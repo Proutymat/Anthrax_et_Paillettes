@@ -290,7 +290,7 @@ screen navigation():
         style_prefix "navigation"
 
         xalign 0.5
-        yalign 0.65
+        yalign 0.70
      
 
         spacing gui.navigation_spacing
