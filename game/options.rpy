@@ -21,7 +21,7 @@ define config.name = _("Anthrax_et_Paillettes")
 ## Détermine si le titre renseigné plus haut est affiché sur l'écran du menu
 ## principal Configurez-le à False (Faux) pour cacher le titre.
 
-define gui.show_name = True
+define gui.show_name = False
 
 
 ## La version du jeu.

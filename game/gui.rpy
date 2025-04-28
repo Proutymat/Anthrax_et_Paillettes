@@ -38,7 +38,7 @@ define gui.idle_color = '#707070'
 define gui.idle_small_color = '#606060'
 
 ## Cette couleur est utilisée pour les boutons et les barres qui sont survolées.
-define gui.hover_color = '#660066'
+define gui.hover_color = '#5c0303'
 
 ## Cette couleur est utilisé pour le texte d’un bouton sélectionné, mais qui n’a
 ## pas le focus. Un bouton est sélectionné s’il est sur l’écran actuel ou si
@@ -69,7 +69,7 @@ define gui.text_font = "DejaVuSans.ttf"
 define gui.name_text_font = "DejaVuSans.ttf"
 
 ## Les polices utilisées pour les textes « hors du jeu ».
-define gui.interface_text_font = "DejaVuSans.ttf"
+define gui.interface_text_font = "AbrilFatface-Regular.ttf"
 
 ## La taille normale pour les dialogues.
 define gui.text_size = 33
@@ -78,7 +78,7 @@ define gui.text_size = 33
 define gui.name_text_size = 45
 
 ## La taille du texte dans l’interface de jeu.
-define gui.interface_text_size = 33
+define gui.interface_text_size = 50
 
 ## La taille des libellés dans l’interface de jeu.
 define gui.label_text_size = 36
@@ -180,7 +180,7 @@ define gui.button_text_insensitive_color = gui.insensitive_color
 
 ## L'alignement horizontal du texte des boutons. (0.0 est à gauche, 0.5 est au
 ## centre, 1.0 est à droite).
-define gui.button_text_xalign = 0.0
+define gui.button_text_xalign = 0.5
 
 
 ## Ces variables surchargent les paramètres par défaut pour différents types de
@@ -273,7 +273,7 @@ define gui.notify_ypos = 68
 define gui.choice_spacing = 33
 
 ## Boutons dans la section de navigation du menu principal et du menu de jeu.
-define gui.navigation_spacing = 6
+define gui.navigation_spacing = 20
 
 ## Contrôle l’espacement entre les préférences.
 define gui.pref_spacing = 15
