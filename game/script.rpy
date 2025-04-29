@@ -228,7 +228,7 @@ label start:
 
     a "Jasmine avait l'air d'être le genre de fille qui ne se prenait pas trop la tête, en plus d'être accessible. Elle a blagué tout le long de la visite sur de petites anecdotes de clients, c'était assez rassurant. Elle a dû sentir que je n'étais pas encore très à l'aise."
 
-
+    
 
 
 
