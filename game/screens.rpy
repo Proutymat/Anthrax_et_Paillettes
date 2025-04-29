@@ -289,9 +289,12 @@ screen navigation():
     vbox:
         style_prefix "navigation"
 
-        xalign 0.5
-        yalign 0.70
-     
+        if renpy.get_screen("main_menu"):
+            xalign 0.5
+            yalign 0.8
+        else:
+            xoffset 40
+            yalign 0.5
 
         spacing gui.navigation_spacing
 
@@ -307,7 +310,13 @@ screen navigation():
 
         textbutton _("Charger") action ShowMenu("load")
 
-        textbutton _("Préférences") action ShowMenu("preferences")
+        textbutton _("Album") action ShowMenu("album")
+
+        textbutton _("Interviews") action ShowMenu("interviews")
+
+        textbutton _("Options") action ShowMenu("preferences")
+
+        
 
         if _in_replay:
 
@@ -317,13 +326,13 @@ screen navigation():
 
             textbutton _("Menu principal") action MainMenu()
 
-        textbutton _("À propos") action ShowMenu("about")
+        textbutton _("Crédits") action ShowMenu("about")
 
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
             ## L'aide n’est ni nécessaire ni pertinente sur les appareils
             ## mobiles.
-            textbutton _("Aide") action ShowMenu("help")
+            textbutton _("Contrôles") action ShowMenu("help")
 
         if renpy.variant("pc"):
 

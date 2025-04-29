@@ -1,4 +1,4 @@
-﻿################################################################################
+################################################################################
 ## Initialisation
 ################################################################################
 
@@ -43,7 +43,8 @@ define gui.hover_color = '#5c0303'
 ## Cette couleur est utilisé pour le texte d’un bouton sélectionné, mais qui n’a
 ## pas le focus. Un bouton est sélectionné s’il est sur l’écran actuel ou si
 ## c’est la valeur de préférence.
-define gui.selected_color = '#555555'
+define gui.hover_color = '#5c0303'
+define gui.selected_color = '#5c0303'
 
 ## La couleur utilisée pour le texte d’un bouton qui ne peut pas être
 ## sélectionné.
@@ -63,10 +64,10 @@ define gui.interface_text_color = '#404040'
 ## Polices et tailles de police ################################################
 
 ## Les polices utilisées pour le texte du jeu.
-define gui.text_font = "DejaVuSans.ttf"
+define gui.text_font = "AbrilFatface-Regular.ttf"
 
 ## Les polices utilisées pour le nom des personnages.
-define gui.name_text_font = "DejaVuSans.ttf"
+define gui.name_text_font = "AbrilFatface-Regular.ttf"
 
 ## Les polices utilisées pour les textes « hors du jeu ».
 define gui.interface_text_font = "AbrilFatface-Regular.ttf"
@@ -273,7 +274,7 @@ define gui.notify_ypos = 68
 define gui.choice_spacing = 33
 
 ## Boutons dans la section de navigation du menu principal et du menu de jeu.
-define gui.navigation_spacing = 20
+define gui.navigation_spacing = 0
 
 ## Contrôle l’espacement entre les préférences.
 define gui.pref_spacing = 15
