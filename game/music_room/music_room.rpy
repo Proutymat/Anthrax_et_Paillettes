@@ -29,12 +29,12 @@ init python:
     ##                they are added to the music room in.
     music_room = ExtendedMusicRoom(channel='music', fadeout=0.0, fadein=0.0,
         loop=True, single_track=True, shuffle=False, stop_action=None,
-        alphabetical=True)
+        alphabetical=False)
 
     ## This sets up a default art image for all tracks in this room which aren't
     ## given a more specific one. This default art is 600x600, but several
     ## layouts resize it. It should typically be square.
-    music_room.default_art = "gui/music_room/vinyle.webm"
+    music_room.default_art = "gui/music_room/cover_art.webp"
 
     ## Now you can declare the music files. These will appear in the music room
     ## in the order you declare them in, unless you set alphabetical=True above.
@@ -77,17 +77,16 @@ init python:
     )
 
     music_room.add(
-        name=_("Beneath the Endless Day"),
-        artist="Tobi Weiss",
+        name=_("Stateside"),
+        artist="Pink Mother fucking Panthress",
         path="audio/music_room/stateside.ogg",
         unlock_condition="True",
-        art= "gui/music_room/vinyle.webm"
     )
 
     music_room.add(
-        name=_("Destati"),
-        artist="Yoko Shimomura",
-        path="<silence 173>",
+        name=_("von dutch"),
+        artist="brat icon",
+        path="audio/music_room/vondutch.ogg",
         unlock_condition="True",
     )
 
