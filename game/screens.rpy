@@ -312,7 +312,7 @@ screen navigation():
 
         textbutton _("Album") action ShowMenu("album")
 
-        textbutton _("Interviews") action ShowMenu("interviews")
+        textbutton _("Interviews") action ShowMenu("music_room", mr=music_room)
 
         textbutton _("Options") action ShowMenu("preferences")
 
