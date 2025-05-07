@@ -64,22 +64,22 @@ define gui.interface_text_color = '#404040'
 ## Polices et tailles de police ################################################
 
 ## Les polices utilisées pour le texte du jeu.
-define gui.text_font = "AbrilFatface-Regular.ttf"
+define gui.text_font = "Commissioner-Regular.ttf"
 
 ## Les polices utilisées pour le nom des personnages.
-define gui.name_text_font = "AbrilFatface-Regular.ttf"
+define gui.name_text_font = "Commissioner-Regular.ttf"
 
 ## Les polices utilisées pour les textes « hors du jeu ».
-define gui.interface_text_font = "AbrilFatface-Regular.ttf"
+define gui.interface_text_font = "Commissioner-Regular.ttf"
 
 ## La taille normale pour les dialogues.
-define gui.text_size = 33
+define gui.text_size = 30
 
 ## La taille pour le nom des personnages.
 define gui.name_text_size = 45
 
 ## La taille du texte dans l’interface de jeu.
-define gui.interface_text_size = 50
+define gui.interface_text_size = 33
 
 ## La taille des libellés dans l’interface de jeu.
 define gui.label_text_size = 36

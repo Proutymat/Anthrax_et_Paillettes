@@ -326,7 +326,35 @@ label start:
     g "Mais mon vrai prénom, c'est PRÉNOM GATSBY. Pareil que Pea, tu peux aussi m'appeler comme ça si tu en as envie."
 
 
-    
+
+#Test Illustrations ne pas toucher
+
+image CG_delauney = "CGs/delauney.jpg"
+image CG_gatsby = "CGs/gatsby.jpg"
+image CG_peacock = "CGs/peacock.jpg"
 
 
+
+scene bg classroom
+jump choices
+
+label choices:
+    menu:
+        "Illustration Delauney":
+           scene CG_delauney with fade
+        
+        "Illustration Gatsby":
+           scene CG_gatsby with fade           
+        
+        "Illustration Peacock":           
+           scene CG_peacock with fade
+
+
+        "End":
+            return
+
+label after_choices:
+    jump choices
     return
+
+        

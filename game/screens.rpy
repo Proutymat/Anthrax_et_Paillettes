@@ -291,9 +291,9 @@ screen navigation():
 
         if renpy.get_screen("main_menu"):
             xalign 0.5
-            yalign 0.8
+            yalign 0.6
         else:
-            xoffset 40
+            xoffset 100
             yalign 0.5
 
         spacing gui.navigation_spacing
@@ -308,11 +308,11 @@ screen navigation():
 
             textbutton _("Sauvegarde") action ShowMenu("save")
 
-        textbutton _("Charger") action ShowMenu("load")
+        textbutton _("Reprendre") action ShowMenu("load")
 
-        textbutton _("Album") action ShowMenu("album")
+        textbutton _("Album") action ShowMenu("gallery_delauney")
 
-        textbutton _("Interviews") action ShowMenu("music_room", mr=music_room)
+        textbutton _("Jukebox") action ShowMenu("music_room", mr=music_room)
 
         textbutton _("Options") action ShowMenu("preferences")
 
@@ -512,7 +512,7 @@ style game_menu_outer_frame:
     bottom_padding 45
     top_padding 180
 
-    background "gui/overlay/game_menu.png"
+    background "gui/overlay/game_menu.jpg"
 
 style game_menu_navigation_frame:
     xsize 420
