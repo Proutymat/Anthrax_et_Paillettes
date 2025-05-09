@@ -6,6 +6,7 @@
 ## sont du code commenté et vous pouvez les décommentez quand c’est approprié
 ## (pour votre projet).
 
+define config.game_menu_action = ShowMenu("pause_menu")
 
 ## Bases #######################################################################
 

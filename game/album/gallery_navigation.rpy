@@ -4,12 +4,12 @@ screen gallery_navigation:
         spacing 75
         xoffset -70
         yoffset 50
-        textbutton "Delauney" action ShowMenu("gallery_delauney")
+        textbutton "Delaunay" action ShowMenu("gallery_delaunay")
         textbutton "Gatsby" action ShowMenu("gallery_gatsby")
         textbutton "Peacock" action ShowMenu("gallery_peacock")
   
         textbutton "Retour":
-            action Return()
+            action ShowMenu("backstages")
             yoffset 150
 
 style gallery_button_text:

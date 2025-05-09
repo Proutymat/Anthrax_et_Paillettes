@@ -1,4 +1,4 @@
-screen gallery_delauney:
+screen gallery_delaunay:
     tag menu
     add "images/CustomUI/bg gallery.jpg"
     
@@ -8,5 +8,5 @@ screen gallery_delauney:
         spacing 30
         use gallery_navigation
         grid 3 2:
-            add gallery.make_button(name="delauney",unlocked="CGs/small/delauney_small.jpg",locked="CGs/small/locked.jpg") at Transform(xzoom=3.5, yzoom=3.5)
+            add gallery.make_button(name="delaunay",unlocked="CGs/small/delaunay_small.jpg",locked="CGs/small/locked.jpg") at Transform(xzoom=3.5, yzoom=3.5)
             spacing 15

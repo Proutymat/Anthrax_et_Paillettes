@@ -329,7 +329,7 @@ label start:
 
 #Test Illustrations ne pas toucher
 
-image CG_delauney = "CGs/delauney.jpg"
+image CG_delauney = "images/CGs/delaunay.jpg"
 image CG_gatsby = "CGs/gatsby.jpg"
 image CG_peacock = "CGs/peacock.jpg"
 
@@ -340,8 +340,8 @@ jump choices
 
 label choices:
     menu:
-        "Illustration Delauney":
-           scene CG_delauney with fade
+        "Illustration Delaunay":
+           scene CG_delaunay with fade
         
         "Illustration Gatsby":
            scene CG_gatsby with fade           
