@@ -4,6 +4,9 @@
 
 init offset = -1
 
+init python:
+    config.mouse_hide_time = None  # Ne jamais cacher la souris
+
 
 ################################################################################
 ## Styles
@@ -249,9 +252,9 @@ screen quick_menu():
             yalign 0.0
             spacing 10
 
-            textbutton _("Retour") action Rollback()
-            textbutton _("Historique") action ShowMenu('history')
-            textbutton _("Avance rapide") action Skip() alternate Skip(fast=True, confirm=True)
+            imagebutton idle "menuUI/retourhud_idle.png" hover "menuUI/retourhud_hover.png" action Rollback()
+            imagebutton idle "menuUI/journal_idle.png" hover "menuUI/journal_hover.png" action ShowMenu('history')
+            imagebutton idle "menuUI/avancerapide_idle.png" hover "menuUI/avancerapide_hover.png" action Skip() alternate Skip(fast=True, confirm=True)
             #textbutton _("Auto") action Preference("auto-forward", "toggle")
             #textbutton _("Sauvegarde") action ShowMenu('save')
             #textbutton _("Sauvegarde R.") action QuickSave()
@@ -327,9 +330,11 @@ screen backstages():
                 spacing 100
                 xalign 0.5
 
-                textbutton "Juxebox" action ShowMenu ("music_room", mr=music_room)
-                textbutton "Interviews" action ShowMenu ("music_room_interviews", mr=music_room_interviews)
                 textbutton "Album" action ShowMenu("gallery_delaunay") 
+                textbutton "Interviews" action ShowMenu ("music_room_interviews", mr=music_room_interviews)
+                textbutton "Juxebox" action ShowMenu ("music_room", mr=music_room)
+                
+             
     vbox:
         at Transform(xalign=0.05, yalign=0.98)
         imagebutton idle "menuUI/retour_idle.png" hover "menuUI/retour_hover.png" action Return()
