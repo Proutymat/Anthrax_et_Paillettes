@@ -154,7 +154,7 @@ style namebox:
 
 style say_label:
     properties gui.text_properties("name", accent=True)
-    xalign gui.name_xalign
+    xalign 0.5
     yalign 0.5
 
 style say_dialogue:
@@ -1074,10 +1074,12 @@ screen history():
         yalign 0.0
         has vbox
         spacing 10
+
         viewport:
             yinitial 1.0
             draggable True
             mousewheel True
+
             vbox:
                 spacing gui.history_spacing
 
@@ -1086,13 +1088,15 @@ screen history():
                         has fixed
                         yfit True
 
+                        # Affichage du nom du personnage si disponible
                         if h.who:
-                            label h.who:
-                                style "history_name"
+                            text h.who:
+                                style "history_name"     # Applique un style dédié pour l’historique
                                 substitute False
                                 if "color" in h.who_args:
-                                    text_color h.who_args["color"]
+                                    color h.who_args["color"]  # Permet de récupérer la couleur du perso si définie
 
+                        # Nettoyage des balises de mise en forme autorisées
                         $ what = renpy.filter_text_tags(h.what, allow=gui.history_allow_tags)
                         text what:
                             substitute False
@@ -1100,9 +1104,11 @@ screen history():
                 if not _history_list:
                     label _("L'historique des dialogues est vide.")
 
+    # Bouton retour en bas à droite
     vbox:
-                at Transform(xalign=0.95, yalign=0.95)
-                imagebutton idle "menuUI/retour_idle.png" hover "menuUI/retour_hover.png" action Return()
+        at Transform(xalign=0.95, yalign=0.95)
+        imagebutton idle "menuUI/retour_idle.png" hover "menuUI/retour_hover.png" action Return()
+
 
 
 ## Ceci détermine quels tags peuvent être affichés sur le screen de

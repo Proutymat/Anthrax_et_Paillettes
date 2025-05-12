@@ -31,32 +31,42 @@ image Mother:
     "concept_mother"
     zoom 0.35
 
-image Delaunay Out Neutre:
+image Delaunay In Neutre:
     "concept_delaunay_in"
     zoom 0.35
 
-image Delaunay In Neutre:
+image Delaunay Out Neutre:
     "concept_delaunay_out"
     zoom 0.35
 
-image Gatsby Out Neutre:
+image Gatsby In Neutre:
     "concept_gatsby_in"
     zoom 0.35
 
-image Gatsby In Neutre:
+image Gatsby Out Neutre:
     "concept_gatsby_out"
-    zoom 0.35
-
-image Peacock Out Neutre :
-    "concept_peacock-out"
     zoom 0.35
 
 image Peacock In Neutre:
     "concept_peacock_in"
     zoom 0.35
 
+image Peacock Out Neutre:
+    "concept_peacock_out"
+    zoom 0.35
+
+image Jazz:
+    "concept_jazz"
+
+image Barman:
+    "concept_barman"
+
 image Auditorium = "Backgrounds/concept_auditorium.png"
 
+transform tall_right:
+    zoom 2.8
+    xalign 0.90
+    yalign 1.0
 
 
 # Liste des sfx
@@ -71,13 +81,13 @@ define audio.Chorus = "AP_Chorus_V1.ogg"
 define audio.BarNeutral = "AP_Bar_V2.ogg"
 
 # Déclarez les personnages utilisés dans le jeu.
-define m = Character('Mother', color="#c8ffc8", what_slow_cps=25, callback=type_sound, cb_cps=25)
-define a = Character('Anthräx', what_slow_cps=35, callback=type_sound, cp_cps=35)
-define b = Character('Barman', what_slow_cps=40, callback=type_sound, cb_cps=40)
-define j = Character('Jazz', what_slow_cps=50, callback=type_sound, cb_cps=50)
-define d = Character('Delaunay', what_slow_cps=50, callback=type_sound, cb_cps=50)
-define g = Character('Gatsby', what_slow_cps=50, callback=type_sound, cb_cps=50)
-define p = Character('Peacock', what_slow_cps=50, callback=type_sound, cb_cps=50)
+define m = Character('Mother', color="#880000", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=25, callback=type_sound, cb_cps=25)
+define a = Character('Anthräx', color="#6600b9", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=35, callback=type_sound, cb_cps=35)
+define b = Character('Barman', color="#ca4a4a", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=40, callback=type_sound, cb_cps=40)
+define j = Character('Jazz', color="#ec7f40", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
+define d = Character('Delaunay', color="#2d9ead", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
+define g = Character('Gatsby', color="#003099", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
+define p = Character('Peacock', color="#be9f13", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
 
 # Le jeu commence ici
 
@@ -135,15 +145,11 @@ label start:
 
     play music IntroCabaret fadein 0.1
 
-    define m = Character('Mother', color="#c8ffc8", what_slow_cps=50, callback=type_sound, cb_cps=50)
-
     scene concept_auditorium
 
-    show Mother
+    show Mother at tall_right
 
     m "Bienvenue dans l'Androgame! J'espère que tu as fait bonne route."
-
-    define m = Character('Mother', color="#c8ffc8", what_slow_cps=25, callback=type_sound, cb_cps=25)
 
     m "Tu avais l'air de dire dans nos échanges que tu n'habitais pas trop loin, le chemin n'a pas dû être bien compliqué."
 
@@ -186,11 +192,13 @@ label start:
 
     a "L'immense lustre duquel pendaient des larmes de verre reflétait les spots de lumière à la manière d'une boule à facette sur le papier peint texturé."
 
-    show Mother
+    show Mother at tall_right
 
     m "Je te présente BARMAN, c'est lui qui tient le bar."
 
     m "Ne t'en fais pas, il a beau avoir une tête de doberman, il ne mord pas."
+
+    show Barman at Transform(xalign=-0.1, yalign=0.14)
 
     b "Vu comment tu me vends Mama, c'est pas comme ça que tu vas le.a rassurer..."
 
@@ -202,9 +210,11 @@ label start:
 
     m "Je plussoie. On protège les nôtres ici, inconditionnellement."
 
-    m " On discute tout à l'heure BARMAN ? Je termine la visite, puis j'arrive pour l'inventaire."
+    m "On discute tout à l'heure BARMAN ? Je termine la visite, puis j'arrive pour l'inventaire."
 
     b "Ça marche. Bye!"
+
+    hide Barman 
 
     a "Après avoir monté les escaliers en colimaçon et traversé les gradins, surplombant le reste de la salle de spectacle, nous nous sommes arreté.e.s sur les rembardes pour discuter davantage de ce que Mother attendait de ses nouvelles recrues."
 
@@ -215,6 +225,8 @@ label start:
     m "C'est peut-être impressionnant dit dans ces termes, mais je suis sûre que tu es à la hauteur du challenge. Après tout, si je t'ai choisi.e lors des castings, c'est que j'ai bien remarqué du potentiel chez toi."
 
     stop music fadeout 0.05
+
+    show Jazz at Transform(xalign=0.18, yalign=0.14)
 
     j "Excusez-moi, je peux vous interrompre?"
 
@@ -262,6 +274,8 @@ label start:
 
     j "Viens! Je vais t'emmener dans les coulisses."
 
+    hide Jazz
+
     a "Jazz et moi sommes monté.e.s sur la scène et l'avons traversée avant de passer derrière les épais rideaux de velours. Nous sommes passé.e.s dans un véritable dédale de couloirs tandis qu'elle ouvrait quelques portes et m'expliquait la fonction de chaque pièce."
 
     a "Ici, la réserve des costumes; où les armatures de dos, de hanches, d'épaules à plumes d'autruche, de floss, d'oie ou de faisan; et les casques grandioses à strass, sequins, perles de verre ou fausses pierres précieuses, se faisaient la compétition."
@@ -274,9 +288,13 @@ label start:
 
     a "Studieuse."
 
+    show Peacock Out Neutre at Transform(xalign=0.99, yalign=0.0, zoom=5.5)
+
     p "Ok, hear me out... Je dis simplement que si l'on veut garder une logique dans la suite de nos numéros, on va devoir inverser l'ordre dans lequel on passe pour pouvoir faire de la place aux nouvelles."
 
     a "L'homme qui venait de prendre la parole était en train de gribouiller avec insistance un schéma dans son carnet, une aiguille à coudre entre les lèvres et une pièce de tissu sur les genoux, à laquelle il semblait broder des sequins un à un"
+
+    show Gatsby Out Neutre at Transform(xalign=0.51, yalign=0.14, zoom=5)
 
     g "Girl... J'entends, et je suis d'accord sur le fond. Mais on ne les connaît même pas encore et on ne sait pas quels numéros iels vont présenter, ou si même iels en ont... Tu es en train de te faire des plans sur la comète, ma belle."
 
@@ -289,6 +307,8 @@ label start:
     g "Et toi Del'? Qu'est-ce que tu en penses?"
 
     a "Relevant la tête, le concerné remarqua qu'iels n'étaient plus trois dans la pièce et me fixa un instant, avant de se retourner vers ses interlocuteur.ice.s."
+  
+    show Delaunay Out Neutre at Transform(xalign=0.09, yalign=0.14, zoom=4.5)
 
     d "Je pense qu'on devrait leur demander directement..."
 
@@ -300,25 +320,41 @@ label start:
 
     a "C'est à ce moment que, salvatrice, Mother revint avec un parfait timing."
 
+    hide Delaunay Out Neutre
+    hide Peacock Out Neutre
+    hide Gatsby Out Neutre
+
+    show Mother at tall_right
+
     m "Oh! Je vois que vous faites connaissance! Les filles, je vous présente PSEUDO, iel nous rejoindra sous peu le temps d'arranger le spectacle, et je compte sur vous pour l'acceuillir comme il se doit."
 
     a "Semblant sortir de leur torpeur et reprendre leurs esprits, les artistes drag face à moi me sourirent et commencèrent à faire un tour des présentations."
 
-    p " Pardon, on a dû te sembler hyper antipathiques avec notre absence de réaction! Moi c'est PRÉNOM PEACOCK. Parfois on s'appelle aussi par nos noms de scène, donc tu peux aussi m'appeler Peacock si tu en as envie."
+    show Peacock Out Neutre at Transform(xalign=0.1, yalign=0.0, zoom=5.5)
 
-    p "PRÉNOM PEACOCK se spécialise dans tout ce qui est du ressort de la performance vocale. Lipsync, chant, reading, shading, imitation... Si tu as des conseils de ce côté à aller chercher, c'est vers elle."
+    p "Pardon, on a dû te sembler hyper antipathiques avec notre absence de réaction! Moi c'est PRÉNOM PEACOCK. Parfois on s'appelle aussi par nos noms de scène, donc tu peux aussi m'appeler Peacock si tu en as envie."
+
+    m "PRÉNOM PEACOCK se spécialise dans tout ce qui est du ressort de la performance vocale. Lipsync, chant, reading, shading, imitation... Si tu as des conseils de ce côté à aller chercher, c'est vers elle."
 
     p "Ah oui! Et pour les pronoms, tu peux utiliser ceux dont tu as envie, je ne suis pas très regardant. Je me genre moi-même souvent au féminin."
+
+    hide Peacock Out Neutre
 
     m "Le petit timide là, qui essaye de faire en sorte de se faire oublier, c'est PRÉNOM DELAUNAY"
 
     a "Prit en flagrant délit, le jeune homme tourna au pivoine et balbutia, mal à l'aise."
 
+    show Delaunay Out Neutre at Transform(xalign=0.2, yalign=0.14, zoom=4.5)
+
     d "N-Non! C'est juste que... J'ai toujours un peu de mal avec les nouvelles personnes. Excuse-moi... Oui, donc moi, c'est PRÉNOM DELAUNAY, j'utilise il/lui, et je fais principalement de l'effeuillage burlesque. C'est assez classique..."
+
+    hide Delaunay Out Neutre
+
+    show Gatsby Out Neutre at Transform(xalign=0.2, yalign=0.14, zoom=4.5)
 
     g "C'est tout sauf classique, ton striptease!"
 
-    a "PRÉNOM DELAUNAY se renfrogna davantage. Apparement, les deux étaient suffisamment bon.ne.s ami.e.s pour se taquiner et s'embarasser ainsi"
+    a "PRÉNOM DELAUNAY se renfrogna davantage. Apparement, les deux étaient suffisamment bon.ne.s ami.e.s pour se taquiner et s'embarasser ainsi."
 
     g "Du coup, vu qu'on doit toujours parler à sa place, son nom de drag est Delaunay."
 
@@ -328,9 +364,15 @@ label start:
 
     g "Mais mon vrai prénom, c'est PRÉNOM GATSBY. Pareil que Pea, tu peux aussi m'appeler comme ça si tu en as envie."
 
+    hide Mother
+    hide Gatsby Out Neutre
+
 label route_choice_intro:
-    window show
-    "Tu t'apprêtes à faire un choix important..."
-    pause
+    window show 
+    "Tu t'apprêtes à faire un choix important..." with fade
+
+    $ _window_hide()
+    $ renpy.pause(0, hard=True)
+    $ quick_menu = False
+   
     call screen choose_route with fade
-    return

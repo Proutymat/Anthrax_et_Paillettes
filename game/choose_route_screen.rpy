@@ -1,6 +1,5 @@
 label choose_route_label:
     call screen choose_route
-    return
 
 screen choose_route():
     tag menu

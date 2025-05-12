@@ -9,7 +9,7 @@ screen gallery_navigation:
         textbutton "Peacock" action ShowMenu("gallery_peacock")
   
         textbutton "Retour":
-            action ShowMenu("backstagesR")
+            action ShowMenu("backstages")
             yoffset 150
 
 style gallery_button_text:
