@@ -80,7 +80,10 @@ define g = Character('Gatsby', what_slow_cps=50, callback=type_sound, cb_cps=50)
 define p = Character('Peacock', what_slow_cps=50, callback=type_sound, cb_cps=50)
 
 # Le jeu commence ici
+
 label start:
+
+    $ quick_menu = True  
 
     play music IntroBS fadein 10.0
 
@@ -325,36 +328,9 @@ label start:
 
     g "Mais mon vrai prénom, c'est PRÉNOM GATSBY. Pareil que Pea, tu peux aussi m'appeler comme ça si tu en as envie."
 
-
-
-#Test Illustrations ne pas toucher
-
-image CG_delauney = "images/CGs/delaunay.jpg"
-image CG_gatsby = "CGs/gatsby.jpg"
-image CG_peacock = "CGs/peacock.jpg"
-
-
-
-scene bg classroom
-jump choices
-
-label choices:
-    menu:
-        "Illustration Delaunay":
-           scene CG_delaunay with fade
-        
-        "Illustration Gatsby":
-           scene CG_gatsby with fade           
-        
-        "Illustration Peacock":           
-           scene CG_peacock with fade
-
-
-        "End":
-            return
-
-label after_choices:
-    jump choices
+label route_choice_intro:
+    window show
+    "Tu t'apprêtes à faire un choix important..."
+    pause
+    call screen choose_route with fade
     return
-
-        

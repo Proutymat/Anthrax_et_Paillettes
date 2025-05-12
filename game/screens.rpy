@@ -4,6 +4,8 @@
 
 init offset = -1
 
+default quick_menu = True  # le quick menu est activé par défaut
+
 init python:
     config.mouse_hide_time = None  # Ne jamais cacher la souris
 
@@ -240,21 +242,20 @@ style choice_button_text is default:
 
 screen quick_menu():
 
-    ## Assure qu'il apparaît au-dessus des autres screens.
     zorder 100
 
     if quick_menu:
 
         hbox:
             style_prefix "quick"
-
             xalign 0.0
             yalign 0.0
             spacing 10
 
             imagebutton idle "menuUI/retourhud_idle.png" hover "menuUI/retourhud_hover.png" action Rollback()
             imagebutton idle "menuUI/journal_idle.png" hover "menuUI/journal_hover.png" action ShowMenu('history')
-            imagebutton idle "menuUI/avancerapide_idle.png" hover "menuUI/avancerapide_hover.png" action Skip() alternate Skip(fast=True, confirm=True)
+            #imagebutton idle "menuUI/avancerapide_idle.png" hover "menuUI/avancerapide_hover.png" action Skip() alternate Skip(fast=True, confirm=True)
+
             #textbutton _("Auto") action Preference("auto-forward", "toggle")
             #textbutton _("Sauvegarde") action ShowMenu('save')
             #textbutton _("Sauvegarde R.") action QuickSave()
@@ -266,8 +267,6 @@ screen quick_menu():
 ## que le joueur n’aura pas explicitement demandé à cacher l’interface.
 init python:
     config.overlay_screens.append("quick_menu")
-
-default quick_menu = True
 
 style quick_button is default
 style quick_button_text is button_text
@@ -287,6 +286,16 @@ style h1 is default:
 screen pause_menu():
 
     tag menu  # Ferme les autres menus automatiquement
+
+    default quick_menu_backup = quick_menu  # ← cette ligne est nécessaire
+    
+    python:
+        quick_menu = False
+
+    on "hide" action SetVariable("quick_menu", quick_menu_backup)
+
+
+    $ quick_menu = False  # <- désactive le quick menu pendant la pause
 
     add Solid("#000")  # noir 100% opaque
     # ou par exemple : add Solid("#111") si tu veux juste un fond très foncé
