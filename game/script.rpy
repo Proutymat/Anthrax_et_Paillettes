@@ -104,7 +104,6 @@ label start:
 
     $ quick_menu = True  
 
-    #play music IntroBS fadein 10.0
     play music GoodVibeIntro fadein 3.0
 
     a "L'Androgame..."
