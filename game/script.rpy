@@ -24,6 +24,7 @@ init python:
         if renpy.music.is_playing('sound'):
             renpy.pause((20-renpy.music.get_pos('sound')),hard=True)
 
+
 # Déclarez sous cette ligne les images, avec l'instruction 'image'
 # ex: image eileen heureuse = "eileen_heureuse.png"
 
@@ -73,12 +74,20 @@ transform tall_right:
 define type_sounds = ['TextMix-001.ogg','TextMix-002.ogg','TextMix-003.ogg','TextMix-004.ogg','TextMix-005.ogg','TextMix-006.ogg','TextMix-007.ogg','TextMix-008.ogg','TextMix-009.ogg','TextMix-010.ogg']
 
 # Liste des musiques
-define audio.IntroBS = "Hypnotized.mp3"
+define audio.GoodVibeIntro = "ON_GoodVibeIntro_V2.ogg"
+define audio.IntroGoodVibe1 = "ON_GoodVibeA_V2.ogg"
+define audio.IntroGoodVibe2 = "ON_GoodVibeB_V2.ogg"
+define audio.IntroGoodVibe3 = "AP_IntroGoodVib3_V1.ogg"
+define audio.IntroGoodVibe4 = "AP_IntroGoodVib4_V1.ogg"
 define audio.IntroCabaret = "AP_ON2.1_V1.ogg"
 define audio.Intro2Cabaret = "AP_Intro2_V1.ogg"
-define audio.Verse = "AP_Verse_V1.ogg"
-define audio.Chorus = "AP_Chorus_V1.ogg"
+define audio.Verse = "ON_CabaretLightVerse_V1.ogg"
+define audio.CabaretLightChorus = "ON_CabaretLightChorus_V1.ogg"
+define audio.CabaretLightSolo = "ON_CabaretLightSolo_V1.ogg"
 define audio.BarNeutral = "AP_Bar_V2.ogg"
+define audio.BalconyIntro = "ON_Backstage_V1.ogg"
+define audio.BalconyLoop = "ON_BackstageLoop_V1.ogg"
+define audio.Backstage = "ON_Loge_V1.ogg"
 
 # Déclarez les personnages utilisés dans le jeu.
 define m = Character('Mother', color="#880000", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=25, callback=type_sound, cb_cps=25)
@@ -95,7 +104,8 @@ label start:
 
     $ quick_menu = True  
 
-    play music IntroBS fadein 10.0
+    #play music IntroBS fadein 10.0
+    play music GoodVibeIntro fadein 3.0
 
     a "L'Androgame..."
 
@@ -104,6 +114,9 @@ label start:
     a "Je me souviens encore de quand je passais devant pour aller prendre le métro... Complètement défraichit, la pierre sale et les fenêtres brisées."
 
     a "On se demandait quand est-ce qu'ils finiraient par abréger ses souffrances et le démolir."
+
+    queue music IntroGoodVibe1
+    queue music IntroGoodVibe2
 
     a "Cela fait un moment maintenant qu'il a été reprit, et après de longs et nombreux travaux, il fait à présent revivre le quartier comme je ne l'ai jamais vu auparavant."
 
@@ -139,7 +152,7 @@ label start:
 
     a "Je ne pensais pas être sélectionné.e, encore moins de passer un entretien avec Mother, la patronne du cabaret. Je n'ai pas trop compris, mais elle m'a parlé des règles de conduite au sein de la troupe et envers les clients, puis d'une période d'essai..."
 
-    stop music fadeout 1.5
+    stop music fadeout 5.0
 
     a "J'avais du mal à réaliser, mais on a convenu d'une nouvelle date d'entretien, en journée quand le cabaret serait vide, où elle m'expliquerait plus en détails le fonctionnement des backstages."
 
@@ -170,8 +183,6 @@ label start:
 
     m "Ce n'est pas trop dans notre politique cette histoire du <<le client est roi>>, mais tu apprendras vite que c'est là que les pourboires se cachent~"
 
-    queue music Chorus
-
     m "Et nous voici donc dans l'auditorium! Il sera un peu comme ton meilleur ennemi, car peu importe le trac ou qui se retrouvera dans le public, il faudra grimper sur les planches!"
 
     m "Après, si tu es ici aujourd'hui, c'est par ce que c'est justement le genre de chose qui t'anime: te mettre en scène..."
@@ -184,7 +195,7 @@ label start:
 
     scene concept_bar
 
-    play music BarNeutral fadein 0.5
+    play music BarNeutral fadein 0.1
 
     a "Nous nous sommes approché.e.s du comptoir derrière lequel brillaient un mur de bouteilles de formes et couleurs uniques. Le paradis du parfait mixologue."
 
@@ -212,9 +223,15 @@ label start:
 
     m "On discute tout à l'heure BARMAN ? Je termine la visite, puis j'arrive pour l'inventaire."
 
+    stop music fadeout 2.0
+
     b "Ça marche. Bye!"
 
     hide Barman 
+
+    scene concept_auditorium
+    play music BalconyIntro
+    queue music BalconyLoop
 
     a "Après avoir monté les escaliers en colimaçon et traversé les gradins, surplombant le reste de la salle de spectacle, nous nous sommes arreté.e.s sur les rembardes pour discuter davantage de ce que Mother attendait de ses nouvelles recrues."
 
@@ -229,6 +246,8 @@ label start:
     show Jazz at Transform(xalign=0.18, yalign=0.14)
 
     j "Excusez-moi, je peux vous interrompre?"
+
+    stop music fadeout 0.05
 
     m "Oh, Jasmine... Qu'est-ce qui se passe?"
 
@@ -248,6 +267,8 @@ label start:
 
     a "Mother a quitté la pièce d'un pas déterminé, dégageant d'un geste vif son téléphone portable de son décolleté et composant déjà le numéro de l'entreprise, cherchant un endroit plus calme et discret pour passer sa soufflante"
 
+    queue music Verse
+
     j "Bon... Bah moi, c'est Jazz. Et toi?"
 
     a "Anthräx... Tu travailles à la technique ici?"
@@ -261,6 +282,9 @@ label start:
     a "Je le trouve bien pensé..."
 
     j "Vraiment? Ça doit être le blaze moins original de la terre! Ils ne se sont pas foulés... Mais bon, je m'y suis attachée quand même."
+
+    queue music CabaretLightSolo
+    queue music CabaretLightChorus
 
     a "Jasmine avait l'air d'être le genre de fille qui ne se prenait pas trop la tête, en plus d'être accessible. Elle a blagué tout le long de la visite sur de petites anecdotes de clients, c'était assez rassurant. Elle a dû sentir que je n'étais pas encore très à l'aise."
 
@@ -285,6 +309,8 @@ label start:
     a "Déjà que je ne savais pas encore vers quelle pratique je souhaitais me spécialiser, submergé.e par tout ceci, j'en étais d'autant plus perdu.e..."
 
     a "Nous avons fini par pousser une dernière porte, celle des loges et avons été accueilli.e.s par une ambiance des plus..."
+
+    stop music fadeout 2.0
 
     a "Studieuse."
 
@@ -325,6 +351,7 @@ label start:
     hide Gatsby Out Neutre
 
     show Mother at tall_right
+    play music Backstage fadein 0.5
 
     m "Oh! Je vois que vous faites connaissance! Les filles, je vous présente PSEUDO, iel nous rejoindra sous peu le temps d'arranger le spectacle, et je compte sur vous pour l'acceuillir comme il se doit."
 
@@ -376,3 +403,34 @@ label route_choice_intro:
     $ quick_menu = False
    
     call screen choose_route with fade
+#Test Illustrations ne pas toucher
+
+#image CG_delauney = "CGs/delauney.jpg"
+#image CG_gatsby = "CGs/gatsby.jpg"
+#image CG_peacock = "CGs/peacock.jpg"
+
+
+
+#scene bg classroom
+#jump choices
+
+#label choices:
+    #menu:
+        #"Illustration Delauney":
+        #scene CG_delauney with fade
+        
+        #"Illustration Gatsby":
+        #scene CG_gatsby with fade           
+        
+        #"Illustration Peacock":           
+        #scene CG_peacock with fade
+
+
+        #"End":
+        #return
+
+#label after_choices:
+    #jump choices
+    #return
+
+        
