@@ -22,6 +22,7 @@ init python:
         if renpy.music.is_playing('sound'):
             renpy.pause((20-renpy.music.get_pos('sound')),hard=True)
 
+
 # Déclarez sous cette ligne les images, avec l'instruction 'image'
 # ex: image eileen heureuse = "eileen_heureuse.png"
 
@@ -65,12 +66,20 @@ transform tall_right:
 define type_sounds = ['TextMix-001.ogg','TextMix-002.ogg','TextMix-003.ogg','TextMix-004.ogg','TextMix-005.ogg','TextMix-006.ogg','TextMix-007.ogg','TextMix-008.ogg','TextMix-009.ogg','TextMix-010.ogg']
 
 # Liste des musiques
-define audio.IntroBS = "Hypnotized.mp3"
+define audio.GoodVibeIntro = "ON_GoodVibeIntro_V2.ogg"
+define audio.IntroGoodVibe1 = "ON_GoodVibeA_V2.ogg"
+define audio.IntroGoodVibe2 = "ON_GoodVibeB_V2.ogg"
+define audio.IntroGoodVibe3 = "AP_IntroGoodVib3_V1.ogg"
+define audio.IntroGoodVibe4 = "AP_IntroGoodVib4_V1.ogg"
 define audio.IntroCabaret = "AP_ON2.1_V1.ogg"
 define audio.Intro2Cabaret = "AP_Intro2_V1.ogg"
-define audio.Verse = "AP_Verse_V1.ogg"
-define audio.Chorus = "AP_Chorus_V1.ogg"
+define audio.Verse = "ON_CabaretLightVerse_V1.ogg"
+define audio.CabaretLightChorus = "ON_CabaretLightChorus_V1.ogg"
+define audio.CabaretLightSolo = "ON_CabaretLightSolo_V1.ogg"
 define audio.BarNeutral = "AP_Bar_V2.ogg"
+define audio.BalconyIntro = "ON_Backstage_V1.ogg"
+define audio.BalconyLoop = "ON_BackstageLoop_V1.ogg"
+define audio.Backstage = "ON_Loge_V1.ogg"
 
 # Déclarez les personnages utilisés dans le jeu.
 define mother = Character('Mother', color="#880000", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=25, callback=type_sound, cb_cps=25)
@@ -91,11 +100,15 @@ label start:
 #0.1
     $ quick_menu = True  
 
-    play music IntroBS fadein 10.0
+    play music GoodVibeIntro fadein 3.0
 
     anthrax "C’est dingue à quel point ce cabaret a reprit ses lettres de noblesse."
     anthrax "Je me souviens encore de quand je passais devant pour aller prendre le métro... Complètement défraichit, la pierre sale et les fenètres brisées."
     anthrax "On se demandait quand est-ce qu’ils finiraient par abréger ses souffrances et le démolir."
+
+    queue music IntroGoodVibe1
+    queue music IntroGoodVibe2
+    
     anthrax "Cela fait un moment maintenant qu’il a été reprit, et après de longs et nombreux travaux, il fait à présent revivre le quartier comme je ne l’ai jamais vu auparavant."
     anthrax "Il me décroche toujours un sourire quand je passe devant..."
     anthrax "Et puis même au sein de la commu’, ça a fait jaser. Toutes les têtes d’affiches sont queer."
@@ -115,7 +128,7 @@ label start:
     anthrax "Je pense que j’ai décidé d’arrêter d’essayer de me justifier à un moment, lorsque j’étais aux portes du bâtiment. Après tout, je n’avais rien à perdre et j’aurais regretté de ne pas avoir au moins essayé."
     anthrax "Je ne pensais pas être sélectionné.e, encore moins de passer un entretien avec Mother, la patronne du cabaret. Je n’ai pas trop compris, mais elle m’a parlé des règles de conduite au sein de la troupe et envers les clients, puis d’une période d’essai..."
 
-    stop music fadeout 1.5
+    stop music fadeout 5.0
 
     anthrax "J’avais du mal à réaliser, mais on a convenu d’une nouvelle date d’entretien, en journée quand le cabaret serait vide, où elle m’expliquerait plus en détails le fonctionnement des backstages."
 
@@ -157,7 +170,9 @@ label start:
     anthrax "Déjà que je ne savais pas encore vers quelle pratique je souhaitais me spécialiser, submergé.e par tout ceci, j'en étais d'autant plus perdu.e..." 
     anthrax "Nous avons fini par pousser une dernière porte, celle des loges et avons été accueilli.e.s par une ambiance des plus... Studieuse."
 
+    play music BarNeutral fadein 0.1
     inconnu "Ok, hear me out... Je dis simplement que si l'on veut garder une logique dans la suite de nos numéros, on va devoir inverser l'ordre dans lequel on passe pour pouvoir faire de la place aux nouvelles."
+    
 
     anthrax "L'homme qui venait de prendre la parole était en train de gribouiller avec insistance un schéma dans son carnet, une aiguille à coudre entre les lèvres et une pièce de tissu sur les genoux, à laquelle il semblait broder des sequins un à un."
 
@@ -218,3 +233,34 @@ label route_choice_intro:
     $ quick_menu = False
    
     call screen choose_route with fade
+#Test Illustrations ne pas toucher
+
+#image CG_delauney = "CGs/delauney.jpg"
+#image CG_gatsby = "CGs/gatsby.jpg"
+#image CG_peacock = "CGs/peacock.jpg"
+
+
+
+#scene bg classroom
+#jump choices
+
+#label choices:
+    #menu:
+        #"Illustration Delauney":
+        #scene CG_delauney with fade
+        
+        #"Illustration Gatsby":
+        #scene CG_gatsby with fade           
+        
+        #"Illustration Peacock":           
+        #scene CG_peacock with fade
+
+
+        #"End":
+        #return
+
+#label after_choices:
+    #jump choices
+    #return
+
+        
