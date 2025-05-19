@@ -22,37 +22,37 @@ init python:
             renpy.pause((20-renpy.music.get_pos('sound')),hard=True)
 
 image Mother:
-    "concept_mother"
+    "mother"
     zoom 0.35
 
-image Delaunay In Neutre:
-    "concept_delaunay_in"
+image Delaunay Neutre:
+    "delaunay_neutre"
     zoom 0.35
 
-image Delaunay Out Neutre:
-    "concept_delaunay_out"
+image Léandre Neutre:
+    "leandre_neutre"
     zoom 0.35
 
-image Gatsby In Neutre:
-    "concept_gatsby_in"
+image Gatsby Neutre:
+    "gatsby_neutre"
     zoom 0.35
 
-image Gatsby Out Neutre:
-    "concept_gatsby_out"
+image Aimée Neutre:
+    "aime.e_neutre"
     zoom 0.35
 
-image Peacock In Neutre:
-    "concept_peacock_in"
+image Peacock Neutre:
+    "peacock_neutre"
     zoom 0.35
 
-image Peacock Out Neutre:
-    "concept_peacock_out"
+image Imani Neutre:
+    "imani_neutre"
     zoom 0.35
 
 image Auditorium = "Backgrounds/concept_auditorium.png"
 
 #illustration de fin
-image CG_delaunay = "images/CGs/delaunay.jpg"
+image CG_gatsby = "images/CGs/gatsby.jpg"
 
 
 # Liste des sfx
@@ -78,333 +78,317 @@ define aimee = Character('Aimé.e', color="#be9f13", who_outlines=[(2, "#000000"
 define imani = Character('Imani', color="#be9f13", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
 define staff = Character('Staff', color="#be9f13", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
 
-label delaunay_start:
+label gatsby_start:
 scene Auditorium with fade
 
-#DEL.1
-leandre "Hey... Hum... Je suis content que tu m’aies choisi. Je ne pensais pas trop que ce serait le cas."
+#GAT.1
+gatsby "Let's go ! On va former un duo d'enfer, je te le dis !"
 
-anthrax "Ah oui? Pourquoi donc?"
+anthrax "Aha ! J'adore cette énergie. Par quoi voudrais-tu commencer ?"
 
-leandre "Oh, je ne sais pas trop. Je suis un peu plus discret que les autres, disons..."
+gatsby "Hm... On pourrait se présenter mutuellement, histoire d'apprendre à se connaître, et voir ensuite où ça nous mène ?"
 
-anthrax "Discret? Ce n’est pas cette impression que tu m’as donné.e."
+anthrax "C'est une excellente idée."
 
-leandre "Vraiment? Je suis soulagé alors!"
+gatsby "Ça te dit qu'on se pose au bar ? C'est plus intime et Barman est un vrai génie dans tout ce qui est cocktail, alcoolisé ou non."
 
-leandre "Est-ce que tu souhaites qu’on discute autour d’un verre au bar? J’aimerais beaucoup en apprendre plus sur ton drag."
-
-leandre "Et puis, ce sera plus simple aussi pour t’aider à construire ton acte lorsque Mother te donnera le feu vert"
-
-anthrax "Ça, je ne dis pas non!"
+anthrax "Ça me tente bien."
 
 
-#DEL.2
-anthrax "Nous sommes arrivé.e.s dans l'auditorium et nous sommes approché.e.s du comptoir derrière lequel brillaient un mur de bouteilles de formes et couleurs uniques. Le paradis du parfait mixologue."
-anthrax "Nous avions depuis le bar une vue imprenable sur la scène, légèrement en contrebas. Les tablées y étaient déjà dressées et se regroupaient autour du big band et de l'estrade secondaire au centre de la pièce."
-anthrax "L'immense lustre duquel pendaient des larmes de verre reflétait les spots de lumière à la manière d'une boule à facettes sur le papier peint texturé. Léandre s'assît sur l'une des chaises hautes de bois verni et commanda une citronnade au barman, et moi un allongé."
+#GAT.2
 
-leandre "Alors dis-moi, qu’est-ce qui t’amène ici ?"
 
-anthrax "M-Moi ? Comme ça ? Directement ?"
+#Dialogue WIP
 
-leandre "Eh bien... Oui ? Enfin, ça me semblait être un bon début de conversation..."
 
-anthrax "Oh. Eh bien... J’ai commencé le drag dans le confort de mon appart, sur les réseaux sociaux. Je n’ai jamais mis les pieds dans une troupe. Ou même un cabaret pour tout te dire."
-anthrax "C’est un peu impressionnant. Je me demande si j’ai ma place. Je ne réalise pas que je l’ai remportée, cette audition."
 
-leandre "Hm... C’est bien le genre de Mother de recruter quelqu’un de ton acabit. Plein.e de potentiel, mais qui ne sait pas par où commencer. J’étais exactement pareil."
-
-anthrax "Ça fait longtemps que tu as intégré la troupe ?"
-
-leandre "Environ cinq ans je dirais ? Techniquement, je suis le doyen, parmi les autres que tu as croisé.e.s tout à l’heure."
-leandre "Enfin, officiellement, Imani a travaillé ici depuis plus longtemps, mais n’a intégré la troupe que depuis deux ans."
-leandre "Et Aimé.e est arrivé.e peut-être un an après moi ?"
-leandre "Techniquement, cela fait déjà des années que l’on se côtoie."
-
-anthrax "Ah oui. Tout de même... Et il y a eu du roulement dans l’équipe ?"
-
-leandre "Et bien, quelques collègues sont parti.e.s, revenu.e.s, mais au final nous sommes les trois qui ayons tenu sur le long terme."
-leandre "Et puis, comparé.e.s aux autres, nous n’avons pas fait trop d’histoires. C’est beaucoup pour ces raisons que les contrats cassent, malgré toute la bonne volonté que l’on puisse y mettre."
-
-anthrax "Et toi ? Qu’est-ce qui t’a lancé dans le drag ?"
-
-leandre "Et bien... J’étais en train de décrocher des études, j’étais dans la panade financière, j’étais en pleine découverte de mon identité de genre."
-leandre "Vraiment, une vraie crise de la vingtaine... J’en ris maintenant, mais ce n’était pas du tout drôle à l’époque."
-leandre "Et finalement, Mother m’a pris sous son aile et m’a aidé à me sortir de tout cela."
-
-#Choix DEL.2
-label choix_del2:
+#Choix GAT.2
+label choix_gat2:
 
     menu: 
-        "Oh! Tu as transitionné?":
-            call del_2_1
-        "Et comment est-ce que tu as rencontré Mother?":
-            call del_2_2
-        "choix del.2.3":
-            call del_2_3
+        "WIP":
+            call gat_2_1
+        "WIP":
+            call gat_2_2
+        "WIP":
+            call gat_2_3
           
 
-#DEL.2.1
-label del_2_1:
-
-    anthrax "Oh! Tu as transitionné? !"
-    leandre "Yep."
-    call del_3
-
-#DEL.2.2
-label del_2_2:
-
-    anthrax "Et comment est-ce que tu as rencontré Mother?"
-    mother "Ma belle attends je t'explque"
-    call del_3
-
-#DEL.2.3
-label del_2_3:
-
-    anthrax "Choix wip"
-    mother "Script wip"
-    call del_3
-
-#DEL.3
-label del_3:
-
-
-#Dialogue WIP 
-
-
-#Choix DEL.3
-label choix_del3:
-
-    menu: 
-        "WIP":
-            call del_3_1
-        "WIP":
-            call del_3_2
-        "WIP":
-            call del_3_3
-
-#DEL.3.1
-label del_3_1:
+#GAT.2.1
+label gat_2_1:
 
     anthrax "WIP"
     leandre "WIP"
-    call del_4
+    call gat_3
 
-#DEL.3.2
-label del_3_2:
-
-    anthrax "WIP"
-    mother "WIP"
-    call del_4
-
-#DEL.3.3
-label del_3_3:
+#GAT.2.2
+label gat_2_2:
 
     anthrax "WIP"
     mother "WIP"
-    call del_4
+    call gat_3
 
-#DEL.4
-label del_4:
+#GAT.2.3
+label gat_2_3:
 
-    anthrax "Au sein de la loge, une certaine tension planait au-dessus de la playlist qui tournait. Pas une mauvaise ambiance, non, plutôt une intense concentration."
-    anthrax "Évidemment, tout le monde chit-chattait gaîment, mais je ne pus m'empêcher de fixer un instant Léandre."
-    anthrax "Agenouillé devant un miroir sur pied, déjà maquillé, à moitié habillé de son pantalon à sequins rouge Louboutin fendu sur les côtés et ses lunettes glissant maladroitement de son nez,"
-    anthrax "il collait précautionneusement des strass de la même couleur sur la peau rugueuse des cicatrices de son torse."
-    anthrax "Tel un papillon se dégageant de son cocon, Delaunay sortait de la peau de Léandre."
-    anthrax "Son dos se courba, son regard s'embrasa et il me remarqua le fixer. Un sourire coquin et un clin d’œil plus tard, il m'invitait à le rejoindre."
+    anthrax "WIP"
+    mother "WIP"
+    call gat_3
 
-    leandre "Qu'est-ce que tu fais à jouer le timide ? Approche, je ne vais pas te manger."
-
-#Choix DEL.4
-label choix_del4:
-
-    menu: 
-        "Franchement, tu me manges quand tu veux":
-            call del_4_1
-        "J'adore la manière dont tu prends confiance en toi avec Delaunay":
-            call del_4_2
-        "Timide? Moi?":
-            call del_4_3
-
-#DEL.4.1
-label del_4_1:
-
-    anthrax "Franchement, tu me manges quand tu veux"
-
-    delaunay "Eh bien ! On dirait que je commence à déteindre sur toi~"
-
-    anthrax "Ce n'était pas le but peut-être ?"
-
-    delaunay "Seulement si tu en as réellement envie. Je ne veux pas te forcer à faire du burlesque ou à devenir une pimbèche de service, bien que je tienne ce titre en très haute estime."
-    delaunay "C'est ma persona après tout~"
-
-    gatsby "Et ça va être difficile de la battre, cette pimbèche là."
-
-    peacock "Oh, je suis certaine qu'il y a de la place pour deux perruches, après tout, regarde-nous."
-    peacock "Mais bon quand il s'agit de bomber le torse et de faire du pied, il n'y a qu'une personne qui nous vienne à l'esprit."
-
-    delaunay "Oh ! Mais occupez-vous de vos fesses, oui ! Je vais rougir..."
-    delaunay "Je reviens de loin, je peux bien m'octroyer un peu de crédit."
-
-    anthrax "Il doit me manquer un peu de contexte, je ne comprends pas..."
-
-    delaunay "Oh, c'est vrai. Comment est-ce que je pourrais le formuler... ?"
-    delaunay "J'ai toujours eu un peu de mal à me trouver désirable. Ou en tout cas d'être confiant dans mon intimité, ma sensualité, ma sexualité..."
-    delaunay "Alors Delaunay l'est à ma place, et m'aide à explorer cette facette de ma personne que je cherche à redécouvrir."
-    delaunay "Puisque ça a été un échec cuisant lors de ma première tentative, à travers les vidéos..."
-
-    gatsby "Après, quand tu faisais tes vidéos, tu avais aussi d'autres circonstances qui ont fait que ta démarche n'était pas vraiment saine."
-
-    peacock "...Toi et ton tact légendaire."
-    peacock "En soi, je suis plutôt d'accord avec Aimé.e, mais je ne l'aurais pas dit dans ces termes. Tu avais des besoins et tu te cherchais encore..."
-
-    delaunay "Je sais. J'ai fait un choix et ce n'était pas le bon. Mais au final, ça m'a tout de même amené ici aujourd'hui. Donc je n'ai pas tant de regrets que ça."
-    delaunay "Et je découvre la bad bitch que j'ai toujours rêvé d'être."
-    delaunay "Tout est bien qui finit bien. Carpe diem, blablabla."
-
-    anthrax "C'est adorable."
-
-    staff "Ok les filles ! Showtime dans dix minutes !"
-
-    delaunay "Mon dieu, j'ai encore tellement à faire ! Vite PSEUDO ! Un coup de main, vite !"
-
-    call del_5
-
-#DEL.4.2
-label del_4_2:
-    anthrax "J'adore la manière dont tu prends confiance en toi avec Delaunay"
-    anthrax "Qu'est-ce qui change quand tu te costumes ?"
-
-    delaunay "Tout."
-    delaunay "Léandre n'existe pas quand je suis en drag, c'est libérateur."
-
-    anthrax "Vraiment ? J'aurais pensé le contraire. Je ne savais pas que ta relation avec toi-même était si conflictuelle."
-
-    delaunay "Conflictuelle, c'est le bon mot..."
-    delaunay "Mais détrompe-toi... J'adore Léandre."
-    delaunay "Enfin, je m'aime bien."
-
-    delaunay "Quand j'ai imaginé Delaunay, je l'ai créé comme étant tout ce que je désirais être. Confiant, têtu, un peu salope sur les bords..."
-
-    anthrax "Et c'est quelque chose que tu n'arrives pas à faire... en tant que Léandre ?"
-
-    delaunay "Hm... Oui. Mais c'est pas comme si je n'essayais pas. Comment dire..."
-    delaunay "En fait, je suis passé par tellement de changements et je me recherche tellement encore, que je n'ai pas de vrai repère auquel me raccrocher en termes de confiance en soi et de personnalité."
-    delaunay "Alors... Delaunay, c'est un peu mon phare dans cet océan de confusion. Et Léandre, il essaye de naviguer un peu à travers tout ça."
-
-    anthrax "Je comprends mieux... C'est valide d'être un peu perdu dans la vie."
-
-    delaunay "Je sais... Et ça commence à se stabiliser, bien heureusement."
-    delaunay "J'aimerais juste des fois que ça aille un peu plus vite."
-
-    staff "Ok les filles ! Showtime dans dix minutes !"
-
-    delaunay "Mon dieu, j'ai encore tellement à faire ! Vite PSEUDO ! Un coup de main, vite !"
-
-    call del_5
-
-#DEL.4.3
-label del_4_3:
-
-    anthrax "\"Timide ? Moi ?\""
-
-    delaunay "Oui, bon ok. C'est un peu l'hôpital qui se fout de la charité."
-
-    anthrax "J'aurais bien dit que tu as raison... Mais bizarrement, tu m'as l'air plus confiant là."
-
-    delaunay "Ah ça, c'est l'effet \"Delaunay\" !"
-    delaunay "Il m'a toujours aidé à devenir l'homme que je voulais être, encore maintenant..."
-
-    anthrax "Pourtant, ton personnage m'a l'air d'être très efféminé, aussi maladroit que ça puisse être dit comme ça."
-
-    delaunay "Tu n'as pas tort. Mais il n'a pas toujours été comme ça... Au contraire, au début, il était très masculin."
-    delaunay "Après coup, j'ai réalisé que comme c'était au début de ma transition, j'essayais peut-être de me recréer un \"idéal masculin\"... Qui était finalement très stéréotypé."
-
-    anthrax "Je ne l'aurais jamais imaginé... Genre avec une fausse barbe et tout ?"
-
-    delaunay "Surtout pas ! Une moustache, très chèr.e ! J'ai quand même un peu de goût..."
-
-    peacock "Tu as quelque chose contre les barbes ma belle ?"
-
-    delaunay "Non ! Du tout ! La tienne te sied très bien... Malgré les trous~"
-
-    peacock "Hm... C'est vrai que la testo ne t'a pas trop épargné là-dessus... Une absence de barbe, des poils aux fesses et un début de calvitie..."
-
-    gatsby "BAHAHA !"
-
-    anthrax "Shady."
-
-    delaunay "Je suis outré !"
-
-    anthrax "Hm... Tu as commencé."
-
-    delaunay "..."
-    delaunay "Anyway."
-    delaunay "J'ai quand même pas mal rétropédalé au niveau de l'hypermasculinisation de mon perso, quand mon corps a commencé à changer."
-    delaunay "Je me suis réconcilié avec moi-même, et donc Delaunay n'avait plus besoin de servir cette fonction."
-    delaunay "Et comme j'avais envie de redécouvrir ma part de féminité en tant qu'homme, nous y voilà."
-
-    anthrax "C'est une relation très personnelle et intime que tu as avec ton personnage finalement, je comprends mieux pourquoi tu t'adresses à \"Léandre\" à la troisième personne parfois, quand tu es en drag."
-
-    delaunay "Oh, ça... C'est un autre débat. C'est plus mon côté égocentrique que j'essaye de travailler. Faut pas hésiter à me rappeler l'humilité..."
-
-    anthrax "Si ça peut te rassurer, on remarque à peine ta calvitie."
-
-    delaunay "Par pitié, pas toi aussi... Le terrain est glissant."
-
-    anthrax "Désolé.e, c'était trop tentant."
-
-    staff "Ok les filles ! Showtime dans dix minutes !"
-
-    delaunay "Mon dieu, j'ai encore tellement à faire ! Vite [PSEUDO] ! Un coup de main, vite !~"
-
-    call del_5
-
-#DEL.5
-label del_5:
+#GAT.3
+label gat_3:
 
 
 #Dialogue WIP 
 
 
-call del_6
+#Choix GAT.3
+label choix_gat3:
 
-#DEL.6
-label del_6:
+    menu: 
+        "WIP":
+            call gat_3_1
+        "WIP":
+            call gat_3_2
+        "WIP":
+            call gat_3_3
+
+#GAT.3.1
+label gat_3_1:
+
+    anthrax "WIP"
+    leandre "WIP"
+    call gat_4
+
+#GAT.3.2
+label gat_3_2:
+
+    anthrax "WIP"
+    mother "WIP"
+    call gat_4
+
+#GAT.3.3
+label gat_3_3:
+
+    anthrax "WIP"
+    mother "WIP"
+    call gat_4
+
+#GAT.4
+label gat_4:
+
+    anthrax "Le calme illusoire de la loge contrastait drastiquement avec le bourdonnement du staff passé la porte."
+    anthrax "Les discussions étaient légères et l'entraide entre les artistes pour régler les petits aléas techniques était doux à voir."
+    anthrax "Malgré tout, chacun.e se préparait avec diligence, en jetant nerveusement un coup d'œil à l'heure qui tournait plusieurs fois dans la même minute."
+    anthrax "Assis.e sur une chaise face à l'un des miroirs, en peignoir, Aimé décoiffait son mohawk à l'aide d'une large brosse avant d'appliquer un conditionner, pendant que son teint était en train de se fixer."
+    anthrax "Iel finit par tresser les sections, puis enfiler un collant pour tout bien plaquer contre son crâne et laisser place à sa perruque qui l'attendait sur le mannequin."
+    anthrax "En quelques coups de peigne et de gel, des vagues décoraient son front et quelques perles adoucissaient son regard tandis que son regard se berçait d'écume."
+
+    gatsby "PSEUDO, est-ce que tu pourrais me rendre un service ?"
+
+    anthrax "Bien sûr, de quoi as-tu besoin ?"
+
+    gatsby "Est-ce que ce serait possible de me passer les pièces de mon costume pendant que je me change ? La cabine est ridiculement petite."
+
+    anthrax "Aimé.e gardait son air confiant malgré son maquillage aux traits de Pierrot. Cependant, je décelais quelques incertitudes dans son regard. Peut-être de l'appréhension."
+    anthrax "Avait-iel peur de me demander une telle chose ? Cela semblait délicat pour iel de me demander cela. Mais qu'iel me fasse confiance ainsi me fit anormalement plaisir."
+    anthrax "Dis-moi ! Qu'est-ce que tu veux que je porte ?"
+    anthrax "Iel me pointa une chaise et disparut avec son regard espiègle derrière le rideau de la cabine."
+    anthrax "Je pris le costume et passa mes doigts sur le tulle léger, les strass, testant l'élasticité du tissu avec précaution."
+    anthrax "Aimé.e me tendit ensuite son haut en dehors de son vestiaire improvisé et je compris à l'oreille que Gatsby quittait son binder pour taper sa poitrine."
+    anthrax "Après tout, son tour était très physique et lui demandait une liberté de mouvements, qui clashaient peut-être avec sa dysphorie de genre..."
+
+    gatsby "Merci... J'aurais besoin du harnais de sécurité s'il te plaît."
+
+    anthrax "Je lui tendis en réfléchissant à quoi dire pour meubler le silence."
+
+#Choix GAT.4
+label choix_gat4:
+
+    menu: 
+        "Ce n'est pas trop compliqué de performer? Je veux dire... Le rapport au corps, tout ça....?":
+            call gat_4_1
+        "Je te trouve courageux.e... Tout ce que tu réussis à accomplir sans que ça ai vraiment l'air de t'affecter":
+            call gat_4_2
+        "Je comprends, je pense. Mais tu n'as pas à te sentir gêné.e avec moi, tu sais?":
+            call gat_4_3
+
+#GAT.4.1
+label gat_4_1:
+
+    anthrax "Ce n'est pas trop compliqué de performer ? Je veux dire... Le rapport au corps, tout ça... ?"
+
+    gatsby "Mon corps, c'est un peu mon meilleur ennemi."
+    gatsby "Dans le sens où c'est avec lui que je suis capable de faire ce que je fais, et je sais que je suis doué.e."
+    gatsby "Et d'un autre côté, j'ai toujours une dysphorie de genre assez fluctuante, donc je ne sais pas si je vais être au top de ma forme ou non, avant un show."
+
+    anthrax "À ce point ?"
+
+    gatsby "Parfois oui, j'adore mon corps, mes formes, sa force... Et il suffit d'un instant pour avoir l'impression que ma peau n'est pas la mienne, que quelque chose est à vif en dessous, que ça grouille."
+
+    gatsby "C'est très spécial à décrire..."
+
+    delaunay "Hm... Je comprends exactement ce que tu veux dire..."
+
+    peacock "C'est peut-être pour ça que le drag est notre plus grand atout finalement, on peut se permettre d'explorer."
+
+    gatsby "Plus qu'explorer, je dirais même se réconcilier. La majeure partie du temps, je me sens super bien dans ma peau."
+    gatsby "Devoir accomplir des prouesses physiques, se dévoiler, ne pas avoir droit à l'erreur et être obligé.e de rester concentré.e quand juste parfois le mood n'est pas là, est bien plus embarrassant que ce qu'on croirait."
+    gatsby "Même moi, j'ai sous-estimé l'impact que ça aurait sur ma performance au début. Ça va que je réussis maintenant à gérer."
+
+    anthrax "Ça t'est déjà arrivé pendant que tu étais sur scène ?"
+
+    gatsby "Si on parle de crise de dysphorie, non. Et j'ai bien de la chance. C'est plus une sensation de malaise qu'autre chose."
+
+    peacock "C'est déjà arrivé une fois à Léandre cependant, au début."
+
+    anthrax "Vraiment ?"
+
+    delaunay "Oui, mais c'était un cas exceptionnel. Et j'avais d'autres facteurs dans ma vie personnelle qui ont fait que je n'ai plus réussi à assumer mon numéro en plein milieu de celui-ci."
+
+    gatsby "Mais au final, ça s'est bien fini et le public était très compréhensif..."
+    gatsby "Et on se soutient suffisamment dans la troupe pour savoir exprimer nos besoins et nos difficultés."
+
+    peacock "Et se rassurer."
+
+    staff "Ok les filles ! Showtime dans dix minutes !"
+
+    gatsby "Allez ! On doit mettre les bouchées doubles si on veut être à l'heure, girlies ! Chop-chop !"
+
+    call gat_5
+
+#GAT.4.2
+label gat_4_2:
+
+    anthrax "Je te trouve courageux.e... Tout ce que tu réussis à accomplir sans que ça ait vraiment l'air de t'affecter."
+
+    gatsby "Ce n'est pas du courage ça. Ça s'appelle juste vivre... Tu dis ça parce que tu as du mal à comprendre."
+
+    anthrax "Du mal à comprendre ? Pourquoi tu dis ça ? Ce n'est pas comme si j'essayais pas ou que j'étais complètement ignorant.e."
+
+    gatsby "Non ! Pas dans ce sens-là ! Dans le sens où on a tous.te.s nos limites de compréhension. Tu n'es pas dans ma tête, ni dans mon corps. Alors la définition de courage est celle qui te vient en premier."
+    gatsby "Je déteste ce mot, pour me définir en tout cas."
+
+    anthrax "Pourquoi donc ? Ce n'est pas péjoratif."
+
+    gatsby "Non, en effet. Mais ça sous-entend un peu que mon existence est une corvée. Ce n'est pas le cas du tout. En fait, j'ai l'impression d'être pris.e en pitié, et je ne supporte pas ça."
+
+    anthrax "Pardon, ce n'est pas ce que je souhaitais dire."
+
+    gatsby "Je sais. Et j'ai aussi été maladroit.e dans ma réaction. Désolé.e."
+    gatsby "J'ai conscience d'être une personne grosse, noire et non-binaire. Très clairement, je cumule."
+    gatsby "Mais ce n'est pas une raison pour s'apitoyer, au contraire."
+    gatsby "Mon bonheur, c'est ma plus belle arme de résistance face à une société peu accueillante. Et c'est quelque chose que je ne compte pas lui abandonner de sitôt."
+    gatsby "J'ai trop travaillé pour arriver là où j'en suis aujourd'hui. De l'effort, de la résilience, de la joie, mais pas du courage."
+
+    anthrax "C'est un raccourci trop simple, si je comprends bien."
+
+    gatsby "Je n'aurais pas dit mieux !"
+
+    peacock "Mais t'aurais pu lui répondre plus gentiment. Maintenant PSEUDO a l'air tout.e embarrassé.e."
+
+    delaunay "C'était peut-être maladroit, mais ça ne partait pas d'un mauvais fond. Tu es encore parti.e au quart de tour By-By."
+
+    gatsby "C'est vrai, my bad. Je ferai plus gaffe."
+
+    anthrax "Ce n'est pas grave, ça m'a plus surpris.e qu'autre chose. Mais au final, ça m'a donné plus de perspective, et j'apprécie l'honnêteté."
+
+    staff "Ok les filles ! Showtime dans dix minutes !"
+
+    gatsby "Allez ! On doit mettre les bouchées doubles si on veut être à l'heure girlies ! Chop-chop !"
+    
+    call gat_5
+
+   
+#GAT.4.3
+label gat_4_3:
+
+    anthrax "J'étais persuadé.e qu'avec tout ce que tu m'as mentionné avant, tu ne toucherais plus jamais aux arts acrobatiques."
+
+    gatsby "Eh bien... En soi je comprends que tu puisses penser cela. Moi aussi j'étais persuadé.e que je ne reprendrais pas."
+    gatsby "Mais petit à petit, l'envie de m'y remettre a pris le pas sur mes réticences."
+    gatsby "Et au final, j'ai réalisé que ce n'était pas contre les soies aériennes que j'étais fâché, mais tout ce qu'elles avaient représenté de toxique dans mon ancien environnement de travail."
+    gatsby "C'était plus facile d'amalgamer quelque chose que j'adore avec les horreurs que l'on m'a fait subir dans cette industrie, plutôt que de déconstruire et dissocier des années d'abus."
+
+    anthrax "Personne ne peut te blâmer là-dessus, de ce que tu m'as raconté."
+
+    gatsby "Bah... Ce n'était pas juste la pression de bien performer au spectacle. C'était la pure misogynie, le racisme ambiant, les standards de beauté, l'absence de contrôle sur ma manière de penser. J'étais vraiment conditionné.e."
+    gatsby "Après, c'est aussi surtout parce que je suis tombé.e sur une troupe particulièrement toxique."
+    gatsby "J'ai de nombreux.euses ami.e.s qui l'ont quittée et qui travaillent maintenant dans un climat plus sain, avec de l'entraide et de l'empathie. J'en ai d'excellents échos."
+    gatsby "Et de toute manière, j'ai entendu dire que l'entreprise pour laquelle on bossait a fait faillite."
+    gatsby "Donc j'ai vraiment l'esprit en paix à présent."
+
+    delaunay "Je me demande surtout comment tu as fait pour ne pas partir avant..."
+
+    gatsby "Pour les mêmes raisons que toi : je pourrais te retourner la remarque. J'avais mes circonstances, je ne questionne pas les tiennes..."
+
+    delaunay "Touché."
+
+    peacock "Stop vous deux. C'est pas simple de briser un pattern malsain auquel on est habitué.e.s."
+    peacock "Vous êtes les deux le plus à même de le comprendre ici."
+
+    gatsby "Tu dis ça, mais ton industrie n'est pas non plus très haute placée sur l'échelle des bisounours..."
+
+    peacock "C'est vrai, c'est surtout de la chance. Et du bouche à oreille. J'ai l'avantage de bosser beaucoup avec des petits contrats. Ça aide à ne pas rester enfermé.e avec la même équipe et de pouvoir tourner."
+    peacock "Ou alors de trouver justement les personnes avec qui j'apprécie bosser et pouvoir les recontacter."
+
+    gatsby "Enfin bref ! Morale de l'histoire : bien s'entourer, et faire du drag. Parce qu'au moins, on s'entoure de gens qui nous comprennent."
+
+    staff "Ok les filles ! Showtime dans dix minutes !"
+
+    gatsby "Allez ! On doit mettre les bouchées doubles si on veut être à l'heure, girlies ! Chop-chop !"
+
+    call gat_5
+
+#GAT.5
+label gat_5:
+    anthrax "Le band commença le morceau suivant alors que la scène était encore vide de toute activité, si bien que les spectateur.ice.s en venaient à se demander si quelque chose clochait."
+    anthrax "Un projecteur se braqua sur deux longues soies qui venaient d'être lâchées. Tout en douceur, accompagné.e par les accords du piano, Gatsby avançait sur les planches."
+    anthrax "Après une courte parade, iel retira sa redingote et se hissa le long des deux voilages à la force de ses bras et de ses jambes, sécurisant son ascension en se créant un harnais en quelques tours de draps."
+    anthrax "Surplombant l'atrium de quelques mètres de hauteurs, iel démarra son numéro de soies aériennes avec grâce."
+    anthrax "Tourbillonnant, usant de sa flexibilité pour réaliser des postures impressionnantes, Gatsby captivait le regard, et le souffle retenu de chaque membre de l'audience faisait planer une tension éthérée et palpable."
+    anthrax "Les deux nœuds au bout de chaque cheville et plante le.a tenait suspendu.e en grand écart, qui lui demandaient un effort d'équilibre surhumain."
+    anthrax "Soudainement, iel tomba."
+    anthrax "Virevoltant, sa chute se stoppa si près du sol qu'un cri de surprise fusa depuis le comptoir du bar."
+    anthrax "Mais le risque calculé, et son sourire fier tandis qu'iel se redressait en disait long sur le contrôle que Gatsby avait sur la situation."
+    anthrax "Quelques minutes plus tard et notre acrobate revint sur la terre ferme, saluant avec humilité son public ému."
+
+call gat_6
+
+#GAT.6
+label gat_6:
 
 
 #Dialogue WIP 
 
 
-#Choix DEL.6
-label choix_del6:
+#Choix GAT.6
+label choix_gat6:
 
     menu: 
         "WIP":
-            call del_6_good
+            call gat_6_good
         "WIP":
-            call del_6_bad
+            call gat_6_bad
 
-#DEL.6.GOOD
-label del_6_good:
+#GAT.6.GOOD
+label gat_6_good:
 
     anthrax "WIP"
     leandre "WIP"
     call final
 
-#DEL.6.BAD
-label del_6_bad:
+#GAT.6.BAD
+label gat_6_bad:
 
     anthrax "WIP"
     mother "WIP"
-    call final
+    call final_gatsby
 
     
 
-label final:
-    scene CG delaunay with fade
+label final_gatsby:
+    scene CG gatsby with fade
 
     $ persistent.delaunay = True
     "Une nouvelle illustration est disponible dans l'album."

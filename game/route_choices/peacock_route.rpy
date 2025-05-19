@@ -22,31 +22,31 @@ init python:
             renpy.pause((20-renpy.music.get_pos('sound')),hard=True)
 
 image Mother:
-    "concept_mother"
+    "mother"
     zoom 0.35
 
-image Delaunay In Neutre:
-    "concept_delaunay_in"
+image Delaunay Neutre:
+    "delaunay_neutre"
     zoom 0.35
 
-image Delaunay Out Neutre:
-    "concept_delaunay_out"
+image Léandre Neutre:
+    "leandre_neutre"
     zoom 0.35
 
-image Gatsby In Neutre:
-    "concept_gatsby_in"
+image Gatsby Neutre:
+    "gatsby_neutre"
     zoom 0.35
 
-image Gatsby Out Neutre:
-    "concept_gatsby_out"
+image Aimée Neutre:
+    "aime.e_neutre"
     zoom 0.35
 
-image Peacock In Neutre:
-    "concept_peacock_in"
+image Peacock Neutre:
+    "peacock_neutre"
     zoom 0.35
 
-image Peacock Out Neutre:
-    "concept_peacock_out"
+image Imani Neutre:
+    "imani_neutre"
     zoom 0.35
 
 image Auditorium = "Backgrounds/concept_auditorium.png"
@@ -78,332 +78,307 @@ define aimee = Character('Aimé.e', color="#be9f13", who_outlines=[(2, "#000000"
 define imani = Character('Imani', color="#be9f13", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
 define staff = Character('Staff', color="#be9f13", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
 
-label delaunay_start:
+label peacock_start:
 scene Auditorium with fade
 
-#DEL.1
-leandre "Hey... Hum... Je suis content que tu m’aies choisi. Je ne pensais pas trop que ce serait le cas."
+#PEA.1
 
-anthrax "Ah oui? Pourquoi donc?"
+imani "Je suis flattée"
 
-leandre "Oh, je ne sais pas trop. Je suis un peu plus discret que les autres, disons..."
+imani "Alors comme ça je t'ai fait une telle impression ?"
 
-anthrax "Discret? Ce n’est pas cette impression que tu m’as donné.e."
+anthrax "Il semblerait, j'adore ta vibe. Tu as un certain talent pour mettre les gens à l'aise."
 
-leandre "Vraiment? Je suis soulagé alors!"
+imani "Ah ça ! On me le dit souvent !"
 
-leandre "Est-ce que tu souhaites qu’on discute autour d’un verre au bar? J’aimerais beaucoup en apprendre plus sur ton drag."
+imani "Même si parfois j'ai l'impression de faire trop vieux jeu."
 
-leandre "Et puis, ce sera plus simple aussi pour t’aider à construire ton acte lorsque Mother te donnera le feu vert"
+anthrax "Vieux jeu ? J'aimerais bien croiser la personne qui a dit ça."
 
-anthrax "Ça, je ne dis pas non!"
+imani "Hm... Je pense que je peux définitivement blâmer mon reflet dans le miroir. Pas que ce visage ne soit pas sublime, mais c'est un peu mon meilleur ennemi."
+
+anthrax "Comme dirait RuPaul, il ne faut pas écouter notre 'inner saboteur'."
+
+imani "Word."
+
+imani "Ça te dit de t'installer quelque part de plus cosy pour continuer à discuter ?"
+
+#PEA.2
+
+#Dialogue WIP
 
 
-#DEL.2
-anthrax "Nous sommes arrivé.e.s dans l'auditorium et nous sommes approché.e.s du comptoir derrière lequel brillaient un mur de bouteilles de formes et couleurs uniques. Le paradis du parfait mixologue."
-anthrax "Nous avions depuis le bar une vue imprenable sur la scène, légèrement en contrebas. Les tablées y étaient déjà dressées et se regroupaient autour du big band et de l'estrade secondaire au centre de la pièce."
-anthrax "L'immense lustre duquel pendaient des larmes de verre reflétait les spots de lumière à la manière d'une boule à facettes sur le papier peint texturé. Léandre s'assît sur l'une des chaises hautes de bois verni et commanda une citronnade au barman, et moi un allongé."
-
-leandre "Alors dis-moi, qu’est-ce qui t’amène ici ?"
-
-anthrax "M-Moi ? Comme ça ? Directement ?"
-
-leandre "Eh bien... Oui ? Enfin, ça me semblait être un bon début de conversation..."
-
-anthrax "Oh. Eh bien... J’ai commencé le drag dans le confort de mon appart, sur les réseaux sociaux. Je n’ai jamais mis les pieds dans une troupe. Ou même un cabaret pour tout te dire."
-anthrax "C’est un peu impressionnant. Je me demande si j’ai ma place. Je ne réalise pas que je l’ai remportée, cette audition."
-
-leandre "Hm... C’est bien le genre de Mother de recruter quelqu’un de ton acabit. Plein.e de potentiel, mais qui ne sait pas par où commencer. J’étais exactement pareil."
-
-anthrax "Ça fait longtemps que tu as intégré la troupe ?"
-
-leandre "Environ cinq ans je dirais ? Techniquement, je suis le doyen, parmi les autres que tu as croisé.e.s tout à l’heure."
-leandre "Enfin, officiellement, Imani a travaillé ici depuis plus longtemps, mais n’a intégré la troupe que depuis deux ans."
-leandre "Et Aimé.e est arrivé.e peut-être un an après moi ?"
-leandre "Techniquement, cela fait déjà des années que l’on se côtoie."
-
-anthrax "Ah oui. Tout de même... Et il y a eu du roulement dans l’équipe ?"
-
-leandre "Et bien, quelques collègues sont parti.e.s, revenu.e.s, mais au final nous sommes les trois qui ayons tenu sur le long terme."
-leandre "Et puis, comparé.e.s aux autres, nous n’avons pas fait trop d’histoires. C’est beaucoup pour ces raisons que les contrats cassent, malgré toute la bonne volonté que l’on puisse y mettre."
-
-anthrax "Et toi ? Qu’est-ce qui t’a lancé dans le drag ?"
-
-leandre "Et bien... J’étais en train de décrocher des études, j’étais dans la panade financière, j’étais en pleine découverte de mon identité de genre."
-leandre "Vraiment, une vraie crise de la vingtaine... J’en ris maintenant, mais ce n’était pas du tout drôle à l’époque."
-leandre "Et finalement, Mother m’a pris sous son aile et m’a aidé à me sortir de tout cela."
-
-#Choix DEL.2
-label choix_del2:
+#Choix PEA.2
+label choix_pea2:
 
     menu: 
-        "Oh! Tu as transitionné?":
-            call del_2_1
-        "Et comment est-ce que tu as rencontré Mother?":
-            call del_2_2
-        "choix del.2.3":
-            call del_2_3
+        "WIP":
+            call pea_2_1
+        "WIP":
+            call pea_2_2
+        "WIP":
+            call pea_2_3
           
 
-#DEL.2.1
-label del_2_1:
+#PEA.2.1
+label pea_2_1:
 
-    anthrax "Oh! Tu as transitionné? !"
-    leandre "Yep."
+    anthrax "WIP"
+    peacock "WIP"
     call del_3
 
-#DEL.2.2
-label del_2_2:
+#PEA.2.2
+label pea_2_2:
 
-    anthrax "Et comment est-ce que tu as rencontré Mother?"
-    mother "Ma belle attends je t'explque"
-    call del_3
+    anthrax "WIP"
+    mother "WIP"
+    call pea_3
 
-#DEL.2.3
-label del_2_3:
+#PEA.2.3
+label pea_2_3:
 
-    anthrax "Choix wip"
-    mother "Script wip"
-    call del_3
+    anthrax "WIP"
+    mother "WIP"
+    call pea_3
 
-#DEL.3
-label del_3:
+#PEA.3
+label pea_3:
 
 
 #Dialogue WIP 
 
 
-#Choix DEL.3
-label choix_del3:
+#Choix PEA.3
+label choix_pea3:
 
     menu: 
         "WIP":
-            call del_3_1
+            call pea_3_1
         "WIP":
-            call del_3_2
+            call pea_3_2
         "WIP":
-            call del_3_3
+            call pea_3_3
 
-#DEL.3.1
-label del_3_1:
+#PEA.3.1
+label pea_3_1:
 
     anthrax "WIP"
     leandre "WIP"
-    call del_4
+    call pea_4
 
-#DEL.3.2
-label del_3_2:
-
-    anthrax "WIP"
-    mother "WIP"
-    call del_4
-
-#DEL.3.3
-label del_3_3:
+#PEA.3.2
+label pea_3_2:
 
     anthrax "WIP"
     mother "WIP"
-    call del_4
+    call pea_4
 
-#DEL.4
-label del_4:
+#PEA.3.3
+label pea_3_3:
 
-    anthrax "Au sein de la loge, une certaine tension planait au-dessus de la playlist qui tournait. Pas une mauvaise ambiance, non, plutôt une intense concentration."
-    anthrax "Évidemment, tout le monde chit-chattait gaîment, mais je ne pus m'empêcher de fixer un instant Léandre."
-    anthrax "Agenouillé devant un miroir sur pied, déjà maquillé, à moitié habillé de son pantalon à sequins rouge Louboutin fendu sur les côtés et ses lunettes glissant maladroitement de son nez,"
-    anthrax "il collait précautionneusement des strass de la même couleur sur la peau rugueuse des cicatrices de son torse."
-    anthrax "Tel un papillon se dégageant de son cocon, Delaunay sortait de la peau de Léandre."
-    anthrax "Son dos se courba, son regard s'embrasa et il me remarqua le fixer. Un sourire coquin et un clin d’œil plus tard, il m'invitait à le rejoindre."
+    anthrax "WIP"
+    mother "WIP"
+    call pea_4
 
-    leandre "Qu'est-ce que tu fais à jouer le timide ? Approche, je ne vais pas te manger."
+#PEA.4
+label pea_4:
 
-#Choix DEL.4
-label choix_del4:
+    anthrax "Debout au milieu de la pièce, Imani était en train de passer le fil de son micro dans les espaces étriqués de son corset et de son padding couleur chair, le passant dans la lanière de son bullet-bra jusque le long de son dos."
+    anthrax "Accrochant l'appareil à l'aide d'épingles à sa perruque, elle semblait avoir la tête ailleurs, tout en reproduisant ses gestes millimétrés et à présent routiniers, glissant ensuite le boîtier HF dans sa jarretelle qui avait été modifiée à cet effet."
+    anthrax "Peacock enfila ensuite sa robe à dos nu et déclipsa le soutien-gorge pour dissimuler le tissu dépassant dans son costume, n'ayant pas besoin de maintien."
+    anthrax "Une étiquette dépassait effrontément du vêtement et je me levai pour remédier à ce problème."
+    anthrax "Attends, oups... Je me permets..."
+    anthrax "Un peu surprise, Imani remarqua que j'essayais maladroitement d'aider et me laissa faire, avant de me sourire avec un air attendri."
+
+    peacock "Tu es adorable, merci girlie."
+
+    anthrax "Je peux t'aider à quelque chose d'autre ?"
+
+    peacock "Hm... Je ne sais pas trop. Peut-être peux-tu vérifier l'état des plumes de mes éventails ? Je les ai changées il y a peu, mais elles ont peut-être besoin d'être ébouriffées."
+
+#Choix PEA.4
+label choix_pea4:
 
     menu: 
-        "Franchement, tu me manges quand tu veux":
-            call del_4_1
-        "J'adore la manière dont tu prends confiance en toi avec Delaunay":
-            call del_4_2
-        "Timide? Moi?":
-            call del_4_3
+        "Oui, bien sûr. Ca fait longtemps que tu fais ce show? Avec les plumes je veux dire...":
+            call pea_4_1
+        "Sans soucis! Tu comptes chanter aussi? Je vois que tu as un micro d'installé...":
+            call pea_4_2
+        "Les ébouriffer? Est-ce que c'est pour mieux te cacher lors de l'effeuillage?":
+            call pea_4_3
 
-#DEL.4.1
-label del_4_1:
+#PEA.4.1
+label pea_4_1:
+    
+    anthrax "Oui, bien sûr. Ca fait longtemps que tu fais ce show? Avec les plumes je veux dire..."
 
-    anthrax "Franchement, tu me manges quand tu veux"
+    peacock "Hm... Oui et non. Il a tout de même bien évolué depuis le temps."
+    peacock "Évidemment, je me base sur mes atouts, mais l'expérience fait que le show s'est amélioré."
+    peacock "Et puis, j'y ai aussi mis de l'effort. J'ai pris des classes, j'ai longtemps itéré, jusqu'à trouver la formule qui me correspondait."
+    peacock "Puis, je suis loin d'avoir fini, je compte rester dans le business encore un moment. Le show continuera de progresser dans tous les cas."
 
-    delaunay "Eh bien ! On dirait que je commence à déteindre sur toi~"
+    anthrax "Et donc, les plumes, ça vient de quelque part en particulier ?"
 
-    anthrax "Ce n'était pas le but peut-être ?"
+    peacock "Eh bien déjà, c'est mon nom de scène. Donc il y a ça... Et puis c'est finalement ce qui m'a fait me rapprocher de l'Androgame."
+    peacock "J'ai toujours eu une admiration démesurée pour le monde de la scène, mes parents m'emmenaient toujours en spectacle quand j'étais petit."
+    peacock "Ce sont les souvenirs qui me ramènent le plus en enfance."
+    peacock "Et une fois, il y avait ces danseuses de cabaret, avec leurs grands éventails à plumes. À partir de ce point, je n'ai jamais lâché cette fixette."
 
-    delaunay "Seulement si tu en as réellement envie. Je ne veux pas te forcer à faire du burlesque ou à devenir une pimbèche de service, bien que je tienne ce titre en très haute estime."
-    delaunay "C'est ma persona après tout~"
+    delaunay "C'est mignon ! Quand j'y repense, mes parents aussi m'emmenaient en spectacle. C'est peut-être de là que ça vient."
 
-    gatsby "Et ça va être difficile de la battre, cette pimbèche là."
+    gatsby "Ou d'y avoir été sensibilisé.e au moins. De mon côté, c'était plus les comédies musicales à la télé, du type *Mozart, l'Opéra Rock* ou *1789*."
 
-    peacock "Oh, je suis certaine qu'il y a de la place pour deux perruches, après tout, regarde-nous."
-    peacock "Mais bon quand il s'agit de bomber le torse et de faire du pied, il n'y a qu'une personne qui nous vienne à l'esprit."
+    peacock "Comme quoi ! Les plumes, la scène, le théâtre... Au final, c'est plus histoire de me rappeler d'où je viens, ce que j'aime et ce qui m'a construit."
+    peacock "Et je parle pour plusieurs on dirait."
 
-    delaunay "Oh ! Mais occupez-vous de vos fesses, oui ! Je vais rougir..."
-    delaunay "Je reviens de loin, je peux bien m'octroyer un peu de crédit."
+    anthrax "C'est assez beau comme réflexion. Mais ça ne vous a jamais ennuyé.e.s ?"
 
-    anthrax "Il doit me manquer un peu de contexte, je ne comprends pas..."
+    peacock "Peut-être par moments, mais c'est pour ça que je danse, je chante et je fais rire à côté. Je déteste l'idée de ne pas me renouveler et de proposer toujours la même chose."
+    peacock "Même si ce n'est pas simple d'innover chaque semaine, c'est quelque chose que je me suis promis de faire."
 
-    delaunay "Oh, c'est vrai. Comment est-ce que je pourrais le formuler... ?"
-    delaunay "J'ai toujours eu un peu de mal à me trouver désirable. Ou en tout cas d'être confiant dans mon intimité, ma sensualité, ma sexualité..."
-    delaunay "Alors Delaunay l'est à ma place, et m'aide à explorer cette facette de ma personne que je cherche à redécouvrir."
-    delaunay "Puisque ça a été un échec cuisant lors de ma première tentative, à travers les vidéos..."
+    peacock "Sinon, autant arrêter le drag maintenant. Ça ne sert à rien d'être boring sur scène..."
 
-    gatsby "Après, quand tu faisais tes vidéos, tu avais aussi d'autres circonstances qui ont fait que ta démarche n'était pas vraiment saine."
+    delaunay "Moi, pas du tout... Il y a quelque chose de relaxant à faire un numéro répétitif. On a beau le connaître par cœur, on en découvre toujours de nouvelles facettes."
 
-    peacock "...Toi et ton tact légendaire."
-    peacock "En soi, je suis plutôt d'accord avec Aimé.e, mais je ne l'aurais pas dit dans ces termes. Tu avais des besoins et tu te cherchais encore..."
-
-    delaunay "Je sais. J'ai fait un choix et ce n'était pas le bon. Mais au final, ça m'a tout de même amené ici aujourd'hui. Donc je n'ai pas tant de regrets que ça."
-    delaunay "Et je découvre la bad bitch que j'ai toujours rêvé d'être."
-    delaunay "Tout est bien qui finit bien. Carpe diem, blablabla."
-
-    anthrax "C'est adorable."
+    gatsby "J'ai une relation un peu plus mitigée avec le mien, puisque j'ai une démarche différente qui est plus de l'ordre de la réconciliation."
+    gatsby "Donc parfois, je le déteste, et parfois je l'adore. Mais ennuyant ? Ça, jamais."
 
     staff "Ok les filles ! Showtime dans dix minutes !"
 
-    delaunay "Mon dieu, j'ai encore tellement à faire ! Vite PSEUDO ! Un coup de main, vite !"
+    peacock "Déjà ?! Bon, plus qu'à se dépêcher..."
+    
+    call pea_5
 
-    call del_5
+#PEA.4.2
+label pea_4_2:
 
-#DEL.4.2
-label del_4_2:
-    anthrax "J'adore la manière dont tu prends confiance en toi avec Delaunay"
-    anthrax "Qu'est-ce qui change quand tu te costumes ?"
+    anthrax "Sans souci ! Tu comptes chanter aussi ? Je vois que tu as un micro d'installé..."
 
-    delaunay "Tout."
-    delaunay "Léandre n'existe pas quand je suis en drag, c'est libérateur."
+    anthrax "J'étais persuadé.e que tu ne faisais que de la danse..."
 
-    anthrax "Vraiment ? J'aurais pensé le contraire. Je ne savais pas que ta relation avec toi-même était si conflictuelle."
+    peacock "Il fut une époque, c'était le cas. J'étais encore timide et je reproduisais des pas de chorés que j'avais vus sur les réseaux."
 
-    delaunay "Conflictuelle, c'est le bon mot..."
-    delaunay "Mais détrompe-toi... J'adore Léandre."
-    delaunay "Enfin, je m'aime bien."
+    anthrax "Et qu'est-ce qui a changé depuis ?"
 
-    delaunay "Quand j'ai imaginé Delaunay, je l'ai créé comme étant tout ce que je désirais être. Confiant, têtu, un peu salope sur les bords..."
+    peacock "Changé ? Honnêtement, énormément de choses, et à la fois, pas tant. J'ai pris en confiance principalement."
+    peacock "Je t'avais dit que je bossais en régie avant ? Un peu comme Jazz actuellement."
+    peacock "Maintenant, je fais de la radio et du podcast, tout en filant un coup de main de temps en temps, au besoin."
+    peacock "La musique a toujours eu une place super importante dans ma vie, et je ne pensais pas être suffisamment talentueuse pour pouvoir partager ça sur scène un jour."
+    peacock "Encore une leçon que le drag m'a apprise : ne jamais se douter de ses capacités et savoir se lancer."
 
-    anthrax "Et c'est quelque chose que tu n'arrives pas à faire... en tant que Léandre ?"
+    gatsby "On est un peu tous.te.s dans ce cas. Le drag, ça éveille des capacités insoupçonnées. Ou en tout cas, ça nous encourage à nous redécouvrir sous un nouvel angle."
 
-    delaunay "Hm... Oui. Mais c'est pas comme si je n'essayais pas. Comment dire..."
-    delaunay "En fait, je suis passé par tellement de changements et je me recherche tellement encore, que je n'ai pas de vrai repère auquel me raccrocher en termes de confiance en soi et de personnalité."
-    delaunay "Alors... Delaunay, c'est un peu mon phare dans cet océan de confusion. Et Léandre, il essaye de naviguer un peu à travers tout ça."
+    delaunay "Pendant un long moment, je ne me suis jamais cru capable d'être aussi confiant.e. Encore moins sur scène. Et encore moins en m'effeuillant !"
 
-    anthrax "Je comprends mieux... C'est valide d'être un peu perdu dans la vie."
+    peacock "Et moi, je ne me sentais pas suffisamment légitime, ou sexy, ou \"féminine\" pour faire du drag à barbe et rendre hommage à ma culture. Surtout que je viens de loin !"
 
-    delaunay "Je sais... Et ça commence à se stabiliser, bien heureusement."
-    delaunay "J'aimerais juste des fois que ça aille un peu plus vite."
+    anthrax "Ça doit tout de même être super physique de chanter et danser en même temps..."
 
-    staff "Ok les filles ! Showtime dans dix minutes !"
+    peacock "On s'y fait... Et puis, c'est pour ça que je me pose ensuite sur scène pour enchaîner le public."
+    peacock "J'ai toujours été un petit clown de service, et l'humour nous rend toujours plus accessible, même envers les personnes qui ne sont pas très familières avec notre art."
+    peacock "Autant \"ouvrir la bibliothèque\" en dehors des loges. C'est bien de lire les copines, encore mieux d'en faire profiter tout le monde."
 
-    delaunay "Mon dieu, j'ai encore tellement à faire ! Vite PSEUDO ! Un coup de main, vite !"
+    gatsby "Oui... Enfin, quand tu te décides à tacler, t'en fais pas que tu ne te gardes pas de le faire dans les coulisses."
 
-    call del_5
-
-#DEL.4.3
-label del_4_3:
-
-    anthrax "\"Timide ? Moi ?\""
-
-    delaunay "Oui, bon ok. C'est un peu l'hôpital qui se fout de la charité."
-
-    anthrax "J'aurais bien dit que tu as raison... Mais bizarrement, tu m'as l'air plus confiant là."
-
-    delaunay "Ah ça, c'est l'effet \"Delaunay\" !"
-    delaunay "Il m'a toujours aidé à devenir l'homme que je voulais être, encore maintenant..."
-
-    anthrax "Pourtant, ton personnage m'a l'air d'être très efféminé, aussi maladroit que ça puisse être dit comme ça."
-
-    delaunay "Tu n'as pas tort. Mais il n'a pas toujours été comme ça... Au contraire, au début, il était très masculin."
-    delaunay "Après coup, j'ai réalisé que comme c'était au début de ma transition, j'essayais peut-être de me recréer un \"idéal masculin\"... Qui était finalement très stéréotypé."
-
-    anthrax "Je ne l'aurais jamais imaginé... Genre avec une fausse barbe et tout ?"
-
-    delaunay "Surtout pas ! Une moustache, très chèr.e ! J'ai quand même un peu de goût..."
-
-    peacock "Tu as quelque chose contre les barbes ma belle ?"
-
-    delaunay "Non ! Du tout ! La tienne te sied très bien... Malgré les trous~"
-
-    peacock "Hm... C'est vrai que la testo ne t'a pas trop épargné là-dessus... Une absence de barbe, des poils aux fesses et un début de calvitie..."
-
-    gatsby "BAHAHA !"
-
-    anthrax "Shady."
-
-    delaunay "Je suis outré !"
-
-    anthrax "Hm... Tu as commencé."
-
-    delaunay "..."
-    delaunay "Anyway."
-    delaunay "J'ai quand même pas mal rétropédalé au niveau de l'hypermasculinisation de mon perso, quand mon corps a commencé à changer."
-    delaunay "Je me suis réconcilié avec moi-même, et donc Delaunay n'avait plus besoin de servir cette fonction."
-    delaunay "Et comme j'avais envie de redécouvrir ma part de féminité en tant qu'homme, nous y voilà."
-
-    anthrax "C'est une relation très personnelle et intime que tu as avec ton personnage finalement, je comprends mieux pourquoi tu t'adresses à \"Léandre\" à la troisième personne parfois, quand tu es en drag."
-
-    delaunay "Oh, ça... C'est un autre débat. C'est plus mon côté égocentrique que j'essaye de travailler. Faut pas hésiter à me rappeler l'humilité..."
-
-    anthrax "Si ça peut te rassurer, on remarque à peine ta calvitie."
-
-    delaunay "Par pitié, pas toi aussi... Le terrain est glissant."
-
-    anthrax "Désolé.e, c'était trop tentant."
+    delaunay "Et puis, quand tu es dans l'humeur, on en a parfois pour des heures !"
 
     staff "Ok les filles ! Showtime dans dix minutes !"
 
-    delaunay "Mon dieu, j'ai encore tellement à faire ! Vite [PSEUDO] ! Un coup de main, vite !~"
+    peacock "Déjà ?! Bon, plus qu'à se dépêcher..."
 
-    call del_5
+    call pea_5
 
-#DEL.5
-label del_5:
+#PEA.4.3
+label pea_4_3:
+
+    anthrax "Les ébouriffer ? Est-ce que c'est pour mieux te cacher lors de l'effeuillage ?"
+    anthrax "Je pensais qu'il n'y avait que Léandre qui faisait ça ici..."
+
+    peacock "L'effeuillage ? Hm... Non, ce n'est vraiment pas mon genre de numéro ça."
+    peacock "//Don't get me wrong//, je suis une bombe."
+    peacock "Mais me déshabiller sur scène face à tout un public, ça va à l'encontre de ce que je veux transmettre avec ma persona."
+
+    anthrax "Ah bon ? C'est-à-dire ? J'ai du mal à comprendre."
+
+    peacock "Faut que je réussisse à mettre les mots dessus, attends..."
+    peacock "En fait, Peacock, elle est sensuelle, mais avec pudeur et une certaine humilité. Elle ne charme pas comme Delaunay, en jouant de son corps. Elle use de ses autres charmes."
+    peacock "\"J'use\" de mes autres charmes."
+
+    anthrax "Rien de mal avec un peu de \"body-oh-dy\"..."
+
+    peacock "Entièrement d'accord avec toi. C'est pour ça que j'ai précisé que j'étais une bombe, chéri.e"
+
+    anthrax "Oh, je vois ce que tu sous-entendais par \"humilité\"...~"
+
+    peacock "Touchée... Et shady~"
+    peacock "Tu apprends vite~"
+
+    anthrax "J'apprends surtout des meilleurs."
+
+    delaunay "On vous entend à côté ! Faudrait pas non plus nous rendre jaloux.e.s."
+
+    gatsby "Je t'ai vue draguer avec plus de finesse, Pea ! Attention à ne pas te perdre avec l'âge !"
+
+    peacock "Non mais de quoi je me mêle les fouineuses ! Occupez-vous de faire un trait d'eyeliner droit avant de vous intéresser à mes techniques de séduction !"
+
+    anthrax "Ah... Donc c'est là où l'on se situe ?~"
+
+    peacock "Pas encore~ Mais c'est une option tout à fait envisageable."
+    peacock "Si nos deux commères nationales arrêtaient de fourrer leur nez là où ça ne les concerne pas !"
+
+    staff "Ok les filles ! Showtime dans dix minutes !"
+
+    peacock "Déjà ?! Bon, plus qu'à se dépêcher..."
+   
+    call pea_5
+
+#PEA.5
+label pea_5:
+
+    anthrax "Les yeux du public étaient encore rivés sur la scène où les restes du précédent numéro se faisaient débarrasser, qu'ils furent forcés de se retourner en entendant une voix rauque et a cappella démarrer le fameux 'Feeling Good' de Nina Simone depuis le fond de la salle."
+    anthrax "Les escarpins ancrés dans le marbre du comptoir du bar, un spot détournant sa silhouette en contre-jour pour ajouter un peu de pizzazz à son entrée, elle descendit tout en sensualité en se faisant porter par [BARMAN]."
+    anthrax "Imani se saisit des deux grands éventails à plumes que le staff lui proposait et le band lança le top départ de sa performance en arrivant en fanfare."
+    anthrax "Se baladant entre les tables, sans manquer une seule note, son chant et sa danse induisaient une certaine transe chez le public ébahi."
+    anthrax "Hypnotisante, chacun de ses coups de hanches, tourbillons de plumage et battement de cils soulevaient quelques sifflements jusqu'à ce que sa représentation ne se déplace sur l'estrade."
+    anthrax "Tandis que les derniers accords signaient la fin de sa chorégraphie, elle troqua ses éventails pour un tabouret et un verre d'eau, chauffant la salle avec un 'one-woman show' pour introduire le prochain numéro."
+    anthrax "Son charisme, sa vivacité d'esprit et sa répartie étaient bien connus des habitué.e.s du cabaret, qui venaient parfois uniquement pour participer à cet instant léger et sarcastique."
+    anthrax "Peacock se faisait règle de ne jamais reproduire un gig deux fois, de la même manière que ses tenues selon ses propres termes."
+  
+    call pea_6
+
+#PEA.6
+label pea_6:
 
 
 #Dialogue WIP 
 
 
-call del_6
-
-#DEL.6
-label del_6:
-
-
-#Dialogue WIP 
-
-
-#Choix DEL.6
-label choix_del6:
+#Choix PEA.6
+label choix_pea6:
 
     menu: 
         "WIP":
-            call del_6_good
+            call pea_6_good
         "WIP":
-            call del_6_bad
+            call pea_6_bad
 
-#DEL.6.GOOD
-label del_6_good:
+#PEA.6.GOOD
+label pea_6_good:
 
     anthrax "WIP"
     leandre "WIP"
-    call final
+    call final_peacock
 
-#DEL.6.BAD
-label del_6_bad:
+#PEA.6.BAD
+label pea_6_bad:
 
     anthrax "WIP"
     mother "WIP"
-    call final
+    call final_peacock
 
     
 
-label final:
+label final_peacock:
     scene CG delaunay with fade
 
     $ persistent.delaunay = True

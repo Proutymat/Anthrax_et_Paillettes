@@ -22,31 +22,31 @@ init python:
             renpy.pause((20-renpy.music.get_pos('sound')),hard=True)
 
 image Mother:
-    "concept_mother"
+    "mother"
     zoom 0.35
 
-image Delaunay In Neutre:
-    "concept_delaunay_in"
+image Delaunay Neutre:
+    "delaunay_neutre"
     zoom 0.35
 
-image Delaunay Out Neutre:
-    "concept_delaunay_out"
+image Léandre Neutre:
+    "leandre_neutre"
     zoom 0.35
 
-image Gatsby In Neutre:
-    "concept_gatsby_in"
+image Gatsby Neutre:
+    "gatsby_neutre"
     zoom 0.35
 
-image Gatsby Out Neutre:
-    "concept_gatsby_out"
+image Aimée Neutre:
+    "aime.e_neutre"
     zoom 0.35
 
-image Peacock In Neutre:
-    "concept_peacock_in"
+image Peacock Neutre:
+    "peacock_neutre"
     zoom 0.35
 
-image Peacock Out Neutre:
-    "concept_peacock_out"
+image Imani Neutre:
+    "imani_neutre"
     zoom 0.35
 
 image Auditorium = "Backgrounds/concept_auditorium.png"
@@ -365,6 +365,15 @@ label del_4_3:
 #DEL.5
 label del_5:
 
+    anthrax "L’entracte arrivait déjà à sa fin et l’atmosphère était bouillonnante dans les coulisses. Derrière le rideau, les kittens et les régisseur.euse.s s’activaient à déplacer le décor en silence."
+    anthrax "Soudainement, un spot se braqua sur le velours et un “bang” de trompettes réveilla la foule. Puis une longue jambe dévoila sensuellement sa résille en sortant de l’entrouverture."
+    anthrax "Au rythme de la musique, Delaunay fit son apparition sur le devant de la scène, sous les hurlements des fanatiques du premier rang."
+    anthrax "Le temps qu’il ne chauffe la salle, les préparatifs de l’arrière-scène arrivaient à leur fin. Le rideau tomba et dévoila un immense verre à martini duquel s’échappaient des volutes de fumée."
+    anthrax "Delaunay continuait d'effeuiller son costume jusqu’à grimper l’échelle et s’asseoir, dos courbé, sur le bord du verre."
+    anthrax "Laissant la tension gagner le public, il finit par s’y glisser en arrière, laissant l’eau déborder ostensiblement sur la scène."
+    anthrax "Il continua de se déshabiller avec lenteur et adresse, jusqu’à sortir de son corset un sous-vêtement trempé qu’il jeta insolemment."
+    anthrax "L’effet dupait aisément son public et signa la fin de son acte."
+    anthrax "Il se couvrit d’un long kimono et se fit aider pour descendre sans glisser avant de saluer fièrement les spectateur.ice.s, son make-up intact et un grand sourire aux lèvres."
 
 #Dialogue WIP 
 
@@ -399,11 +408,11 @@ label del_6_bad:
 
     anthrax "WIP"
     mother "WIP"
-    call final
+    call final_delaunay
 
     
 
-label final:
+label final_delaunay:
     scene CG delaunay with fade
 
     $ persistent.delaunay = True
