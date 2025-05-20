@@ -1,4 +1,3 @@
-
 # fonctions custom
 
 init python:
@@ -92,18 +91,38 @@ define aimee = Character('Aimé.e', color="#be9f13", who_outlines=[(2, "#000000"
 define imani = Character('Imani', color="#be9f13", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
 define inconnu = Character('???', color="#be9f13", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
 define delinconnu = Character('Del?', color="#be9f13", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
+define player = Character('[player_name]', color="#be9f13", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
 
-# Le jeu commence ici
+
 
 label start:
 
-#0.1
+    scene black
+    with fade
+    $player_name = renpy.input("Avec quel prénom veux-tu t'identfier ?")
+
+    $ player_name = player_name.strip()
+    if player_name == "":
+        $player_name = "Moumine"
+         
+    menu:
+        "Tu es sûr de consever [player_name] ?"
+        "oui":
+            jump onboarding
+        "non":
+            jump start
+
+#0.1    
+label onboarding:
+    scene black
+    with fade
     $ quick_menu = True  
+
 
     play music GoodVibeIntro fadein 3.0
 
-    anthrax "C’est dingue à quel point ce cabaret a reprit ses lettres de noblesse."
-    anthrax "Je me souviens encore de quand je passais devant pour aller prendre le métro... Complètement défraichit, la pierre sale et les fenètres brisées."
+    player "C’est dingue à quel point ce cabaret a reprit ses lettres de noblesse."
+    player "Je me souviens encore de quand je passais devant pour aller prendre le métro... Complètement défraichit, la pierre sale et les fenètres brisées."
     anthrax "On se demandait quand est-ce qu’ils finiraient par abréger ses souffrances et le démolir."
 
     queue music IntroGoodVibe1
@@ -233,34 +252,5 @@ label route_choice_intro:
     $ quick_menu = False
    
     call screen choose_route with fade
-#Test Illustrations ne pas toucher
-
-#image CG_delauney = "CGs/delauney.jpg"
-#image CG_gatsby = "CGs/gatsby.jpg"
-#image CG_peacock = "CGs/peacock.jpg"
-
-
-
-#scene bg classroom
-#jump choices
-
-#label choices:
-    #menu:
-        #"Illustration Delauney":
-        #scene CG_delauney with fade
-        
-        #"Illustration Gatsby":
-        #scene CG_gatsby with fade           
-        
-        #"Illustration Peacock":           
-        #scene CG_peacock with fade
-
-
-        #"End":
-        #return
-
-#label after_choices:
-    #jump choices
-    #return
 
         

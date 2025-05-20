@@ -27,6 +27,7 @@ screen choose_route():
         imagebutton:
             auto "images/routes/peacock_route_%s.png"
             action ShowMenu("confirm_choice_peacock")
+    use quick_menu
 
 screen confirm_choice_delaunay():
     tag menu
@@ -44,6 +45,7 @@ screen confirm_choice_delaunay():
         at Transform(xalign=0.885, yalign=0.865)
         imagebutton idle "images/backgrounds/routes_confirmation/oui_route_idle.png" hover "images/backgrounds/routes_confirmation/oui_route_hover.png" action [Hide("confirm_choice_delaunay"), Jump("delaunay_start")]
         imagebutton idle "images/backgrounds/routes_confirmation/non_route_idle.png" hover "images/backgrounds/routes_confirmation/non_route_hover.png" action ShowMenu("choose_route")
+    use quick_menu
 
 screen confirm_choice_gatsby():
     tag menu
@@ -61,7 +63,8 @@ screen confirm_choice_gatsby():
         at Transform(xalign=0.885, yalign=0.865)
         imagebutton idle "images/backgrounds/routes_confirmation/oui_route_idle.png" hover "images/backgrounds/routes_confirmation/oui_route_hover.png" action [Hide("confirm_choice_gatsby"), Jump("gatsby_start")]
         imagebutton idle "images/backgrounds/routes_confirmation/non_route_idle.png" hover "images/backgrounds/routes_confirmation/non_route_hover.png" action ShowMenu("choose_route")
-
+    use quick_menu
+    
 screen confirm_choice_peacock():
     tag menu
     modal True
@@ -78,3 +81,4 @@ screen confirm_choice_peacock():
         at Transform(xalign=0.885, yalign=0.865)
         imagebutton idle "images/backgrounds/routes_confirmation/oui_route_idle.png" hover "images/backgrounds/routes_confirmation/oui_route_hover.png" action [Hide("confirm_choice_peacock"), Jump("peacock_start")]
         imagebutton idle "images/backgrounds/routes_confirmation/non_route_idle.png" hover "images/backgrounds/routes_confirmation/non_route_hover.png" action ShowMenu("choose_route")
+    use quick_menu

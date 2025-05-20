@@ -77,14 +77,18 @@ define leandre = Character('Léandre', color="#be9f13", who_outlines=[(2, "#0000
 define aimee = Character('Aimé.e', color="#be9f13", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
 define imani = Character('Imani', color="#be9f13", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
 define staff = Character('Staff', color="#be9f13", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
+define player = Character('[player_name]', color="#be9f13", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
+
+
 
 label delaunay_start:
+$ quick_menu = True
 scene Auditorium with fade
 
 #DEL.1
 leandre "Hey... Hum... Je suis content que tu m’aies choisi. Je ne pensais pas trop que ce serait le cas."
 
-anthrax "Ah oui? Pourquoi donc?"
+player "Ah oui? Pourquoi donc?"
 
 leandre "Oh, je ne sais pas trop. Je suis un peu plus discret que les autres, disons..."
 
@@ -268,7 +272,7 @@ label del_4_1:
 
     staff "Ok les filles ! Showtime dans dix minutes !"
 
-    delaunay "Mon dieu, j'ai encore tellement à faire ! Vite PSEUDO ! Un coup de main, vite !"
+    delaunay "Mon dieu, j'ai encore tellement à faire ! Vite [player] ! Un coup de main, vite !"
 
     call del_5
 
@@ -301,7 +305,7 @@ label del_4_2:
 
     staff "Ok les filles ! Showtime dans dix minutes !"
 
-    delaunay "Mon dieu, j'ai encore tellement à faire ! Vite PSEUDO ! Un coup de main, vite !"
+    delaunay "Mon dieu, j'ai encore tellement à faire ! Vite [player] ! Un coup de main, vite !"
 
     call del_5
 
@@ -358,7 +362,7 @@ label del_4_3:
 
     staff "Ok les filles ! Showtime dans dix minutes !"
 
-    delaunay "Mon dieu, j'ai encore tellement à faire ! Vite [PSEUDO] ! Un coup de main, vite !~"
+    delaunay "Mon dieu, j'ai encore tellement à faire ! Vite [player] ! Un coup de main, vite !"
 
     call del_5
 
@@ -410,9 +414,12 @@ label del_6_bad:
     mother "WIP"
     call final_delaunay
 
+    $_window_hide()
+    $ renpy.pause(0, hard=True)
+    $ quick_menu = False
     
 
-label final_delaunay:
+label final_delaunay:   
     scene CG delaunay with fade
 
     $ persistent.delaunay = True

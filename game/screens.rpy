@@ -114,6 +114,7 @@ screen say(who, what):
 
         text what id "what"
 
+    use quick_menu
 
     ## Si il y a une side image, l'afficher au-dessus du texte. Ne pas
     ## l'afficher sur la version téléphone - pas assez de place.
@@ -233,8 +234,7 @@ style choice_button is default:
 
 style choice_button_text is default:
     properties gui.text_properties("choice_button")
-
-
+    
 ## Écran des menus rapides #####################################################
 ##
 ## Les menus rapides sont affichés dans le jeu pour permettre un accès rapide à
