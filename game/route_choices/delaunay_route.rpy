@@ -85,12 +85,10 @@ label delaunay_start:
 $ quick_menu = True
 scene Auditorium with fade
 
-call screen preferences
-
 #DEL.1
 leandre "Hey... Hum... Je suis content que tu m’aies choisi. Je ne pensais pas trop que ce serait le cas."
 
-player "Ah oui? Pourquoi donc?"
+anthrax "Ah oui? Pourquoi donc?"
 
 leandre "Oh, je ne sais pas trop. Je suis un peu plus discret que les autres, disons..."
 
@@ -141,8 +139,10 @@ leandre "Et finalement, Mother m’a pris sous son aile et m’a aidé à me sor
 
 #Choix DEL.2
 label choix_del2:
-
+    $ quick_menu = False
+    
     menu: 
+        anthrax "Et finalement, Mother m’a pris sous son aile et m’a aidé à me sortir de tout cela."
         "Oh! Tu as transitionné?":
             call del_2_1
         "Et comment est-ce que tu as rencontré Mother?":
@@ -153,6 +153,7 @@ label choix_del2:
 
 #DEL.2.1
 label del_2_1:
+    $ quick_menu = True
 
     anthrax "Oh! Tu as transitionné? !"
     leandre "Yep."
@@ -160,6 +161,7 @@ label del_2_1:
 
 #DEL.2.2
 label del_2_2:
+    $ quick_menu = True
 
     anthrax "Et comment est-ce que tu as rencontré Mother?"
     mother "Ma belle attends je t'explque"
@@ -167,6 +169,7 @@ label del_2_2:
 
 #DEL.2.3
 label del_2_3:
+    $ quick_menu = True
 
     anthrax "Choix wip"
     mother "Script wip"
@@ -181,6 +184,7 @@ label del_3:
 
 #Choix DEL.3
 label choix_del3:
+    $ quick_menu = False
 
     menu: 
         "WIP":
@@ -192,6 +196,7 @@ label choix_del3:
 
 #DEL.3.1
 label del_3_1:
+    $ quick_menu = True
 
     anthrax "WIP"
     leandre "WIP"
@@ -199,6 +204,7 @@ label del_3_1:
 
 #DEL.3.2
 label del_3_2:
+    $ quick_menu = True
 
     anthrax "WIP"
     mother "WIP"
@@ -206,6 +212,7 @@ label del_3_2:
 
 #DEL.3.3
 label del_3_3:
+    $ quick_menu = True
 
     anthrax "WIP"
     mother "WIP"
@@ -225,8 +232,10 @@ label del_4:
 
 #Choix DEL.4
 label choix_del4:
+    $ quick_menu = False
 
     menu: 
+        anthrax "Qu'est-ce que tu fais à jouer le timide ? Approche, je ne vais pas te manger."
         "Franchement, tu me manges quand tu veux":
             call del_4_1
         "J'adore la manière dont tu prends confiance en toi avec Delaunay":
@@ -236,6 +245,7 @@ label choix_del4:
 
 #DEL.4.1
 label del_4_1:
+    $ quick_menu = True
 
     anthrax "Franchement, tu me manges quand tu veux"
 
@@ -280,6 +290,8 @@ label del_4_1:
 
 #DEL.4.2
 label del_4_2:
+    $ quick_menu = True
+
     anthrax "J'adore la manière dont tu prends confiance en toi avec Delaunay"
     anthrax "Qu'est-ce qui change quand tu te costumes ?"
 
@@ -313,6 +325,7 @@ label del_4_2:
 
 #DEL.4.3
 label del_4_3:
+    $ quick_menu = True
 
     anthrax "\"Timide ? Moi ?\""
 
@@ -395,6 +408,7 @@ label del_6:
 
 #Choix DEL.6
 label choix_del6:
+    $ quick_menu = False
 
     menu: 
         "WIP":
@@ -404,13 +418,15 @@ label choix_del6:
 
 #DEL.6.GOOD
 label del_6_good:
+    $ quick_menu = True
 
     anthrax "WIP"
     leandre "WIP"
-    call final
+    call final_delaunay
 
 #DEL.6.BAD
 label del_6_bad:
+    $ quick_menu = True
 
     anthrax "WIP"
     mother "WIP"

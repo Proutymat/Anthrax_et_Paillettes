@@ -113,6 +113,7 @@ imani "Ça te dit de t'installer quelque part de plus cosy pour continuer à dis
 
 #Choix PEA.2
 label choix_pea2:
+    $ quick_menu = False
 
     menu: 
         "WIP":
@@ -125,6 +126,7 @@ label choix_pea2:
 
 #PEA.2.1
 label pea_2_1:
+    $ quick_menu = True
 
     anthrax "WIP"
     peacock "WIP"
@@ -132,6 +134,7 @@ label pea_2_1:
 
 #PEA.2.2
 label pea_2_2:
+    $ quick_menu = True
 
     anthrax "WIP"
     mother "WIP"
@@ -139,6 +142,7 @@ label pea_2_2:
 
 #PEA.2.3
 label pea_2_3:
+    $ quick_menu = True
 
     anthrax "WIP"
     mother "WIP"
@@ -153,6 +157,7 @@ label pea_3:
 
 #Choix PEA.3
 label choix_pea3:
+    $ quick_menu = False
 
     menu: 
         "WIP":
@@ -164,6 +169,7 @@ label choix_pea3:
 
 #PEA.3.1
 label pea_3_1:
+    $ quick_menu = True
 
     anthrax "WIP"
     leandre "WIP"
@@ -171,6 +177,7 @@ label pea_3_1:
 
 #PEA.3.2
 label pea_3_2:
+    $ quick_menu = True
 
     anthrax "WIP"
     mother "WIP"
@@ -178,6 +185,7 @@ label pea_3_2:
 
 #PEA.3.3
 label pea_3_3:
+    $ quick_menu = True
 
     anthrax "WIP"
     mother "WIP"
@@ -197,12 +205,12 @@ label pea_4:
 
     anthrax "Je peux t'aider à quelque chose d'autre ?"
 
-    peacock "Hm... Je ne sais pas trop. Peut-être peux-tu vérifier l'état des plumes de mes éventails ? Je les ai changées il y a peu, mais elles ont peut-être besoin d'être ébouriffées."
-
 #Choix PEA.4
 label choix_pea4:
+    $ quick_menu = False
 
     menu: 
+        peacock "Hm... Je ne sais pas trop. Peut-être peux-tu vérifier l'état des plumes de mes éventails ? Je les ai changées il y a peu, mais elles ont peut-être besoin d'être ébouriffées."
         "Oui, bien sûr. Ca fait longtemps que tu fais ce show? Avec les plumes je veux dire...":
             call pea_4_1
         "Sans soucis! Tu comptes chanter aussi? Je vois que tu as un micro d'installé...":
@@ -212,6 +220,7 @@ label choix_pea4:
 
 #PEA.4.1
 label pea_4_1:
+    $ quick_menu = True
     
     anthrax "Oui, bien sûr. Ca fait longtemps que tu fais ce show? Avec les plumes je veux dire..."
 
@@ -254,6 +263,7 @@ label pea_4_1:
 
 #PEA.4.2
 label pea_4_2:
+    $ quick_menu = True
 
     anthrax "Sans souci ! Tu comptes chanter aussi ? Je vois que tu as un micro d'installé..."
 
@@ -293,6 +303,7 @@ label pea_4_2:
 
 #PEA.4.3
 label pea_4_3:
+    $ quick_menu = True
 
     anthrax "Les ébouriffer ? Est-ce que c'est pour mieux te cacher lors de l'effeuillage ?"
     anthrax "Je pensais qu'il n'y avait que Léandre qui faisait ça ici..."
@@ -358,6 +369,7 @@ label pea_6:
 
 #Choix PEA.6
 label choix_pea6:
+    $ quick_menu = False
 
     menu: 
         "WIP":
@@ -367,6 +379,7 @@ label choix_pea6:
 
 #PEA.6.GOOD
 label pea_6_good:
+    $ quick_menu = True
 
     anthrax "WIP"
     leandre "WIP"
@@ -374,6 +387,7 @@ label pea_6_good:
 
 #PEA.6.BAD
 label pea_6_bad:
+    $ quick_menu = True
 
     anthrax "WIP"
     mother "WIP"
@@ -382,9 +396,9 @@ label pea_6_bad:
     
 
 label final_peacock:
-    scene CG delaunay with fade
+    scene CG peacock with fade
 
-    $ persistent.delaunay = True
+    $ persistent.peacock = True
     "Une nouvelle illustration est disponible dans l'album."
     "Musiques et Interviews débloqués."
 
