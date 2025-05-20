@@ -1,16 +1,19 @@
 label choose_route_label:
-    call screen choose_route
+    show screen choose_route
 
 screen choose_route():
-    tag menu
+
+    on "show" action SetVariable("route_menu_enabled", False)
+    on "hide" action SetVariable("route_menu_enabled", True)
+    
+
+    key "K_ESCAPE" action Hide("choose_route")
+
+    $ quick_menu = False
+    tag choose_route
     modal True  # empêche les interactions avec les autres éléments de l’UI
 
-    default quick_menu_backup = quick_menu
-    $ quick_menu = False
-
     add "images/backgrounds/white_background.png"
-
-    on "hide" action SetVariable("quick_menu", quick_menu_backup)
 
     hbox:
         xalign 0.5
@@ -30,13 +33,11 @@ screen choose_route():
     use quick_menu
 
 screen confirm_choice_delaunay():
-    tag menu
+    $ quick_menu = False
+    tag choose_route
     modal True
 
     default quick_menu_backup = quick_menu
-    $ quick_menu = False
-
-    on "hide" action SetVariable("quick_menu", quick_menu_backup)
 
     add "images/backgrounds/routes_confirmation/delaunay_route_background.png"
 
@@ -48,13 +49,11 @@ screen confirm_choice_delaunay():
     use quick_menu
 
 screen confirm_choice_gatsby():
-    tag menu
+    $ quick_menu = False
+    tag choose_route
     modal True
 
     default quick_menu_backup = quick_menu
-    $ quick_menu = False
-
-    on "hide" action SetVariable("quick_menu", quick_menu_backup)
 
     add "images/backgrounds/routes_confirmation/gatsby_route_background.png"
 
@@ -66,13 +65,11 @@ screen confirm_choice_gatsby():
     use quick_menu
     
 screen confirm_choice_peacock():
-    tag menu
+    $ quick_menu = False
+    tag choose_route
     modal True
 
     default quick_menu_backup = quick_menu
-    $ quick_menu = False
-
-    on "hide" action SetVariable("quick_menu", quick_menu_backup)
 
     add "images/backgrounds/routes_confirmation/peacock_route_background.png"
 

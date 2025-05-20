@@ -99,7 +99,7 @@ label start:
 
     scene black
     with fade
-    $player_name = renpy.input("Avec quel prénom veux-tu t'identfier ?")
+    $player_name = renpy.input("Choisis le prénom d'Anthräx, ton personnage...")
 
     $ player_name = player_name.strip()
     if player_name == "":
@@ -121,8 +121,8 @@ label onboarding:
 
     play music GoodVibeIntro fadein 3.0
 
-    player "C’est dingue à quel point ce cabaret a reprit ses lettres de noblesse."
-    player "Je me souviens encore de quand je passais devant pour aller prendre le métro... Complètement défraichit, la pierre sale et les fenètres brisées."
+    anthrax "C’est dingue à quel point ce cabaret a reprit ses lettres de noblesse."
+    anthrax "Je me souviens encore de quand je passais devant pour aller prendre le métro... Complètement défraichit, la pierre sale et les fenètres brisées."
     anthrax "On se demandait quand est-ce qu’ils finiraient par abréger ses souffrances et le démolir."
 
     queue music IntroGoodVibe1

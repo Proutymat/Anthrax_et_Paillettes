@@ -1,5 +1,10 @@
 ﻿## Ce fichier contient les options qui peuvent être modifiées pour personnaliser
 ## votre jeu.
+
+#Menu pause route 
+default route_menu_enabled = False
+
+
 ##
 ## Les lignes qui commencent avec deux dièses '#' sont des commentaires et vous
 ## ne devriez pas les décommenter. Les lignes qui commencent avec un seul dièse
@@ -7,8 +12,10 @@
 ## (pour votre projet).
 
 define config.game_menu_action = ShowMenu("pause_menu")
+define config.keymap["game_menu"] = []
 
-## Bases #######################################################################
+
+## Bases #######################################################################F
 
 ## Un nom de jeu intelligible. Il est utilisé pour personnaliser le titre de la
 ## fenêtre par défaut et s’affiche dans l’interface ainsi que dans les rapports

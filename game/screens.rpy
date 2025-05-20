@@ -9,7 +9,6 @@ default quick_menu = True  # le quick menu est activé par défaut
 init python:
     config.mouse_hide_time = None  # Ne jamais cacher la souris
 
-
 ################################################################################
 ## Styles
 ################################################################################
@@ -101,6 +100,7 @@ style frame:
 ## https://www.renpy.org/doc/html/screen_special.html#say
 
 screen say(who, what):
+    key "K_ESCAPE" action ShowMenu("pause_menu")
 
     window:
         id "window"
@@ -282,6 +282,12 @@ style h1 is default:
     bold True
     xalign 0.5
     color "#fff"
+
+init python:
+    config.overlay_screens.append("global_escape_handler")
+
+screen global_escape_handler():
+    key "K_ESCAPE" action If(route_menu_enabled, Show("choose_route"))
 
 screen pause_menu():
 
@@ -876,10 +882,15 @@ style slot_button_text:
 
 screen preferences():
 
-    tag menu
+    tag preferences
 
     # use game_menu(_("Préférences"), scroll="viewport"):
+    add Solid("#000000ff")  
 
+    frame:
+        style "menu_frame"
+        has vbox
+        spacing 20
     vbox:
         align (0.5, 0.5)
         spacing 30

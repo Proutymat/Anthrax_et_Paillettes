@@ -81,12 +81,13 @@ define player = Character('[player_name]', color="#be9f13", who_outlines=[(2, "#
 
 
 label gatsby_start:
+$ quick_menu = True
 scene Auditorium with fade
 
 #GAT.1
 gatsby "Let's go ! On va former un duo d'enfer, je te le dis !"
 
-player "Aha ! J'adore cette énergie. Par quoi voudrais-tu commencer ?"
+anthrax "Aha ! J'adore cette énergie. Par quoi voudrais-tu commencer ?"
 
 gatsby "Hm... On pourrait se présenter mutuellement, histoire d'apprendre à se connaître, et voir ensuite où ça nous mène ?"
 
@@ -186,7 +187,7 @@ label gat_4:
     anthrax "Iel finit par tresser les sections, puis enfiler un collant pour tout bien plaquer contre son crâne et laisser place à sa perruque qui l'attendait sur le mannequin."
     anthrax "En quelques coups de peigne et de gel, des vagues décoraient son front et quelques perles adoucissaient son regard tandis que son regard se berçait d'écume."
 
-    gatsby "PSEUDO, est-ce que tu pourrais me rendre un service ?"
+    gatsby "[player], est-ce que tu pourrais me rendre un service ?"
 
     anthrax "Bien sûr, de quoi as-tu besoin ?"
 
@@ -287,7 +288,7 @@ label gat_4_2:
 
     gatsby "Je n'aurais pas dit mieux !"
 
-    peacock "Mais t'aurais pu lui répondre plus gentiment. Maintenant PSEUDO a l'air tout.e embarrassé.e."
+    peacock "Mais t'aurais pu lui répondre plus gentiment. Maintenant [player] a l'air tout.e embarrassé.e."
 
     delaunay "C'était peut-être maladroit, mais ça ne partait pas d'un mauvais fond. Tu es encore parti.e au quart de tour By-By."
 

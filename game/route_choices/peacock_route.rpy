@@ -81,6 +81,7 @@ define player = Character('[player_name]', color="#be9f13", who_outlines=[(2, "#
 
 
 label peacock_start:
+$ quick_menu = True
 scene Auditorium with fade
 
 #PEA.1
@@ -89,7 +90,7 @@ imani "Je suis flattée"
 
 imani "Alors comme ça je t'ai fait une telle impression ?"
 
-anthrax "Il semblerait, j'adore ta vibe. Tu as un certain talent pour mettre les gens à l'aise."
+player "Il semblerait, j'adore ta vibe. Tu as un certain talent pour mettre les gens à l'aise."
 
 imani "Ah ça ! On me le dit souvent !"
 

@@ -85,6 +85,8 @@ label delaunay_start:
 $ quick_menu = True
 scene Auditorium with fade
 
+call screen preferences
+
 #DEL.1
 leandre "Hey... Hum... Je suis content que tu m’aies choisi. Je ne pensais pas trop que ce serait le cas."
 
