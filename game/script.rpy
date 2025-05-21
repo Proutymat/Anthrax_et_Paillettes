@@ -21,6 +21,8 @@ init python:
         if renpy.music.is_playing('sound'):
             renpy.pause((20-renpy.music.get_pos('sound')),hard=True)
 
+    renpy.music.register_channel("ambiance", "sfx", True)
+
 
 # Déclarez sous cette ligne les images, avec l'instruction 'image'
 # ex: image eileen heureuse = "eileen_heureuse.png"
@@ -63,6 +65,10 @@ transform tall_right:
 
 # Liste des sfx
 define type_sounds = ['TextMix-001.ogg','TextMix-002.ogg','TextMix-003.ogg','TextMix-004.ogg','TextMix-005.ogg','TextMix-006.ogg','TextMix-007.ogg','TextMix-008.ogg','TextMix-009.ogg','TextMix-010.ogg']
+
+# Liste des ambiances
+#define audio.AmbAndrogameDay = "Amb_AndrogameDay_V2.wav"
+#efine audio.AmbLoges = "Amb_LogesWithStinger_V1.wav"
 
 # Liste des musiques
 define audio.GoodVibeIntro = "ON_GoodVibeIntro_V2.ogg"
@@ -159,6 +165,8 @@ label onboarding:
 
 #0.2
 
+    play ambiance "Amb_AndrogameDay_V1.ogg" fadein 1
+
     mother "Bienvenue dans l'Androgame! J'espère que tu as fait bonne route."
     mother "Tu avais l’air de dire dans nos échanges que tu n’habitais pas trop loin, le chemin n’a pas dû être bien  compliqué."
     anthrax "En effet, une fois que j’avais passé la porte pivotante, la hauteur sous plafond et les lustres géométriques faillirent me donner un torticolis."
@@ -180,6 +188,8 @@ label onboarding:
     anthrax "Je ne l’avais pas encore abordé de cette perspective, mais l’idée d’être au milieu de cette scène, avec tous les regards tournés vers moi, m’excitait autant que me faisait appréhender."
 
     stop music fadeout 2.0
+    ##stop ambiance fadeout 10.0
+
 
 #0.5
 
@@ -189,9 +199,9 @@ label onboarding:
     anthrax "Déjà que je ne savais pas encore vers quelle pratique je souhaitais me spécialiser, submergé.e par tout ceci, j'en étais d'autant plus perdu.e..." 
     anthrax "Nous avons fini par pousser une dernière porte, celle des loges et avons été accueilli.e.s par une ambiance des plus... Studieuse."
 
-    play music BarNeutral fadein 0.1
+    play ambiance "Amb_LogesWithStinger_V1.ogg" fadein 1
+
     inconnu "Ok, hear me out... Je dis simplement que si l'on veut garder une logique dans la suite de nos numéros, on va devoir inverser l'ordre dans lequel on passe pour pouvoir faire de la place aux nouvelles."
-    
 
     anthrax "L'homme qui venait de prendre la parole était en train de gribouiller avec insistance un schéma dans son carnet, une aiguille à coudre entre les lèvres et une pièce de tissu sur les genoux, à laquelle il semblait broder des sequins un à un."
 
@@ -237,6 +247,8 @@ label onboarding:
     gatsby "Parce que je suis magnifique, et que je n'avais pas plus d'inspi que ça au moment de choisir. Je me genre au neutre, c'est à dire avec ellui/iel. "
     gatsby "C'est non-négociable. "
     aimee "Mais mon vrai prénom, c'est Aimé.e, avec un point. Pareil que Pea, tu peux aussi m'appeler comme ça si tu en as envie."
+
+    stop ambiance fadeout 1
 
    
     hide Mother
