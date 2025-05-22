@@ -3,7 +3,7 @@ screen gallery_delaunay:
     add "images/CustomUI/bg gallery.jpg"
     
     hbox:
-        xalign -0.055
+        xalign 1.99
         yalign -0.35
         spacing 30
         use gallery_navigation

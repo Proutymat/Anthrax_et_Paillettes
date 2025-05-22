@@ -5,8 +5,6 @@ init python:
     (20, "back")
 ])
 
-
-
 init python:
     def type_sound(event, interact=True, cps=35, **kwargs):
         speed = int((0.1/cps)*1000)/1000
@@ -499,5 +497,5 @@ label final_delaunay:
     pause 1.0
 
     scene black with fade
-
+    $ renpy.save_persistent()
     $ renpy.full_restart()
