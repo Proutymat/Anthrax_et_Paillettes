@@ -64,27 +64,27 @@ transform tall_right:
 
 
 # Liste des sfx
-define type_sounds = ['TextMix-001.ogg','TextMix-002.ogg','TextMix-003.ogg','TextMix-004.ogg','TextMix-005.ogg','TextMix-006.ogg','TextMix-007.ogg','TextMix-008.ogg','TextMix-009.ogg','TextMix-010.ogg']
+define type_sounds = ['audio/SFX/TextMix-001.ogg','audio/SFX/TextMix-002.ogg','audio/SFX/TextMix-003.ogg','audio/SFX/TextMix-004.ogg','audio/SFX/TextMix-005.ogg','audio/SFX/TextMix-006.ogg','audio/SFX/TextMix-007.ogg','audio/SFX/TextMix-008.ogg','audio/SFX/TextMix-009.ogg','audio/SFX/TextMix-010.ogg']
 
 # Liste des ambiances
-#define audio.AmbAndrogameDay = "Amb_AndrogameDay_V2.wav"
-#efine audio.AmbLoges = "Amb_LogesWithStinger_V1.wav"
+define audio.AmbAndrogameDay = "audio/Amb/Amb_AndrogameDay_V3.ogg"
+define audio.AmbLoges = "audio/Amb/Amb_LogesWithStinger_V1.ogg"
 
 # Liste des musiques
-define audio.GoodVibeIntro = "ON_GoodVibeIntro_V2.ogg"
-define audio.IntroGoodVibe1 = "ON_GoodVibeA_V2.ogg"
-define audio.IntroGoodVibe2 = "ON_GoodVibeB_V2.ogg"
-define audio.IntroGoodVibe3 = "AP_IntroGoodVib3_V1.ogg"
-define audio.IntroGoodVibe4 = "AP_IntroGoodVib4_V1.ogg"
-define audio.IntroCabaret = "AP_ON2.1_V1.ogg"
-define audio.Intro2Cabaret = "AP_Intro2_V1.ogg"
-define audio.Verse = "ON_CabaretLightVerse_V1.ogg"
-define audio.CabaretLightChorus = "ON_CabaretLightChorus_V1.ogg"
-define audio.CabaretLightSolo = "ON_CabaretLightSolo_V1.ogg"
-define audio.BarNeutral = "AP_Bar_V2.ogg"
-define audio.BalconyIntro = "ON_Backstage_V1.ogg"
-define audio.BalconyLoop = "ON_BackstageLoop_V1.ogg"
-define audio.Backstage = "ON_Loge_V1.ogg"
+define audio.GoodVibeIntro = "audio/Music/ON_GoodVibeIntro_V2.ogg"
+define audio.IntroGoodVibe1 = "audio/Music/ON_GoodVibeA_V2.ogg"
+define audio.IntroGoodVibe2 = "audio/Music/ON_GoodVibeB_V2.ogg"
+define audio.IntroGoodVibe3 = "audio/Music/AP_IntroGoodVib3_V1.ogg"
+define audio.IntroGoodVibe4 = "audio/Music/AP_IntroGoodVib4_V1.ogg"
+define audio.CabaretEntrance = "audio/Music/ON_CabaretEntrance_V1.ogg"
+define audio.CabaretIntro = "audio/Music/ON_CabaretIntro_V1_.ogg"
+define audio.CabaretLightVerse = "audio/Music/ON_CabaretLightVerse_V1.ogg"
+define audio.CabaretLightChorus = "audio/Music/ON_CabaretLightChorus_V1.ogg"
+define audio.CabaretLightSolo = "audio/Music/ON_CabaretLightSolo_V1.ogg"
+define audio.BarNeutral = "audio/Music/AP_Bar_V2.ogg"
+define audio.BackstageMysterious = "audio/Music/ON_Backstage_V1.ogg"
+define audio.BackstageLoop = "audio/Music/ON_BackstageLoop_V1.ogg"
+define audio.BackstageSkype = "audio/Music/ON_Loge_V1.ogg"
 
 # Déclarez les personnages utilisés dans le jeu.
 define mother = Character('Mother', color="#880000", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=25, callback=type_sound, cb_cps=25)
@@ -157,7 +157,7 @@ label onboarding:
 
     anthrax "J’avais du mal à réaliser, mais on a convenu d’une nouvelle date d’entretien, en journée quand le cabaret serait vide, où elle m’expliquerait plus en détails le fonctionnement des backstages."
 
-    play music IntroCabaret fadein 0.1
+    play music CabaretEntrance fadein 0.1
 
     scene concept_auditorium
 
@@ -165,33 +165,35 @@ label onboarding:
 
 #0.2
 
-    play ambiance "Amb_AndrogameDay_V1.ogg" fadein 1
+    play ambiance AmbAndrogameDay fadein 1
 
     mother "Bienvenue dans l'Androgame! J'espère que tu as fait bonne route."
     mother "Tu avais l’air de dire dans nos échanges que tu n’habitais pas trop loin, le chemin n’a pas dû être bien  compliqué."
     anthrax "En effet, une fois que j’avais passé la porte pivotante, la hauteur sous plafond et les lustres géométriques faillirent me donner un torticolis."
 
-    queue music Intro2Cabaret
-    queue music Verse
+    queue music CabaretIntro
+    queue music CabaretLightVerse
 
     anthrax "Je devais presque plisser les yeux pour repérer tous les petits détails dans la marqueterie, les dorures et les formes dans le papier peint."
     anthrax "Oui. Et puis, c’est le genre d’établissement qu’il est difficile de louper!"
     mother "Aha! Tu m’en vois ravie de l’entendre."
     mother "Je ne fais pas te faire patienter plus longtemps... Commençons par te faire une petite visite des lieux. Promis, tu vas t’y retrouver bien vite"
+
+    queue music CabaretLightChorus
+
     mother "En arrivant, tu es passé.e par le lobby, le hall d’entrée, l’accueil... Tu peux l’appeler comme tu veux. Mais dans l’idée, passé ce guichet, les clients payent!"
     mother "Ce n’est pas trop dans notre politique cette histoire du \"le client est roi\", mais tu apprendras vite que c’est là que les pourboires se cachent"
-
-    queue music Chorus
 
     mother "Et nous voici donc dans l’auditorium! Il sera un peu comme ton meilleur ennemi, car peu importe le trac ou qui se retrouvera dans le public, il faudra grimper sur les planches!"
     mother "Après, si tu es ici aujourd’hui, c’est par ce que c’est justement le genre de chose qui t’anime: te mettre en scène..."
     anthrax "Je ne l’avais pas encore abordé de cette perspective, mais l’idée d’être au milieu de cette scène, avec tous les regards tournés vers moi, m’excitait autant que me faisait appréhender."
 
-    stop music fadeout 2.0
-    ##stop ambiance fadeout 10.0
+    stop music fadeout 1
+    stop ambiance fadeout 10.0
 
 
 #0.5
+    play music BackstageLoop
 
     anthrax "Nous sommes monté.e.s sur la scène et l'avons traversée avant de passer derrière les épais rideaux de velours. Nous sommes passé.e.s dans un véritable dédale de couloirs tandis qu'elle ouvrait quelques portes et m'expliquait la fonction de chaque pièce." 
     anthrax "Ici, la réserve des costumes ; où les armatures de dos, de hanches, d'épaules à plumes d'autruche, de floss, d'oie ou de faisan ; et les casques grandioses à strass, sequins, perles de verre ou fausses pierres précieuses, se faisaient la compétition." 
@@ -199,7 +201,8 @@ label onboarding:
     anthrax "Déjà que je ne savais pas encore vers quelle pratique je souhaitais me spécialiser, submergé.e par tout ceci, j'en étais d'autant plus perdu.e..." 
     anthrax "Nous avons fini par pousser une dernière porte, celle des loges et avons été accueilli.e.s par une ambiance des plus... Studieuse."
 
-    play ambiance "Amb_LogesWithStinger_V1.ogg" fadein 1
+    stop music fadeout 1.5
+    play ambiance AmbLoges fadein 1
 
     inconnu "Ok, hear me out... Je dis simplement que si l'on veut garder une logique dans la suite de nos numéros, on va devoir inverser l'ordre dans lequel on passe pour pouvoir faire de la place aux nouvelles."
 
