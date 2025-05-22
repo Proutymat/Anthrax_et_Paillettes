@@ -489,8 +489,8 @@ label del_6_bad:
 
 label final_delaunay:   
     scene CG delaunay with fade
-
     $ persistent.delaunay = True
+
     "Une nouvelle illustration est disponible dans l'album."
     "Musiques et Interviews débloqués."
 

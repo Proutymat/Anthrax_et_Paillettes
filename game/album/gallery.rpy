@@ -2,13 +2,13 @@ init python:
     gallery = Gallery()
 
     gallery.button("delaunay") 
-    gallery.unlock("delaunay", "persistent.delaunay")
+    gallery.unlock("persistent.delaunay")
 
     gallery.button("gatsby") 
-    gallery.unlock("gatsby", "persistent.gatsby")
+    gallery.unlock("persistent.gatsby")
 
     gallery.button("peacock")
-    gallery.unlock("peacock", "persistent.peacock")
+    gallery.unlock("persistent.peacock")
 
   
 screen gallery:
