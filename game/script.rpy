@@ -25,40 +25,71 @@ init python:
 # Déclarez sous cette ligne les images, avec l'instruction 'image'
 # ex: image eileen heureuse = "eileen_heureuse.png"
 
-image Mother:
-    "concept_mother"
+#Assets personnages
+image mother:
+    "images/Personnages/mother.png"
     zoom 0.35
 
-image Delaunay In Neutre:
-    "concept_delaunay_in"
+image delaunay_neutre:
+    "images/Personnages/delaunay_neutre.png"
     zoom 0.35
 
-image Delaunay Out Neutre:
-    "concept_delaunay_out"
+image leandre_neutre:
+    "images/Personnages/leandre_neutre.png"
     zoom 0.35
 
-image Gatsby In Neutre:
-    "concept_gatsby_in"
+image gatsby_neutre:
+    "images/Personnages/gatsby_neutre.png"
     zoom 0.35
 
-image Gatsby Out Neutre:
-    "concept_gatsby_out"
+image aimee_neutre:
+    "images/Personnages/aimee_neutre.png"
     zoom 0.35
 
-image Peacock In Neutre:
-    "concept_peacock_in"
+image peacock_neutre:
+    "images/Personnages/peacock_neutre.png"
     zoom 0.35
 
-image Peacock Out Neutre:
-    "concept_peacock_out"
+image imani_neutre:
+    "images/Personnages/imani_neutre.png"
     zoom 0.35
 
-image Auditorium = "Backgrounds/concept_auditorium.png"
+#Assets backgrounds
+image devanture = "Backgrounds/devanture.png"
 
-transform tall_right:
-    zoom 2.8
-    xalign 0.90
-    yalign 1.0
+image auditorium = "Backgrounds/auditorium.png"
+
+image bar = "Backgrounds/bar.png"
+
+image loges = "Backgrounds/loges.png"
+
+image rideau = "Backgrounds/rideau.png"
+
+init python:
+
+    tall_right = Transform(
+        zoom=2.2,       
+        xalign=0.90,
+        yanchor=1.0,
+        ypos=1.0,
+        xzoom=1
+    )
+
+    tall_left = Transform(
+        zoom=2.2,
+        xalign=0.15,
+        yanchor=1.0,
+        ypos=1.0,
+        xzoom=-1
+    )
+
+    tall_center = Transform(
+        zoom=2.2,
+        xalign=0.5,
+        yanchor=1.0,
+        ypos=1.0,
+        xzoom=1
+    )
 
 
 # Liste des sfx
@@ -114,7 +145,7 @@ label start:
 
 #0.1    
 label onboarding:
-    scene black
+    show devanture onlayer back
     with fade
     $ quick_menu = True  
 
@@ -152,10 +183,13 @@ label onboarding:
     anthrax "J’avais du mal à réaliser, mais on a convenu d’une nouvelle date d’entretien, en journée quand le cabaret serait vide, où elle m’expliquerait plus en détails le fonctionnement des backstages."
 
     play music IntroCabaret fadein 0.1
+    hide devanture
+    
+    show auditorium onlayer back
+    with fade
 
-    scene concept_auditorium
+    show mother at tall_center onlayer characters with fade
 
-    show Mother at tall_right
 
 #0.2
 
@@ -179,9 +213,17 @@ label onboarding:
     mother "Après, si tu es ici aujourd’hui, c’est par ce que c’est justement le genre de chose qui t’anime: te mettre en scène..."
     anthrax "Je ne l’avais pas encore abordé de cette perspective, mais l’idée d’être au milieu de cette scène, avec tous les regards tournés vers moi, m’excitait autant que me faisait appréhender."
 
+    hide mother onlayer characters
+
     stop music fadeout 2.0
 
 #0.5
+    hide auditorium onlayer back
+    show loges onlayer back
+    with fade
+
+    show mother at tall_right onlayer characters with dissolve
+
 
     anthrax "Nous sommes monté.e.s sur la scène et l'avons traversée avant de passer derrière les épais rideaux de velours. Nous sommes passé.e.s dans un véritable dédale de couloirs tandis qu'elle ouvrait quelques portes et m'expliquait la fonction de chaque pièce." 
     anthrax "Ici, la réserve des costumes ; où les armatures de dos, de hanches, d'épaules à plumes d'autruche, de floss, d'oie ou de faisan ; et les casques grandioses à strass, sequins, perles de verre ou fausses pierres précieuses, se faisaient la compétition." 
@@ -190,6 +232,9 @@ label onboarding:
     anthrax "Nous avons fini par pousser une dernière porte, celle des loges et avons été accueilli.e.s par une ambiance des plus... Studieuse."
 
     play music BarNeutral fadein 0.1
+
+    show imani_neutre at tall_left onlayer characters with dissolve
+
     inconnu "Ok, hear me out... Je dis simplement que si l'on veut garder une logique dans la suite de nos numéros, on va devoir inverser l'ordre dans lequel on passe pour pouvoir faire de la place aux nouvelles."
     
 
@@ -200,10 +245,16 @@ label onboarding:
     anthrax "Les doigts couverts de gel et un peigne à la main, la personne qui venait de lui répondre était en train de styliser une perruque noire de jais sur une tête de mannequin en plastique." 
     anthrax "Iel y plaquait les cheveux contre le front en de jolies boucles bien définies, et y fixait des perles nacrées avec un pistolet à colle." 
     anthrax "Un autre garçon, plus silencieux, avait la tête baissée sur une armature de fils de fer artisanale qu'il pliait à l'aide d'une pince, et bloquait fermement avec du chaterton."
+    
+    hide mother onlayer characters
+    show aimee_neutre at tall_right onlayer characters with dissolve
 
     inconnu "Et toi Del'? Qu'est-ce que tu en penses?"
 
     anthrax "Relevant la tête, le concerné remarqua qu'iels n'étaient plus trois dans la pièce et me fixa un instant, avant de se retourner vers ses interlocuteur.ice.s."
+
+    hide imani_neutre onlayer characters
+    show leandre_neutre at tall_left onlayer characters with dissolve
 
     delinconnu "Je pense qu'on devrait leur demander directement..." 
 
@@ -213,44 +264,69 @@ label onboarding:
 
     anthrax "Un court silence s'est installé, tandis que nous nous regardions dans le blanc des yeux, ne sachant pas tellement qui devait prendre la parole et que dire."
 
+    hide aimee_neutre onlayer characters
+    hide leandre_neutre onlayer characters
+    show mother at tall_center onlayer characters with dissolve
+
     mother "Les filles, je vous présente [player], iel nous rejoindra sous peu le temps d'arranger le spectacle, et je compte sur vous pour l'accueillir comme il se doit."
 
     anthrax "Semblant sortir de leur torpeur et reprendre leurs esprits, les artistes drag face à moi me sourirent et commencèrent à faire un tour des présentations."
+    
+    hide mother onlayer characters
+    show imani_neutre at tall_center onlayer characters with dissolve
 
     imani "Pardon, on a dû te sembler hyper antipathiques avec notre absence de réaction! Moi c'est Imani. Parfois on s'appelle aussi par nos noms de scène, donc tu peux aussi m'appeler Peacock si tu en as envie."
+    
+    hide imani_neutre onlayer characters
+    show mother at tall_center onlayer characters with dissolve
 
     mother "Imani se spécialise dans tout ce qui est du ressort de la performance vocale. Lipsync, chant, reading, shading, imitation... Si tu as des conseils de ce côté à aller chercher, c'est vers elle."
+    
+    hide mother onlayer characters
+    show imani_neutre at tall_center onlayer characters with dissolve
 
     imani "Ah oui! Et pour les pronoms, tu peux utiliser ceux dont tu as envie, je ne suis pas très regardant. Je me genre moi-même souvent au féminin."
+    
+    hide imani_neutre onlayer characters
+    show mother at tall_center onlayer characters with dissolve
 
     mother "Le petit timide là, qui essaye de faire en sorte de se faire oublier, c'est Léandre."
 
     anthrax "Prit en flagrant délit, le jeune homme tourna au pivoine et balbutia, mal à l'aise."
-
+    
+    hide mother onlayer characters
+    show leandre_neutre at tall_center onlayer characters with dissolve
+    
     leandre "N-Non! C'est juste que... J'ai toujours un peu de mal avec les nouvelles personnes. Excuse-moi... Oui, donc moi, c'est Léandre, j'utilise il/lui, et je fais principalement de l'effeuillage burlesque. C'est assez classique..."
-
+    
+    hide leandre_neutre onlayer characters
+    show aimee_neutre at tall_center onlayer characters with dissolve
+    
     inconnu "C'est tout sauf classique, ton striptease!"
 
     anthrax "Léandre se renfrogna davantage. Apparemment, les deux étaient suffisamment bon.ne.s ami.e.s pour se taquiner et s'embarrasser ainsi."
-
+    
     gatsby "Du coup, vu qu'on doit toujours parler à sa place, son nom de drag est Delaunay. Et moi c'est Gatsby! "
     gatsby "Parce que je suis magnifique, et que je n'avais pas plus d'inspi que ça au moment de choisir. Je me genre au neutre, c'est à dire avec ellui/iel. "
     gatsby "C'est non-négociable. "
-    aimee "Mais mon vrai prénom, c'est Aimé.e, avec un point. Pareil que Pea, tu peux aussi m'appeler comme ça si tu en as envie."
-
+    gatsby "Mais mon vrai prénom, c'est Aimé.e, avec un point. Pareil que Pea, tu peux aussi m'appeler comme ça si tu en as envie."
+    
+    hide aimee_neutre onlayer characters
    
-    hide Mother
+    
 
 
 
 label route_choice_intro:
-    window show 
+    show loges onlayer back 
+    show mother at tall_right onlayer characters 
     mother "Alors [player], si tu devais choisir l'un de mes \"babies\" comme marrain ou parraine, qui est-ce que tu désignerais ?" with fade
-
+    hide loges onlayer back
+    hide mother onlayer characters
+    stop music fadeout 0.1
     $ _window_hide()
     $ renpy.pause(0, hard=True)
     $ quick_menu = False
-   
     call screen choose_route with fade
 
         

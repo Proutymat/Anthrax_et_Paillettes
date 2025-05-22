@@ -7,8 +7,6 @@ screen choose_route():
     on "hide" action SetVariable("route_menu_enabled", True)
     
 
-    key "K_ESCAPE" action Hide("choose_route")
-
     $ quick_menu = False
     tag choose_route
     modal True  # empêche les interactions avec les autres éléments de l’UI

@@ -1,4 +1,4 @@
-#Fonctions custom
+# fonctions custom
 
 init python:
     def type_sound(event, interact=True, cps=35, **kwargs):
@@ -21,35 +21,75 @@ init python:
         if renpy.music.is_playing('sound'):
             renpy.pause((20-renpy.music.get_pos('sound')),hard=True)
 
-image Mother:
-    "mother"
+
+# Déclarez sous cette ligne les images, avec l'instruction 'image'
+# ex: image eileen heureuse = "eileen_heureuse.png"
+
+#Assets personnages
+image mother:
+    "images/Personnages/mother.png"
     zoom 0.35
 
-image Delaunay Neutre:
-    "delaunay_neutre"
+image delaunay_neutre:
+    "images/Personnages/delaunay_neutre.png"
     zoom 0.35
 
-image Léandre Neutre:
-    "leandre_neutre"
+image leandre_neutre:
+    "images/Personnages/leandre_neutre.png"
     zoom 0.35
 
-image Gatsby Neutre:
-    "gatsby_neutre"
+image gatsby_neutre:
+    "images/Personnages/gatsby_neutre.png"
     zoom 0.35
 
-image Aimée Neutre:
-    "aime.e_neutre"
+image aimee_neutre:
+    "images/Personnages/aimee_neutre.png"
     zoom 0.35
 
-image Peacock Neutre:
-    "peacock_neutre"
+image peacock_neutre:
+    "images/Personnages/peacock_neutre.png"
     zoom 0.35
 
-image Imani Neutre:
-    "imani_neutre"
+image imani_neutre:
+    "images/Personnages/imani_neutre.png"
     zoom 0.35
 
-image Auditorium = "Backgrounds/concept_auditorium.png"
+#Assets backgrounds
+image devanture = "Backgrounds/devanture.png"
+
+image auditorium = "Backgrounds/auditorium.png"
+
+image bar = "Backgrounds/bar.png"
+
+image loges = "Backgrounds/loges.png"
+
+image rideau = "Backgrounds/rideau.png"
+
+init python:
+
+    tall_right = Transform(
+        zoom=2.2,       
+        xalign=0.90,
+        yanchor=1.0,
+        ypos=1.0,
+        xzoom=1
+    )
+
+    tall_left = Transform(
+        zoom=2.2,
+        xalign=0.15,
+        yanchor=1.0,
+        ypos=1.0,
+        xzoom=-1
+    )
+
+    tall_center = Transform(
+        zoom=2.2,
+        xalign=0.5,
+        yanchor=1.0,
+        ypos=1.0,
+        xzoom=1
+    )
 
 #illustration de fin
 image CG_gatsby = "images/CGs/gatsby.jpg"
