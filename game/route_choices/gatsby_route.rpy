@@ -90,10 +90,6 @@ init python:
         xzoom=1
     )
 
-#illustration de fin
-image CG_gatsby = "images/CGs/gatsby.jpg"
-
-
 # Liste des sfx
 define type_sounds = ['TextMix-001.ogg','TextMix-002.ogg','TextMix-003.ogg','TextMix-004.ogg','TextMix-005.ogg','TextMix-006.ogg','TextMix-007.ogg','TextMix-008.ogg','TextMix-009.ogg','TextMix-010.ogg']
 
@@ -446,12 +442,13 @@ label gat_6_bad:
     
 
 label final_gatsby:
-    scene CG gatsby with fade
 
-    $ persistent.gatsby = True
-    "Une nouvelle illustration est disponible dans l'album."
-    "Musiques et Interviews débloqués."
-
+    image CG_gatsby = "images/CGs/gatsby.jpg"
+    show CG_gatsby with fade
+    "Nouvelle illustration débloquée"
+    hide CG_gatsby with fade
+    $ persistent.gatsby_unlocked = True
+    "Interview et musiques débloquées"
     pause 1.0
 
     scene black with fade

@@ -96,9 +96,6 @@ init python:
         xzoom=1
     )
 
-#illustration de fin
-image CG_delaunay = "images/CGs/delaunay.jpg"
-
 
 # Liste des sfx
 define type_sounds = ['TextMix-001.ogg','TextMix-002.ogg','TextMix-003.ogg','TextMix-004.ogg','TextMix-005.ogg','TextMix-006.ogg','TextMix-007.ogg','TextMix-008.ogg','TextMix-009.ogg','TextMix-010.ogg']
@@ -129,6 +126,7 @@ define staff = Character('Staff', color="#FFFFFF", who_outlines=[(2, "#000000", 
 
 
 label delaunay_start:
+
 $ quick_menu = True
 $ start_parallax()
 show devanture onlayer back
@@ -472,7 +470,11 @@ label del_6_good:
 
     anthrax "WIP"
     leandre "WIP"
+    hide delaunay_neutre onlayer characters
+    hide devanture onlayer back
+    hide devanture onlayer farback
     call final_delaunay
+
 
 #DEL.6.BAD
 label del_6_bad:
@@ -480,22 +482,21 @@ label del_6_bad:
 
     anthrax "WIP"
     mother "WIP"
+    hide leandre_neutre onlayer characters
+    hide devanture onlayer back
+    hide devanture onlayer farback
     call final_delaunay
 
-    $_window_hide()
-    $ renpy.pause(0, hard=True)
+label final_delaunay:
     $ quick_menu = False
-    
-
-label final_delaunay:   
-    scene CG delaunay with fade
-    $ persistent.delaunay = True
-
-    "Une nouvelle illustration est disponible dans l'album."
-    "Musiques et Interviews débloqués."
-
+    image CG_delaunay = "images/CGs/delaunay.jpg"
+    scene CG_delaunay with fade
+    "Nouvelle illustration débloquée"
+    hide CG_delaunay with fade
+    $ persistent.delaunay_unlocked = True
+    "Interview et musiques débloquées"
     pause 1.0
 
     scene black with fade
-    $ renpy.save_persistent()
+
     $ renpy.full_restart()

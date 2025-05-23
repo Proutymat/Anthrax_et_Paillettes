@@ -65,6 +65,10 @@ image loges = "Backgrounds/loges.png"
 
 image rideau = "Backgrounds/rideau.png"
 
+#Illustration de fin 
+
+image CG_delaunay = "images/CGs/delaunay.jpg"
+
 init python:
 
     tall_right = Transform(
@@ -312,10 +316,6 @@ label onboarding:
     gatsby "Mais mon vrai prénom, c'est Aimé.e, avec un point. Pareil que Pea, tu peux aussi m'appeler comme ça si tu en as envie."
     
     hide aimee_neutre onlayer characters
-   
-    
-
-
 
 label route_choice_intro:
     show loges onlayer back 

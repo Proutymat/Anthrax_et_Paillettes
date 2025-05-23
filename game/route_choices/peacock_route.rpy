@@ -90,9 +90,6 @@ init python:
         xzoom=1
     )
 
-#illustration de fin
-image CG_delaunay = "images/CGs/delaunay.jpg"
-
 
 # Liste des sfx
 define type_sounds = ['TextMix-001.ogg','TextMix-002.ogg','TextMix-003.ogg','TextMix-004.ogg','TextMix-005.ogg','TextMix-006.ogg','TextMix-007.ogg','TextMix-008.ogg','TextMix-009.ogg','TextMix-010.ogg']
@@ -437,12 +434,13 @@ label pea_6_bad:
     
 
 label final_peacock:
-    scene CG peacock with fade
 
-    $ persistent.peacock = True
-    "Une nouvelle illustration est disponible dans l'album."
-    "Musiques et Interviews débloqués."
-
+    image CG_peacock = "images/CGs/peacock.jpg"
+    show CG_peacock with fade
+    "Nouvelle illustration débloquée"
+    hide CG_peacock with fade
+    $ persistent.peacock_unlocked = True
+    "Interview et musiques débloquées"
     pause 1.0
 
     scene black with fade

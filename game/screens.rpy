@@ -346,7 +346,7 @@ screen backstages():
                 spacing 100
                 xalign 0.5
 
-                textbutton "Album" action ShowMenu("gallery_delaunay") 
+                textbutton "Album" action ShowMenu("album") 
                 textbutton "Interviews" action ShowMenu ("music_room_interviews", mr=music_room_interviews)
                 textbutton "Juxebox" action ShowMenu ("music_room", mr=music_room)
                 
