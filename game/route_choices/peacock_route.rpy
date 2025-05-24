@@ -120,7 +120,7 @@ define staff = Character('Staff', color="#FFFFFF", who_outlines=[(2, "#000000", 
 
 label peacock_start:
 $ quick_menu = True
-scene Auditorium with fade
+scene loges onlayer back with fade
 
 #PEA.1
 
@@ -388,7 +388,7 @@ label pea_4_3:
 label pea_5:
 
     anthrax "Les yeux du public étaient encore rivés sur la scène où les restes du précédent numéro se faisaient débarrasser, qu'ils furent forcés de se retourner en entendant une voix rauque et a cappella démarrer le fameux 'Feeling Good' de Nina Simone depuis le fond de la salle."
-    anthrax "Les escarpins ancrés dans le marbre du comptoir du bar, un spot détournant sa silhouette en contre-jour pour ajouter un peu de pizzazz à son entrée, elle descendit tout en sensualité en se faisant porter par [BARMAN]."
+    anthrax "Les escarpins ancrés dans le marbre du comptoir du bar, un spot détournant sa silhouette en contre-jour pour ajouter un peu de pizzazz à son entrée, elle descendit tout en sensualité en se faisant porter par Doberman."
     anthrax "Imani se saisit des deux grands éventails à plumes que le staff lui proposait et le band lança le top départ de sa performance en arrivant en fanfare."
     anthrax "Se baladant entre les tables, sans manquer une seule note, son chant et sa danse induisaient une certaine transe chez le public ébahi."
     anthrax "Hypnotisante, chacun de ses coups de hanches, tourbillons de plumage et battement de cils soulevaient quelques sifflements jusqu'à ce que sa représentation ne se déplace sur l'estrade."

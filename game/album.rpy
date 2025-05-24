@@ -17,8 +17,8 @@ screen album:
     hbox:
         xalign 0.5
         yalign 0.5
-        spacing 30
-        grid 2 2:
+        spacing 70
+        grid 3 3:
             add gallery.make_button(name="delaunay",unlocked="images/CGs/small/delaunay_small.jpg",locked="images/CGs/small/locked.jpg") 
             add gallery.make_button(name="gatsby",unlocked="images/CGs/small/gatsby_small.jpg",locked="images/CGs/small/locked.jpg") 
             add gallery.make_button(name="peacock",unlocked="images/CGs/small/peacock_small.jpg",locked="images/CGs/small/locked.jpg") 
