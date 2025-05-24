@@ -149,7 +149,7 @@ label start:
 
 #0.1    
 label onboarding:
-    show devanture onlayer back
+    show devanture onlayer back 
     with fade
     $ quick_menu = True  
 
