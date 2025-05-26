@@ -65,9 +65,6 @@ image loges = "Backgrounds/loges.png"
 
 image rideau = "Backgrounds/rideau.png"
 
-#Illustration de fin 
-
-image CG_delaunay = "images/CGs/delaunay.jpg"
 
 init python:
 
@@ -131,7 +128,7 @@ define player = Character('[player_name]', color="#5928ed", who_outlines=[(2, "#
 
 
 label start:
-
+    $ quick_menu = False
     scene black
     with fade
     $player_name = renpy.input("Choisis le prénom d'Anthräx, ton personnage...")

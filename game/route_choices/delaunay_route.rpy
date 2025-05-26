@@ -470,7 +470,7 @@ label del_6_good:
 
     anthrax "WIP"
     leandre "WIP"
-    hide delaunay_neutre onlayer characters
+    hide leandre_neutre onlayer characters
     hide devanture onlayer back
     hide devanture onlayer farback
     call final_delaunay
