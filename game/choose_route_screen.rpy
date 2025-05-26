@@ -1,6 +1,4 @@
-label choose_route_label:
-    show screen choose_route
-
+label choose_route:
 screen choose_route():
 
     on "show" action SetVariable("route_menu_enabled", False)

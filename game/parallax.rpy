@@ -1,66 +1,69 @@
-﻿#Parallaxe
-init 800 python:
+define config.tag_layer = {
+    'devanture': 'back',
+    'auditorium': 'farBack',
+    'bar': 'back',
+    'loges': 'farBack',
+    'rideau': 'back',
+    'mother': 'back',
+    'delaunay_neutre': 'back',
+    'leandre_neutre': 'back',
+    'gatsby_neutre': 'back',
+    'aimee_neutre': 'back',
+    'peacock_neutre': 'back',
+    'imani_neutre': 'back',
+}
 
+init -1 python:
     class MouseParallax(renpy.Displayable):
         def __init__(self, layer_info):
             super(renpy.Displayable, self).__init__()
             self.xoffset, self.yoffset = 0.0, 0.0
+
             self.sort_layer = sorted(layer_info, reverse=True)
             cflayer = []
             masteryet = False
-
             for m, n in self.sort_layer:
-                if (not masteryet) and (m < 41):
+                if (not masteryet) and (m < 0):
                     cflayer.append("master")
                     masteryet = True
                 cflayer.append(n)
-
             if not masteryet:
                 cflayer.append("master")
-
-            cflayer.extend(["transient","characters","screens","overlay"])
+            cflayer.extend(["transient", "screens", "overlay"])
             config.layers = cflayer
             config.overlay_functions.append(self.overlay)
-
-            # Centrer au chargement sans attendre un mouvement souris
-            import pygame
-            self.event(pygame.event.Event(pygame.MOUSEMOTION),
-                       config.screen_width // 2,
-                       config.screen_height // 2,
-                       0)
+            return
 
         def render(self, width, height, st, at):
             return renpy.Render(width, height)
 
         def parallax(self, m):
             func = renpy.curry(trans)(disp=self, m=m)
-            return Transform(
-            function=func,
-            xpos=0.5, ypos=0.5,
-            xanchor=0.5, yanchor=0.5
-    )
+            return Transform(function=func)
 
         def overlay(self):
             ui.add(self)
             for m, n in self.sort_layer:
                 renpy.layer_at_list([self.parallax(m)], n)
+            return
 
         def event(self, ev, x, y, st):
             import pygame
             if ev.type == pygame.MOUSEMOTION:
-                self.xoffset = (float(x) / config.screen_width) - 0.5
-                self.yoffset = (float(y) / config.screen_height) - 0.5
+                self.xoffset = ((float)(x) / (config.screen_width)) - 0.5
+                self.yoffset = ((float)(y) / (config.screen_height)) - 1.0
             return
 
-    MouseParallax([
-        (30, "farback"),
-        (20, "back"),
-        (-20, "front"),
-        (-30, "inyourface")
-    ])
-
     def trans(d, st, at, disp=None, m=None):
-        factor = 0.5  # Réduire l’intensité du mouvement
-        d.xoffset = int(round(m * disp.xoffset * factor))
-        d.yoffset = int(round(m * disp.yoffset * factor))
+        d.xoffset, d.yoffset = int(round(m * disp.xoffset)), int(round(m * disp.yoffset))
+        if persistent.bg_parallax is False:
+            d.xoffset, d.yoffset = 0, 0
         return 0
+
+    MouseParallax([
+        (-20, "farthestBack"),
+        (-50, "farBack"),
+        (-80, "back"),
+        (-30, "front"),
+        (50, "inyourface")
+    ])
