@@ -168,26 +168,21 @@ label onboarding:
     play ambiance AmbAndrogameDay fadein 1
 
     mother "Bienvenue dans l'Androgame! J'espère que tu as fait bonne route."
+    queue music CabaretIntro
     mother "Tu avais l’air de dire dans nos échanges que tu n’habitais pas trop loin, le chemin n’a pas dû être bien  compliqué."
     anthrax "En effet, une fois que j’avais passé la porte pivotante, la hauteur sous plafond et les lustres géométriques faillirent me donner un torticolis."
-
-    queue music CabaretIntro
     queue music CabaretLightVerse
-
     anthrax "Je devais presque plisser les yeux pour repérer tous les petits détails dans la marqueterie, les dorures et les formes dans le papier peint."
     anthrax "Oui. Et puis, c’est le genre d’établissement qu’il est difficile de louper!"
     mother "Aha! Tu m’en vois ravie de l’entendre."
     mother "Je ne fais pas te faire patienter plus longtemps... Commençons par te faire une petite visite des lieux. Promis, tu vas t’y retrouver bien vite"
-
     queue music CabaretLightChorus
-
     mother "En arrivant, tu es passé.e par le lobby, le hall d’entrée, l’accueil... Tu peux l’appeler comme tu veux. Mais dans l’idée, passé ce guichet, les clients payent!"
     mother "Ce n’est pas trop dans notre politique cette histoire du \"le client est roi\", mais tu apprendras vite que c’est là que les pourboires se cachent"
 
     mother "Et nous voici donc dans l’auditorium! Il sera un peu comme ton meilleur ennemi, car peu importe le trac ou qui se retrouvera dans le public, il faudra grimper sur les planches!"
     mother "Après, si tu es ici aujourd’hui, c’est par ce que c’est justement le genre de chose qui t’anime: te mettre en scène..."
     anthrax "Je ne l’avais pas encore abordé de cette perspective, mais l’idée d’être au milieu de cette scène, avec tous les regards tournés vers moi, m’excitait autant que me faisait appréhender."
-
     stop music fadeout 1
     stop ambiance fadeout 10.0
 
@@ -225,6 +220,8 @@ label onboarding:
     delinconnu "Ou alors que ce serait justement l'occasion parfaite pour nous de revoir nos propres tours..." 
 
     anthrax "Un court silence s'est installé, tandis que nous nous regardions dans le blanc des yeux, ne sachant pas tellement qui devait prendre la parole et que dire."
+
+    #ajout musique loge à venir
 
     mother "Les filles, je vous présente [player], iel nous rejoindra sous peu le temps d'arranger le spectacle, et je compte sur vous pour l'accueillir comme il se doit."
 
