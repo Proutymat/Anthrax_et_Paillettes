@@ -1,9 +1,9 @@
 define config.tag_layer = {
-    'devanture': 'back',
-    'auditorium': 'farBack',
-    'bar': 'back',
-    'loges': 'farBack',
-    'rideau': 'back',
+    'devanture': 'farthestBack',
+    'auditorium': 'farthestBack',
+    'bar': 'farthestBack',
+    'loges': 'farthestBack',
+    'rideau': 'farthestBack',
     'mother': 'back',
     'delaunay_neutre': 'back',
     'leandre_neutre': 'back',
@@ -11,6 +11,11 @@ define config.tag_layer = {
     'aimee_neutre': 'back',
     'peacock_neutre': 'back',
     'imani_neutre': 'back',
+    'CG_delaunay' : 'front',
+    'CG_gatsby' : 'front',
+    'CG_peacock' : 'front',
+    'background_cg' : 'farthestBack'
+
 }
 
 init -1 python:

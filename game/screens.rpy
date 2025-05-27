@@ -1,10 +1,3 @@
-label test_parallax:
-    scene black
-    show devanture
-    "Est-ce que ça bouge ?"
-    return
-
-
 ################################################################################
 ## Initialisation
 ################################################################################
@@ -112,6 +105,7 @@ screen say(who, what):
 
     window:
         id "window"
+        yalign 0.98
 
         if who is not None:
 
@@ -249,19 +243,30 @@ style choice_button_text is default:
 ## certaines fonctions.
 
 screen quick_menu():
-
     zorder 100
 
     if quick_menu:
-
-        hbox:
-            style_prefix "quick"
-            xalign 0.0
+        fixed:
+            xalign 1.0
             yalign 0.0
-            spacing 10
+            xoffset 0
+            yoffset 0
 
-            imagebutton idle "menuUI/retourhud_idle.png" hover "menuUI/retourhud_hover.png" action Rollback()
-            imagebutton idle "menuUI/journal_idle.png" hover "menuUI/journal_hover.png" action ShowMenu('history')
+            frame:
+                background "menuUI/quick_background.png"
+                padding (20, 15)
+                xalign 1.0
+                yalign 0.0
+
+                hbox:
+                    style_prefix "quick"
+                    spacing 12
+
+                    imagebutton idle "menuUI/retourhud_idle.png" hover "menuUI/retourhud_hover.png" action Rollback()
+                    imagebutton idle "menuUI/journal_idle.png" hover "menuUI/journal_hover.png" action ShowMenu("history")
+                    imagebutton idle "menuUI/save_button_idle.png" hover "menuUI/save_button_hover.png" action ShowMenu("save")
+                    imagebutton idle "menuUI/pause_menu_idle.png" hover "menuUI/pause_menu_hover.png" action ShowMenu("pause_menu")
+
             #imagebutton idle "menuUI/avancerapide_idle.png" hover "menuUI/avancerapide_hover.png" action Skip() alternate Skip(fast=True, confirm=True)
 
             #textbutton _("Auto") action Preference("auto-forward", "toggle")

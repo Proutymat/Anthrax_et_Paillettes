@@ -115,7 +115,7 @@ define gui.textbox_yalign = 1.0
 ## parler. La valeur peut être un nombre entier de pixels depuis la gauche ou le
 ## haut ou 0.5 pour le centre.
 define gui.name_xpos = 150
-define gui.name_ypos = -88
+define gui.name_ypos = -80
 
 ## L’alignement horizontal du nom du personnage. La valeur peut être 0.0 pour un
 ## alignement à gauche, 0.5 pour le centrer et 1.0 pour un alignement à droite.

@@ -64,6 +64,10 @@ image loges = "Backgrounds/loges.png"
 
 image rideau = "Backgrounds/rideau.png"
 
+image CG_peacock = "images/CGs/peacock.jpg"
+
+image background_cg = "images/Backgrounds/background_cg.png"
+
 init python:
 
     tall_right = Transform(
@@ -120,7 +124,10 @@ define staff = Character('Staff', color="#FFFFFF", who_outlines=[(2, "#000000", 
 
 label peacock_start:
 $ quick_menu = True
-scene loges onlayer back with fade
+scene black with fade
+show loges
+show imani_neutre at tall_center with dissolve
+
 
 #PEA.1
 
@@ -434,9 +441,16 @@ label pea_6_bad:
     
 
 label final_peacock:
+    hide imani_neutre
+    hide loges
 
-    image CG_peacock = "images/CGs/peacock.jpg"
+    $ quick_menu = False
+    
+    scene background_cg
     show CG_peacock with fade
+
+
+    pause 1.0
     "Nouvelle illustration débloquée"
     hide CG_peacock with fade
     $ persistent.peacock_unlocked = True

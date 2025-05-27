@@ -64,6 +64,10 @@ image loges = "Backgrounds/loges.png"
 
 image rideau = "Backgrounds/rideau.png"
 
+image CG_gatsby = "images/CGs/gatsby.jpg"
+
+image background_cg = "images/Backgrounds/background_cg.png"
+
 init python:
 
     tall_right = Transform(
@@ -119,7 +123,9 @@ define staff = Character('Staff', color="#FFFFFF", who_outlines=[(2, "#000000", 
 
 label gatsby_start:
 $ quick_menu = True
-scene Auditorium with fade
+scene black with fade
+scene loges
+show aimee_neutre at tall_center with dissolve
 
 #GAT.1
 gatsby "Let's go ! On va former un duo d'enfer, je te le dis !"
@@ -442,15 +448,22 @@ label gat_6_bad:
     
 
 label final_gatsby:
+    hide aimee_neutre
+    hide loges
 
-    image CG_gatsby = "images/CGs/gatsby.jpg"
+    $ quick_menu = False
+    
+    scene background_cg
     show CG_gatsby with fade
+    
+    pause 1.0
     "Nouvelle illustration débloquée"
     hide CG_gatsby with fade
-    $ persistent.gatsby_unlocked = True
+    $ persistent.peacock_unlocked = True
     "Interview et musiques débloquées"
     pause 1.0
 
     scene black with fade
 
     $ renpy.full_restart()
+
