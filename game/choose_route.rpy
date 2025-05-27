@@ -9,7 +9,7 @@ define short_fade = Fade(0.1, 1, 0.2)
 
 label choose_route:
     scene black
-    show expression "images/Backgrounds/loges.png"
+    show expression "images/Backgrounds/background_cg.png"
     $ persistent.bg_parallax = False
     $ quick_menu = False
 

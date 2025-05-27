@@ -151,9 +151,13 @@ anthrax "Ça, je ne dis pas non!"
 
 
 #DEL.2
-anthrax "Nous sommes arrivé.e.s dans l'auditorium et nous sommes approché.e.s du comptoir derrière lequel brillaient un mur de bouteilles de formes et couleurs uniques. Le paradis du parfait mixologue."
-anthrax "Nous avions depuis le bar une vue imprenable sur la scène, légèrement en contrebas. Les tablées y étaient déjà dressées et se regroupaient autour du big band et de l'estrade secondaire au centre de la pièce."
-anthrax "L'immense lustre duquel pendaient des larmes de verre reflétait les spots de lumière à la manière d'une boule à facettes sur le papier peint texturé. Léandre s'assît sur l'une des chaises hautes de bois verni et commanda une citronnade au barman, et moi un allongé."
+hide loges
+show bar with fade
+
+"Nous sommes arrivé.e.s dans l'auditorium et nous sommes approché.e.s du comptoir derrière lequel brillaient un mur de bouteilles de formes et couleurs uniques. Le paradis du parfait mixologue."
+"Nous avions depuis le bar une vue imprenable sur la scène, légèrement en contrebas. Les tablées y étaient déjà dressées et se regroupaient autour du big band et de l'estrade secondaire au centre de la pièce."
+"L'immense lustre duquel pendaient des larmes de verre reflétait les spots de lumière à la manière d'une boule à facettes sur le papier peint texturé. Léandre s'assît sur l'une des chaises hautes de bois verni et commanda une citronnade au barman, et moi un allongé."
+"Léandre s'assît sur l'une des chaises hautes de bois verni et commanda une citronnade au barman, et moi un allongé."
 
 leandre "Alors dis-moi, qu’est-ce qui t’amène ici ?"
 
@@ -163,6 +167,8 @@ leandre "Eh bien... Oui ? Enfin, ça me semblait être un bon début de conversa
 
 anthrax "Oh. Eh bien... J’ai commencé le drag dans le confort de mon appart, sur les réseaux sociaux. Je n’ai jamais mis les pieds dans une troupe. Ou même un cabaret pour tout te dire."
 anthrax "C’est un peu impressionnant. Je me demande si j’ai ma place. Je ne réalise pas que je l’ai remportée, cette audition."
+anthrax "J'ai toujours été attiré.e par le burlesque, les plumes, le vintage, l'impétueux..."
+anthrax "Je ne réalise pas que je l'ai remportée, cette audition."
 
 leandre "Hm... C’est bien le genre de Mother de recruter quelqu’un de ton acabit. Plein.e de potentiel, mais qui ne sait pas par où commencer. J’étais exactement pareil."
 
@@ -184,10 +190,13 @@ leandre "Et bien... J’étais en train de décrocher des études, j’étais da
 leandre "Vraiment, une vraie crise de la vingtaine... J’en ris maintenant, mais ce n’était pas du tout drôle à l’époque."
 leandre "Et finalement, Mother m’a pris sous son aile et m’a aidé à me sortir de tout cela."
 
+
 #Choix DEL.2
 label choix_del2:
     $ quick_menu = False
     
+    show leandre_neutre at tall_right
+    with fade
     menu: 
         anthrax "Et finalement, Mother m’a pris sous son aile et m’a aidé à me sortir de tout cela."
         "Oh! Tu as transitionné?":
@@ -201,7 +210,9 @@ label choix_del2:
 #DEL.2.1
 label del_2_1:
     $ quick_menu = True
-
+    
+    show leandre_neutre at tall_center
+    with fade
     anthrax "Oh! Tu as transitionné? !"
     leandre "Yep."
     call del_3
@@ -209,7 +220,9 @@ label del_2_1:
 #DEL.2.2
 label del_2_2:
     $ quick_menu = True
-
+    
+    show leandre_neutre at tall_center
+    with fade
     anthrax "Et comment est-ce que tu as rencontré Mother?"
     mother "Ma belle attends je t'explque"
     call del_3
@@ -217,7 +230,9 @@ label del_2_2:
 #DEL.2.3
 label del_2_3:
     $ quick_menu = True
-
+    
+    show leandre_neutre at tall_center
+    with fade
     anthrax "Choix wip"
     mother "Script wip"
     call del_3
@@ -228,11 +243,12 @@ label del_3:
 
 #Dialogue WIP 
 
-
 #Choix DEL.3
 label choix_del3:
     $ quick_menu = False
-
+    
+    show leandre_neutre at tall_right
+    with fade
     menu: 
         "WIP":
             call del_3_1
@@ -244,7 +260,9 @@ label choix_del3:
 #DEL.3.1
 label del_3_1:
     $ quick_menu = True
-
+    
+    show leandre_neutre at tall_center
+    with fade
     anthrax "WIP"
     leandre "WIP"
     call del_4
@@ -252,7 +270,9 @@ label del_3_1:
 #DEL.3.2
 label del_3_2:
     $ quick_menu = True
-
+    
+    show leandre_neutre at tall_center
+    with fade
     anthrax "WIP"
     mother "WIP"
     call del_4
@@ -260,7 +280,9 @@ label del_3_2:
 #DEL.3.3
 label del_3_3:
     $ quick_menu = True
-
+    
+    show leandre_neutre at tall_center
+    with fade
     anthrax "WIP"
     mother "WIP"
     call del_4
@@ -280,7 +302,9 @@ label del_4:
 #Choix DEL.4
 label choix_del4:
     $ quick_menu = False
-
+    
+    show leandre_neutre at tall_right
+    with fade
     menu: 
         anthrax "Qu'est-ce que tu fais à jouer le timide ? Approche, je ne vais pas te manger."
         "Franchement, tu me manges quand tu veux":
@@ -293,6 +317,9 @@ label choix_del4:
 #DEL.4.1
 label del_4_1:
     $ quick_menu = True
+    
+    show leandre_neutre at tall_center
+    with fade
 
     anthrax "Franchement, tu me manges quand tu veux"
 
@@ -338,6 +365,9 @@ label del_4_1:
 #DEL.4.2
 label del_4_2:
     $ quick_menu = True
+    
+    show leandre_neutre at tall_center
+    with fade
 
     anthrax "J'adore la manière dont tu prends confiance en toi avec Delaunay"
     anthrax "Qu'est-ce qui change quand tu te costumes ?"
@@ -373,6 +403,9 @@ label del_4_2:
 #DEL.4.3
 label del_4_3:
     $ quick_menu = True
+
+    show leandre_neutre at tall_center
+    with fade
 
     anthrax "\"Timide ? Moi ?\""
 
@@ -456,6 +489,8 @@ label del_6:
 #Choix DEL.6
 label choix_del6:
     $ quick_menu = False
+    show leandre_neutre at tall_right
+    with fade
 
     menu: 
         "WIP":
@@ -466,6 +501,8 @@ label choix_del6:
 #DEL.6.GOOD
 label del_6_good:
     $ quick_menu = True
+    show leandre_neutre at tall_center
+    with fade
 
     anthrax "WIP"
     leandre "WIP"
@@ -475,6 +512,8 @@ label del_6_good:
 #DEL.6.BAD
 label del_6_bad:
     $ quick_menu = True
+    show leandre_neutre at tall_center
+    with fade
 
     anthrax "WIP"
     mother "WIP"

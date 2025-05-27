@@ -144,6 +144,8 @@ anthrax "Ça me tente bien."
 
 
 #GAT.2
+hide loges
+show bar with fade
 
 
 #Dialogue WIP
@@ -153,6 +155,9 @@ anthrax "Ça me tente bien."
 #Choix GAT.2
 label choix_gat2:
     $ quick_menu = False
+    
+    show aimee_neutre at tall_right
+    with fade
 
     menu: 
         "WIP":
@@ -166,14 +171,20 @@ label choix_gat2:
 #GAT.2.1
 label gat_2_1:
     $ quick_menu = True
+    
+    show aimee_neutre at tall_center
+    with fade
 
     anthrax "WIP"
-    leandre "WIP"
+    aimee "WIP"
     call gat_3
 
 #GAT.2.2
 label gat_2_2:
     $ quick_menu = True
+    
+    show aimee_neutre at tall_center
+    with fade
 
     anthrax "WIP"
     mother "WIP"
@@ -182,6 +193,9 @@ label gat_2_2:
 #GAT.2.3
 label gat_2_3:
     $ quick_menu = True
+
+    show aimee_neutre at tall_center
+    with fade
 
     anthrax "WIP"
     mother "WIP"
@@ -198,6 +212,9 @@ label gat_3:
 label choix_gat3:
     $ quick_menu = False
 
+    show aimee_neutre at tall_right
+    with fade
+
     menu: 
         "WIP":
             call gat_3_1
@@ -210,13 +227,19 @@ label choix_gat3:
 label gat_3_1:
     $ quick_menu = True
 
+    show aimee_neutre at tall_center
+    with fade
+
     anthrax "WIP"
-    leandre "WIP"
+    aimee "WIP"
     call gat_4
 
 #GAT.3.2
 label gat_3_2:
     $ quick_menu = True
+    
+    show aimee_neutre at tall_center
+    with fade
 
     anthrax "WIP"
     mother "WIP"
@@ -225,6 +248,9 @@ label gat_3_2:
 #GAT.3.3
 label gat_3_3:
     $ quick_menu = True
+
+    show aimee_neutre at tall_center
+    with fade
 
     anthrax "WIP"
     mother "WIP"
@@ -260,6 +286,9 @@ label gat_4:
 label choix_gat4:
     $ quick_menu = False
 
+    show aimee_neutre at tall_right
+    with fade
+
     menu: 
         anthrax "Je lui tendis en réfléchissant à quoi dire pour meubler le silence."
         "Ce n'est pas trop compliqué de performer? Je veux dire... Le rapport au corps, tout ça....?":
@@ -272,6 +301,9 @@ label choix_gat4:
 #GAT.4.1
 label gat_4_1:
     $ quick_menu = True
+    
+    show aimee_neutre at tall_center
+    with fade
 
     anthrax "Ce n'est pas trop compliqué de performer ? Je veux dire... Le rapport au corps, tout ça... ?"
 
@@ -318,6 +350,9 @@ label gat_4_1:
 label gat_4_2:
     $ quick_menu = True
 
+    show aimee_neutre at tall_center
+    with fade
+
     anthrax "Je te trouve courageux.e... Tout ce que tu réussis à accomplir sans que ça ait vraiment l'air de t'affecter."
 
     gatsby "Ce n'est pas du courage ça. Ça s'appelle juste vivre... Tu dis ça parce que tu as du mal à comprendre."
@@ -361,6 +396,9 @@ label gat_4_2:
 #GAT.4.3
 label gat_4_3:
     $ quick_menu = True
+
+    show aimee_neutre at tall_center
+    with fade
 
     anthrax "J'étais persuadé.e qu'avec tout ce que tu m'as mentionné avant, tu ne toucherais plus jamais aux arts acrobatiques."
 
@@ -424,6 +462,9 @@ label gat_6:
 #Choix GAT.6
 label choix_gat6:
     $ quick_menu = False
+    
+    show aimee_neutre at tall_right
+    with fade
 
     menu: 
         "WIP":
@@ -434,14 +475,20 @@ label choix_gat6:
 #GAT.6.GOOD
 label gat_6_good:
     $ quick_menu = True
+    
+    show aimee_neutre at tall_center
+    with fade
 
     anthrax "WIP"
-    leandre "WIP"
+    aimee "WIP"
     call final_gatsby
 
 #GAT.6.BAD
 label gat_6_bad:
     $ quick_menu = True
+    
+    show aimee_neutre at tall_center
+    with fade
 
     anthrax "WIP"
     mother "WIP"

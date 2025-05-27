@@ -303,9 +303,6 @@ label onboarding:
 
     stop music fadeout 1.5
     play ambiance AmbLoges fadein 1
-
-    inconnu "Ok, hear me out... Je dis simplement que si l'on veut garder une logique dans la suite de nos numéros, on va devoir inverser l'ordre dans lequel on passe pour pouvoir faire de la place aux nouvelles."
-
     show imani_neutre at tall_left  with dissolve
 
     inconnu "Ok, hear me out... Je dis simplement que si l'on veut garder une logique dans la suite de nos numéros, on va devoir inverser l'ordre dans lequel on passe pour pouvoir faire de la place aux nouvelles."
@@ -340,7 +337,7 @@ label onboarding:
     hide leandre_neutre 
     show mother at tall_center  with dissolve
 
-    mother "Les filles, je vous présente [player], iel nous rejoindra sous peu le temps d'arranger le spectacle, et je compte sur vous pour l'accueillir comme il se doit."
+    mother "Oh! Je vois que vous faites connaissance! Les filles, je vous présente [player_name], iel nous rejoindra sous peu le temps d'arranger le spectacle, et je compte sur vous pour l'acceuillir comme il se doit."
 
     anthrax "Semblant sortir de leur torpeur et reprendre leurs esprits, les artistes drag face à moi me sourirent et commencèrent à faire un tour des présentations."
     
@@ -364,7 +361,7 @@ label onboarding:
 
     mother "Le petit timide là, qui essaye de faire en sorte de se faire oublier, c'est Léandre."
 
-    anthrax "Prit en flagrant délit, le jeune homme tourna au pivoine et balbutia, mal à l'aise."
+    "Prit en flagrant délit, le jeune homme tourna au pivoine et balbutia, mal à l'aise."
     
     hide mother 
     show leandre_neutre at tall_center with dissolve
@@ -376,7 +373,7 @@ label onboarding:
     
     inconnu "C'est tout sauf classique, ton striptease!"
 
-    anthrax "Léandre se renfrogna davantage. Apparemment, les deux étaient suffisamment bon.ne.s ami.e.s pour se taquiner et s'embarrasser ainsi."
+    "Léandre se renfrogna davantage. Apparemment, les deux étaient suffisamment bon.ne.s ami.e.s pour se taquiner et s'embarrasser ainsi."
     
     gatsby "Du coup, vu qu'on doit toujours parler à sa place, son nom de drag est Delaunay. Et moi c'est Gatsby! "
     gatsby "Parce que je suis magnifique, et que je n'avais pas plus d'inspi que ça au moment de choisir. Je me genre au neutre, c'est à dire avec ellui/iel. "
