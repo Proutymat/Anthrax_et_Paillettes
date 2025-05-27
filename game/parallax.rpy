@@ -4,6 +4,7 @@ define config.tag_layer = {
     'bar': 'farthestBack',
     'loges': 'farthestBack',
     'rideau': 'farthestBack',
+    'balcon': 'farthestBack',
     'mother': 'back',
     'delaunay_neutre': 'back',
     'leandre_neutre': 'back',
