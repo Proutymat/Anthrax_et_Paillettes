@@ -170,11 +170,11 @@ label choix_pea2:
 
     menu: 
         "WIP":
-            call pea_2_1 
+            call pea_2_1 from _call_pea_2_1 
         "WIP":
-            call pea_2_2 
+            call pea_2_2 from _call_pea_2_2 
         "WIP":
-            call pea_2_3 
+            call pea_2_3 from _call_pea_2_3 
           
 
 #PEA.2.1
@@ -186,7 +186,7 @@ label pea_2_1:
 
     anthrax "WIP"
     peacock "WIP"
-    call del_3 
+    call del_3 from _call_del_3_4 
 
 #PEA.2.2
 label pea_2_2:
@@ -197,7 +197,7 @@ label pea_2_2:
 
     anthrax "WIP"
     mother "WIP"
-    call pea_3 
+    call pea_3 from _call_pea_3 
 
 #PEA.2.3
 label pea_2_3:
@@ -208,7 +208,7 @@ label pea_2_3:
 
     anthrax "WIP"
     mother "WIP"
-    call pea_3 
+    call pea_3 from _call_pea_3_1 
 
 #PEA.3
 label pea_3:
@@ -225,11 +225,11 @@ label choix_pea3:
 
     menu: 
         "WIP":
-            call pea_3_1 
+            call pea_3_1 from _call_pea_3_1_1 
         "WIP":
-            call pea_3_2
+            call pea_3_2 from _call_pea_3_2
         "WIP":
-            call pea_3_3 
+            call pea_3_3 from _call_pea_3_3 
 
 #PEA.3.1
 label pea_3_1:
@@ -240,7 +240,7 @@ label pea_3_1:
 
     anthrax "WIP"
     imani "WIP"
-    call pea_4 
+    call pea_4 from _call_pea_4 
 
 #PEA.3.2
 label pea_3_2:
@@ -251,7 +251,7 @@ label pea_3_2:
 
     anthrax "WIP"
     mother "WIP"
-    call pea_4 
+    call pea_4 from _call_pea_4_1 
 
 #PEA.3.3
 label pea_3_3:
@@ -262,7 +262,7 @@ label pea_3_3:
 
     anthrax "WIP"
     mother "WIP"
-    call pea_4 
+    call pea_4 from _call_pea_4_2 
 
 #PEA.4
 label pea_4:
@@ -288,11 +288,11 @@ label choix_pea4:
     menu: 
         peacock "Hm... Je ne sais pas trop. Peut-être peux-tu vérifier l'état des plumes de mes éventails ? Je les ai changées il y a peu, mais elles ont peut-être besoin d'être ébouriffées."
         "Oui, bien sûr. Ca fait longtemps que tu fais ce show? Avec les plumes je veux dire...":
-            call pea_4_1 
+            call pea_4_1 from _call_pea_4_1_1 
         "Sans soucis! Tu comptes chanter aussi? Je vois que tu as un micro d'installé...":
-            call pea_4_2 
+            call pea_4_2 from _call_pea_4_2_1 
         "Les ébouriffer? Est-ce que c'est pour mieux te cacher lors de l'effeuillage?":
-            call pea_4_3 
+            call pea_4_3 from _call_pea_4_3 
 
 #PEA.4.1
 label pea_4_1:
@@ -338,7 +338,7 @@ label pea_4_1:
 
     peacock "Déjà ?! Bon, plus qu'à se dépêcher..."
     
-    call pea_5 
+    call pea_5 from _call_pea_5 
 
 #PEA.4.2
 label pea_4_2:
@@ -381,7 +381,7 @@ label pea_4_2:
 
     peacock "Déjà ?! Bon, plus qu'à se dépêcher..."
 
-    call pea_5 
+    call pea_5 from _call_pea_5_1 
 
 #PEA.4.3
 label pea_4_3:
@@ -429,7 +429,7 @@ label pea_4_3:
 
     peacock "Déjà ?! Bon, plus qu'à se dépêcher..."
    
-    call pea_5 
+    call pea_5 from _call_pea_5_2 
 
 #PEA.5
 label pea_5:
@@ -443,7 +443,7 @@ label pea_5:
     anthrax "Son charisme, sa vivacité d'esprit et sa répartie étaient bien connus des habitué.e.s du cabaret, qui venaient parfois uniquement pour participer à cet instant léger et sarcastique."
     anthrax "Peacock se faisait règle de ne jamais reproduire un gig deux fois, de la même manière que ses tenues selon ses propres termes."
   
-    call pea_6 
+    call pea_6 from _call_pea_6 
 
 #PEA.6
 label pea_6:
@@ -461,9 +461,9 @@ label choix_pea6:
 
     menu: 
         "WIP":
-            call pea_6_good 
+            call pea_6_good from _call_pea_6_good 
         "WIP":
-            call pea_6_bad 
+            call pea_6_bad from _call_pea_6_bad 
 
 #PEA.6.GOOD
 label pea_6_good:
@@ -474,7 +474,7 @@ label pea_6_good:
 
     anthrax "WIP"
     imani "WIP"
-    call final_peacock 
+    call final_peacock from _call_final_peacock 
 
 #PEA.6.BAD
 label pea_6_bad:
@@ -485,7 +485,7 @@ label pea_6_bad:
 
     anthrax "WIP"
     mother "WIP"
-    call final_peacock 
+    call final_peacock from _call_final_peacock_1 
 
     
 

@@ -162,11 +162,11 @@ label choix_gat2:
 
     menu: 
         "WIP":
-            call gat_2_1 
+            call gat_2_1 from _call_gat_2_1 
         "WIP":
-            call gat_2_2 
+            call gat_2_2 from _call_gat_2_2 
         "WIP":
-            call gat_2_3 
+            call gat_2_3 from _call_gat_2_3 
           
 
 #GAT.2.1
@@ -178,7 +178,7 @@ label gat_2_1:
 
     anthrax "WIP"
     aimee "WIP"
-    call gat_3 
+    call gat_3 from _call_gat_3 
 
 #GAT.2.2
 label gat_2_2:
@@ -189,7 +189,7 @@ label gat_2_2:
 
     anthrax "WIP"
     mother "WIP"
-    call gat_3 
+    call gat_3 from _call_gat_3_1 
 
 #GAT.2.3
 label gat_2_3:
@@ -200,7 +200,7 @@ label gat_2_3:
 
     anthrax "WIP"
     mother "WIP"
-    call gat_3 
+    call gat_3 from _call_gat_3_2 
 
 #GAT.3
 label gat_3:
@@ -218,11 +218,11 @@ label choix_gat3:
 
     menu: 
         "WIP":
-            call gat_3_1 
+            call gat_3_1 from _call_gat_3_1_1 
         "WIP":
-            call gat_3_2 
+            call gat_3_2 from _call_gat_3_2_1 
         "WIP":
-            call gat_3_3 
+            call gat_3_3 from _call_gat_3_3 
 
 #GAT.3.1
 label gat_3_1:
@@ -233,7 +233,7 @@ label gat_3_1:
 
     anthrax "WIP"
     aimee "WIP"
-    call gat_4 
+    call gat_4 from _call_gat_4 
 
 #GAT.3.2
 label gat_3_2:
@@ -244,7 +244,7 @@ label gat_3_2:
 
     anthrax "WIP"
     mother "WIP"
-    call gat_4 
+    call gat_4 from _call_gat_4_1 
 
 #GAT.3.3
 label gat_3_3:
@@ -255,7 +255,7 @@ label gat_3_3:
 
     anthrax "WIP"
     mother "WIP"
-    call gat_4 
+    call gat_4 from _call_gat_4_2 
 
 #GAT.4
 label gat_4:
@@ -293,11 +293,11 @@ label choix_gat4:
     menu: 
         anthrax "Je lui tendis en réfléchissant à quoi dire pour meubler le silence."
         "Ce n'est pas trop compliqué de performer? Je veux dire... Le rapport au corps, tout ça....?":
-            call gat_4_1 
+            call gat_4_1 from _call_gat_4_1_1 
         "Je te trouve courageux.e... Tout ce que tu réussis à accomplir sans que ça ai vraiment l'air de t'affecter":
-            call gat_4_2 
+            call gat_4_2 from _call_gat_4_2_1 
         "Je comprends, je pense. Mais tu n'as pas à te sentir gêné.e avec moi, tu sais?":
-            call gat_4_3 
+            call gat_4_3 from _call_gat_4_3 
 
 #GAT.4.1
 label gat_4_1:
@@ -345,7 +345,7 @@ label gat_4_1:
 
     gatsby "Allez ! On doit mettre les bouchées doubles si on veut être à l'heure, girlies ! Chop-chop !"
 
-    call gat_5 
+    call gat_5 from _call_gat_5 
 
 #GAT.4.2
 label gat_4_2:
@@ -391,7 +391,7 @@ label gat_4_2:
 
     gatsby "Allez ! On doit mettre les bouchées doubles si on veut être à l'heure girlies ! Chop-chop !"
     
-    call gat_5 
+    call gat_5 from _call_gat_5_1 
 
    
 #GAT.4.3
@@ -436,7 +436,7 @@ label gat_4_3:
 
     gatsby "Allez ! On doit mettre les bouchées doubles si on veut être à l'heure, girlies ! Chop-chop !"
 
-    call gat_5 
+    call gat_5 from _call_gat_5_2 
 
 #GAT.5
 label gat_5:
@@ -451,7 +451,7 @@ label gat_5:
     anthrax "Mais le risque calculé, et son sourire fier tandis qu'iel se redressait en disait long sur le contrôle que Gatsby avait sur la situation."
     anthrax "Quelques minutes plus tard et notre acrobate revint sur la terre ferme, saluant avec humilité son public ému."
 
-call gat_6 
+call gat_6 from _call_gat_6 
 
 #GAT.6
 label gat_6:
@@ -469,9 +469,9 @@ label choix_gat6:
 
     menu: 
         "WIP":
-            call gat_6_good 
+            call gat_6_good from _call_gat_6_good 
         "WIP":
-            call gat_6_bad 
+            call gat_6_bad from _call_gat_6_bad 
 
 #GAT.6.GOOD
 label gat_6_good:
@@ -482,7 +482,7 @@ label gat_6_good:
 
     anthrax "WIP"
     aimee "WIP"
-    call final_gatsby 
+    call final_gatsby from _call_final_gatsby 
 
 #GAT.6.BAD
 label gat_6_bad:
@@ -493,7 +493,7 @@ label gat_6_bad:
 
     anthrax "WIP"
     mother "WIP"
-    call final_gatsby 
+    call final_gatsby from _call_final_gatsby_1 
 
     
 
