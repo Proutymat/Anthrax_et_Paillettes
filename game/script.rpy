@@ -21,6 +21,8 @@ init python:
         if renpy.music.is_playing('sound'):
             renpy.pause((20-renpy.music.get_pos('sound')),hard=True)
 
+    renpy.music.register_channel("ambiance", "sfx", True)
+
 
 # Déclarez sous cette ligne les images, avec l'instruction 'image'
 # ex: image eileen heureuse = "eileen_heureuse.png"
@@ -97,23 +99,27 @@ init python:
 
 
 # Liste des sfx
-define type_sounds = ['TextMix-001.ogg','TextMix-002.ogg','TextMix-003.ogg','TextMix-004.ogg','TextMix-005.ogg','TextMix-006.ogg','TextMix-007.ogg','TextMix-008.ogg','TextMix-009.ogg','TextMix-010.ogg']
+define type_sounds = ['audio/SFX/TextMix-001.ogg','audio/SFX/TextMix-002.ogg','audio/SFX/TextMix-003.ogg','audio/SFX/TextMix-004.ogg','audio/SFX/TextMix-005.ogg','audio/SFX/TextMix-006.ogg','audio/SFX/TextMix-007.ogg','audio/SFX/TextMix-008.ogg','audio/SFX/TextMix-009.ogg','audio/SFX/TextMix-010.ogg']
+
+# Liste des ambiances
+define audio.AmbAndrogameDay = "audio/Amb/Amb_AndrogameDay_V3.ogg"
+define audio.AmbLoges = "audio/Amb/Amb_LogesWithStinger_V1.ogg"
 
 # Liste des musiques
-define audio.GoodVibeIntro = "ON_GoodVibeIntro_V2.ogg"
-define audio.IntroGoodVibe1 = "ON_GoodVibeA_V2.ogg"
-define audio.IntroGoodVibe2 = "ON_GoodVibeB_V2.ogg"
-define audio.IntroGoodVibe3 = "AP_IntroGoodVib3_V1.ogg"
-define audio.IntroGoodVibe4 = "AP_IntroGoodVib4_V1.ogg"
-define audio.IntroCabaret = "AP_ON2.1_V1.ogg"
-define audio.Intro2Cabaret = "AP_Intro2_V1.ogg"
-define audio.Verse = "ON_CabaretLightVerse_V1.ogg"
-define audio.CabaretLightChorus = "ON_CabaretLightChorus_V1.ogg"
-define audio.CabaretLightSolo = "ON_CabaretLightSolo_V1.ogg"
-define audio.BarNeutral = "AP_Bar_V2.ogg"
-define audio.BalconyIntro = "ON_Backstage_V1.ogg"
-define audio.BalconyLoop = "ON_BackstageLoop_V1.ogg"
-define audio.Backstage = "ON_Loge_V1.ogg"
+define audio.GoodVibeIntro = "audio/Music/ON_GoodVibeIntro_V2.ogg"
+define audio.IntroGoodVibe1 = "audio/Music/ON_GoodVibeA_V2.ogg"
+define audio.IntroGoodVibe2 = "audio/Music/ON_GoodVibeB_V2.ogg"
+define audio.IntroGoodVibe3 = "audio/Music/AP_IntroGoodVib3_V1.ogg"
+define audio.IntroGoodVibe4 = "audio/Music/AP_IntroGoodVib4_V1.ogg"
+define audio.CabaretEntrance = "audio/Music/ON_CabaretEntrance_V1.ogg"
+define audio.CabaretIntro = "audio/Music/ON_CabaretIntro_V1_.ogg"
+define audio.CabaretLightVerse = "audio/Music/ON_CabaretLightVerse_V1.ogg"
+define audio.CabaretLightChorus = "audio/Music/ON_CabaretLightChorus_V1.ogg"
+define audio.CabaretLightSolo = "audio/Music/ON_CabaretLightSolo_V1.ogg"
+define audio.BarNeutral = "audio/Music/AP_Bar_V2.ogg"
+define audio.BackstageMysterious = "audio/Music/ON_Backstage_V1.ogg"
+define audio.BackstageLoop = "audio/Music/ON_BackstageLoop_V1.ogg"
+define audio.BackstageSkype = "audio/Music/ON_Loge_V1.ogg"
 
 # Déclarez les personnages utilisés dans le jeu.
 define mother = Character('Mother', color="#b51963", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=25, callback=type_sound, cb_cps=25)
@@ -238,7 +244,7 @@ label onboarding:
 
     "J’avais du mal à réaliser, mais on a convenu d’une nouvelle date d’entretien, en journée quand le cabaret serait vide, où elle m’expliquerait plus en détails le fonctionnement des backstages."
 
-    play music IntroCabaret fadein 0.1
+    play music CabaretEntrance fadein 0.1
     hide devanture
     
     show auditorium  
@@ -249,21 +255,24 @@ label onboarding:
 
 #0.2
 
+    play ambiance AmbAndrogameDay fadein 1
+
     mother "Bienvenue dans l'Androgame! J'espère que tu as fait bonne route."
     mother "Tu avais l’air de dire dans nos échanges que tu n’habitais pas trop loin, le chemin n’a pas dû être bien  compliqué."
     "En effet, une fois passée la porte pivotante, la hauteur sous plafond et les lustres géométriques faillirent me donner un torticolis."
 
-    queue music Intro2Cabaret
-    queue music Verse
+    queue music CabaretIntro
+    queue music CabaretLightVerse
 
     "Je devais presque plisser les yeux pour repérer tous les petits détails dans la marqueterie, les dorures et les formes dans le papier peint."
     anthrax "Oui. Et puis, c’est le genre d’établissement qu’il est difficile de louper!"
     mother "Aha! Tu m’en vois ravie de l’entendre."
     mother "Je ne fais pas te faire patienter plus longtemps... Commençons par te faire une petite visite des lieux. Promis, tu vas t’y retrouver bien vite"
+
+    queue music CabaretLightChorus
+
     mother "En arrivant, tu es passé.e par le lobby, le hall d’entrée, l’accueil... Tu peux l’appeler comme tu veux. Mais dans l’idée, passé ce guichet, les clients payent!"
     mother "Ce n’est pas trop dans notre politique cette histoire du \"le client est roi\", mais tu apprendras vite que c’est là que les pourboires se cachent"
-
-    queue music Chorus
 
     mother "Et nous voici donc dans l’auditorium! Il sera un peu comme ton meilleur ennemi, car peu importe le trac ou qui se retrouvera dans le public, il faudra grimper sur les planches!"
     mother "Après, si tu es ici aujourd’hui, c’est par ce que c’est justement le genre de chose qui t’anime: te mettre en scène..."
@@ -272,12 +281,15 @@ label onboarding:
 
     hide mother 
 
-    stop music fadeout 2.0
+    stop music fadeout 1
+    stop ambiance fadeout 10.0
+
 
 #0.5
     hide auditorium 
     show loges 
     with fade
+    play music BackstageLoop
 
     show mother at tall_right  with dissolve
 
@@ -289,7 +301,10 @@ label onboarding:
     "Nous avons fini par pousser une dernière porte, celle des loges et avons été accueilli.e.s par une ambiance des plus..."
     "Studieuse."
 
-    play music BarNeutral fadein 0.1
+    stop music fadeout 1.5
+    play ambiance AmbLoges fadein 1
+
+    inconnu "Ok, hear me out... Je dis simplement que si l'on veut garder une logique dans la suite de nos numéros, on va devoir inverser l'ordre dans lequel on passe pour pouvoir faire de la place aux nouvelles."
 
     show imani_neutre at tall_left  with dissolve
 
@@ -370,6 +385,11 @@ label onboarding:
     
     hide aimee_neutre 
     jump route_choice_intro
+
+    stop ambiance fadeout 1
+
+
+
 
 label route_choice_intro:
     show loges 
