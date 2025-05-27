@@ -258,11 +258,14 @@ label onboarding:
     play ambiance AmbAndrogameDay fadein 1
 
     mother "Bienvenue dans l'Androgame! J'espère que tu as fait bonne route."
-    mother "Tu avais l’air de dire dans nos échanges que tu n’habitais pas trop loin, le chemin n’a pas dû être bien  compliqué."
-    "En effet, une fois passée la porte pivotante, la hauteur sous plafond et les lustres géométriques faillirent me donner un torticolis."
 
     queue music CabaretIntro
     queue music CabaretLightVerse
+    
+    mother "Tu avais l’air de dire dans nos échanges que tu n’habitais pas trop loin, le chemin n’a pas dû être bien  compliqué."
+    "En effet, une fois passée la porte pivotante, la hauteur sous plafond et les lustres géométriques faillirent me donner un torticolis."
+
+   
 
     "Je devais presque plisser les yeux pour repérer tous les petits détails dans la marqueterie, les dorures et les formes dans le papier peint."
     anthrax "Oui. Et puis, c’est le genre d’établissement qu’il est difficile de louper!"
@@ -304,8 +307,6 @@ label onboarding:
     stop music fadeout 1.5
     play ambiance AmbLoges fadein 1
     show imani_neutre at tall_left  with dissolve
-
-    inconnu "Ok, hear me out... Je dis simplement que si l'on veut garder une logique dans la suite de nos numéros, on va devoir inverser l'ordre dans lequel on passe pour pouvoir faire de la place aux nouvelles."
 
     "L'homme qui venait de prendre la parole était en train de gribouiller avec insistance un schéma dans son carnet, une aiguille à coudre entre les lèvres et une pièce de tissu sur les genoux, à laquelle il semblait broder des sequins un à un."
 
@@ -380,10 +381,10 @@ label onboarding:
     gatsby "C'est non-négociable. "
     gatsby "Mais mon vrai prénom, c'est Aimé.e, avec un point. Pareil que Pea, tu peux aussi m'appeler comme ça si tu en as envie."
     
+    stop ambiance fadeout 1
     hide aimee_neutre 
     jump route_choice_intro
 
-    stop ambiance fadeout 1
 
 
 

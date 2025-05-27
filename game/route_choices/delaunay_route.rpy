@@ -107,7 +107,7 @@ define audio.IntroCabaret = "AP_ON2.1_V1.ogg"
 define audio.Intro2Cabaret = "AP_Intro2_V1.ogg"
 define audio.Verse = "AP_Verse_V1.ogg"
 define audio.Chorus = "AP_Chorus_V1.ogg"
-define audio.BarNeutral = "AP_Bar_V2.ogg"
+define audio.BarNeutral = "audio/Music/RUN_BarNeutral_V1.ogg"
 
 
 # Déclarez les personnages utilisés dans le jeu.
@@ -153,11 +153,11 @@ anthrax "Ça, je ne dis pas non!"
 #DEL.2
 hide loges
 show bar with fade
+play music BarNeutral
 
-"Nous sommes arrivé.e.s dans l'auditorium et nous sommes approché.e.s du comptoir derrière lequel brillaient un mur de bouteilles de formes et couleurs uniques. Le paradis du parfait mixologue."
-"Nous avions depuis le bar une vue imprenable sur la scène, légèrement en contrebas. Les tablées y étaient déjà dressées et se regroupaient autour du big band et de l'estrade secondaire au centre de la pièce."
-"L'immense lustre duquel pendaient des larmes de verre reflétait les spots de lumière à la manière d'une boule à facettes sur le papier peint texturé. Léandre s'assît sur l'une des chaises hautes de bois verni et commanda une citronnade au barman, et moi un allongé."
-"Léandre s'assît sur l'une des chaises hautes de bois verni et commanda une citronnade au barman, et moi un allongé."
+anthrax "Nous sommes arrivé.e.s dans l'auditorium et nous sommes approché.e.s du comptoir derrière lequel brillaient un mur de bouteilles de formes et couleurs uniques. Le paradis du parfait mixologue."
+anthrax "Nous avions depuis le bar une vue imprenable sur la scène, légèrement en contrebas. Les tablées y étaient déjà dressées et se regroupaient autour du big band et de l'estrade secondaire au centre de la pièce."
+anthrax "L'immense lustre duquel pendaient des larmes de verre reflétait les spots de lumière à la manière d'une boule à facettes sur le papier peint texturé. Léandre s'assît sur l'une des chaises hautes de bois verni et commanda une citronnade au barman, et moi un allongé."
 
 leandre "Alors dis-moi, qu’est-ce qui t’amène ici ?"
 
@@ -190,6 +190,7 @@ leandre "Et bien... J’étais en train de décrocher des études, j’étais da
 leandre "Vraiment, une vraie crise de la vingtaine... J’en ris maintenant, mais ce n’était pas du tout drôle à l’époque."
 leandre "Et finalement, Mother m’a pris sous son aile et m’a aidé à me sortir de tout cela."
 
+stop music fadeout 2.0
 
 #Choix DEL.2
 label choix_del2:
