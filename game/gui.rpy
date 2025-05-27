@@ -115,7 +115,7 @@ define gui.textbox_yalign = 1.0
 ## parler. La valeur peut être un nombre entier de pixels depuis la gauche ou le
 ## haut ou 0.5 pour le centre.
 define gui.name_xpos = 150
-define gui.name_ypos = -88
+define gui.name_ypos = -80
 
 ## L’alignement horizontal du nom du personnage. La valeur peut être 0.0 pour un
 ## alignement à gauche, 0.5 pour le centrer et 1.0 pour un alignement à droite.
@@ -216,11 +216,10 @@ define gui.quick_button_text_selected_color = gui.accent_color
 ## permettre au joueur de choisir telle ou telle action, tel ou tel dialogue.
 
 define gui.choice_button_width = 1000
-define gui.choice_button_height = 70
+define gui.choice_button_height = 80
 define gui.choice_button_tile = False
 define gui.choice_button_borders = Borders(0, 0, 0, 0)
-define gui.choice_button_text_font = gui.text_font
-define gui.choice_button_text_size = gui.text_size
+define gui.choice_button_text_size = 25
 define gui.choice_button_text_xalign = 0.5
 define gui.choice_button_text_yalign = 0.5
 define gui.choice_button_text_layout = "subtitle"

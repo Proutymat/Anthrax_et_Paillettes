@@ -105,6 +105,7 @@ screen say(who, what):
 
     window:
         id "window"
+        yalign 0.98
 
         if who is not None:
 
@@ -242,19 +243,30 @@ style choice_button_text is default:
 ## certaines fonctions.
 
 screen quick_menu():
-
     zorder 100
 
     if quick_menu:
-
-        hbox:
-            style_prefix "quick"
-            xalign 0.0
+        fixed:
+            xalign 1.0
             yalign 0.0
-            spacing 10
+            xoffset 0
+            yoffset 0
 
-            imagebutton idle "menuUI/retourhud_idle.png" hover "menuUI/retourhud_hover.png" action Rollback()
-            imagebutton idle "menuUI/journal_idle.png" hover "menuUI/journal_hover.png" action ShowMenu('history')
+            frame:
+                background "menuUI/quick_background.png"
+                padding (20, 15)
+                xalign 1.0
+                yalign 0.0
+
+                hbox:
+                    style_prefix "quick"
+                    spacing 12
+
+                    imagebutton idle "menuUI/retourhud_idle.png" hover "menuUI/retourhud_hover.png" action Rollback()
+                    imagebutton idle "menuUI/journal_idle.png" hover "menuUI/journal_hover.png" action ShowMenu("history")
+                    imagebutton idle "menuUI/save_button_idle.png" hover "menuUI/save_button_hover.png" action ShowMenu("save")
+                    imagebutton idle "menuUI/pause_menu_idle.png" hover "menuUI/pause_menu_hover.png" action ShowMenu("pause_menu")
+
             #imagebutton idle "menuUI/avancerapide_idle.png" hover "menuUI/avancerapide_hover.png" action Skip() alternate Skip(fast=True, confirm=True)
 
             #textbutton _("Auto") action Preference("auto-forward", "toggle")
@@ -330,6 +342,7 @@ screen pause_menu():
 screen backstages():
 
     tag menu
+    add "images/Backgrounds/loges.png"
     
     frame:
         xalign 0.5
@@ -340,17 +353,20 @@ screen backstages():
             spacing 50
             xalign 0.5
 
-            text "Backstages" 
-
-            hbox:
-                spacing 100
+            vbox:
+                spacing 5
                 xalign 0.5
 
-                textbutton "Album" action ShowMenu("gallery_delaunay") 
-                textbutton "Interviews" action ShowMenu ("music_room_interviews", mr=music_room_interviews)
-                textbutton "Juxebox" action ShowMenu ("music_room", mr=music_room)
-                
-             
+                imagebutton:
+                    auto "menuUI/album_%s.png" action ShowMenu ("album")
+                imagebutton:
+                    auto "menuUI/interviews_%s.png" action ShowMenu ("music_room_interviews", mr=music_room_interviews)
+                imagebutton:
+                    auto "menuUI/juxebox_%s.png" action ShowMenu ("music_room", mr=music_room)
+                imagebutton:
+                    auto "menuUI/credits_%s.png" action ShowMenu("about")
+                                                   
+
     vbox:
         at Transform(xalign=0.05, yalign=0.98)
         imagebutton idle "menuUI/retour_idle.png" hover "menuUI/retour_hover.png" action Return()
@@ -371,7 +387,7 @@ screen navigation():
 
         if renpy.get_screen("main_menu"):
             xalign 0.5
-            yalign 0.8
+            yalign 0.85
         else:
             xoffset 100
             yalign 0.5
@@ -421,10 +437,6 @@ screen navigation():
             textbutton _("Menu principal") action MainMenu()
 
         #textbutton _("Crédits") action ShowMenu("about")
-        imagebutton:
-             auto "menuUI/credits_%s.png"
-             action ShowMenu("about")
-
 
         #if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
@@ -464,7 +476,7 @@ screen main_menu():
     ## Ceci assure que tout autre screen de menu est remplacé.
     tag menu
 
-    add gui.main_menu_background
+    add("gui/main_menu.png")
 
     ## Cette frame vide obscurcit le menu principal.
     frame:
@@ -688,7 +700,7 @@ screen about():
         
         vbox:
                 at Transform(xalign=0.05, yalign=0.98)
-                imagebutton idle "menuUI/retour_idle.png" hover "menuUI/retour_hover.png" action Return()
+                imagebutton idle "menuUI/retour_idle.png" hover "menuUI/retour_hover.png" action ShowMenu("backstages")
 
 
 
@@ -883,15 +895,14 @@ style slot_button_text:
 
 screen preferences():
 
-    tag preferences
+    tag menu
+    add "images/Backgrounds/auditorium.png"
+    
+    vbox:
+        at Transform(xalign=0.1, yalign=0.98)
+        imagebutton idle "menuUI/retour_idle.png" hover "menuUI/retour_hover.png" action Return()
 
-    # use game_menu(_("Préférences"), scroll="viewport"):
-    add Solid("#000000ff")  
 
-    frame:
-        style "menu_frame"
-        has vbox
-        spacing 20
     vbox:
         align (0.5, 0.5)
         spacing 30
@@ -985,11 +996,7 @@ screen preferences():
                     textbutton _("Couper tous les sons"):
                         action Preference("all mute", "toggle")
                         style "text_button"
-                  
-    vbox:
-        at Transform(xalign=0.1, yalign=0.98)
-        imagebutton idle "menuUI/retour_idle.png" hover "menuUI/retour_hover.png" action Return()
-
+                
 
 
 style pref_label is gui_label

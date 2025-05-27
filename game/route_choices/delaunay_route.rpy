@@ -1,4 +1,4 @@
-#Fonctions custom
+# fonctions custom
 
 init python:
     def type_sound(event, interact=True, cps=35, **kwargs):
@@ -21,38 +21,81 @@ init python:
         if renpy.music.is_playing('sound'):
             renpy.pause((20-renpy.music.get_pos('sound')),hard=True)
 
-image Mother:
-    "mother"
+
+# Déclarez sous cette ligne les images, avec l'instruction 'image'
+# ex: image eileen heureuse = "eileen_heureuse.png"
+
+#Assets personnages
+image mother:
+    "images/Personnages/mother.png"
     zoom 0.35
 
-image Delaunay Neutre:
-    "delaunay_neutre"
+image delaunay_neutre:
+    "images/Personnages/delaunay_neutre.png"
     zoom 0.35
 
-image Léandre Neutre:
-    "leandre_neutre"
+image leandre_neutre:
+    "images/Personnages/leandre_neutre.png"
     zoom 0.35
 
-image Gatsby Neutre:
-    "gatsby_neutre"
+image gatsby_neutre:
+    "images/Personnages/gatsby_neutre.png"
     zoom 0.35
 
-image Aimée Neutre:
-    "aime.e_neutre"
+image aimee_neutre:
+    "images/Personnages/aimee_neutre.png"
     zoom 0.35
 
-image Peacock Neutre:
-    "peacock_neutre"
+image peacock_neutre:
+    "images/Personnages/peacock_neutre.png"
     zoom 0.35
 
-image Imani Neutre:
-    "imani_neutre"
+image imani_neutre:
+    "images/Personnages/imani_neutre.png"
     zoom 0.35
 
-image Auditorium = "Backgrounds/concept_auditorium.png"
+#Assets backgrounds
+image devanture = "Backgrounds/devanture.png"
 
-#illustration de fin
+image auditorium = "Backgrounds/auditorium.png"
+
+image bar = "Backgrounds/bar.png"
+
+image loges = "Backgrounds/loges.png"
+
+image rideau = "Backgrounds/rideau.png"
+
+image balcon = "Backgrounds/balcon.png"
+
 image CG_delaunay = "images/CGs/delaunay.jpg"
+
+image background_cg = "images/Backgrounds/background_cg.png"
+
+init python:
+
+    tall_right = Transform(
+        zoom=2.2,       
+        xalign=0.90,
+        yanchor=1.0,
+        ypos=1.0,
+        xzoom=1
+    )
+
+    tall_left = Transform(
+        zoom=2.2,
+        xalign=0.15,
+        yanchor=1.0,
+        ypos=1.0,
+        xzoom=-1
+    )
+
+    tall_center = Transform(
+        zoom=2.2,
+        xalign=0.5,
+        yanchor=1.0,
+        ypos=1.0,
+        xzoom=1
+    )
 
 
 # Liste des sfx
@@ -68,22 +111,26 @@ define audio.BarNeutral = "AP_Bar_V2.ogg"
 
 
 # Déclarez les personnages utilisés dans le jeu.
-define mother = Character('Mother', color="#880000", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=25, callback=type_sound, cb_cps=25)
-define anthrax = Character('Anthräx', color="#6600b9", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=35, callback=type_sound, cb_cps=35)
-define delaunay = Character('Delaunay', color="#2d9ead", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
-define gatsby = Character('Gatsby', color="#003099", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
-define peacock = Character('Peacock', color="#be9f13", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
-define leandre = Character('Léandre', color="#be9f13", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
-define aimee = Character('Aimé.e', color="#be9f13", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
-define imani = Character('Imani', color="#be9f13", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
-define staff = Character('Staff', color="#be9f13", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
-define player = Character('[player_name]', color="#be9f13", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
+define mother = Character('Mother', color="#b51963", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=25, callback=type_sound, cb_cps=25)
+define anthrax = Character('Anthräx', color="#9370db", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=35, callback=type_sound, cb_cps=35)
+define delaunay = Character('Delaunay', color="#faaf90", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
+define gatsby = Character('Gatsby', color="#054fb9", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
+define peacock = Character('Peacock', color="#f57600", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
+define leandre = Character('Léandre', color="#faaf90", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
+define aimee = Character('Aimé.e', color="#054fb9", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
+define imani = Character('Imani', color="#f57600", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
+define inconnu = Character('???', color="#FFFFFF", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
+define delinconnu = Character('Del?', color="#faaf90", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
+define player = Character('[player_name]', color="#9370db", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
 
 
 
 label delaunay_start:
+$ persistent.bg_parallax = True
 $ quick_menu = True
-scene Auditorium with fade
+scene black with fade
+show loges
+show leandre_neutre at tall_center with dissolve
 
 #DEL.1
 leandre "Hey... Hum... Je suis content que tu m’aies choisi. Je ne pensais pas trop que ce serait le cas."
@@ -424,6 +471,7 @@ label del_6_good:
     leandre "WIP"
     call final_delaunay
 
+
 #DEL.6.BAD
 label del_6_bad:
     $ quick_menu = True
@@ -432,18 +480,20 @@ label del_6_bad:
     mother "WIP"
     call final_delaunay
 
-    $_window_hide()
-    $ renpy.pause(0, hard=True)
+label final_delaunay:
+    hide leandre_neutre
+    hide loges
+
     $ quick_menu = False
-    
 
-label final_delaunay:   
-    scene CG delaunay with fade
+    scene background_cg
+    show CG_delaunay with fade
 
-    $ persistent.delaunay = True
-    "Une nouvelle illustration est disponible dans l'album."
-    "Musiques et Interviews débloqués."
-
+    pause 1.0
+    "Nouvelle illustration débloquée"
+    hide CG_delaunay with fade
+    $ persistent.delaunay_unlocked = True
+    "Interview et musiques débloquées"
     pause 1.0
 
     scene black with fade
