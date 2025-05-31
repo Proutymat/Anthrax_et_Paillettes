@@ -59,7 +59,9 @@ image devanture = "Backgrounds/devanture.png"
 
 image auditorium = "Backgrounds/auditorium.png"
 
-image bar = "Backgrounds/bar.png"
+image bar:
+    "Backgrounds/bar.png"
+    zoom 0.7
 
 image loges = "Backgrounds/loges.png"
 
@@ -214,11 +216,11 @@ label choix_del2:
     menu: 
         anthrax "Et finalement, Mother m’a pris sous son aile et m’a aidé à me sortir de tout cela."
         "Oh! Tu as transitionné?":
-            call del_2_1
+            call del_2_1 from _call_del_2_1 
         "Et comment est-ce que tu as rencontré Mother?":
-            call del_2_2
+            call del_2_2 from _call_del_2_2 
         "choix del.2.3":
-            call del_2_3
+            call del_2_3 from _call_del_2_3 
           
 
 #DEL.2.1
@@ -229,7 +231,7 @@ label del_2_1:
     with fade
     anthrax "Oh! Tu as transitionné? !"
     leandre "Yep."
-    call del_3
+    call del_3 from _call_del_3 
 
 #DEL.2.2
 label del_2_2:
@@ -239,7 +241,7 @@ label del_2_2:
     with fade
     anthrax "Et comment est-ce que tu as rencontré Mother?"
     mother "Ma belle attends je t'explque"
-    call del_3
+    call del_3 from _call_del_3_1 
 
 #DEL.2.3
 label del_2_3:
@@ -249,7 +251,7 @@ label del_2_3:
     with fade
     anthrax "Choix wip"
     mother "Script wip"
-    call del_3
+    call del_3 from _call_del_3_2 
 
 #DEL.3
 label del_3:
@@ -265,11 +267,11 @@ label choix_del3:
     with fade
     menu: 
         "WIP":
-            call del_3_1
+            call del_3_1 from _call_del_3_1_1 
         "WIP":
-            call del_3_2
+            call del_3_2 from _call_del_3_2_1 
         "WIP":
-            call del_3_3
+            call del_3_3 from _call_del_3_3 
 
 #DEL.3.1
 label del_3_1:
@@ -279,7 +281,7 @@ label del_3_1:
     with fade
     anthrax "WIP"
     leandre "WIP"
-    call del_4
+    call del_4 from _call_del_4 
 
 #DEL.3.2
 label del_3_2:
@@ -289,7 +291,7 @@ label del_3_2:
     with fade
     anthrax "WIP"
     mother "WIP"
-    call del_4
+    call del_4 from _call_del_4_1 
 
 #DEL.3.3
 label del_3_3:
@@ -299,7 +301,7 @@ label del_3_3:
     with fade
     anthrax "WIP"
     mother "WIP"
-    call del_4
+    call del_4 from _call_del_4_2 
 
 #DEL.4
 label del_4:
@@ -324,11 +326,11 @@ label choix_del4:
     menu: 
         anthrax "Qu'est-ce que tu fais à jouer le timide ? Approche, je ne vais pas te manger."
         "Franchement, tu me manges quand tu veux":
-            call del_4_1
+            call del_4_1 from _call_del_4_1_1 
         "J'adore la manière dont tu prends confiance en toi avec Delaunay":
-            call del_4_2
+            call del_4_2 from _call_del_4_2_1 
         "Timide? Moi?":
-            call del_4_3
+            call del_4_3 from _call_del_4_3 
 
 #DEL.4.1
 label del_4_1:
@@ -376,7 +378,7 @@ label del_4_1:
 
     delaunay "Mon dieu, j'ai encore tellement à faire ! Vite [player] ! Un coup de main, vite !"
 
-    call del_5
+    call del_5 from _call_del_5 
 
 #DEL.4.2
 label del_4_2:
@@ -414,7 +416,7 @@ label del_4_2:
 
     delaunay "Mon dieu, j'ai encore tellement à faire ! Vite [player] ! Un coup de main, vite !"
 
-    call del_5
+    call del_5 from _call_del_5_1 
 
 #DEL.4.3
 label del_4_3:
@@ -475,7 +477,7 @@ label del_4_3:
 
     delaunay "Mon dieu, j'ai encore tellement à faire ! Vite [player] ! Un coup de main, vite !"
 
-    call del_5
+    call del_5 from _call_del_5_2 
 
 #DEL.5
 label del_5:
@@ -499,7 +501,7 @@ label del_5:
 #Dialogue WIP 
 
 
-call del_6
+call del_6 from _call_del_6 
 
 #DEL.6
 label del_6:
@@ -516,9 +518,9 @@ label choix_del6:
 
     menu: 
         "WIP":
-            call del_6_good
+            call del_6_good from _call_del_6_good 
         "WIP":
-            call del_6_bad
+            call del_6_bad from _call_del_6_bad 
 
 #DEL.6.GOOD
 label del_6_good:
@@ -528,7 +530,7 @@ label del_6_good:
 
     anthrax "WIP"
     leandre "WIP"
-    call final_delaunay
+    call final_delaunay from _call_final_delaunay 
 
 
 #DEL.6.BAD
@@ -539,7 +541,7 @@ label del_6_bad:
 
     anthrax "WIP"
     mother "WIP"
-    call final_delaunay
+    call final_delaunay from _call_final_delaunay_1 
 
 label final_delaunay:
     hide leandre_neutre
