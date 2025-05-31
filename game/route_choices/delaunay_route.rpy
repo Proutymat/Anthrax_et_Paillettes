@@ -101,13 +101,25 @@ init python:
 # Liste des sfx
 define type_sounds = ['TextMix-001.ogg','TextMix-002.ogg','TextMix-003.ogg','TextMix-004.ogg','TextMix-005.ogg','TextMix-006.ogg','TextMix-007.ogg','TextMix-008.ogg','TextMix-009.ogg','TextMix-010.ogg']
 
+#Liste des ambiances
+define audio.BarDay = "audio/Amb/Amb_BarDay_V2.ogg"
+
 # Liste des musiques
-define audio.IntroBS = "Hypnotized.mp3"
-define audio.IntroCabaret = "AP_ON2.1_V1.ogg"
-define audio.Intro2Cabaret = "AP_Intro2_V1.ogg"
-define audio.Verse = "AP_Verse_V1.ogg"
-define audio.Chorus = "AP_Chorus_V1.ogg"
-define audio.BarNeutral = "audio/Music/RUN_BarNeutral_V1.ogg"
+define audio.GoodVibeIntro = "audio/Music/ON_GoodVibeIntro_V2.ogg"
+define audio.IntroGoodVibe1 = "audio/Music/ON_GoodVibeA_V2.ogg"
+define audio.IntroGoodVibe2 = "audio/Music/ON_GoodVibeB_V2.ogg"
+define audio.IntroGoodVibe3 = "audio/Music/AP_IntroGoodVib3_V1.ogg"
+define audio.IntroGoodVibe4 = "audio/Music/AP_IntroGoodVib4_V1.ogg"
+define audio.CabaretEntrance = "audio/Music/ON_CabaretEntrance_V1.ogg"
+define audio.CabaretIntro = "audio/Music/ON_CabaretIntro_V1_.ogg"
+define audio.CabaretLightVerse = "audio/Music/ON_CabaretLightVerse_V1.ogg"
+define audio.CabaretLightChorus = "audio/Music/ON_CabaretLightChorus_V1.ogg"
+define audio.CabaretLightSolo = "audio/Music/ON_CabaretLightSolo_V1.ogg"
+define audio.BackstageMysterious = "audio/Music/ON_Backstage_V1.ogg"
+define audio.BackstageLoop = "audio/Music/ON_BackstageLoop_V1.ogg"
+define audio.BackstageSkype = "audio/Music/ON_Loge_V1.ogg"
+define audio.BarMusic = "audio/Music/RUN_BarNeutral_V1.ogg"
+define audio.ShowDelaunay = "audio/Music/SHOW_Delaunay_Idea1_V1.ogg"
 
 
 # Déclarez les personnages utilisés dans le jeu.
@@ -153,7 +165,8 @@ anthrax "Ça, je ne dis pas non!"
 #DEL.2
 hide loges
 show bar with fade
-play music BarNeutral
+play music BarMusic fadein 1.5 volume 0.5
+play ambiance BarDay fadein 0.5
 
 anthrax "Nous sommes arrivé.e.s dans l'auditorium et nous sommes approché.e.s du comptoir derrière lequel brillaient un mur de bouteilles de formes et couleurs uniques. Le paradis du parfait mixologue."
 anthrax "Nous avions depuis le bar une vue imprenable sur la scène, légèrement en contrebas. Les tablées y étaient déjà dressées et se regroupaient autour du big band et de l'estrade secondaire au centre de la pièce."
@@ -290,6 +303,8 @@ label del_3_3:
 
 #DEL.4
 label del_4:
+
+    stop ambiance fadeout 0.5
 
     anthrax "Au sein de la loge, une certaine tension planait au-dessus de la playlist qui tournait. Pas une mauvaise ambiance, non, plutôt une intense concentration."
     anthrax "Évidemment, tout le monde chit-chattait gaîment, mais je ne pus m'empêcher de fixer un instant Léandre."
@@ -466,6 +481,9 @@ label del_4_3:
 label del_5:
 
     anthrax "L’entracte arrivait déjà à sa fin et l’atmosphère était bouillonnante dans les coulisses. Derrière le rideau, les kittens et les régisseur.euse.s s’activaient à déplacer le décor en silence."
+
+    play music ShowDelaunay
+
     anthrax "Soudainement, un spot se braqua sur le velours et un “bang” de trompettes réveilla la foule. Puis une longue jambe dévoila sensuellement sa résille en sortant de l’entrouverture."
     anthrax "Au rythme de la musique, Delaunay fit son apparition sur le devant de la scène, sous les hurlements des fanatiques du premier rang."
     anthrax "Le temps qu’il ne chauffe la salle, les préparatifs de l’arrière-scène arrivaient à leur fin. Le rideau tomba et dévoila un immense verre à martini duquel s’échappaient des volutes de fumée."
@@ -473,6 +491,9 @@ label del_5:
     anthrax "Laissant la tension gagner le public, il finit par s’y glisser en arrière, laissant l’eau déborder ostensiblement sur la scène."
     anthrax "Il continua de se déshabiller avec lenteur et adresse, jusqu’à sortir de son corset un sous-vêtement trempé qu’il jeta insolemment."
     anthrax "L’effet dupait aisément son public et signa la fin de son acte."
+
+    stop music fadeout 2.0
+
     anthrax "Il se couvrit d’un long kimono et se fit aider pour descendre sans glisser avant de saluer fièrement les spectateur.ice.s, son make-up intact et un grand sourire aux lèvres."
 
 #Dialogue WIP 

@@ -101,12 +101,20 @@ init python:
 define type_sounds = ['TextMix-001.ogg','TextMix-002.ogg','TextMix-003.ogg','TextMix-004.ogg','TextMix-005.ogg','TextMix-006.ogg','TextMix-007.ogg','TextMix-008.ogg','TextMix-009.ogg','TextMix-010.ogg']
 
 # Liste des musiques
-define audio.IntroBS = "Hypnotized.mp3"
-define audio.IntroCabaret = "AP_ON2.1_V1.ogg"
-define audio.Intro2Cabaret = "AP_Intro2_V1.ogg"
-define audio.Verse = "AP_Verse_V1.ogg"
-define audio.Chorus = "AP_Chorus_V1.ogg"
-define audio.BarNeutral = "AP_Bar_V2.ogg"
+define audio.GoodVibeIntro = "audio/Music/ON_GoodVibeIntro_V2.ogg"
+define audio.IntroGoodVibe1 = "audio/Music/ON_GoodVibeA_V2.ogg"
+define audio.IntroGoodVibe2 = "audio/Music/ON_GoodVibeB_V2.ogg"
+define audio.IntroGoodVibe3 = "audio/Music/AP_IntroGoodVib3_V1.ogg"
+define audio.IntroGoodVibe4 = "audio/Music/AP_IntroGoodVib4_V1.ogg"
+define audio.CabaretEntrance = "audio/Music/ON_CabaretEntrance_V1.ogg"
+define audio.CabaretIntro = "audio/Music/ON_CabaretIntro_V1_.ogg"
+define audio.CabaretLightVerse = "audio/Music/ON_CabaretLightVerse_V1.ogg"
+define audio.CabaretLightChorus = "audio/Music/ON_CabaretLightChorus_V1.ogg"
+define audio.CabaretLightSolo = "audio/Music/ON_CabaretLightSolo_V1.ogg"
+define audio.BackstageMysterious = "audio/Music/ON_Backstage_V1.ogg"
+define audio.BackstageLoop = "audio/Music/ON_BackstageLoop_V1.ogg"
+define audio.BackstageSkype = "audio/Music/ON_Loge_V1.ogg"
+define audio.BarMusic = "audio/Music/RUN_BarNeutral_V1.ogg"
 
 
 # Déclarez les personnages utilisés dans le jeu.
