@@ -1,7 +1,7 @@
 # fonctions custom
 
 init python:
-    def type_sound(event, interact=True, cps=35, **kwargs):
+    def type_sound(event, interact=True, cps=35, boopfile=type_sounds, **kwargs):
         speed = int((0.1/cps)*1000)/1000
         silence = "<silence " + str(speed) + ">"
     
@@ -11,7 +11,7 @@ init python:
         if event == "show" :
             for i in range(100):
                 print(silence)
-                renpy.sound.queue(renpy.random.choice(type_sounds))
+                renpy.sound.queue(renpy.random.choice(boopfile))
                 renpy.sound.queue(silence)
 
         elif event == "slow_done" or event == "end":
@@ -100,6 +100,10 @@ init python:
 
 # Liste des sfx
 define type_sounds = ['audio/SFX/TextMix-001.ogg','audio/SFX/TextMix-002.ogg','audio/SFX/TextMix-003.ogg','audio/SFX/TextMix-004.ogg','audio/SFX/TextMix-005.ogg','audio/SFX/TextMix-006.ogg','audio/SFX/TextMix-007.ogg','audio/SFX/TextMix-008.ogg','audio/SFX/TextMix-009.ogg','audio/SFX/TextMix-010.ogg']
+define D_type_sounds = ['audio/SFX/AP_T_Text-001.ogg','audio/SFX/AP_T_Text-002.ogg','audio/SFX/AP_T_Text-003.ogg','audio/SFX/AP_T_Text-004.ogg']
+define M_type_sounds = ['audio/SFX/AP_T2_Text-001.ogg','audio/SFX/AP_T2_Text-002.ogg','audio/SFX/AP_T2_Text-003.ogg','audio/SFX/AP_T2_Text-004.ogg']
+define G_type_sounds = ['audio/SFX/AP_T3_Text-001.ogg','audio/SFX/AP_T3_Text-002.ogg','audio/SFX/AP_T3_Text-003.ogg','audio/SFX/AP_T3_Text-004.ogg'] 
+#define P_type_sounds =
 
 # Liste des ambiances
 define audio.AmbAndrogameDay = "audio/Amb/Amb_AndrogameDay_V3.ogg"
@@ -116,21 +120,24 @@ define audio.CabaretIntro = "audio/Music/ON_CabaretIntro_V1_.ogg"
 define audio.CabaretLightVerse = "audio/Music/ON_CabaretLightVerse_V1.ogg"
 define audio.CabaretLightChorus = "audio/Music/ON_CabaretLightChorus_V1.ogg"
 define audio.CabaretLightSolo = "audio/Music/ON_CabaretLightSolo_V1.ogg"
-define audio.BackstageMysterious = "audio/Music/ON_Backstage_V1.ogg"
-define audio.BackstageLoop = "audio/Music/ON_BackstageLoop_V1.ogg"
-define audio.BackstageSkype = "audio/Music/ON_Loge_V1.ogg"
+define audio.BackstageSt1 = "audio/Music/AP_Stinger1_V1.ogg"
+define audio.BackstageSt2 = "audio/Music/AP_Stinger2_V1.ogg"
+define audio.BackstageSt3 = "audio/Music/AP_Stinger3_V1.ogg"
+define audio.BackstageSt4 = "audio/Music/AP_Stinger4_V1.ogg"
+define audio.BackstageLoop = "audio/Music/AP_LogesTruc_V1.ogg"
+define audio.BackstageDrumLoop = "audio/Music/ON_BackStageLoop_V1.ogg"
 
 # Déclarez les personnages utilisés dans le jeu.
-define mother = Character('Mother', color="#b51963", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=25, callback=type_sound, cb_cps=25)
+define mother = Character('Mother', color="#b51963", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=25, callback=type_sound, cb_cps=25, cb_boopfile=M_type_sounds)
 define anthrax = Character('Anthräx', color="#9370db", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=35, callback=type_sound, cb_cps=35)
-define delaunay = Character('Delaunay', color="#faaf90", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
-define gatsby = Character('Gatsby', color="#054fb9", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
-define peacock = Character('Peacock', color="#f57600", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
-define leandre = Character('Léandre', color="#faaf90", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
-define aimee = Character('Aimé.e', color="#054fb9", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
+define delaunay = Character('Delaunay', color="#faaf90", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=D_type_sounds)
+define gatsby = Character('Gatsby', color="#054fb9", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=G_type_sounds)
+define peacock = Character('Peacock', color="#f57600", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)  
+define leandre = Character('Léandre', color="#faaf90", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=D_type_sounds)
+define aimee = Character('Aimé.e', color="#054fb9", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=G_type_sounds)
 define imani = Character('Imani', color="#f57600", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
 define inconnu = Character('???', color="#FFFFFF", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
-define delinconnu = Character('Del?', color="#faaf90", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
+define delinconnu = Character('Del?', color="#faaf90", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=D_type_sounds)
 define player = Character('[player_name]', color="9370db", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
 define staff = Character('Staff', color="#FFFFFF", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
 
@@ -210,8 +217,8 @@ label onboarding:
     with fade
     $ quick_menu = True  
 
+    
 
-    play music GoodVibeIntro fadein 3.0
     "L'Androgame..."
     "C’est dingue à quel point ce cabaret a reprit ses lettres de noblesse."
     "Je me souviens encore de quand je passais devant pour aller prendre le métro... Complètement défraichit, la pierre sale et les fenètres brisées."
@@ -305,6 +312,10 @@ label onboarding:
 
     stop music fadeout 1.5
     play ambiance AmbLoges fadein 1
+    play music BackstageDrumLoop
+
+    imani "Ok, hear me out... Je dis simplement que si l'on veut garder une logique dans la suite de nos numéros, on va devoir inverser l'ordre dans lequel on passe pour pouvoir faire de la place aux nouvelles."
+
     show imani_neutre at tall_left  with dissolve
 
     "L'homme qui venait de prendre la parole était en train de gribouiller avec insistance un schéma dans son carnet, une aiguille à coudre entre les lèvres et une pièce de tissu sur les genoux, à laquelle il semblait broder des sequins un à un."
@@ -336,6 +347,7 @@ label onboarding:
     hide aimee_neutre 
     hide leandre_neutre 
     show mother at tall_center  with dissolve
+    queue music CabaretLightChorus
 
     mother "Oh! Je vois que vous faites connaissance! Les filles, je vous présente [player_name], iel nous rejoindra sous peu le temps d'arranger le spectacle, et je compte sur vous pour l'acceuillir comme il se doit."
 
@@ -381,6 +393,7 @@ label onboarding:
     gatsby "Mais mon vrai prénom, c'est Aimé.e, avec un point. Pareil que Pea, tu peux aussi m'appeler comme ça si tu en as envie."
     
     stop ambiance fadeout 1
+    stop music fadeout 2.0
     hide aimee_neutre 
     jump route_choice_intro
 
