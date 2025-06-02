@@ -96,6 +96,48 @@ init python:
         xzoom=1
     )
 
+# Liste des sfx
+define type_sounds = ['audio/SFX/TextMix-001.ogg','audio/SFX/TextMix-002.ogg','audio/SFX/TextMix-003.ogg','audio/SFX/TextMix-004.ogg','audio/SFX/TextMix-005.ogg','audio/SFX/TextMix-006.ogg','audio/SFX/TextMix-007.ogg','audio/SFX/TextMix-008.ogg','audio/SFX/TextMix-009.ogg','audio/SFX/TextMix-010.ogg']
+define D_type_sounds = ['audio/SFX/AP_T1-001.ogg','audio/SFX/AP_T1-002.ogg','audio/SFX/AP_T1-003.ogg','audio/SFX/AP_T1-004.ogg']
+define M_type_sounds = ['audio/SFX/AP_T2-001.ogg','audio/SFX/AP_T2-002.ogg','audio/SFX/AP_T2-003.ogg','audio/SFX/AP_T2-004.ogg']
+define G_type_sounds = ['audio/SFX/AP_T3-001.ogg','audio/SFX/AP_T3-002.ogg','audio/SFX/AP_T3-003.ogg','audio/SFX/AP_T3-004.ogg'] 
+define P_type_sounds = ['audio/SFX/AP_T4-001.ogg','audio/SFX/AP_T4-002.ogg','audio/SFX/AP_T4-003.ogg','audio/SFX/AP_T4-004.ogg']
+
+# Liste des ambiances
+define audio.AmbAndrogameDay = "audio/Amb/Amb_CabaretDay_V3.ogg"
+define audio.AmbLoges = "audio/Amb/Amb_LogesDay_V3.ogg"
+define audio.AmbRue = "audio/Amb/Amb_Rue_V1.ogg"
+define audio.AmbLogesNight = "audio/Amb/Amb_LogesNight_V4.ogg"
+define audio.AmbDelShow = "audio/Amb/AP_Amb_ShowDel_V1.ogg"
+define audio.BarDay = "audio/Amb/Amb_BarDay_V2.ogg"
+
+# Liste des réactions de foule
+define audio.CrowdDel1 = "audio/Amb/AP_Crowd_ShowDelSt1.ogg"
+define audio.CrowdDel2 = "audio/Amb/AP_Crowd_ShowDelSt2.ogg"
+define audio.CrowdDel3 = "audio/Amb/AP_Crowd_ShowDelSt3.ogg"
+define audio.CrowdDel4 = "audio/Amb/AP_Crowd_ShowDelSt4.ogg"
+
+# Liste des musiques
+define audio.GoodVibeIntro = "audio/Music/ON_GoodVibeIntro_V2.ogg"
+define audio.IntroGoodVibe1 = "audio/Music/ON_GoodVibeA_V2.ogg"
+define audio.IntroGoodVibe2 = "audio/Music/ON_GoodVibeB_V2.ogg"
+define audio.IntroGoodVibe3 = "audio/Music/AP_IntroGoodVib3_V1.ogg"
+define audio.IntroGoodVibe4 = "audio/Music/AP_IntroGoodVib4_V1.ogg"
+define audio.CabaretEntrance = "audio/Music/ON_CabaretEntrance_V1.ogg"
+define audio.CabaretIntro = "audio/Music/ON_CabaretIntro_V1_.ogg"
+define audio.CabaretLightVerse = "audio/Music/ON_CabaretLightVerse_V1.ogg"
+define audio.CabaretLightChorus = "audio/Music/ON_CabaretLightChorus_V1.ogg"
+define audio.CabaretLightSolo = "audio/Music/ON_CabaretLightSolo_V1.ogg"
+define audio.BackstageSt1 = "audio/Music/AP_Stinger1_V1.ogg"
+define audio.BackstageSt2 = "audio/Music/AP_Stinger2_V1.ogg"
+define audio.BackstageSt3 = "audio/Music/AP_Stinger3_V1.ogg"
+define audio.BackstageSt4 = "audio/Music/AP_Stinger4_V1.ogg"
+define audio.BackstageLoop = "audio/Music/AP_LogesTruc_V1.ogg"
+define audio.BackstageDrumLoop = "audio/Music/ON_BackStageLoop_V1.ogg"
+define audio.BarMusic = "audio/Music/RUN_BarNeutral_V1.ogg"
+define audio.ShowDelaunay = "audio/Music/SHOW_Delaunay_Idea1_V1.ogg"
+define audio.ShowGatsby = "audio/Music/SHOW_Gatsby_Idea1_V2.ogg"
+
 # Déclarez les personnages utilisés dans le jeu.
 define mother = Character('Mother', color="#b51963", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=25, callback=type_sound, cb_cps=25)
 define anthrax = Character('Anthräx', color="#9370db", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=35, callback=type_sound, cb_cps=35)
@@ -146,7 +188,7 @@ imani "Ça te dit de t'installer quelque part de plus cosy pour continuer à dis
 hide loges
 show bar with fade
 stop ambiance fadeout 2.0
-play music BarNeutral fadin 2.0
+play music BarNeutral fadein 2.0
 play ambiance BarDay
 
 #Dialogue WIP
@@ -259,7 +301,7 @@ label pea_3_3:
 label pea_4:
 
     play ambiance AmbLogesNight fadein 4.0
-    
+
     anthrax "Debout au milieu de la pièce, Imani était en train de passer le fil de son micro dans les espaces étriqués de son corset et de son padding couleur chair, le passant dans la lanière de son bullet-bra jusque le long de son dos."
     anthrax "Accrochant l'appareil à l'aide d'épingles à sa perruque, elle semblait avoir la tête ailleurs, tout en reproduisant ses gestes millimétrés et à présent routiniers, glissant ensuite le boîtier HF dans sa jarretelle qui avait été modifiée à cet effet."
     anthrax "Peacock enfila ensuite sa robe à dos nu et déclipsa le soutien-gorge pour dissimuler le tissu dépassant dans son costume, n'ayant pas besoin de maintien."

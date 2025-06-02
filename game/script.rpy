@@ -100,9 +100,9 @@ init python:
 
 # Liste des sfx
 define type_sounds = ['audio/SFX/TextMix-001.ogg','audio/SFX/TextMix-002.ogg','audio/SFX/TextMix-003.ogg','audio/SFX/TextMix-004.ogg','audio/SFX/TextMix-005.ogg','audio/SFX/TextMix-006.ogg','audio/SFX/TextMix-007.ogg','audio/SFX/TextMix-008.ogg','audio/SFX/TextMix-009.ogg','audio/SFX/TextMix-010.ogg']
-define D_type_sounds = ['audio/SFX/AP_T_Text-001.ogg','audio/SFX/AP_T_Text-002.ogg','audio/SFX/AP_T_Text-003.ogg','audio/SFX/AP_T_Text-004.ogg']
-define M_type_sounds = ['audio/SFX/AP_T2_Text-001.ogg','audio/SFX/AP_T2_Text-002.ogg','audio/SFX/AP_T2_Text-003.ogg','audio/SFX/AP_T2_Text-004.ogg']
-define G_type_sounds = ['audio/SFX/AP_T3_Text-001.ogg','audio/SFX/AP_T3_Text-002.ogg','audio/SFX/AP_T3_Text-003.ogg','audio/SFX/AP_T3_Text-004.ogg'] 
+define D_type_sounds = ['audio/SFX/AP_T1-001.ogg','audio/SFX/AP_T1-002.ogg','audio/SFX/AP_T1-003.ogg','audio/SFX/AP_T1-004.ogg']
+define M_type_sounds = ['audio/SFX/AP_T2-001.ogg','audio/SFX/AP_T2-002.ogg','audio/SFX/AP_T2-003.ogg','audio/SFX/AP_T2-004.ogg']
+define G_type_sounds = ['audio/SFX/AP_T3-001.ogg','audio/SFX/AP_T3-002.ogg','audio/SFX/AP_T3-003.ogg','audio/SFX/AP_T3-004.ogg'] 
 define P_type_sounds = ['audio/SFX/AP_T4-001.ogg','audio/SFX/AP_T4-002.ogg','audio/SFX/AP_T4-003.ogg','audio/SFX/AP_T4-004.ogg']
 
 # Liste des ambiances
@@ -110,9 +110,14 @@ define audio.AmbAndrogameDay = "audio/Amb/Amb_CabaretDay_V3.ogg"
 define audio.AmbLoges = "audio/Amb/Amb_LogesDay_V3.ogg"
 define audio.AmbRue = "audio/Amb/Amb_Rue_V1.ogg"
 define audio.AmbLogesNight = "audio/Amb/Amb_LogesNight_V4.ogg"
+define audio.AmbDelShow = "audio/Amb/AP_Amb_ShowDel_V1.ogg"
+define audio.BarDay = "audio/Amb/Amb_BarDay_V2.ogg"
 
 # Liste des réactions de foule
-
+define audio.CrowdDel1 = "audio/Amb/AP_Crowd_ShowDelSt1.ogg"
+define audio.CrowdDel2 = "audio/Amb/AP_Crowd_ShowDelSt2.ogg"
+define audio.CrowdDel3 = "audio/Amb/AP_Crowd_ShowDelSt3.ogg"
+define audio.CrowdDel4 = "audio/Amb/AP_Crowd_ShowDelSt4.ogg"
 
 # Liste des musiques
 define audio.GoodVibeIntro = "audio/Music/ON_GoodVibeIntro_V2.ogg"
