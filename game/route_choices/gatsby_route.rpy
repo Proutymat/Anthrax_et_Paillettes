@@ -96,25 +96,6 @@ init python:
         xzoom=1
     )
 
-# Liste des sfx
-define type_sounds = ['TextMix-001.ogg','TextMix-002.ogg','TextMix-003.ogg','TextMix-004.ogg','TextMix-005.ogg','TextMix-006.ogg','TextMix-007.ogg','TextMix-008.ogg','TextMix-009.ogg','TextMix-010.ogg']
-
-# Liste des musiques
-define audio.GoodVibeIntro = "audio/Music/ON_GoodVibeIntro_V2.ogg"
-define audio.IntroGoodVibe1 = "audio/Music/ON_GoodVibeA_V2.ogg"
-define audio.IntroGoodVibe2 = "audio/Music/ON_GoodVibeB_V2.ogg"
-define audio.IntroGoodVibe3 = "audio/Music/AP_IntroGoodVib3_V1.ogg"
-define audio.IntroGoodVibe4 = "audio/Music/AP_IntroGoodVib4_V1.ogg"
-define audio.CabaretEntrance = "audio/Music/ON_CabaretEntrance_V1.ogg"
-define audio.CabaretIntro = "audio/Music/ON_CabaretIntro_V1_.ogg"
-define audio.CabaretLightVerse = "audio/Music/ON_CabaretLightVerse_V1.ogg"
-define audio.CabaretLightChorus = "audio/Music/ON_CabaretLightChorus_V1.ogg"
-define audio.CabaretLightSolo = "audio/Music/ON_CabaretLightSolo_V1.ogg"
-define audio.BackstageMysterious = "audio/Music/ON_Backstage_V1.ogg"
-define audio.BackstageLoop = "audio/Music/ON_BackstageLoop_V1.ogg"
-define audio.BackstageSkype = "audio/Music/ON_Loge_V1.ogg"
-define audio.BarMusic = "audio/Music/RUN_BarNeutral_V1.ogg"
-define audio.ShowGatsby = "audio/Music/SHOW_Gatsby_Idea1_V2.ogg"
 
 # Déclarez les personnages utilisés dans le jeu.
 define mother = Character('Mother', color="#b51963", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=25, callback=type_sound, cb_cps=25)
@@ -136,6 +117,7 @@ $ quick_menu = True
 scene black with fade
 scene loges
 show aimee_neutre at tall_center with dissolve
+play ambiance AmbLoges fadein 2.0
 
 #GAT.1
 gatsby "Let's go ! On va former un duo d'enfer, je te le dis !"
@@ -268,6 +250,8 @@ label gat_3_3:
 #GAT.4
 label gat_4:
 
+    play ambiance AmbLogesNight fadein 2.0
+
     anthrax "Le calme illusoire de la loge contrastait drastiquement avec le bourdonnement du staff passé la porte."
     anthrax "Les discussions étaient légères et l'entraide entre les artistes pour régler les petits aléas techniques était doux à voir."
     anthrax "Malgré tout, chacun.e se préparait avec diligence, en jetant nerveusement un coup d'œil à l'heure qui tournait plusieurs fois dans la même minute."
@@ -353,6 +337,7 @@ label gat_4_1:
 
     gatsby "Allez ! On doit mettre les bouchées doubles si on veut être à l'heure, girlies ! Chop-chop !"
 
+    stop ambiance fadeout 3.0
     call gat_5 from _call_gat_5 
 
 #GAT.4.2
@@ -399,6 +384,7 @@ label gat_4_2:
 
     gatsby "Allez ! On doit mettre les bouchées doubles si on veut être à l'heure girlies ! Chop-chop !"
     
+    stop ambiance fadeout 3.0
     call gat_5 from _call_gat_5_1 
 
    
@@ -444,6 +430,7 @@ label gat_4_3:
 
     gatsby "Allez ! On doit mettre les bouchées doubles si on veut être à l'heure, girlies ! Chop-chop !"
 
+    stop ambiance fadeout 3.0
     call gat_5 from _call_gat_5_2 
 
 #GAT.5

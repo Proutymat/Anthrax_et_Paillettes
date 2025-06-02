@@ -103,11 +103,16 @@ define type_sounds = ['audio/SFX/TextMix-001.ogg','audio/SFX/TextMix-002.ogg','a
 define D_type_sounds = ['audio/SFX/AP_T_Text-001.ogg','audio/SFX/AP_T_Text-002.ogg','audio/SFX/AP_T_Text-003.ogg','audio/SFX/AP_T_Text-004.ogg']
 define M_type_sounds = ['audio/SFX/AP_T2_Text-001.ogg','audio/SFX/AP_T2_Text-002.ogg','audio/SFX/AP_T2_Text-003.ogg','audio/SFX/AP_T2_Text-004.ogg']
 define G_type_sounds = ['audio/SFX/AP_T3_Text-001.ogg','audio/SFX/AP_T3_Text-002.ogg','audio/SFX/AP_T3_Text-003.ogg','audio/SFX/AP_T3_Text-004.ogg'] 
-#define P_type_sounds =
+define P_type_sounds = ['audio/SFX/AP_T4-001.ogg','audio/SFX/AP_T4-002.ogg','audio/SFX/AP_T4-003.ogg','audio/SFX/AP_T4-004.ogg']
 
 # Liste des ambiances
-define audio.AmbAndrogameDay = "audio/Amb/Amb_AndrogameDay_V3.ogg"
-define audio.AmbLoges = "audio/Amb/Amb_LogesWithStinger_V1.ogg"
+define audio.AmbAndrogameDay = "audio/Amb/Amb_CabaretDay_V3.ogg"
+define audio.AmbLoges = "audio/Amb/Amb_LogesDay_V3.ogg"
+define audio.AmbRue = "audio/Amb/Amb_Rue_V1.ogg"
+define audio.AmbLogesNight = "audio/Amb/Amb_LogesNight_V4.ogg"
+
+# Liste des réactions de foule
+
 
 # Liste des musiques
 define audio.GoodVibeIntro = "audio/Music/ON_GoodVibeIntro_V2.ogg"
@@ -126,16 +131,19 @@ define audio.BackstageSt3 = "audio/Music/AP_Stinger3_V1.ogg"
 define audio.BackstageSt4 = "audio/Music/AP_Stinger4_V1.ogg"
 define audio.BackstageLoop = "audio/Music/AP_LogesTruc_V1.ogg"
 define audio.BackstageDrumLoop = "audio/Music/ON_BackStageLoop_V1.ogg"
+define audio.BarMusic = "audio/Music/RUN_BarNeutral_V1.ogg"
+define audio.ShowDelaunay = "audio/Music/SHOW_Delaunay_Idea1_V1.ogg"
+define audio.ShowGatsby = "audio/Music/SHOW_Gatsby_Idea1_V2.ogg"
 
 # Déclarez les personnages utilisés dans le jeu.
 define mother = Character('Mother', color="#b51963", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=25, callback=type_sound, cb_cps=25, cb_boopfile=M_type_sounds)
 define anthrax = Character('Anthräx', color="#9370db", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=35, callback=type_sound, cb_cps=35)
 define delaunay = Character('Delaunay', color="#faaf90", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=D_type_sounds)
 define gatsby = Character('Gatsby', color="#054fb9", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=G_type_sounds)
-define peacock = Character('Peacock', color="#f57600", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)  
+define peacock = Character('Peacock', color="#f57600", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=P_type_sounds)  
 define leandre = Character('Léandre', color="#faaf90", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=D_type_sounds)
 define aimee = Character('Aimé.e', color="#054fb9", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=G_type_sounds)
-define imani = Character('Imani', color="#f57600", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
+define imani = Character('Imani', color="#f57600", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=P_type_sounds)
 define inconnu = Character('???', color="#FFFFFF", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
 define delinconnu = Character('Del?', color="#faaf90", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=D_type_sounds)
 define player = Character('[player_name]', color="9370db", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
@@ -217,16 +225,12 @@ label onboarding:
     with fade
     $ quick_menu = True  
 
-    
+    play ambiance AmbRue
 
     "L'Androgame..."
     "C’est dingue à quel point ce cabaret a reprit ses lettres de noblesse."
     "Je me souviens encore de quand je passais devant pour aller prendre le métro... Complètement défraichit, la pierre sale et les fenètres brisées."
     "On se demandait quand est-ce qu’ils finiraient par abréger ses souffrances et le démolir."
-
-    queue music IntroGoodVibe1
-    queue music IntroGoodVibe2
-    
     "Cela fait un moment maintenant qu’il a été reprit, et après de longs et nombreux travaux, il fait à présent revivre le quartier comme je ne l’ai jamais vu auparavant."
     "Il me décroche toujours un sourire quand je passe devant..."
     "Et puis même au sein de la commu’, ça a fait jaser. Toutes les têtes d’affiches sont queer."
@@ -246,7 +250,7 @@ label onboarding:
     "Je pense que j’ai décidé d’arrêter d’essayer de me justifier à un moment, lorsque j’étais aux portes du bâtiment. Après tout, je n’avais rien à perdre et j’aurais regretté de ne pas avoir au moins essayé."
     "Je ne pensais pas être sélectionné.e, encore moins de passer un entretien avec Mother, la patronne du cabaret. Je n’ai pas trop compris, mais elle m’a parlé des règles de conduite au sein de la troupe et envers les clients, puis d’une période d’essai..."
 
-    stop music fadeout 5.0
+    stop ambiance fadeout 4.0
 
     "J’avais du mal à réaliser, mais on a convenu d’une nouvelle date d’entretien, en journée quand le cabaret serait vide, où elle m’expliquerait plus en détails le fonctionnement des backstages."
 
@@ -306,13 +310,13 @@ label onboarding:
     "Nous sommes monté.e.s sur la scène et l'avons traversée avant de passer derrière les épais rideaux de velours. Nous sommes passé.e.s dans un véritable dédale de couloirs tandis qu'elle ouvrait quelques portes et m'expliquait la fonction de chaque pièce." 
     "Ici, la réserve des costumes ; où les armatures de dos, de hanches, d'épaules à plumes d'autruche, de floss, d'oie ou de faisan ; et les casques grandioses à strass, sequins, perles de verre ou fausses pierres précieuses, se faisaient la compétition." 
     "Là, l'inventaire des décors roulants, barres de pole dance, accessoires de scène et de cirque pour les tours plus acrobatiques." 
-    "Déjà que je ne savais pas encore vers quelle pratique je souhaitais me spécialiser, submergé.e par tout ceci, j'en étais d'autant plus perdu.e..." 
+    "Déjà que je ne savais pas encore vers quelle pratique je souhaitais me spécialiser, submergé.e par tout ceci, j'en étais d'autant plus perdu.e..."
+    stop music fadeout 1.5
     "Nous avons fini par pousser une dernière porte, celle des loges et avons été accueilli.e.s par une ambiance des plus..."
     "Studieuse."
-
-    stop music fadeout 1.5
+    
     play ambiance AmbLoges fadein 1
-    play music BackstageDrumLoop
+    play music BackstageDrumLoop fadein 1.0 volume 0.5
 
     imani "Ok, hear me out... Je dis simplement que si l'on veut garder une logique dans la suite de nos numéros, on va devoir inverser l'ordre dans lequel on passe pour pouvoir faire de la place aux nouvelles."
 
@@ -342,14 +346,17 @@ label onboarding:
 
     delinconnu "Ou alors que ce serait justement l'occasion parfaite pour nous de revoir nos propres tours..." 
 
+    stop music fadeout 1.0
+
     anthrax "Un court silence s'est installé, tandis que nous nous regardions dans le blanc des yeux, ne sachant pas tellement qui devait prendre la parole et que dire."
 
     hide aimee_neutre 
     hide leandre_neutre 
     show mother at tall_center  with dissolve
-    queue music CabaretLightChorus
 
     mother "Oh! Je vois que vous faites connaissance! Les filles, je vous présente [player_name], iel nous rejoindra sous peu le temps d'arranger le spectacle, et je compte sur vous pour l'acceuillir comme il se doit."
+
+    play music CabaretLightChorus fadein 0.5 volume 1.0
 
     anthrax "Semblant sortir de leur torpeur et reprendre leurs esprits, les artistes drag face à moi me sourirent et commencèrent à faire un tour des présentations."
     

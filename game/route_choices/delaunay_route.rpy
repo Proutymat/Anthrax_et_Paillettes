@@ -99,31 +99,6 @@ init python:
         xzoom=1
     )
 
-
-# Liste des sfx
-define type_sounds = ['TextMix-001.ogg','TextMix-002.ogg','TextMix-003.ogg','TextMix-004.ogg','TextMix-005.ogg','TextMix-006.ogg','TextMix-007.ogg','TextMix-008.ogg','TextMix-009.ogg','TextMix-010.ogg']
-
-#Liste des ambiances
-define audio.BarDay = "audio/Amb/Amb_BarDay_V2.ogg"
-
-# Liste des musiques
-define audio.GoodVibeIntro = "audio/Music/ON_GoodVibeIntro_V2.ogg"
-define audio.IntroGoodVibe1 = "audio/Music/ON_GoodVibeA_V2.ogg"
-define audio.IntroGoodVibe2 = "audio/Music/ON_GoodVibeB_V2.ogg"
-define audio.IntroGoodVibe3 = "audio/Music/AP_IntroGoodVib3_V1.ogg"
-define audio.IntroGoodVibe4 = "audio/Music/AP_IntroGoodVib4_V1.ogg"
-define audio.CabaretEntrance = "audio/Music/ON_CabaretEntrance_V1.ogg"
-define audio.CabaretIntro = "audio/Music/ON_CabaretIntro_V1_.ogg"
-define audio.CabaretLightVerse = "audio/Music/ON_CabaretLightVerse_V1.ogg"
-define audio.CabaretLightChorus = "audio/Music/ON_CabaretLightChorus_V1.ogg"
-define audio.CabaretLightSolo = "audio/Music/ON_CabaretLightSolo_V1.ogg"
-define audio.BackstageMysterious = "audio/Music/ON_Backstage_V1.ogg"
-define audio.BackstageLoop = "audio/Music/ON_BackstageLoop_V1.ogg"
-define audio.BackstageSkype = "audio/Music/ON_Loge_V1.ogg"
-define audio.BarMusic = "audio/Music/RUN_BarNeutral_V1.ogg"
-define audio.ShowDelaunay = "audio/Music/SHOW_Delaunay_Idea1_V1.ogg"
-
-
 # Déclarez les personnages utilisés dans le jeu.
 define mother = Character('Mother', color="#b51963", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=25, callback=type_sound, cb_cps=25)
 define anthrax = Character('Anthräx', color="#9370db", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=35, callback=type_sound, cb_cps=35)
@@ -145,6 +120,8 @@ $ quick_menu = True
 scene black with fade
 show loges
 show leandre_neutre at tall_center with dissolve
+
+play ambiance AmbLoges fadein 2.0 
 
 #DEL.1
 leandre "Hey... Hum... Je suis content que tu m’aies choisi. Je ne pensais pas trop que ce serait le cas."
@@ -307,6 +284,7 @@ label del_3_3:
 label del_4:
 
     stop ambiance fadeout 0.5
+    play ambiance AmbLogesNight fadein 2.0
 
     anthrax "Au sein de la loge, une certaine tension planait au-dessus de la playlist qui tournait. Pas une mauvaise ambiance, non, plutôt une intense concentration."
     anthrax "Évidemment, tout le monde chit-chattait gaîment, mais je ne pus m'empêcher de fixer un instant Léandre."
@@ -378,6 +356,7 @@ label del_4_1:
 
     delaunay "Mon dieu, j'ai encore tellement à faire ! Vite [player] ! Un coup de main, vite !"
 
+    stop ambiance fadeout 2.0
     call del_5 from _call_del_5 
 
 #DEL.4.2
@@ -416,6 +395,7 @@ label del_4_2:
 
     delaunay "Mon dieu, j'ai encore tellement à faire ! Vite [player] ! Un coup de main, vite !"
 
+    stop ambiance fadeout 2.0
     call del_5 from _call_del_5_1 
 
 #DEL.4.3
@@ -477,6 +457,8 @@ label del_4_3:
 
     delaunay "Mon dieu, j'ai encore tellement à faire ! Vite [player] ! Un coup de main, vite !"
 
+    stop ambiance fadeout 2.0
+
     call del_5 from _call_del_5_2 
 
 #DEL.5
@@ -484,7 +466,7 @@ label del_5:
 
     anthrax "L’entracte arrivait déjà à sa fin et l’atmosphère était bouillonnante dans les coulisses. Derrière le rideau, les kittens et les régisseur.euse.s s’activaient à déplacer le décor en silence."
 
-    play music ShowDelaunay
+    play music ShowDelaunay noloop
 
     anthrax "Soudainement, un spot se braqua sur le velours et un “bang” de trompettes réveilla la foule. Puis une longue jambe dévoila sensuellement sa résille en sortant de l’entrouverture."
     anthrax "Au rythme de la musique, Delaunay fit son apparition sur le devant de la scène, sous les hurlements des fanatiques du premier rang."

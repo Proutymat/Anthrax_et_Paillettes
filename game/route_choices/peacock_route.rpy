@@ -96,27 +96,6 @@ init python:
         xzoom=1
     )
 
-
-# Liste des sfx
-define type_sounds = ['TextMix-001.ogg','TextMix-002.ogg','TextMix-003.ogg','TextMix-004.ogg','TextMix-005.ogg','TextMix-006.ogg','TextMix-007.ogg','TextMix-008.ogg','TextMix-009.ogg','TextMix-010.ogg']
-
-# Liste des musiques
-define audio.GoodVibeIntro = "audio/Music/ON_GoodVibeIntro_V2.ogg"
-define audio.IntroGoodVibe1 = "audio/Music/ON_GoodVibeA_V2.ogg"
-define audio.IntroGoodVibe2 = "audio/Music/ON_GoodVibeB_V2.ogg"
-define audio.IntroGoodVibe3 = "audio/Music/AP_IntroGoodVib3_V1.ogg"
-define audio.IntroGoodVibe4 = "audio/Music/AP_IntroGoodVib4_V1.ogg"
-define audio.CabaretEntrance = "audio/Music/ON_CabaretEntrance_V1.ogg"
-define audio.CabaretIntro = "audio/Music/ON_CabaretIntro_V1_.ogg"
-define audio.CabaretLightVerse = "audio/Music/ON_CabaretLightVerse_V1.ogg"
-define audio.CabaretLightChorus = "audio/Music/ON_CabaretLightChorus_V1.ogg"
-define audio.CabaretLightSolo = "audio/Music/ON_CabaretLightSolo_V1.ogg"
-define audio.BackstageMysterious = "audio/Music/ON_Backstage_V1.ogg"
-define audio.BackstageLoop = "audio/Music/ON_BackstageLoop_V1.ogg"
-define audio.BackstageSkype = "audio/Music/ON_Loge_V1.ogg"
-define audio.BarMusic = "audio/Music/RUN_BarNeutral_V1.ogg"
-
-
 # Déclarez les personnages utilisés dans le jeu.
 define mother = Character('Mother', color="#b51963", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=25, callback=type_sound, cb_cps=25)
 define anthrax = Character('Anthräx', color="#9370db", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=35, callback=type_sound, cb_cps=35)
@@ -137,6 +116,8 @@ $ quick_menu = True
 scene black with fade
 show loges
 show imani_neutre at tall_center with dissolve
+
+play ambiance AmbLoges fadein 2.0
 
 
 #PEA.1
@@ -164,7 +145,9 @@ imani "Ça te dit de t'installer quelque part de plus cosy pour continuer à dis
 #PEA.2
 hide loges
 show bar with fade
-play music BarNeutral
+stop ambiance fadeout 2.0
+play music BarNeutral fadin 2.0
+play ambiance BarDay
 
 #Dialogue WIP
 
@@ -275,6 +258,8 @@ label pea_3_3:
 #PEA.4
 label pea_4:
 
+    play ambiance AmbLogesNight fadein 4.0
+    
     anthrax "Debout au milieu de la pièce, Imani était en train de passer le fil de son micro dans les espaces étriqués de son corset et de son padding couleur chair, le passant dans la lanière de son bullet-bra jusque le long de son dos."
     anthrax "Accrochant l'appareil à l'aide d'épingles à sa perruque, elle semblait avoir la tête ailleurs, tout en reproduisant ses gestes millimétrés et à présent routiniers, glissant ensuite le boîtier HF dans sa jarretelle qui avait été modifiée à cet effet."
     anthrax "Peacock enfila ensuite sa robe à dos nu et déclipsa le soutien-gorge pour dissimuler le tissu dépassant dans son costume, n'ayant pas besoin de maintien."
@@ -346,6 +331,7 @@ label pea_4_1:
 
     peacock "Déjà ?! Bon, plus qu'à se dépêcher..."
     
+    stop ambiance fadeout 3.0
     call pea_5 from _call_pea_5 
 
 #PEA.4.2
@@ -389,6 +375,7 @@ label pea_4_2:
 
     peacock "Déjà ?! Bon, plus qu'à se dépêcher..."
 
+    stop ambiance fadeout 3.0
     call pea_5 from _call_pea_5_1 
 
 #PEA.4.3
@@ -437,6 +424,7 @@ label pea_4_3:
 
     peacock "Déjà ?! Bon, plus qu'à se dépêcher..."
    
+    stop ambiance fadeout 3.0
     call pea_5 from _call_pea_5_2 
 
 #PEA.5
