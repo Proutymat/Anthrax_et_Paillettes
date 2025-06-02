@@ -110,10 +110,11 @@ define type_silent = ['<silence 1.0>']
 
 # Liste des ambiances
 define audio.AmbAndrogameDay = "audio/Amb/Amb_CabaretDay_V3.ogg"
-define audio.AmbLoges = "audio/Amb/Amb_LogesDay_V3.ogg"
-define audio.AmbRue = "audio/Amb/Amb_Rue_V1.ogg"
-define audio.AmbLogesNight = "audio/Amb/Amb_LogesNight_V4.ogg"
+define audio.AmbLoges = "audio/Amb/Amb_LogesDay_V4.ogg"
+define audio.AmbRue = "audio/Amb/Amb_Rue_V2.ogg"
+define audio.AmbLogesNight = "audio/Amb/Amb_LogesNight_V3.ogg"
 define audio.AmbDelShow = "audio/Amb/AP_Amb_ShowDel_V1.ogg"
+define audio.BarDay = "audio/Amb/Amb_BarDay_V4.ogg"
 
 # Liste des réactions de foule
 define audio.CrowdDel1 = "audio/Amb/AP_Crowd_ShowDelSt1.ogg"
@@ -166,7 +167,7 @@ scene black with fade
 show loges
 show leandre_neutre at tall_center with dissolve
 
-play ambiance AmbLoges fadein 2.0 
+play ambiance AmbLoges fadein 0.5 
 
 #DEL.1
 leandre "Hey... Hum... Je suis content que tu m’aies choisi. Je ne pensais pas trop que ce serait le cas."
@@ -188,9 +189,9 @@ anthrax "Ça, je ne dis pas non!"
 
 #DEL.2
 hide loges
-show bar with fade
-play music BarMusic fadein 1.5 volume 0.5
 play ambiance BarDay fadein 0.5
+show bar with fade
+play music BarMusic volume 0.5
 
 anthrax "Nous sommes arrivé.e.s dans l'auditorium et nous sommes approché.e.s du comptoir derrière lequel brillaient un mur de bouteilles de formes et couleurs uniques. Le paradis du parfait mixologue."
 anthrax "Nous avions depuis le bar une vue imprenable sur la scène, légèrement en contrebas. Les tablées y étaient déjà dressées et se regroupaient autour du big band et de l'estrade secondaire au centre de la pièce."
@@ -227,7 +228,7 @@ leandre "Et bien... J’étais en train de décrocher des études, j’étais da
 leandre "Vraiment, une vraie crise de la vingtaine... J’en ris maintenant, mais ce n’était pas du tout drôle à l’époque."
 leandre "Et finalement, Mother m’a pris sous son aile et m’a aidé à me sortir de tout cela."
 
-stop music fadeout 2.0
+
 
 #Choix DEL.2
 label choix_del2:
@@ -328,8 +329,10 @@ label del_3_3:
 #DEL.4
 label del_4:
 
+    stop music fadeout 0.5
     stop ambiance fadeout 0.5
-    play ambiance AmbLogesNight fadein 2.0
+    play music BackstageLoop volume 0.5
+    play ambiance AmbLoges fadein 0.5
 
     anthrax "Au sein de la loge, une certaine tension planait au-dessus de la playlist qui tournait. Pas une mauvaise ambiance, non, plutôt une intense concentration."
     anthrax "Évidemment, tout le monde chit-chattait gaîment, mais je ne pus m'empêcher de fixer un instant Léandre."
@@ -397,6 +400,8 @@ label del_4_1:
 
     anthrax "C'est adorable."
 
+    stop music fadeout 0.1
+    
     staff "Ok les filles ! Showtime dans dix minutes !"
 
     delaunay "Mon dieu, j'ai encore tellement à faire ! Vite [player] ! Un coup de main, vite !"
@@ -435,6 +440,8 @@ label del_4_2:
 
     delaunay "Je sais... Et ça commence à se stabiliser, bien heureusement."
     delaunay "J'aimerais juste des fois que ça aille un peu plus vite."
+
+    stop music fadeout 0.1
 
     staff "Ok les filles ! Showtime dans dix minutes !"
 
@@ -497,6 +504,8 @@ label del_4_3:
     delaunay "Par pitié, pas toi aussi... Le terrain est glissant."
 
     anthrax "Désolé.e, c'était trop tentant."
+
+    stop music fadeout 0.1
 
     staff "Ok les filles ! Showtime dans dix minutes !"
 

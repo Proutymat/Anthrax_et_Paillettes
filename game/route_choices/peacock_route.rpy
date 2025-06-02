@@ -107,11 +107,11 @@ define type_silent = ['<silence 1.0>']
 
 # Liste des ambiances
 define audio.AmbAndrogameDay = "audio/Amb/Amb_CabaretDay_V3.ogg"
-define audio.AmbLoges = "audio/Amb/Amb_LogesDay_V3.ogg"
-define audio.AmbRue = "audio/Amb/Amb_Rue_V1.ogg"
-define audio.AmbLogesNight = "audio/Amb/Amb_LogesNight_V4.ogg"
+define audio.AmbLoges = "audio/Amb/Amb_LogesDay_V4.ogg"
+define audio.AmbRue = "audio/Amb/Amb_Rue_V2.ogg"
+define audio.AmbLogesNight = "audio/Amb/Amb_LogesNight_V3.ogg"
 define audio.AmbDelShow = "audio/Amb/AP_Amb_ShowDel_V1.ogg"
-define audio.BarDay = "audio/Amb/Amb_BarDay_V2.ogg"
+define audio.BarDay = "audio/Amb/Amb_BarDay_V4.ogg"
 
 # Liste des réactions de foule
 define audio.CrowdDel1 = "audio/Amb/AP_Crowd_ShowDelSt1.ogg"
@@ -162,7 +162,7 @@ scene black with fade
 show loges
 show imani_neutre at tall_center with dissolve
 
-play ambiance AmbLoges fadein 2.0
+play ambiance AmbLoges fadein 0.5
 
 
 #PEA.1
@@ -191,8 +191,8 @@ imani "Ça te dit de t'installer quelque part de plus cosy pour continuer à dis
 hide loges
 show bar with fade
 stop ambiance fadeout 2.0
-play music BarMusic fadein 2.0
-play ambiance BarDay
+play music BarMusic volume 0.5
+play ambiance BarDay fadein 0.5
 
 #Dialogue WIP
 
@@ -303,7 +303,10 @@ label pea_3_3:
 #PEA.4
 label pea_4:
 
-    play ambiance AmbLogesNight fadein 4.0
+    stop music fadeout 0.2
+    stop ambiance fadeout 1.0
+    play ambiance AmbLoges fadein 0.5
+    play music BackstageLoop volume 0.5
 
     anthrax "Debout au milieu de la pièce, Imani était en train de passer le fil de son micro dans les espaces étriqués de son corset et de son padding couleur chair, le passant dans la lanière de son bullet-bra jusque le long de son dos."
     anthrax "Accrochant l'appareil à l'aide d'épingles à sa perruque, elle semblait avoir la tête ailleurs, tout en reproduisant ses gestes millimétrés et à présent routiniers, glissant ensuite le boîtier HF dans sa jarretelle qui avait été modifiée à cet effet."
@@ -372,6 +375,8 @@ label pea_4_1:
     gatsby "J'ai une relation un peu plus mitigée avec le mien, puisque j'ai une démarche différente qui est plus de l'ordre de la réconciliation."
     gatsby "Donc parfois, je le déteste, et parfois je l'adore. Mais ennuyant ? Ça, jamais."
 
+    stop music fadeout 0.1
+
     staff "Ok les filles ! Showtime dans dix minutes !"
 
     peacock "Déjà ?! Bon, plus qu'à se dépêcher..."
@@ -415,6 +420,8 @@ label pea_4_2:
     gatsby "Oui... Enfin, quand tu te décides à tacler, t'en fais pas que tu ne te gardes pas de le faire dans les coulisses."
 
     delaunay "Et puis, quand tu es dans l'humeur, on en a parfois pour des heures !"
+
+    stop music fadeout 0.1
 
     staff "Ok les filles ! Showtime dans dix minutes !"
 
@@ -465,6 +472,8 @@ label pea_4_3:
     peacock "Pas encore~ Mais c'est une option tout à fait envisageable."
     peacock "Si nos deux commères nationales arrêtaient de fourrer leur nez là où ça ne les concerne pas !"
 
+    stop music fadeout 0.1
+    
     staff "Ok les filles ! Showtime dans dix minutes !"
 
     peacock "Déjà ?! Bon, plus qu'à se dépêcher..."

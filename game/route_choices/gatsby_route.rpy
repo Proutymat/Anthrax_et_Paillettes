@@ -107,10 +107,11 @@ define type_silent = ['<silence 1.0>']
 
 # Liste des ambiances
 define audio.AmbAndrogameDay = "audio/Amb/Amb_CabaretDay_V3.ogg"
-define audio.AmbLoges = "audio/Amb/Amb_LogesDay_V3.ogg"
-define audio.AmbRue = "audio/Amb/Amb_Rue_V1.ogg"
-define audio.AmbLogesNight = "audio/Amb/Amb_LogesNight_V4.ogg"
+define audio.AmbLoges = "audio/Amb/Amb_LogesDay_V4.ogg"
+define audio.AmbRue = "audio/Amb/Amb_Rue_V2.ogg"
+define audio.AmbLogesNight = "audio/Amb/Amb_LogesNight_V3.ogg"
 define audio.AmbDelShow = "audio/Amb/AP_Amb_ShowDel_V1.ogg"
+define audio.BarDay = "audio/Amb/Amb_BarDay_V4.ogg"
 
 # Liste des réactions de foule
 define audio.CrowdDel1 = "audio/Amb/AP_Crowd_ShowDelSt1.ogg"
@@ -179,8 +180,8 @@ anthrax "Ça me tente bien."
 #GAT.2
 hide loges
 show bar with fade
-play music BarMusic
-
+play music BarMusic volume 0.5
+play ambiance BarDay fadein 0.5
 
 #Dialogue WIP
 
@@ -293,7 +294,10 @@ label gat_3_3:
 #GAT.4
 label gat_4:
 
-    play ambiance AmbLogesNight fadein 2.0
+    stop music fadeout 0.5
+    stop ambiance fadeout 0.5
+    play music BackstageLoop volume 0.5
+    play ambiance AmbLoges fadein 0.5
 
     anthrax "Le calme illusoire de la loge contrastait drastiquement avec le bourdonnement du staff passé la porte."
     anthrax "Les discussions étaient légères et l'entraide entre les artistes pour régler les petits aléas techniques était doux à voir."
@@ -376,11 +380,13 @@ label gat_4_1:
 
     peacock "Et se rassurer."
 
+    stop music fadeout 0.1
+    
     staff "Ok les filles ! Showtime dans dix minutes !"
 
     gatsby "Allez ! On doit mettre les bouchées doubles si on veut être à l'heure, girlies ! Chop-chop !"
 
-    stop ambiance fadeout 3.0
+    stop ambiance fadeout 1.0
     call gat_5 from _call_gat_5 
 
 #GAT.4.2
@@ -423,11 +429,13 @@ label gat_4_2:
 
     anthrax "Ce n'est pas grave, ça m'a plus surpris.e qu'autre chose. Mais au final, ça m'a donné plus de perspective, et j'apprécie l'honnêteté."
 
+    stop music fadeout 0.1
+
     staff "Ok les filles ! Showtime dans dix minutes !"
 
     gatsby "Allez ! On doit mettre les bouchées doubles si on veut être à l'heure girlies ! Chop-chop !"
     
-    stop ambiance fadeout 3.0
+    stop ambiance fadeout 2.0
     call gat_5 from _call_gat_5_1 
 
    
@@ -469,17 +477,19 @@ label gat_4_3:
 
     gatsby "Enfin bref ! Morale de l'histoire : bien s'entourer, et faire du drag. Parce qu'au moins, on s'entoure de gens qui nous comprennent."
 
+    stop music fadeout 0.1
+
     staff "Ok les filles ! Showtime dans dix minutes !"
 
     gatsby "Allez ! On doit mettre les bouchées doubles si on veut être à l'heure, girlies ! Chop-chop !"
 
-    stop ambiance fadeout 3.0
+    stop ambiance fadeout 2.0
     call gat_5 from _call_gat_5_2 
 
 #GAT.5
 label gat_5:
 
-    play music ShowGatsby fadein 2.0
+    play music ShowGatsby
 
     anthrax "Le band commença le morceau suivant alors que la scène était encore vide de toute activité, si bien que les spectateur.ice.s en venaient à se demander si quelque chose clochait."
     anthrax "Un projecteur se braqua sur deux longues soies qui venaient d'être lâchées. Tout en douceur, accompagné.e par les accords du piano, Gatsby avançait sur les planches."
