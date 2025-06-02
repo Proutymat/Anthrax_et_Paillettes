@@ -144,7 +144,7 @@ define audio.ShowDelaunay = "audio/Music/SHOW_Delaunay_Idea1_V1.ogg"
 define audio.ShowGatsby = "audio/Music/SHOW_Gatsby_Idea1_V2.ogg"
 
 # Déclarez les personnages utilisés dans le jeu.
-define mother = Character('Mother', color="#b51963", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=25, callback=type_sound, cb_cps=25, cb_boopfile=M_type_sounds)
+define mother = Character('Mother', color="#b51963", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=30, callback=type_sound, cb_cps=30, cb_boopfile=M_type_sounds)
 define anthrax = Character('Anthräx', color="#9370db", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=35, callback=type_sound, cb_cps=35, cb_boopfile=A_type_sounds)
 define delaunay = Character('Delaunay', color="#faaf90", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=D_type_sounds)
 define gatsby = Character('Gatsby', color="#054fb9", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=G_type_sounds)
@@ -152,10 +152,10 @@ define peacock = Character('Peacock', color="#f57600", who_outlines=[(2, "#00000
 define leandre = Character('Léandre', color="#faaf90", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=D_type_sounds)
 define aimee = Character('Aimé.e', color="#054fb9", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=G_type_sounds)
 define imani = Character('Imani', color="#f57600", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=P_type_sounds)
-define inconnu = Character('???', color="#FFFFFF", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
+define inconnu = Character('???', color="#FFFFFF", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50)
 define delinconnu = Character('Del?', color="#faaf90", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=D_type_sounds)
 define player = Character('[player_name]', color="9370db", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
-define staff = Character('Staff', color="#FFFFFF", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
+define staff = Character('Staff', color="#FFFFFF", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50)
 define text = Character(color="#FFFFFF", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
 
 
@@ -388,13 +388,13 @@ label del_2_3:
 #DEL.3
 label del_3:
 
-    "Cela faisait plusieurs minutes que je cherchais Léandre, avec qui j'étais supposé.e répéter une partie de mon numéro, que l'on construisait ensemble."
+    text "Cela faisait plusieurs minutes que je cherchais Léandre, avec qui j'étais supposé.e répéter une partie de mon numéro, que l'on construisait ensemble."
 
-    "Après avoir fait trois fois le tour du lobby, des backstages, être retourné.e tout autant de fois dans les loges, je finis par retourner sur les planches de la scène, pensif.ve."
+    text "Après avoir fait trois fois le tour du lobby, des backstages, être retourné.e tout autant de fois dans les loges, je finis par retourner sur les planches de la scène, pensif.ve."
 
-    "Et en toute honnêteté, un peu inquiet.e."
+    text "Et en toute honnêteté, un peu inquiet.e."
 
-    "C'est alors que j'aperçus une tignasse blonde depuis le haut du balcon, absorbée par le contenu de son téléphone. N'ayant pas pensé à lever le regard, je grimpai l'escalier en colimaçon pour le rejoindre, à tâtons."
+    text "C'est alors que j'aperçus une tignasse blonde depuis le haut du balcon, absorbée par le contenu de son téléphone. N'ayant pas pensé à lever le regard, je grimpai l'escalier en colimaçon pour le rejoindre, à tâtons."
 
     anthrax "Hey... Je me demandais où tu étais passé."
 
@@ -410,7 +410,7 @@ label del_3:
 
     leandre "Hm..."
 
-    "Visiblement pas très à l'aise, Léandre rangea son mobile et joua avec ses doigts, venant s'appuyer sur la rambarde pour observer la scène en contrebas."
+    text "Visiblement pas très à l'aise, Léandre rangea son mobile et joua avec ses doigts, venant s'appuyer sur la rambarde pour observer la scène en contrebas."
 
     leandre "C'est vrai que je ne t'en ai pas encore parlé..."
 
@@ -428,7 +428,7 @@ label del_3:
 
     leandre "Mais je te fais suffisamment confiance pour ne pas me juger sur mes décisions."
 
-    "Un peu plus confiant, il se redressa et tourna la tête dans ma direction, un sourire apaisé aux lèvres."
+    text "Un peu plus confiant, il se redressa et tourna la tête dans ma direction, un sourire apaisé aux lèvres."
 
     leandre "À un moment, j'ai fait des vidéos à caractère..."
 

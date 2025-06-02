@@ -141,7 +141,7 @@ define audio.ShowDelaunay = "audio/Music/SHOW_Delaunay_Idea1_V1.ogg"
 define audio.ShowGatsby = "audio/Music/SHOW_Gatsby_Idea1_V2.ogg"
 
 # Déclarez les personnages utilisés dans le jeu.
-define mother = Character('Mother', color="#b51963", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=25, callback=type_sound, cb_cps=25, cb_boopfile=M_type_sounds)
+define mother = Character('Mother', color="#b51963", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=30, callback=type_sound, cb_cps=30, cb_boopfile=M_type_sounds)
 define anthrax = Character('Anthräx', color="#9370db", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=35, callback=type_sound, cb_cps=35, cb_boopfile=A_type_sounds)
 define delaunay = Character('Delaunay', color="#faaf90", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=D_type_sounds)
 define gatsby = Character('Gatsby', color="#054fb9", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=G_type_sounds)
@@ -151,10 +151,9 @@ define aimee = Character('Aimé.e', color="#054fb9", who_outlines=[(2, "#000000"
 define imani = Character('Imani', color="#f57600", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=P_type_sounds)
 define inconnu = Character('???', color="#FFFFFF", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50)
 define delinconnu = Character('Del?', color="#faaf90", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=D_type_sounds)
-define player = Character('[player_name]', color="9370db", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=A_type_sounds)
-define staff = Character('Staff', color="#FFFFFF", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=type_silent)
+define player = Character('[player_name]', color="9370db", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
+define staff = Character('Staff', color="#FFFFFF", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50)
 define text = Character(color="#FFFFFF", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
-
 
 label peacock_start:
 $ quick_menu = True
@@ -193,13 +192,13 @@ stop ambiance fadeout 2.0
 play music BarMusic volume 0.5
 play ambiance BarDay fadein 0.5
 
-"Nous sommes arrivé.e.s dans l'auditorium et nous nous sommes approché.e.s du comptoir derrière lequel brillait un mur de bouteilles de formes et couleurs uniques. Le paradis du parfait mixologue."
+text "Nous sommes arrivé.e.s dans l'auditorium et nous nous sommes approché.e.s du comptoir derrière lequel brillait un mur de bouteilles de formes et couleurs uniques. Le paradis du parfait mixologue."
 
-"Nous avions depuis le bar une vue imprenable sur la scène, légèrement en contrebas. Les tablées y étaient déjà dressées et se regroupaient autour du big band et de l'estrade secondaire au centre de la pièce."
+text "Nous avions depuis le bar une vue imprenable sur la scène, légèrement en contrebas. Les tablées y étaient déjà dressées et se regroupaient autour du big band et de l'estrade secondaire au centre de la pièce."
 
-"L'immense lustre duquel pendaient des larmes de verre reflétait les spots de lumière à la manière d'une boule à facettes sur le papier peint texturé."
+text "L'immense lustre duquel pendaient des larmes de verre reflétait les spots de lumière à la manière d'une boule à facettes sur le papier peint texturé."
 
-"Imani s'assit sur l'une des chaises hautes de bois verni et commanda un Virgin Moscow Mule au barman, et moi un Negroni."
+text "Imani s'assit sur l'une des chaises hautes de bois verni et commanda un Virgin Moscow Mule au barman, et moi un Negroni."
 
 imani "Tu verras, notre barman est un vrai génie en la matière. Il peut te concocter le meilleur mocktail de ta vie sans que tu t'y attendes."
 
@@ -213,7 +212,7 @@ anthrax "Je me sens bête de prendre un Martini du coup..."
 
 imani "Oh non ! Ne t’en fais pas, tant que tu es raisonnable dans ta consommation, tout va bien !"
 
-"Imani sourit et prit sa boisson entre ses doigts vernis, la portant à ses lèvres et sirotant en me fixant, comme pour me jauger."
+text "Imani sourit et prit sa boisson entre ses doigts vernis, la portant à ses lèvres et sirotant en me fixant, comme pour me jauger."
 
 imani "Alors, dis-moi. C’est quoi ton drag ?"
 
@@ -430,13 +429,13 @@ label pea_2_3:
 #PEA.3
 label pea_3:
 
-    "Cela faisait plusieurs minutes que je cherchais Imani, avec qui j'étais supposé.e répéter une partie de mon numéro, que l'on construisait ensemble."
+    text "Cela faisait plusieurs minutes que je cherchais Imani, avec qui j'étais supposé.e répéter une partie de mon numéro, que l'on construisait ensemble."
     
-    "Après avoir fait trois fois le tour du lobby, des backstages, être retourné.e tout autant de fois dans les loges, je finis par retourner sur les planches de la scène, pensif.ve."
+    text "Après avoir fait trois fois le tour du lobby, des backstages, être retourné.e tout autant de fois dans les loges, je finis par retourner sur les planches de la scène, pensif.ve."
     
-    "Et en toute honnêteté, un peu inquièt.e."
+    text "Et en toute honnêteté, un peu inquièt.e."
 
-    "En relevant le regard vers le balcon, je le remarquai appuyé.e contre la balustrade, me faisant signe de le rejoindre, un verre de jus à moitié vide à la main avec lequel il jouait."
+    text "En relevant le regard vers le balcon, je le remarquai appuyé.e contre la balustrade, me faisant signe de le rejoindre, un verre de jus à moitié vide à la main avec lequel il jouait."
 
     anthrax "Hey... Je me demandais où tu étais passé."
 
@@ -456,7 +455,7 @@ label pea_3:
 
     imani "Un jus d'abricot. Classique et délicieux !"
 
-    "Il termina le fond de son verre d'une traite, avant de le poser sur l'une des tables qui n'avaient pas encore été dressées pour la soirée."
+    text "Il termina le fond de son verre d'une traite, avant de le poser sur l'une des tables qui n'avaient pas encore été dressées pour la soirée."
 
     anthrax "Quand j'y repense, je ne t'ai jamais vu boire. Enfin... Tu m'as compris.e."
 
