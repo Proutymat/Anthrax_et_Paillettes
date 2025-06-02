@@ -317,7 +317,7 @@ label pea_2_2:
     show imani_neutre at tall_center
     with fade
 
-    thrax "Est-ce que tu peux m'en dire davantage sur ce que tu fais ? Mother a piqué ma curiosité, mais je brûle d'avoir plus de détails."
+    anthrax "Est-ce que tu peux m'en dire davantage sur ce que tu fais ? Mother a piqué ma curiosité, mais je brûle d'avoir plus de détails."
 
     imani "Eh bien... Comme Mother l'a expliqué. Je me spécialise dans tout ce qui est \"vocal\"..."
 
