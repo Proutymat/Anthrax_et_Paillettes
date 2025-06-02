@@ -142,6 +142,13 @@ define audio.BackstageDrumLoop = "audio/Music/ON_BackStageLoop_V1.ogg"
 define audio.BarMusic = "audio/Music/RUN_BarNeutral_V1.ogg"
 define audio.ShowDelaunay = "audio/Music/SHOW_Delaunay_Idea1_V1.ogg"
 define audio.ShowGatsby = "audio/Music/SHOW_Gatsby_Idea1_V2.ogg"
+define audio.ConfidenceIntro = 'audio/Music/3_Confidence_Intro.ogg'
+define audio.ConfidenceA1 = 'audio/Music/3_Confidence_A.ogg'
+define audio.ConfidenceA2 = 'audio/Music/3_Confidence_A2.ogg'
+define audio.ConfidenceAB = 'audio/Music/3_Confidence_AB.ogg'
+define audio.ConfidenceB1 = 'audio/Music/3_Confidence_B1.ogg'
+define audio.ConfidenceB2 = 'audio/Music/3_Confidence_B2.ogg'
+define audio.ConfidenceOutro = 'audio/Music/3_Confidence_Outro.ogg'
 
 # Déclarez les personnages utilisés dans le jeu.
 define mother = Character('Mother', color="#b51963", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=30, callback=type_sound, cb_cps=30, cb_boopfile=M_type_sounds)
@@ -297,6 +304,9 @@ label del_2_1:
     leandre "D'avoir grandi comme j'ai grandi, d'avoir connu la sororité et les difficultés liées à la vie de femme ?"
 
     leandre "Cette empathie, cette solidarité, cette bienveillance, elle me sont très précieuses."
+
+    stop music fadeout 1.0
+    stop ambiance fadeout 1.0
     call del_3 from _call_del_3 
 
 #DEL.2.2
@@ -342,6 +352,8 @@ label del_2_2:
 
     anthrax "C’est aussi pour cette raison que j’avais envie de venir."
 
+    stop music fadeout 1.0
+    stop ambiance fadeout 1.0
     call del_3 from _call_del_3_1 
 
 #DEL.2.3
@@ -383,16 +395,22 @@ label del_2_3:
 
     anthrax "La nuance est fine, mais je crois comprendre ce que tu sous-entends."
 
+    stop music fadeout 1.0
+    stop ambiance fadeout 1.0
     call del_3 from _call_del_3_2 
 
 #DEL.3
 label del_3:
+
+    play music ConfidenceIntro
 
     text "Cela faisait plusieurs minutes que je cherchais Léandre, avec qui j'étais supposé.e répéter une partie de mon numéro, que l'on construisait ensemble."
 
     text "Après avoir fait trois fois le tour du lobby, des backstages, être retourné.e tout autant de fois dans les loges, je finis par retourner sur les planches de la scène, pensif.ve."
 
     text "Et en toute honnêteté, un peu inquiet.e."
+
+    queue music ConfidenceA1
 
     text "C'est alors que j'aperçus une tignasse blonde depuis le haut du balcon, absorbée par le contenu de son téléphone. N'ayant pas pensé à lever le regard, je grimpai l'escalier en colimaçon pour le rejoindre, à tâtons."
 
@@ -409,6 +427,8 @@ label del_3:
     anthrax "Un ancien client ?"
 
     leandre "Hm..."
+
+    queue music ConfidenceA2
 
     text "Visiblement pas très à l'aise, Léandre rangea son mobile et joua avec ses doigts, venant s'appuyer sur la rambarde pour observer la scène en contrebas."
 
@@ -515,6 +535,8 @@ label del_3_1:
 label del_3_2:
     $ quick_menu = True
     
+    queue music ConfidenceAB
+    queue music ConfidenceB1
     show leandre_neutre at tall_center
     with fade
 
@@ -542,6 +564,8 @@ label del_3_2:
 
     leandre "Alors que ça aurait dû être l'inverse..."
 
+    queue music ConfidenceB2
+
     leandre "M'aimer d'abord, découvrir mon intimité ensuite... Ou en même temps, à la rigueur."
 
     leandre "Enfin bref, c'était pas du tout la méthode adaptée pour nourrir mon \"appréciation de soi\"."
@@ -554,6 +578,8 @@ label del_3_2:
 
     leandre "Je m'étais lancé dans les vidéos pour payer mon opération mais Mother m'a proposé un travail à mi-temps et présenté à ses ami.e.s drag artists lorsque j'ai soulevé l'idée que ça pouvait m'aider avec ma dysphorie de genre."
 
+    queue music ConfidenceOutro
+    
     leandre "Grâce à ça, j'ai pu arrêter et reprendre ma vie en main."
 
     leandre "Je t'en avais déjà parlé, non ? Je ne me souviens plus... Ce serait bête que je passe pour un disque rayé !"
