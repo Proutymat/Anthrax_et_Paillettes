@@ -12,11 +12,13 @@ define config.tag_layer = {
     'aimee_neutre': 'back',
     'peacock_neutre': 'back',
     'imani_neutre': 'back',
-    'CG_delaunay' : 'front',
-    'CG_gatsby' : 'front',
-    'CG_peacock' : 'front',
-    'background_cg' : 'farthestBack'
-
+    'CG_delaunay' : 'back',
+    'CG_gatsby' : 'back',
+    'CG_peacock' : 'back',
+    'background_cg' : 'farthestBack',
+    'curtain_open' : 'inyourface',
+    'curtain_close' : 'inyourface',
+    'flirt' : 'back',
 }
 
 init -1 python:

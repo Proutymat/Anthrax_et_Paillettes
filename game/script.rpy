@@ -71,6 +71,9 @@ image rideau = "Backgrounds/rideau.png"
 
 image balcon = "Backgrounds/balcon.png"
 
+#vfx
+
+
 init python:
 
     tall_right = Transform(
@@ -256,7 +259,9 @@ label onboarding:
 
     play music CabaretEntrance fadein 0.1
     hide devanture
-    
+
+
+
     show auditorium  
     with fade
 
