@@ -22,7 +22,7 @@ init python:
             renpy.pause((20-renpy.music.get_pos('sound')),hard=True)
 
     renpy.music.register_channel("ambiance", "sfx", True)
-    renpy.music.register_channel("typechannel", "sound", False)
+
 
 
 # Déclarez sous cette ligne les images, avec l'instruction 'image'
@@ -237,8 +237,7 @@ label onboarding:
     with fade
     $ quick_menu = True  
 
-    play ambiance AmbRue fadein 1.0
-
+    play ambiance AmbRue
 
     text "L'Androgame..."
     text "C’est dingue à quel point ce cabaret a reprit ses lettres de noblesse."
@@ -262,12 +261,16 @@ label onboarding:
     text "Je ne savais pas comment j’allais pouvoir concilier le burlesque et le travail, ce qu’on pourrait dire de moi ou juger de mon drag."
     text "Je pense que j’ai décidé d’arrêter d’essayer de me justifier à un moment, lorsque j’étais aux portes du bâtiment. Après tout, je n’avais rien à perdre et j’aurais regretté de ne pas avoir au moins essayé."
     text "Je ne pensais pas être sélectionné.e, encore moins de passer un entretien avec Mother, la patronne du cabaret. Je n’ai pas trop compris, mais elle m’a parlé des règles de conduite au sein de la troupe et envers les clients, puis d’une période d’essai..."
-    text "J’avais du mal à réaliser, mais on a convenu d’une nouvelle date d’entretien, en journée quand le cabaret serait vide, où elle m’expliquerait plus en détails le fonctionnement des backstages."
 
     stop ambiance fadeout 4.0
 
+    "J’avais du mal à réaliser, mais on a convenu d’une nouvelle date d’entretien, en journée quand le cabaret serait vide, où elle m’expliquerait plus en détails le fonctionnement des backstages."
+
     play music CabaretEntrance fadein 0.1
     hide devanture
+
+
+
     show auditorium  
     with fade
 
@@ -327,11 +330,11 @@ label onboarding:
     text "Studieuse."
     
     play ambiance AmbLoges fadein 1
-    play music BackstageDrumLoop volume 0.5
-
-    imani "Ok, hear me out... Je dis simplement que si l'on veut garder une logique dans la suite de nos numéros, on va devoir inverser l'ordre dans lequel on passe pour pouvoir faire de la place aux nouvelles."
+    play music BackstageDrumLoop fadein 1.0 volume 0.5
 
     show imani_neutre at tall_left  with dissolve
+
+    imani "Ok, hear me out... Je dis simplement que si l'on veut garder une logique dans la suite de nos numéros, on va devoir inverser l'ordre dans lequel on passe pour pouvoir faire de la place aux nouvelles."
 
     text "L'homme qui venait de prendre la parole était en train de gribouiller avec insistance un schéma dans son carnet, une aiguille à coudre entre les lèvres et une pièce de tissu sur les genoux, à laquelle il semblait broder des sequins un à un."
 
@@ -367,7 +370,7 @@ label onboarding:
 
     mother "Oh! Je vois que vous faites connaissance! Les filles, je vous présente [player_name], iel nous rejoindra sous peu le temps d'arranger le spectacle, et je compte sur vous pour l'acceuillir comme il se doit."
 
-    play music CabaretLightChorus volume 0.5
+    play music CabaretLightChorus fadein 0.5 volume 1.0
 
     anthrax "Semblant sortir de leur torpeur et reprendre leurs esprits, les artistes drag face à moi me sourirent et commencèrent à faire un tour des présentations."
     
