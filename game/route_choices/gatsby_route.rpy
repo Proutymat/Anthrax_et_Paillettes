@@ -176,7 +176,7 @@ anthrax "Ça me tente bien."
 #GAT.2
 hide loges
 show bar with fade
-play music BarNeutral
+play music BarMusic
 
 
 #Dialogue WIP
@@ -491,7 +491,7 @@ label gat_5:
 
     stop music fadeout 2.0
 
-call gat_6
+call gat_6 from _call_gat_6_1
 call gat_6 from _call_gat_6 
 
 #GAT.6

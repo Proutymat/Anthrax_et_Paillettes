@@ -188,7 +188,7 @@ imani "Ça te dit de t'installer quelque part de plus cosy pour continuer à dis
 hide loges
 show bar with fade
 stop ambiance fadeout 2.0
-play music BarNeutral fadein 2.0
+play music BarMusic fadein 2.0
 play ambiance BarDay
 
 #Dialogue WIP
@@ -219,7 +219,7 @@ label pea_2_1:
 
     anthrax "WIP"
     peacock "WIP"
-    call del_3 from _call_del_3_4 
+    call pea_3 from _call_pea_3_4 
 
 #PEA.2.2
 label pea_2_2:
