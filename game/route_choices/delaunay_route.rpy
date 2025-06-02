@@ -183,8 +183,7 @@ anthrax "Ça, je ne dis pas non!"
 
 
 #DEL.2
-hide loges
-show bar with fade
+show bar with dissolve
 play music BarMusic fadein 1.5 volume 0.5
 play ambiance BarDay fadein 0.5
 
@@ -237,7 +236,7 @@ label choix_del2:
             call del_2_1 from _call_del_2_1 
         "Et comment est-ce que tu as rencontré Mother?":
             call del_2_2 from _call_del_2_2 
-        "choix del.2.3":
+        "J'ai remarqué qu'Aimé.e finissait beaucoup tes phrases. Est-ce que tu es toujours aussi timide ?":
             call del_2_3 from _call_del_2_3 
           
 
@@ -247,8 +246,50 @@ label del_2_1:
     
     show leandre_neutre at tall_center
     with fade
-    anthrax "Oh! Tu as transitionné? !"
-    leandre "Yep."
+
+    anthrax "Oh ! Tu as transitionné ?"
+
+    leandre "Oui ! Ça ne se voit pas ?"
+
+    anthrax "Ça dépend... Tu as un très bon passing. Mais ce n'est pas la première question que je me pose en rencontrant quelqu'un."
+
+    leandre "C'est vrai que dit comme ça, ça a l'air plutôt normal. Je suis toujours persuadé que ça se lit sur mon front tellement ça fait partie de moi. J'ai tendance à oublier que ce n'est pas si commun que ça."
+
+    anthrax "J'ai aussi envie de dire que l'on est dans une troupe de drag. J'aurais dû m'y attendre un minimum..."
+
+    leandre "Pas faux... Mais bon, nous sommes une troupe particulièrement hétéroclite. *Pun intended.*"
+
+    anthrax "Ça n'a pas été trop dur ? Enfin, si ce n'est pas indiscret."
+
+    leandre "Dur ? Hm..."
+
+    leandre "En toute honnêteté, c'était l'enfer. Mais j'ai eu la chance d'être bien entouré."
+
+    leandre "Et j'ai commencé le drag à peu près à cette période, donc c'était très utile pour m'aider à combattre la dysphorie de genre."
+
+    anthrax "D'où le fait que tu fasses du drag king, je suppose."
+
+    leandre "C'est exact..."
+
+    leandre "Après, mon drag s'est \"re\"féminisé dernièrement."
+
+    leandre "Après tout, ma masculinité n'est pas la même que celle des hommes cisgenres, et hétéros."
+
+    leandre "Et je tire une bonne partie de ma fierté queer, de ma transition."
+
+    anthrax "Qu'est-ce que tu entends par là ?"
+
+    leandre "J'entends que si je devais renaître, je ne choisirais pas de le faire dans un corps d'homme,"
+
+    leandre "Et que je me relancerais dans le même parcours de vie."
+
+    leandre "Je n'ai aucun regret et je n'échangerais pour rien au monde cette expérience."
+
+    leandre "Après tout, est-ce que ce n'est pas le bonheur d'avoir pu expérimenter les deux genres ?"
+
+    leandre "D'avoir grandi comme j'ai grandi, d'avoir connu la sororité et les difficultés liées à la vie de femme ?"
+
+    leandre "Cette empathie, cette solidarité, cette bienveillance, elle me sont très précieuses."
     call del_3 from _call_del_3 
 
 #DEL.2.2
@@ -257,8 +298,43 @@ label del_2_2:
     
     show leandre_neutre at tall_center
     with fade
-    anthrax "Et comment est-ce que tu as rencontré Mother?"
-    mother "Ma belle attends je t'explque"
+
+    anthrax "Et comment est-ce que tu as rencontré Mother ?"
+
+    leandre "C'est un peu bête, vraiment..."
+
+    leandre "Je me suis fait traîner ici par des ami.e.s pour un spectacle, mais iels ont eu un empêchement de dernière minute."
+
+    leandre "Du coup je me suis retrouvé tout seul... Comme les endroits avec beaucoup de monde et personne que je connais m'angoissent beaucoup, j'ai bu pour essayer de me détendre et rencontrer du monde."
+
+    leandre "Au final, je suis juste resté assis au comptoir et je me suis pris une cuite... J'en suis pas super fier."
+
+    leandre "Mother m'a approché puisqu'elle s'inquiétait de mon état et on a fini par discuter pendant que je désaoulais."
+
+    anthrax "Ah oui... Une sacrée histoire finalement."
+
+    leandre "Je n'étais pas très flambant... Ce n'est pas une période de ma vie dont je suis très fier."
+
+    leandre "Ce soir-là, Mother m'a passé son contact et invité à repasser de temps en temps. Et comme je n'avais pas trop de repères, c'est là où je me suis ancré."
+
+    anthrax "Et tu as fini par intégrer la troupe."
+
+    leandre "E-Et bien... Ça ne s'est pas fait de suite évidemment... Mais ultimement, oui."
+
+    leandre "C'était un peu informel, mais elle m'a fait visiter L'Androgame de fond en comble et initié au drag en m'emmenant dans les coulisses avec les danseuses de semaine."
+
+    leandre "Tout du long, elle soulignait qu'elle comptait monter une troupe secondaire, exclusivement queer."
+
+    leandre "\"Une manière de rendre à la communauté\", qu'elle disait. Son plan était de réserver au moins un soir de grande affluence en semaine au drag."
+
+    leandre "Pas besoin de préciser que ça a fonctionné bien plus qu'elle ne le pensait..."
+
+    anthrax "C'est vrai que la majorité des soirées sont réservées maintenant aux \"Paillettes\"."
+
+    anthrax "Je n’ai d’ailleurs connu L’Androgame qu’à partir du moment où la communauté a commencé à se réveiller et partager ce qu’il s’y passait."
+
+    anthrax "C’est aussi pour cette raison que j’avais envie de venir."
+
     call del_3 from _call_del_3_1 
 
 #DEL.2.3
@@ -267,13 +343,93 @@ label del_2_3:
     
     show leandre_neutre at tall_center
     with fade
-    anthrax "Choix wip"
-    mother "Script wip"
+    
+    anthrax "J'ai remarqué qu'Aimé.e finissait beaucoup tes phrases. Est-ce que tu es toujours aussi timide ?"
+
+    leandre "Hm... La plupart du temps oui. Mais c'est quelque chose que j'essaye de travailler."
+
+    leandre "J'ai toujours été assez réservé et discret. Je prends plutôt bien sa démarche puisque je ne réussis pas encore à aussi bien m'imposer qu'ellui."
+
+    leandre "Je préfère ça à m'effacer dans le décor comme je le faisais avant..."
+
+    leandre "Et iel est très compréhensif.ve lorsque je sens que je suis capable de m'exprimer et que j'en fais part."
+
+    anthrax "C'est donc d'un commun accord..."
+
+    leandre "Un accord tacite, oui. Mais qui nous convient et nous ressemble bien..."
+
+    leandre "Ça ne l'empêche pas non plus de me taquiner et d'essayer de me faire sortir de mes gonds."
+
+    leandre "C'est challengeant, et ça a déjà marché. Même Imani s'est retrouvée assez surprise."
+
+    anthrax "J'ai très envie de voir ça maintenant ! Mais il y a une raison derrière tout cela ?"
+
+    leandre "Pas vraiment... Je n'ai juste jamais eu une grande confiance en moi, et le regard des autres m'a toujours semblé particulièrement lourd à porter."
+
+    leandre "Lorsqu'une situation était trop embarrassante, je choisissais toujours la fuite. Ou le déni, au choix. C'est devenu ma façon d'être, et les handicaps qui viennent avec."
+
+    leandre "C'est pour ça que le drag est particulièrement rassurant... L'espace d'un instant, je peux être entièrement quelqu'un d'autre."
+
+    leandre "Quelqu'un de ma création, que je contrôle, qui me protège, derrière lequel je peux me cacher et extérioriser le fond de ma pensée."
+
+    leandre "Il n'y a pas vraiment d'autre forme d'expression qui permet cela... Le théâtre peut-être, mais encore, le personnage y est déjà existant et incarné... Pas un reflet d'une personnalité que j'aimerais affirmer."
+
+    anthrax "La nuance est fine, mais je crois comprendre ce que tu sous-entends."
+
     call del_3 from _call_del_3_2 
 
 #DEL.3
 label del_3:
 
+    "Cela faisait plusieurs minutes que je cherchais Léandre, avec qui j'étais supposé.e répéter une partie de mon numéro, que l'on construisait ensemble."
+
+    "Après avoir fait trois fois le tour du lobby, des backstages, être retourné.e tout autant de fois dans les loges, je finis par retourner sur les planches de la scène, pensif.ve."
+
+    "Et en toute honnêteté, un peu inquiet.e."
+
+    "C'est alors que j'aperçus une tignasse blonde depuis le haut du balcon, absorbée par le contenu de son téléphone. N'ayant pas pensé à lever le regard, je grimpai l'escalier en colimaçon pour le rejoindre, à tâtons."
+
+    anthrax "Hey... Je me demandais où tu étais passé."
+
+    leandre "Oh !"
+
+    leandre "Pardon, je n'ai pas vu l'heure tourner."
+
+    anthrax "Est-ce que tout va bien ? Tu as l'air soucieux."
+
+    leandre "Hm... C'est rien. Juste un ancien client qui essaye de reprendre contact. C'est un peu relou."
+
+    anthrax "Un ancien client ?"
+
+    leandre "Hm..."
+
+    "Visiblement pas très à l'aise, Léandre rangea son mobile et joua avec ses doigts, venant s'appuyer sur la rambarde pour observer la scène en contrebas."
+
+    leandre "C'est vrai que je ne t'en ai pas encore parlé..."
+
+    leandre "Les autres sont au courant, mais j'aurais peut-être dû te mettre dans la boucle plus tôt."
+
+    anthrax "Oh... C'est grave ?"
+
+    leandre "Pas vraiment... Mais c'est une passe de ma vie dont je ne suis pas très fier."
+
+    leandre "Mais ça ne me dérange plus tellement d'en parler, donc bon..."
+
+    anthrax "Seulement si tu te sens de l'aborder alors."
+
+    leandre "Ne t'en fais pas, je n'aurais pas commencé à en parler si je ne le sentais pas."
+
+    leandre "Mais je te fais suffisamment confiance pour ne pas me juger sur mes décisions."
+
+    "Un peu plus confiant, il se redressa et tourna la tête dans ma direction, un sourire apaisé aux lèvres."
+
+    leandre "À un moment, j'ai fait des vidéos à caractère..."
+
+    leandre "Disons les termes, à caractère sexuel."
+
+    leandre "Pour de l'argent."
+
+    leandre "D'où \"l'ancien client\"..."
 
 #Dialogue WIP 
 
@@ -284,11 +440,11 @@ label choix_del3:
     show leandre_neutre at tall_right
     with fade
     menu: 
-        "WIP":
+        "Tu avais d'autres raisons pour te lancer... dans cette industrie?":
             call del_3_1 from _call_del_3_1_1 
-        "WIP":
+        "Pourquoi est-ce que tu n'es pas très fier de cette période?":
             call del_3_2 from _call_del_3_2_1 
-        "WIP":
+        "Pour de l'argent? Tu étais en difficulté?":
             call del_3_3 from _call_del_3_3 
 
 #DEL.3.1
@@ -297,8 +453,55 @@ label del_3_1:
     
     show leandre_neutre at tall_center
     with fade
-    anthrax "WIP"
-    leandre "WIP"
+    
+    anthrax "Tu avais d'autres raisons pour te lancer... dans cette industrie ?"
+
+    leandre "Sûrement... On peut dire ça."
+
+    leandre "C'était un moment dans ma vie où j'étais assez perdu."
+
+    leandre "Il y a eu tellement de changements en aussi peu de temps que je ne savais plus du tout où me positionner. Par rapport aux autres et par rapport à moi-même..."
+
+    anthrax "C'est-à-dire... ?"
+
+    leandre "Je ne sais pas... J'ai toujours eu un rapport à l'intime complètement frit."
+
+    leandre "Hormonalement parlant, c'était la fiesta. Je commençais tout juste la testo et ma libido était en roue libre."
+
+    leandre "Bon, après, ça ne m'a jamais empêché d'être serein et décent avec mes partenaires, mais tout de même..."
+
+    leandre "Et c'était la première fois de ma vie que j'apprenais à apprécier mon corps pour ce qu'il était. C'était une liberté nouvelle, peut-être un peu trop, parce que je ne savais pas ce que je faisais."
+
+    leandre "J'étais jeune aussi, et c'était peut-être trop de bonheur d'un coup, pour quelqu'un d'encore blessé et immature."
+
+    anthrax "Après, c'est quelque chose de facilement compréhensible. Tu te cherchais..."
+
+    leandre "Je me suis surtout senti pousser des ailes."
+
+    leandre "Dans cette quête, je me suis hypersexualisé, et au final ça m'a plus joué des tours qu'autre chose."
+
+    leandre "J'avais aussi besoin d'argent pour payer ma mammec', et je m'en sentais les épaules. Maintenant, je me retrouve avec du contenu intime qui se promène dans la nature..."
+
+    leandre "J'ai fini par l'accepter : j'ai fait des erreurs et pris de mauvaises décisions."
+
+    leandre "Maintenant, le \"moi\" adulte vit avec."
+
+    anthrax "Si tu réussis à te réconcilier avec ton passé, c'est le principal non ?"
+
+    leandre "Oui, je suis de cet avis. Et puis tout le monde a des regrets, je ne suis pas le seul."
+
+    leandre "J'aurais peut-être juste espéré que Delaunay débarque un peu plus tôt dans ma vie. Il m'aurait sûrement évité quelques bêtises et aiguillé comme il le fait aujourd'hui."
+
+    anthrax "Ta persona drag ? Je ne savais pas que tu l'adressais comme si c'était quelqu'un d'autre."
+
+    leandre "C'est un peu plus simple de complètement le dissocier de ma personne."
+
+    leandre "C'est un peu mon ange gardien finalement, qui m'incite à prendre exemple sur lui et être une meilleure version de moi-même."
+
+    leandre "Mais tout le monde ne fait pas pareil et chacun.e a sa manière d'aborder son drag après tout."
+
+    leandre "Dans tous les cas, c'est une relation très personnelle avec une facette de nous-même, donc ça ne me dérange pas de l'adresser à la troisième personne."
+
     call del_4 from _call_del_4 
 
 #DEL.3.2
@@ -307,8 +510,49 @@ label del_3_2:
     
     show leandre_neutre at tall_center
     with fade
-    anthrax "WIP"
-    mother "WIP"
+
+    anthrax "Pourquoi est-ce que tu n'es pas très fier de cette période ?"
+
+    leandre "Oh, eh bien, ça me semble plutôt logique..."
+
+    leandre "Avoir fait du porno, c'est pas très mirobolant sur un CV."
+
+    leandre "Mais Mother n'est pas très regardante sur ce point, donc je n'ai pas eu plus de soucis que ça."
+
+    leandre "C'est plus gênant si quelqu'un tombe dessus et m'y reconnaît, mais comme j'ai énormément changé entre-temps, je ne m'en inquiète pas plus que ça."
+
+    leandre "Puis, comme j'assume un minimum, ce n'est pas comme si ces personnes pouvaient retourner ça contre moi. Et sinon, j'ai toujours l'option de nier."
+
+    anthrax "Après tout, ça ne concerne que toi."
+
+    leandre "Exact !"
+
+    anthrax "Si tu réussis à tirer quelque chose de positif de cette expérience, c'est le principal."
+
+    leandre "Hm... Oui, après tout, ça m'a aidé à réaliser que ce n'était pas à travers le regard des autres que j'allais apprendre à m'aimer."
+
+    leandre "J'étais persuadé à l'époque que si les gens m'appréciaient pour quelque chose, le reste allait suivre de l'autre côté."
+
+    leandre "Alors que ça aurait dû être l'inverse..."
+
+    leandre "M'aimer d'abord, découvrir mon intimité ensuite... Ou en même temps, à la rigueur."
+
+    leandre "Enfin bref, c'était pas du tout la méthode adaptée pour nourrir mon \"appréciation de soi\"."
+
+    anthrax "Comment est-ce que tu as réussi à t'en sortir du coup ?"
+
+    leandre "Je ne travaillais pas encore à l'Androgame, et je m'étais fait poser un lapin, donc je me suis laminé au bar... Et on a discuté le temps que je décuve."
+
+    leandre "C'était assez bizarre, mais bienvenu puisque j'étais prêt à me raccrocher à n'importe quoi. Je suis revenu quelques fois justement pour ça..."
+
+    leandre "Je m'étais lancé dans les vidéos pour payer mon opération mais Mother m'a proposé un travail à mi-temps et présenté à ses ami.e.s drag artists lorsque j'ai soulevé l'idée que ça pouvait m'aider avec ma dysphorie de genre."
+
+    leandre "Grâce à ça, j'ai pu arrêter et reprendre ma vie en main."
+
+    leandre "Je t'en avais déjà parlé, non ? Je ne me souviens plus... Ce serait bête que je passe pour un disque rayé !"
+
+    anthrax "Mais non ! Et puis, même si tu te répétais, ça m'est égal. Ça veut dire que tu me fais toujours confiance pour m'en parler !"
+
     call del_4 from _call_del_4_1 
 
 #DEL.3.3
@@ -317,8 +561,57 @@ label del_3_3:
     
     show leandre_neutre at tall_center
     with fade
-    anthrax "WIP"
-    mother "WIP"
+    
+    anthrax "Pour de l'argent ? Tu étais à ce point en difficulté ?"
+
+    leandre "Plus ou moins... Avec mon parcours de transition plutôt chaotique, je n'ai pas pu passer par le circuit \"public\", avec les aides médicales qui vont avec."
+
+    leandre "Pour avoir accès à ça, il faut avoir eu un suivi psychiatrique d'au moins deux ans."
+
+    leandre "Mais comme je m'en suis rendu compte tardivement, je n'ai pas eu ce luxe."
+
+    leandre "Et j'étais tellement dans le mal, psychologiquement parlant, que je n'avais pas la patience non plus d'entamer ce parcours."
+
+    leandre "Heureusement, je suis tombé sur une endocrinologue top, qui m'a permis d'accéder à un traitement hormonal."
+
+    leandre "Et ma psy, bien qu'elle ne soit pas psychiatre, a été d'un grand soutien."
+
+    anthrax "Ça m'a l'air d'être des démarches super compliquées..."
+
+    leandre "Oh, crois-moi que je suis rodé en tout ce qui concerne les démarches administratives..."
+
+    leandre "Même si je suis toujours aussi terrifié à l'idée de passer un appel téléphonique pour prendre un rendez-vous..."
+
+    leandre "Dans l'idée, dans le meilleur des mondes, j'aurais dû m'en rendre compte lorsque j'étais jeune et innocent pour qu'on me prenne au sérieux."
+
+    leandre "Et pas à dix-neuf ans, déjà majeur, comme ça s'est passé..."
+
+    leandre "C'est fou à quel point on te laisse tomber à ta majorité par rapport à tout ce qui est médical..."
+
+    leandre "Comme si c'était inné, qu'on devait tout savoir, ou que c'était une évidence de connaître la marche à suivre."
+
+    leandre "Alors évidemment, internet est ton meilleur ami, mais ensuite on te reproche d'avoir été influencé par internet et de ne pas savoir ce que tu veux finalement..."
+
+    leandre "Parce qu'en plus de ta déprime, c'est apparemment absolument nécessaire de t'achever en te décrédibilisant."
+
+    leandre "Enfin bref..."
+
+    anthrax "Les circonstances ont fait que tu as dû payer de ta poche..."
+
+    leandre "En effet... Et ça ne sort pas d'un chapeau magique, quelques milliers d'euros. Donc j'ai fait avec ce que j'avais, c'est-à-dire, pas grand-chose..."
+
+    leandre "J'étais tellement au fond du trou et au pire de ma dépression que ça me semblait être la seule issue."
+
+    leandre "Si je n'agissais pas, j'allais me laisser manger par les idées noires et..."
+
+    leandre "Je ne vais pas faire un dessin, je suppose que tu connais les statistiques..."
+
+    anthrax "Malheureusement oui. Je connais au moins une personne trans dans mon entourage qui s'est suicidée... Et d'autres qui l'ont au moins envisagé."
+
+    leandre "Ce n'est pas très joyeux comme discussion..."
+
+    anthrax "C'est clair... Mais c'est la triste réalité..."
+
     call del_4 from _call_del_4_2 
 
 #DEL.4
