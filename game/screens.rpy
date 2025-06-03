@@ -386,8 +386,8 @@ screen navigation():
         style_prefix "navigation"
 
         if renpy.get_screen("main_menu"):
-            xalign 0.5
-            yalign 0.65
+            xalign 0.504
+            yalign 0.84
         else:
             xoffset 100
             yalign 0.5
@@ -411,12 +411,12 @@ screen navigation():
 
         if renpy.get_screen("main_menu"):
             xalign 0.5
-            yalign 0.85
+            yalign 0.95
         else:
             xoffset 100
             yalign 0.5
 
-        spacing 60
+        spacing 120
 
         #textbutton _("Reprendre") action ShowMenu("load")
         imagebutton:
