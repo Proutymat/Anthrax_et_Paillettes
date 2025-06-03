@@ -98,10 +98,36 @@ image angry:
     0.03
     "images/VFX/Angry/Angry_00005.png"
     0.03
+    "images/VFX/Angry/Angry_00006.png"
+    0.03
+    "images/VFX/Angry/Angry_00007.png"
+    0.03
+    "images/VFX/Angry/Angry_00008.png"
+    0.03
+    "images/VFX/Angry/Angry_00009.png"
+    0.03
+    "images/VFX/Angry/Angry_00010.png"
+    0.03
+    "images/VFX/Angry/Angry_00011.png"
+    0.03
+    "images/VFX/Angry/Angry_00012.png"
+    0.03
+    "images/VFX/Angry/Angry_00013.png"
+    0.03
+    "images/VFX/Angry/Angry_00014.png"
+    0.03
+    "images/VFX/Angry/Angry_00015.png"
+    0.03
+    "images/VFX/Angry/Angry_00016.png"
+    0.03
+    "images/VFX/Angry/Angry_00017.png"
+    0.03
+    "images/VFX/Angry/Angry_00018.png"
+    0.03
+    "images/VFX/Angry/Angry_00019.png"
+    0.03
 
-
-
-
+    
 
 
 
@@ -299,7 +325,7 @@ label onboarding:
     hide devanture
     show auditorium  
     with fade
-    show mother at tall_center with fade
+    show mother at tall_center with dissolve
 
 
 #0.2
@@ -314,6 +340,7 @@ label onboarding:
     queue music CabaretLightVerse volume 0.7
     
     mother "Tu avais l’air de dire dans nos échanges que tu n’habitais pas trop loin, le chemin n’a pas dû être bien  compliqué."
+    hide angry
     text "En effet, une fois passée la porte pivotante, la hauteur sous plafond et les lustres géométriques faillirent me donner un torticolis."
     text "Je devais presque plisser les yeux pour repérer tous les petits détails dans la marqueterie, les dorures et les formes dans le papier peint."
     anthrax "Oui. Et puis, c’est le genre d’établissement qu’il est difficile de louper!"
