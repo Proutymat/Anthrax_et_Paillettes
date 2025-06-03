@@ -87,6 +87,24 @@ image balcon = "Backgrounds/balcon.png"
 
 #vfx
 
+image angry: 
+    "images/VFX/Angry/Angry_00001.png"
+    0.03
+    "images/VFX/Angry/Angry_00002.png"
+    0.03
+    "images/VFX/Angry/Angry_00003.png"
+    0.03
+    "images/VFX/Angry/Angry_00004.png"
+    0.03
+    "images/VFX/Angry/Angry_00005.png"
+    0.03
+
+
+
+
+
+
+
 
 init python:
 
@@ -289,6 +307,8 @@ label onboarding:
     play ambiance AmbAndrogameDay fadein 0.5
 
     mother "Bienvenue dans l'Androgame! J'espère que tu as fait bonne route."
+
+    show angry
 
     queue music CabaretIntro volume 0.7
     queue music CabaretLightVerse volume 0.7
