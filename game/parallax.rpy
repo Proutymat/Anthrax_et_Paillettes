@@ -19,6 +19,7 @@ define config.tag_layer = {
     'curtain_open' : 'inyourface',
     'curtain_close' : 'inyourface',
     'flirt' : 'back',
+    'angry' : 'farthestBack'
 }
 
 init -1 python:
