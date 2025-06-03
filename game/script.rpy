@@ -1,5 +1,19 @@
 # fonctions custom
 
+init python:    
+    import os
+
+    def get_available_translations():
+        tl_path = os.path.join(renpy.config.gamedir, "tl")
+        available_translations = []
+        if os.path.isdir(tl_path):
+            for folder_name in os.listdir(tl_path):
+                # Exclude "None" folder and any hidden files
+                if folder_name != "None" and not folder_name.startswith('.'):
+                    available_translations.append(folder_name)
+        return available_translations
+
+
 init python:
     def type_sound(event, interact=True, cps=35, boopfile=type_sounds, **kwargs):
         speed = int((0.1/cps)*1000)/1000

@@ -896,12 +896,11 @@ style slot_button_text:
 screen preferences():
 
     tag menu
-    add "images/Backgrounds/auditorium.png"
+    add "images/Backgrounds/white_background.png"
     
     vbox:
         at Transform(xalign=0.1, yalign=0.98)
         imagebutton idle "menuUI/retour_idle.png" hover "menuUI/retour_hover.png" action Return()
-
 
     vbox:
         align (0.5, 0.5)
@@ -926,6 +925,21 @@ screen preferences():
                 textbutton _("Texte non lu") action Preference("skip", "toggle")
                 textbutton _("Après les choix") action Preference("after choices", "toggle")
                 textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
+
+            vbox:
+                style_prefix "radio"
+                label _("Langues")
+
+                textbutton _("Français") action Language(None)
+
+                for lang in get_available_translations():
+                    textbutton _(f"{lang.capitalize()}") action Language(lang)
+
+            vbox:
+                style_prefix "radio"
+                label "Effets visuels"
+                textbutton "[\"Parallaxe : Activée\" if persistent.bg_parallax else \"Parallaxe : Désactivée\"]" action [ToggleField(persistent, "bg_parallax"), Function(renpy.restart_interaction)]
+
 
                 ## Des boites vbox additionnelles de type "radio_pref" ou
                 ## "check_pref" peuvent être ajoutées ici pour ajouter des
