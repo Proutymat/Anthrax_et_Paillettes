@@ -236,7 +236,7 @@ label onboarding:
     with fade
     $ quick_menu = True  
 
-    play ambiance AmbRue
+    play ambiance AmbRue fadein 5.0
 
     text "L'Androgame..."
     text "C’est dingue à quel point ce cabaret a reprit ses lettres de noblesse."
@@ -263,7 +263,7 @@ label onboarding:
     text "J’avais du mal à réaliser, mais on a convenu d’une nouvelle date d’entretien, en journée quand le cabaret serait vide, où elle m’expliquerait plus en détails le fonctionnement des backstages."
 
     stop ambiance fadeout 1.0
-    play music CabaretEntrance fadein 0.1
+    play music CabaretEntrance volume 0.7
     hide devanture
     show auditorium  
     with fade
@@ -276,8 +276,8 @@ label onboarding:
 
     mother "Bienvenue dans l'Androgame! J'espère que tu as fait bonne route."
 
-    queue music CabaretIntro
-    queue music CabaretLightVerse
+    queue music CabaretIntro volume 0.7
+    queue music CabaretLightVerse volume 0.7
     
     mother "Tu avais l’air de dire dans nos échanges que tu n’habitais pas trop loin, le chemin n’a pas dû être bien  compliqué."
     text "En effet, une fois passée la porte pivotante, la hauteur sous plafond et les lustres géométriques faillirent me donner un torticolis."
@@ -286,7 +286,7 @@ label onboarding:
     mother "Aha! Tu m’en vois ravie de l’entendre."
     mother "Je ne fais pas te faire patienter plus longtemps... Commençons par te faire une petite visite des lieux. Promis, tu vas t’y retrouver bien vite"
 
-    queue music CabaretLightChorus
+    queue music CabaretLightChorus volume 0.7
 
     mother "En arrivant, tu es passé.e par le lobby, le hall d’entrée, l’accueil... Tu peux l’appeler comme tu veux. Mais dans l’idée, passé ce guichet, les clients payent!"
     mother "Ce n’est pas trop dans notre politique cette histoire du \"le client est roi\", mais tu apprendras vite que c’est là que les pourboires se cachent"
@@ -298,7 +298,6 @@ label onboarding:
 
     hide mother 
 
-    stop music fadeout 1
     stop ambiance fadeout 10.0
 
 
@@ -306,7 +305,7 @@ label onboarding:
     hide auditorium 
     show loges 
     with fade
-    play music BackstageLoop
+    queue music CabaretLightSolo volume 0.7
 
     show mother at tall_right  with dissolve
 
@@ -320,7 +319,7 @@ label onboarding:
     text "Studieuse."
     
     play ambiance AmbLoges fadein 1
-    play music BackstageDrumLoop fadein 1.0 volume 0.5
+    play music BackstageDrumLoop volume 0.5
 
     show imani_neutre at tall_left  with dissolve
 
@@ -360,7 +359,7 @@ label onboarding:
 
     mother "Oh! Je vois que vous faites connaissance! Les filles, je vous présente [player_name], iel nous rejoindra sous peu le temps d'arranger le spectacle, et je compte sur vous pour l'acceuillir comme il se doit."
 
-    play music CabaretLightChorus fadein 0.5 volume 1.0
+    play music CabaretLightChorus volume 0.7
 
     anthrax "Semblant sortir de leur torpeur et reprendre leurs esprits, les artistes drag face à moi me sourirent et commencèrent à faire un tour des présentations."
     
