@@ -101,17 +101,20 @@ init python:
 
 # Liste des sfx
 define type_sounds = ['audio/SFX/TextMix-001.ogg','audio/SFX/TextMix-002.ogg','audio/SFX/TextMix-003.ogg','audio/SFX/TextMix-004.ogg','audio/SFX/TextMix-005.ogg','audio/SFX/TextMix-006.ogg','audio/SFX/TextMix-007.ogg','audio/SFX/TextMix-008.ogg','audio/SFX/TextMix-009.ogg','audio/SFX/TextMix-010.ogg']
+define A_type_sounds = ['audio/SFX/AP_TA-001.ogg','audio/SFX/AP_TA-002.ogg','audio/SFX/AP_TA-003.ogg','audio/SFX/AP_TA-004.ogg']
 define D_type_sounds = ['audio/SFX/AP_T1-001.ogg','audio/SFX/AP_T1-002.ogg','audio/SFX/AP_T1-003.ogg','audio/SFX/AP_T1-004.ogg']
 define M_type_sounds = ['audio/SFX/AP_T2-001.ogg','audio/SFX/AP_T2-002.ogg','audio/SFX/AP_T2-003.ogg','audio/SFX/AP_T2-004.ogg']
 define G_type_sounds = ['audio/SFX/AP_T3-001.ogg','audio/SFX/AP_T3-002.ogg','audio/SFX/AP_T3-003.ogg','audio/SFX/AP_T3-004.ogg'] 
 define P_type_sounds = ['audio/SFX/AP_T4-001.ogg','audio/SFX/AP_T4-002.ogg','audio/SFX/AP_T4-003.ogg','audio/SFX/AP_T4-004.ogg']
+define type_silent = ['<silence 1.0>']
 
 # Liste des ambiances
 define audio.AmbAndrogameDay = "audio/Amb/Amb_CabaretDay_V3.ogg"
-define audio.AmbLoges = "audio/Amb/Amb_LogesDay_V3.ogg"
-define audio.AmbRue = "audio/Amb/Amb_Rue_V1.ogg"
-define audio.AmbLogesNight = "audio/Amb/Amb_LogesNight_V4.ogg"
+define audio.AmbLoges = "audio/Amb/Amb_LogesDay_V4.ogg"
+define audio.AmbRue = "audio/Amb/Amb_Rue_V2.ogg"
+define audio.AmbLogesNight = "audio/Amb/Amb_LogesNight_V3.ogg"
 define audio.AmbDelShow = "audio/Amb/AP_Amb_ShowDel_V1.ogg"
+define audio.BarDay = "audio/Amb/Amb_BarDay_V4.ogg"
 
 # Liste des réactions de foule
 define audio.CrowdDel1 = "audio/Amb/AP_Crowd_ShowDelSt1.ogg"
@@ -139,19 +142,28 @@ define audio.BackstageDrumLoop = "audio/Music/ON_BackStageLoop_V1.ogg"
 define audio.BarMusic = "audio/Music/RUN_BarNeutral_V1.ogg"
 define audio.ShowDelaunay = "audio/Music/SHOW_Delaunay_Idea1_V1.ogg"
 define audio.ShowGatsby = "audio/Music/SHOW_Gatsby_Idea1_V2.ogg"
+define audio.ConfidenceIntro = 'audio/Music/3_Confidence_Intro.ogg'
+define audio.ConfidenceA1 = 'audio/Music/3_Confidence_A.ogg'
+define audio.ConfidenceA2 = 'audio/Music/3_Confidence_A2.ogg'
+define audio.ConfidenceAB = 'audio/Music/3_Confidence_AB.ogg'
+define audio.ConfidenceB1 = 'audio/Music/3_Confidence_B1.ogg'
+define audio.ConfidenceB2 = 'audio/Music/3_Confidence_B2.ogg'
+define audio.ConfidenceOutro = 'audio/Music/3_Confidence_Outro.ogg'
 
 # Déclarez les personnages utilisés dans le jeu.
-define mother = Character('Mother', color="#b51963", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=25, callback=type_sound, cb_cps=25)
-define anthrax = Character('Anthräx', color="#9370db", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=35, callback=type_sound, cb_cps=35)
-define delaunay = Character('Delaunay', color="#faaf90", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
-define gatsby = Character('Gatsby', color="#054fb9", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
-define peacock = Character('Peacock', color="#f57600", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
-define leandre = Character('Léandre', color="#faaf90", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
-define aimee = Character('Aimé.e', color="#054fb9", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
-define imani = Character('Imani', color="#f57600", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
-define inconnu = Character('???', color="#FFFFFF", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
-define delinconnu = Character('Del?', color="#faaf90", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
-define player = Character('[player_name]', color="#9370db", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
+define mother = Character('Mother', color="#b51963", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=30, callback=type_sound, cb_cps=30, cb_boopfile=M_type_sounds)
+define anthrax = Character('Anthräx', color="#9370db", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=35, callback=type_sound, cb_cps=35, cb_boopfile=A_type_sounds)
+define delaunay = Character('Delaunay', color="#faaf90", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=D_type_sounds)
+define gatsby = Character('Gatsby', color="#054fb9", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=G_type_sounds)
+define peacock = Character('Peacock', color="#f57600", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=P_type_sounds)  
+define leandre = Character('Léandre', color="#faaf90", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=D_type_sounds)
+define aimee = Character('Aimé.e', color="#054fb9", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=G_type_sounds)
+define imani = Character('Imani', color="#f57600", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=P_type_sounds)
+define inconnu = Character('???', color="#FFFFFF", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50)
+define delinconnu = Character('Del?', color="#faaf90", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=D_type_sounds)
+define player = Character('[player_name]', color="9370db", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
+define staff = Character('Staff', color="#FFFFFF", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50)
+define text = Character(color="#FFFFFF", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
 
 
 
@@ -162,7 +174,7 @@ scene black with fade
 show loges
 show leandre_neutre at tall_center with dissolve
 
-play ambiance AmbLoges fadein 2.0 
+play ambiance AmbLoges fadein 0.5 
 
 #DEL.1
 leandre "Hey... Hum... Je suis content que tu m’aies choisi. Je ne pensais pas trop que ce serait le cas."
@@ -186,6 +198,8 @@ anthrax "Ça, je ne dis pas non!"
 show bar with dissolve
 play music BarMusic fadein 1.5 volume 0.5
 play ambiance BarDay fadein 0.5
+show bar with fade
+play music BarMusic volume 0.5
 
 anthrax "Nous sommes arrivé.e.s dans l'auditorium et nous sommes approché.e.s du comptoir derrière lequel brillaient un mur de bouteilles de formes et couleurs uniques. Le paradis du parfait mixologue."
 anthrax "Nous avions depuis le bar une vue imprenable sur la scène, légèrement en contrebas. Les tablées y étaient déjà dressées et se regroupaient autour du big band et de l'estrade secondaire au centre de la pièce."
@@ -222,7 +236,7 @@ leandre "Et bien... J’étais en train de décrocher des études, j’étais da
 leandre "Vraiment, une vraie crise de la vingtaine... J’en ris maintenant, mais ce n’était pas du tout drôle à l’époque."
 leandre "Et finalement, Mother m’a pris sous son aile et m’a aidé à me sortir de tout cela."
 
-stop music fadeout 2.0
+
 
 #Choix DEL.2
 label choix_del2:
@@ -290,6 +304,9 @@ label del_2_1:
     leandre "D'avoir grandi comme j'ai grandi, d'avoir connu la sororité et les difficultés liées à la vie de femme ?"
 
     leandre "Cette empathie, cette solidarité, cette bienveillance, elle me sont très précieuses."
+
+    stop music fadeout 1.0
+    stop ambiance fadeout 1.0
     call del_3 from _call_del_3 
 
 #DEL.2.2
@@ -335,6 +352,8 @@ label del_2_2:
 
     anthrax "C’est aussi pour cette raison que j’avais envie de venir."
 
+    stop music fadeout 1.0
+    stop ambiance fadeout 1.0
     call del_3 from _call_del_3_1 
 
 #DEL.2.3
@@ -376,18 +395,24 @@ label del_2_3:
 
     anthrax "La nuance est fine, mais je crois comprendre ce que tu sous-entends."
 
+    stop music fadeout 1.0
+    stop ambiance fadeout 1.0
     call del_3 from _call_del_3_2 
 
 #DEL.3
 label del_3:
 
-    "Cela faisait plusieurs minutes que je cherchais Léandre, avec qui j'étais supposé.e répéter une partie de mon numéro, que l'on construisait ensemble."
+    play music ConfidenceIntro
 
-    "Après avoir fait trois fois le tour du lobby, des backstages, être retourné.e tout autant de fois dans les loges, je finis par retourner sur les planches de la scène, pensif.ve."
+    text "Cela faisait plusieurs minutes que je cherchais Léandre, avec qui j'étais supposé.e répéter une partie de mon numéro, que l'on construisait ensemble."
 
-    "Et en toute honnêteté, un peu inquiet.e."
+    text "Après avoir fait trois fois le tour du lobby, des backstages, être retourné.e tout autant de fois dans les loges, je finis par retourner sur les planches de la scène, pensif.ve."
 
-    "C'est alors que j'aperçus une tignasse blonde depuis le haut du balcon, absorbée par le contenu de son téléphone. N'ayant pas pensé à lever le regard, je grimpai l'escalier en colimaçon pour le rejoindre, à tâtons."
+    text "Et en toute honnêteté, un peu inquiet.e."
+
+    queue music ConfidenceA1
+
+    text "C'est alors que j'aperçus une tignasse blonde depuis le haut du balcon, absorbée par le contenu de son téléphone. N'ayant pas pensé à lever le regard, je grimpai l'escalier en colimaçon pour le rejoindre, à tâtons."
 
     anthrax "Hey... Je me demandais où tu étais passé."
 
@@ -403,7 +428,9 @@ label del_3:
 
     leandre "Hm..."
 
-    "Visiblement pas très à l'aise, Léandre rangea son mobile et joua avec ses doigts, venant s'appuyer sur la rambarde pour observer la scène en contrebas."
+    queue music ConfidenceA2
+
+    text "Visiblement pas très à l'aise, Léandre rangea son mobile et joua avec ses doigts, venant s'appuyer sur la rambarde pour observer la scène en contrebas."
 
     leandre "C'est vrai que je ne t'en ai pas encore parlé..."
 
@@ -421,7 +448,7 @@ label del_3:
 
     leandre "Mais je te fais suffisamment confiance pour ne pas me juger sur mes décisions."
 
-    "Un peu plus confiant, il se redressa et tourna la tête dans ma direction, un sourire apaisé aux lèvres."
+    text "Un peu plus confiant, il se redressa et tourna la tête dans ma direction, un sourire apaisé aux lèvres."
 
     leandre "À un moment, j'ai fait des vidéos à caractère..."
 
@@ -508,6 +535,8 @@ label del_3_1:
 label del_3_2:
     $ quick_menu = True
     
+    queue music ConfidenceAB
+    queue music ConfidenceB1
     show leandre_neutre at tall_center
     with fade
 
@@ -535,6 +564,8 @@ label del_3_2:
 
     leandre "Alors que ça aurait dû être l'inverse..."
 
+    queue music ConfidenceB2
+
     leandre "M'aimer d'abord, découvrir mon intimité ensuite... Ou en même temps, à la rigueur."
 
     leandre "Enfin bref, c'était pas du tout la méthode adaptée pour nourrir mon \"appréciation de soi\"."
@@ -547,6 +578,8 @@ label del_3_2:
 
     leandre "Je m'étais lancé dans les vidéos pour payer mon opération mais Mother m'a proposé un travail à mi-temps et présenté à ses ami.e.s drag artists lorsque j'ai soulevé l'idée que ça pouvait m'aider avec ma dysphorie de genre."
 
+    queue music ConfidenceOutro
+    
     leandre "Grâce à ça, j'ai pu arrêter et reprendre ma vie en main."
 
     leandre "Je t'en avais déjà parlé, non ? Je ne me souviens plus... Ce serait bête que je passe pour un disque rayé !"
@@ -617,8 +650,10 @@ label del_3_3:
 #DEL.4
 label del_4:
 
+    stop music fadeout 0.5
     stop ambiance fadeout 0.5
-    play ambiance AmbLogesNight fadein 2.0
+    play music BackstageLoop volume 0.5
+    play ambiance AmbLoges fadein 0.5
 
     anthrax "Au sein de la loge, une certaine tension planait au-dessus de la playlist qui tournait. Pas une mauvaise ambiance, non, plutôt une intense concentration."
     anthrax "Évidemment, tout le monde chit-chattait gaîment, mais je ne pus m'empêcher de fixer un instant Léandre."
@@ -686,6 +721,8 @@ label del_4_1:
 
     anthrax "C'est adorable."
 
+    stop music fadeout 0.1
+    
     staff "Ok les filles ! Showtime dans dix minutes !"
 
     delaunay "Mon dieu, j'ai encore tellement à faire ! Vite [player] ! Un coup de main, vite !"
@@ -724,6 +761,8 @@ label del_4_2:
 
     delaunay "Je sais... Et ça commence à se stabiliser, bien heureusement."
     delaunay "J'aimerais juste des fois que ça aille un peu plus vite."
+
+    stop music fadeout 0.1
 
     staff "Ok les filles ! Showtime dans dix minutes !"
 
@@ -786,6 +825,8 @@ label del_4_3:
     delaunay "Par pitié, pas toi aussi... Le terrain est glissant."
 
     anthrax "Désolé.e, c'était trop tentant."
+
+    stop music fadeout 0.1
 
     staff "Ok les filles ! Showtime dans dix minutes !"
 

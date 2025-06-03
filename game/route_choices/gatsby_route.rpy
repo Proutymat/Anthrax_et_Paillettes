@@ -98,17 +98,20 @@ init python:
 
 # Liste des sfx
 define type_sounds = ['audio/SFX/TextMix-001.ogg','audio/SFX/TextMix-002.ogg','audio/SFX/TextMix-003.ogg','audio/SFX/TextMix-004.ogg','audio/SFX/TextMix-005.ogg','audio/SFX/TextMix-006.ogg','audio/SFX/TextMix-007.ogg','audio/SFX/TextMix-008.ogg','audio/SFX/TextMix-009.ogg','audio/SFX/TextMix-010.ogg']
+define A_type_sounds = ['audio/SFX/AP_TA-001.ogg','audio/SFX/AP_TA-002.ogg','audio/SFX/AP_TA-003.ogg','audio/SFX/AP_TA-004.ogg']
 define D_type_sounds = ['audio/SFX/AP_T1-001.ogg','audio/SFX/AP_T1-002.ogg','audio/SFX/AP_T1-003.ogg','audio/SFX/AP_T1-004.ogg']
 define M_type_sounds = ['audio/SFX/AP_T2-001.ogg','audio/SFX/AP_T2-002.ogg','audio/SFX/AP_T2-003.ogg','audio/SFX/AP_T2-004.ogg']
 define G_type_sounds = ['audio/SFX/AP_T3-001.ogg','audio/SFX/AP_T3-002.ogg','audio/SFX/AP_T3-003.ogg','audio/SFX/AP_T3-004.ogg'] 
 define P_type_sounds = ['audio/SFX/AP_T4-001.ogg','audio/SFX/AP_T4-002.ogg','audio/SFX/AP_T4-003.ogg','audio/SFX/AP_T4-004.ogg']
+define type_silent = ['<silence 1.0>']
 
 # Liste des ambiances
 define audio.AmbAndrogameDay = "audio/Amb/Amb_CabaretDay_V3.ogg"
-define audio.AmbLoges = "audio/Amb/Amb_LogesDay_V3.ogg"
-define audio.AmbRue = "audio/Amb/Amb_Rue_V1.ogg"
-define audio.AmbLogesNight = "audio/Amb/Amb_LogesNight_V4.ogg"
+define audio.AmbLoges = "audio/Amb/Amb_LogesDay_V4.ogg"
+define audio.AmbRue = "audio/Amb/Amb_Rue_V2.ogg"
+define audio.AmbLogesNight = "audio/Amb/Amb_LogesNight_V3.ogg"
 define audio.AmbDelShow = "audio/Amb/AP_Amb_ShowDel_V1.ogg"
+define audio.BarDay = "audio/Amb/Amb_BarDay_V4.ogg"
 
 # Liste des réactions de foule
 define audio.CrowdDel1 = "audio/Amb/AP_Crowd_ShowDelSt1.ogg"
@@ -138,18 +141,19 @@ define audio.ShowDelaunay = "audio/Music/SHOW_Delaunay_Idea1_V1.ogg"
 define audio.ShowGatsby = "audio/Music/SHOW_Gatsby_Idea1_V2.ogg"
 
 # Déclarez les personnages utilisés dans le jeu.
-define mother = Character('Mother', color="#b51963", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=25, callback=type_sound, cb_cps=25)
-define anthrax = Character('Anthräx', color="#9370db", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=35, callback=type_sound, cb_cps=35)
-define delaunay = Character('Delaunay', color="#faaf90", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
-define gatsby = Character('Gatsby', color="#054fb9", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
-define peacock = Character('Peacock', color="#f57600", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
-define leandre = Character('Léandre', color="#faaf90", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
-define aimee = Character('Aimé.e', color="#054fb9", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
-define imani = Character('Imani', color="#f57600", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
-define inconnu = Character('???', color="#FFFFFF", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
-define delinconnu = Character('Del?', color="#faaf90", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
-define player = Character('[player_name]', color="#9370db", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
-define staff = Character('Staff', color="#FFFFFF", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
+define mother = Character('Mother', color="#b51963", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=30, callback=type_sound, cb_cps=30, cb_boopfile=M_type_sounds)
+define anthrax = Character('Anthräx', color="#9370db", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=35, callback=type_sound, cb_cps=35, cb_boopfile=A_type_sounds)
+define delaunay = Character('Delaunay', color="#faaf90", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=D_type_sounds)
+define gatsby = Character('Gatsby', color="#054fb9", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=G_type_sounds)
+define peacock = Character('Peacock', color="#f57600", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=P_type_sounds)  
+define leandre = Character('Léandre', color="#faaf90", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=D_type_sounds)
+define aimee = Character('Aimé.e', color="#054fb9", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=G_type_sounds)
+define imani = Character('Imani', color="#f57600", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=P_type_sounds)
+define inconnu = Character('???', color="#FFFFFF", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50)
+define delinconnu = Character('Del?', color="#faaf90", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=D_type_sounds)
+define player = Character('[player_name]', color="9370db", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
+define staff = Character('Staff', color="#FFFFFF", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50)
+define text = Character(color="#FFFFFF", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
 
 
 label gatsby_start:
@@ -174,16 +178,19 @@ anthrax "Ça me tente bien."
 
 
 #GAT.2
+hide loges
+show bar with fade
+play music BarMusic volume 0.5
+play ambiance BarDay fadein 0.5
 show bar with dissolve
-play music BarMusic
 
-"Nous sommes arrivé.e.s dans l'auditorium et nous nous sommes approché.e.s du comptoir derrière lequel brillait un mur de bouteilles de formes et couleurs uniques. Le paradis du parfait mixologue."
+text "Nous sommes arrivé.e.s dans l'auditorium et nous nous sommes approché.e.s du comptoir derrière lequel brillait un mur de bouteilles de formes et couleurs uniques. Le paradis du parfait mixologue."
 
-"Nous avions depuis le bar une vue imprenable sur la scène, légèrement en contrebas. Les tablées y étaient déjà dressées et se regroupaient autour du big band et de l'estrade secondaire au centre de la pièce."
+text "Nous avions depuis le bar une vue imprenable sur la scène, légèrement en contrebas. Les tablées y étaient déjà dressées et se regroupaient autour du big band et de l'estrade secondaire au centre de la pièce."
 
-"L'immense lustre duquel pendaient des larmes de verre reflétait les spots de lumière à la manière d'une boule à facettes sur le papier peint texturé."
+text "L'immense lustre duquel pendaient des larmes de verre reflétait les spots de lumière à la manière d'une boule à facettes sur le papier peint texturé."
 
-"Aimée s'assit sur l'une des chaises hautes de bois verni et commanda un Bloody Mary au barman, et moi un Expresso Martini."
+text "Aimée s'assit sur l'une des chaises hautes de bois verni et commanda un Bloody Mary au barman, et moi un Expresso Martini."
 
 aimee "Alors ! Raconte-moi tout ! D'où est-ce que tu viens ? Qu'est-ce que tu fais ici ? Comment est-ce que tu nous as connu.e.s ?"
 
@@ -407,13 +414,13 @@ label gat_2_3:
 #GAT.3
 label gat_3:
 
-    "Cela faisait plusieurs minutes que je cherchais Aimée, avec qui j'étais supposé.e répéter une partie de mon numéro, que l'on construisait ensemble."
+    text "Cela faisait plusieurs minutes que je cherchais Aimée, avec qui j'étais supposé.e répéter une partie de mon numéro, que l'on construisait ensemble."
 
-    "Après avoir fait trois fois le tour du lobby, des backstages, être retourné.e tout autant de fois dans les loges, je finis par retourner sur les planches de la scène, pensif.ve."
+    text "Après avoir fait trois fois le tour du lobby, des backstages, être retourné.e tout autant de fois dans les loges, je finis par retourner sur les planches de la scène, pensif.ve."
 
-    "Et en toute honnêteté, un peu inquiet.e."
+    text "Et en toute honnêteté, un peu inquiet.e."
 
-    "Puis je l'aperçus, dominant un carnet sur lequel iel tapotait la mine de son crayon, posé sur l'un des mange-debouts. Je le.a rejoignis rapidement."
+    text "Puis je l'aperçus, dominant un carnet sur lequel iel tapotait la mine de son crayon, posé sur l'un des mange-debouts. Je le.a rejoignis rapidement."
 
     anthrax "Hey... Je me demandais où tu étais passé.e."
 
@@ -437,7 +444,7 @@ label gat_3:
 
     aimee "Entre autres..."
 
-    "Soudainement l'air un peu ailleurs, Aimée se mordit l'intérieur de la joue, sans reprendre la parole. Ellui étant si bavard.e, c'était plutôt surprenant de sa part..."
+    text "Soudainement l'air un peu ailleurs, Aimée se mordit l'intérieur de la joue, sans reprendre la parole. Ellui étant si bavard.e, c'était plutôt surprenant de sa part..."
 
     anthrax "Tout va bien ?"
 
@@ -661,7 +668,10 @@ label gat_3_3:
 #GAT.4
 label gat_4:
 
-    play ambiance AmbLogesNight fadein 2.0
+    stop music fadeout 0.5
+    stop ambiance fadeout 0.5
+    play music BackstageLoop volume 0.5
+    play ambiance AmbLoges fadein 0.5
 
     anthrax "Le calme illusoire de la loge contrastait drastiquement avec le bourdonnement du staff passé la porte."
     anthrax "Les discussions étaient légères et l'entraide entre les artistes pour régler les petits aléas techniques était doux à voir."
@@ -744,11 +754,13 @@ label gat_4_1:
 
     peacock "Et se rassurer."
 
+    stop music fadeout 0.1
+    
     staff "Ok les filles ! Showtime dans dix minutes !"
 
     gatsby "Allez ! On doit mettre les bouchées doubles si on veut être à l'heure, girlies ! Chop-chop !"
 
-    stop ambiance fadeout 3.0
+    stop ambiance fadeout 1.0
     call gat_5 from _call_gat_5 
 
 #GAT.4.2
@@ -791,11 +803,13 @@ label gat_4_2:
 
     anthrax "Ce n'est pas grave, ça m'a plus surpris.e qu'autre chose. Mais au final, ça m'a donné plus de perspective, et j'apprécie l'honnêteté."
 
+    stop music fadeout 0.1
+
     staff "Ok les filles ! Showtime dans dix minutes !"
 
     gatsby "Allez ! On doit mettre les bouchées doubles si on veut être à l'heure girlies ! Chop-chop !"
     
-    stop ambiance fadeout 3.0
+    stop ambiance fadeout 2.0
     call gat_5 from _call_gat_5_1 
 
    
@@ -837,17 +851,19 @@ label gat_4_3:
 
     gatsby "Enfin bref ! Morale de l'histoire : bien s'entourer, et faire du drag. Parce qu'au moins, on s'entoure de gens qui nous comprennent."
 
+    stop music fadeout 0.1
+
     staff "Ok les filles ! Showtime dans dix minutes !"
 
     gatsby "Allez ! On doit mettre les bouchées doubles si on veut être à l'heure, girlies ! Chop-chop !"
 
-    stop ambiance fadeout 3.0
+    stop ambiance fadeout 2.0
     call gat_5 from _call_gat_5_2 
 
 #GAT.5
 label gat_5:
 
-    play music ShowGatsby fadein 2.0
+    play music ShowGatsby
 
     anthrax "Le band commença le morceau suivant alors que la scène était encore vide de toute activité, si bien que les spectateur.ice.s en venaient à se demander si quelque chose clochait."
     anthrax "Un projecteur se braqua sur deux longues soies qui venaient d'être lâchées. Tout en douceur, accompagné.e par les accords du piano, Gatsby avançait sur les planches."

@@ -10,7 +10,7 @@ init python:
         if event == "show" :
             for i in range(100):
                 print(silence)
-                renpy.sound.queue(renpy.random.choice(type_sounds))
+                renpy.sound.queue(renpy.random.choice(type_silent))
                 renpy.sound.queue(silence)
 
         elif event == "slow_done" or event == "end":
@@ -98,18 +98,20 @@ init python:
 
 # Liste des sfx
 define type_sounds = ['audio/SFX/TextMix-001.ogg','audio/SFX/TextMix-002.ogg','audio/SFX/TextMix-003.ogg','audio/SFX/TextMix-004.ogg','audio/SFX/TextMix-005.ogg','audio/SFX/TextMix-006.ogg','audio/SFX/TextMix-007.ogg','audio/SFX/TextMix-008.ogg','audio/SFX/TextMix-009.ogg','audio/SFX/TextMix-010.ogg']
+define A_type_sounds = ['audio/SFX/AP_TA-001.ogg','audio/SFX/AP_TA-002.ogg','audio/SFX/AP_TA-003.ogg','audio/SFX/AP_TA-004.ogg']
 define D_type_sounds = ['audio/SFX/AP_T1-001.ogg','audio/SFX/AP_T1-002.ogg','audio/SFX/AP_T1-003.ogg','audio/SFX/AP_T1-004.ogg']
 define M_type_sounds = ['audio/SFX/AP_T2-001.ogg','audio/SFX/AP_T2-002.ogg','audio/SFX/AP_T2-003.ogg','audio/SFX/AP_T2-004.ogg']
 define G_type_sounds = ['audio/SFX/AP_T3-001.ogg','audio/SFX/AP_T3-002.ogg','audio/SFX/AP_T3-003.ogg','audio/SFX/AP_T3-004.ogg'] 
 define P_type_sounds = ['audio/SFX/AP_T4-001.ogg','audio/SFX/AP_T4-002.ogg','audio/SFX/AP_T4-003.ogg','audio/SFX/AP_T4-004.ogg']
+define type_silent = ['<silence 1.0>']
 
 # Liste des ambiances
 define audio.AmbAndrogameDay = "audio/Amb/Amb_CabaretDay_V3.ogg"
-define audio.AmbLoges = "audio/Amb/Amb_LogesDay_V3.ogg"
-define audio.AmbRue = "audio/Amb/Amb_Rue_V1.ogg"
-define audio.AmbLogesNight = "audio/Amb/Amb_LogesNight_V4.ogg"
+define audio.AmbLoges = "audio/Amb/Amb_LogesDay_V4.ogg"
+define audio.AmbRue = "audio/Amb/Amb_Rue_V2.ogg"
+define audio.AmbLogesNight = "audio/Amb/Amb_LogesNight_V3.ogg"
 define audio.AmbDelShow = "audio/Amb/AP_Amb_ShowDel_V1.ogg"
-define audio.BarDay = "audio/Amb/Amb_BarDay_V2.ogg"
+define audio.BarDay = "audio/Amb/Amb_BarDay_V4.ogg"
 
 # Liste des réactions de foule
 define audio.CrowdDel1 = "audio/Amb/AP_Crowd_ShowDelSt1.ogg"
@@ -139,19 +141,19 @@ define audio.ShowDelaunay = "audio/Music/SHOW_Delaunay_Idea1_V1.ogg"
 define audio.ShowGatsby = "audio/Music/SHOW_Gatsby_Idea1_V2.ogg"
 
 # Déclarez les personnages utilisés dans le jeu.
-define mother = Character('Mother', color="#b51963", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=25, callback=type_sound, cb_cps=25)
-define anthrax = Character('Anthräx', color="#9370db", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=35, callback=type_sound, cb_cps=35)
-define delaunay = Character('Delaunay', color="#faaf90", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
-define gatsby = Character('Gatsby', color="#054fb9", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
-define peacock = Character('Peacock', color="#f57600", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
-define leandre = Character('Léandre', color="#faaf90", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
-define aimee = Character('Aimé.e', color="#054fb9", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
-define imani = Character('Imani', color="#f57600", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
-define inconnu = Character('???', color="#FFFFFF", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
-define delinconnu = Character('Del?', color="#faaf90", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
-define player = Character('[player_name]', color="#9370db", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
-define staff = Character('Staff', color="#FFFFFF", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
-
+define mother = Character('Mother', color="#b51963", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=30, callback=type_sound, cb_cps=30, cb_boopfile=M_type_sounds)
+define anthrax = Character('Anthräx', color="#9370db", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=35, callback=type_sound, cb_cps=35, cb_boopfile=A_type_sounds)
+define delaunay = Character('Delaunay', color="#faaf90", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=D_type_sounds)
+define gatsby = Character('Gatsby', color="#054fb9", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=G_type_sounds)
+define peacock = Character('Peacock', color="#f57600", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=P_type_sounds)  
+define leandre = Character('Léandre', color="#faaf90", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=D_type_sounds)
+define aimee = Character('Aimé.e', color="#054fb9", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=G_type_sounds)
+define imani = Character('Imani', color="#f57600", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=P_type_sounds)
+define inconnu = Character('???', color="#FFFFFF", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50)
+define delinconnu = Character('Del?', color="#faaf90", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=D_type_sounds)
+define player = Character('[player_name]', color="9370db", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
+define staff = Character('Staff', color="#FFFFFF", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50)
+define text = Character(color="#FFFFFF", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
 
 label peacock_start:
 $ quick_menu = True
@@ -159,7 +161,7 @@ scene black with fade
 show loges
 show imani_neutre at tall_center with dissolve
 
-play ambiance AmbLoges fadein 2.0
+play ambiance AmbLoges fadein 0.5
 
 
 #PEA.1
@@ -187,16 +189,16 @@ imani "Ça te dit de t'installer quelque part de plus cosy pour continuer à dis
 #PEA.2
 show bar with dissolve
 stop ambiance fadeout 2.0
-play music BarMusic fadein 2.0
-play ambiance BarDay
+play music BarMusic volume 0.5
+play ambiance BarDay fadein 0.5
 
-"Nous sommes arrivé.e.s dans l'auditorium et nous nous sommes approché.e.s du comptoir derrière lequel brillait un mur de bouteilles de formes et couleurs uniques. Le paradis du parfait mixologue."
+text "Nous sommes arrivé.e.s dans l'auditorium et nous nous sommes approché.e.s du comptoir derrière lequel brillait un mur de bouteilles de formes et couleurs uniques. Le paradis du parfait mixologue."
 
-"Nous avions depuis le bar une vue imprenable sur la scène, légèrement en contrebas. Les tablées y étaient déjà dressées et se regroupaient autour du big band et de l'estrade secondaire au centre de la pièce."
+text "Nous avions depuis le bar une vue imprenable sur la scène, légèrement en contrebas. Les tablées y étaient déjà dressées et se regroupaient autour du big band et de l'estrade secondaire au centre de la pièce."
 
-"L'immense lustre duquel pendaient des larmes de verre reflétait les spots de lumière à la manière d'une boule à facettes sur le papier peint texturé."
+text "L'immense lustre duquel pendaient des larmes de verre reflétait les spots de lumière à la manière d'une boule à facettes sur le papier peint texturé."
 
-"Imani s'assit sur l'une des chaises hautes de bois verni et commanda un Virgin Moscow Mule au barman, et moi un Negroni."
+text "Imani s'assit sur l'une des chaises hautes de bois verni et commanda un Virgin Moscow Mule au barman, et moi un Negroni."
 
 imani "Tu verras, notre barman est un vrai génie en la matière. Il peut te concocter le meilleur mocktail de ta vie sans que tu t'y attendes."
 
@@ -210,7 +212,7 @@ anthrax "Je me sens bête de prendre un Martini du coup..."
 
 imani "Oh non ! Ne t’en fais pas, tant que tu es raisonnable dans ta consommation, tout va bien !"
 
-"Imani sourit et prit sa boisson entre ses doigts vernis, la portant à ses lèvres et sirotant en me fixant, comme pour me jauger."
+text "Imani sourit et prit sa boisson entre ses doigts vernis, la portant à ses lèvres et sirotant en me fixant, comme pour me jauger."
 
 imani "Alors, dis-moi. C’est quoi ton drag ?"
 
@@ -427,13 +429,13 @@ label pea_2_3:
 #PEA.3
 label pea_3:
 
-    "Cela faisait plusieurs minutes que je cherchais Imani, avec qui j'étais supposé.e répéter une partie de mon numéro, que l'on construisait ensemble."
+    text "Cela faisait plusieurs minutes que je cherchais Imani, avec qui j'étais supposé.e répéter une partie de mon numéro, que l'on construisait ensemble."
     
-    "Après avoir fait trois fois le tour du lobby, des backstages, être retourné.e tout autant de fois dans les loges, je finis par retourner sur les planches de la scène, pensif.ve."
+    text "Après avoir fait trois fois le tour du lobby, des backstages, être retourné.e tout autant de fois dans les loges, je finis par retourner sur les planches de la scène, pensif.ve."
     
-    "Et en toute honnêteté, un peu inquièt.e."
+    text "Et en toute honnêteté, un peu inquièt.e."
 
-    "En relevant le regard vers le balcon, je le remarquai appuyé.e contre la balustrade, me faisant signe de le rejoindre, un verre de jus à moitié vide à la main avec lequel il jouait."
+    text "En relevant le regard vers le balcon, je le remarquai appuyé.e contre la balustrade, me faisant signe de le rejoindre, un verre de jus à moitié vide à la main avec lequel il jouait."
 
     anthrax "Hey... Je me demandais où tu étais passé."
 
@@ -453,7 +455,7 @@ label pea_3:
 
     imani "Un jus d'abricot. Classique et délicieux !"
 
-    "Il termina le fond de son verre d'une traite, avant de le poser sur l'une des tables qui n'avaient pas encore été dressées pour la soirée."
+    text "Il termina le fond de son verre d'une traite, avant de le poser sur l'une des tables qui n'avaient pas encore été dressées pour la soirée."
 
     anthrax "Quand j'y repense, je ne t'ai jamais vu boire. Enfin... Tu m'as compris.e."
 
@@ -666,7 +668,10 @@ label pea_3_3:
 #PEA.4
 label pea_4:
 
-    play ambiance AmbLogesNight fadein 4.0
+    stop music fadeout 0.2
+    stop ambiance fadeout 1.0
+    play ambiance AmbLoges fadein 0.5
+    play music BackstageLoop volume 0.5
 
     anthrax "Debout au milieu de la pièce, Imani était en train de passer le fil de son micro dans les espaces étriqués de son corset et de son padding couleur chair, le passant dans la lanière de son bullet-bra jusque le long de son dos."
     anthrax "Accrochant l'appareil à l'aide d'épingles à sa perruque, elle semblait avoir la tête ailleurs, tout en reproduisant ses gestes millimétrés et à présent routiniers, glissant ensuite le boîtier HF dans sa jarretelle qui avait été modifiée à cet effet."
@@ -735,6 +740,8 @@ label pea_4_1:
     gatsby "J'ai une relation un peu plus mitigée avec le mien, puisque j'ai une démarche différente qui est plus de l'ordre de la réconciliation."
     gatsby "Donc parfois, je le déteste, et parfois je l'adore. Mais ennuyant ? Ça, jamais."
 
+    stop music fadeout 0.1
+
     staff "Ok les filles ! Showtime dans dix minutes !"
 
     peacock "Déjà ?! Bon, plus qu'à se dépêcher..."
@@ -778,6 +785,8 @@ label pea_4_2:
     gatsby "Oui... Enfin, quand tu te décides à tacler, t'en fais pas que tu ne te gardes pas de le faire dans les coulisses."
 
     delaunay "Et puis, quand tu es dans l'humeur, on en a parfois pour des heures !"
+
+    stop music fadeout 0.1
 
     staff "Ok les filles ! Showtime dans dix minutes !"
 
@@ -828,6 +837,8 @@ label pea_4_3:
     peacock "Pas encore~ Mais c'est une option tout à fait envisageable."
     peacock "Si nos deux commères nationales arrêtaient de fourrer leur nez là où ça ne les concerne pas !"
 
+    stop music fadeout 0.1
+    
     staff "Ok les filles ! Showtime dans dix minutes !"
 
     peacock "Déjà ?! Bon, plus qu'à se dépêcher..."
