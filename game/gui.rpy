@@ -64,7 +64,7 @@ define gui.interface_text_color = '#404040'
 ## Polices et tailles de police ################################################
 
 ## Les polices utilisées pour le texte du jeu.
-define gui.text_font = "NotoSans-Regular.ttf"
+define gui.text_font = "EBGaramond12-Regular.ttf"
 
 ## Les polices utilisées pour le nom des personnages.
 define gui.name_text_font = "NotoSans-Regular.ttf"
