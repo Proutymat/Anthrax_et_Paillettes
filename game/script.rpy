@@ -1,5 +1,19 @@
 # fonctions custom
 
+init python:    
+    import os
+
+    def get_available_translations():
+        tl_path = os.path.join(renpy.config.gamedir, "tl")
+        available_translations = []
+        if os.path.isdir(tl_path):
+            for folder_name in os.listdir(tl_path):
+                # Exclude "None" folder and any hidden files
+                if folder_name != "None" and not folder_name.startswith('.'):
+                    available_translations.append(folder_name)
+        return available_translations
+
+
 init python:
     def type_sound(event, interact=True, cps=35, boopfile=type_sounds, **kwargs):
         speed = int((0.1/cps)*1000)/1000
@@ -22,7 +36,6 @@ init python:
             renpy.pause((20-renpy.music.get_pos('sound')),hard=True)
 
     renpy.music.register_channel("ambiance", "sfx", True)
-
 
 
 # Déclarez sous cette ligne les images, avec l'instruction 'image'
@@ -73,6 +86,24 @@ image rideau = "Backgrounds/rideau.png"
 image balcon = "Backgrounds/balcon.png"
 
 #vfx
+
+image angry: 
+    "images/VFX/Angry/Angry_00001.png"
+    0.03
+    "images/VFX/Angry/Angry_00002.png"
+    0.03
+    "images/VFX/Angry/Angry_00003.png"
+    0.03
+    "images/VFX/Angry/Angry_00004.png"
+    0.03
+    "images/VFX/Angry/Angry_00005.png"
+    0.03
+
+
+
+
+
+
 
 
 init python:
@@ -147,7 +178,7 @@ define audio.ShowDelaunay = "audio/Music/SHOW_Delaunay_Idea1_V1.ogg"
 define audio.ShowGatsby = "audio/Music/SHOW_Gatsby_Idea1_V2.ogg"
 
 # Déclarez les personnages utilisés dans le jeu.
-define mother = Character('Mother', color="#b51963", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=25, callback=type_sound, cb_cps=25, cb_boopfile=M_type_sounds)
+define mother = Character('Mother', color="#b51963", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=30, callback=type_sound, cb_cps=30, cb_boopfile=M_type_sounds)
 define anthrax = Character('Anthräx', color="#9370db", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=35, callback=type_sound, cb_cps=35, cb_boopfile=A_type_sounds)
 define delaunay = Character('Delaunay', color="#faaf90", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=D_type_sounds)
 define gatsby = Character('Gatsby', color="#054fb9", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=G_type_sounds)
@@ -157,8 +188,8 @@ define aimee = Character('Aimé.e', color="#054fb9", who_outlines=[(2, "#000000"
 define imani = Character('Imani', color="#f57600", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=P_type_sounds)
 define inconnu = Character('???', color="#FFFFFF", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50)
 define delinconnu = Character('Del?', color="#faaf90", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=D_type_sounds)
-define player = Character('[player_name]', color="9370db", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=A_type_sounds)
-define staff = Character('Staff', color="#FFFFFF", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=type_silent)
+define player = Character('[player_name]', color="9370db", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
+define staff = Character('Staff', color="#FFFFFF", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50)
 define text = Character(color="#FFFFFF", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
 
 
@@ -237,7 +268,7 @@ label onboarding:
     with fade
     $ quick_menu = True  
 
-    play ambiance AmbRue
+    play ambiance AmbRue fadein 5.0
 
     text "L'Androgame..."
     text "C’est dingue à quel point ce cabaret a reprit ses lettres de noblesse."
@@ -261,42 +292,35 @@ label onboarding:
     text "Je ne savais pas comment j’allais pouvoir concilier le burlesque et le travail, ce qu’on pourrait dire de moi ou juger de mon drag."
     text "Je pense que j’ai décidé d’arrêter d’essayer de me justifier à un moment, lorsque j’étais aux portes du bâtiment. Après tout, je n’avais rien à perdre et j’aurais regretté de ne pas avoir au moins essayé."
     text "Je ne pensais pas être sélectionné.e, encore moins de passer un entretien avec Mother, la patronne du cabaret. Je n’ai pas trop compris, mais elle m’a parlé des règles de conduite au sein de la troupe et envers les clients, puis d’une période d’essai..."
+    text "J’avais du mal à réaliser, mais on a convenu d’une nouvelle date d’entretien, en journée quand le cabaret serait vide, où elle m’expliquerait plus en détails le fonctionnement des backstages."
 
-    stop ambiance fadeout 4.0
-
-    "J’avais du mal à réaliser, mais on a convenu d’une nouvelle date d’entretien, en journée quand le cabaret serait vide, où elle m’expliquerait plus en détails le fonctionnement des backstages."
-
-    play music CabaretEntrance fadein 0.1
+    stop ambiance fadeout 1.0
+    play music CabaretEntrance volume 0.7
     hide devanture
-
-
-
     show auditorium  
     with fade
-
     show mother at tall_center with fade
 
 
 #0.2
 
-    play ambiance AmbAndrogameDay fadein 1
+    play ambiance AmbAndrogameDay fadein 0.5
 
     mother "Bienvenue dans l'Androgame! J'espère que tu as fait bonne route."
 
-    queue music CabaretIntro
-    queue music CabaretLightVerse
+    show angry
+
+    queue music CabaretIntro volume 0.7
+    queue music CabaretLightVerse volume 0.7
     
     mother "Tu avais l’air de dire dans nos échanges que tu n’habitais pas trop loin, le chemin n’a pas dû être bien  compliqué."
     text "En effet, une fois passée la porte pivotante, la hauteur sous plafond et les lustres géométriques faillirent me donner un torticolis."
-
-   
-
     text "Je devais presque plisser les yeux pour repérer tous les petits détails dans la marqueterie, les dorures et les formes dans le papier peint."
     anthrax "Oui. Et puis, c’est le genre d’établissement qu’il est difficile de louper!"
     mother "Aha! Tu m’en vois ravie de l’entendre."
     mother "Je ne fais pas te faire patienter plus longtemps... Commençons par te faire une petite visite des lieux. Promis, tu vas t’y retrouver bien vite"
 
-    queue music CabaretLightChorus
+    queue music CabaretLightChorus volume 0.7
 
     mother "En arrivant, tu es passé.e par le lobby, le hall d’entrée, l’accueil... Tu peux l’appeler comme tu veux. Mais dans l’idée, passé ce guichet, les clients payent!"
     mother "Ce n’est pas trop dans notre politique cette histoire du \"le client est roi\", mais tu apprendras vite que c’est là que les pourboires se cachent"
@@ -308,7 +332,6 @@ label onboarding:
 
     hide mother 
 
-    stop music fadeout 1
     stop ambiance fadeout 10.0
 
 
@@ -316,7 +339,7 @@ label onboarding:
     hide auditorium 
     show loges 
     with fade
-    play music BackstageLoop
+    queue music CabaretLightSolo volume 0.7
 
     show mother at tall_right  with dissolve
 
@@ -330,7 +353,7 @@ label onboarding:
     text "Studieuse."
     
     play ambiance AmbLoges fadein 1
-    play music BackstageDrumLoop fadein 1.0 volume 0.5
+    play music BackstageDrumLoop volume 0.5
 
     show imani_neutre at tall_left  with dissolve
 
@@ -370,7 +393,7 @@ label onboarding:
 
     mother "Oh! Je vois que vous faites connaissance! Les filles, je vous présente [player_name], iel nous rejoindra sous peu le temps d'arranger le spectacle, et je compte sur vous pour l'acceuillir comme il se doit."
 
-    play music CabaretLightChorus fadein 0.5 volume 1.0
+    play music CabaretLightChorus volume 0.7
 
     anthrax "Semblant sortir de leur torpeur et reprendre leurs esprits, les artistes drag face à moi me sourirent et commencèrent à faire un tour des présentations."
     

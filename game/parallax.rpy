@@ -19,6 +19,7 @@ define config.tag_layer = {
     'curtain_open' : 'inyourface',
     'curtain_close' : 'inyourface',
     'flirt' : 'back',
+    'angry' : 'farthestBack'
 }
 
 init -1 python:
@@ -50,10 +51,12 @@ init -1 python:
             return Transform(function=func)
 
         def overlay(self):
-            ui.add(self)
-            for m, n in self.sort_layer:
-                renpy.layer_at_list([self.parallax(m)], n)
+            if persistent.bg_parallax:
+                ui.add(self)
+                for m, n in self.sort_layer:
+                    renpy.layer_at_list([self.parallax(m)], n)
             return
+
 
         def event(self, ev, x, y, st):
             import pygame
