@@ -454,7 +454,7 @@ init python:
     def small():
 
         ## Tailles des polices.
-        gui.text_size = 45
+        gui.text_size = 32
         gui.name_text_size = 54
         gui.notify_text_size = 38
         gui.interface_text_size = 45
@@ -462,10 +462,10 @@ init python:
         gui.label_text_size = 51
 
         ## Ajuste la position de la zone de texte.
-        gui.textbox_height = 360
-        gui.name_xpos = 120
-        gui.dialogue_xpos = 135
-        gui.dialogue_width = 1650
+        gui.textbox_height = 270
+        gui.name_xpos = 140
+        gui.dialogue_xpos = 340
+        gui.dialogue_width = 1250
 
         ## Changer la taille et l'espacement de diverses choses.
         gui.slider_size = 54
