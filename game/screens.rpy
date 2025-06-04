@@ -908,7 +908,7 @@ style slot_button_text:
 screen preferences():
 
     tag menu
-    add "images/Backgrounds/white_background.png"
+    add "images/Backgrounds/menu_background.png"
     
     vbox:
         at Transform(xalign=0.1, yalign=0.98)
@@ -960,7 +960,7 @@ screen preferences():
         null height (4 * gui.pref_spacing)
 
         hbox:
-            style_prefix "slider"
+            style_prefix "my_slider"
             box_wrap True
             spacing 80
 
