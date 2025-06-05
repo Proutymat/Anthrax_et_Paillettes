@@ -916,11 +916,11 @@ screen preferences():
 
     vbox:
         align (0.5, 0.5)
-        spacing 30
+        spacing 1
 
         hbox:
             xalign 0.5
-            spacing 80
+            spacing 1
             box_wrap True
 
             if renpy.variant("pc") or renpy.variant("web"):
@@ -962,7 +962,8 @@ screen preferences():
         hbox:
             style_prefix "my_slider"
             box_wrap True
-            spacing 80
+            spacing -20
+            xsize 40
 
             vbox:
                 label _("Vitesse du texte") 

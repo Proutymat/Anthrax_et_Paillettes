@@ -27,24 +27,24 @@ define config.check_conflicting_properties = True
 
 ## Une couleur utilisée dans l’interface pour mettre l’accent sur un texte
 ## (surbrillance).
-define gui.accent_color = '#660066'
+define gui.accent_color = "#FFFFFF"
 
 ## La couleur utilisée pour le texte d’un bouton quand il n’a jamais été
 ## sélectionné ou survolé.
-define gui.idle_color = '#707070'
+define gui.idle_color = "#707070"
 
 ## La petite couleur est utilisé pour les textes courts qui nécessitent d’être
 ## assombris ou éclairés pour obtenir le même effet.
 define gui.idle_small_color = '#606060'
 
 ## Cette couleur est utilisée pour les boutons et les barres qui sont survolées.
-define gui.hover_color = '#5c0303'
+define gui.hover_color = "#000000"
 
 ## Cette couleur est utilisé pour le texte d’un bouton sélectionné, mais qui n’a
 ## pas le focus. Un bouton est sélectionné s’il est sur l’écran actuel ou si
 ## c’est la valeur de préférence.
-define gui.hover_color = '#5c0303'
-define gui.selected_color = '#5c0303'
+define gui.hover_color = "#FFFFFFFF"
+define gui.selected_color = "#7C7C7CC1"
 
 ## La couleur utilisée pour le texte d’un bouton qui ne peut pas être
 ## sélectionné.
