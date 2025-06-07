@@ -1,10 +1,5 @@
 define config.tag_layer = {
-    'devanture': 'farthestBack',
-    'auditorium': 'farthestBack',
-    'bar': 'farthestBack',
-    'loges': 'farthestBack',
-    'rideau': 'farthestBack',
-    'balcon': 'farthestBack',
+    'curtain_open' : 'front',
     'mother': 'back',
     'delaunay_neutre': 'back',
     'leandre_neutre': 'back',
@@ -15,11 +10,18 @@ define config.tag_layer = {
     'CG_delaunay' : 'back',
     'CG_gatsby' : 'back',
     'CG_peacock' : 'back',
+    'flirt' : 'farthestBack',
+    'angry' : 'farthestBack',
+    'joy' : 'farthestBack',
+    'sadness' : 'farthestBack',
+    'sparkling_click' : 'farthestBack',
+    'devanture' : 'farthestBack',
+    'auditorium': 'farthestBack',
+    'bar': 'farthestBack',
+    'loges': 'farthestBack',
+    'rideau': 'farthestBack',
+    'balcon': 'farthestBack',
     'background_cg' : 'farthestBack',
-    'curtain_open' : 'inyourface',
-    'curtain_close' : 'inyourface',
-    'flirt' : 'back',
-    'angry' : 'farthestBack'
 }
 
 init -1 python:

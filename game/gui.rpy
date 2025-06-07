@@ -27,24 +27,24 @@ define config.check_conflicting_properties = True
 
 ## Une couleur utilisée dans l’interface pour mettre l’accent sur un texte
 ## (surbrillance).
-define gui.accent_color = '#660066'
+define gui.accent_color = "#FFFFFF"
 
 ## La couleur utilisée pour le texte d’un bouton quand il n’a jamais été
 ## sélectionné ou survolé.
-define gui.idle_color = '#707070'
+define gui.idle_color = "#707070"
 
 ## La petite couleur est utilisé pour les textes courts qui nécessitent d’être
 ## assombris ou éclairés pour obtenir le même effet.
 define gui.idle_small_color = '#606060'
 
 ## Cette couleur est utilisée pour les boutons et les barres qui sont survolées.
-define gui.hover_color = '#5c0303'
+define gui.hover_color = "#000000"
 
 ## Cette couleur est utilisé pour le texte d’un bouton sélectionné, mais qui n’a
 ## pas le focus. Un bouton est sélectionné s’il est sur l’écran actuel ou si
 ## c’est la valeur de préférence.
-define gui.hover_color = '#5c0303'
-define gui.selected_color = '#5c0303'
+define gui.hover_color = "#FFFFFFFF"
+define gui.selected_color = "#7C7C7CC1"
 
 ## La couleur utilisée pour le texte d’un bouton qui ne peut pas être
 ## sélectionné.
@@ -64,7 +64,7 @@ define gui.interface_text_color = '#404040'
 ## Polices et tailles de police ################################################
 
 ## Les polices utilisées pour le texte du jeu.
-define gui.text_font = "NotoSans-Regular.ttf"
+define gui.text_font = "EBGaramond12-Regular.ttf"
 
 ## Les polices utilisées pour le nom des personnages.
 define gui.name_text_font = "NotoSans-Regular.ttf"
@@ -454,7 +454,7 @@ init python:
     def small():
 
         ## Tailles des polices.
-        gui.text_size = 45
+        gui.text_size = 32
         gui.name_text_size = 54
         gui.notify_text_size = 38
         gui.interface_text_size = 45
@@ -462,10 +462,10 @@ init python:
         gui.label_text_size = 51
 
         ## Ajuste la position de la zone de texte.
-        gui.textbox_height = 360
-        gui.name_xpos = 120
-        gui.dialogue_xpos = 135
-        gui.dialogue_width = 1650
+        gui.textbox_height = 270
+        gui.name_xpos = 140
+        gui.dialogue_xpos = 340
+        gui.dialogue_width = 1250
 
         ## Changer la taille et l'espacement de diverses choses.
         gui.slider_size = 54
