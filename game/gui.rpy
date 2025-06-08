@@ -304,7 +304,7 @@ define gui.main_menu_text_xalign = 1.0
 define gui.frame_borders = Borders(6, 6, 6, 6)
 
 ## Le cadre qui est utilisé par les écrans de confirmation.
-define gui.confirm_frame_borders = Borders(60, 60, 60, 60)
+define gui.confirm_frame_borders = Borders(320, 160, 320, 160)
 
 ## Le cadre qui est utilisé par l’écran de saut des dialogues.
 define gui.skip_frame_borders = Borders(24, 8, 75, 8)

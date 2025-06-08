@@ -4,12 +4,17 @@ label route_return:
     $ renpy.pause(0.1)
     jump choose_route
 
+default hovered_character = None
+
+transform fade_vfx:
+    alpha 0.0
+    linear 0.2 alpha 1.0
 
 define short_fade = Fade(0.1, 1, 0.2)
 
 label choose_route:
     scene black
-    show expression "images/Backgrounds/background_cg.png"
+    show expression "images/Backgrounds/menu_background_two.png"
     $ persistent.bg_parallax = False
     $ quick_menu = False
 
@@ -23,122 +28,89 @@ label choose_route:
 screen route_choice_buttons():
     modal True
 
-    hbox:
+    fixed:
+
+        # === VFX arrière-plan selon le crush en hover ===
+        if hovered_character == "delaunay":
+            add "light_solo_left" at fade_vfx
+        elif hovered_character == "gatsby":
+            add "light_solo_middle" at fade_vfx
+        elif hovered_character == "peacock":
+            add "light_solo_right" at fade_vfx
+
+
+        # === HBOX avec boutons ===
+        hbox:
+            xalign 0.5
+            yalign 0.5
+            offset (0, 30)
+            spacing 30
+
+            # -- Delaunay --
+            imagebutton:
+                auto "images/routes/delaunay_route_%s.png"
+                hovered SetVariable("hovered_character", "delaunay")
+                unhovered SetVariable("hovered_character", None)
+                action action Show("crush_confirm",
+                message="Es-tu sûr·e de vouloir suivre Léandre ?",
+                yes_action=Jump("delaunay_start"),
+                no_action=Return())
+
+            # -- Gatsby --
+            imagebutton:
+                auto "images/routes/gatsby_route_%s.png"
+                hovered SetVariable("hovered_character", "gatsby")
+                unhovered SetVariable("hovered_character", None)
+                action Show("crush_confirm",
+                message="Es-tu sûr·e de vouloir choisir Aimé.e ?",
+                yes_action=Jump("gatsby_start"),
+                no_action=Return())
+
+            # -- Peacock --
+            imagebutton:
+                auto "images/routes/peacock_route_%s.png"
+                hovered SetVariable("hovered_character", "peacock")
+                unhovered SetVariable("hovered_character", None)
+                action Show("crush_confirm",
+                message="Es-tu sûr·e de vouloir choisir Imani ?",
+                yes_action=Jump("peacock_start"),
+                no_action=Return())
+
+screen choose_route():
+
+    tag menu
+
+    add "images/Backgrounds/Menu/bg_crush.png"
+
+    frame:
+        style "menu_frame"
         xalign 0.5
         yalign 0.5
-        yoffset 30
-        spacing 20
 
-        imagebutton:
-            auto "images/routes/delaunay_route_%s.png"
-            action [Function(renpy.transition, fade), Jump("confirm_choice_delaunay")]
+        vbox:
+            spacing 30
+            xalign 0.5
+            yalign 0.5
 
-        imagebutton:
-            auto "images/routes/gatsby_route_%s.png"
-            action [Function(renpy.transition, fade), Jump("confirm_choice_gatsby")]
-        
+            text "Avec qui veux-tu passer plus de temps ?" style "menu_text"
 
-        imagebutton:
-            auto "images/routes/peacock_route_%s.png"
-            action [Function(renpy.transition, fade), Jump("confirm_choice_peacock")]
+            textbutton "Delaunay":
+                style "menu_choice_button"
+                action Function(confirm_crush, "Delaunay", "delaunay_route")
 
+            textbutton "Gatsby":
+                style "menu_choice_button"
+                action Function(confirm_crush, "Gatsby", "gatsby_route")
 
-label confirm_choice_delaunay:
-    $ quick_menu = False
-    $ persistent.bg_parallax = False
+            textbutton "Peacock":
+                style "menu_choice_button"
+                action Function(confirm_crush, "Peacock", "peacock_route")
 
-    scene expression "images/backgrounds/routes_confirmation/delaunay_route_background.png"
-    window hide
-
-    python:
-        ui.hbox(xalign=0.885, yalign=0.865, spacing=55)
-        ui.imagebutton(
-            idle="images/backgrounds/routes_confirmation/oui_route_idle.png",
-            hover="images/backgrounds/routes_confirmation/oui_route_hover.png",
-            clicked=ui.returns("oui")
+# Cette fonction affiche une fenêtre de confirmation avant de lancer une route
+init python:
+    def confirm_crush(name, label):
+        renpy.confirm(
+            "Es-tu sûr·e de vouloir suivre {} ?".format(name),
+            yes_action=Jump(label),
+            no_action=None
         )
-        ui.imagebutton(
-            idle="images/backgrounds/routes_confirmation/non_route_idle.png",
-            hover="images/backgrounds/routes_confirmation/non_route_hover.png",
-            clicked=ui.returns("non")
-        )
-        ui.close()
-        choix = ui.interact()
-
-    window hide
-
-    if choix == "oui":
-        $ persistent.bg_parallax = True
-        jump delaunay_start
-    else:
-        $ persistent.bg_parallax = False
-        jump route_return
-
-
-
-    
-label confirm_choice_gatsby:
-    $ quick_menu = False
-    $ persistent.bg_parallax = False
-
-    scene expression "images/backgrounds/routes_confirmation/gatsby_route_background.png"
-    window hide
-
-    python:
-        ui.hbox(xalign=0.885, yalign=0.865, spacing=55)
-        ui.imagebutton(
-            idle="images/backgrounds/routes_confirmation/oui_route_idle.png",
-            hover="images/backgrounds/routes_confirmation/oui_route_hover.png",
-            clicked=ui.returns("oui")
-        )
-        ui.imagebutton(
-            idle="images/backgrounds/routes_confirmation/non_route_idle.png",
-            hover="images/backgrounds/routes_confirmation/non_route_hover.png",
-            clicked=ui.returns("non")
-        )
-        ui.close()
-        choix = ui.interact()
-
-    window hide
-
-    if choix == "oui":
-        $ persistent.bg_parallax = True
-        jump gatsby_start
-    else:
-        $ persistent.bg_parallax = False
-        jump route_return
-
-
-
-label confirm_choice_peacock:
-    $ quick_menu = False
-    $ persistent.bg_parallax = False
-
-    scene expression "images/backgrounds/routes_confirmation/peacock_route_background.png"
-    window hide
-
-    python:
-        ui.hbox(xalign=0.885, yalign=0.865, spacing=55)
-        ui.imagebutton(
-            idle="images/backgrounds/routes_confirmation/oui_route_idle.png",
-            hover="images/backgrounds/routes_confirmation/oui_route_hover.png",
-            clicked=ui.returns("oui")
-        )
-        ui.imagebutton(
-            idle="images/backgrounds/routes_confirmation/non_route_idle.png",
-            hover="images/backgrounds/routes_confirmation/non_route_hover.png",
-            clicked=ui.returns("non")
-        )
-        ui.close()
-        choix = ui.interact()
-
-    window hide
-
-    if choix == "oui":
-        $ persistent.bg_parallax = True
-        jump peacock_start
-    else:
-        jump route_return
-
-
-

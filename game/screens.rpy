@@ -316,28 +316,28 @@ screen pause_menu():
 
     $ quick_menu = False  # <- désactive le quick menu pendant la pause
 
-    add Solid("#000")  # noir 100% opaque
-    # ou par exemple : add Solid("#111") si tu veux juste un fond très foncé
+    add "images/Backgrounds/menu_background_two.png"
 
     modal True  # Bloque les clics derrière
 
     frame:
         style "game_menu_outer_frame"
         xalign 0.5
-        yalign 0.5
+        yalign 0.2
 
         vbox:
-            spacing 30
+            spacing 40
             xalign 0.5
 
             text "Pause" style "h1"
 
-            textbutton "Reprendre" action Return()
-            textbutton "Sauvegarder" action ShowMenu("save")
-            textbutton "Charger" action ShowMenu("load")
-            textbutton "Options" action ShowMenu("preferences")
-            textbutton "Menu Principal" action MainMenu(confirm=True)
-            textbutton "Quitter le jeu" action Quit(confirm=not main_menu)
+            textbutton "Reprendre" action Return() xalign 0.5
+            textbutton "Sauvegarder" action ShowMenu("save") xalign 0.5
+            textbutton "Charger" action ShowMenu("load") xalign 0.5
+            textbutton "Options" action ShowMenu("preferences") xalign 0.5
+            textbutton "Menu Principal" action MainMenu(confirm=not main_menu) xalign 0.5
+            textbutton "Quitter le jeu" action Quit(confirm=not main_menu) xalign 0.5
+
 
 screen backstages():
 
@@ -416,7 +416,7 @@ screen navigation():
             xoffset 100
             yalign 0.5
 
-        spacing 120
+        spacing 20
 
         #textbutton _("Reprendre") action ShowMenu("load")
         imagebutton:
@@ -637,7 +637,6 @@ style game_menu_outer_frame:
     bottom_padding 45
     top_padding 180
 
-    background "gui/overlay/game_menu.jpg"
 
 style game_menu_navigation_frame:
     xsize 420
@@ -1402,6 +1401,7 @@ style help_label_text:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#confirm
 
+
 screen confirm(message, yes_action, no_action):
 
     ## Cette instruction s’assure que les autres écrans resteront en arrière
@@ -1431,6 +1431,8 @@ screen confirm(message, yes_action, no_action):
 
                 textbutton _("Oui") action yes_action
                 textbutton _("Non") action no_action
+
+
 
     ## Le clic bouton droit et la touche Echap. correspondent à la réponse
     ## "non".
