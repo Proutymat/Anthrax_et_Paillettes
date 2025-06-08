@@ -863,67 +863,33 @@ label start:
     $ quick_menu = False
     scene black
     with fade
-    $player_name = renpy.input("Choisis le prénom d'Anthräx, ton personnage...")
+
+    # Initialiser la variable utilisée dans l'écran d'input
+    default temp_name = ""
+
+    # Appelle l'écran personnalisé
+    call screen name_input_screen
+    $ player_name = temp_name.strip()
+
+    if player_name == "":
+        $ player_name = "Anthräx"
+
+    call screen name_confirm_screen(
+    message="Tu veux bien garder [player_name] ?",
+    yes_action=Jump("onboarding"),
+    no_action=Return(False),
+    style_prompt="confirm_prompt_text")
 
 
-$ player_name = player_name.strip()
 
-if player_name == "":
-    $ player_name = "Anthrâx"
-    text "Tu n’as rien saisi, on va garder [player_name]. Ça te va ?"
-    hide textbox
-
-    python:
-        ui.hbox(xalign=0.5, yalign=0.5, spacing=55)
-        ui.imagebutton(
-            idle="images/backgrounds/routes_confirmation/oui_route_idle.png",
-            hover="images/backgrounds/routes_confirmation/oui_route_hover.png",
-            clicked=ui.returns("oui")
-        )
-        ui.imagebutton(
-            idle="images/backgrounds/routes_confirmation/non_route_idle.png",
-            hover="images/backgrounds/routes_confirmation/non_route_hover.png",
-            clicked=ui.returns("non")
-        )
-        ui.close()
-        choix = ui.interact()
-
-    window hide
-
-    if choix == "oui":
+    if choix:
         $ persistent.bg_parallax = True
         jump onboarding
     else:
         $ persistent.bg_parallax = False
         jump start
-    
-else:
-    text "Tu veux bien garder [player_name] ?"
 
-        
-    python:
-        ui.hbox(xalign=0.5, yalign=0.5, spacing=55)
-        ui.imagebutton(
-            idle="images/backgrounds/routes_confirmation/oui_route_idle.png",
-            hover="images/backgrounds/routes_confirmation/oui_route_hover.png",
-            clicked=ui.returns("oui")
-        )
-        ui.imagebutton(
-            idle="images/backgrounds/routes_confirmation/non_route_idle.png",
-            hover="images/backgrounds/routes_confirmation/non_route_hover.png",
-            clicked=ui.returns("non")
-        )
-        ui.close()
-        choix = ui.interact()
 
-    window hide
-
-    if choix == "oui":
-        $ persistent.bg_parallax = True
-        jump onboarding
-    else:
-        $ persistent.bg_parallax = False
-        jump start
 
 #0.1    
 label onboarding:

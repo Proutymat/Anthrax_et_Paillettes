@@ -51,66 +51,18 @@ screen route_choice_buttons():
                 auto "images/routes/delaunay_route_%s.png"
                 hovered SetVariable("hovered_character", "delaunay")
                 unhovered SetVariable("hovered_character", None)
-                action action Show("crush_confirm",
-                message="Es-tu sûr·e de vouloir suivre Léandre ?",
-                yes_action=Jump("delaunay_start"),
-                no_action=Return())
+                action Show("crush_confirm", name="Léandre", destination="delaunay_start")
 
             # -- Gatsby --
             imagebutton:
                 auto "images/routes/gatsby_route_%s.png"
                 hovered SetVariable("hovered_character", "gatsby")
                 unhovered SetVariable("hovered_character", None)
-                action Show("crush_confirm",
-                message="Es-tu sûr·e de vouloir choisir Aimé.e ?",
-                yes_action=Jump("gatsby_start"),
-                no_action=Return())
+                action Show("crush_confirm", name="Aimé.e", destination="gatsby_start")
 
             # -- Peacock --
             imagebutton:
                 auto "images/routes/peacock_route_%s.png"
                 hovered SetVariable("hovered_character", "peacock")
                 unhovered SetVariable("hovered_character", None)
-                action Show("crush_confirm",
-                message="Es-tu sûr·e de vouloir choisir Imani ?",
-                yes_action=Jump("peacock_start"),
-                no_action=Return())
-
-screen choose_route():
-
-    tag menu
-
-    add "images/Backgrounds/Menu/bg_crush.png"
-
-    frame:
-        style "menu_frame"
-        xalign 0.5
-        yalign 0.5
-
-        vbox:
-            spacing 30
-            xalign 0.5
-            yalign 0.5
-
-            text "Avec qui veux-tu passer plus de temps ?" style "menu_text"
-
-            textbutton "Delaunay":
-                style "menu_choice_button"
-                action Function(confirm_crush, "Delaunay", "delaunay_route")
-
-            textbutton "Gatsby":
-                style "menu_choice_button"
-                action Function(confirm_crush, "Gatsby", "gatsby_route")
-
-            textbutton "Peacock":
-                style "menu_choice_button"
-                action Function(confirm_crush, "Peacock", "peacock_route")
-
-# Cette fonction affiche une fenêtre de confirmation avant de lancer une route
-init python:
-    def confirm_crush(name, label):
-        renpy.confirm(
-            "Es-tu sûr·e de vouloir suivre {} ?".format(name),
-            yes_action=Jump(label),
-            no_action=None
-        )
+                action Show("crush_confirm", name="Imani", destination="peacock_start")
