@@ -877,12 +877,12 @@ label start:
     call screen name_confirm_screen(
     message="Tu veux bien garder [player_name] ?",
     yes_action=Jump("onboarding"),
-    no_action=Return(False),
+    no_action=Jump("start"),
     style_prompt="confirm_prompt_text")
 
 
 
-    if choix:
+    if yes_action:
         $ persistent.bg_parallax = True
         jump onboarding
     else:
