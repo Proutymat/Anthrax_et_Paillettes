@@ -157,6 +157,7 @@ define text = Character(color="#FFFFFF", who_outlines=[(2, "#000000", 0, 0)], wh
 
 
 label gatsby_start:
+$ persistent.bg_parallax = True
 $ quick_menu = True
 scene black with fade
 scene loges

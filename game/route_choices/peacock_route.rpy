@@ -156,6 +156,7 @@ define staff = Character('Staff', color="#FFFFFF", who_outlines=[(2, "#000000", 
 define text = Character(color="#FFFFFF", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
 
 label peacock_start:
+$ persistent.bg_parallax = True
 $ quick_menu = True
 scene black with fade
 show loges

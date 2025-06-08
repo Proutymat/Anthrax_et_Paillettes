@@ -443,6 +443,331 @@ image sparkling_click = Animation(
     "images/VFX/Sparkling Click/Stars_00020.png", 0.03,
 )
 
+image light_solo_left:
+    "VFX/LightSoloLeft/LightSoloLeft_00001.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00002.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00003.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00004.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00005.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00006.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00007.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00008.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00009.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00010.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00011.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00012.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00013.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00014.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00015.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00016.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00017.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00018.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00019.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00020.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00021.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00022.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00023.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00024.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00025.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00026.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00027.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00028.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00029.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00030.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00031.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00032.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00033.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00034.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00035.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00036.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00037.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00038.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00039.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00040.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00041.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00042.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00043.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00044.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00045.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00046.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00047.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00048.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00049.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00050.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00051.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00052.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00053.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00054.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00055.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00056.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00057.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00058.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00059.png"
+    pause 0.03
+    repeat
+
+image light_solo_middle:
+    "VFX/LightSoloMiddle/LightSoloMiddle_00001.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00002.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00003.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00004.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00005.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00006.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00007.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00008.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00009.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00010.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00011.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00012.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00013.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00014.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00015.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00016.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00017.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00018.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00019.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00020.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00021.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00022.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00023.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00024.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00025.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00026.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00027.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00028.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00029.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00030.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00031.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00032.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00033.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00034.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00035.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00036.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00037.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00038.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00039.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00040.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00041.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00042.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00043.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00044.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00045.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00046.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00047.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00048.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00049.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00050.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00051.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00052.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00053.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00054.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00055.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00056.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00057.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00058.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00059.png"
+    pause 0.03
+    repeat
+
+
+image light_solo_right:
+    "VFX/LightSoloRight/LightSoloRight_00001.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00002.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00003.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00004.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00005.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00006.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00007.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00008.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00009.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00029.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00030.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00031.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00032.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00033.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00034.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00035.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00036.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00037.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00038.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00039.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00040.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00041.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00042.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00043.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00044.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00045.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00046.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00047.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00048.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00049.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00050.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00051.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00052.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00053.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00054.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00055.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00056.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00057.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00058.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00059.png"
+    pause 0.03
+    repeat
 
 
 init python:
@@ -538,67 +863,33 @@ label start:
     $ quick_menu = False
     scene black
     with fade
-    $player_name = renpy.input("Choisis le prénom d'Anthräx, ton personnage...")
+
+    # Initialiser la variable utilisée dans l'écran d'input
+    default temp_name = ""
+
+    # Appelle l'écran personnalisé
+    call screen name_input_screen
+    $ player_name = temp_name.strip()
+
+    if player_name == "":
+        $ player_name = "Anthräx"
+
+    call screen name_confirm_screen(
+    message="Tu veux bien garder [player_name] ?",
+    yes_action=Jump("onboarding"),
+    no_action=Jump("start"),
+    style_prompt="confirm_prompt_text")
 
 
-$ player_name = player_name.strip()
 
-if player_name == "":
-    $ player_name = "Anthrâx"
-    text "Tu n’as rien saisi, on va garder [player_name]. Ça te va ?"
-    hide textbox
-
-    python:
-        ui.hbox(xalign=0.5, yalign=0.5, spacing=55)
-        ui.imagebutton(
-            idle="images/backgrounds/routes_confirmation/oui_route_idle.png",
-            hover="images/backgrounds/routes_confirmation/oui_route_hover.png",
-            clicked=ui.returns("oui")
-        )
-        ui.imagebutton(
-            idle="images/backgrounds/routes_confirmation/non_route_idle.png",
-            hover="images/backgrounds/routes_confirmation/non_route_hover.png",
-            clicked=ui.returns("non")
-        )
-        ui.close()
-        choix = ui.interact()
-
-    window hide
-
-    if choix == "oui":
+    if yes_action:
         $ persistent.bg_parallax = True
         jump onboarding
     else:
         $ persistent.bg_parallax = False
         jump start
-    
-else:
-    text "Tu veux bien garder [player_name] ?"
 
-        
-    python:
-        ui.hbox(xalign=0.5, yalign=0.5, spacing=55)
-        ui.imagebutton(
-            idle="images/backgrounds/routes_confirmation/oui_route_idle.png",
-            hover="images/backgrounds/routes_confirmation/oui_route_hover.png",
-            clicked=ui.returns("oui")
-        )
-        ui.imagebutton(
-            idle="images/backgrounds/routes_confirmation/non_route_idle.png",
-            hover="images/backgrounds/routes_confirmation/non_route_hover.png",
-            clicked=ui.returns("non")
-        )
-        ui.close()
-        choix = ui.interact()
 
-    window hide
-
-    if choix == "oui":
-        $ persistent.bg_parallax = True
-        jump onboarding
-    else:
-        $ persistent.bg_parallax = False
-        jump start
 
 #0.1    
 label onboarding:
