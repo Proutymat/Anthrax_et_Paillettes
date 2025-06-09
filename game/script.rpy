@@ -1092,3 +1092,5 @@ label route_choice_intro:
     $ renpy.pause(0, hard=True)
     $ quick_menu = False
     jump choose_route
+    with fade
+    pause 2.0

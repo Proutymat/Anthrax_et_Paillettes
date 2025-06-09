@@ -1,6 +1,7 @@
 ################################################################################
 ## Initialisation
 ################################################################################
+default _previous_screen = "navigation"
 
 init offset = -1
 
@@ -329,14 +330,23 @@ screen pause_menu():
             xalign 0.5
 
             text "Pause" style "h1"
+            
+            if renpy.variant("pc"):
+            
+                textbutton "Reprendre" action Return() xalign 0.5
+                textbutton "Sauvegarder" action [Hide("pause_menu"), Function(renpy.transition, fade), Show("save")] xalign 0.5
+                textbutton "Charger" action [Hide("pause_menu"), Function(renpy.transition, fade), Show("load")] xalign 0.5
+                textbutton "Options" action [SetVariable("_previous_screen", "pause_menu"), Function(renpy.transition, fade), Show("preferences")] xalign 0.5
+                textbutton "Menu Principal" action MainMenu(confirm=not main_menu) xalign 0.5
+                textbutton "Quitter le jeu" action Quit(confirm=not main_menu) xalign 0.5
 
-            textbutton "Reprendre" action Return() xalign 0.5
-            textbutton "Sauvegarder" action ShowMenu("save") xalign 0.5
-            textbutton "Charger" action ShowMenu("load") xalign 0.5
-            textbutton "Options" action ShowMenu("preferences") xalign 0.5
-            textbutton "Menu Principal" action MainMenu(confirm=not main_menu) xalign 0.5
-            textbutton "Quitter le jeu" action Quit(confirm=not main_menu) xalign 0.5
-
+            else:
+                textbutton "Reprendre" action Return() xalign 0.5
+                textbutton "Sauvegarder" action [Hide("pause_menu"), Function(renpy.transition, fade), Show("save")] xalign 0.5
+                textbutton "Charger" action [Hide("pause_menu"), Function(renpy.transition, fade), Show("load")] xalign 0.5
+                textbutton "Options" action [SetVariable("_previous_screen", "pause_menu"), Function(renpy.transition, fade), Show("preferences")] xalign 0.5
+                textbutton "Menu Principal" action MainMenu(confirm=not main_menu) xalign 0.5
+                
 
 screen backstages():
 
@@ -357,13 +367,13 @@ screen backstages():
                 xalign 0.5
 
                 imagebutton:
-                    auto "menuUI/album_%s.png" action ShowMenu ("album")
+                    auto "menuUI/album_%s.png" action [Hide("backstages"), Function(renpy.transition, fade), Show("album")]
                 imagebutton:
-                    auto "menuUI/interviews_%s.png" action ShowMenu ("music_room_interviews", mr=music_room_interviews)
+                    auto "menuUI/interviews_%s.png" action [Hide("backstages"), Function(renpy.transition, fade), Show("music_room_interviews", mr=music_room_interviews)]
                 imagebutton:
-                    auto "menuUI/juxebox_%s.png" action ShowMenu ("music_room", mr=music_room)
+                    auto "menuUI/juxebox_%s.png" action [Hide("backstages"), Function(renpy.transition, fade), Show("music_room", mr=music_room)]
                 imagebutton:
-                    auto "menuUI/credits_%s.png" action ShowMenu("about")
+                    auto "menuUI/credits_%s.png" action [Hide("backstages"), Function(renpy.transition, fade), Show("about")]
                                                    
 
     vbox:
@@ -420,14 +430,13 @@ screen navigation():
         #textbutton _("Reprendre") action ShowMenu("load")
         imagebutton:
              auto "menuUI/reprendre_%s.png"
-             action ShowMenu("load")
+             action [SetVariable("_previous_screen", "navigation"), Function(renpy.transition, fade), Show("load")]
              
         #textbutton _("Backstages") action ShowMenu("backstages")
         imagebutton:
              auto "menuUI/backstages_%s.png"
-             action ShowMenu("backstages")
+             action [SetVariable("_previous_screen", "navigation"), Function(renpy.transition, fade), Show("backstages")]
 
-    
         #textbutton _("Album") action ShowMenu("gallery_delaunay")
            
         #textbutton _("Jukebox") action ShowMenu("music_room", mr=music_room)
@@ -435,9 +444,7 @@ screen navigation():
         #textbutton _("Options") action ShowMenu("preferences")
         imagebutton:
              auto "menuUI/options_%s.png"
-             action ShowMenu("preferences")
-
-        
+             action [SetVariable("_previous_screen", "navigation"), Function(renpy.transition, fade), Show("preferences")]
 
         if _in_replay:
 
@@ -862,7 +869,10 @@ screen file_slots(title):
                             #xalign 0.5
             vbox:
                 at Transform(xalign=0.1, yalign=0.98)
-                imagebutton idle "menuUI/retour_idle.png" hover "menuUI/retour_hover.png" action Return()
+                imagebutton:
+                    idle "menuUI/retour_idle.png"
+                    hover "menuUI/retour_hover.png"
+                    action Return()
 
 
 
@@ -912,7 +922,10 @@ screen preferences():
 
     vbox:
         at Transform(xalign=0.05, yalign=0.98)
-        imagebutton idle "menuUI/retour_idle.png" hover "menuUI/retour_hover.png" action Return()
+        imagebutton:
+            idle "menuUI/retour_idle.png"
+            hover "menuUI/retour_hover.png"
+            action Return()
 
     frame:
         background None
@@ -964,19 +977,33 @@ screen preferences():
             xalign 0.5
             spacing 60
 
-            vbox:
-                spacing 8
-                xalign 0.5
+            if renpy.variant("pc"):
+                vbox:
+                    spacing 8
+                    xalign 0.5
 
-                label _("Vitesse du texte") xalign 0.5
-                bar value Preference("text speed") xmaximum 600 xalign 0.5
+                    label _("Vitesse du texte") xalign 0.5
+                    bar value Preference("text speed") xmaximum 600 xalign 0.5
 
-                label _("Avance automatique") xalign 0.5
-                bar value Preference("auto-forward time") xmaximum 600 xalign 0.5
+                    label _("Avance automatique") xalign 0.5
+                    bar value Preference("auto-forward time") xmaximum 600 xalign 0.5
 
-                null height 30
+                    null height 30
 
-                imagebutton idle "menuUI/controles_idle.png" hover "menuUI/controles_hover.png" action ShowMenu("help") xalign 0.5
+                    imagebutton idle "menuUI/controles_idle.png" hover "menuUI/controles_hover.png" action ShowMenu("help") xalign 0.5
+
+            else: 
+                vbox:
+                    spacing 8
+                    xalign 0.5
+
+                    label _("Vitesse du texte") xalign 0.5
+                    bar value Preference("text speed") xmaximum 600 xalign 0.5
+
+                    label _("Avance automatique") xalign 0.5
+                    bar value Preference("auto-forward time") xmaximum 600 xalign 0.5
+
+                    null height 30
 
             vbox:
                 spacing 8
@@ -1114,11 +1141,16 @@ screen history():
         yalign 0.0
         padding (80, 80)
 
+
         viewport:
             yinitial 1.0
             draggable False
             mousewheel True
             xmaximum 1200
+
+            vbox:
+                at Transform(xalign=0, yalign=0.99)
+                imagebutton idle "menuUI/retour_idle.png" hover "menuUI/retour_hover.png" action Return()
 
             vbox:
                 spacing 40
@@ -1169,10 +1201,6 @@ screen history():
  
 
     # Bouton retour en bas à droite
-    vbox:
-        at Transform(xalign=0.95, yalign=0.95)
-        imagebutton idle "menuUI/retour_idle.png" hover "menuUI/retour_hover.png" action Return()
-
 
 
 ## Ceci détermine quels tags peuvent être affichés sur le screen de
@@ -1480,10 +1508,10 @@ screen crush_confirm(name, destination):
                 xalign 0.5
 
                 textbutton "Oui":
-                    action [Hide("crush_confirm"), Jump(destination)]
+                    action [Hide("crush_confirm"), Jump(destination)] style "confirm_prompt_text"
 
                 textbutton "Non":
-                    action Hide("crush_confirm")
+                    action Hide("crush_confirm") style "confirm_prompt_text"
 
 screen name_input_screen():
 
