@@ -1,10 +1,5 @@
 define config.tag_layer = {
-    'devanture': 'farthestBack',
-    'auditorium': 'farthestBack',
-    'bar': 'farthestBack',
-    'loges': 'farthestBack',
-    'rideau': 'farthestBack',
-    'balcon': 'farthestBack',
+    'curtain_open' : 'front',
     'mother': 'back',
     'delaunay_neutre': 'back',
     'leandre_neutre': 'back',
@@ -15,10 +10,21 @@ define config.tag_layer = {
     'CG_delaunay' : 'back',
     'CG_gatsby' : 'back',
     'CG_peacock' : 'back',
+    'flirt' : 'farthestBack',
+    'angry' : 'farthestBack',
+    'joy' : 'farthestBack',
+    'sadness' : 'farthestBack',
+    'sparkling_click' : 'farthestBack',
+    'light_solo_left' : 'farthestBack',
+    'light_solo_middle' : 'farthestBack',
+    'light_solo_right' : 'farthestBack',
+    'devanture' : 'farthestBack',
+    'auditorium': 'farthestBack',
+    'bar': 'farthestBack',
+    'loges': 'farthestBack',
+    'rideau': 'farthestBack',
+    'balcon': 'farthestBack',
     'background_cg' : 'farthestBack',
-    'curtain_open' : 'inyourface',
-    'curtain_close' : 'inyourface',
-    'flirt' : 'back',
 }
 
 init -1 python:
@@ -50,10 +56,12 @@ init -1 python:
             return Transform(function=func)
 
         def overlay(self):
-            ui.add(self)
-            for m, n in self.sort_layer:
-                renpy.layer_at_list([self.parallax(m)], n)
+            if persistent.bg_parallax:
+                ui.add(self)
+                for m, n in self.sort_layer:
+                    renpy.layer_at_list([self.parallax(m)], n)
             return
+
 
         def event(self, ev, x, y, st):
             import pygame

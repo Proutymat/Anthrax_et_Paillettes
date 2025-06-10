@@ -5,7 +5,6 @@
 init offset = -1
 
 default quick_menu = True  # le quick menu est activé par défaut
-default choix_del_2_question = ""
 
 init python:
     config.mouse_hide_time = None  # Ne jamais cacher la souris
@@ -316,33 +315,33 @@ screen pause_menu():
 
     $ quick_menu = False  # <- désactive le quick menu pendant la pause
 
-    add Solid("#000")  # noir 100% opaque
-    # ou par exemple : add Solid("#111") si tu veux juste un fond très foncé
+    add "images/Backgrounds/menu_background_two.png"
 
     modal True  # Bloque les clics derrière
 
     frame:
         style "game_menu_outer_frame"
         xalign 0.5
-        yalign 0.5
+        yalign 0.2
 
         vbox:
-            spacing 30
+            spacing 40
             xalign 0.5
 
             text "Pause" style "h1"
 
-            textbutton "Reprendre" action Return()
-            textbutton "Sauvegarder" action ShowMenu("save")
-            textbutton "Charger" action ShowMenu("load")
-            textbutton "Options" action ShowMenu("preferences")
-            textbutton "Menu Principal" action MainMenu(confirm=True)
-            textbutton "Quitter le jeu" action Quit(confirm=not main_menu)
+            textbutton "Reprendre" action Return() xalign 0.5
+            textbutton "Sauvegarder" action ShowMenu("save") xalign 0.5
+            textbutton "Charger" action ShowMenu("load") xalign 0.5
+            textbutton "Options" action ShowMenu("preferences") xalign 0.5
+            textbutton "Menu Principal" action MainMenu(confirm=not main_menu) xalign 0.5
+            textbutton "Quitter le jeu" action Quit(confirm=not main_menu) xalign 0.5
+
 
 screen backstages():
 
     tag menu
-    add "images/Backgrounds/loges.png"
+    add "images/Backgrounds/menu_background_two.png"
     
     frame:
         xalign 0.5
@@ -386,8 +385,8 @@ screen navigation():
         style_prefix "navigation"
 
         if renpy.get_screen("main_menu"):
-            xalign 0.5
-            yalign 0.85
+            xalign 0.504
+            yalign 0.84
         else:
             xoffset 100
             yalign 0.5
@@ -404,7 +403,19 @@ screen navigation():
 
             textbutton _("Historique") action ShowMenu("history")
 
-            textbutton _("Sauvegarde") action ShowMenu("save")
+            textbutton _("Sauvegarde") action ShowMenu("save") 
+    
+    hbox:
+        style_prefix "navigation"
+
+        if renpy.get_screen("main_menu"):
+            xalign 0.5
+            yalign 0.95
+        else:
+            xoffset 100
+            yalign 0.5
+
+        spacing 20
 
         #textbutton _("Reprendre") action ShowMenu("load")
         imagebutton:
@@ -625,7 +636,6 @@ style game_menu_outer_frame:
     bottom_padding 45
     top_padding 180
 
-    background "gui/overlay/game_menu.jpg"
 
 style game_menu_navigation_frame:
     xsize 420
@@ -743,6 +753,8 @@ screen file_slots(title):
     # Remplace la partie window par ceci :
     
     frame:
+        xalign 0.5
+        yalign 0.5
         style "game_menu_outer_frame"
 
         vbox:
@@ -896,108 +908,105 @@ style slot_button_text:
 screen preferences():
 
     tag menu
-    add "images/Backgrounds/auditorium.png"
-    
+    add "images/Backgrounds/menu_background.png"
+
     vbox:
-        at Transform(xalign=0.1, yalign=0.98)
+        at Transform(xalign=0.05, yalign=0.98)
         imagebutton idle "menuUI/retour_idle.png" hover "menuUI/retour_hover.png" action Return()
 
-
-    vbox:
-        align (0.5, 0.5)
-        spacing 30
+    frame:
+        background None
+        xalign 0.5
+        yalign 0.5
+        has vbox
+        spacing 80
 
         hbox:
             xalign 0.5
             spacing 80
-            box_wrap True
 
             if renpy.variant("pc") or renpy.variant("web"):
-
                 vbox:
                     style_prefix "radio"
+                    spacing 10  
+                    style "equalized_vbox"
                     label _("Affichage")
                     textbutton _("Fenêtre") action Preference("display", "window")
                     textbutton _("Plein écran") action Preference("display", "fullscreen")
 
             vbox:
                 style_prefix "check"
+                spacing 10  
+                style "equalized_vbox"
                 label _("Avance rapide")
                 textbutton _("Texte non lu") action Preference("skip", "toggle")
                 textbutton _("Après les choix") action Preference("after choices", "toggle")
                 textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
 
-                ## Des boites vbox additionnelles de type "radio_pref" ou
-                ## "check_pref" peuvent être ajoutées ici pour ajouter des
-                ## préférences définies par le créateur du jeu.
+            vbox:
+                style_prefix "check"
+                spacing 10 
+                style "equalized_vbox"
+                label _("Langues")
+                textbutton _("Français") action Language(None)
+                for lang in get_available_translations():
+                    textbutton _(f"{lang.capitalize()}") action Language(lang)
 
-        null height (4 * gui.pref_spacing)
+            vbox:
+                style_prefix "radio"
+                spacing 10 
+                style "equalized_vbox"
+                label _("Effets visuels")
+                textbutton "[\"Parallaxe : Activée\" if persistent.bg_parallax else \"Parallaxe : Désactivée\"]" action [ToggleField(persistent, "bg_parallax"), Function(renpy.restart_interaction)]
+                textbutton "[\"VFX : Activés\" if persistent.vfx_enabled else \"VFX : Désactivés\"]" action [ToggleField(persistent, "vfx_enabled"),Function(renpy.restart_interaction)]
 
         hbox:
-            style_prefix "slider"
-            box_wrap True
-            spacing 80
+            xalign 0.5
+            spacing 60
 
             vbox:
-                label _("Vitesse du texte") 
-                hbox:
-                    bar: 
-                        value Preference("text speed") 
-                        xmaximum 600
-                        xalign 0.6
+                spacing 8
+                xalign 0.5
 
-                label _("Avance automatique") 
-                hbox:
-                    bar:
-                        value Preference("auto-forward time") 
-                        xmaximum 600
-                        xalign 0.6
-                null height 40
-                imagebutton:
-                    idle "menuUI/controles_idle.png"
-                    hover "menuUI/controles_hover.png"
-                    action ShowMenu ("help")
-            
+                label _("Vitesse du texte") xalign 0.5
+                bar value Preference("text speed") xmaximum 600 xalign 0.5
+
+                label _("Avance automatique") xalign 0.5
+                bar value Preference("auto-forward time") xmaximum 600 xalign 0.5
+
+                null height 30
+
+                imagebutton idle "menuUI/controles_idle.png" hover "menuUI/controles_hover.png" action ShowMenu("help") xalign 0.5
+
             vbox:
+                spacing 8
+                xalign 0.5
 
                 if config.has_music:
-                    label _("Volume de la musique")
-                    hbox:
-                        bar: 
-                            value Preference("music volume") 
-                            xmaximum 600
-                            xalign 0.5
+                    label _("Volume de la musique") xalign 0.5
+                    bar value Preference("music volume") xmaximum 600 xalign 0.5
 
                 if config.has_sound:
-                    label _("Volume des sons") 
-                    hbox:
-                        bar:
-                            value Preference("sound volume") 
-                            xmaximum 600
-                            xalign 0.5
+                    label _("Volume des sons") xalign 0.5
+                    bar value Preference("sound volume") xmaximum 600 xalign 0.5
 
-                        if config.sample_sound:
-                            textbutton _("Test") action Play("sound", config.sample_sound)
+                    if config.sample_sound:
+                        textbutton _("Test") action Play("sound", config.sample_sound)
 
                 if config.has_voice:
-                    label _("Volume des voix") 
-                    hbox:
-                        bar:
-                            value Preference("voice volume")
-                            xmaximum 600
-                            xalign 0.5
-                            
-                        if config.sample_voice:
-                            textbutton _("Test") action Play("voice", config.sample_voice)
+                    label _("Volume des voix") xalign 0.5
+                    bar value Preference("voice volume") xmaximum 600 xalign 0.5
+
+                    if config.sample_voice:
+                        textbutton _("Test") action Play("voice", config.sample_voice)
 
                 if config.has_music or config.has_sound or config.has_voice:
-                    null height gui.pref_spacing
+                    null height -20
+                    textbutton _("Couper tous les sons") action Preference("all mute", "toggle") style "text_button" xalign 0.5
 
-                    textbutton _("Couper tous les sons"):
-                        action Preference("all mute", "toggle")
-                        style "text_button"
                 
-
+style equalized_vbox is vbox:
+    minimum (0, 220)
 
 style pref_label is gui_label
 style pref_label_text is gui_label_text
@@ -1095,47 +1104,69 @@ screen choice_lateral(items):
 screen history():
 
     tag menu
-
-    ## Cette instruction permet d’éviter de prédire cet écran, car il peut être
-    ## très large
     predict False
-
     style_prefix "history"
-        
+
+    add "images/Backgrounds/menu_background.png"
+
     frame:
-        xalign 0.5
+        xalign 0.477
         yalign 0.0
-        has vbox
-        spacing 10
+        padding (80, 80)
 
         viewport:
             yinitial 1.0
-            draggable True
+            draggable False
             mousewheel True
+            xmaximum 1200
 
             vbox:
-                spacing gui.history_spacing
+                spacing 40
 
                 for h in _history_list:
-                    window:
-                        has fixed
-                        yfit True
 
-                        # Affichage du nom du personnage si disponible
-                        if h.who:
+                    if h.who:
+                        hbox:
+                            spacing 40
+                            xalign 0.0
+
                             text h.who:
-                                style "history_name"     # Applique un style dédié pour l’historique
+                                style "history_name"
                                 substitute False
                                 if "color" in h.who_args:
-                                    color h.who_args["color"]  # Permet de récupérer la couleur du perso si définie
+                                    color h.who_args["color"]
+                                xalign 1.0
+                                yalign 0.0
+                                min_width 200
+                                text_align 1.0
 
-                        # Nettoyage des balises de mise en forme autorisées
-                        $ what = renpy.filter_text_tags(h.what, allow=gui.history_allow_tags)
-                        text what:
-                            substitute False
+                            $ what = renpy.filter_text_tags(h.what, allow=gui.history_allow_tags)
+                            text what:
+                                style "history_text"
+                                substitute False
+                                xmaximum 880
+                                layout "subtitle"
+                                text_align 0.0
+                                xalign 0.0
 
-                if not _history_list:
-                    label _("L'historique des dialogues est vide.")
+                    else:
+                        window:
+                            background None
+                            padding (100, 20, 100, 20)  # (gauche, haut, droite, bas)
+                            xalign 0.0
+
+                            text renpy.filter_text_tags(h.what, allow=gui.history_allow_tags):
+                                style "history_text"
+                                substitute False
+                                xalign 0.0
+                                text_align 0.0
+                                xmaximum 1000
+
+        if not _history_list:
+            label _("L'historique des dialogues est vide.")
+
+
+ 
 
     # Bouton retour en bas à droite
     vbox:
@@ -1152,9 +1183,22 @@ define gui.history_allow_tags = { "alt", "noalt", "rt", "rb", "art" }
 
 style history_window is empty
 
-style history_name is gui_label
-style history_name_text is gui_label_text
-style history_text is gui_text
+style history_name is default:
+    color "#c6367b"
+    font "fonts/EBGaramond12-Regular.ttf"
+    size 30
+    bold True
+    xalign 1.0  # le nom est aligné à droite dans sa "colonne"
+    text_align 1.0
+
+style history_text is default:
+    color "#333333"
+    font "fonts/EBGaramond12-Regular.ttf"
+    size 28
+    xalign 0.0
+    text_align 0.0
+    line_spacing 8
+
 
 style history_label is gui_label
 style history_label_text is gui_label_text
@@ -1375,17 +1419,18 @@ style help_label_text:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#confirm
 
+
 screen confirm(message, yes_action, no_action):
 
     ## Cette instruction s’assure que les autres écrans resteront en arrière
     ## plan tant que cet écran sera affiché.
+    
+    add "gui/overlay/confirm.png"
+    
     modal True
-
     zorder 200
 
     style_prefix "confirm"
-
-    add "gui/overlay/confirm.png"
 
     frame:
 
@@ -1405,9 +1450,89 @@ screen confirm(message, yes_action, no_action):
                 textbutton _("Oui") action yes_action
                 textbutton _("Non") action no_action
 
+
+
     ## Le clic bouton droit et la touche Echap. correspondent à la réponse
     ## "non".
     key "game_menu" action no_action
+
+screen crush_confirm(name, destination):
+
+    add "gui/overlay/confirm.png"
+
+    modal True
+    zorder 100
+
+    frame:
+        style "confirm_frame"
+        xalign 0.5
+        yalign 0.5
+
+        vbox:
+            spacing 20
+            xalign 0.5
+            yalign 0.5
+
+            text "Es-tu sûr·e de vouloir [name] comme mentor ?" style "confirm_prompt"
+
+            hbox:
+                spacing 40
+                xalign 0.5
+
+                textbutton "Oui":
+                    action [Hide("crush_confirm"), Jump(destination)]
+
+                textbutton "Non":
+                    action Hide("crush_confirm")
+
+screen name_input_screen():
+
+    modal True
+    zorder 200
+
+    frame:
+        style "confirm_frame"
+        xalign 0.5
+        yalign 0.5
+
+        vbox:
+            spacing 40
+            xalign 0.5
+            yalign 0.5
+
+            text _("Choisis le prénom d'Anthräx, ton personnage :") style "confirm_prompt_text"
+
+            input value VariableInputValue("temp_name") length 20 style "name_input_field"
+
+            hbox:
+                spacing 80
+                xalign 0.5
+
+                textbutton _("Valider") action Return() style "confirm_button"
+
+
+
+
+
+screen name_confirm_screen(message, yes_action, no_action, style_prompt="confirm_prompt_text"):
+    
+    frame:
+        style "confirm_frame"
+
+        vbox:
+            spacing 30
+            xalign 0.5
+            yalign 0.5
+
+            text message style style_prompt xalign 0.5
+
+            hbox:
+                spacing 60
+                xalign 0.5
+                textbutton _("Oui") action yes_action style "confirm_button"
+                textbutton _("Non") action no_action style "confirm_button"
+
+
 
 
 style confirm_frame is gui_frame
@@ -1417,20 +1542,33 @@ style confirm_button is gui_medium_button
 style confirm_button_text is gui_medium_button_text
 
 style confirm_frame:
-    background Frame([ "gui/confirm_frame.png", "gui/frame.png"], gui.confirm_frame_borders, tile=gui.frame_tile)
+    background Frame("gui/frame.png", gui.confirm_frame_borders)
     padding gui.confirm_frame_borders.padding
     xalign .5
     yalign .5
 
 style confirm_prompt_text:
+    color "#000000"
+    size 36
     textalign 0.5
-    layout "subtitle"
+    xalign 0.5
+    font "fonts/EBGaramond12-Regular.ttf"
 
-style confirm_button:
-    properties gui.button_properties("confirm_button")
+style name_input_field:
+    color "#000000"
+    size 30
+    xalign 0.5
+    background None
+    outlines []
 
 style confirm_button_text:
-    properties gui.text_properties("confirm_button")
+    color "#000000"
+    hover_color "#FFFFFF"
+    insensitive_color "#888888"
+    size 32
+    font "fonts/EBGaramond12-Regular.ttf"  # à adapter à ton projet
+
+
 
 
 ## Écran de l’indicateur d'avance rapide #######################################
@@ -1657,193 +1795,4 @@ style nvl_button_text:
 ##
 ## https://www.renpy.org/doc/html/bubble.html#bubble-screen
 
-screen bubble(who, what):
-    style_prefix "bubble"
 
-    window:
-        id "window"
-
-        if who is not None:
-
-            window:
-                id "namebox"
-                style "bubble_namebox"
-
-                text who:
-                    id "who"
-
-        text what:
-            id "what"
-
-style bubble_window is empty
-style bubble_namebox is empty
-style bubble_who is default
-style bubble_what is default
-
-style bubble_window:
-    xpadding 30
-    top_padding 5
-    bottom_padding 5
-
-style bubble_namebox:
-    xalign 0.5
-
-style bubble_who:
-    xalign 0.5
-    textalign 0.5
-    color "#000"
-
-style bubble_what:
-    align (0.5, 0.5)
-    text_align 0.5
-    layout "subtitle"
-    color "#000"
-
-define bubble.frame = Frame("gui/bubble.png", 55, 55, 55, 95)
-define bubble.thoughtframe = Frame("gui/thoughtbubble.png", 55, 55, 55, 55)
-
-define bubble.properties = {
-    "bottom_left" : {
-        "window_background" : Transform(bubble.frame, xzoom=1, yzoom=1),
-        "window_bottom_padding" : 27,
-    },
-
-    "bottom_right" : {
-        "window_background" : Transform(bubble.frame, xzoom=-1, yzoom=1),
-        "window_bottom_padding" : 27,
-    },
-
-    "top_left" : {
-        "window_background" : Transform(bubble.frame, xzoom=1, yzoom=-1),
-        "window_top_padding" : 27,
-    },
-
-    "top_right" : {
-        "window_background" : Transform(bubble.frame, xzoom=-1, yzoom=-1),
-        "window_top_padding" : 27,
-    },
-
-    "thought" : {
-        "window_background" : bubble.thoughtframe,
-    }
-}
-
-define bubble.expand_area = {
-    "bottom_left" : (0, 0, 0, 22),
-    "bottom_right" : (0, 0, 0, 22),
-    "top_left" : (0, 22, 0, 0),
-    "top_right" : (0, 22, 0, 0),
-    "thought" : (0, 0, 0, 0),
-}
-
-
-
-################################################################################
-## Variantes pour les mobiles
-################################################################################
-
-style pref_vbox:
-    variant "medium"
-    xsize 675
-
-## Comme la souris peut ne pas être présente, nous remplaçons le menu rapide
-## avec une version qui utilise des boutons plus gros et qui sont plus faciles à
-## toucher du doigt.
-screen quick_menu():
-    variant "touch"
-
-    zorder 100
-
-    if quick_menu:
-
-        hbox:
-            style_prefix "quick"
-
-            xalign 0.5
-            yalign 1.0
-
-            textbutton _("Retour") action Rollback()
-            textbutton _("Avance rapide") action Skip() alternate Skip(fast=True, confirm=True)
-            textbutton _("Auto") action Preference("auto-forward", "toggle")
-            textbutton _("Menu") action ShowMenu()
-
-
-style window:
-    variant "small"
-    background "gui/phone/textbox.png"
-
-style radio_button:
-    variant "small"
-    foreground "gui/phone/button/radio_[prefix_]foreground.png"
-
-style check_button:
-    variant "small"
-    foreground "gui/phone/button/check_[prefix_]foreground.png"
-
-style nvl_window:
-    variant "small"
-    background "gui/phone/nvl.png"
-
-style main_menu_frame:
-    variant "small"
-    background "gui/phone/overlay/main_menu.png"
-
-style game_menu_outer_frame:
-    variant "small"
-    background "gui/phone/overlay/game_menu.png"
-
-style game_menu_navigation_frame:
-    variant "small"
-    xsize 510
-
-style game_menu_content_frame:
-    variant "small"
-    top_margin 0
-
-style pref_vbox:
-    variant "small"
-    xsize 600
-
-style bar:
-    variant "small"
-    ysize gui.bar_size
-    left_bar Frame("gui/phone/bar/left.png", gui.bar_borders, tile=gui.bar_tile)
-    right_bar Frame("gui/phone/bar/right.png", gui.bar_borders, tile=gui.bar_tile)
-
-style vbar:
-    variant "small"
-    xsize gui.bar_size
-    top_bar Frame("gui/phone/bar/top.png", gui.vbar_borders, tile=gui.bar_tile)
-    bottom_bar Frame("gui/phone/bar/bottom.png", gui.vbar_borders, tile=gui.bar_tile)
-
-style scrollbar:
-    variant "small"
-    ysize gui.scrollbar_size
-    base_bar Frame("gui/phone/scrollbar/horizontal_[prefix_]bar.png", gui.scrollbar_borders, tile=gui.scrollbar_tile)
-    thumb Frame("gui/phone/scrollbar/horizontal_[prefix_]thumb.png", gui.scrollbar_borders, tile=gui.scrollbar_tile)
-
-style vscrollbar:
-    variant "small"
-    xsize gui.scrollbar_size
-    base_bar Frame("gui/phone/scrollbar/vertical_[prefix_]bar.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
-    thumb Frame("gui/phone/scrollbar/vertical_[prefix_]thumb.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
-
-style slider:
-    variant "small"
-    ysize gui.slider_size
-    base_bar Frame("gui/phone/slider/horizontal_[prefix_]bar.png", gui.slider_borders, tile=gui.slider_tile)
-    thumb "gui/phone/slider/horizontal_[prefix_]thumb.png"
-
-style vslider:
-    variant "small"
-    xsize gui.slider_size
-    base_bar Frame("gui/phone/slider/vertical_[prefix_]bar.png", gui.vslider_borders, tile=gui.slider_tile)
-    thumb "gui/phone/slider/vertical_[prefix_]thumb.png"
-
-style slider_vbox:
-    variant "small"
-    xsize None
-
-style slider_slider:
-    variant "small"
-    xsize 900

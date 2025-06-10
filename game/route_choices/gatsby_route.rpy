@@ -141,7 +141,7 @@ define audio.ShowDelaunay = "audio/Music/SHOW_Delaunay_Idea1_V1.ogg"
 define audio.ShowGatsby = "audio/Music/SHOW_Gatsby_Idea1_V2.ogg"
 
 # Déclarez les personnages utilisés dans le jeu.
-define mother = Character('Mother', color="#b51963", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=25, callback=type_sound, cb_cps=25, cb_boopfile=M_type_sounds)
+define mother = Character('Mother', color="#b51963", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=30, callback=type_sound, cb_cps=30, cb_boopfile=M_type_sounds)
 define anthrax = Character('Anthräx', color="#9370db", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=35, callback=type_sound, cb_cps=35, cb_boopfile=A_type_sounds)
 define delaunay = Character('Delaunay', color="#faaf90", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=D_type_sounds)
 define gatsby = Character('Gatsby', color="#054fb9", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=G_type_sounds)
@@ -151,12 +151,13 @@ define aimee = Character('Aimé.e', color="#054fb9", who_outlines=[(2, "#000000"
 define imani = Character('Imani', color="#f57600", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=P_type_sounds)
 define inconnu = Character('???', color="#FFFFFF", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50)
 define delinconnu = Character('Del?', color="#faaf90", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=D_type_sounds)
-define player = Character('[player_name]', color="9370db", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=A_type_sounds)
-define staff = Character('Staff', color="#FFFFFF", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=type_silent)
+define player = Character('[player_name]', color="9370db", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
+define staff = Character('Staff', color="#FFFFFF", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50)
 define text = Character(color="#FFFFFF", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
 
 
 label gatsby_start:
+$ persistent.bg_parallax = True
 $ quick_menu = True
 scene black with fade
 scene loges
@@ -182,9 +183,51 @@ hide loges
 show bar with fade
 play music BarMusic volume 0.5
 play ambiance BarDay fadein 0.5
+show bar with dissolve
 
-#Dialogue WIP
+text "Nous sommes arrivé.e.s dans l'auditorium et nous nous sommes approché.e.s du comptoir derrière lequel brillait un mur de bouteilles de formes et couleurs uniques. Le paradis du parfait mixologue."
 
+text "Nous avions depuis le bar une vue imprenable sur la scène, légèrement en contrebas. Les tablées y étaient déjà dressées et se regroupaient autour du big band et de l'estrade secondaire au centre de la pièce."
+
+text "L'immense lustre duquel pendaient des larmes de verre reflétait les spots de lumière à la manière d'une boule à facettes sur le papier peint texturé."
+
+text "Aimée s'assit sur l'une des chaises hautes de bois verni et commanda un Bloody Mary au barman, et moi un Expresso Martini."
+
+aimee "Alors ! Raconte-moi tout ! D'où est-ce que tu viens ? Qu'est-ce que tu fais ici ? Comment est-ce que tu nous as connu.e.s ?"
+
+anthrax "Oh... Euh... Ça fait beaucoup de questions à la fois..."
+
+aimee "Pas faux. Commence par le drag alors. Qu'est-ce qui t'as lancé.e ?"
+
+anthrax "Oh. Eh bien... J'ai commencé dans le confort de mon appart, sur les réseaux sociaux. Je n'ai jamais mis les pieds dans une troupe. Ou même un cabaret pour tout te dire."
+
+anthrax "Je n'habite pas très loin, donc je passais souvent devant L'Androgame et vous observais de loin."
+
+anthrax "C'est un peu impressionnant. Je me demande si j'ai ma place, je ne m'attendais pas à être retenu.e après l'audition..."
+
+aimee "Bien sûr que tu as ta place ! Mother a l'œil pour repérer les talents."
+
+anthrax "Et toi ? Ça fait longtemps que tu as intégré la troupe ?"
+
+aimee "Peut-être... Cinq ans ? Quatre ? Léandre était là déjà avant moi, mais je n'ai pas tardé après lui."
+
+aimee "Et Imani...? Eh bien, elle bossait déjà là avant en tant que technicienne son. C'est plus récent son lancement dans le drag. Deux ans, il me semble ?"
+
+anthrax "Ah oui, donc ça fait un moment que vous vous connaissez."
+
+aimee "Oui. Ils font même partie de mon cercle d'ami.e.s le plus proche. Mais je ne vais pas leur dire en face sinon ils vont prendre la grosse tête..."
+
+aimee "Et je m'imagine déjà les vannes de Delaunay, quand Léandre sort son alter-ego. Tu verras, c'est assez marrant."
+
+anthrax "En tout cas, ça promet beaucoup pour la suite !"
+
+anthrax "Et sinon, c'est quoi qui t'as lancé.e dans le drag toi ?"
+
+aimee "Ma quête de genre principalement... Enfin je pense. J'étais dans une phase où je me redécouvrais entièrement."
+
+aimee "Je sortais d'un burn-out, je savais que j'avais plein de choses enfouies à régler... Et j'ai décidé de commencer par ça."
+
+aimee "Le reste a suivi."
 
 
 #Choix GAT.2
@@ -195,11 +238,11 @@ label choix_gat2:
     with fade
 
     menu: 
-        "WIP":
+        "Tu faisais du cirque du coup? Est-ce que tu peux m'en raconter davantage?":
             call gat_2_1 from _call_gat_2_1 
-        "WIP":
+        "J'ignorais que tu avais fait un burn-out. C'était quel genre d'environnement de travail pour que ça en arrive là?":
             call gat_2_2 from _call_gat_2_2 
-        "WIP":
+        "Donc tu as commencé par le drag pour... Te relever? Ce n'est peut-être pas la première chose à laquelle on pense quand on commence sa \"healing journey\"":
             call gat_2_3 from _call_gat_2_3 
           
 
@@ -210,8 +253,59 @@ label gat_2_1:
     show aimee_neutre at tall_center
     with fade
 
-    anthrax "WIP"
-    aimee "WIP"
+    anthrax "Donc tu as commencé par le drag pour... Te relever ? Ce n'est peut-être pas la première chose à laquelle on pense quand on commence sa \"healing journey\"."
+
+    aimee "Tu faisais du cirque du coup ? Est-ce que tu peux m'en raconter davantage ?"
+
+    aimee "Eh bien... J'ai commencé très jeune, avec de la gymnastique."
+
+    aimee "Mes parents ont découvert assez vite que j'étais hyperlaxe, c'était donc un avantage dans ce type de discipline."
+
+    aimee "Et j'étais plutôt bon.ne en plus. Mais je commençais à m'ennuyer et j'avais envie de changement."
+
+    aimee "Et avec l'âge, je me suis de plus en plus intéressé.e à d'autres formes d'art, un peu plus physiques mais plus challengeantes !"
+
+    aimee "Et qui dit challenge, dit fun."
+
+    anthrax "Ça te correspond bien en tout cas. Tu as l'air d'être du genre... explosif ?"
+
+    aimee "Ha ha ! Merci. Oui, j'ai toujours été assez turbulent.e !"
+
+    aimee "Donc fallait y aller pour m'épuiser !"
+
+    anthrax "Et qu'est-ce que tu sais faire du coup ?"
+
+    aimee "Pendant quelques années, j'étais contorsionniste."
+
+    aimee "Puis je me suis intéressé.e aux hauteurs."
+
+    anthrax "Aux hauteurs ?"
+
+    aimee "Oui ! Toutes les disciplines qui avaient un rapport de près ou de loin au vide."
+
+    aimee "Équilibrisme, acrobatie aérienne, voltige, trapèze, cerceaux volants..."
+
+    anthrax "Et tu n'as jamais eu le vertige ? J'ai le tournis rien que de m'imaginer ça."
+
+    aimee "Jamais ! Au contraire, la partie la plus drôle, c'était la chute."
+
+    aimee "Après, il y avait toujours un filet ou des matelas pour nous rattraper, donc les dangers étaient minimes pour peu que l'on ait appris à bien tomber."
+
+    aimee "Et rien de mieux dans la vie que d'apprendre à se relever après un échec !"
+
+    anthrax "Et tu en fais toujours ?"
+
+    aimee "Hm... Disons que je reprends doucement."
+
+    aimee "J'ai beau avoir un corps d'Adonis, il n'a plus les mêmes capacités qu'avant."
+
+    aimee "Mais ça ne m'empêche pas d'improviser, puisque je n'ai pas non plus tout perdu."
+
+    aimee "Après tout, j'y ai consacré la majorité de ma vie. Ce n'est pas une mauvaise passe qui va envoyer en l'air tous mes efforts."
+
+    aimee "Recommencer ne me fait pas peur. Et si je peux compiler avec la personne que je suis devenu.e, ce serait un triomphe !"
+
+    jump gat_3
     call gat_3 from _call_gat_3 
 
 #GAT.2.2
@@ -221,8 +315,44 @@ label gat_2_2:
     show aimee_neutre at tall_center
     with fade
 
-    anthrax "WIP"
-    mother "WIP"
+    anthrax "J'ignorais que tu avais fait un burn-out. C'était quel genre d'environnement de travail pour que ça en arrive là ?"
+
+    aimee "Ça n'en a peut-être pas l'air comme ça, mais j'étais acrobate dans une troupe de cirque..."
+
+    aimee "On était constamment en déplacement à l'étranger pour des tournées, et disons que l'ambiance aux répétitions et en spectacles n'était pas au beau fixe."
+
+    aimee "Pendant un long moment, c'était le genre de chose que je ne pouvais pas voir en peinture ou entendre parler."
+
+    aimee "Alors que j'en étais réellement passionné.e..."
+
+    anthrax "Merde... Et du coup, ça a dû te dégoûter complètement..."
+
+    aimee "Pendant un temps, oui."
+
+    aimee "Mais plus à présent. C'est même redevenu ma spécialité au sein de l'Androgame."
+
+    aimee "La majorité de mes numéros sont acrobatiques."
+
+    aimee "Dis-toi que Mother a même fait des modifications dans la structure de la scène, pour l'accommoder à mes besoins techniques."
+
+    anthrax "Ça a dû être assez coûteux."
+
+    aimee "Rien qu'une avance sur le salaire ne puisse régler !"
+
+    aimee "Non, je plaisante. Je n'ai pas eu à contribuer aux frais. C'est juste bien tombé puisque des rénovations étaient déjà prévues."
+
+    aimee "Mother est une vraie businesswoman. Je ne sais pas quels contacts elle cache dans son décolleté, mais si tu as besoin de n'importe quoi, je suis sûr.e qu'elle a quelqu'un pour te dépanner."
+
+    anthrax "Et du coup, qu'est-ce que tu fais exactement comme acrobatisme ?"
+
+    aimee "As-tu réellement envie que je te spoile ? Je peux te laisser la surprise pour le prochain show~"
+
+    anthrax "Juste un indice alors ?"
+
+    aimee "Un indice ? Très bien."
+
+    aimee "C'est de la voltige...~"
+
     call gat_3 from _call_gat_3_1 
 
 #GAT.2.3
@@ -232,15 +362,108 @@ label gat_2_3:
     show aimee_neutre at tall_center
     with fade
 
-    anthrax "WIP"
-    mother "WIP"
+    anthrax "Donc tu as commencé par le drag pour... Te relever ? Ce n'est peut-être pas la première chose à laquelle on pense quand on commence sa \"healing journey\"."
+
+    aimee "Oh, ne t'en fais pas que j'allais déjà chez le psy !"
+
+    aimee "Je ne l'ai d'ailleurs jamais quitté.e..."
+
+    aimee "Non, j'étais déjà à un stade suffisamment avancé de réflexion pour me lancer dans l'exploration tout de même."
+
+    aimee "J'avais les clefs en main, mais je ne savais pas quelle porte ouvrir. Ou bien même où est-ce qu'elle était cette foutue porte."
+
+    aimee "Alors que je suis plutôt du genre à les enfoncer..."
+
+    aimee "Et tout ça pour réaliser que ce n'était pas une porte mais une trappe vers le grenier où j'avais entassé pas mal de vieux démons en espérant les y oublier..."
+
+    aimee "Enfin bref, pas mal de métaphores pour dire une seule chose : \"Maintenant, ça va mieux\"."
+
+    anthrax "Ça a l'air d'avoir été bien fastidieux. Donc... Par quoi est-ce que tu as commencé le drag ?"
+
+    aimee "Eh bien... Au tout départ, c'était avec des sorties costumées, comme Halloween ou Mardi Gras."
+
+    aimee "On avait aussi ces petites soirées à thème avec mes ami.e.s où l'on venait déguisé.e.s, et j'utilisais ces occasions à fond"
+
+    aimee "puisque c'était les seuls moments où je sentais que je pouvais m'amuser avec les frontières du genre et repousser quelques limites."
+
+    aimee "Puis j'ai de plus en plus assumé, avec du jeu de rôle notamment."
+
+    aimee "Puis les cercles d'amis se sont mêlés et j'ai découvert une association queer qui proposait des ateliers drag. Et je me suis inscrit.e."
+
+    anthrax "Sur un coup de tête ? Comme ça ?"
+
+    aimee "Après tout, c'est un peu comme toi lorsque tu t'es présenté.e à l'audition. Parfois, il faut juste se lancer."
+
+    anthrax "C'est vrai... Et à quoi ressemblait ton drag au début ?"
+
+    aimee "Je suis content.e que tu demandes !"
+
+    aimee "Au départ, c'était plutôt du drag clown et du drag creature... Ça ne ressemblait pas à grand-chose, mais c'était le but."
+
+    aimee "Je m'inspirais principalement d'œuvres d'art et j'essayais de les reproduire sur mon corps avec une pointe de body horror."
+
+    aimee "C'était assez fun. Dommage que ça ne colle pas trop avec le style de l'Androgame..."
+
+    aimee "Mais ça ne m'empêche pas de développer ces personnages à côté."
+
+    anthrax "Et tu es toujours dans cette association ?"
+
+    aimee "Oui ! Mais malheureusement, on n'y fait plus trop de spectacles. Chacun.e a sa vie et d'autres priorités, et le drag est passé au second plan. Mais peut-être que ça reprendra un jour, qui sait ?"
+
     call gat_3 from _call_gat_3_2 
 
 #GAT.3
 label gat_3:
 
+    text "Cela faisait plusieurs minutes que je cherchais Aimée, avec qui j'étais supposé.e répéter une partie de mon numéro, que l'on construisait ensemble."
 
-#Dialogue WIP 
+    text "Après avoir fait trois fois le tour du lobby, des backstages, être retourné.e tout autant de fois dans les loges, je finis par retourner sur les planches de la scène, pensif.ve."
+
+    text "Et en toute honnêteté, un peu inquiet.e."
+
+    text "Puis je l'aperçus, dominant un carnet sur lequel iel tapotait la mine de son crayon, posé sur l'un des mange-debouts. Je le.a rejoignis rapidement."
+
+    anthrax "Hey... Je me demandais où tu étais passé.e."
+
+    aimee "Oh, pardon... Je ne pensais pas que tu me cherchais."
+
+    anthrax "Euh... Nous étions censé.e.s nous retrouver pour nous entraîner..."
+
+    aimee "Meeeeeerde ! J'ai complètement zappé ! Je suis désolé.e !"
+
+    anthrax "Ce n'est pas grave, c'est le genre de chose qui arrive. Qu'est-ce que tu fais... ?"
+
+    aimee "Ça ? J'essaye de tenir un journal."
+
+    anthrax "Un journal ?"
+
+    aimee "Oui, pour mettre à plat ma progression, mes hauts et mes bas... Histoire de garder une trace du chemin parcouru et de ce que j'ai accompli."
+
+    anthrax "Oh ! Un journal intime quoi !"
+
+    aimee "Ça fait tout de suite moins sérieux dit comme ça... Mais oui, un journal intime."
+
+    aimee "Entre autres..."
+
+    text "Soudainement l'air un peu ailleurs, Aimée se mordit l'intérieur de la joue, sans reprendre la parole. Ellui étant si bavard.e, c'était plutôt surprenant de sa part..."
+
+    anthrax "Tout va bien ?"
+
+    aimee "Hm..."
+
+    aimee "Peut-être qu'en parler m'aidera à mieux trouver les mots pour l'écrire..."
+
+    anthrax "Oh... ?"
+
+    aimee "Tu vois quand je t'ai parlé de mon burn-out ? Ça a eu des conséquences bien plus dévastatrices sur ma santé mentale qu'une simple dépression..."
+
+    aimee "Avec la pression au sein de mon ancienne troupe, j'ai développé des troubles du comportement alimentaire."
+
+    aimee "Boulimie, anorexie, un mix des deux, puis un soupçon de mérycisme... Enfin bref."
+
+    aimee "Rien de bien joyeux, mais j'aimerais réussir à le noter dans mon carnet pour..."
+
+    aimee "Je ne sais pas... Enfin tourner la page ?"
 
 
 #Choix GAT.3
@@ -251,11 +474,11 @@ label choix_gat3:
     with fade
 
     menu: 
-        "WIP":
+        "Est-ce que ça va mieux maintenant que tu as quitté cet environnement ?":
             call gat_3_1 from _call_gat_3_1_1 
-        "WIP":
+        "Wow... Quand je te vois maintenant... Je ne pensais pas...":
             call gat_3_2 from _call_gat_3_2_1 
-        "WIP":
+        "Tu as dû prendre pas mal de temps pour t'en remettre, non?":
             call gat_3_3 from _call_gat_3_3 
 
 #GAT.3.1
@@ -265,8 +488,60 @@ label gat_3_1:
     show aimee_neutre at tall_center
     with fade
 
-    anthrax "WIP"
-    aimee "WIP"
+    anthrax "Est-ce que ça va mieux maintenant que tu as quitté cet environnement ?"
+
+    aimee "Oui ! Énormément même !"
+
+    aimee "Ça n'a pas encore complètement disparu, mais c'est sur une excellente voie !"
+
+    aimee "Je n'ai jamais été aussi bien dans ma peau, mon apparence et ma confiance."
+
+    anthrax "Ça me rassure un peu... Ça ne rigole pas les TCA."
+
+    aimee "Ce n'est pas moi qui vais te dire le contraire !"
+
+    aimee "Remonter la pente est ce qui a été le plus compliqué, mais maintenant que c'est passé, je suis inarrêtable."
+
+    anthrax "Mais qu'est-ce qui t'as causé de sombrer en premier lieu ?"
+
+    aimee "Je pense que c'était sincèrement la pression qu'on me mettait. C'est même indéniable..."
+
+    aimee "Quelqu'un était constamment sur mon dos pour surveiller mon poids, mon déficit calorique, combien de litres d'eau je buvais par jour, quels compléments alimentaires..."
+
+    aimee "Je n'ai pas toujours eu le corps que j'ai aujourd'hui, c'était un régime très strict."
+
+    aimee "Ça a d'ailleurs commencé par de l'anorexie. Je pense qu'avec le recul, j'avais terriblement besoin de contrôle."
+
+    aimee "Et le peu que je pouvais grapiller se trouvait là..."
+
+    anthrax "Ça devait être abominable."
+
+    aimee "Hm... Peut-être, mais j'ai survécu."
+
+    aimee "Surtout qu'à cette époque, j'étais particulièrement mal dans mes baskets, et je n'avais pas encore réalisé que je me posais des questions sur mon genre."
+
+    aimee "C'était vraiment un pêle-mêle de sentiments néfastes, sans un pour rattraper l'autre."
+
+    aimee "Et j'ai beau avoir fini par quitter la troupe, j'étais tellement matrixé.e que les TCA ne se sont pas arrêtés là."
+
+    aimee "Maintenant, j'avais une sorte de vide à combler, et j'ai fait de l'hyperphagie."
+
+    aimee "Bref..."
+
+    anthrax "C'est l'Androgame qui t'as aidé à t'en sortir ?"
+
+    aimee "L'Androgame ? Non."
+
+    aimee "Mais ma psy et le drag, par contre, oui !"
+
+    aimee "J'ai trouvé une communauté, et un espace pour me redécouvrir, qui m'acceptait pour quiconque je devenais."
+
+    aimee "Franchement, c'était salvateur. Et j'ai pu commencer à aborder plus ouvertement les épreuves que je traversais."
+
+    aimee "Jusqu'à ultimement les surmonter."
+
+    aimee "C'est après que j'ai découvert l'Androgame, et que j'ai pu réitérer !"
+
     call gat_4 from _call_gat_4 
 
 #GAT.3.2
@@ -276,8 +551,62 @@ label gat_3_2:
     show aimee_neutre at tall_center
     with fade
 
-    anthrax "WIP"
-    mother "WIP"
+    anthrax "Wow... Quand je te vois maintenant... Je ne pensais pas..."
+
+    aimee "\"Tu ne pensais pas\" quoi ?"
+
+    anthrax "Eh bien... Ça ne te ressemble pas. Enfin, pas au toi d’aujourd’hui."
+
+    anthrax "Je te vois comme cette personne bien dans son corps, hyper confiante..."
+
+    anthrax "J’ai juste un peu de mal à réaliser que tu n’as pas été... épargné.e ?"
+
+    aimee "Hm... Je pourrais me vexer, mais je crois voir où tu veux en venir."
+
+    aimee "Je ne pense pas que mes TCA viennent de là, il y a plein d’autres raisons que de vouloir correspondre à un standard de beauté pour que ça se déclenche."
+
+    aimee "Ça a commencé avec moi parce que j’avais besoin de contrôle dans ma vie, et que c’était là où je le trouvais."
+
+    aimee "Enfin... C’est ce que je préférais me raconter plutôt..."
+
+    anthrax "Désolé.e, je ne voulais pas te blesser. J’ai été maladroit.e dans mes mots."
+
+    anthrax "Qu’est-ce que tu sous-entends par là ?"
+
+    aimee "Eh bien..."
+
+    aimee "Putain, c’est pas simple d’en parler..."
+
+    aimee "En fait, quand tu entres dans une crise... Que ce soit à te pencher au-dessus d’une cuvette et enfoncer tes doigts dans la gorge ou avaler tout ce qui tombe sous ta main..."
+
+    aimee "Tu n’es pas toi-même. Enfin, plutôt... Tu n’as pas le contrôle sur ce que tu fais à cet instant..."
+
+    aimee "C’est comme si tu étais possédé.e."
+
+    aimee "Mais le pire dans tout ça, c’est que tu te sens étrangement satisfait.e après... Et c’est là où est le danger."
+
+    aimee "Parce que ça te fait sentir bien, tu commences à croire que c’est normal, et que c’est même une solution."
+
+    aimee "Et ensuite, tu ne te sors plus de ce cercle vicieux. Ou du moins, très difficilement..."
+
+    anthrax "Mais maintenant, tu en as encore... ?"
+
+    aimee "Hm... Ce n’est pas aussi simple que ça. J’en ai encore les stigmates, pour être honnête."
+
+    aimee "Justement, je me sens bien dans mes baskets, et j’aime le reflet que je vois dans le miroir, puisque c’est la version de moi la plus heureuse que j’ai eue dans ma vie."
+
+    aimee "Sauf peut-être quand j’étais enfant, mais je n’en ai plus tellement de souvenirs..."
+
+    aimee "Tout le monde ne penserait pas que c’est le cas parce que dans leur tête, être gros.se équivaut à devoir automatiquement se sentir misérable."
+
+    aimee "Mais j’étais bien plus misérable quand j’avais la peau sur les os et que mon patron me disait que je devais encore surveiller mon poids pour pouvoir faire de la contorsion."
+
+    aimee "C’est toute une histoire..."
+
+    anthrax "Et pas l’une des plus joyeuses..."
+
+    aimee "Ça c’est clair..."
+
     call gat_4 from _call_gat_4_1 
 
 #GAT.3.3
@@ -287,8 +616,54 @@ label gat_3_3:
     show aimee_neutre at tall_center
     with fade
 
-    anthrax "WIP"
-    mother "WIP"
+    anthrax "Tu as dû prendre pas mal de temps pour t'en remettre, non ?"
+
+    aimee "Oh ça ! Et encore, je suis loin d'en avoir fini !"
+
+    aimee "Bon, au moins je ne me prive plus de nourriture, ni me fais vomir, ni vide les placards au moindre mental breakdown."
+
+    aimee "Juste parfois, je me reprends à y penser. Sans l'envisager hein ! C'est déjà du progrès."
+
+    aimee "Tant que je ne rechute pas, c'est le principal."
+
+    anthrax "C'est quelque chose qui t'inquiète ? De rechuter ?"
+
+    aimee "Oui, et non... J'ai suffisamment dépassé tout ça et me suis construit une force mentale telle que je ne me laisserais pas retomber."
+
+    aimee "Et d'un autre côté, c'est toujours une peur un peu irrationnelle qui ne me quitte jamais."
+
+    aimee "Surtout que sur le chemin de la convalescence, j'ai eu beaucoup de hauts et de bas."
+
+    aimee "Des périodes qui allaient vraiment très bien, et d'autres où je me sentais comme la dernière des merdes."
+
+    aimee "Chacune durait plus ou moins longtemps. Des mois même !"
+
+    aimee "Et mon corps qui subissait tout ça au passage."
+
+    anthrax "Ça a fini par se stabiliser du coup ?"
+
+    aimee "Visualise ça comme un yo-yo. Sans mauvais jeu de mot."
+
+    aimee "Au début, il descend et remonte très fort, jusqu'à perdre en vélocité. Et ensuite, il rebondit de moins en moins haut et de moins en moins bas."
+
+    anthrax "Bon, un yo-yo finit quand même par se stopper tout en bas..."
+
+    aimee "Imagine qu'il n'y a pas de gravité dans ce cas. Ah mais du coup, le yo-yo ne tomberait pas en premier lieu..."
+
+    aimee "Bon, oublie cette métaphore foireuse !"
+
+    aimee "Ce qui compte, c'est qu'au fil du temps, avec la volonté de guérir qui va avec parce qu'on n'a rien sans rien, les pics sont moins intenses."
+
+    aimee "Jusqu'à disparaître."
+
+    aimee "Et que les TCA disparaissent, c'est ça qu'on veut."
+
+    anthrax "Et où est-ce que tu en es à présent ? Si ce n'est pas encore ça..."
+
+    aimee "Eh bien... Disons que le yo-yo oscille. Mais il faudrait vraiment un gros coup de vent ou une catastrophe naturelle pour qu'il se remette à bouger vraiment."
+
+    anthrax "Bon, tant mieux alors !"
+
     call gat_4 from _call_gat_4_2 
 
 #GAT.4

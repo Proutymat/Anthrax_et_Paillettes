@@ -12,7 +12,7 @@ init python:
 
 screen album:
     tag menu
-    add "images/Backgrounds/bar.png"
+    add "images/Backgrounds/menu_background_two.png"
 
     hbox:
         xalign 0.5

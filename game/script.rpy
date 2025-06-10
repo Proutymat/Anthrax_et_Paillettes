@@ -1,5 +1,19 @@
 # fonctions custom
 
+init python:    
+    import os
+
+    def get_available_translations():
+        tl_path = os.path.join(renpy.config.gamedir, "tl")
+        available_translations = []
+        if os.path.isdir(tl_path):
+            for folder_name in os.listdir(tl_path):
+                # Exclude "None" folder and any hidden files
+                if folder_name != "None" and not folder_name.startswith('.'):
+                    available_translations.append(folder_name)
+        return available_translations
+
+
 init python:
     def type_sound(event, interact=True, cps=35, boopfile=type_sounds, **kwargs):
         speed = int((0.1/cps)*1000)/1000
@@ -22,7 +36,6 @@ init python:
             renpy.pause((20-renpy.music.get_pos('sound')),hard=True)
 
     renpy.music.register_channel("ambiance", "sfx", True)
-
 
 
 # Déclarez sous cette ligne les images, avec l'instruction 'image'
@@ -73,6 +86,688 @@ image rideau = "Backgrounds/rideau.png"
 image balcon = "Backgrounds/balcon.png"
 
 #vfx
+
+
+
+image curtain_open = Animation(
+    "images/VFX/Curtain_Open/Curtain_Open_00000.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00001.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00002.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00003.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00004.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00005.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00006.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00007.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00008.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00009.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00010.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00011.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00012.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00013.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00014.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00015.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00016.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00017.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00018.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00019.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00020.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00021.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00022.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00023.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00024.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00025.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00026.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00027.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00028.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00029.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00030.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00031.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00032.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00033.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00034.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00035.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00036.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00037.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00038.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00039.png", 0.04
+)
+
+
+image curtain_close = Animation(
+    "images/VFX/Curtain_Close/Curtain_Clone_00022.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Clone_00023.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Clone_00024.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Clone_00025.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Clone_00026.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Clone_00027.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Clone_00028.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Clone_00029.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Clone_00030.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Clone_00031.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Clone_00032.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Clone_00033.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Clone_00034.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Clone_00035.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Clone_00036.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Clone_00037.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Clone_00038.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Clone_00039.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Clone_00040.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Clone_00041.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Clone_00042.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Clone_00043.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Clone_00044.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Clone_00045.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Clone_00046.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Clone_00047.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Clone_00048.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Clone_00049.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Clone_00050.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Clone_00051.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Clone_00052.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Clone_00053.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Clone_00054.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Clone_00055.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Clone_00056.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Clone_00057.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Clone_00058.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Clone_00059.png", 0.04
+)
+
+
+image flirt = Animation(
+    "images/VFX/Flirt/Flirt_00001.png", 0.03,
+    "images/VFX/Flirt/Flirt_00002.png", 0.03,
+    "images/VFX/Flirt/Flirt_00003.png", 0.03,
+    "images/VFX/Flirt/Flirt_00004.png", 0.03,
+    "images/VFX/Flirt/Flirt_00005.png", 0.03,
+    "images/VFX/Flirt/Flirt_00006.png", 0.03,
+    "images/VFX/Flirt/Flirt_00007.png", 0.03,
+    "images/VFX/Flirt/Flirt_00008.png", 0.03,
+    "images/VFX/Flirt/Flirt_00009.png", 0.03,
+    "images/VFX/Flirt/Flirt_00010.png", 0.03,
+    "images/VFX/Flirt/Flirt_00011.png", 0.03,
+    "images/VFX/Flirt/Flirt_00012.png", 0.03,
+    "images/VFX/Flirt/Flirt_00013.png", 0.03,
+    "images/VFX/Flirt/Flirt_00014.png", 0.03,
+    "images/VFX/Flirt/Flirt_00015.png", 0.03,
+    "images/VFX/Flirt/Flirt_00016.png", 0.03,
+    "images/VFX/Flirt/Flirt_00017.png", 0.03,
+    "images/VFX/Flirt/Flirt_00018.png", 0.03,
+    "images/VFX/Flirt/Flirt_00019.png", 0.03,
+    "images/VFX/Flirt/Flirt_00020.png", 0.03,
+    "images/VFX/Flirt/Flirt_00021.png", 0.03,
+    "images/VFX/Flirt/Flirt_00022.png", 0.03,
+    "images/VFX/Flirt/Flirt_00023.png", 0.03,
+    "images/VFX/Flirt/Flirt_00024.png", 0.03,
+    "images/VFX/Flirt/Flirt_00025.png", 0.03,
+    "images/VFX/Flirt/Flirt_00026.png", 0.03,
+    "images/VFX/Flirt/Flirt_00027.png", 0.03,
+    "images/VFX/Flirt/Flirt_00028.png", 0.03,
+    "images/VFX/Flirt/Flirt_00029.png", 0.03,
+    "images/VFX/Flirt/Flirt_00030.png", 0.03,
+    "images/VFX/Flirt/Flirt_00031.png", 0.03,
+    "images/VFX/Flirt/Flirt_00032.png", 0.03,
+    "images/VFX/Flirt/Flirt_00033.png", 0.03,
+    "images/VFX/Flirt/Flirt_00034.png", 0.03,
+    "images/VFX/Flirt/Flirt_00035.png", 0.03,
+    "images/VFX/Flirt/Flirt_00036.png", 0.03,
+    "images/VFX/Flirt/Flirt_00037.png", 0.03,
+    "images/VFX/Flirt/Flirt_00038.png", 0.03,
+    "images/VFX/Flirt/Flirt_00039.png", 0.03,
+    "images/VFX/Flirt/Flirt_00040.png", 0.03,
+    "images/VFX/Flirt/Flirt_00041.png", 0.03,
+    "images/VFX/Flirt/Flirt_00042.png", 0.03,
+    "images/VFX/Flirt/Flirt_00043.png", 0.03,
+    "images/VFX/Flirt/Flirt_00044.png", 0.03,
+    "images/VFX/Flirt/Flirt_00045.png", 0.03,
+    "images/VFX/Flirt/Flirt_00046.png", 0.03,
+    "images/VFX/Flirt/Flirt_00047.png", 0.03,
+    "images/VFX/Flirt/Flirt_00048.png", 0.03,
+    "images/VFX/Flirt/Flirt_00049.png", 0.03,
+    "images/VFX/Flirt/Flirt_00050.png", 0.03,
+    "images/VFX/Flirt/Flirt_00051.png", 0.03,
+    "images/VFX/Flirt/Flirt_00052.png", 0.03,
+    "images/VFX/Flirt/Flirt_00053.png", 0.03,
+    "images/VFX/Flirt/Flirt_00054.png", 0.03,
+    "images/VFX/Flirt/Flirt_00055.png", 0.03,
+    "images/VFX/Flirt/Flirt_00056.png", 0.03,
+    "images/VFX/Flirt/Flirt_00057.png", 0.03,
+    "images/VFX/Flirt/Flirt_00058.png", 0.03,
+    "images/VFX/Flirt/Flirt_00059.png", 0.03,
+    "images/VFX/Flirt/Flirt_00060.png", 0.03,
+    "images/VFX/Flirt/Flirt_00061.png", 0.03,
+    "images/VFX/Flirt/Flirt_00062.png", 0.03,
+    "images/VFX/Flirt/Flirt_00063.png", 0.03,
+    "images/VFX/Flirt/Flirt_00064.png", 0.03,
+    "images/VFX/Flirt/Flirt_00065.png", 0.03,
+    "images/VFX/Flirt/Flirt_00066.png", 0.03,
+    "images/VFX/Flirt/Flirt_00067.png", 0.03,
+    "images/VFX/Flirt/Flirt_00068.png", 0.03,
+    "images/VFX/Flirt/Flirt_00069.png", 0.03,
+    "images/VFX/Flirt/Flirt_00070.png", 0.03,
+    "images/VFX/Flirt/Flirt_00071.png", 0.03,
+    "images/VFX/Flirt/Flirt_00072.png", 0.03,
+    "images/VFX/Flirt/Flirt_00073.png", 0.03,
+    "images/VFX/Flirt/Flirt_00074.png", 0.03
+)
+
+image angry = Animation(
+    "images/VFX/Angry/Angry_00001.png", 0.06,
+    "images/VFX/Angry/Angry_00002.png", 0.06,
+    "images/VFX/Angry/Angry_00003.png", 0.06,
+    "images/VFX/Angry/Angry_00004.png", 0.06,
+    "images/VFX/Angry/Angry_00005.png", 0.06,
+    "images/VFX/Angry/Angry_00006.png", 0.06,
+    "images/VFX/Angry/Angry_00007.png", 0.06,
+    "images/VFX/Angry/Angry_00008.png", 0.06,
+    "images/VFX/Angry/Angry_00009.png", 0.06,
+    "images/VFX/Angry/Angry_00010.png", 0.06,
+    "images/VFX/Angry/Angry_00011.png", 0.06,
+    "images/VFX/Angry/Angry_00012.png", 0.06,
+    "images/VFX/Angry/Angry_00013.png", 0.06,
+    "images/VFX/Angry/Angry_00014.png", 0.06,
+    "images/VFX/Angry/Angry_00015.png", 0.06,
+    "images/VFX/Angry/Angry_00016.png", 0.06,
+    "images/VFX/Angry/Angry_00017.png", 0.06,
+    "images/VFX/Angry/Angry_00018.png", 0.06,
+    "images/VFX/Angry/Angry_00019.png", 0.06
+)
+
+image joy = Animation(
+    "images/VFX/Joy/Joy_00001.png", 0.04,
+    "images/VFX/Joy/Joy_00002.png", 0.04,
+    "images/VFX/Joy/Joy_00003.png", 0.04,
+    "images/VFX/Joy/Joy_00004.png", 0.04,
+    "images/VFX/Joy/Joy_00005.png", 0.04,
+    "images/VFX/Joy/Joy_00006.png", 0.04,
+    "images/VFX/Joy/Joy_00007.png", 0.04,
+    "images/VFX/Joy/Joy_00008.png", 0.04,
+    "images/VFX/Joy/Joy_00009.png", 0.04,
+    "images/VFX/Joy/Joy_00010.png", 0.04,
+    "images/VFX/Joy/Joy_00011.png", 0.04,
+    "images/VFX/Joy/Joy_00012.png", 0.04,
+    "images/VFX/Joy/Joy_00013.png", 0.04,
+    "images/VFX/Joy/Joy_00014.png", 0.04,
+    "images/VFX/Joy/Joy_00015.png", 0.04,
+    "images/VFX/Joy/Joy_00016.png", 0.04,
+    "images/VFX/Joy/Joy_00017.png", 0.04,
+    "images/VFX/Joy/Joy_00018.png", 0.04,
+    "images/VFX/Joy/Joy_00019.png", 0.04,
+    "images/VFX/Joy/Joy_00020.png", 0.04,
+    "images/VFX/Joy/Joy_00021.png", 0.04,
+    "images/VFX/Joy/Joy_00022.png", 0.04,
+    "images/VFX/Joy/Joy_00023.png", 0.04,
+    "images/VFX/Joy/Joy_00024.png", 0.04,
+    "images/VFX/Joy/Joy_00025.png", 0.04,
+    "images/VFX/Joy/Joy_00026.png", 0.04,
+    "images/VFX/Joy/Joy_00027.png", 0.04,
+    "images/VFX/Joy/Joy_00028.png", 0.04,
+    "images/VFX/Joy/Joy_00029.png", 0.04,
+    "images/VFX/Joy/Joy_00030.png", 0.04,
+    "images/VFX/Joy/Joy_00031.png", 0.04,
+    "images/VFX/Joy/Joy_00032.png", 0.04,
+    "images/VFX/Joy/Joy_00033.png", 0.04,
+    "images/VFX/Joy/Joy_00034.png", 0.04,
+    "images/VFX/Joy/Joy_00035.png", 0.04,
+    "images/VFX/Joy/Joy_00036.png", 0.04,
+    "images/VFX/Joy/Joy_00037.png", 0.04,
+    "images/VFX/Joy/Joy_00038.png", 0.04,
+    "images/VFX/Joy/Joy_00039.png", 0.04,
+    "images/VFX/Joy/Joy_00040.png", 0.04,
+    "images/VFX/Joy/Joy_00041.png", 0.04,
+    "images/VFX/Joy/Joy_00042.png", 0.04,
+    "images/VFX/Joy/Joy_00043.png", 0.04,
+    "images/VFX/Joy/Joy_00044.png", 0.04,
+    "images/VFX/Joy/Joy_00045.png", 0.04,
+    "images/VFX/Joy/Joy_00046.png", 0.04,
+    "images/VFX/Joy/Joy_00047.png", 0.04,
+    "images/VFX/Joy/Joy_00048.png", 0.04,
+    "images/VFX/Joy/Joy_00049.png", 0.04,
+    "images/VFX/Joy/Joy_00050.png", 0.04,
+    "images/VFX/Joy/Joy_00051.png", 0.04,
+    "images/VFX/Joy/Joy_00052.png", 0.04,
+    "images/VFX/Joy/Joy_00053.png", 0.04,
+    "images/VFX/Joy/Joy_00054.png", 0.04,
+    "images/VFX/Joy/Joy_00055.png", 0.04,
+    "images/VFX/Joy/Joy_00056.png", 0.04,
+    "images/VFX/Joy/Joy_00057.png", 0.04,
+    "images/VFX/Joy/Joy_00058.png", 0.04,
+    "images/VFX/Joy/Joy_00059.png", 0.04,
+    "images/VFX/Joy/Joy_00060.png", 0.04,
+    "images/VFX/Joy/Joy_00061.png", 0.04,
+    "images/VFX/Joy/Joy_00062.png", 0.04,
+    "images/VFX/Joy/Joy_00063.png", 0.04,
+    "images/VFX/Joy/Joy_00064.png", 0.04,
+    "images/VFX/Joy/Joy_00065.png", 0.04
+)
+
+image sadness = Animation(
+    "images/VFX/Sadness/Sadness_00001.png", 0.05,
+    "images/VFX/Sadness/Sadness_00002.png", 0.05,
+    "images/VFX/Sadness/Sadness_00003.png", 0.05,
+    "images/VFX/Sadness/Sadness_00004.png", 0.05,
+    "images/VFX/Sadness/Sadness_00005.png", 0.05,
+    "images/VFX/Sadness/Sadness_00006.png", 0.05,
+    "images/VFX/Sadness/Sadness_00007.png", 0.05,
+    "images/VFX/Sadness/Sadness_00008.png", 0.05,
+    "images/VFX/Sadness/Sadness_00009.png", 0.05,
+    "images/VFX/Sadness/Sadness_00010.png", 0.05,
+    "images/VFX/Sadness/Sadness_00011.png", 0.05,
+    "images/VFX/Sadness/Sadness_00012.png", 0.05,
+    "images/VFX/Sadness/Sadness_00013.png", 0.05,
+    "images/VFX/Sadness/Sadness_00014.png", 0.05,
+    "images/VFX/Sadness/Sadness_00015.png", 0.05,
+    "images/VFX/Sadness/Sadness_00016.png", 0.05,
+    "images/VFX/Sadness/Sadness_00017.png", 0.05,
+    "images/VFX/Sadness/Sadness_00018.png", 0.05,
+    "images/VFX/Sadness/Sadness_00019.png", 0.05,
+    "images/VFX/Sadness/Sadness_00020.png", 0.05,
+    "images/VFX/Sadness/Sadness_00021.png", 0.05,
+    "images/VFX/Sadness/Sadness_00022.png", 0.05,
+    "images/VFX/Sadness/Sadness_00023.png", 0.05,
+    "images/VFX/Sadness/Sadness_00024.png", 0.05,
+    "images/VFX/Sadness/Sadness_00025.png", 0.05,
+    "images/VFX/Sadness/Sadness_00026.png", 0.05,
+    "images/VFX/Sadness/Sadness_00027.png", 0.05,
+    "images/VFX/Sadness/Sadness_00028.png", 0.05,
+    "images/VFX/Sadness/Sadness_00029.png", 0.05,
+    "images/VFX/Sadness/Sadness_00030.png", 0.05,
+    "images/VFX/Sadness/Sadness_00031.png", 0.05,
+    "images/VFX/Sadness/Sadness_00032.png", 0.05,
+    "images/VFX/Sadness/Sadness_00033.png", 0.05,
+    "images/VFX/Sadness/Sadness_00034.png", 0.05,
+    "images/VFX/Sadness/Sadness_00035.png", 0.05,
+    "images/VFX/Sadness/Sadness_00036.png", 0.05,
+    "images/VFX/Sadness/Sadness_00037.png", 0.05,
+    "images/VFX/Sadness/Sadness_00038.png", 0.05,
+    "images/VFX/Sadness/Sadness_00039.png", 0.05,
+    "images/VFX/Sadness/Sadness_00040.png", 0.05,
+    "images/VFX/Sadness/Sadness_00041.png", 0.05,
+    "images/VFX/Sadness/Sadness_00042.png", 0.05,
+    "images/VFX/Sadness/Sadness_00043.png", 0.05,
+    "images/VFX/Sadness/Sadness_00044.png", 0.05,
+    "images/VFX/Sadness/Sadness_00045.png", 0.05,
+    "images/VFX/Sadness/Sadness_00046.png", 0.05,
+    "images/VFX/Sadness/Sadness_00047.png", 0.05,
+    "images/VFX/Sadness/Sadness_00048.png", 0.05,
+    "images/VFX/Sadness/Sadness_00049.png", 0.05,
+    "images/VFX/Sadness/Sadness_00050.png", 0.05,
+    "images/VFX/Sadness/Sadness_00051.png", 0.05,
+    "images/VFX/Sadness/Sadness_00052.png", 0.05,
+    "images/VFX/Sadness/Sadness_00053.png", 0.05,
+    "images/VFX/Sadness/Sadness_00054.png", 0.05,
+    "images/VFX/Sadness/Sadness_00055.png", 0.05,
+    "images/VFX/Sadness/Sadness_00056.png", 0.05,
+    "images/VFX/Sadness/Sadness_00057.png", 0.05,
+    "images/VFX/Sadness/Sadness_00058.png", 0.05,
+    "images/VFX/Sadness/Sadness_00059.png", 0.05,
+    "images/VFX/Sadness/Sadness_00060.png", 0.05,
+    "images/VFX/Sadness/Sadness_00061.png", 0.05,
+    "images/VFX/Sadness/Sadness_00062.png", 0.05,
+    "images/VFX/Sadness/Sadness_00063.png", 0.05,
+    "images/VFX/Sadness/Sadness_00064.png", 0.05,
+    "images/VFX/Sadness/Sadness_00065.png", 0.05,
+    "images/VFX/Sadness/Sadness_00066.png", 0.05,
+    "images/VFX/Sadness/Sadness_00067.png", 0.05,
+    "images/VFX/Sadness/Sadness_00068.png", 0.05,
+    "images/VFX/Sadness/Sadness_00069.png", 0.05,
+    "images/VFX/Sadness/Sadness_00070.png", 0.05,
+    "images/VFX/Sadness/Sadness_00071.png", 0.05,
+    "images/VFX/Sadness/Sadness_00072.png", 0.05,
+    "images/VFX/Sadness/Sadness_00073.png", 0.05,
+    "images/VFX/Sadness/Sadness_00074.png", 0.05
+)
+
+    
+image sparkling_click = Animation(
+    "images/VFX/Sparkling Click/Stars_00001.png", 0.03,
+    "images/VFX/Sparkling Click/Stars_00002.png", 0.03,
+    "images/VFX/Sparkling Click/Stars_00003.png", 0.03,
+    "images/VFX/Sparkling Click/Stars_00004.png", 0.03,
+    "images/VFX/Sparkling Click/Stars_00005.png", 0.03,
+    "images/VFX/Sparkling Click/Stars_00006.png", 0.03,
+    "images/VFX/Sparkling Click/Stars_00007.png", 0.03,
+    "images/VFX/Sparkling Click/Stars_00008.png", 0.03,
+    "images/VFX/Sparkling Click/Stars_00009.png", 0.03,
+    "images/VFX/Sparkling Click/Stars_00010.png", 0.03,
+    "images/VFX/Sparkling Click/Stars_00011.png", 0.03,
+    "images/VFX/Sparkling Click/Stars_00012.png", 0.03,
+    "images/VFX/Sparkling Click/Stars_00013.png", 0.03,
+    "images/VFX/Sparkling Click/Stars_00014.png", 0.03,
+    "images/VFX/Sparkling Click/Stars_00015.png", 0.03,
+    "images/VFX/Sparkling Click/Stars_00016.png", 0.03,
+    "images/VFX/Sparkling Click/Stars_00017.png", 0.03,
+    "images/VFX/Sparkling Click/Stars_00018.png", 0.03,
+    "images/VFX/Sparkling Click/Stars_00019.png", 0.03,
+    "images/VFX/Sparkling Click/Stars_00020.png", 0.03,
+)
+
+image light_solo_left:
+    "VFX/LightSoloLeft/LightSoloLeft_00001.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00002.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00003.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00004.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00005.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00006.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00007.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00008.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00009.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00010.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00011.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00012.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00013.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00014.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00015.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00016.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00017.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00018.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00019.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00020.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00021.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00022.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00023.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00024.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00025.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00026.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00027.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00028.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00029.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00030.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00031.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00032.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00033.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00034.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00035.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00036.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00037.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00038.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00039.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00040.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00041.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00042.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00043.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00044.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00045.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00046.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00047.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00048.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00049.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00050.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00051.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00052.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00053.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00054.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00055.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00056.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00057.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00058.png"
+    pause 0.03
+    "VFX/LightSoloLeft/LightSoloLeft_00059.png"
+    pause 0.03
+    repeat
+
+image light_solo_middle:
+    "VFX/LightSoloMiddle/LightSoloMiddle_00001.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00002.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00003.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00004.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00005.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00006.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00007.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00008.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00009.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00010.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00011.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00012.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00013.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00014.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00015.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00016.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00017.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00018.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00019.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00020.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00021.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00022.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00023.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00024.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00025.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00026.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00027.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00028.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00029.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00030.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00031.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00032.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00033.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00034.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00035.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00036.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00037.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00038.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00039.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00040.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00041.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00042.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00043.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00044.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00045.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00046.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00047.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00048.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00049.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00050.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00051.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00052.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00053.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00054.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00055.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00056.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00057.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00058.png"
+    pause 0.03
+    "VFX/LightSoloMiddle/LightSoloMiddle_00059.png"
+    pause 0.03
+    repeat
+
+
+image light_solo_right:
+    "VFX/LightSoloRight/LightSoloRight_00001.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00002.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00003.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00004.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00005.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00006.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00007.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00008.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00009.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00029.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00030.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00031.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00032.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00033.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00034.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00035.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00036.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00037.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00038.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00039.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00040.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00041.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00042.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00043.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00044.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00045.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00046.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00047.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00048.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00049.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00050.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00051.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00052.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00053.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00054.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00055.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00056.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00057.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00058.png"
+    pause 0.03
+    "VFX/LightSoloRight/LightSoloRight_00059.png"
+    pause 0.03
+    repeat
 
 
 init python:
@@ -147,7 +842,7 @@ define audio.ShowDelaunay = "audio/Music/SHOW_Delaunay_Idea1_V1.ogg"
 define audio.ShowGatsby = "audio/Music/SHOW_Gatsby_Idea1_V2.ogg"
 
 # Déclarez les personnages utilisés dans le jeu.
-define mother = Character('Mother', color="#b51963", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=25, callback=type_sound, cb_cps=25, cb_boopfile=M_type_sounds)
+define mother = Character('Mother', color="#b51963", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=30, callback=type_sound, cb_cps=30, cb_boopfile=M_type_sounds)
 define anthrax = Character('Anthräx', color="#9370db", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=35, callback=type_sound, cb_cps=35, cb_boopfile=A_type_sounds)
 define delaunay = Character('Delaunay', color="#faaf90", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=D_type_sounds)
 define gatsby = Character('Gatsby', color="#054fb9", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=G_type_sounds)
@@ -157,8 +852,8 @@ define aimee = Character('Aimé.e', color="#054fb9", who_outlines=[(2, "#000000"
 define imani = Character('Imani', color="#f57600", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=P_type_sounds)
 define inconnu = Character('???', color="#FFFFFF", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50)
 define delinconnu = Character('Del?', color="#faaf90", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=D_type_sounds)
-define player = Character('[player_name]', color="9370db", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=A_type_sounds)
-define staff = Character('Staff', color="#FFFFFF", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=type_silent)
+define player = Character('[player_name]', color="9370db", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
+define staff = Character('Staff', color="#FFFFFF", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50)
 define text = Character(color="#FFFFFF", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
 
 
@@ -168,67 +863,33 @@ label start:
     $ quick_menu = False
     scene black
     with fade
-    $player_name = renpy.input("Choisis le prénom d'Anthräx, ton personnage...")
+
+    # Initialiser la variable utilisée dans l'écran d'input
+    default temp_name = ""
+
+    # Appelle l'écran personnalisé
+    call screen name_input_screen
+    $ player_name = temp_name.strip()
+
+    if player_name == "":
+        $ player_name = "Anthräx"
+
+    call screen name_confirm_screen(
+    message="Tu veux bien garder [player_name] ?",
+    yes_action=Jump("onboarding"),
+    no_action=Jump("start"),
+    style_prompt="confirm_prompt_text")
 
 
-$ player_name = player_name.strip()
 
-if player_name == "":
-    $ player_name = "Anthrâx"
-    text "Tu n’as rien saisi, on va garder [player_name]. Ça te va ?"
-    hide textbox
-
-    python:
-        ui.hbox(xalign=0.5, yalign=0.5, spacing=55)
-        ui.imagebutton(
-            idle="images/backgrounds/routes_confirmation/oui_route_idle.png",
-            hover="images/backgrounds/routes_confirmation/oui_route_hover.png",
-            clicked=ui.returns("oui")
-        )
-        ui.imagebutton(
-            idle="images/backgrounds/routes_confirmation/non_route_idle.png",
-            hover="images/backgrounds/routes_confirmation/non_route_hover.png",
-            clicked=ui.returns("non")
-        )
-        ui.close()
-        choix = ui.interact()
-
-    window hide
-
-    if choix == "oui":
+    if yes_action:
         $ persistent.bg_parallax = True
         jump onboarding
     else:
         $ persistent.bg_parallax = False
         jump start
-    
-else:
-    text "Tu veux bien garder [player_name] ?"
 
-        
-    python:
-        ui.hbox(xalign=0.5, yalign=0.5, spacing=55)
-        ui.imagebutton(
-            idle="images/backgrounds/routes_confirmation/oui_route_idle.png",
-            hover="images/backgrounds/routes_confirmation/oui_route_hover.png",
-            clicked=ui.returns("oui")
-        )
-        ui.imagebutton(
-            idle="images/backgrounds/routes_confirmation/non_route_idle.png",
-            hover="images/backgrounds/routes_confirmation/non_route_hover.png",
-            clicked=ui.returns("non")
-        )
-        ui.close()
-        choix = ui.interact()
 
-    window hide
-
-    if choix == "oui":
-        $ persistent.bg_parallax = True
-        jump onboarding
-    else:
-        $ persistent.bg_parallax = False
-        jump start
 
 #0.1    
 label onboarding:
@@ -237,7 +898,7 @@ label onboarding:
     with fade
     $ quick_menu = True  
 
-    play ambiance AmbRue
+    play ambiance AmbRue fadein 5.0
 
     text "L'Androgame..."
     text "C’est dingue à quel point ce cabaret a reprit ses lettres de noblesse."
@@ -261,42 +922,40 @@ label onboarding:
     text "Je ne savais pas comment j’allais pouvoir concilier le burlesque et le travail, ce qu’on pourrait dire de moi ou juger de mon drag."
     text "Je pense que j’ai décidé d’arrêter d’essayer de me justifier à un moment, lorsque j’étais aux portes du bâtiment. Après tout, je n’avais rien à perdre et j’aurais regretté de ne pas avoir au moins essayé."
     text "Je ne pensais pas être sélectionné.e, encore moins de passer un entretien avec Mother, la patronne du cabaret. Je n’ai pas trop compris, mais elle m’a parlé des règles de conduite au sein de la troupe et envers les clients, puis d’une période d’essai..."
+    text "J’avais du mal à réaliser, mais on a convenu d’une nouvelle date d’entretien, en journée quand le cabaret serait vide, où elle m’expliquerait plus en détails le fonctionnement des backstages."
 
-    stop ambiance fadeout 4.0
-
-    "J’avais du mal à réaliser, mais on a convenu d’une nouvelle date d’entretien, en journée quand le cabaret serait vide, où elle m’expliquerait plus en détails le fonctionnement des backstages."
-
-    play music CabaretEntrance fadein 0.1
+    stop ambiance fadeout 1.0
+    play music CabaretEntrance volume 0.7
     hide devanture
-
-
-
-    show auditorium  
-    with fade
-
-    show mother at tall_center with fade
+    show curtain_open
+    show auditorium  with dissolve
+    show mother at tall_center with dissolve
 
 
 #0.2
 
-    play ambiance AmbAndrogameDay fadein 1
+    play ambiance AmbAndrogameDay fadein 0.5
+
 
     mother "Bienvenue dans l'Androgame! J'espère que tu as fait bonne route."
 
-    queue music CabaretIntro
-    queue music CabaretLightVerse
-    
+    hide curtain_open with dissolve
+
+    queue music CabaretIntro volume 0.7
+    queue music CabaretLightVerse volume 0.7
+
+
     mother "Tu avais l’air de dire dans nos échanges que tu n’habitais pas trop loin, le chemin n’a pas dû être bien  compliqué."
+    
+    show sadness
     text "En effet, une fois passée la porte pivotante, la hauteur sous plafond et les lustres géométriques faillirent me donner un torticolis."
-
-   
-
+    hide sadness
     text "Je devais presque plisser les yeux pour repérer tous les petits détails dans la marqueterie, les dorures et les formes dans le papier peint."
     anthrax "Oui. Et puis, c’est le genre d’établissement qu’il est difficile de louper!"
     mother "Aha! Tu m’en vois ravie de l’entendre."
     mother "Je ne fais pas te faire patienter plus longtemps... Commençons par te faire une petite visite des lieux. Promis, tu vas t’y retrouver bien vite"
 
-    queue music CabaretLightChorus
+    queue music CabaretLightChorus volume 0.7
 
     mother "En arrivant, tu es passé.e par le lobby, le hall d’entrée, l’accueil... Tu peux l’appeler comme tu veux. Mais dans l’idée, passé ce guichet, les clients payent!"
     mother "Ce n’est pas trop dans notre politique cette histoire du \"le client est roi\", mais tu apprendras vite que c’est là que les pourboires se cachent"
@@ -308,7 +967,6 @@ label onboarding:
 
     hide mother 
 
-    stop music fadeout 1
     stop ambiance fadeout 10.0
 
 
@@ -316,7 +974,7 @@ label onboarding:
     hide auditorium 
     show loges 
     with fade
-    play music BackstageLoop
+    queue music CabaretLightSolo volume 0.7
 
     show mother at tall_right  with dissolve
 
@@ -330,7 +988,7 @@ label onboarding:
     text "Studieuse."
     
     play ambiance AmbLoges fadein 1
-    play music BackstageDrumLoop fadein 1.0 volume 0.5
+    play music BackstageDrumLoop volume 0.5
 
     show imani_neutre at tall_left  with dissolve
 
@@ -370,7 +1028,7 @@ label onboarding:
 
     mother "Oh! Je vois que vous faites connaissance! Les filles, je vous présente [player_name], iel nous rejoindra sous peu le temps d'arranger le spectacle, et je compte sur vous pour l'acceuillir comme il se doit."
 
-    play music CabaretLightChorus fadein 0.5 volume 1.0
+    play music CabaretLightChorus volume 0.7
 
     anthrax "Semblant sortir de leur torpeur et reprendre leurs esprits, les artistes drag face à moi me sourirent et commencèrent à faire un tour des présentations."
     

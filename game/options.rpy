@@ -232,3 +232,7 @@ init python:
 # define build.itch_project = "renpytom/test-project"
 
 define config.console = True
+
+init -1 python:
+    if not hasattr(persistent, "parallaxe_active"):
+        persistent.parallaxe_active = True
