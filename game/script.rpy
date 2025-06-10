@@ -772,7 +772,7 @@ image light_solo_right:
 
 init python:
 
-    tall_right = Transform(
+    del_right = Transform(
         zoom=2.2,       
         xalign=0.90,
         yanchor=1.0,
@@ -780,7 +780,7 @@ init python:
         xzoom=1
     )
 
-    tall_left = Transform(
+    del_left = Transform(
         zoom=2.2,
         xalign=0.15,
         yanchor=1.0,
@@ -788,7 +788,7 @@ init python:
         xzoom=-1
     )
 
-    tall_center = Transform(
+    del_center = Transform(
         zoom=2.2,
         xalign=0.5,
         yanchor=1.0,
@@ -796,6 +796,77 @@ init python:
         xzoom=1
     )
 
+    gat_right = Transform(
+        zoom=2.2,
+        xalign=0.5,
+        yanchor=1.0,
+        ypos=1.0,
+        xzoom=1
+    )
+
+    gat_left = Transform(
+        zoom=2.2,
+        xalign=0.5,
+        yanchor=1.0,
+        ypos=1.0,
+        xzoom=1
+    )
+
+    gat_center = Transform(
+        zoom=2.2,
+        xalign=0.5,
+        yanchor=1.0,
+        ypos=1.0,
+        xzoom=1
+    )
+
+    pea_right = Transform(
+        zoom=2.2,
+        xalign=0.5,
+        yanchor=1.0,
+        ypos=1.0,
+        xzoom=1
+    )
+
+    pea_left = Transform(
+        zoom=2.2,
+        xalign=0.5,
+        yanchor=1.0,
+        ypos=1.0,
+        xzoom=1
+    )
+
+    pea_center = Transform(
+        zoom=2.2,
+        xalign=0.5,
+        yanchor=1.0,
+        ypos=1.0,
+        xzoom=1
+    )
+
+    mother_right = Transform(
+        zoom=2.2,
+        xalign=0.5,
+        yanchor=1.0,
+        ypos=1.0,
+        xzoom=1
+    )
+
+    mother_left = Transform(
+        zoom=2.2,
+        xalign=0.5,
+        yanchor=1.0,
+        ypos=1.0,
+        xzoom=1
+    )
+
+    mother_center = Transform(
+        zoom=2.2,
+        xalign=0.5,
+        yanchor=1.0,
+        ypos=1.0,
+        xzoom=1
+    )
 
 # Liste des sfx
 define type_sounds = ['audio/SFX/TextMix-001.ogg','audio/SFX/TextMix-002.ogg','audio/SFX/TextMix-003.ogg','audio/SFX/TextMix-004.ogg','audio/SFX/TextMix-005.ogg','audio/SFX/TextMix-006.ogg','audio/SFX/TextMix-007.ogg','audio/SFX/TextMix-008.ogg','audio/SFX/TextMix-009.ogg','audio/SFX/TextMix-010.ogg']
@@ -927,31 +998,29 @@ label onboarding:
     stop ambiance fadeout 1.0
     play music CabaretEntrance volume 0.7
     hide devanture
-    show curtain_open
     show auditorium  with dissolve
-    show mother at tall_center with dissolve
+    show mother at mother_center with dissolve
 
 
 #0.2
 
     play ambiance AmbAndrogameDay fadein 0.5
 
-
+    show curtain_open
     mother "Bienvenue dans l'Androgame! J'espère que tu as fait bonne route."
 
-    hide curtain_open with dissolve
 
     queue music CabaretIntro volume 0.7
     queue music CabaretLightVerse volume 0.7
 
 
     mother "Tu avais l’air de dire dans nos échanges que tu n’habitais pas trop loin, le chemin n’a pas dû être bien  compliqué."
-    
-    show sadness
+
     text "En effet, une fois passée la porte pivotante, la hauteur sous plafond et les lustres géométriques faillirent me donner un torticolis."
-    hide sadness
     text "Je devais presque plisser les yeux pour repérer tous les petits détails dans la marqueterie, les dorures et les formes dans le papier peint."
+
     anthrax "Oui. Et puis, c’est le genre d’établissement qu’il est difficile de louper!"
+
     mother "Aha! Tu m’en vois ravie de l’entendre."
     mother "Je ne fais pas te faire patienter plus longtemps... Commençons par te faire une petite visite des lieux. Promis, tu vas t’y retrouver bien vite"
 
@@ -976,7 +1045,7 @@ label onboarding:
     with fade
     queue music CabaretLightSolo volume 0.7
 
-    show mother at tall_right  with dissolve
+    show mother at mother_right  with dissolve
 
 
     text "Nous sommes monté.e.s sur la scène et l'avons traversée avant de passer derrière les épais rideaux de velours. Nous sommes passé.e.s dans un véritable dédale de couloirs tandis qu'elle ouvrait quelques portes et m'expliquait la fonction de chaque pièce." 
@@ -990,7 +1059,7 @@ label onboarding:
     play ambiance AmbLoges fadein 1
     play music BackstageDrumLoop volume 0.5
 
-    show imani_neutre at tall_left  with dissolve
+    show imani_neutre at pea_left  with dissolve
 
     imani "Ok, hear me out... Je dis simplement que si l'on veut garder une logique dans la suite de nos numéros, on va devoir inverser l'ordre dans lequel on passe pour pouvoir faire de la place aux nouvelles."
 
@@ -1003,14 +1072,14 @@ label onboarding:
     text "Un autre garçon, plus silencieux, avait la tête baissée sur une armature de fils de fer artisanale qu'il pliait à l'aide d'une pince, et bloquait fermement avec du chaterton."
     
     hide mother 
-    show aimee_neutre at tall_right  with dissolve
+    show aimee_neutre at gat_right  with dissolve
 
     inconnu "Et toi Del'? Qu'est-ce que tu en penses?"
 
     anthrax "Relevant la tête, le concerné remarqua qu'iels n'étaient plus trois dans la pièce et me fixa un instant, avant de se retourner vers ses interlocuteur.ice.s."
 
     hide imani_neutre 
-    show leandre_neutre at tall_left  with dissolve
+    show leandre_neutre at del_left  with dissolve
 
     delinconnu "Je pense qu'on devrait leur demander directement..." 
 
@@ -1024,7 +1093,7 @@ label onboarding:
 
     hide aimee_neutre 
     hide leandre_neutre 
-    show mother at tall_center  with dissolve
+    show mother at mother_center  with dissolve
 
     mother "Oh! Je vois que vous faites connaissance! Les filles, je vous présente [player_name], iel nous rejoindra sous peu le temps d'arranger le spectacle, et je compte sur vous pour l'acceuillir comme il se doit."
 
@@ -1033,34 +1102,34 @@ label onboarding:
     anthrax "Semblant sortir de leur torpeur et reprendre leurs esprits, les artistes drag face à moi me sourirent et commencèrent à faire un tour des présentations."
     
     hide mother 
-    show imani_neutre at tall_center with dissolve
+    show imani_neutre at pea_center with dissolve
 
     peacock "Pardon, on a dû te sembler hyper antipathiques avec notre absence de réaction! Moi c'est Imani. Parfois on s'appelle aussi par nos noms de scène, donc tu peux aussi m'appeler Peacock si tu en as envie."
     
     hide imani_neutre 
-    show mother at tall_center with dissolve
+    show mother at mother_center with dissolve
 
     mother "Imani se spécialise dans tout ce qui est du ressort de la performance vocale. Lipsync, chant, reading, shading, imitation... Si tu as des conseils de ce côté à aller chercher, c'est vers elle."
     
     hide mother 
-    show imani_neutre at tall_center with dissolve
+    show imani_neutre at pea_center with dissolve
 
     peacock "Ah oui! Et pour les pronoms, tu peux utiliser ceux dont tu as envie, je ne suis pas très regardant. Je me genre moi-même souvent au féminin."
     
     hide imani_neutre 
-    show mother at tall_center with dissolve
+    show mother at mother_center with dissolve
 
     mother "Le petit timide là, qui essaye de faire en sorte de se faire oublier, c'est Léandre."
 
     text "Prit en flagrant délit, le jeune homme tourna au pivoine et balbutia, mal à l'aise."
     
     hide mother 
-    show leandre_neutre at tall_center with dissolve
+    show leandre_neutre at del_center with dissolve
     
     leandre "N-Non! C'est juste que... J'ai toujours un peu de mal avec les nouvelles personnes. Excuse-moi... Oui, donc moi, c'est Léandre, j'utilise il/lui, et je fais principalement de l'effeuillage burlesque. C'est assez classique..."
     
     hide leandre_neutre 
-    show aimee_neutre at tall_center with dissolve
+    show aimee_neutre at gat_center with dissolve
     
     inconnu "C'est tout sauf classique, ton striptease!"
 
@@ -1082,7 +1151,7 @@ label onboarding:
 
 label route_choice_intro:
     show loges 
-    show mother at tall_right 
+    show mother at mother_right 
     mother "Alors [player], si tu devais choisir l'un de mes \"babies\" comme marrain ou parraine, qui est-ce que tu désignerais ?" with fade
     hide loges 
     hide devanture 

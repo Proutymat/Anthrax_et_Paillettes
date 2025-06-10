@@ -73,32 +73,6 @@ image CG_delaunay = "images/CGs/delaunay.jpg"
 
 image background_cg = "images/Backgrounds/background_cg.png"
 
-init python:
-
-    tall_right = Transform(
-        zoom=2.2,       
-        xalign=0.90,
-        yanchor=1.0,
-        ypos=1.0,
-        xzoom=1
-    )
-
-    tall_left = Transform(
-        zoom=2.2,
-        xalign=0.15,
-        yanchor=1.0,
-        ypos=1.0,
-        xzoom=-1
-    )
-
-    tall_center = Transform(
-        zoom=2.2,
-        xalign=0.5,
-        yanchor=1.0,
-        ypos=1.0,
-        xzoom=1
-    )
-
 # Liste des sfx
 define type_sounds = ['audio/SFX/TextMix-001.ogg','audio/SFX/TextMix-002.ogg','audio/SFX/TextMix-003.ogg','audio/SFX/TextMix-004.ogg','audio/SFX/TextMix-005.ogg','audio/SFX/TextMix-006.ogg','audio/SFX/TextMix-007.ogg','audio/SFX/TextMix-008.ogg','audio/SFX/TextMix-009.ogg','audio/SFX/TextMix-010.ogg']
 define A_type_sounds = ['audio/SFX/AP_TA-001.ogg','audio/SFX/AP_TA-002.ogg','audio/SFX/AP_TA-003.ogg','audio/SFX/AP_TA-004.ogg']
@@ -172,7 +146,7 @@ $ persistent.bg_parallax = True
 $ quick_menu = True
 scene black with fade
 show loges
-show leandre_neutre at tall_center with dissolve
+show leandre_neutre at del_center with dissolve
 
 play ambiance AmbLoges fadein 0.5 
 
@@ -242,7 +216,7 @@ leandre "Et finalement, Mother m’a pris sous son aile et m’a aidé à me sor
 label choix_del2:
     $ quick_menu = False
     
-    show leandre_neutre at tall_right
+    show leandre_neutre at del_right
     with fade
     menu: 
         anthrax "Et finalement, Mother m’a pris sous son aile et m’a aidé à me sortir de tout cela."
@@ -258,7 +232,7 @@ label choix_del2:
 label del_2_1:
     $ quick_menu = True
     
-    show leandre_neutre at tall_center
+    show leandre_neutre at del_center
     with fade
 
     anthrax "Oh ! Tu as transitionné ?"
@@ -313,7 +287,7 @@ label del_2_1:
 label del_2_2:
     $ quick_menu = True
     
-    show leandre_neutre at tall_center
+    show leandre_neutre at del_center
     with fade
 
     anthrax "Et comment est-ce que tu as rencontré Mother ?"
@@ -360,7 +334,7 @@ label del_2_2:
 label del_2_3:
     $ quick_menu = True
     
-    show leandre_neutre at tall_center
+    show leandre_neutre at del_center
     with fade
     
     anthrax "J'ai remarqué qu'Aimé.e finissait beaucoup tes phrases. Est-ce que tu es toujours aussi timide ?"
@@ -464,7 +438,7 @@ label del_3:
 label choix_del3:
     $ quick_menu = False
     
-    show leandre_neutre at tall_right
+    show leandre_neutre at del_right
     with fade
     menu: 
         "Tu avais d'autres raisons pour te lancer... dans cette industrie?":
@@ -478,7 +452,7 @@ label choix_del3:
 label del_3_1:
     $ quick_menu = True
     
-    show leandre_neutre at tall_center
+    show leandre_neutre at del_center
     with fade
     
     anthrax "Tu avais d'autres raisons pour te lancer... dans cette industrie ?"
@@ -537,7 +511,7 @@ label del_3_2:
     
     queue music ConfidenceAB
     queue music ConfidenceB1
-    show leandre_neutre at tall_center
+    show leandre_neutre at del_center
     with fade
 
     anthrax "Pourquoi est-ce que tu n'es pas très fier de cette période ?"
@@ -592,7 +566,7 @@ label del_3_2:
 label del_3_3:
     $ quick_menu = True
     
-    show leandre_neutre at tall_center
+    show leandre_neutre at del_center
     with fade
     
     anthrax "Pour de l'argent ? Tu étais à ce point en difficulté ?"
@@ -668,7 +642,7 @@ label del_4:
 label choix_del4:
     $ quick_menu = False
     
-    show leandre_neutre at tall_right
+    show leandre_neutre at del_right
     with fade
     menu: 
         anthrax "Qu'est-ce que tu fais à jouer le timide ? Approche, je ne vais pas te manger."
@@ -683,7 +657,7 @@ label choix_del4:
 label del_4_1:
     $ quick_menu = True
     
-    show leandre_neutre at tall_center
+    show leandre_neutre at del_center
     with fade
 
     anthrax "Franchement, tu me manges quand tu veux"
@@ -734,7 +708,7 @@ label del_4_1:
 label del_4_2:
     $ quick_menu = True
     
-    show leandre_neutre at tall_center
+    show leandre_neutre at del_center
     with fade
 
     anthrax "J'adore la manière dont tu prends confiance en toi avec Delaunay"
@@ -775,7 +749,7 @@ label del_4_2:
 label del_4_3:
     $ quick_menu = True
 
-    show leandre_neutre at tall_center
+    show leandre_neutre at del_center
     with fade
 
     anthrax "\"Timide ? Moi ?\""
@@ -881,7 +855,7 @@ label del_6:
 #Choix DEL.6
 label choix_del6:
     $ quick_menu = False
-    show leandre_neutre at tall_right
+    show leandre_neutre at del_right
     with fade
 
     menu: 
@@ -893,7 +867,7 @@ label choix_del6:
 #DEL.6.GOOD
 label del_6_good:
     $ quick_menu = True
-    show leandre_neutre at tall_center
+    show leandre_neutre at del_center
     with fade
 
     anthrax "WIP"
@@ -904,7 +878,7 @@ label del_6_good:
 #DEL.6.BAD
 label del_6_bad:
     $ quick_menu = True
-    show leandre_neutre at tall_center
+    show leandre_neutre at del_center
     with fade
 
     anthrax "WIP"
