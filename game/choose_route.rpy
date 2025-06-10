@@ -41,7 +41,7 @@ screen route_choice_buttons():
 
         # === HBOX avec boutons ===
         hbox:
-            xalign 0.5
+            xalign 0.52
             yalign 0.5
             offset (0, 30)
             spacing 30
