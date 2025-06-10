@@ -1006,7 +1006,6 @@ label onboarding:
 
     play ambiance AmbAndrogameDay fadein 0.5
 
-    show curtain_open
     mother "Bienvenue dans l'Androgame! J'espère que tu as fait bonne route."
 
 
