@@ -1,6 +1,49 @@
 ################################################################################
 ## Initialisation
 ################################################################################
+
+#Définition sons UI
+
+init python:
+
+    import random
+
+    ui_hover = [
+        "audio/SFX/AP_UI_Hover-001.ogg",
+        "audio/SFX/AP_UI_Hover-002.ogg",
+        "audio/SFX/AP_UI_Hover-003.ogg",
+        "audio/SFX/AP_UI_Hover-004.ogg",
+        "audio/SFX/AP_UI_Hover-005.ogg",
+        "audio/SFX/AP_UI_Hover-006.ogg",
+    ]
+
+    ui_click = [
+        "audio/SFX/AP_UI_Click-001.ogg",
+        "audio/SFX/AP_UI_Click-002.ogg",
+        "audio/SFX/AP_UI_Click-003.ogg",
+        "audio/SFX/AP_UI_Click-004.ogg",
+        "audio/SFX/AP_UI_Click-005.ogg",
+        "audio/SFX/AP_UI_Click-006.ogg",
+    ]
+
+    ui_back = [
+        "audio/SFX/AP_UI_Back_V4-001.ogg",
+        "audio/SFX/AP_UI_Back_V4-002.ogg",
+        "audio/SFX/AP_UI_Back_V4-003.ogg",
+        "audio/SFX/AP_UI_Back_V4-004.ogg",
+        "audio/SFX/AP_UI_Back_V4-005.ogg",
+        "audio/SFX/AP_UI_Back_V4-006.ogg",
+    ]
+
+    def play_ui_hover():
+        renpy.play(random.choice(ui_hover), channel="sound")
+
+    def play_ui_click():
+        renpy.play(random.choice(ui_click), channel="sound")
+
+    def play_ui_back():
+        renpy.play(random.choice(ui_back), channel="sound")
+
 default _previous_screen = "navigation"
 
 init offset = -1
@@ -101,27 +144,68 @@ style frame:
 ## https://www.renpy.org/doc/html/screen_special.html#say
 
 screen say(who, what):
+
     key "K_ESCAPE" action ShowMenu("pause_menu")
 
+    # Image de fond dynamique selon current_textbox
     window:
-        id "window"
-        yalign 0.98
+        style "my_say_window"
+        background "gui/textbox_[current_textbox].png"
 
-        if who is not None:
+        vbox:
+            spacing 15
+            xalign 0.5
+            yalign 0.5
 
-            window:
-                id "namebox"
-                style "namebox"
+            # Affiche le nom du personnage s'il y en a un
+            if who is not None:
                 text who id "who"
 
-        text what id "what"
+            text what id "what"
 
     use quick_menu
+
+    # Affiche une side image sauf sur petit écran
+    if not renpy.variant("small"):
+        add SideImage() xalign 0.0 yalign 1.0
+
+
 
     ## Si il y a une side image, l'afficher au-dessus du texte. Ne pas
     ## l'afficher sur la version téléphone - pas assez de place.
     if not renpy.variant("small"):
         add SideImage() xalign 0.0 yalign 1.0
+
+# Styles personnalisés textboxes et name tags
+
+style my_say_window is default:
+    xalign 0.35
+    yalign 0.93
+    xsize 1280
+    ysize 250
+    padding (80, 40, 80, 30)
+    background "gui/textbox_description.png"
+    top_margin 0
+    bottom_margin 20
+
+style say_dialogue is default:
+    font "fonts/EBGaramond12-Regular.ttf"
+    size 34
+    color "#2e2e2e"
+    text_align 0.0
+    xalign 0.0
+    line_spacing 6
+    kerning 0
+
+style say_label is default:
+    font "fonts/EBGaramond12-Regular.ttf"
+    size 36
+    color "#ffffff"
+    background "#00000080"
+    padding (20, 10)
+    xalign 0.05
+
+
 
 
 ## Rendre la boîte du nom personnalisable à travers l'objet Character.
@@ -143,7 +227,7 @@ style window:
     yalign gui.textbox_yalign
     ysize gui.textbox_height
 
-    background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
+    background Image("gui/textbox_[current_textbox].png", xalign=0.5, yalign=1.0)
 
 style namebox:
     xpos gui.name_xpos
@@ -395,8 +479,8 @@ screen navigation():
         style_prefix "navigation"
 
         if renpy.get_screen("main_menu"):
-            xalign 0.504
-            yalign 0.84
+            xalign 0.5
+            yalign 0.85
         else:
             xoffset 100
             yalign 0.5
@@ -408,12 +492,12 @@ screen navigation():
             #textbutton _("Nouvelle partie") action Start()
             imagebutton:
                 auto "menuUI/jouer_%s.png"
-                action Start()
-        else:
+                hovered Function(play_ui_hover)
+                action [Function(play_ui_click), Start()]
 
-            textbutton _("Historique") action ShowMenu("history")
+            #textbutton _("Historique") action ShowMenu("history")
 
-            textbutton _("Sauvegarde") action ShowMenu("save") 
+            #textbutton _("Sauvegarde") action ShowMenu("save") 
     
     hbox:
         style_prefix "navigation"
@@ -918,7 +1002,7 @@ style slot_button_text:
 screen preferences():
 
     tag menu
-    add "images/Backgrounds/menu_background.png"
+    add "images/Backgrounds/options_background.png"
 
     vbox:
         at Transform(xalign=0.05, yalign=0.98)
@@ -936,7 +1020,7 @@ screen preferences():
 
         hbox:
             xalign 0.5
-            spacing 80
+            spacing 70
 
             if renpy.variant("pc") or renpy.variant("web"):
                 vbox:
@@ -1134,73 +1218,75 @@ screen history():
     predict False
     style_prefix "history"
 
-    add "images/Backgrounds/menu_background.png"
+    add "images/Backgrounds/journal_background.png"
 
-    frame:
-        xalign 0.477
-        yalign 0.0
-        padding (80, 80)
+    # Bouton retour
+    imagebutton:
+        idle "menuUI/retour_idle.png"
+        hover "menuUI/retour_hover.png"
+        action Return()
+        xalign 0.05
+        yalign 0.95
 
+    viewport:
+        xalign 0.57
+        yalign 0.2
+        yinitial 1.0
+        mousewheel True
+        draggable True
+        xmaximum 1200
+        ymaximum 850
 
-        viewport:
-            yinitial 1.0
-            draggable False
-            mousewheel True
-            xmaximum 1200
+        vbox:
+            spacing 40
+            xalign 0.0
 
-            vbox:
-                at Transform(xalign=0, yalign=0.99)
-                imagebutton idle "menuUI/retour_idle.png" hover "menuUI/retour_hover.png" action Return()
+            for h in _history_list:
 
-            vbox:
-                spacing 40
+                if h.who:
+                    hbox:
+                        spacing 40
+                        xalign 0.0
 
-                for h in _history_list:
+                        text h.who:
+                            style "history_name"
+                            substitute False
+                            if "color" in h.who_args:
+                                color h.who_args["color"]
+                            min_width 200
+                            text_align 1.0
+                            xalign 1.0
 
-                    if h.who:
-                        hbox:
-                            spacing 40
+                        $ what = renpy.filter_text_tags(h.what, allow=gui.history_allow_tags)
+                        text what:
+                            style "history_text"
+                            substitute False
+                            xmaximum 880
+                            layout "subtitle"
+                            text_align 0.0
                             xalign 0.0
 
-                            text h.who:
-                                style "history_name"
-                                substitute False
-                                if "color" in h.who_args:
-                                    color h.who_args["color"]
-                                xalign 1.0
-                                yalign 0.0
-                                min_width 200
-                                text_align 1.0
+                else:
+                    window:
+                        background None
+                        padding (40, 10, 40, 10)
+                        xalign 0.0
 
-                            $ what = renpy.filter_text_tags(h.what, allow=gui.history_allow_tags)
-                            text what:
-                                style "history_text"
-                                substitute False
-                                xmaximum 880
-                                layout "subtitle"
-                                text_align 0.0
-                                xalign 0.0
-
-                    else:
-                        window:
-                            background None
-                            padding (100, 20, 100, 20)  # (gauche, haut, droite, bas)
+                        text renpy.filter_text_tags(h.what, allow=gui.history_allow_tags):
+                            style "history_text"
+                            substitute False
                             xalign 0.0
+                            text_align 0.0
+                            xmaximum 1000
 
-                            text renpy.filter_text_tags(h.what, allow=gui.history_allow_tags):
-                                style "history_text"
-                                substitute False
-                                xalign 0.0
-                                text_align 0.0
-                                xmaximum 1000
-
-        if not _history_list:
-            label _("L'historique des dialogues est vide.")
+    if not _history_list:
+        vbox:
+            xalign 0.5
+            yalign 0.5
+            text _("L'historique des dialogues est vide.")
 
 
- 
 
-    # Bouton retour en bas à droite
 
 
 ## Ceci détermine quels tags peuvent être affichés sur le screen de

@@ -1,6 +1,7 @@
 # fonctions custom
 
-init python:    
+init python:   
+
     import os
 
     def get_available_translations():
@@ -773,47 +774,47 @@ image light_solo_right:
 init python:
 
     del_right = Transform(
-        zoom=2.2,       
-        xalign=0.90,
+        zoom=0.83,       
+        xalign=0.78,
         yanchor=1.0,
         ypos=1.0,
         xzoom=1
     )
 
     del_left = Transform(
-        zoom=2.2,
-        xalign=0.15,
+        zoom=0.83,
+        xalign=0.23,
         yanchor=1.0,
         ypos=1.0,
         xzoom=-1
     )
 
     del_center = Transform(
-        zoom=2.2,
-        xalign=0.5,
+        zoom=0.83,
+        xalign=0.47,
         yanchor=1.0,
         ypos=1.0,
         xzoom=1
     )
 
     gat_right = Transform(
-        zoom=2.2,
-        xalign=0.5,
+        zoom=0.89,
+        xalign=0.85,
         yanchor=1.0,
         ypos=1.0,
         xzoom=1
     )
 
     gat_left = Transform(
-        zoom=2.2,
-        xalign=0.5,
+        zoom=0.89,
+        xalign=0.18,
         yanchor=1.0,
         ypos=1.0,
-        xzoom=1
+        xzoom=-1
     )
 
     gat_center = Transform(
-        zoom=2.2,
+        zoom=0.89,
         xalign=0.5,
         yanchor=1.0,
         ypos=1.0,
@@ -821,23 +822,23 @@ init python:
     )
 
     pea_right = Transform(
-        zoom=2.2,
-        xalign=0.5,
+        zoom=1,
+        xalign=0.88,
         yanchor=1.0,
         ypos=1.0,
         xzoom=1
     )
 
     pea_left = Transform(
-        zoom=2.2,
-        xalign=0.5,
+        zoom=1,
+        xalign=0.2,
         yanchor=1.0,
         ypos=1.0,
-        xzoom=1
+        xzoom=-1
     )
 
     pea_center = Transform(
-        zoom=2.2,
+        zoom=1,
         xalign=0.5,
         yanchor=1.0,
         ypos=1.0,
@@ -845,28 +846,149 @@ init python:
     )
 
     mother_right = Transform(
-        zoom=2.2,
-        xalign=0.5,
+        zoom=0.95,
+        xalign=0.88,
         yanchor=1.0,
-        ypos=1.0,
+        ypos=1.09,
         xzoom=1
     )
 
     mother_left = Transform(
-        zoom=2.2,
-        xalign=0.5,
+        zoom=0.95,
+        xalign=0.15,
         yanchor=1.0,
-        ypos=1.0,
-        xzoom=1
+        ypos=1.09,
+        xzoom=-1
     )
 
     mother_center = Transform(
-        zoom=2.2,
-        xalign=0.5,
+        zoom=0.95,
+        xalign=0.54,
         yanchor=1.0,
-        ypos=1.0,
+        ypos=1.09,
         xzoom=1
     )
+
+    flirt_center = Transform(
+        zoom=0.80,
+        xalign=0.54,
+        yanchor=1.0,
+        ypos=0.7,
+        xzoom=1
+    )
+
+    flirt_right = Transform(
+        zoom=0.80,
+        xalign=1.55,
+        yanchor=1.0,
+        ypos=0.7,
+        xzoom=1
+    )
+
+    flirt_left = Transform(
+        zoom=0.80,
+        xalign=-0.5,
+        yanchor=1.0,
+        ypos=0.7,
+        xzoom=1
+    )
+
+    sadness_center = Transform(
+        zoom=0.80,
+        xalign=0.4,
+        yanchor=1.0,
+        ypos=0.7,
+        xzoom=1
+    )
+
+    sadness_right = Transform(
+        zoom=0.80,
+        xalign=1.49,
+        yanchor=1.0,
+        ypos=0.7,
+        xzoom=1
+    )
+
+    sadness_left = Transform(
+        zoom=0.80,
+        xalign=-0.5,
+        yanchor=1.0,
+        ypos=0.7,
+        xzoom=1
+    )
+
+    sadness_pea_center = Transform(
+        zoom=0.80,
+        xalign=0.4,
+        yanchor=1.0,
+        ypos=0.65,
+        xzoom=1
+    )
+
+    sadness_pea_right = Transform(
+        zoom=0.80,
+        xalign=1.49,
+        yanchor=1.0,
+        ypos=0.65,
+        xzoom=1
+    )
+
+    sadness_pea_left = Transform(
+        zoom=0.80,
+        xalign=-0.35,
+        yanchor=1.0,
+        ypos=0.65,
+        xzoom=1
+    )
+
+    angry_center = Transform(
+        zoom=0.80,
+        xalign=0.54,
+        yanchor=1.0,
+        ypos=0.7,
+        xzoom=1
+    )
+
+    angry_right = Transform(
+        zoom=0.80,
+        xalign=1.55,
+        yanchor=1.0,
+        ypos=0.7,
+        xzoom=1
+    )
+
+    angry_left = Transform(
+        zoom=0.80,
+        xalign=-0.5,
+        yanchor=1.0,
+        ypos=0.7,
+        xzoom=1
+    )
+
+    joy_center = Transform(
+        zoom=0.80,
+        xalign=0.54,
+        yanchor=1.0,
+        ypos=0.7,
+        xzoom=1
+    )
+
+    joy_right = Transform(
+        zoom=0.80,
+        xalign=1.55,
+        yanchor=1.0,
+        ypos=0.7,
+        xzoom=1
+    )
+
+    joy_left = Transform(
+        zoom=0.80,
+        xalign=-0.5,
+        yanchor=1.0,
+        ypos=0.7,
+        xzoom=1
+    )
+
 
 # Liste des sfx
 define type_sounds = ['audio/SFX/TextMix-001.ogg','audio/SFX/TextMix-002.ogg','audio/SFX/TextMix-003.ogg','audio/SFX/TextMix-004.ogg','audio/SFX/TextMix-005.ogg','audio/SFX/TextMix-006.ogg','audio/SFX/TextMix-007.ogg','audio/SFX/TextMix-008.ogg','audio/SFX/TextMix-009.ogg','audio/SFX/TextMix-010.ogg']
@@ -977,7 +1099,9 @@ label onboarding:
 
     play ambiance AmbRue fadein 5.0
 
-    text "L'Androgame..."
+    $ current_textbox = "description"
+
+    text "L'androgame..."
     text "C’est dingue à quel point ce cabaret a reprit ses lettres de noblesse."
     text "Je me souviens encore de quand je passais devant pour aller prendre le métro... Complètement défraichit, la pierre sale et les fenètres brisées."
     text "On se demandait quand est-ce qu’ils finiraient par abréger ses souffrances et le démolir."
@@ -1012,6 +1136,8 @@ label onboarding:
 
     play ambiance AmbAndrogameDay fadein 0.5
 
+    $ current_textbox = "anthrax"
+
     mother "Bienvenue dans l'Androgame! J'espère que tu as fait bonne route."
 
 
@@ -1020,6 +1146,8 @@ label onboarding:
 
 
     mother "Tu avais l’air de dire dans nos échanges que tu n’habitais pas trop loin, le chemin n’a pas dû être bien  compliqué."
+
+    $ current_textbox = "description"
 
     text "En effet, une fois passée la porte pivotante, la hauteur sous plafond et les lustres géométriques faillirent me donner un torticolis."
     text "Je devais presque plisser les yeux pour repérer tous les petits détails dans la marqueterie, les dorures et les formes dans le papier peint."
