@@ -144,68 +144,52 @@ style frame:
 ## https://www.renpy.org/doc/html/screen_special.html#say
 
 screen say(who, what):
-
     key "K_ESCAPE" action ShowMenu("pause_menu")
 
-    # Image de fond dynamique selon current_textbox
     window:
         style "my_say_window"
         background "gui/textbox_[current_textbox].png"
 
-        vbox:
-            spacing 15
-            xalign 0.5
-            yalign 0.5
+        fixed:
+            xfill True
+            yfill True
 
-            # Affiche le nom du personnage s'il y en a un
+            # 🧍 Nom du personnage
             if who is not None:
-                text who id "who"
+                text who id "who" style "my_say_label" xpos 140 ypos 40
 
-            text what id "what"
+            # 💬 Texte principal
+            text what id "what" style "my_say_dialogue" xpos 180 ypos 100 line_spacing 10
 
     use quick_menu
 
-    # Affiche une side image sauf sur petit écran
     if not renpy.variant("small"):
         add SideImage() xalign 0.0 yalign 1.0
 
-
-
-    ## Si il y a une side image, l'afficher au-dessus du texte. Ne pas
-    ## l'afficher sur la version téléphone - pas assez de place.
-    if not renpy.variant("small"):
-        add SideImage() xalign 0.0 yalign 1.0
 
 # Styles personnalisés textboxes et name tags
 
 style my_say_window is default:
-    xalign 0.35
-    yalign 0.93
+    xpos 0.115
+    ypos 0.71       
     xsize 1280
-    ysize 250
-    padding (80, 40, 80, 30)
+    ysize 260
     background "gui/textbox_description.png"
-    top_margin 0
-    bottom_margin 20
 
-style say_dialogue is default:
+style my_say_label is default:
     font "fonts/EBGaramond12-Regular.ttf"
     size 34
-    color "#2e2e2e"
-    text_align 0.0
-    xalign 0.0
-    line_spacing 6
-    kerning 0
-
-style say_label is default:
-    font "fonts/EBGaramond12-Regular.ttf"
-    size 36
     color "#ffffff"
     background "#00000080"
-    padding (20, 10)
-    xalign 0.05
+    xalign 0.0
+    yalign 0.0
 
-
+style my_say_dialogue is default:
+    font "fonts/EBGaramond12-Regular.ttf"
+    size 32
+    color "#2e2e2e"
+    text_align 0.0
+    spacing 40
 
 
 ## Rendre la boîte du nom personnalisable à travers l'objet Character.
