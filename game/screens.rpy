@@ -2,6 +2,50 @@
 ## Initialisation
 ################################################################################
 
+#Définition sons UI
+
+init python:
+
+    import random
+
+    ui_hover = [
+        "audio/SFX/AP_UI_Hover-001.ogg",
+        "audio/SFX/AP_UI_Hover-002.ogg",
+        "audio/SFX/AP_UI_Hover-003.ogg",
+        "audio/SFX/AP_UI_Hover-004.ogg",
+        "audio/SFX/AP_UI_Hover-005.ogg",
+        "audio/SFX/AP_UI_Hover-006.ogg",
+    ]
+
+    ui_click = [
+        "audio/SFX/AP_UI_Click-001.ogg",
+        "audio/SFX/AP_UI_Click-002.ogg",
+        "audio/SFX/AP_UI_Click-003.ogg",
+        "audio/SFX/AP_UI_Click-004.ogg",
+        "audio/SFX/AP_UI_Click-005.ogg",
+        "audio/SFX/AP_UI_Click-006.ogg",
+    ]
+
+    ui_back = [
+        "audio/SFX/AP_UI_Back_V4-001.ogg",
+        "audio/SFX/AP_UI_Back_V4-002.ogg",
+        "audio/SFX/AP_UI_Back_V4-003.ogg",
+        "audio/SFX/AP_UI_Back_V4-004.ogg",
+        "audio/SFX/AP_UI_Back_V4-005.ogg",
+        "audio/SFX/AP_UI_Back_V4-006.ogg",
+    ]
+
+    def play_ui_hover():
+        renpy.play(random.choice(ui_hover), channel="sound")
+
+    def play_ui_click():
+        renpy.play(random.choice(ui_click), channel="sound")
+
+    def play_ui_back():
+        renpy.play(random.choice(ui_back), channel="sound")
+
+default _previous_screen = "navigation"
+
 init offset = -1
 
 default quick_menu = True  # le quick menu est activé par défaut
@@ -103,24 +147,49 @@ screen say(who, what):
     key "K_ESCAPE" action ShowMenu("pause_menu")
 
     window:
-        id "window"
-        yalign 0.98
+        style "my_say_window"
+        background "gui/textbox_[current_textbox].png"
 
-        if who is not None:
+        fixed:
+            xfill True
+            yfill True
 
-            window:
-                id "namebox"
-                style "namebox"
-                text who id "who"
+            # 🧍 Nom du personnage
+            if who is not None:
+                text who id "who" style "my_say_label" xpos 140 ypos 40
 
-        text what id "what"
+            # 💬 Texte principal
+            text what id "what" style "my_say_dialogue" xpos 180 ypos 100 line_spacing 10
 
     use quick_menu
 
-    ## Si il y a une side image, l'afficher au-dessus du texte. Ne pas
-    ## l'afficher sur la version téléphone - pas assez de place.
     if not renpy.variant("small"):
         add SideImage() xalign 0.0 yalign 1.0
+
+
+# Styles personnalisés textboxes et name tags
+
+style my_say_window is default:
+    xpos 0.115
+    ypos 0.71       
+    xsize 1280
+    ysize 260
+    background "gui/textbox_description.png"
+
+style my_say_label is default:
+    font "fonts/EBGaramond12-Regular.ttf"
+    size 34
+    color "#ffffff"
+    background "#00000080"
+    xalign 0.0
+    yalign 0.0
+
+style my_say_dialogue is default:
+    font "fonts/EBGaramond12-Regular.ttf"
+    size 32
+    color "#2e2e2e"
+    text_align 0.0
+    spacing 40
 
 
 ## Rendre la boîte du nom personnalisable à travers l'objet Character.
@@ -142,7 +211,7 @@ style window:
     yalign gui.textbox_yalign
     ysize gui.textbox_height
 
-    background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
+    background Image("gui/textbox_[current_textbox].png", xalign=0.5, yalign=1.0)
 
 style namebox:
     xpos gui.name_xpos
@@ -329,14 +398,23 @@ screen pause_menu():
             xalign 0.5
 
             text "Pause" style "h1"
+            
+            if renpy.variant("pc"):
+            
+                textbutton "Reprendre" action Return() xalign 0.5
+                textbutton "Sauvegarder" action [Hide("pause_menu"), Function(renpy.transition, fade), Show("save")] xalign 0.5
+                textbutton "Charger" action [Hide("pause_menu"), Function(renpy.transition, fade), Show("load")] xalign 0.5
+                textbutton "Options" action [SetVariable("_previous_screen", "pause_menu"), Function(renpy.transition, fade), Show("preferences")] xalign 0.5
+                textbutton "Menu Principal" action MainMenu(confirm=not main_menu) xalign 0.5
+                textbutton "Quitter le jeu" action Quit(confirm=not main_menu) xalign 0.5
 
-            textbutton "Reprendre" action Return() xalign 0.5
-            textbutton "Sauvegarder" action ShowMenu("save") xalign 0.5
-            textbutton "Charger" action ShowMenu("load") xalign 0.5
-            textbutton "Options" action ShowMenu("preferences") xalign 0.5
-            textbutton "Menu Principal" action MainMenu(confirm=not main_menu) xalign 0.5
-            textbutton "Quitter le jeu" action Quit(confirm=not main_menu) xalign 0.5
-
+            else:
+                textbutton "Reprendre" action Return() xalign 0.5
+                textbutton "Sauvegarder" action [Hide("pause_menu"), Function(renpy.transition, fade), Show("save")] xalign 0.5
+                textbutton "Charger" action [Hide("pause_menu"), Function(renpy.transition, fade), Show("load")] xalign 0.5
+                textbutton "Options" action [SetVariable("_previous_screen", "pause_menu"), Function(renpy.transition, fade), Show("preferences")] xalign 0.5
+                textbutton "Menu Principal" action MainMenu(confirm=not main_menu) xalign 0.5
+                
 
 screen backstages():
 
@@ -357,13 +435,13 @@ screen backstages():
                 xalign 0.5
 
                 imagebutton:
-                    auto "menuUI/album_%s.png" action ShowMenu ("album")
+                    auto "menuUI/album_%s.png" action [Hide("backstages"), Function(renpy.transition, fade), Show("album")]
                 imagebutton:
-                    auto "menuUI/interviews_%s.png" action ShowMenu ("music_room_interviews", mr=music_room_interviews)
+                    auto "menuUI/interviews_%s.png" action [Hide("backstages"), Function(renpy.transition, fade), Show("music_room_interviews", mr=music_room_interviews)]
                 imagebutton:
-                    auto "menuUI/juxebox_%s.png" action ShowMenu ("music_room", mr=music_room)
+                    auto "menuUI/juxebox_%s.png" action [Hide("backstages"), Function(renpy.transition, fade), Show("music_room", mr=music_room)]
                 imagebutton:
-                    auto "menuUI/credits_%s.png" action ShowMenu("about")
+                    auto "menuUI/credits_%s.png" action [Hide("backstages"), Function(renpy.transition, fade), Show("about")]
                                                    
 
     vbox:
@@ -385,8 +463,8 @@ screen navigation():
         style_prefix "navigation"
 
         if renpy.get_screen("main_menu"):
-            xalign 0.504
-            yalign 0.84
+            xalign 0.5
+            yalign 0.85
         else:
             xoffset 100
             yalign 0.5
@@ -398,12 +476,12 @@ screen navigation():
             #textbutton _("Nouvelle partie") action Start()
             imagebutton:
                 auto "menuUI/jouer_%s.png"
-                action Start()
-        else:
+                hovered Function(play_ui_hover)
+                action [Function(play_ui_click), Start()]
 
-            textbutton _("Historique") action ShowMenu("history")
+            #textbutton _("Historique") action ShowMenu("history")
 
-            textbutton _("Sauvegarde") action ShowMenu("save") 
+            #textbutton _("Sauvegarde") action ShowMenu("save") 
     
     hbox:
         style_prefix "navigation"
@@ -420,14 +498,13 @@ screen navigation():
         #textbutton _("Reprendre") action ShowMenu("load")
         imagebutton:
              auto "menuUI/reprendre_%s.png"
-             action ShowMenu("load")
+             action [SetVariable("_previous_screen", "navigation"), Function(renpy.transition, fade), Show("load")]
              
         #textbutton _("Backstages") action ShowMenu("backstages")
         imagebutton:
              auto "menuUI/backstages_%s.png"
-             action ShowMenu("backstages")
+             action [SetVariable("_previous_screen", "navigation"), Function(renpy.transition, fade), Show("backstages")]
 
-    
         #textbutton _("Album") action ShowMenu("gallery_delaunay")
            
         #textbutton _("Jukebox") action ShowMenu("music_room", mr=music_room)
@@ -435,9 +512,7 @@ screen navigation():
         #textbutton _("Options") action ShowMenu("preferences")
         imagebutton:
              auto "menuUI/options_%s.png"
-             action ShowMenu("preferences")
-
-        
+             action [SetVariable("_previous_screen", "navigation"), Function(renpy.transition, fade), Show("preferences")]
 
         if _in_replay:
 
@@ -862,7 +937,10 @@ screen file_slots(title):
                             #xalign 0.5
             vbox:
                 at Transform(xalign=0.1, yalign=0.98)
-                imagebutton idle "menuUI/retour_idle.png" hover "menuUI/retour_hover.png" action Return()
+                imagebutton:
+                    idle "menuUI/retour_idle.png"
+                    hover "menuUI/retour_hover.png"
+                    action Return()
 
 
 
@@ -908,11 +986,14 @@ style slot_button_text:
 screen preferences():
 
     tag menu
-    add "images/Backgrounds/menu_background.png"
+    add "images/Backgrounds/options_background.png"
 
     vbox:
         at Transform(xalign=0.05, yalign=0.98)
-        imagebutton idle "menuUI/retour_idle.png" hover "menuUI/retour_hover.png" action Return()
+        imagebutton:
+            idle "menuUI/retour_idle.png"
+            hover "menuUI/retour_hover.png"
+            action Return()
 
     frame:
         background None
@@ -923,7 +1004,7 @@ screen preferences():
 
         hbox:
             xalign 0.5
-            spacing 80
+            spacing 70
 
             if renpy.variant("pc") or renpy.variant("web"):
                 vbox:
@@ -964,19 +1045,33 @@ screen preferences():
             xalign 0.5
             spacing 60
 
-            vbox:
-                spacing 8
-                xalign 0.5
+            if renpy.variant("pc"):
+                vbox:
+                    spacing 8
+                    xalign 0.5
 
-                label _("Vitesse du texte") xalign 0.5
-                bar value Preference("text speed") xmaximum 600 xalign 0.5
+                    label _("Vitesse du texte") xalign 0.5
+                    bar value Preference("text speed") xmaximum 600 xalign 0.5
 
-                label _("Avance automatique") xalign 0.5
-                bar value Preference("auto-forward time") xmaximum 600 xalign 0.5
+                    label _("Avance automatique") xalign 0.5
+                    bar value Preference("auto-forward time") xmaximum 600 xalign 0.5
 
-                null height 30
+                    null height 30
 
-                imagebutton idle "menuUI/controles_idle.png" hover "menuUI/controles_hover.png" action ShowMenu("help") xalign 0.5
+                    imagebutton idle "menuUI/controles_idle.png" hover "menuUI/controles_hover.png" action ShowMenu("help") xalign 0.5
+
+            else: 
+                vbox:
+                    spacing 8
+                    xalign 0.5
+
+                    label _("Vitesse du texte") xalign 0.5
+                    bar value Preference("text speed") xmaximum 600 xalign 0.5
+
+                    label _("Avance automatique") xalign 0.5
+                    bar value Preference("auto-forward time") xmaximum 600 xalign 0.5
+
+                    null height 30
 
             vbox:
                 spacing 8
@@ -1107,71 +1202,74 @@ screen history():
     predict False
     style_prefix "history"
 
-    add "images/Backgrounds/menu_background.png"
+    add "images/Backgrounds/journal_background.png"
 
-    frame:
-        xalign 0.477
-        yalign 0.0
-        padding (80, 80)
+    # Bouton retour
+    imagebutton:
+        idle "menuUI/retour_idle.png"
+        hover "menuUI/retour_hover.png"
+        action Return()
+        xalign 0.05
+        yalign 0.95
 
-        viewport:
-            yinitial 1.0
-            draggable False
-            mousewheel True
-            xmaximum 1200
+    viewport:
+        xalign 0.57
+        yalign 0.2
+        yinitial 1.0
+        mousewheel True
+        draggable True
+        xmaximum 1200
+        ymaximum 850
 
-            vbox:
-                spacing 40
+        vbox:
+            spacing 40
+            xalign 0.0
 
-                for h in _history_list:
+            for h in _history_list:
 
-                    if h.who:
-                        hbox:
-                            spacing 40
+                if h.who:
+                    hbox:
+                        spacing 40
+                        xalign 0.0
+
+                        text h.who:
+                            style "history_name"
+                            substitute False
+                            if "color" in h.who_args:
+                                color h.who_args["color"]
+                            min_width 200
+                            text_align 1.0
+                            xalign 1.0
+
+                        $ what = renpy.filter_text_tags(h.what, allow=gui.history_allow_tags)
+                        text what:
+                            style "history_text"
+                            substitute False
+                            xmaximum 880
+                            layout "subtitle"
+                            text_align 0.0
                             xalign 0.0
 
-                            text h.who:
-                                style "history_name"
-                                substitute False
-                                if "color" in h.who_args:
-                                    color h.who_args["color"]
-                                xalign 1.0
-                                yalign 0.0
-                                min_width 200
-                                text_align 1.0
+                else:
+                    window:
+                        background None
+                        padding (40, 10, 40, 10)
+                        xalign 0.0
 
-                            $ what = renpy.filter_text_tags(h.what, allow=gui.history_allow_tags)
-                            text what:
-                                style "history_text"
-                                substitute False
-                                xmaximum 880
-                                layout "subtitle"
-                                text_align 0.0
-                                xalign 0.0
-
-                    else:
-                        window:
-                            background None
-                            padding (100, 20, 100, 20)  # (gauche, haut, droite, bas)
+                        text renpy.filter_text_tags(h.what, allow=gui.history_allow_tags):
+                            style "history_text"
+                            substitute False
                             xalign 0.0
+                            text_align 0.0
+                            xmaximum 1000
 
-                            text renpy.filter_text_tags(h.what, allow=gui.history_allow_tags):
-                                style "history_text"
-                                substitute False
-                                xalign 0.0
-                                text_align 0.0
-                                xmaximum 1000
-
-        if not _history_list:
-            label _("L'historique des dialogues est vide.")
+    if not _history_list:
+        vbox:
+            xalign 0.5
+            yalign 0.5
+            text _("L'historique des dialogues est vide.")
 
 
- 
-
-    # Bouton retour en bas à droite
-    vbox:
-        at Transform(xalign=0.95, yalign=0.95)
-        imagebutton idle "menuUI/retour_idle.png" hover "menuUI/retour_hover.png" action Return()
 
 
 
@@ -1480,10 +1578,10 @@ screen crush_confirm(name, destination):
                 xalign 0.5
 
                 textbutton "Oui":
-                    action [Hide("crush_confirm"), Jump(destination)]
+                    action [Hide("crush_confirm"), Jump(destination)] style "confirm_prompt_text"
 
                 textbutton "Non":
-                    action Hide("crush_confirm")
+                    action Hide("crush_confirm") style "confirm_prompt_text"
 
 screen name_input_screen():
 

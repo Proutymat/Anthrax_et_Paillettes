@@ -70,32 +70,6 @@ image CG_gatsby = "images/CGs/gatsby.jpg"
 
 image background_cg = "images/Backgrounds/background_cg.png"
 
-init python:
-
-    tall_right = Transform(
-        zoom=2.2,       
-        xalign=0.90,
-        yanchor=1.0,
-        ypos=1.0,
-        xzoom=1
-    )
-
-    tall_left = Transform(
-        zoom=2.2,
-        xalign=0.15,
-        yanchor=1.0,
-        ypos=1.0,
-        xzoom=-1
-    )
-
-    tall_center = Transform(
-        zoom=2.2,
-        xalign=0.5,
-        yanchor=1.0,
-        ypos=1.0,
-        xzoom=1
-    )
-
 # Liste des sfx
 define type_sounds = ['audio/SFX/TextMix-001.ogg','audio/SFX/TextMix-002.ogg','audio/SFX/TextMix-003.ogg','audio/SFX/TextMix-004.ogg','audio/SFX/TextMix-005.ogg','audio/SFX/TextMix-006.ogg','audio/SFX/TextMix-007.ogg','audio/SFX/TextMix-008.ogg','audio/SFX/TextMix-009.ogg','audio/SFX/TextMix-010.ogg']
 define A_type_sounds = ['audio/SFX/AP_TA-001.ogg','audio/SFX/AP_TA-002.ogg','audio/SFX/AP_TA-003.ogg','audio/SFX/AP_TA-004.ogg']
@@ -137,8 +111,9 @@ define audio.BackstageSt4 = "audio/Music/AP_Stinger4_V1.ogg"
 define audio.BackstageLoop = "audio/Music/AP_LogesTruc_V1.ogg"
 define audio.BackstageDrumLoop = "audio/Music/ON_BackStageLoop_V1.ogg"
 define audio.BarMusic = "audio/Music/RUN_BarNeutral_V1.ogg"
-define audio.ShowDelaunay = "audio/Music/SHOW_Delaunay_Idea1_V1.ogg"
-define audio.ShowGatsby = "audio/Music/SHOW_Gatsby_Idea1_V2.ogg"
+define audio.ShowDelaunay = "audio/Music/AP_ShowDelaunay_V2.ogg"
+define audio.ShowGatsby = "audio/Music/AP_ShowGatsby_V1.ogg"
+define audio.ShowPeacock = "audio/Music/AP_ShowPeacock_V1.ogg"
 
 # Déclarez les personnages utilisés dans le jeu.
 define mother = Character('Mother', color="#b51963", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=30, callback=type_sound, cb_cps=30, cb_boopfile=M_type_sounds)
@@ -160,8 +135,8 @@ label gatsby_start:
 $ persistent.bg_parallax = True
 $ quick_menu = True
 scene black with fade
-scene loges
-show aimee_neutre at tall_center with dissolve
+show loges
+show aimee_neutre at gat_center with dissolve
 play ambiance AmbLoges fadein 2.0
 
 #GAT.1
@@ -179,11 +154,11 @@ anthrax "Ça me tente bien."
 
 
 #GAT.2
-hide loges
-show bar with fade
-play music BarMusic volume 0.5
-play ambiance BarDay fadein 0.5
+
 show bar with dissolve
+play music BarMusic fadein 1.5 volume 0.5
+play ambiance BarDay fadein 0.5
+play music BarMusic volume 0.5
 
 text "Nous sommes arrivé.e.s dans l'auditorium et nous nous sommes approché.e.s du comptoir derrière lequel brillait un mur de bouteilles de formes et couleurs uniques. Le paradis du parfait mixologue."
 
@@ -234,7 +209,7 @@ aimee "Le reste a suivi."
 label choix_gat2:
     $ quick_menu = False
     
-    show aimee_neutre at tall_right
+    show aimee_neutre at gat_right
     with fade
 
     menu: 
@@ -250,7 +225,7 @@ label choix_gat2:
 label gat_2_1:
     $ quick_menu = True
     
-    show aimee_neutre at tall_center
+    show aimee_neutre at gat_center
     with fade
 
     anthrax "Donc tu as commencé par le drag pour... Te relever ? Ce n'est peut-être pas la première chose à laquelle on pense quand on commence sa \"healing journey\"."
@@ -312,7 +287,7 @@ label gat_2_1:
 label gat_2_2:
     $ quick_menu = True
     
-    show aimee_neutre at tall_center
+    show aimee_neutre at gat_center
     with fade
 
     anthrax "J'ignorais que tu avais fait un burn-out. C'était quel genre d'environnement de travail pour que ça en arrive là ?"
@@ -359,7 +334,7 @@ label gat_2_2:
 label gat_2_3:
     $ quick_menu = True
 
-    show aimee_neutre at tall_center
+    show aimee_neutre at gat_center
     with fade
 
     anthrax "Donc tu as commencé par le drag pour... Te relever ? Ce n'est peut-être pas la première chose à laquelle on pense quand on commence sa \"healing journey\"."
@@ -470,7 +445,7 @@ label gat_3:
 label choix_gat3:
     $ quick_menu = False
 
-    show aimee_neutre at tall_right
+    show aimee_neutre at gat_right
     with fade
 
     menu: 
@@ -485,7 +460,7 @@ label choix_gat3:
 label gat_3_1:
     $ quick_menu = True
 
-    show aimee_neutre at tall_center
+    show aimee_neutre at gat_center
     with fade
 
     anthrax "Est-ce que ça va mieux maintenant que tu as quitté cet environnement ?"
@@ -548,7 +523,7 @@ label gat_3_1:
 label gat_3_2:
     $ quick_menu = True
     
-    show aimee_neutre at tall_center
+    show aimee_neutre at gat_center
     with fade
 
     anthrax "Wow... Quand je te vois maintenant... Je ne pensais pas..."
@@ -613,7 +588,7 @@ label gat_3_2:
 label gat_3_3:
     $ quick_menu = True
 
-    show aimee_neutre at tall_center
+    show aimee_neutre at gat_center
     with fade
 
     anthrax "Tu as dû prendre pas mal de temps pour t'en remettre, non ?"
@@ -701,7 +676,7 @@ label gat_4:
 label choix_gat4:
     $ quick_menu = False
 
-    show aimee_neutre at tall_right
+    show aimee_neutre at gat_right
     with fade
 
     menu: 
@@ -717,7 +692,7 @@ label choix_gat4:
 label gat_4_1:
     $ quick_menu = True
     
-    show aimee_neutre at tall_center
+    show aimee_neutre at gat_center
     with fade
 
     anthrax "Ce n'est pas trop compliqué de performer ? Je veux dire... Le rapport au corps, tout ça... ?"
@@ -768,7 +743,7 @@ label gat_4_1:
 label gat_4_2:
     $ quick_menu = True
 
-    show aimee_neutre at tall_center
+    show aimee_neutre at gat_center
     with fade
 
     anthrax "Je te trouve courageux.e... Tout ce que tu réussis à accomplir sans que ça ait vraiment l'air de t'affecter."
@@ -818,7 +793,7 @@ label gat_4_2:
 label gat_4_3:
     $ quick_menu = True
 
-    show aimee_neutre at tall_center
+    show aimee_neutre at gat_center
     with fade
 
     anthrax "J'étais persuadé.e qu'avec tout ce que tu m'as mentionné avant, tu ne toucherais plus jamais aux arts acrobatiques."
@@ -864,7 +839,7 @@ label gat_4_3:
 #GAT.5
 label gat_5:
 
-    play music ShowGatsby
+    play music ShowGatsby noloop
 
     anthrax "Le band commença le morceau suivant alors que la scène était encore vide de toute activité, si bien que les spectateur.ice.s en venaient à se demander si quelque chose clochait."
     anthrax "Un projecteur se braqua sur deux longues soies qui venaient d'être lâchées. Tout en douceur, accompagné.e par les accords du piano, Gatsby avançait sur les planches."
@@ -893,7 +868,7 @@ label gat_6:
 label choix_gat6:
     $ quick_menu = False
     
-    show aimee_neutre at tall_right
+    show aimee_neutre at gat_right
     with fade
 
     menu: 
@@ -906,7 +881,7 @@ label choix_gat6:
 label gat_6_good:
     $ quick_menu = True
     
-    show aimee_neutre at tall_center
+    show aimee_neutre at gat_center
     with fade
 
     anthrax "WIP"
@@ -917,7 +892,7 @@ label gat_6_good:
 label gat_6_bad:
     $ quick_menu = True
     
-    show aimee_neutre at tall_center
+    show aimee_neutre at gat_center
     with fade
 
     anthrax "WIP"

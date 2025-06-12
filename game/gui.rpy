@@ -57,7 +57,7 @@ define gui.muted_color = '#a366a3'
 define gui.hover_muted_color = '#c199c1'
 
 ## Les couleurs utilisées pour les dialogues et les menus de choix.
-define gui.text_color = '#404040'
+define gui.text_color = "#000000"
 define gui.interface_text_color = '#404040'
 
 
@@ -104,7 +104,7 @@ define gui.game_menu_background = "gui/game_menu.png"
 ## fois.
 
 ## La hauteur de la fenêtre contenant les dialogues.
-define gui.textbox_height = 278
+define gui.textbox_height = 300
 
 ## L’emplacement vertical de la zone de texte à l’écran. 0.0 pour le haut, 0.5
 ## pour le centre et 1.0 pour le bas.
