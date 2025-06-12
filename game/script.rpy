@@ -1179,7 +1179,7 @@ label onboarding:
 
     mother "Et nous voici donc dans l'auditorium !"
 
-    mother "Il sera un peu comme ton meilleur ennemi, car peu importe le trac ou qui se retrouvera dans le public, il faudra grimper sur les planches!"
+    mother "Il sera un peu comme ton meilleur ennemi, car peu importe le trac ou qui se retrouvera dans le public, il faudra grimper sur les planches !"
    
     mother "Après, si tu es ici aujourd’hui, c’est parce que c’est justement le genre de chose qui t’anime: te mettre en scène..."
 
