@@ -134,7 +134,7 @@ label gatsby_start:
 $ persistent.bg_parallax = True
 $ quick_menu = True
 scene black with fade
-scene loges
+show loges
 show aimee_neutre at gat_center with dissolve
 play ambiance AmbLoges fadein 2.0
 
@@ -153,11 +153,11 @@ anthrax "Ça me tente bien."
 
 
 #GAT.2
-hide loges
-show bar with fade
-play music BarMusic volume 0.5
-play ambiance BarDay fadein 0.5
+
 show bar with dissolve
+play music BarMusic fadein 1.5 volume 0.5
+play ambiance BarDay fadein 0.5
+play music BarMusic volume 0.5
 
 text "Nous sommes arrivé.e.s dans l'auditorium et nous nous sommes approché.e.s du comptoir derrière lequel brillait un mur de bouteilles de formes et couleurs uniques. Le paradis du parfait mixologue."
 

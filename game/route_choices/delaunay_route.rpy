@@ -172,7 +172,6 @@ anthrax "Ça, je ne dis pas non!"
 show bar with dissolve
 play music BarMusic fadein 1.5 volume 0.5
 play ambiance BarDay fadein 0.5
-show bar with fade
 play music BarMusic volume 0.5
 
 anthrax "Nous sommes arrivé.e.s dans l'auditorium et nous sommes approché.e.s du comptoir derrière lequel brillaient un mur de bouteilles de formes et couleurs uniques. Le paradis du parfait mixologue."
