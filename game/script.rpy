@@ -1,6 +1,7 @@
 # fonctions custom
 
-init python:    
+init python:   
+
     import os
 
     def get_available_translations():
@@ -253,26 +254,51 @@ image flirt = Animation(
 )
 
 image angry = Animation(
-    "images/VFX/Angry/Angry_00001.png", 0.06,
-    "images/VFX/Angry/Angry_00002.png", 0.06,
-    "images/VFX/Angry/Angry_00003.png", 0.06,
-    "images/VFX/Angry/Angry_00004.png", 0.06,
-    "images/VFX/Angry/Angry_00005.png", 0.06,
-    "images/VFX/Angry/Angry_00006.png", 0.06,
-    "images/VFX/Angry/Angry_00007.png", 0.06,
-    "images/VFX/Angry/Angry_00008.png", 0.06,
-    "images/VFX/Angry/Angry_00009.png", 0.06,
-    "images/VFX/Angry/Angry_00010.png", 0.06,
-    "images/VFX/Angry/Angry_00011.png", 0.06,
-    "images/VFX/Angry/Angry_00012.png", 0.06,
-    "images/VFX/Angry/Angry_00013.png", 0.06,
-    "images/VFX/Angry/Angry_00014.png", 0.06,
-    "images/VFX/Angry/Angry_00015.png", 0.06,
-    "images/VFX/Angry/Angry_00016.png", 0.06,
-    "images/VFX/Angry/Angry_00017.png", 0.06,
-    "images/VFX/Angry/Angry_00018.png", 0.06,
-    "images/VFX/Angry/Angry_00019.png", 0.06
+    "images/VFX/Angry/Angry_00001.png", 0.03,
+    "images/VFX/Angry/Angry_00002.png", 0.03,
+    "images/VFX/Angry/Angry_00003.png", 0.03,
+    "images/VFX/Angry/Angry_00004.png", 0.03,
+    "images/VFX/Angry/Angry_00005.png", 0.03,
+    "images/VFX/Angry/Angry_00006.png", 0.03,
+    "images/VFX/Angry/Angry_00007.png", 0.03,
+    "images/VFX/Angry/Angry_00008.png", 0.03,
+    "images/VFX/Angry/Angry_00009.png", 0.03,
+    "images/VFX/Angry/Angry_00010.png", 0.03,
+    "images/VFX/Angry/Angry_00011.png", 0.03,
+    "images/VFX/Angry/Angry_00012.png", 0.03,
+    "images/VFX/Angry/Angry_00013.png", 0.03,
+    "images/VFX/Angry/Angry_00014.png", 0.03,
+    "images/VFX/Angry/Angry_00015.png", 0.03,
+    "images/VFX/Angry/Angry_00016.png", 0.03,
+    "images/VFX/Angry/Angry_00017.png", 0.03,
+    "images/VFX/Angry/Angry_00018.png", 0.03,
+    "images/VFX/Angry/Angry_00019.png", 0.03,
+    "images/VFX/Angry/Angry_00020.png", 0.03,
+    "images/VFX/Angry/Angry_00021.png", 0.03,
+    "images/VFX/Angry/Angry_00022.png", 0.03,
+    "images/VFX/Angry/Angry_00023.png", 0.03,
+    "images/VFX/Angry/Angry_00024.png", 0.03,
+    "images/VFX/Angry/Angry_00025.png", 0.03,
+    "images/VFX/Angry/Angry_00026.png", 0.03,
+    "images/VFX/Angry/Angry_00027.png", 0.03,
+    "images/VFX/Angry/Angry_00028.png", 0.03,
+    "images/VFX/Angry/Angry_00029.png", 0.03,
+    "images/VFX/Angry/Angry_00030.png", 0.03,
+    "images/VFX/Angry/Angry_00031.png", 0.03,
+    "images/VFX/Angry/Angry_00032.png", 0.03,
+    "images/VFX/Angry/Angry_00033.png", 0.03,
+    "images/VFX/Angry/Angry_00034.png", 0.03,
+    "images/VFX/Angry/Angry_00035.png", 0.03,
+    "images/VFX/Angry/Angry_00036.png", 0.03,
+    "images/VFX/Angry/Angry_00037.png", 0.03,
+    "images/VFX/Angry/Angry_00038.png", 0.03,
+    "images/VFX/Angry/Angry_00039.png", 0.03,
+    "images/VFX/Angry/Angry_00040.png", 0.03,
+    "images/VFX/Angry/Angry_00041.png", 0.03,
+    "images/VFX/Angry/Angry_00042.png", 0.03,
+    "images/VFX/Angry/Angry_00043.png", 0.03,
 )
+
 
 image joy = Animation(
     "images/VFX/Joy/Joy_00001.png", 0.04,
@@ -772,27 +798,219 @@ image light_solo_right:
 
 init python:
 
-    tall_right = Transform(
-        zoom=2.2,       
-        xalign=0.90,
+    del_right = Transform(
+        zoom=0.86,       
+        xalign=0.78,
         yanchor=1.0,
         ypos=1.0,
         xzoom=1
     )
 
-    tall_left = Transform(
-        zoom=2.2,
-        xalign=0.15,
+    del_left = Transform(
+        zoom=0.86,
+        xalign=0.23,
         yanchor=1.0,
         ypos=1.0,
         xzoom=-1
     )
 
-    tall_center = Transform(
-        zoom=2.2,
+    del_center = Transform(
+        zoom=0.86,
+        xalign=0.47,
+        yanchor=1.0,
+        ypos=1.0,
+        xzoom=1
+    )
+
+    gat_right = Transform(
+        zoom=0.89,
+        xalign=0.85,
+        yanchor=1.0,
+        ypos=1.0,
+        xzoom=1
+    )
+
+    gat_left = Transform(
+        zoom=0.89,
+        xalign=0.18,
+        yanchor=1.0,
+        ypos=1.0,
+        xzoom=-1
+    )
+
+    gat_center = Transform(
+        zoom=0.89,
         xalign=0.5,
         yanchor=1.0,
         ypos=1.0,
+        xzoom=1
+    )
+
+    pea_right = Transform(
+        zoom=0.987,
+        xalign=0.88,
+        yanchor=1.0,
+        ypos=1.02,
+        xzoom=1
+    )
+
+    pea_left = Transform(
+        zoom=0.987,
+        xalign=0.2,
+        yanchor=1.0,
+        ypos=1.02,
+        xzoom=-1
+    )
+
+    pea_center = Transform(
+        zoom=0.987,
+        xalign=0.5,
+        yanchor=1.0,
+        ypos=1.02,
+        xzoom=1
+    )
+
+    mother_right = Transform(
+        zoom=0.985,
+        xalign=0.88,
+        yanchor=1.0,
+        ypos=1.09,
+        xzoom=1
+    )
+
+    mother_left = Transform(
+        zoom=0.985,
+        xalign=0.15,
+        yanchor=1.0,
+        ypos=1.09,
+        xzoom=-1
+    )
+
+    mother_center = Transform(
+        zoom=0.985,
+        xalign=0.54,
+        yanchor=1.0,
+        ypos=1.09,
+        xzoom=1
+    )
+
+    flirt_center = Transform(
+        zoom=0.80,
+        xalign=0.54,
+        yanchor=1.0,
+        ypos=0.7,
+        xzoom=1
+    )
+
+    flirt_right = Transform(
+        zoom=0.80,
+        xalign=1.55,
+        yanchor=1.0,
+        ypos=0.7,
+        xzoom=1
+    )
+
+    flirt_left = Transform(
+        zoom=0.80,
+        xalign=-0.5,
+        yanchor=1.0,
+        ypos=0.7,
+        xzoom=1
+    )
+
+    sadness_center = Transform(
+        zoom=0.80,
+        xalign=0.4,
+        yanchor=1.0,
+        ypos=0.7,
+        xzoom=1
+    )
+
+    sadness_right = Transform(
+        zoom=0.80,
+        xalign=1.49,
+        yanchor=1.0,
+        ypos=0.7,
+        xzoom=1
+    )
+
+    sadness_left = Transform(
+        zoom=0.80,
+        xalign=-0.5,
+        yanchor=1.0,
+        ypos=0.7,
+        xzoom=1
+    )
+
+    sadness_pea_center = Transform(
+        zoom=0.80,
+        xalign=0.4,
+        yanchor=1.0,
+        ypos=0.65,
+        xzoom=1
+    )
+
+    sadness_pea_right = Transform(
+        zoom=0.80,
+        xalign=1.49,
+        yanchor=1.0,
+        ypos=0.65,
+        xzoom=1
+    )
+
+    sadness_pea_left = Transform(
+        zoom=0.80,
+        xalign=-0.35,
+        yanchor=1.0,
+        ypos=0.65,
+        xzoom=1
+    )
+
+    angry_center = Transform(
+        zoom=0.80,
+        xalign=0.54,
+        yanchor=1.0,
+        ypos=0.7,
+        xzoom=1
+    )
+
+    angry_right = Transform(
+        zoom=0.80,
+        xalign=1.55,
+        yanchor=1.0,
+        ypos=0.7,
+        xzoom=1
+    )
+
+    angry_left = Transform(
+        zoom=0.80,
+        xalign=-0.5,
+        yanchor=1.0,
+        ypos=0.7,
+        xzoom=1
+    )
+
+    joy_center = Transform(
+        zoom=0.80,
+        xalign=0.54,
+        yanchor=1.0,
+        ypos=0.7,
+        xzoom=1
+    )
+
+    joy_right = Transform(
+        zoom=0.80,
+        xalign=1.55,
+        yanchor=1.0,
+        ypos=0.7,
+        xzoom=1
+    )
+
+    joy_left = Transform(
+        zoom=0.80,
+        xalign=-0.5,
+        yanchor=1.0,
+        ypos=0.7,
         xzoom=1
     )
 
@@ -907,7 +1125,11 @@ label onboarding:
 
     play ambiance AmbRue fadein 5.0
 
-    text "L'Androgame..."
+    $ current_textbox = "description"
+
+
+
+    text "L'androgame..."
     text "C’est dingue à quel point ce cabaret a reprit ses lettres de noblesse."
     text "Je me souviens encore de quand je passais devant pour aller prendre le métro... Complètement défraichit, la pierre sale et les fenètres brisées."
     text "On se demandait quand est-ce qu’ils finiraient par abréger ses souffrances et le démolir."
@@ -934,31 +1156,34 @@ label onboarding:
     stop ambiance fadeout 1.0
     play music CabaretEntrance volume 0.7
     hide devanture
-    show curtain_open
     show auditorium  with dissolve
-    show mother at tall_center with dissolve
+    show mother at mother_center with dissolve
 
 
 #0.2
 
     play ambiance AmbAndrogameDay fadein 0.5
 
+    $ current_textbox = "anthrax"
 
     mother "Bienvenue dans l'Androgame! J'espère que tu as fait bonne route."
 
-    hide curtain_open with dissolve
 
     queue music CabaretIntro volume 0.7
     queue music CabaretLightVerse volume 0.7
 
 
     mother "Tu avais l’air de dire dans nos échanges que tu n’habitais pas trop loin, le chemin n’a pas dû être bien  compliqué."
-    
-    show sadness
+
+    $ current_textbox = "description"
+
     text "En effet, une fois passée la porte pivotante, la hauteur sous plafond et les lustres géométriques faillirent me donner un torticolis."
-    hide sadness
     text "Je devais presque plisser les yeux pour repérer tous les petits détails dans la marqueterie, les dorures et les formes dans le papier peint."
+
+    $ current_textbox = "anthrax"
+
     anthrax "Oui. Et puis, c’est le genre d’établissement qu’il est difficile de louper!"
+
     mother "Aha! Tu m’en vois ravie de l’entendre."
     mother "Je ne fais pas te faire patienter plus longtemps... Commençons par te faire une petite visite des lieux. Promis, tu vas t’y retrouver bien vite"
 
@@ -968,7 +1193,11 @@ label onboarding:
     mother "Ce n’est pas trop dans notre politique cette histoire du \"le client est roi\", mais tu apprendras vite que c’est là que les pourboires se cachent"
 
     mother "Et nous voici donc dans l’auditorium! Il sera un peu comme ton meilleur ennemi, car peu importe le trac ou qui se retrouvera dans le public, il faudra grimper sur les planches!"
+   
     mother "Après, si tu es ici aujourd’hui, c’est par ce que c’est justement le genre de chose qui t’anime: te mettre en scène..."
+    
+    $ current_textbox = "description"
+
     text "Je ne l’avais pas encore abordé de cette perspective, mais l’idée d’être au milieu de cette scène, avec tous les regards tournés vers moi, m’excitait autant que me faisait appréhender."
     text "Je mis cette pensée sur le compte de l'inexpérience, et continua ma visite avec Mother"
 
@@ -983,7 +1212,7 @@ label onboarding:
     with fade
     queue music CabaretLightSolo volume 0.7
 
-    show mother at tall_right  with dissolve
+    show mother at mother_right  with dissolve
 
 
     text "Nous sommes monté.e.s sur la scène et l'avons traversée avant de passer derrière les épais rideaux de velours. Nous sommes passé.e.s dans un véritable dédale de couloirs tandis qu'elle ouvrait quelques portes et m'expliquait la fonction de chaque pièce." 
@@ -997,32 +1226,48 @@ label onboarding:
     play ambiance AmbLoges fadein 1
     play music BackstageDrumLoop volume 0.5
 
-    show imani_neutre at tall_left  with dissolve
+    show imani_neutre at pea_left  with dissolve
+
+    $ current_textbox = "anthrax"
 
     imani "Ok, hear me out... Je dis simplement que si l'on veut garder une logique dans la suite de nos numéros, on va devoir inverser l'ordre dans lequel on passe pour pouvoir faire de la place aux nouvelles."
 
+    $ current_textbox = "description"
+
     text "L'homme qui venait de prendre la parole était en train de gribouiller avec insistance un schéma dans son carnet, une aiguille à coudre entre les lèvres et une pièce de tissu sur les genoux, à laquelle il semblait broder des sequins un à un."
 
+    $ current_textbox = "anthrax"
+
     inconnu "Girl... J'entends, et je suis d'accord sur le fond. Mais on ne les connaît même pas encore et on ne sait pas quels numéros iels vont présenter, ou si même iels en ont... Tu es en train de te faire des plans sur la comète, ma belle."
+
+    $ current_textbox = "description"
 
     text "Les doigts couverts de gel et un peigne à la main, la personne qui venait de lui répondre était en train de styliser une perruque noire de jais sur une tête de mannequin en plastique." 
     text "Iel y plaquait les cheveux contre le front en de jolies boucles bien définies, et y fixait des perles nacrées avec un pistolet à colle." 
     text "Un autre garçon, plus silencieux, avait la tête baissée sur une armature de fils de fer artisanale qu'il pliait à l'aide d'une pince, et bloquait fermement avec du chaterton."
     
     hide mother 
-    show aimee_neutre at tall_right  with dissolve
+    show aimee_neutre at gat_right  with dissolve
+
+    $ current_textbox = "anthrax"
 
     inconnu "Et toi Del'? Qu'est-ce que tu en penses?"
 
-    anthrax "Relevant la tête, le concerné remarqua qu'iels n'étaient plus trois dans la pièce et me fixa un instant, avant de se retourner vers ses interlocuteur.ice.s."
+    $ current_textbox = "description"
+
+    text "Relevant la tête, le concerné remarqua qu'iels n'étaient plus trois dans la pièce et me fixa un instant, avant de se retourner vers ses interlocuteur.ice.s."
 
     hide imani_neutre 
-    show leandre_neutre at tall_left  with dissolve
+    show leandre_neutre at del_left  with dissolve
 
     delinconnu "Je pense qu'on devrait leur demander directement..." 
 
+    $ current_textbox = "description"
+
     text "Les deux autres se sont retourné.e.s vers l'encadrement de porte dans lequel nous nous tenions, Mother et moi." 
 
+    $ current_textbox = "anthrax"
+    
     delinconnu "Ou alors que ce serait justement l'occasion parfaite pour nous de revoir nos propres tours..." 
 
     stop music fadeout 1.0
@@ -1031,7 +1276,7 @@ label onboarding:
 
     hide aimee_neutre 
     hide leandre_neutre 
-    show mother at tall_center  with dissolve
+    show mother at mother_center  with dissolve
 
     mother "Oh! Je vois que vous faites connaissance! Les filles, je vous présente [player_name], iel nous rejoindra sous peu le temps d'arranger le spectacle, et je compte sur vous pour l'acceuillir comme il se doit."
 
@@ -1040,39 +1285,47 @@ label onboarding:
     anthrax "Semblant sortir de leur torpeur et reprendre leurs esprits, les artistes drag face à moi me sourirent et commencèrent à faire un tour des présentations."
     
     hide mother 
-    show imani_neutre at tall_center with dissolve
+    show imani_neutre at pea_center with dissolve
 
     peacock "Pardon, on a dû te sembler hyper antipathiques avec notre absence de réaction! Moi c'est Imani. Parfois on s'appelle aussi par nos noms de scène, donc tu peux aussi m'appeler Peacock si tu en as envie."
     
     hide imani_neutre 
-    show mother at tall_center with dissolve
+    show mother at mother_center with dissolve
 
     mother "Imani se spécialise dans tout ce qui est du ressort de la performance vocale. Lipsync, chant, reading, shading, imitation... Si tu as des conseils de ce côté à aller chercher, c'est vers elle."
     
     hide mother 
-    show imani_neutre at tall_center with dissolve
+    show imani_neutre at pea_center with dissolve
 
     peacock "Ah oui! Et pour les pronoms, tu peux utiliser ceux dont tu as envie, je ne suis pas très regardant. Je me genre moi-même souvent au féminin."
     
     hide imani_neutre 
-    show mother at tall_center with dissolve
+    show mother at mother_center with dissolve
 
     mother "Le petit timide là, qui essaye de faire en sorte de se faire oublier, c'est Léandre."
 
+    $ current_textbox = "description"
+    
     text "Prit en flagrant délit, le jeune homme tourna au pivoine et balbutia, mal à l'aise."
     
     hide mother 
-    show leandre_neutre at tall_center with dissolve
+    show leandre_neutre at del_center with dissolve
+
+    $ current_textbox = "anthrax"
     
     leandre "N-Non! C'est juste que... J'ai toujours un peu de mal avec les nouvelles personnes. Excuse-moi... Oui, donc moi, c'est Léandre, j'utilise il/lui, et je fais principalement de l'effeuillage burlesque. C'est assez classique..."
     
     hide leandre_neutre 
-    show aimee_neutre at tall_center with dissolve
+    show aimee_neutre at gat_center with dissolve
     
     inconnu "C'est tout sauf classique, ton striptease!"
+    
+    $ current_textbox = "description"
 
     text "Léandre se renfrogna davantage. Apparemment, les deux étaient suffisamment bon.ne.s ami.e.s pour se taquiner et s'embarrasser ainsi."
     
+    $ current_textbox = "anthrax"
+
     gatsby "Du coup, vu qu'on doit toujours parler à sa place, son nom de drag est Delaunay. Et moi c'est Gatsby! "
     gatsby "Parce que je suis magnifique, et que je n'avais pas plus d'inspi que ça au moment de choisir. Je me genre au neutre, c'est à dire avec ellui/iel. "
     gatsby "C'est non-négociable. "
@@ -1089,7 +1342,7 @@ label onboarding:
 
 label route_choice_intro:
     show loges 
-    show mother at tall_right 
+    show mother at mother_right 
     mother "Alors [player], si tu devais choisir l'un de mes \"babies\" comme marrain ou parraine, qui est-ce que tu désignerais ?" with fade
     hide loges 
     hide devanture 
@@ -1099,3 +1352,5 @@ label route_choice_intro:
     $ renpy.pause(0, hard=True)
     $ quick_menu = False
     jump choose_route
+    with fade
+    pause 2.0

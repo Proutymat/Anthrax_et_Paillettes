@@ -70,32 +70,6 @@ image CG_peacock = "images/CGs/peacock.jpg"
 
 image background_cg = "images/Backgrounds/background_cg.png"
 
-init python:
-
-    tall_right = Transform(
-        zoom=2.2,       
-        xalign=0.90,
-        yanchor=1.0,
-        ypos=1.0,
-        xzoom=1
-    )
-
-    tall_left = Transform(
-        zoom=2.2,
-        xalign=0.15,
-        yanchor=1.0,
-        ypos=1.0,
-        xzoom=-1
-    )
-
-    tall_center = Transform(
-        zoom=2.2,
-        xalign=0.5,
-        yanchor=1.0,
-        ypos=1.0,
-        xzoom=1
-    )
-
 # Liste des sfx
 define type_sounds = ['audio/SFX/TextMix-001.ogg','audio/SFX/TextMix-002.ogg','audio/SFX/TextMix-003.ogg','audio/SFX/TextMix-004.ogg','audio/SFX/TextMix-005.ogg','audio/SFX/TextMix-006.ogg','audio/SFX/TextMix-007.ogg','audio/SFX/TextMix-008.ogg','audio/SFX/TextMix-009.ogg','audio/SFX/TextMix-010.ogg']
 define A_type_sounds = ['audio/SFX/AP_TA-001.ogg','audio/SFX/AP_TA-002.ogg','audio/SFX/AP_TA-003.ogg','audio/SFX/AP_TA-004.ogg']
@@ -161,7 +135,7 @@ $ persistent.bg_parallax = True
 $ quick_menu = True
 scene black with fade
 show loges
-show imani_neutre at tall_center with dissolve
+show imani_neutre at pea_center with dissolve
 
 play ambiance AmbLoges fadein 0.5
 
@@ -186,7 +160,7 @@ anthrax "Comme dirait RuPaul, il ne faut pas écouter notre 'inner saboteur'."
 
 imani "Word."
 
-imani "Ça te dit de t'installer quelque part de plus cosy pour continuer à discuter ?"
+imani "Ça te dit de t'inspeaer quelque part de plus cosy pour continuer à discuter ?"
 
 #PEA.2
 show bar with dissolve
@@ -241,7 +215,7 @@ imani "Non, non ! C’était un compliment. Je sais que j’ai beaucoup de shade
 label choix_pea2:
     $ quick_menu = False
     
-    show imani_neutre at tall_right
+    show imani_neutre at pea_right
     with fade
 
     menu: 
@@ -257,7 +231,7 @@ label choix_pea2:
 label pea_2_1:
     $ quick_menu = True
     
-    show imani_neutre at tall_center
+    show imani_neutre at pea_center
     with fade
 
     anthrax "Tu es la personne qui m'a l'air la plus engagée au sein de la troupe."
@@ -318,7 +292,7 @@ label pea_2_1:
 label pea_2_2:
     $ quick_menu = True
     
-    show imani_neutre at tall_center
+    show imani_neutre at pea_center
     with fade
 
     anthrax "Est-ce que tu peux m'en dire davantage sur ce que tu fais ? Mother a piqué ma curiosité, mais je brûle d'avoir plus de détails."
@@ -375,7 +349,7 @@ label pea_2_2:
 label pea_2_3:
     $ quick_menu = True
 
-    show imani_neutre at tall_center
+    show imani_neutre at pea_center
     with fade
 
     anthrax "Et toi ? Qu'est-ce qui t'as lancée dans le drag ?"
@@ -477,7 +451,7 @@ label pea_3:
 label choix_pea3:
     $ quick_menu = False
 
-    show imani_neutre at tall_right
+    show imani_neutre at pea_right
     with fade
 
     menu: 
@@ -492,7 +466,7 @@ label choix_pea3:
 label pea_3_1:
     $ quick_menu = True
 
-    show imani_neutre at tall_center
+    show imani_neutre at pea_center
     with fade
 
     anthrax "Je me sens bête maintenant, d'avoir amené le sujet comme ça..."
@@ -545,7 +519,7 @@ label pea_3_1:
 label pea_3_2:
     $ quick_menu = True
 
-    show imani_neutre at tall_center
+    show imani_neutre at pea_center
     with fade
 
     anthrax "Comment est-ce que tu es tombé dedans? Ça te ressemble si peu..."
@@ -608,7 +582,7 @@ label pea_3_2:
 label pea_3_3:
     $ quick_menu = True
 
-    show imani_neutre at tall_center
+    show imani_neutre at pea_center
     with fade
 
     anthrax "Tu as dû prendre pas mal de temps pour t’en remettre, non ?"
@@ -690,14 +664,14 @@ label pea_4:
 label choix_pea4:
     $ quick_menu = False
 
-    show imani_neutre at tall_right
+    show imani_neutre at pea_right
     with fade
 
     menu: 
         peacock "Hm... Je ne sais pas trop. Peut-être peux-tu vérifier l'état des plumes de mes éventails ? Je les ai changées il y a peu, mais elles ont peut-être besoin d'être ébouriffées."
         "Oui, bien sûr. Ca fait longtemps que tu fais ce show? Avec les plumes je veux dire...":
             call pea_4_1 from _call_pea_4_1_1 
-        "Sans soucis! Tu comptes chanter aussi? Je vois que tu as un micro d'installé...":
+        "Sans soucis! Tu comptes chanter aussi? Je vois que tu as un micro d'inspeaé...":
             call pea_4_2 from _call_pea_4_2_1 
         "Les ébouriffer? Est-ce que c'est pour mieux te cacher lors de l'effeuillage?":
             call pea_4_3 from _call_pea_4_3 
@@ -706,7 +680,7 @@ label choix_pea4:
 label pea_4_1:
     $ quick_menu = True
 
-    show imani_neutre at tall_center
+    show imani_neutre at pea_center
     with fade
     
     anthrax "Oui, bien sûr. Ca fait longtemps que tu fais ce show? Avec les plumes je veux dire..."
@@ -755,10 +729,10 @@ label pea_4_1:
 label pea_4_2:
     $ quick_menu = True
 
-    show imani_neutre at tall_center
+    show imani_neutre at pea_center
     with fade
 
-    anthrax "Sans souci ! Tu comptes chanter aussi ? Je vois que tu as un micro d'installé..."
+    anthrax "Sans souci ! Tu comptes chanter aussi ? Je vois que tu as un micro d'inspeaé..."
 
     anthrax "J'étais persuadé.e que tu ne faisais que de la danse..."
 
@@ -801,7 +775,7 @@ label pea_4_2:
 label pea_4_3:
     $ quick_menu = True
 
-    show imani_neutre at tall_center
+    show imani_neutre at pea_center
     with fade
 
     anthrax "Les ébouriffer ? Est-ce que c'est pour mieux te cacher lors de l'effeuillage ?"
@@ -874,7 +848,7 @@ label pea_6:
 label choix_pea6:
     $ quick_menu = False
     
-    show imani_neutre at tall_right
+    show imani_neutre at pea_right
     with fade
 
     menu: 
@@ -887,7 +861,7 @@ label choix_pea6:
 label pea_6_good:
     $ quick_menu = True
     
-    show imani_neutre at tall_center
+    show imani_neutre at pea_center
     with fade
 
     anthrax "WIP"
@@ -898,7 +872,7 @@ label pea_6_good:
 label pea_6_bad:
     $ quick_menu = True
     
-    show imani_neutre at tall_center
+    show imani_neutre at pea_center
     with fade
 
     anthrax "WIP"
