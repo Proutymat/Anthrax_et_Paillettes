@@ -499,13 +499,17 @@ screen navigation():
 
         #textbutton _("Reprendre") action ShowMenu("load")
         imagebutton:
-             auto "menuUI/reprendre_%s.png"
-             action [SetVariable("_previous_screen", "navigation"), Function(renpy.transition, fade), Show("load")]
+            auto "menuUI/reprendre_%s.png"
+            hovered Function(play_ui_hover)
+            action [Function(play_ui_click), SetVariable("_previous_screen", "navigation"), Function(renpy.transition, fade), Show("load")]
+
              
         #textbutton _("Backstages") action ShowMenu("backstages")
         imagebutton:
              auto "menuUI/backstages_%s.png"
-             action [SetVariable("_previous_screen", "navigation"), Function(renpy.transition, fade), Show("backstages")]
+             hovered Function(play_ui_hover)
+             action [Function(play_ui_click), SetVariable("_previous_screen", "navigation"), Function(renpy.transition, fade), Show("backstages")]
+    
 
         #textbutton _("Album") action ShowMenu("gallery_delaunay")
            
@@ -513,8 +517,9 @@ screen navigation():
             
         #textbutton _("Options") action ShowMenu("preferences")
         imagebutton:
-             auto "menuUI/options_%s.png"
-             action [SetVariable("_previous_screen", "navigation"), Function(renpy.transition, fade), Show("preferences")]
+            auto "menuUI/options_%s.png"
+            hovered Function(play_ui_hover)
+            action [Function(play_ui_click), SetVariable("_previous_screen", "navigation"), Function(renpy.transition, fade), Show("preferences")]
 
         if _in_replay:
 
@@ -538,8 +543,9 @@ screen navigation():
             ## et sur le Web.
             #textbutton _("Quitter") action Quit(confirm=not main_menu)
             imagebutton:
-             auto "menuUI/quitter_%s.png"
-             action Quit(confirm=not main_menu)
+                auto "menuUI/quitter_%s.png"
+                hovered Function(play_ui_hover)
+                action [Function(play_ui_click), Quit(confirm=not main_menu)]
 
 
 style navigation_button is gui_button

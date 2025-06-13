@@ -22,8 +22,6 @@ label before_main_menu:
 
     return
 
-
-
 init python:   
 
     import os
