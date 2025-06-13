@@ -2,6 +2,8 @@
 ## Initialisation
 ################################################################################
 
+default current_textbox = "description"
+
 #Définition sons UI
 
 init python:

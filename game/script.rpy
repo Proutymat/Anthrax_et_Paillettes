@@ -1,4 +1,27 @@
 # fonctions custom
+image splash = "splashscreen.png"
+image splash2 = "splashscreen2.png"
+
+label before_main_menu:
+     # Ne pas afficher la textbox ni le quick menu
+    $ _window = False
+    $ quick_menu = False
+    $ _game_menu_screen = None
+
+    # Écran noir de transition 
+
+    # Affiche l'image de splash
+    show splash with dissolve
+    pause 1
+
+    show splash2 with fade
+    pause 1
+
+    scene black with fade
+
+    return
+
+
 
 init python:   
 
