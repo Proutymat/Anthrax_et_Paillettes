@@ -1084,8 +1084,9 @@ define audio.BackstageSt4 = "audio/Music/AP_Stinger4_V1.ogg"
 define audio.BackstageLoop = "audio/Music/AP_LogesTruc_V1.ogg"
 define audio.BackstageDrumLoop = "audio/Music/ON_BackStageLoop_V1.ogg"
 define audio.BarMusic = "audio/Music/RUN_BarNeutral_V1.ogg"
-define audio.ShowDelaunay = "audio/Music/SHOW_Delaunay_Idea1_V1.ogg"
-define audio.ShowGatsby = "audio/Music/SHOW_Gatsby_Idea1_V2.ogg"
+define audio.ShowDelaunay = "audio/Music/AP_ShowDelaunay_V2.ogg"
+define audio.ShowGatsby = "audio/Music/AP_ShowGatsby_V1.ogg"
+define audio.ShowPeacock = "audio/Music/AP_ShowPeacock_V1.ogg"
 
 # Déclarez les personnages utilisés dans le jeu.
 define mother = Character('Mother', color="#b51963", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=30, callback=type_sound, cb_cps=30, cb_boopfile=M_type_sounds)

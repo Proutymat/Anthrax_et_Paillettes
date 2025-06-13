@@ -111,8 +111,9 @@ define audio.BackstageSt4 = "audio/Music/AP_Stinger4_V1.ogg"
 define audio.BackstageLoop = "audio/Music/AP_LogesTruc_V1.ogg"
 define audio.BackstageDrumLoop = "audio/Music/ON_BackStageLoop_V1.ogg"
 define audio.BarMusic = "audio/Music/RUN_BarNeutral_V1.ogg"
-define audio.ShowDelaunay = "audio/Music/SHOW_Delaunay_Idea1_V1.ogg"
-define audio.ShowGatsby = "audio/Music/SHOW_Gatsby_Idea1_V2.ogg"
+define audio.ShowDelaunay = "audio/Music/AP_ShowDelaunay_V2.ogg"
+define audio.ShowGatsby = "audio/Music/AP_ShowGatsby_V1.ogg"
+define audio.ShowPeacock = "audio/Music/AP_ShowPeacock_V1.ogg"
 
 # Déclarez les personnages utilisés dans le jeu.
 define mother = Character('Mother', color="#b51963", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=30, callback=type_sound, cb_cps=30, cb_boopfile=M_type_sounds)
@@ -824,6 +825,7 @@ label pea_4_3:
 #PEA.5
 label pea_5:
 
+    play music ShowPeacock noloop
     anthrax "Les yeux du public étaient encore rivés sur la scène où les restes du précédent numéro se faisaient débarrasser, qu'ils furent forcés de se retourner en entendant une voix rauque et a cappella démarrer le fameux 'Feeling Good' de Nina Simone depuis le fond de la salle."
     anthrax "Les escarpins ancrés dans le marbre du comptoir du bar, un spot détournant sa silhouette en contre-jour pour ajouter un peu de pizzazz à son entrée, elle descendit tout en sensualité en se faisant porter par Doberman."
     anthrax "Imani se saisit des deux grands éventails à plumes que le staff lui proposait et le band lança le top départ de sa performance en arrivant en fanfare."
@@ -832,7 +834,7 @@ label pea_5:
     anthrax "Tandis que les derniers accords signaient la fin de sa chorégraphie, elle troqua ses éventails pour un tabouret et un verre d'eau, chauffant la salle avec un 'one-woman show' pour introduire le prochain numéro."
     anthrax "Son charisme, sa vivacité d'esprit et sa répartie étaient bien connus des habitué.e.s du cabaret, qui venaient parfois uniquement pour participer à cet instant léger et sarcastique."
     anthrax "Peacock se faisait règle de ne jamais reproduire un gig deux fois, de la même manière que ses tenues selon ses propres termes."
-  
+    stop music fadeout 0.2
     call pea_6 from _call_pea_6 
 
 #PEA.6

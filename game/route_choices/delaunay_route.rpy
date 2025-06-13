@@ -114,8 +114,9 @@ define audio.BackstageSt4 = "audio/Music/AP_Stinger4_V1.ogg"
 define audio.BackstageLoop = "audio/Music/AP_LogesTruc_V1.ogg"
 define audio.BackstageDrumLoop = "audio/Music/ON_BackStageLoop_V1.ogg"
 define audio.BarMusic = "audio/Music/RUN_BarNeutral_V1.ogg"
-define audio.ShowDelaunay = "audio/Music/SHOW_Delaunay_Idea1_V1.ogg"
-define audio.ShowGatsby = "audio/Music/SHOW_Gatsby_Idea1_V2.ogg"
+define audio.ShowDelaunay = "audio/Music/AP_ShowDelaunay_V2.ogg"
+define audio.ShowGatsby = "audio/Music/AP_ShowGatsby_V1.ogg"
+define audio.ShowPeacock = "audio/Music/AP_ShowPeacock_V1.ogg"
 define audio.ConfidenceIntro = 'audio/Music/3_Confidence_Intro.ogg'
 define audio.ConfidenceA1 = 'audio/Music/3_Confidence_A.ogg'
 define audio.ConfidenceA2 = 'audio/Music/3_Confidence_A2.ogg'
@@ -812,31 +813,17 @@ label del_4_3:
 #DEL.5
 label del_5:
 
-    anthrax "L’entracte arrivait déjà à sa fin et l’atmosphère était bouillonnante dans les coulisses. Derrière le rideau, les kittens et les régisseur.euse.s s’activaient à déplacer le décor en silence."
-
     play music ShowDelaunay noloop
 
-    play audio CrowdDel1
+    anthrax "L’entracte arrivait déjà à sa fin et l’atmosphère était bouillonnante dans les coulisses. Derrière le rideau, les kittens et les régisseur.euse.s s’activaient à déplacer le décor en silence." 
     anthrax "Soudainement, un spot se braqua sur le velours et un “bang” de trompettes réveilla la foule. Puis une longue jambe dévoila sensuellement sa résille en sortant de l’entrouverture."
-    
-    play audio CrowdDel3
     anthrax "Au rythme de la musique, Delaunay fit son apparition sur le devant de la scène, sous les hurlements des fanatiques du premier rang."
-
-    play audio CrowdDel4
     anthrax "Le temps qu’il ne chauffe la salle, les préparatifs de l’arrière-scène arrivaient à leur fin. Le rideau tomba et dévoila un immense verre à martini duquel s’échappaient des volutes de fumée."
-
     anthrax "Delaunay continuait d'effeuiller son costume jusqu’à grimper l’échelle et s’asseoir, dos courbé, sur le bord du verre."
-
-    play audio CrowdDel2
     anthrax "Laissant la tension gagner le public, il finit par s’y glisser en arrière, laissant l’eau déborder ostensiblement sur la scène."
-    play audio CrowdDel3
     anthrax "Il continua de se déshabiller avec lenteur et adresse, jusqu’à sortir de son corset un sous-vêtement trempé qu’il jeta insolemment."
-
-    queue audio CrowdDel4
     anthrax "L’effet dupait aisément son public et signa la fin de son acte."
-
-    stop music fadeout 4.0
-
+    stop music fadeout 3.0
     anthrax "Il se couvrit d’un long kimono et se fit aider pour descendre sans glisser avant de saluer fièrement les spectateur.ice.s, son make-up intact et un grand sourire aux lèvres."
 
 #Dialogue WIP 
