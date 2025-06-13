@@ -1,4 +1,5 @@
 # fonctions custom
+
 image splash = "splashscreen.png"
 image splash2 = "splashscreen2.png"
 
