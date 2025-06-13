@@ -74,7 +74,7 @@ define config.has_voice = True
 ## diffusé quand le joueur sera sur le menu principal. Ce son se poursuivra dans
 ## le jeu, jusqu’à ce qu'il soit stoppé ou qu’un autre fichier soit joué.
 
-#define config.main_menu_music = 
+define config.main_menu_music = "audio/Music/AP_MainTitle_V1.ogg"
 
 
 ## Transitions #################################################################
