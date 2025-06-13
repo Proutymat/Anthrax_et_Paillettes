@@ -1017,11 +1017,11 @@ init python:
 
 # Liste des sfx
 define type_sounds = ['audio/SFX/TextMix-001.ogg','audio/SFX/TextMix-002.ogg','audio/SFX/TextMix-003.ogg','audio/SFX/TextMix-004.ogg','audio/SFX/TextMix-005.ogg','audio/SFX/TextMix-006.ogg','audio/SFX/TextMix-007.ogg','audio/SFX/TextMix-008.ogg','audio/SFX/TextMix-009.ogg','audio/SFX/TextMix-010.ogg']
-define A_type_sounds = ['audio/SFX/AP_TA-001.ogg','audio/SFX/AP_TA-002.ogg','audio/SFX/AP_TA-003.ogg','audio/SFX/AP_TA-004.ogg']
-define D_type_sounds = ['audio/SFX/AP_T1-001.ogg','audio/SFX/AP_T1-002.ogg','audio/SFX/AP_T1-003.ogg','audio/SFX/AP_T1-004.ogg']
-define M_type_sounds = ['audio/SFX/AP_T2-001.ogg','audio/SFX/AP_T2-002.ogg','audio/SFX/AP_T2-003.ogg','audio/SFX/AP_T2-004.ogg']
-define G_type_sounds = ['audio/SFX/AP_T3-001.ogg','audio/SFX/AP_T3-002.ogg','audio/SFX/AP_T3-003.ogg','audio/SFX/AP_T3-004.ogg'] 
-define P_type_sounds = ['audio/SFX/AP_T4-001.ogg','audio/SFX/AP_T4-002.ogg','audio/SFX/AP_T4-003.ogg','audio/SFX/AP_T4-004.ogg']
+define A_type_sounds = ['audio/SFX/AP_TA-001.ogg','audio/SFX/AP_TA-002.ogg','audio/SFX/AP_TA-003.ogg','audio/SFX/AP_TA-004.ogg','audio/SFX/AP_TA-005.ogg','audio/SFX/AP_TA-006.ogg']
+define D_type_sounds = ['audio/SFX/AP_TL-001.ogg','audio/SFX/AP_TL-002.ogg','audio/SFX/AP_TL-003.ogg','audio/SFX/AP_TL-004.ogg','audio/SFX/AP_TL-005.ogg','audio/SFX/AP_TL-006.ogg']
+define M_type_sounds = ['audio/SFX/AP_TM-001.ogg','audio/SFX/AP_TM-002.ogg','audio/SFX/AP_TM-003.ogg','audio/SFX/AP_TM-004.ogg','audio/SFX/AP_TM-005.ogg','audio/SFX/AP_TM-006.ogg']
+define G_type_sounds = ['audio/SFX/AP_TG-001.ogg','audio/SFX/AP_TG-002.ogg','audio/SFX/AP_TG-003.ogg','audio/SFX/AP_TG-004.ogg','audio/SFX/AP_TG-005.ogg','audio/SFX/AP_TG-006.ogg']
+define P_type_sounds = ['audio/SFX/AP_TP-001.ogg','audio/SFX/AP_TP-002.ogg','audio/SFX/AP_TP-003.ogg','audio/SFX/AP_TP-004.ogg','audio/SFX/AP_TP-005.ogg','audio/SFX/AP_TP-006.ogg']
 define type_silent = ['<silence 1.0>']
 
 # SONS d'UI
@@ -1075,9 +1075,9 @@ define peacock = Character('Peacock', color="#f57600", who_outlines=[(2, "#00000
 define leandre = Character('Léandre', color="#faaf90", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=D_type_sounds)
 define aimee = Character('Aimé.e', color="#054fb9", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=G_type_sounds)
 define imani = Character('Imani', color="#f57600", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=P_type_sounds)
-define inconnu = Character('???', color="#FFFFFF", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50)
+define inconnu = Character('???', color="#FFFFFF", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=G_type_sounds)
 define delinconnu = Character('Del?', color="#faaf90", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=D_type_sounds)
-define player = Character('[player_name]', color="9370db", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
+define player = Character('[player_name]', color="9370db", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50, cb_boopfile=A_type_sounds)
 define staff = Character('Staff', color="#FFFFFF", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50)
 define text = Character(color="#FFFFFF", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=50, callback=type_sound, cb_cps=50)
 
