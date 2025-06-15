@@ -2,9 +2,11 @@
 ## Initialisation
 ################################################################################
 
-default current_textbox = "description"
 
 #Définition sons UI
+
+# Petite fonction pour changer la police à la volée
+
 
 init python:
 
@@ -145,6 +147,8 @@ style frame:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#say
 
+default current_textbox = "description"
+
 screen say(who, what):
     key "K_ESCAPE" action ShowMenu("pause_menu")
 
@@ -161,7 +165,7 @@ screen say(who, what):
                 text who id "who" style "my_say_label" xpos 140 ypos 40
 
             # 💬 Texte principal
-            text what id "what" style "my_say_dialogue" xpos 180 ypos 100 line_spacing 10
+            text what id "what" style "my_say_dialogue" xpos 145 ypos 85 line_spacing 10 size 40
 
     use quick_menu
 
@@ -188,7 +192,7 @@ style my_say_label is default:
 
 style my_say_dialogue is default:
     font "fonts/EBGaramond12-Regular.ttf"
-    size 32
+    size 70
     color "#2e2e2e"
     text_align 0.0
     spacing 40
@@ -759,78 +763,127 @@ style return_button:
 # - Uses categorised_credit_list in init_credit_objects.rpy (initialisation of the list of credit class objects)
 
 # Credits Screen 
+
 screen credits():
     tag menu
 
-    ## This use statement includes the game_menu screen inside this one. The
-    ## vbox child is then included inside the viewport inside the game_menu
-    ## screen.
-    use game_menu(_("2c: two columns, categorised lists"), scroll="viewport"):
+    vbox:
+        at Transform(xalign=0.1, yalign=0.98)
+        imagebutton idle "menuUI/retour_idle.png" hover "menuUI/retour_hover.png" action ShowMenu("backstages")
 
-        style_prefix "about"
+    # Fond
+    add "images/Backgrounds/options_background.png"
 
-        text "Credits:" style "about_header" 
-        null height 100 # manual vertical spacing
+    vbox:
+        at Transform(xalign=0.1, yalign=0.98)
+        imagebutton idle "menuUI/retour_idle.png" hover "menuUI/retour_hover.png" action ShowMenu("backstages")
 
-        # Iterate over the categories
-        for categorised_credits in categorised_credits_list:
+    # Conteneur avec padding haut/bas réduit
+    frame:
+        background None
+        padding (0, 40, 0, 40)  # gauche, haut, droite, bas
+        xfill True
+        yfill True
 
-            # Header for the credits category
-            text categorised_credits.category style "credits_category_header" 
-            null height 50 # manual vertical spacing
+        viewport:
+            scrollbars "vertical"
+            mousewheel True
+            draggable True
+            side_xalign 1.0
 
-            # syntax: grid <amount_columns> <amount_rows>
-            # vpgrid is also an option over grid depending on preference.
-            # NOTE As fas as I know, you can't give fixed coordinates to grid slots, positions are calculated for slots in relation to each other.
-            # Such as having long text strings in first column will push the second column more to the right. Play around with xspacing value for the look you want.
+            # Contenu centré
+            vbox:
+                spacing 50
+                xalign 0.5
 
-            $ amount_credits = len(categorised_credits.credit_list)
-            $ is_odd = amount_credits % 2 == 1
+                frame:
+                    background None
+                    xmaximum 1100
+                    padding (40, 10, 40, 10)
+                    xpos 420
 
-            # // is floor division
-            if is_odd:
-                $ rows = amount_credits // 2 + 1
-            else:
-                $ rows = amount_credits // 2
+                    vbox:
+                        spacing 50
+                        xalign 0.5
 
-            grid 2 rows:            
-                # horizontal spacing
-                xspacing 100
-                # vertical spacing
-                yspacing 100
+                        for categorised_credits in categorised_credits_list:
 
-                # For-loop for Credit blocks
-                for credit in categorised_credits.credit_list:
-                    hbox:
-                        if credit.image_name is not None:
-                            add credit.image_name zoom 0.6
-                        else:
-                            null width 150 # image width in px 
-                            null height 150 # image height in px 
+                            vbox:
+                                spacing 15
+                                xalign 0.5
 
-                        # distance between logo and text
-                        null width 25 
+                                text categorised_credits.category style "credits_category_header" xalign 0.5
 
-                        vbox:
-                            null height 5 # yalign 0.5 is an alternative option, but yalign is more suited when there is equal amount of elements in this vbox
-                            text credit.name style "credits_name_small"
-                            null height 10
-                            text credit.role style "credits_role_small"
-                            null height 10
+                                $ amount_credits = len(categorised_credits.credit_list)
+                                $ is_odd = amount_credits % 2 == 1
+                                $ rows = amount_credits // 2 + is_odd
 
-                            for url_tuple in credit.url_list:
                                 hbox:
-                                    if url_tuple[0] is not None:
-                                        add url_tuple[0]
-                                    else:
-                                        null width 32 # image width in px     
-                                    textbutton _(url_tuple[1]) action OpenURL(url_tuple[1]) style "credits_url_button" text_style "credits_url_text_small"
+                                    xalign 0.5
 
-                # exited for-loop, check if 'null' is necessary to fill up empty space (when elements number is not even)
-                if is_odd:
-                    null
+                                    grid 2 rows:
+                                        xspacing 100
+                                        yspacing 80
 
-            null height 100 # manual vertical spacing
+                                        for credit in categorised_credits.credit_list:
+                                            hbox:
+                                                if credit.image_name:
+                                                    add credit.image_name zoom 0.6
+                                                else:
+                                                    null width 150 height 150
+                                                null width 20
+                                                vbox:
+                                                    text credit.name style "credits_name_small"
+                                                    text credit.role style "credits_role_small"
+                                                    for url_tuple in credit.url_list:
+                                                        hbox:
+                                                            if url_tuple[0]:
+                                                                add url_tuple[0]
+                                                            else:
+                                                                null width 32
+                                                            textbutton _(url_tuple[1]) action OpenURL(url_tuple[1]) style "credits_url_button" text_style "credits_url_text_small"
+
+                                        if is_odd:
+                                            null
+
+## styles: change fonts, colours, et cetera over here
+
+## style definitions
+
+style about_header:
+    size 60
+
+style credits_category_header:
+    size 50
+    font "fonts/EBGaramond12-Regular.ttf"  # adapte à ta font
+    color "#ffffff"
+
+# inherit style from text_button
+style credits_url_button is text_button
+
+
+#########################################################################################################################    
+
+# style definitions only used by template 2
+
+style credits_name_small:
+    size 25
+    bold True
+    font "fonts/EBGaramond12-Regular.ttf"
+    color "#ffffff"
+    text_align 0.0
+
+style credits_role_small:
+    size 20
+    font "fonts/EBGaramond12-Regular.ttf"
+    color "#ffffff"
+    text_align 0.0
+
+# inherit from hyperlink_text
+style credits_url_text_small is hyperlink_text
+style credits_url_text_small:
+    size 15
+
 
 ## Écran « À propos... » #######################################################
 ##
@@ -1095,7 +1148,7 @@ screen preferences():
 
             if renpy.variant("pc") or renpy.variant("web"):
                 vbox:
-                    style_prefix "radio"
+                    style_prefix "check"
                     spacing 10  
                     style "equalized_vbox"
                     label _("Affichage")
@@ -1103,16 +1156,7 @@ screen preferences():
                     textbutton _("Plein écran") action Preference("display", "fullscreen")
 
             vbox:
-                style_prefix "check"
-                spacing 10  
-                style "equalized_vbox"
-                label _("Avance rapide")
-                textbutton _("Texte non lu") action Preference("skip", "toggle")
-                textbutton _("Après les choix") action Preference("after choices", "toggle")
-                textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
-
-            vbox:
-                style_prefix "check"
+                style_prefix "radio"
                 spacing 10 
                 style "equalized_vbox"
                 label _("Langues")
@@ -1121,7 +1165,7 @@ screen preferences():
                     textbutton _(f"{lang.capitalize()}") action Language(lang)
 
             vbox:
-                style_prefix "radio"
+                style_prefix "check"
                 spacing 10 
                 style "equalized_vbox"
                 label _("Effets visuels")
@@ -1185,8 +1229,7 @@ screen preferences():
                 if config.has_music or config.has_sound or config.has_voice:
                     null height -20
                     textbutton _("Couper tous les sons") action Preference("all mute", "toggle") style "text_button" xalign 0.5
-
-                
+             
 style equalized_vbox is vbox:
     minimum (0, 220)
 

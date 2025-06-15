@@ -469,9 +469,19 @@ init python:
 
         ## Changer la taille et l'espacement de diverses choses.
         gui.slider_size = 54
-
-        gui.choice_button_width = 1860
-        gui.choice_button_text_size = 45
+        
+        gui.choice_button_width = 1000
+        gui.choice_button_height = 80
+        gui.choice_button_tile = False
+        gui.choice_button_borders = Borders(0, 0, 0, 0)
+        gui.choice_button_text_size = 25
+        gui.choice_button_text_xalign = 0.5
+        gui.choice_button_text_yalign = 0.5
+        gui.choice_button_text_layout = "subtitle"
+        gui.choice_button_text_text_align = 0.5
+        gui.choice_button_text_idle_color = '#000000'
+        gui.choice_button_text_hover_color = "#ffffff"
+        gui.choice_button_text_insensitive_color = '#7070707f'
 
         gui.navigation_spacing = 30
         gui.pref_button_spacing = 15
