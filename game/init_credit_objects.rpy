@@ -33,7 +33,7 @@ define team_credits_list = [
     ),
     Credit(
         name = "Gabriele ENNAOUAJI",
-        role = "Character Artist & Environment Artist",
+        role = "Character & Environment Artist",
         image_name = "images/crédits/gabriele.png",
         url_list = [
             ("itch-io", "https://gaming-variety-potato.itch.io/"),
