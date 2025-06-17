@@ -152,65 +152,104 @@ show leandre_neutre at del_center with dissolve
 play ambiance AmbLoges fadein 0.5 
 
 #DEL.1
-leandre "Hey... Hum... Je suis content que tu m’aies choisi. Je ne pensais pas trop que ce serait le cas."
+leandre "Hey... Hum... Je suis content que tu m'aies choisi. Je ne pensais pas trop que ce serait le cas."
 
-anthrax "Ah oui? Pourquoi donc?"
+anthrax "Ah oui ? Pourquoi donc ?"
 
 leandre "Oh, je ne sais pas trop. Je suis un peu plus discret que les autres, disons..."
 
-anthrax "Discret? Ce n’est pas cette impression que tu m’as donné.e."
+anthrax "Discret ? Ce n'est pas cette impression que tu m'as donné.e."
 
-leandre "Vraiment? Je suis soulagé alors!"
+leandre "Vraiment ? Je suis soulagé alors !"
+leandre "Est-ce que tu souhaites qu'on discute autour d'un verre au bar ? J'aimerais beaucoup en apprendre plus sur ton drag."
 
-leandre "Est-ce que tu souhaites qu’on discute autour d’un verre au bar? J’aimerais beaucoup en apprendre plus sur ton drag."
+label minichoice_del_1:
+    $ quick_menu = False
+   
+    show leandre_neutre at del_right
+    with fade
+    menu:
+        leandre "Et puis, ce sera plus simple aussi pour t’aider à construire ton acte lorsque Mother te donnera le feu vert."
+        "Je te suis !":
+            pass
+        "J'adorerais !":
+            pass
+        "Ça, je ne dis pas non !":
+            pass
 
-leandre "Et puis, ce sera plus simple aussi pour t’aider à construire ton acte lorsque Mother te donnera le feu vert"
-
-anthrax "Ça, je ne dis pas non!"
 
 
 #DEL.2
-show bar with dissolve
+show bar with fade
+$ quick_menu = True
 play music BarMusic fadein 1.5 volume 0.5
 play ambiance BarDay fadein 0.5
 play music BarMusic volume 0.5
 
-anthrax "Nous sommes arrivé.e.s dans l'auditorium et nous sommes approché.e.s du comptoir derrière lequel brillaient un mur de bouteilles de formes et couleurs uniques. Le paradis du parfait mixologue."
-anthrax "Nous avions depuis le bar une vue imprenable sur la scène, légèrement en contrebas. Les tablées y étaient déjà dressées et se regroupaient autour du big band et de l'estrade secondaire au centre de la pièce."
-anthrax "L'immense lustre duquel pendaient des larmes de verre reflétait les spots de lumière à la manière d'une boule à facettes sur le papier peint texturé. Léandre s'assît sur l'une des chaises hautes de bois verni et commanda une citronnade au barman, et moi un allongé."
+$ current_textbox = "description" 
+text "Nous sommes arrivé.e.s dans l'auditorium et nous sommes approché.e.s du comptoir derrière lequel brillaient un mur de bouteilles aux couleurs uniques."
+text "Nous avions depuis le bar une vue imprenable sur la scène, légèrement en contrebas."
+text "Les tablées y étaient déjà dressées et se regroupaient autour du big band et de l'estrade secondaire au centre de la pièce."
+text "L'immense lustre duquel pendaient des larmes de verre reflétait les spots de lumière à la manière d'une boule à facettes sur le papier peint texturé."
+text "Léandre s'assît sur l'une des chaises hautes de bois verni et commanda un Cosmo au barman."
+
+$ current_textbox = "anthrax"
+label minichoice_del_2:
+    $ quick_menu = False
+   
+    show leandre_neutre at del_right
+    with fade
+    menu:
+        leandre "Est-ce que tu sais déjà quoi commander ?"
+        "Un Pornstar Martini.":
+            pass
+        "Un Negroni Sbagliato, avec une pointe de prosecco.":
+            pass
+        "Une citronnade bien fraîche.":
+            pass
+
+$ quick_menu = True
 
 leandre "Alors dis-moi, qu’est-ce qui t’amène ici ?"
 
 anthrax "M-Moi ? Comme ça ? Directement ?"
 
-leandre "Eh bien... Oui ? Enfin, ça me semblait être un bon début de conversation..."
+leandre "Euh... Oui ? Enfin, ça me semblait être un bon début de conversation..."
 
-anthrax "Oh. Eh bien... J’ai commencé le drag dans le confort de mon appart, sur les réseaux sociaux. Je n’ai jamais mis les pieds dans une troupe. Ou même un cabaret pour tout te dire."
-anthrax "C’est un peu impressionnant. Je me demande si j’ai ma place. Je ne réalise pas que je l’ai remportée, cette audition."
+anthrax "Oh. Eh bien... J’ai commencé le drag dans le confort de mon appart, sur les réseaux sociaux. "
+anthrax "Je n’ai jamais mis les pieds dans une troupe. Ou même un cabaret pour tout te dire."
 anthrax "J'ai toujours été attiré.e par le burlesque, les plumes, le vintage, l'impétueux..."
-anthrax "Je ne réalise pas que je l'ai remportée, cette audition."
 
-leandre "Hm... C’est bien le genre de Mother de recruter quelqu’un de ton acabit. Plein.e de potentiel, mais qui ne sait pas par où commencer. J’étais exactement pareil."
+leandre "Hm... C’est bien le genre de Mother de recruter quelqu’un de ton acabit. Plein.e de potentiel, mais ne sachant pas par où commencer."
 
-anthrax "Ça fait longtemps que tu as intégré la troupe ?"
 
-leandre "Environ cinq ans je dirais ? Techniquement, je suis le doyen, parmi les autres que tu as croisé.e.s tout à l’heure."
-leandre "Enfin, officiellement, Imani a travaillé ici depuis plus longtemps, mais n’a intégré la troupe que depuis deux ans."
+label minichoice_del_3:
+    $ quick_menu = False
+   
+    show leandre_neutre at del_right
+    with fade
+    menu:
+        leandre "J’étais exactement pareil..."
+        "Ça fait longtemps que tu as intégré la troupe ?":
+            pass
+        "Depuis combien de temps est-ce que tu es là?":
+            pass
+        "Vous devez bien vous connaître, avec les autres, depuis le temps...":
+            pass
+
+$ quick_menu = True
+
+
+leandre "Environ cinq ans je dirais? Techniquement, je suis le doyen, parmi les autres que tu as croisé.e.s tout à l'heure."
+leandre "Enfin, officiellement, Imani a travaillé ici depuis plus longtemps, mais n'a intégré la troupe qu'il y a seulement deux ans."
 leandre "Et Aimé.e est arrivé.e peut-être un an après moi ?"
 leandre "Techniquement, cela fait déjà des années que l’on se côtoie."
+leandre "Quelques collègues sont parti.e.s, revenue.s, mais au final nous sommes les trois qui ayons tenu sur le long terme."
 
-anthrax "Ah oui. Tout de même... Et il y a eu du roulement dans l’équipe ?"
-
-leandre "Et bien, quelques collègues sont parti.e.s, revenu.e.s, mais au final nous sommes les trois qui ayons tenu sur le long terme."
-leandre "Et puis, comparé.e.s aux autres, nous n’avons pas fait trop d’histoires. C’est beaucoup pour ces raisons que les contrats cassent, malgré toute la bonne volonté que l’on puisse y mettre."
-
-anthrax "Et toi ? Qu’est-ce qui t’a lancé dans le drag ?"
+anthrax "Et toi ? Qu’est-ce qui t’as lancé dans le drag ?"
 
 leandre "Et bien... J’étais en train de décrocher des études, j’étais dans la panade financière, j’étais en pleine découverte de mon identité de genre."
-leandre "Vraiment, une vraie crise de la vingtaine... J’en ris maintenant, mais ce n’était pas du tout drôle à l’époque."
-leandre "Et finalement, Mother m’a pris sous son aile et m’a aidé à me sortir de tout cela."
-
-
+leandre "Une vraie crise de la vingtaine... J'en ris maintenant, mais ce n'était pas du tout drôle à l'époque."
 
 #Choix DEL.2
 label choix_del2:
@@ -234,50 +273,65 @@ label del_2_1:
     
     show leandre_neutre at del_center
     with fade
-
-    anthrax "Oh ! Tu as transitionné ?"
+#lovometer +1
+    anthrax "Oh ! Tu as transitionné ?"  
 
     leandre "Oui ! Ça ne se voit pas ?"
 
     anthrax "Ça dépend... Tu as un très bon passing. Mais ce n'est pas la première question que je me pose en rencontrant quelqu'un."
 
-    leandre "C'est vrai que dit comme ça, ça a l'air plutôt normal. Je suis toujours persuadé que ça se lit sur mon front tellement ça fait partie de moi. J'ai tendance à oublier que ce n'est pas si commun que ça."
+    leandre "C'est vrai que dit comme ça, ça a l'air plutôt normal. Je suis toujours persuadé que ça se lit sur mon front tellement ça fait partie de moi."
+    leandre "J'ai tendance à oublier que ce n'est pas si commun que ça."
 
     anthrax "J'ai aussi envie de dire que l'on est dans une troupe de drag. J'aurais dû m'y attendre un minimum..."
 
-    leandre "Pas faux... Mais bon, nous sommes une troupe particulièrement hétéroclite. *Pun intended.*"
+label minichoice_del_4:
+    $ quick_menu = False
+   
+    show leandre_neutre at del_right
+    with fade
+    menu:
+        leandre "Pas faux... Mais bon, nous sommes une troupe particulièrement hétéroclite. Blague à part!"
+        "Ça n'a pas été trop dur? Enfin, si ce n'est pas indiscret.":
+            pass
+        "Comment as-tu réussi à t'en sortir?":
+            pass
+        "Ça a dû être une sacrée épreuve, tout de même...":
+            pass
 
-    anthrax "Ça n'a pas été trop dur ? Enfin, si ce n'est pas indiscret."
 
-    leandre "Dur ? Hm..."
+    $ quick_menu = True
 
     leandre "En toute honnêteté, c'était l'enfer. Mais j'ai eu la chance d'être bien entouré."
-
     leandre "Et j'ai commencé le drag à peu près à cette période, donc c'était très utile pour m'aider à combattre la dysphorie de genre."
 
     anthrax "D'où le fait que tu fasses du drag king, je suppose."
 
     leandre "C'est exact..."
-
     leandre "Après, mon drag s'est \"re\"féminisé dernièrement."
-
     leandre "Après tout, ma masculinité n'est pas la même que celle des hommes cisgenres, et hétéros."
 
-    leandre "Et je tire une bonne partie de ma fierté queer, de ma transition."
+label minichoice_del_5:
+    $ quick_menu = False
+   
+    show leandre_neutre at del_right
+    with fade
+    menu:
+        leandre "Et je tire une bonne partie de ma fierté queer, de ma transition."
+        "Qu'est-ce que tu entends par là ?":
+            pass
+        "Je ne comprends pas...":
+            pass
+        "Peux-tu préciser? J'ai dû mal à saisir la nuance.":
+            pass
 
-    anthrax "Qu'est-ce que tu entends par là ?"
+    $ quick_menu = True
 
-    leandre "J'entends que si je devais renaître, je ne choisirais pas de le faire dans un corps d'homme,"
-
+    leandre "J'entends que si je devais renaître, je ne choisirais pas de le faire dans un corps d'homme cis..."
     leandre "Et que je me relancerais dans le même parcours de vie."
-
-    leandre "Je n'ai aucun regret et je n'échangerais pour rien au monde cette expérience."
-
-    leandre "Après tout, est-ce que ce n'est pas le bonheur d'avoir pu expérimenter les deux genres ?"
-
+    leandre "Je n'échangerais pour rien au monde cette expérience."
     leandre "D'avoir grandi comme j'ai grandi, d'avoir connu la sororité et les difficultés liées à la vie de femme ?"
-
-    leandre "Cette empathie, cette solidarité, cette bienveillance, elle me sont très précieuses."
+    leandre "Cette empathie, en tant qu'homme, m'est très précieuse."
 
     stop music fadeout 1.0
     stop ambiance fadeout 1.0
@@ -293,38 +347,53 @@ label del_2_2:
     anthrax "Et comment est-ce que tu as rencontré Mother ?"
 
     leandre "C'est un peu bête, vraiment..."
-
     leandre "Je me suis fait traîner ici par des ami.e.s pour un spectacle, mais iels ont eu un empêchement de dernière minute."
+    leandre "Du coup je me suis retrouvé tout seul... Comme les endroits avec beaucoup de monde et personne que je connais m'angoissent beaucoup, j'ai bu..."
 
-    leandre "Du coup je me suis retrouvé tout seul... Comme les endroits avec beaucoup de monde et personne que je connais m'angoissent beaucoup, j'ai bu pour essayer de me détendre et rencontrer du monde."
+label minichoice_del_6:
+    $ quick_menu = False
+   
+    show leandre_neutre at del_right
+    with fade
+    menu:
+        leandre "Mother m'a approché puisqu'elle s'inquiétait de mon état et on a fini par discuter pendant que je déssoûlais."
+        "Ah oui... Une sacrée histoire finalement.":
+            pass
+        "C'était un peu des enfoirés, tes potes...":
+            pass
+        "C'est dommage que ça t'ai mis dans de tels états !":
+            pass
 
-    leandre "Au final, je suis juste resté assis au comptoir et je me suis pris une cuite... J'en suis pas super fier."
 
-    leandre "Mother m'a approché puisqu'elle s'inquiétait de mon état et on a fini par discuter pendant que je désaoulais."
-
-    anthrax "Ah oui... Une sacrée histoire finalement."
+    $ quick_menu = True
 
     leandre "Je n'étais pas très flambant... Ce n'est pas une période de ma vie dont je suis très fier."
-
     leandre "Ce soir-là, Mother m'a passé son contact et invité à repasser de temps en temps. Et comme je n'avais pas trop de repères, c'est là où je me suis ancré."
 
     anthrax "Et tu as fini par intégrer la troupe."
 
     leandre "E-Et bien... Ça ne s'est pas fait de suite évidemment... Mais ultimement, oui."
-
-    leandre "C'était un peu informel, mais elle m'a fait visiter L'Androgame de fond en comble et initié au drag en m'emmenant dans les coulisses avec les danseuses de semaine."
-
+    leandre "C'était un peu informel, mais elle m'a fait visiter L'Androgame de fond en comble..."
+    leandre "Et initié au drag en m'emmenant dans les coulisses avec les danseuses de semaine et racontant sa vie."
     leandre "Tout du long, elle soulignait qu'elle comptait monter une troupe secondaire, exclusivement queer."
-
     leandre "\"Une manière de rendre à la communauté\", qu'elle disait. Son plan était de réserver au moins un soir de grande affluence en semaine au drag."
 
-    leandre "Pas besoin de préciser que ça a fonctionné bien plus qu'elle ne le pensait..."
 
-    anthrax "C'est vrai que la majorité des soirées sont réservées maintenant aux \"Paillettes\"."
+label minichoice_del_7:
+    $ quick_menu = False
+   
+    show leandre_neutre at del_right
+    with fade
+    menu:
+        leandre "Pas besoin de préciser que ça a fonctionné bien plus qu'elle ne le pensait..."
+        "C'est vrai que la majorité des soirées sont réservées maintenant aux \"Paillettes\".":
+            pass
+        "Je n'ai d'ailleurs connu L'Androgame qu'à partir du moment où la communauté à commencé à se réveiller et partager ce qu'il s'y passait.":
+            pass
+        "C'est aussi pour cette raison que j'avais envie de venir.":
+            pass
 
-    anthrax "Je n’ai d’ailleurs connu L’Androgame qu’à partir du moment où la communauté a commencé à se réveiller et partager ce qu’il s’y passait."
-
-    anthrax "C’est aussi pour cette raison que j’avais envie de venir."
+    $ quick_menu = True
 
     stop music fadeout 1.0
     stop ambiance fadeout 1.0
@@ -340,32 +409,41 @@ label del_2_3:
     anthrax "J'ai remarqué qu'Aimé.e finissait beaucoup tes phrases. Est-ce que tu es toujours aussi timide ?"
 
     leandre "Hm... La plupart du temps oui. Mais c'est quelque chose que j'essaye de travailler."
-
     leandre "J'ai toujours été assez réservé et discret. Je prends plutôt bien sa démarche puisque je ne réussis pas encore à aussi bien m'imposer qu'ellui."
-
     leandre "Je préfère ça à m'effacer dans le décor comme je le faisais avant..."
-
     leandre "Et iel est très compréhensif.ve lorsque je sens que je suis capable de m'exprimer et que j'en fais part."
 
     anthrax "C'est donc d'un commun accord..."
 
-    leandre "Un accord tacite, oui. Mais qui nous convient et nous ressemble bien..."
+    leandre "Tacite, oui. Mais qui nous convient et ressemble bien..."
 
     leandre "Ça ne l'empêche pas non plus de me taquiner et d'essayer de me faire sortir de mes gonds."
 
-    leandre "C'est challengeant, et ça a déjà marché. Même Imani s'est retrouvée assez surprise."
 
-    anthrax "J'ai très envie de voir ça maintenant ! Mais il y a une raison derrière tout cela ?"
+label minichoice_del_8:
+    $ quick_menu = False
+   
+    show leandre_neutre at del_right
+    with fade
+    menu:
+        leandre "C'est challengeant, et ça a déjà marché. Même Imani s'est retrouvée assez surprise."
+        "J'ai très envie de voir ça maintenant! Mais il y a une raison derrière tout cela ?":
+            pass
+        "Vous semblez être de très bon.ne.s ami.e.s, mais pourquoi ?":
+            pass
+        "C'est le genre de chose que je ne supporterais pas... Que l'on parle à ma place.":
+            pass
 
-    leandre "Pas vraiment... Je n'ai juste jamais eu une grande confiance en moi, et le regard des autres m'a toujours semblé particulièrement lourd à porter."
 
-    leandre "Lorsqu'une situation était trop embarrassante, je choisissais toujours la fuite. Ou le déni, au choix. C'est devenu ma façon d'être, et les handicaps qui viennent avec."
+    $ quick_menu = True
 
+    leandre "Je n'ai juste jamais eu une grande confiance en moi, et le regard des autres m'a toujours semblé particulièrement lourd à porter."
+    leandre "Lorsqu'une situation était trop embarrassante, je choisissais toujours la fuite. Ou le déni, au choix."
+    leandre "C'est devenu ma façon d'être, et les handicaps qui viennent avec."
     leandre "C'est pour ça que le drag est particulièrement rassurant... L'espace d'un instant, je peux être entièrement quelqu'un d'autre."
-
     leandre "Quelqu'un de ma création, que je contrôle, qui me protège, derrière lequel je peux me cacher et extérioriser le fond de ma pensée."
-
-    leandre "Il n'y a pas vraiment d'autre forme d'expression qui permet cela... Le théâtre peut-être, mais encore, le personnage y est déjà existant et incarné... Pas un reflet d'une personnalité que j'aimerais affirmer."
+    leandre "Il n'y a pas vraiment d'autre forme d'expression qui permet cela... Le théâtre peut-être ? Mais encore, le personnage y est déjà existant et incarné..."
+    leandre "Pas un reflet d'une personnalité que j'aimerais affirmer."
 
     anthrax "La nuance est fine, mais je crois comprendre ce que tu sous-entends."
 
@@ -376,22 +454,53 @@ label del_2_3:
 #DEL.3
 label del_3:
 
+# faire la transition avec la description sur fond noir comme sur l'onboarding
+    hide loges withe dissolve
+    hide leandre_neutre with dissolve
+    hide bar with dissolve
+
+    show curtain_close
+    scene black with dissolve
+    
+
+
     play music ConfidenceIntro
 
+    $ current_textbox = "description"
     text "Cela faisait plusieurs minutes que je cherchais Léandre, avec qui j'étais supposé.e répéter une partie de mon numéro, que l'on construisait ensemble."
-
-    text "Après avoir fait trois fois le tour du lobby, des backstages, être retourné.e tout autant de fois dans les loges, je finis par retourner sur les planches de la scène, pensif.ve."
-
+    text "Après avoir fait trois fois le tour du bâtiment, je finis par retourner sur les planches de la scène, pensif.ve."
     text "Et en toute honnêteté, un peu inquiet.e."
 
     queue music ConfidenceA1
 
-    text "C'est alors que j'aperçus une tignasse blonde depuis le haut du balcon, absorbée par le contenu de son téléphone. N'ayant pas pensé à lever le regard, je grimpai l'escalier en colimaçon pour le rejoindre, à tâtons."
+    text "C'est alors que j'aperçu une tignasse blonde depuis le haut du balcon, absorbée par le contenu de son téléphone."
+    text "N'ayant pas pensé à lever le regard, je grimpai l'escalier en colimaçon pour le rejoindre, à tâtons."
 
-    anthrax "Hey... Je me demandais où tu étais passé."
+
+    show auditorium
+    #show leandre_neutre at del_right with dissolve
+
+label minichoice_del_9:
+    $ quick_menu = False
+    
+    show sadness at sadness_right
+    show leandre_neutre at del_right
+    with fade
+    menu:
+        
+        "Hey... Je me demandais où tu étais passé.":
+            pass
+        "Léandre! Ça fait un moment que je te cherche!":
+            pass
+        "Alors c'était là où tu te cachais...~":
+            pass
+
+
+    $ quick_menu = True
+
+    $ current_textbox = "anthrax"
 
     leandre "Oh !"
-
     leandre "Pardon, je n'ai pas vu l'heure tourner."
 
     anthrax "Est-ce que tout va bien ? Tu as l'air soucieux."

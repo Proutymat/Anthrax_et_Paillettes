@@ -112,7 +112,7 @@ image balcon = "Backgrounds/balcon.png"
 
 
 
-image curtain_open = Animation(
+image curtain_open:
     "images/VFX/Curtain_Open/Curtain_Open_00000.png", 0.04,
     "images/VFX/Curtain_Open/Curtain_Open_00001.png", 0.04,
     "images/VFX/Curtain_Open/Curtain_Open_00002.png", 0.04,
@@ -153,49 +153,72 @@ image curtain_open = Animation(
     "images/VFX/Curtain_Open/Curtain_Open_00037.png", 0.04,
     "images/VFX/Curtain_Open/Curtain_Open_00038.png", 0.04,
     "images/VFX/Curtain_Open/Curtain_Open_00039.png", 0.04
-)
+    "images/Backgrounds/transparent_background.png"
+    
 
 
-image curtain_close = Animation(
-    "images/VFX/Curtain_Close/Curtain_Clone_00022.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00023.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00024.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00025.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00026.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00027.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00028.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00029.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00030.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00031.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00032.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00033.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00034.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00035.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00036.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00037.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00038.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00039.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00040.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00041.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00042.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00043.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00044.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00045.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00046.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00047.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00048.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00049.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00050.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00051.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00052.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00053.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00054.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00055.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00056.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00057.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00058.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00059.png", 0.04
-)
+
+image curtain_close:
+    "images/VFX/Curtain_Close/Curtain_Close_00000.png", 0.02,
+    "images/VFX/Curtain_Close/Curtain_Close_00001.png", 0.02,
+    "images/VFX/Curtain_Close/Curtain_Close_00002.png", 0.02,
+    "images/VFX/Curtain_Close/Curtain_Close_00003.png", 0.02,
+    "images/VFX/Curtain_Close/Curtain_Close_00004.png", 0.02,
+    "images/VFX/Curtain_Close/Curtain_Close_00005.png", 0.02,
+    "images/VFX/Curtain_Close/Curtain_Close_00006.png", 0.02,
+    "images/VFX/Curtain_Close/Curtain_Close_00007.png", 0.02,
+    "images/VFX/Curtain_Close/Curtain_Close_00008.png", 0.02,
+    "images/VFX/Curtain_Close/Curtain_Close_00009.png", 0.02,
+    "images/VFX/Curtain_Close/Curtain_Close_00010.png", 0.02,
+    "images/VFX/Curtain_Close/Curtain_Close_00011.png", 0.02,
+    "images/VFX/Curtain_Close/Curtain_Close_00012.png", 0.02,
+    "images/VFX/Curtain_Close/Curtain_Close_00013.png", 0.02,
+    "images/VFX/Curtain_Close/Curtain_Close_00014.png", 0.02,
+    "images/VFX/Curtain_Close/Curtain_Close_00015.png", 0.02,
+    "images/VFX/Curtain_Close/Curtain_Close_00016.png", 0.02,
+    "images/VFX/Curtain_Close/Curtain_Close_00017.png", 0.02,
+    "images/VFX/Curtain_Close/Curtain_Close_00018.png", 0.02,
+    "images/VFX/Curtain_Close/Curtain_Close_00019.png", 0.02,
+    "images/VFX/Curtain_Close/Curtain_Close_00020.png", 0.02,
+    "images/VFX/Curtain_Close/Curtain_Close_00021.png", 0.02,
+    "images/VFX/Curtain_Close/Curtain_Close_00022.png", 0.02,
+    "images/VFX/Curtain_Close/Curtain_Close_00023.png", 0.02,
+    "images/VFX/Curtain_Close/Curtain_Close_00024.png", 0.02,
+    "images/VFX/Curtain_Close/Curtain_Close_00025.png", 0.02,
+    "images/VFX/Curtain_Close/Curtain_Close_00026.png", 0.02,
+    "images/VFX/Curtain_Close/Curtain_Close_00027.png", 0.02,
+    "images/VFX/Curtain_Close/Curtain_Close_00028.png", 0.02,
+    "images/VFX/Curtain_Close/Curtain_Close_00029.png", 0.02,
+    "images/VFX/Curtain_Close/Curtain_Close_00030.png", 0.02,
+    "images/VFX/Curtain_Close/Curtain_Close_00031.png", 0.02,
+    "images/VFX/Curtain_Close/Curtain_Close_00032.png", 0.02,
+    "images/VFX/Curtain_Close/Curtain_Close_00033.png", 0.02,
+    "images/VFX/Curtain_Close/Curtain_Close_00034.png", 0.02,
+    "images/VFX/Curtain_Close/Curtain_Close_00035.png", 0.02,
+    "images/VFX/Curtain_Close/Curtain_Close_00036.png", 0.02,
+    "images/VFX/Curtain_Close/Curtain_Close_00037.png", 0.02,
+    "images/VFX/Curtain_Close/Curtain_Close_00038.png", 0.02,
+    "images/VFX/Curtain_Close/Curtain_Close_00039.png", 0.02,
+    "images/VFX/Curtain_Close/Curtain_Close_00040.png", 0.02,
+    "images/VFX/Curtain_Close/Curtain_Close_00041.png", 0.02,
+    "images/VFX/Curtain_Close/Curtain_Close_00042.png", 0.02,
+    "images/VFX/Curtain_Close/Curtain_Close_00043.png", 0.02,
+    "images/VFX/Curtain_Close/Curtain_Close_00044.png", 0.02,
+    "images/VFX/Curtain_Close/Curtain_Close_00045.png", 0.02,
+    "images/VFX/Curtain_Close/Curtain_Close_00046.png", 0.02,
+    "images/VFX/Curtain_Close/Curtain_Close_00047.png", 0.02,
+    "images/VFX/Curtain_Close/Curtain_Close_00048.png", 0.02,
+    "images/VFX/Curtain_Close/Curtain_Close_00049.png", 0.02,
+    "images/VFX/Curtain_Close/Curtain_Close_00050.png", 0.02,
+    "images/VFX/Curtain_Close/Curtain_Close_00051.png", 0.02,
+    "images/VFX/Curtain_Close/Curtain_Close_00052.png", 0.02,
+    "images/VFX/Curtain_Close/Curtain_Close_00053.png", 0.02,
+    "images/VFX/Curtain_Close/Curtain_Close_00054.png", 0.02,
+    "images/VFX/Curtain_Close/Curtain_Close_00055.png", 0.02,
+    "images/VFX/Curtain_Close/Curtain_Close_00056.png", 0.02,
+    "images/VFX/Curtain_Close/Curtain_Close_00057.png", 0.02
+    "images/Backgrounds/transparent_background.png"
+
 
 
 image flirt = Animation(
