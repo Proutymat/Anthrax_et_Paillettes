@@ -24,19 +24,19 @@ translate English strings:
 
     # game/screens.rpy:954
     old "Sauvegarde"
-    new ""
+    new "save"
 
     # game/screens.rpy:966
     old "Page {}"
-    new ""
+    new "Page"
 
     # game/screens.rpy:966
     old "Sauvegardes automatiques"
-    new ""
+    new "Auto save"
 
     # game/screens.rpy:966
     old "Sauvegardes rapides"
-    new ""
+    new "Quick save"
 
     # game/screens.rpy:1033
     old "{#file_time}%A %d %B %Y, %H:%M"
@@ -44,7 +44,7 @@ translate English strings:
 
     # game/screens.rpy:1033
     old "emplacement vide"
-    new ""
+    new "Empty slot"
 
     # game/screens.rpy:1053
     old "<"
@@ -68,27 +68,27 @@ translate English strings:
 
     # game/screens.rpy:1154
     old "Affichage"
-    new ""
+    new "Screen settings"
 
     # game/screens.rpy:1155
     old "Fenêtre"
-    new ""
+    new "Windowed"
 
     # game/screens.rpy:1156
     old "Plein écran"
-    new ""
+    new "Full screen"
 
     # game/screens.rpy:1162
     old "Langues"
-    new ""
+    new "Languages"
 
     # game/screens.rpy:1163
     old "Français"
-    new ""
+    new "French"
 
     # game/screens.rpy:1171
     old "Effets visuels"
-    new ""
+    new "Visual effects"
 
     # game/screens.rpy:1184
     old "Vitesse du texte"
@@ -100,27 +100,27 @@ translate English strings:
 
     # game/screens.rpy:1212
     old "Volume de la musique"
-    new ""
+    new "Music volume"
 
     # game/screens.rpy:1216
     old "Volume des sons"
-    new ""
+    new "Sounds volume"
 
     # game/screens.rpy:1220
     old "Test"
-    new ""
+    new "Test"
 
     # game/screens.rpy:1223
     old "Volume des voix"
-    new ""
+    new "Voice Volume"
 
     # game/screens.rpy:1231
     old "Couper tous les sons"
-    new ""
+    new "Mute"
 
     # game/screens.rpy:1400
     old "L'historique des dialogues est vide."
-    new ""
+    new "The journal is empty"
 
     # game/screens.rpy:1489
     old "Clavier"
@@ -272,11 +272,11 @@ translate English strings:
 
     # game/screens.rpy:1731
     old "Choisis le prénom d'Anthräx, ton personnage :"
-    new ""
+    new "Choose Anthräx's name, your caracther :"
 
     # game/screens.rpy:1739
     old "Valider"
-    new ""
+    new "Confirm"
 
     # game/screens.rpy:1819
     old "Avance rapide"
