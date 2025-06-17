@@ -323,71 +323,25 @@ image angry = Animation(
 
 
 image joy = Animation(
-    "images/VFX/Joy/Joy_00001.png", 0.04,
-    "images/VFX/Joy/Joy_00002.png", 0.04,
-    "images/VFX/Joy/Joy_00003.png", 0.04,
-    "images/VFX/Joy/Joy_00004.png", 0.04,
-    "images/VFX/Joy/Joy_00005.png", 0.04,
-    "images/VFX/Joy/Joy_00006.png", 0.04,
-    "images/VFX/Joy/Joy_00007.png", 0.04,
-    "images/VFX/Joy/Joy_00008.png", 0.04,
-    "images/VFX/Joy/Joy_00009.png", 0.04,
-    "images/VFX/Joy/Joy_00010.png", 0.04,
-    "images/VFX/Joy/Joy_00011.png", 0.04,
-    "images/VFX/Joy/Joy_00012.png", 0.04,
-    "images/VFX/Joy/Joy_00013.png", 0.04,
-    "images/VFX/Joy/Joy_00014.png", 0.04,
-    "images/VFX/Joy/Joy_00015.png", 0.04,
-    "images/VFX/Joy/Joy_00016.png", 0.04,
-    "images/VFX/Joy/Joy_00017.png", 0.04,
-    "images/VFX/Joy/Joy_00018.png", 0.04,
-    "images/VFX/Joy/Joy_00019.png", 0.04,
-    "images/VFX/Joy/Joy_00020.png", 0.04,
-    "images/VFX/Joy/Joy_00021.png", 0.04,
-    "images/VFX/Joy/Joy_00022.png", 0.04,
-    "images/VFX/Joy/Joy_00023.png", 0.04,
-    "images/VFX/Joy/Joy_00024.png", 0.04,
-    "images/VFX/Joy/Joy_00025.png", 0.04,
-    "images/VFX/Joy/Joy_00026.png", 0.04,
-    "images/VFX/Joy/Joy_00027.png", 0.04,
-    "images/VFX/Joy/Joy_00028.png", 0.04,
-    "images/VFX/Joy/Joy_00029.png", 0.04,
-    "images/VFX/Joy/Joy_00030.png", 0.04,
-    "images/VFX/Joy/Joy_00031.png", 0.04,
-    "images/VFX/Joy/Joy_00032.png", 0.04,
-    "images/VFX/Joy/Joy_00033.png", 0.04,
-    "images/VFX/Joy/Joy_00034.png", 0.04,
-    "images/VFX/Joy/Joy_00035.png", 0.04,
-    "images/VFX/Joy/Joy_00036.png", 0.04,
-    "images/VFX/Joy/Joy_00037.png", 0.04,
-    "images/VFX/Joy/Joy_00038.png", 0.04,
-    "images/VFX/Joy/Joy_00039.png", 0.04,
-    "images/VFX/Joy/Joy_00040.png", 0.04,
-    "images/VFX/Joy/Joy_00041.png", 0.04,
-    "images/VFX/Joy/Joy_00042.png", 0.04,
-    "images/VFX/Joy/Joy_00043.png", 0.04,
-    "images/VFX/Joy/Joy_00044.png", 0.04,
-    "images/VFX/Joy/Joy_00045.png", 0.04,
-    "images/VFX/Joy/Joy_00046.png", 0.04,
-    "images/VFX/Joy/Joy_00047.png", 0.04,
-    "images/VFX/Joy/Joy_00048.png", 0.04,
-    "images/VFX/Joy/Joy_00049.png", 0.04,
-    "images/VFX/Joy/Joy_00050.png", 0.04,
-    "images/VFX/Joy/Joy_00051.png", 0.04,
-    "images/VFX/Joy/Joy_00052.png", 0.04,
-    "images/VFX/Joy/Joy_00053.png", 0.04,
-    "images/VFX/Joy/Joy_00054.png", 0.04,
-    "images/VFX/Joy/Joy_00055.png", 0.04,
-    "images/VFX/Joy/Joy_00056.png", 0.04,
-    "images/VFX/Joy/Joy_00057.png", 0.04,
-    "images/VFX/Joy/Joy_00058.png", 0.04,
-    "images/VFX/Joy/Joy_00059.png", 0.04,
-    "images/VFX/Joy/Joy_00060.png", 0.04,
-    "images/VFX/Joy/Joy_00061.png", 0.04,
-    "images/VFX/Joy/Joy_00062.png", 0.04,
-    "images/VFX/Joy/Joy_00063.png", 0.04,
-    "images/VFX/Joy/Joy_00064.png", 0.04,
-    "images/VFX/Joy/Joy_00065.png", 0.04
+    "images/VFX/Joy/Joy_00001.png", 0.06,
+    "images/VFX/Joy/Joy_00002.png", 0.06,
+    "images/VFX/Joy/Joy_00003.png", 0.06,
+    "images/VFX/Joy/Joy_00004.png", 0.06,
+    "images/VFX/Joy/Joy_00005.png", 0.06,
+    "images/VFX/Joy/Joy_00006.png", 0.06,
+    "images/VFX/Joy/Joy_00007.png", 0.06,
+    "images/VFX/Joy/Joy_00008.png", 0.06,
+    "images/VFX/Joy/Joy_00009.png", 0.06,
+    "images/VFX/Joy/Joy_00010.png", 0.06,
+    "images/VFX/Joy/Joy_00011.png", 0.06,
+    "images/VFX/Joy/Joy_00012.png", 0.06,
+    "images/VFX/Joy/Joy_00013.png", 0.06,
+    "images/VFX/Joy/Joy_00014.png", 0.06,
+    "images/VFX/Joy/Joy_00015.png", 0.06,
+    "images/VFX/Joy/Joy_00016.png", 0.06,
+    "images/VFX/Joy/Joy_00017.png", 0.06,
+    "images/VFX/Joy/Joy_00018.png", 0.06,
+    "images/VFX/Joy/Joy_00019.png", 0.06
 )
 
 image sadness = Animation(
@@ -1122,11 +1076,19 @@ label start:
     if player_name == "":
         $ player_name = "Anthräx"
 
-    call screen name_confirm_screen(
-    message="Tu veux bien garder [player_name] ?",
-    yes_action=Jump("onboarding"),
-    no_action=Jump("start"),
-    style_prompt="confirm_prompt_text")
+    if _preferences.language == "English":
+        call screen name_confirm_screen(
+        message="Would you keep [player_name] ?",
+        yes_action=Jump("onboarding"),
+        no_action=Jump("start"),
+        style_prompt="confirm_prompt_text")
+
+    else:
+        call screen name_confirm_screen(
+        message="Tu veux bien garder [player_name] ?",
+        yes_action=Jump("onboarding"),
+        no_action=Jump("start"),
+        style_prompt="confirm_prompt_text")
 
 
 
@@ -1400,7 +1362,7 @@ label onboarding:
 label route_choice_intro:
     show loges 
     show mother at mother_center
-    mother "Alors [player], si tu devais choisir l'un de mes \"babies\" comme marrain ou parraine, qui est-ce que tu désignerais ?" with fade
+    mother "Alors [player_name], si tu devais choisir l'un de mes \"babies\" comme marrain ou parraine, qui est-ce que tu désignerais ?" with fade
     hide loges 
     hide devanture 
     hide mother with dissolve
