@@ -1045,6 +1045,11 @@ define M_type_sounds = ['audio/SFX/AP_TM-001.ogg','audio/SFX/AP_TM-002.ogg','aud
 define G_type_sounds = ['audio/SFX/AP_TG-001.ogg','audio/SFX/AP_TG-002.ogg','audio/SFX/AP_TG-003.ogg','audio/SFX/AP_TG-004.ogg','audio/SFX/AP_TG-005.ogg','audio/SFX/AP_TG-006.ogg']
 define P_type_sounds = ['audio/SFX/AP_TP-001.ogg','audio/SFX/AP_TP-002.ogg','audio/SFX/AP_TP-003.ogg','audio/SFX/AP_TP-004.ogg','audio/SFX/AP_TP-005.ogg','audio/SFX/AP_TP-006.ogg']
 define type_silent = ['<silence 1.0>']
+define audio.transition = 'audio/SFX/AP_UI_Transition.ogg'
+define audio.IntroConstruction = 'audio/SFX/AP_SFX_Intro_Construction.ogg'
+define audio.IntroRagots = 'audio/SFX/AP_SFX_Intro_Ragots.ogg'
+define audio.IntroRoaring = 'audio/SFX/AP_SFX_Intro_Roaring20s.ogg'
+define audio.IntroSmartphone = 'audio/SFX/AP_SFX_Intro_Smartphone.ogg'
 
 # SONS d'UI
 # pour jouer aléatoirement un son de la liste : renpy.sound.play(renpy.random.choice(nomliste))
@@ -1146,22 +1151,35 @@ label onboarding:
     with fade
     $ quick_menu = True  
 
-    play ambiance AmbRue fadein 2.0
+    stop music fadeout 0.5
+    play ambiance AmbRue fadein 1.0
 
     $ current_textbox = "description"
 
     text "L'androgame..."
+
+    play music IntroConstruction noloop
+
     text "Cela fait un moment maintenant qu’il a été reprit, et après de longs et nombreux travaux, il fait à présent revivre le quartier comme je ne l’avais jamais vu auparavant."
     text "Et puis même au sein de la commu’, ça a fait jaser. Toutes les têtes d’affiches sont queer."
+    
+    play music IntroRagots noloop
+
     text "Ça fait presque bizarre de nous voir nous réapproprier une époque dans laquelle on n’avait pas le droit d'exister."
     text "Je suis sûr·e qu’on n’aurait jamais autant flamboyé que dans les années 20... C’est peut-être pour ça qu’on était \"interdits\"?"
     text "On aurait trop volé la vedette aux hétéros."
+    
+    play music IntroRoaring noloop
+
     text "Les plumes, la fourrure, les paillettes, le champagne, le charleston, l’occasionnel rail de coke... Les années folles quoi."
     text "C’est ce qui m’a motivé·e à me lancer dans le drag finalement..."
     text "J’ai toujours été intrigué·e par cette forme d’expression. Et à voir ces artistes bourré·e·s de talent faire leur show, à deux pas de chez moi..."
     text "Au début, j’en avais un peu honte. Je me costumais en cachette dans mon appart, et pour être honnête, c’était peut-être pour le mieux."
     text "Mes premières tentatives de make-up étaient catastrophiques... Mais au fur et à mesure, j’ai pris le coup de pinceau."
     text "Ce que je pensais être une lubie est finalement devenu un hobby."
+
+    queue music IntroSmartphone noloop
+
     text "Je faisais mon petit contenu sur les réseaux socieux et continuait ma vie tranquillement à côté, en passant toujours devant l’Androgame pour aller au travail."
     text "Alors quand ils ont lancé des auditions pour agrandir la troupe, j’ai longuement hésité. Je ne me sentais pas légitime de rentrer dans cette sphère."
     text "Je ne pensais pas être sélectionné.e, encore moins de passer un entretien avec Mother, la patronne du cabaret. Je n’ai pas trop compris, mais elle m’a parlé des règles de conduite au sein de la troupe et envers les clients, puis d’une période d’essai..."

@@ -124,6 +124,14 @@ define audio.ConfidenceAB = 'audio/Music/3_Confidence_AB.ogg'
 define audio.ConfidenceB1 = 'audio/Music/3_Confidence_B1.ogg'
 define audio.ConfidenceB2 = 'audio/Music/3_Confidence_B2.ogg'
 define audio.ConfidenceOutro = 'audio/Music/3_Confidence_Outro.ogg'
+define audio.Z3Intro = 'audio/Music/Z3-1_V1.ogg'
+define audio.Z3Couplet = 'audio/Music/Z3-21_V1.ogg'
+define audio.Z3RefrainPartie1 = 'audio/Music/Z3-26-0-7_Partie1_V1.ogg'
+define audio.Z3RefrainPartie2 = 'audio/Music/Z3-26-0-7_Partie2_V1.ogg'
+define audio.Z3RefrainPartie3 = 'audio/Music/Z3-26-0-7_Partie3_V1.ogg'
+define audio.Z3RefrainPartie4 = 'audio/Music/Z3-26-0-7_Partie4_V1.ogg'
+define audio.Z3End = 'audio/Music/Z3-26-0-7_End_V1.ogg'
+
 
 # Déclarez les personnages utilisés dans le jeu.
 define mother = Character('Mother', color="#b51963", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=30, callback=type_sound, cb_cps=30, cb_boopfile=M_type_sounds)
@@ -376,17 +384,15 @@ label del_2_3:
 #DEL.3
 label del_3:
 
-    play music ConfidenceIntro
-
     text "Cela faisait plusieurs minutes que je cherchais Léandre, avec qui j'étais supposé.e répéter une partie de mon numéro, que l'on construisait ensemble."
 
     text "Après avoir fait trois fois le tour du lobby, des backstages, être retourné.e tout autant de fois dans les loges, je finis par retourner sur les planches de la scène, pensif.ve."
 
     text "Et en toute honnêteté, un peu inquiet.e."
 
-    queue music ConfidenceA1
-
     text "C'est alors que j'aperçus une tignasse blonde depuis le haut du balcon, absorbée par le contenu de son téléphone. N'ayant pas pensé à lever le regard, je grimpai l'escalier en colimaçon pour le rejoindre, à tâtons."
+
+    play music Z3Intro noloop volume 0.5
 
     anthrax "Hey... Je me demandais où tu étais passé."
 
@@ -401,8 +407,6 @@ label del_3:
     anthrax "Un ancien client ?"
 
     leandre "Hm..."
-
-    queue music ConfidenceA2
 
     text "Visiblement pas très à l'aise, Léandre rangea son mobile et joua avec ses doigts, venant s'appuyer sur la rambarde pour observer la scène en contrebas."
 
@@ -421,6 +425,8 @@ label del_3:
     leandre "Ne t'en fais pas, je n'aurais pas commencé à en parler si je ne le sentais pas."
 
     leandre "Mais je te fais suffisamment confiance pour ne pas me juger sur mes décisions."
+
+    play music Z3Couplet volume 0.5
 
     text "Un peu plus confiant, il se redressa et tourna la tête dans ma direction, un sourire apaisé aux lèvres."
 
@@ -452,6 +458,10 @@ label choix_del3:
 label del_3_1:
     $ quick_menu = True
     
+    queue music Z3RefrainPartie1
+    queue music Z3RefrainPartie2
+    queue music Z3RefrainPartie3 
+    queue music Z3RefrainPartie4
     show leandre_neutre at del_center
     with fade
     
@@ -466,6 +476,11 @@ label del_3_1:
     anthrax "C'est-à-dire... ?"
 
     leandre "Je ne sais pas... J'ai toujours eu un rapport à l'intime complètement frit."
+
+    queue music Z3RefrainPartie1
+    queue music Z3RefrainPartie2
+    queue music Z3RefrainPartie3 
+    queue music Z3RefrainPartie4
 
     leandre "Hormonalement parlant, c'était la fiesta. Je commençais tout juste la testo et ma libido était en roue libre."
 
@@ -499,6 +514,8 @@ label del_3_1:
 
     leandre "C'est un peu mon ange gardien finalement, qui m'incite à prendre exemple sur lui et être une meilleure version de moi-même."
 
+    queue music Z3End
+    
     leandre "Mais tout le monde ne fait pas pareil et chacun.e a sa manière d'aborder son drag après tout."
 
     leandre "Dans tous les cas, c'est une relation très personnelle avec une facette de nous-même, donc ça ne me dérange pas de l'adresser à la troisième personne."
@@ -509,8 +526,11 @@ label del_3_1:
 label del_3_2:
     $ quick_menu = True
     
-    queue music ConfidenceAB
-    queue music ConfidenceB1
+    queue music Z3RefrainPartie1
+    queue music Z3RefrainPartie2
+    queue music Z3RefrainPartie3 
+    queue music Z3RefrainPartie4
+
     show leandre_neutre at del_center
     with fade
 
@@ -538,8 +558,6 @@ label del_3_2:
 
     leandre "Alors que ça aurait dû être l'inverse..."
 
-    queue music ConfidenceB2
-
     leandre "M'aimer d'abord, découvrir mon intimité ensuite... Ou en même temps, à la rigueur."
 
     leandre "Enfin bref, c'était pas du tout la méthode adaptée pour nourrir mon \"appréciation de soi\"."
@@ -551,13 +569,13 @@ label del_3_2:
     leandre "C'était assez bizarre, mais bienvenu puisque j'étais prêt à me raccrocher à n'importe quoi. Je suis revenu quelques fois justement pour ça..."
 
     leandre "Je m'étais lancé dans les vidéos pour payer mon opération mais Mother m'a proposé un travail à mi-temps et présenté à ses ami.e.s drag artists lorsque j'ai soulevé l'idée que ça pouvait m'aider avec ma dysphorie de genre."
-
-    queue music ConfidenceOutro
     
     leandre "Grâce à ça, j'ai pu arrêter et reprendre ma vie en main."
 
-    leandre "Je t'en avais déjà parlé, non ? Je ne me souviens plus... Ce serait bête que je passe pour un disque rayé !"
+    queue music Z3End
 
+    leandre "Je t'en avais déjà parlé, non ? Je ne me souviens plus... Ce serait bête que je passe pour un disque rayé !"
+    
     anthrax "Mais non ! Et puis, même si tu te répétais, ça m'est égal. Ça veut dire que tu me fais toujours confiance pour m'en parler !"
 
     call del_4 from _call_del_4_1 
@@ -566,6 +584,10 @@ label del_3_2:
 label del_3_3:
     $ quick_menu = True
     
+    queue music Z3RefrainPartie1
+    queue music Z3RefrainPartie2
+    queue music Z3RefrainPartie3 
+    queue music Z3RefrainPartie4
     show leandre_neutre at del_center
     with fade
     
@@ -614,6 +636,8 @@ label del_3_3:
     leandre "Je ne vais pas faire un dessin, je suppose que tu connais les statistiques..."
 
     anthrax "Malheureusement oui. Je connais au moins une personne trans dans mon entourage qui s'est suicidée... Et d'autres qui l'ont au moins envisagé."
+
+    queue music Z3End noloop
 
     leandre "Ce n'est pas très joyeux comme discussion..."
 
