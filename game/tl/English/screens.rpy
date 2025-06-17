@@ -1,22 +1,22 @@
-﻿# TODO: Translation updated at 2025-06-16 21:10
+﻿# TODO: Translation updated at 2025-06-17 13:30
 
 translate English strings:
 
     # game/screens.rpy:530
     old "Fin de la rediffusion"
-    new "End of diffusion"
+    new ""
 
     # game/screens.rpy:534
     old "Menu principal"
-    new "Main menu"
+    new ""
 
     # game/screens.rpy:698
     old "Retour"
-    new "Return"
+    new ""
 
     # game/screens.rpy:917
     old "Version [config.version!t]\n"
-    new "Version [config.version!t]\n"
+    new ""
 
     # game/screens.rpy:924
     old "Conçu avec {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]"
@@ -24,19 +24,19 @@ translate English strings:
 
     # game/screens.rpy:954
     old "Sauvegarde"
-    new "Save"
+    new ""
 
     # game/screens.rpy:966
     old "Page {}"
-    new "Page"
+    new ""
 
     # game/screens.rpy:966
     old "Sauvegardes automatiques"
-    new "Auto save"
+    new ""
 
     # game/screens.rpy:966
     old "Sauvegardes rapides"
-    new "Quick save"
+    new ""
 
     # game/screens.rpy:1033
     old "{#file_time}%A %d %B %Y, %H:%M"
@@ -44,7 +44,7 @@ translate English strings:
 
     # game/screens.rpy:1033
     old "emplacement vide"
-    new "Empty slot"
+    new ""
 
     # game/screens.rpy:1053
     old "<"
@@ -68,75 +68,75 @@ translate English strings:
 
     # game/screens.rpy:1154
     old "Affichage"
-    new "Screen"
+    new ""
 
     # game/screens.rpy:1155
     old "Fenêtre"
-    new "Windowed"
+    new ""
 
     # game/screens.rpy:1156
     old "Plein écran"
-    new "Full Screen"
+    new ""
 
     # game/screens.rpy:1162
     old "Langues"
-    new "Languages"
+    new ""
 
     # game/screens.rpy:1163
     old "Français"
-    new "French"
+    new ""
 
     # game/screens.rpy:1171
     old "Effets visuels"
-    new "Visual effects"
+    new ""
 
     # game/screens.rpy:1184
     old "Vitesse du texte"
-    new "Text speed"
+    new ""
 
     # game/screens.rpy:1187
     old "Avance automatique"
-    new "Auto speed"
+    new ""
 
     # game/screens.rpy:1212
     old "Volume de la musique"
-    new "Music volume"
+    new ""
 
     # game/screens.rpy:1216
     old "Volume des sons"
-    new "Sounds volume"
+    new ""
 
     # game/screens.rpy:1220
     old "Test"
-    new "Test"
+    new ""
 
     # game/screens.rpy:1223
     old "Volume des voix"
-    new "Voices volume"
+    new ""
 
     # game/screens.rpy:1231
     old "Couper tous les sons"
-    new "Mute"
+    new ""
 
     # game/screens.rpy:1400
     old "L'historique des dialogues est vide."
-    new "The journal is empty"
+    new ""
 
     # game/screens.rpy:1489
     old "Clavier"
-    new "Keyboard"
+    new ""
 
     # game/screens.rpy:1490
     old "Souris"
-    new "Mouse"
+    new ""
 
     # game/screens.rpy:1493
     old "Manette"
-    new "Controller"
+    new ""
 
     # game/screens.rpy:1512
     old "Entrée"
-    new "Enter"
+    new ""
 
     # game/screens.rpy:1513
     old "Avance dans les dialogues et active l’interface (effectue un choix)."
@@ -144,7 +144,7 @@ translate English strings:
 
     # game/screens.rpy:1516
     old "Espace"
-    new "Keyspace"
+    new ""
 
     # game/screens.rpy:1517
     old "Avance dans les dialogues sans effectuer de choix."
@@ -264,19 +264,19 @@ translate English strings:
 
     # game/screens.rpy:1678
     old "Oui"
-    new "Yes"
+    new ""
 
     # game/screens.rpy:1679
     old "Non"
-    new "No"
+    new ""
 
     # game/screens.rpy:1731
     old "Choisis le prénom d'Anthräx, ton personnage :"
-    new "Choose Anthräx's first name, your caracther"
+    new ""
 
     # game/screens.rpy:1739
     old "Valider"
-    new "Confirm"
+    new ""
 
     # game/screens.rpy:1819
     old "Avance rapide"

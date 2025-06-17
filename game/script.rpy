@@ -1150,7 +1150,7 @@ label onboarding:
 
     $ current_textbox = "description"
 
-    text "L'androgame..."
+    text "L'Androgame..."
     text "Cela fait un moment maintenant qu’il a été reprit, et après de longs et nombreux travaux, il fait à présent revivre le quartier comme je ne l’avais jamais vu auparavant."
     text "Et puis même au sein de la commu’, ça a fait jaser. Toutes les têtes d’affiches sont queer."
     text "Ça fait presque bizarre de nous voir nous réapproprier une époque dans laquelle on n’avait pas le droit d'exister."
@@ -1271,13 +1271,9 @@ label onboarding:
     hide imani_neutre 
     show leandre_neutre at del_left  with dissolve
 
-    delinconnu "Je pense qu'on devrait leur demander directement..."
-
-    $ current_textbox = "description"
-
-    text "Les deux autres se sont retourné·e·s vers l'encadrement de porte dans lequel nous nous tenions, Mother et moi."
-
     $ current_textbox = "anthrax"
+
+    delinconnu "Je pense qu'on devrait leur demander directement..."
     
     delinconnu "Ou alors que ce serait justement l'occasion parfaite pour nous de revoir nos propres tours..." 
 
