@@ -1,4 +1,5 @@
 define config.tag_layer = {
+    'wip' : 'front',
     'curtain_open' : 'front',
     'curtain_close' : 'front',
     'curtain' : 'front',

@@ -180,8 +180,9 @@ label minichoice_del_1:
 
 
 #DEL.2
-hide leandre_neutre
-show bar with fade
+hide loges with dissolve
+hide leandre_neutre with dissolve
+scene black with fade
 $ quick_menu = True
 play music BarMusic fadein 1.5 volume 0.5
 play ambiance BarDay fadein 0.5
@@ -193,6 +194,8 @@ text "Nous avions depuis le bar une vue imprenable sur la scène, légèrement e
 text "Les tablées y étaient déjà dressées et se regroupaient autour du big band et de l'estrade secondaire au centre de la pièce."
 text "L'immense lustre duquel pendaient des larmes de verre reflétait les spots de lumière à la manière d'une boule à facettes sur le papier peint texturé."
 text "Léandre s'assît sur l'une des chaises hautes de bois verni et commanda un Cosmo au barman."
+
+show bar
 
 $ current_textbox = "anthrax"
 label minichoice_del_2:
@@ -456,22 +459,14 @@ label minichoice_del_8:
 label del_3:
 # TRANSITION RIDEAUX
 # faire la transition avec la description sur fond noir comme sur l'onboarding
-<<<<<<< HEAD
-    hide loges with dissolve
-    hide leandre_neutre with dissolve
-    hide bar with dissolve
 
-    show curtain_close
-    scene black with dissolve
-    #text "Quelques mois passèrent..."
-=======
+#text "Quelques mois passèrent..."
     show curtain_close with dissolve
     hide leandre_neutre with dissolve
     hide bar
     hide loges
     pause 1.5
     show curtain_open with dissolve
->>>>>>> 1a6c590c73c6950b3876af07e7a25fc74160d942
 
     scene black
 
@@ -821,6 +816,13 @@ label minichoice_del_17:
 #DEL.4
 
 # TRANSITION RIDEAU DE SES MORTS A AJOUTER
+    show curtain_close with dissolve
+    hide leandre_neutre with dissolve
+    hide bar
+    hide loges
+    pause 1.5
+    show curtain_open with dissolve
+
 # text "Le jour du spectacle..."
 label del_4:
     
@@ -953,7 +955,7 @@ label minichoice_del_18:
 label del_4_2:
     $ quick_menu = True
     
-    show leandre_neutre at del_center
+    show delaunay_neutre at del_center
     with fade
 
     anthrax "J'adore la manière dont tu prends confiance en toi avec Delaunay"
@@ -1048,7 +1050,7 @@ label del_4_2:
 label del_4_3:
     $ quick_menu = True
 
-    show leandre_neutre at del_center
+    show delaunay_neutre at del_center
     with fade
 
     anthrax "\"Timide\" ? Moi ?"
@@ -1151,6 +1153,13 @@ label del_4_3:
 #DEL.5
 label del_5:
 # TRANSITION RIDEAU
+    show curtain_close with dissolve
+    hide delaunay_neutre with dissolve
+    hide bar
+    hide loges
+    pause 1.5
+    show curtain_open with dissolve
+
     scene black with dissolve
     show auditorium
     play music ShowDelaunay noloop
@@ -1190,6 +1199,14 @@ label del_6:
 #Choix DEL.6
 label choix_del6:
     $ quick_menu = False
+
+    show curtain_close with dissolve
+    hide delaunay_neutre with dissolve
+    hide bar
+    hide loges
+    pause 1.5
+    show curtain_open with dissolve
+
     show leandre_neutre at del_right
     with fade
 

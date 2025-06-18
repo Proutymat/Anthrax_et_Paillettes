@@ -135,12 +135,14 @@ $ persistent.bg_parallax = True
 $ quick_menu = True
 scene black with fade
 show loges
-show imani_neutre at pea_center with dissolve
+#show imani_neutre at pea_center with dissolve
 
 play ambiance AmbLoges fadein 0.5
 
 
 #PEA.1
+
+show wip
 
 imani "Je suis flattée"
 

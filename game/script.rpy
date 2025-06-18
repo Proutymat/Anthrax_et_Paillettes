@@ -108,6 +108,7 @@ image rideau = "Backgrounds/rideau.png"
 
 image balcon = "Backgrounds/balcon.png"
 
+image wip = "images/WIP.png"
 #vfx
 
 image curtain : 
