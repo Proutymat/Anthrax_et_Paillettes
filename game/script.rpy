@@ -59,6 +59,7 @@ init python:
             renpy.pause((20-renpy.music.get_pos('sound')),hard=True)
 
     renpy.music.register_channel("ambiance", "sfx", True)
+    renpy.music.register_channel("sfx","sfx", False)
 
 
 # Déclarez sous cette ligne les images, avec l'instruction 'image'
@@ -1128,6 +1129,13 @@ define audio.IntroConstruction = 'audio/SFX/AP_SFX_Intro_Construction.ogg'
 define audio.IntroRagots = 'audio/SFX/AP_SFX_Intro_Ragots.ogg'
 define audio.IntroRoaring = 'audio/SFX/AP_SFX_Intro_Roaring20s.ogg'
 define audio.IntroSmartphone = 'audio/SFX/AP_SFX_Intro_Roaring20s.ogg'
+define audio.DoorAndrogame = 'audio/SFX/AP_SFX_Intro_DoorAndrogame.ogg'
+define audio.ShortEllipse = 'audio/SFX/AP_SFX_Intro_Ellipse_V2.ogg'
+define audio.LongEllipse = 'audio/SFX/AP_SFX_Intro_LongEllipse_V2.ogg'
+define audio.Gribouillis = 'audio/SFX/AP_SFX_Gribouillis.ogg'
+define audio.Corset = 'audio/SFX/AP_SFX_Corset.ogg'
+define audio.GelCheveux = 'audio/SFX/AP_SFX_Intro_GelCheveux.ogg'
+define audio.DoorLoges = 'audio/SFX/AP_SFX_Intro_DoorLoges.ogg'
 
 # SONS d'UI
 # pour jouer aléatoirement un son de la liste : renpy.sound.play(renpy.random.choice(nomliste))
@@ -1269,6 +1277,7 @@ label onboarding:
     hide devanture
     scene black with fade
     show auditorium  with dissolve
+    play sfx DoorAndrogame
     show mother at mother_center with dissolve
 
 
@@ -1326,6 +1335,8 @@ label onboarding:
     hide auditorium 
     hide mother with dissolve
     scene black with fade
+
+    play sfx LongEllipse volume 0.8
     
     $ current_textbox = "description" 
 
@@ -1335,7 +1346,10 @@ label onboarding:
     text "Et les casques grandioses à strass, sequins, perles de verre ou fausses pierres précieuses, se faisaient la compétition." 
     text "Là, l'inventaire des décors roulants, barres de pole dance, accessoires de scène et de cirque pour les tours plus acrobatiques." 
     stop music fadeout 1.5
+    play sfx DoorLoges
     text "Nous avons fini par pousser une dernière porte, celle des loges..."
+
+    stop sfx fadeout 1.0
     
     show loges
 
@@ -1352,8 +1366,8 @@ label onboarding:
     imani "Pour pouvoir faire de la place aux nouvelles !"
     
     $ current_textbox = "description"
-
     #ajouter un overlay entre la descri et le personnage
+    play sfx Gribouillis
     text "L'homme qui venait de prendre la parole était en train de gribouiller avec insistance un croquis dans son carnet..."
     text "Une aiguille à coudre entre les lèvres et une pièce de tissu sur les genoux, à laquelle il semblait broder des sequins uns à uns."
     #retirer l'overlay
@@ -1371,6 +1385,7 @@ label onboarding:
     $ current_textbox = "description"
 
     #ajouter un overlay entre la descri et le personnage
+    play sfx GelCheveux
     text "Les doigts couverts de gel et un peigne à la main, la personne qui venait de lui répondre était en train de styliser une perruque noire de jais sur une tête de mannequin." 
     text "Iel y plaquait les cheveux contre le front en de jolies boucles bien définies, et y fixait des perles nacrées avec un pistolet à colle."
     #retirer l'overlay
@@ -1385,6 +1400,7 @@ label onboarding:
 
     show leandre_neutre at del_left with dissolve
     #ajouter un overlay entre la descri et le personnage
+    play sfx Corset
     text "Un autre garçon, plus silencieux, avait la tête baissée sur un corset tout de dentelle, qu'il laçait précautionneusement."
     hide aimee_neutre with dissolve 
     text "Relevant la tête, le concerné remarqua qu'iels n'étaient plus trois dans la pièce et me fixa un instant, avant de se retourner vers ses interlocuteur·ice·s."
