@@ -109,7 +109,426 @@ image rideau = "Backgrounds/rideau.png"
 image balcon = "Backgrounds/balcon.png"
 
 image wip = "images/WIP.png"
+
 #vfx
+
+# Déclaration de l'animation complète du gradient
+image gradiant_transparent:
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00000.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00001.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00002.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00003.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00004.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00005.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00006.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00007.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00008.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00009.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00010.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00011.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00012.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00013.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00014.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00015.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00016.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00017.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00018.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00019.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00020.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00021.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00022.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00023.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00024.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00025.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00026.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00027.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00028.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00029.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00030.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00031.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00032.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00033.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00034.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00035.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00036.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00037.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00038.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00039.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00040.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00041.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00042.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00043.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00044.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00045.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00046.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00047.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00048.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00049.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00050.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00051.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00052.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00053.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00054.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00055.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00056.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00057.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00058.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00059.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00060.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00061.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00062.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00063.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00064.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00065.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00066.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00067.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00068.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00103.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00104.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00105.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00106.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00107.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00108.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00109.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00110.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00111.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00112.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00113.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00114.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00115.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00116.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00117.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00118.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00119.png"
+    pause 0.04
+
+image gradiant_noir:
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00000.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00001.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00002.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00003.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00004.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00005.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00006.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00007.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00008.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00009.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00010.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00011.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00012.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00013.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00014.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00015.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00016.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00017.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00018.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00019.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00020.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00021.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00022.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00023.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00024.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00025.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00026.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00027.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00028.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00029.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00030.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00031.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00032.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00033.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00034.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00035.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00036.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00037.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00038.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00039.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00040.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00041.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00042.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00043.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00044.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00045.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00046.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00047.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00048.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00049.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00050.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00051.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00052.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00053.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00054.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00055.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00056.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00057.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00058.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00059.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00060.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00061.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00062.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00063.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00064.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00065.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00066.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00067.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00068.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00069.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00070.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00071.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00072.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00073.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00074.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00075.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00076.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00077.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00078.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00079.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00080.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00081.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00082.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00083.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00084.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00085.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00086.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00087.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00088.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00089.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00090.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00091.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00092.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00093.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00094.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00095.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00096.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00097.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00098.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00099.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00100.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00101.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00102.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00103.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00104.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00105.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00106.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00107.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00108.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00109.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00110.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00111.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00112.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00113.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00114.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00115.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00116.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00117.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00118.png"
+    pause 0.04
+    "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00119.png"
+    pause 0.04
+    
 
 image curtain : 
     "images/VFX/Curtain_Close/Curtain_Close_00000.png", 0.04,
@@ -446,27 +865,32 @@ image angry = Animation(
     "images/VFX/Angry/Angry_00043.png", 0.03,
 )
 
-
 image joy = Animation(
-    "images/VFX/Joy/Joy_00001.png", 0.06,
-    "images/VFX/Joy/Joy_00002.png", 0.06,
-    "images/VFX/Joy/Joy_00003.png", 0.06,
-    "images/VFX/Joy/Joy_00004.png", 0.06,
-    "images/VFX/Joy/Joy_00005.png", 0.06,
-    "images/VFX/Joy/Joy_00006.png", 0.06,
-    "images/VFX/Joy/Joy_00007.png", 0.06,
-    "images/VFX/Joy/Joy_00008.png", 0.06,
-    "images/VFX/Joy/Joy_00009.png", 0.06,
-    "images/VFX/Joy/Joy_00010.png", 0.06,
-    "images/VFX/Joy/Joy_00011.png", 0.06,
-    "images/VFX/Joy/Joy_00012.png", 0.06,
-    "images/VFX/Joy/Joy_00013.png", 0.06,
-    "images/VFX/Joy/Joy_00014.png", 0.06,
-    "images/VFX/Joy/Joy_00015.png", 0.06,
-    "images/VFX/Joy/Joy_00016.png", 0.06,
-    "images/VFX/Joy/Joy_00017.png", 0.06,
-    "images/VFX/Joy/Joy_00018.png", 0.06,
-    "images/VFX/Joy/Joy_00019.png", 0.06
+    "images/VFX/Joy/Joy_00000.png", 0.04,
+    "images/VFX/Joy/Joy_00001.png", 0.04,
+    "images/VFX/Joy/Joy_00002.png", 0.04,
+    "images/VFX/Joy/Joy_00003.png", 0.04,
+    "images/VFX/Joy/Joy_00004.png", 0.04,
+    "images/VFX/Joy/Joy_00005.png", 0.04,
+    "images/VFX/Joy/Joy_00006.png", 0.04,
+    "images/VFX/Joy/Joy_00007.png", 0.04,
+    "images/VFX/Joy/Joy_00008.png", 0.04,
+    "images/VFX/Joy/Joy_00009.png", 0.04,
+    "images/VFX/Joy/Joy_00010.png", 0.04,
+    "images/VFX/Joy/Joy_00011.png", 0.04,
+    "images/VFX/Joy/Joy_00012.png", 0.04,
+    "images/VFX/Joy/Joy_00013.png", 0.04,
+    "images/VFX/Joy/Joy_00014.png", 0.04,
+    "images/VFX/Joy/Joy_00015.png", 0.04,
+    "images/VFX/Joy/Joy_00031.png", 0.04,
+    "images/VFX/Joy/Joy_00032.png", 0.04,
+    "images/VFX/Joy/Joy_00033.png", 0.04,
+    "images/VFX/Joy/Joy_00034.png", 0.04,
+    "images/VFX/Joy/Joy_00035.png", 0.04,
+    "images/VFX/Joy/Joy_00036.png", 0.04,
+    "images/VFX/Joy/Joy_00037.png", 0.04,
+    "images/VFX/Joy/Joy_00038.png", 0.04,
+    "images/VFX/Joy/Joy_00039.png", 0.04,
 )
 
 image sadness = Animation(
