@@ -461,6 +461,7 @@ label del_3:
 # faire la transition avec la description sur fond noir comme sur l'onboarding
 
 #text "Quelques mois passèrent..."
+
     show curtain_close with dissolve
     hide leandre_neutre with dissolve
     hide bar
@@ -814,7 +815,6 @@ label minichoice_del_17:
     call del_4 from _call_del_4_2 
 
 #DEL.4
-
 # TRANSITION RIDEAU DE SES MORTS A AJOUTER
     show curtain_close with dissolve
     hide leandre_neutre with dissolve
@@ -825,7 +825,7 @@ label minichoice_del_17:
 
 # text "Le jour du spectacle..."
 label del_4:
-    
+
     hide leandre_neutre
     hide auditorium
     scene black with dissolve
@@ -1008,14 +1008,19 @@ label del_4_2:
     delaunay "Je sais... Et ça commence à se stabiliser, bien heureusement."
     delaunay "J'aimerais juste des fois que ça aille un peu plus vite."
 
+    show gatsby_neutre at gat_left with dissolve
     gatsby "C'est le genre de chose qui prend du temps après tout."
+    hide delaunay_neutre with dissolve
 
+    show peacock_neutre at pea_right with dissolve
     peacock "Et puis, tu as déjà fait de nombreux progrès. Je me souviens quand t'avais commencé avec une version masculinisée un peu foireuse de Betty Boop..."
 
     gatsby "Mon dieu, c'est vrai que ça a existé ça."
 
     $ quick_menu = False
-   
+
+    hide gatsby_neutre
+    hide peacock_neutre
     show delaunay_neutre at del_right
     with fade
     menu:
@@ -1030,12 +1035,16 @@ label del_4_2:
     $ quick_menu = True
 
     delaunay "Elles ont été diligemment supprimées."
-
+    
+    show gatsby_neutre at gat_left with dissolve
     gatsby "Oh... Je suis sûr.e qu'il doit m'en rester..."
 
     delaunay "Tu n'as pas osé!?"
-
+    
+    hide gatsby_neutre with dissolve
+    show peacock_neutre at pea_left with dissolve
     peacock "Je suis si peu surprise. C'était mythique!"
+    hide peacock_neutre with dissolve
 
     stop music fadeout 0.1
 
@@ -1164,6 +1173,7 @@ label del_5:
     show auditorium
     play music ShowDelaunay noloop
 
+    $ current_textbox = "description"
     text "L’entracte arrivait déjà à sa fin et l’atmosphère était bouillonnante dans les coulisses. "
     text "Derrière le rideau, les kittens et les régisseur.euse.s s’activaient à déplacer le décor en silence." 
     text "Soudainement, un spot se braqua sur le velours et un \"bang\" de trompettes réveilla la foule."
@@ -1184,46 +1194,88 @@ label del_5:
 call del_6 from _call_del_6 
 
 #DEL.6
-label del_6:
 
+#TRANSITION RIDEAU
+
+label del_6:
+    
     hide auditorium
     show loges
+    $ current_textbox = "anthrax"
     show delaunay_neutre at del_center with dissolve
+    delaunay "Wow! C'était dément! La salle était super chaude ce soir!"
+    delaunay "Et j'ai ramassé un beau pactole avec les tips! Je suis refais!"
+    
+    $ quick_menu = False
+   
+    show delaunay_neutre at del_right
+    with fade
+    menu:
+        delaunay "Alors, qu'est-ce que tu en as pensé [player_name]?"
+        "C'était incroyable! Surtout quand le rideau s'est ouvert sur le verre!":
+            pass
+        "J'ai adoré! Mais tu l'as sorti d'où ce string?!":
+            pass
+        "La foule était en délire à ton salut! Et moi aussi!":
+            pass
 
+    $ quick_menu = True
 
+    delaunay "Je suis content que ça t'aie plu!"
+    delaunay "Et puis ça pourra toujours t'inspirer pour ton propre numéro!"
+    delaunay "Ça avance, d'ailleurs?"
 
+    anthrax "C'est sur le feu! Je suis chaud.e bouillant.e!"
+
+    delaunay "Hey, ça te dirait qu'on sorte prendre un verre après m'être changé? Rien que nous deux?"
 
 #Dialogue WIP 
-
 
 #Choix DEL.6
 label choix_del6:
     $ quick_menu = False
-
     show curtain_close with dissolve
     hide delaunay_neutre with dissolve
     hide bar
     hide loges
     pause 1.5
     show curtain_open with dissolve
-
-    show leandre_neutre at del_right
+    show delaunay_neutre at del_right
     with fade
 
     menu: 
-        "WIP":
+        text "Accepter le date ?"
+        "Oui":
             call del_6_good from _call_del_6_good 
-        "WIP":
+        "Non":
             call del_6_bad from _call_del_6_bad 
 
 #DEL.6.GOOD
 label del_6_good:
     $ quick_menu = True
-    show leandre_neutre at del_center
-    with fade
+    show delaunay at del_right with dissolve
+    
+    delaunay "Parfait! Je te retrouve dehors dans quelques minutes alors !"
+    
+    show scene black with dissolve
 
-    anthrax "WIP"
-    leandre "WIP"
+    $ current_textbox = "description"
+    text "Le temps que Delaunay et les autres artistes terminent de se démaquiller et de se rhabiller en civil, je passai le balai sur les planches de la scène"
+    text "Laissant mon esprit vagabonder au jour où moi-même je les foulerais."
+    text "À l'extérieur, quelques clients étaient restés sur le pavé pour continuer leurs discussions et attendre la sortie de la royauté de L'Androgame."
+ 
+    show devanture
+    show leandre_neutre at del_right with dissolve
+
+    leandre "Pardon pour l'attente! On y va?"
+    anthrax "Merci pour l'invitation... Les autres ne sont pas trop jaloux.se.s de notre contre-soirée?"
+    leandre "Oh, iels devraient s'en remettre. Ça faisait un moment que je voulais passer un peu plus de temps avec toi."
+    leandre "En dehors des plumes et des paillettes,  je veux dire..."
+    leandre "Enfin, si tu es d'accord, évidemment."
+    anthrax "Ce serait avec plaisir Léandre..."
+    anthrax "Alors dis-moi! Où est-ce que tu m'emmènes ce soir?"
+    leandre "Hm... Je te réserve la surprise. Mais je pense vraiment que ça devrait te plaire!"
+
     call final_delaunay from _call_final_delaunay 
 
 
