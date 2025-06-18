@@ -455,14 +455,14 @@ label minichoice_del_8:
 label del_3:
 
 # faire la transition avec la description sur fond noir comme sur l'onboarding
-    hide loges withe dissolve
+    show curtain_close with dissolve
     hide leandre_neutre with dissolve
-    hide bar with dissolve
+    hide bar
+    hide loges
+    pause 1.5
+    show curtain_open with dissolve
 
-    show curtain_close
-    scene black with dissolve
-    
-
+    scene black
 
     play music ConfidenceIntro
 

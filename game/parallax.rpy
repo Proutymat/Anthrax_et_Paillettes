@@ -1,5 +1,7 @@
 define config.tag_layer = {
     'curtain_open' : 'front',
+    'curtain_close' : 'front',
+    'curtain' : 'front',
     'mother': 'back',
     'delaunay_neutre': 'back',
     'leandre_neutre': 'back',

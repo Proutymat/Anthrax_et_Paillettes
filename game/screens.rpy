@@ -165,7 +165,7 @@ screen say(who, what):
                 text who id "who" style "my_say_label" xpos 140 ypos 40
 
             # 💬 Texte principal
-            text what id "what" style "my_say_dialogue" xpos 145 ypos 85 line_spacing 10 size 40
+            text what id "what" style "my_say_dialogue" xpos 145 ypos 85 line_spacing 10 size 40 color "02061a"
 
     use quick_menu
 
@@ -193,7 +193,7 @@ style my_say_label is default:
 style my_say_dialogue is default:
     font "fonts/EBGaramond12-Regular.ttf"
     size 70
-    color "#2e2e2e"
+    color "#02061a"
     text_align 0.0
     spacing 40
 

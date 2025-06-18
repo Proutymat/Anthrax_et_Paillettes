@@ -219,12 +219,12 @@ define gui.choice_button_width = 1000
 define gui.choice_button_height = 80
 define gui.choice_button_tile = False
 define gui.choice_button_borders = Borders(0, 0, 0, 0)
-define gui.choice_button_text_size = 25
+define gui.choice_button_text_size = 40
 define gui.choice_button_text_xalign = 0.5
 define gui.choice_button_text_yalign = 0.5
 define gui.choice_button_text_layout = "subtitle"
 define gui.choice_button_text_text_align = 0.5
-define gui.choice_button_text_idle_color = '#000000'
+define gui.choice_button_text_idle_color = '#02061a'
 define gui.choice_button_text_hover_color = "#ffffff"
 define gui.choice_button_text_insensitive_color = '#7070707f'
 
