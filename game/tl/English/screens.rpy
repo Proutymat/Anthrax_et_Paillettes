@@ -1,296 +1,284 @@
-﻿# TODO: Translation updated at 2025-06-02 20:02
+﻿# TODO: Translation updated at 2025-06-17 17:41
 
 translate English strings:
 
-    # game/screens.rpy:405
-    old "Historique"
-    new ""
-
-    # game/screens.rpy:407
-    old "Sauvegarde"
-    new ""
-
-    # game/screens.rpy:433
+    # game/screens.rpy:530
     old "Fin de la rediffusion"
     new ""
 
-    # game/screens.rpy:437
+    # game/screens.rpy:534
     old "Menu principal"
-    new ""
+    new "Main menu"
 
-    # game/screens.rpy:600
+    # game/screens.rpy:698
     old "Retour"
-    new ""
+    new "Return"
 
-    # game/screens.rpy:692
+    # game/screens.rpy:917
     old "Version [config.version!t]\n"
     new ""
 
-    # game/screens.rpy:699
+    # game/screens.rpy:924
     old "Conçu avec {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]"
     new ""
 
-    # game/screens.rpy:741
+    # game/screens.rpy:954
+    old "Sauvegarde"
+    new "save"
+
+    # game/screens.rpy:966
     old "Page {}"
-    new ""
+    new "Page"
 
-    # game/screens.rpy:741
+    # game/screens.rpy:966
     old "Sauvegardes automatiques"
-    new ""
+    new "Auto save"
 
-    # game/screens.rpy:741
+    # game/screens.rpy:966
     old "Sauvegardes rapides"
-    new ""
+    new "Quick save"
 
-    # game/screens.rpy:806
+    # game/screens.rpy:1033
     old "{#file_time}%A %d %B %Y, %H:%M"
     new ""
 
-    # game/screens.rpy:806
+    # game/screens.rpy:1033
     old "emplacement vide"
-    new ""
+    new "Empty slot"
 
-    # game/screens.rpy:826
+    # game/screens.rpy:1053
     old "<"
     new ""
 
-    # game/screens.rpy:830
+    # game/screens.rpy:1057
     old "{#auto_page}A"
     new ""
 
-    # game/screens.rpy:833
+    # game/screens.rpy:1060
     old "{#quick_page}Q"
     new ""
 
-    # game/screens.rpy:839
+    # game/screens.rpy:1066
     old ">"
     new ""
 
-    # game/screens.rpy:844
+    # game/screens.rpy:1071
     old "Uploader Sync"
     new ""
 
-    # game/screens.rpy:918
+    # game/screens.rpy:1154
     old "Affichage"
-    new ""
+    new "Screen settings"
 
-    # game/screens.rpy:919
+    # game/screens.rpy:1155
     old "Fenêtre"
-    new ""
+    new "Windowed"
 
-    # game/screens.rpy:920
+    # game/screens.rpy:1156
     old "Plein écran"
-    new ""
+    new "Full screen"
 
-    # game/screens.rpy:924
-    old "Avance rapide"
-    new ""
+    # game/screens.rpy:1162
+    old "Langues"
+    new "Languages"
 
-    # game/screens.rpy:925
-    old "Texte non lu"
-    new ""
-
-    # game/screens.rpy:926
-    old "Après les choix"
-    new ""
-
-    # game/screens.rpy:927
-    old "Transitions"
-    new ""
-
-    # game/screens.rpy:931
-    old "Languages"
-    new ""
-
-    # game/screens.rpy:933
+    # game/screens.rpy:1163
     old "Français"
-    new ""
+    new "French"
 
-    # game/screens.rpy:952
+    # game/screens.rpy:1171
+    old "Effets visuels"
+    new "Visual effects"
+
+    # game/screens.rpy:1184
     old "Vitesse du texte"
-    new ""
+    new "Text speed"
 
-    # game/screens.rpy:959
+    # game/screens.rpy:1187
     old "Avance automatique"
-    new ""
+    new "Auto speed"
 
-    # game/screens.rpy:974
+    # game/screens.rpy:1212
     old "Volume de la musique"
-    new ""
+    new "Music volume"
 
-    # game/screens.rpy:982
+    # game/screens.rpy:1216
     old "Volume des sons"
-    new ""
+    new "Sounds volume"
 
-    # game/screens.rpy:990
+    # game/screens.rpy:1220
     old "Test"
-    new ""
+    new "Test"
 
-    # game/screens.rpy:993
+    # game/screens.rpy:1223
     old "Volume des voix"
-    new ""
+    new "Voice Volume"
 
-    # game/screens.rpy:1006
+    # game/screens.rpy:1231
     old "Couper tous les sons"
-    new ""
+    new "Mute"
 
-    # game/screens.rpy:1148
+    # game/screens.rpy:1400
     old "L'historique des dialogues est vide."
-    new ""
+    new "The journal is empty"
 
-    # game/screens.rpy:1227
+    # game/screens.rpy:1489
     old "Clavier"
     new ""
 
-    # game/screens.rpy:1228
+    # game/screens.rpy:1490
     old "Souris"
     new ""
 
-    # game/screens.rpy:1231
+    # game/screens.rpy:1493
     old "Manette"
     new ""
 
-    # game/screens.rpy:1250
+    # game/screens.rpy:1512
     old "Entrée"
     new ""
 
-    # game/screens.rpy:1251
+    # game/screens.rpy:1513
     old "Avance dans les dialogues et active l’interface (effectue un choix)."
     new ""
 
-    # game/screens.rpy:1254
+    # game/screens.rpy:1516
     old "Espace"
     new ""
 
-    # game/screens.rpy:1255
+    # game/screens.rpy:1517
     old "Avance dans les dialogues sans effectuer de choix."
     new ""
 
-    # game/screens.rpy:1258
+    # game/screens.rpy:1520
     old "Flèches directionnelles"
     new ""
 
-    # game/screens.rpy:1259
+    # game/screens.rpy:1521
     old "Permet de se déplacer dans l’interface."
     new ""
 
-    # game/screens.rpy:1262
+    # game/screens.rpy:1524
     old "Echap."
     new ""
 
-    # game/screens.rpy:1263
+    # game/screens.rpy:1525
     old "Ouvre le menu du jeu."
     new ""
 
-    # game/screens.rpy:1266
+    # game/screens.rpy:1528
     old "Ctrl"
     new ""
 
-    # game/screens.rpy:1267
+    # game/screens.rpy:1529
     old "Fait défiler les dialogues tant que la touche est pressée."
     new ""
 
-    # game/screens.rpy:1270
+    # game/screens.rpy:1532
     old "Tab"
     new ""
 
-    # game/screens.rpy:1271
+    # game/screens.rpy:1533
     old "Active ou désactive les «sauts des dialogues»."
     new ""
 
-    # game/screens.rpy:1274
+    # game/screens.rpy:1536
     old "Page Haut"
     new ""
 
-    # game/screens.rpy:1275
+    # game/screens.rpy:1537
     old "Retourne au précédent dialogue."
     new ""
 
-    # game/screens.rpy:1278
+    # game/screens.rpy:1540
     old "Page Bas"
     new ""
 
-    # game/screens.rpy:1279
+    # game/screens.rpy:1541
     old "Avance jusqu'au prochain dialogue."
     new ""
 
-    # game/screens.rpy:1283
+    # game/screens.rpy:1545
     old "Cache l’interface utilisateur."
     new ""
 
-    # game/screens.rpy:1287
+    # game/screens.rpy:1549
     old "Prend une capture d’écran."
     new ""
 
-    # game/screens.rpy:1291
+    # game/screens.rpy:1553
     old "Active la {a=https://www.renpy.org/l/voicing}{size=24}vocalisation automatique{/size}{/a}."
     new ""
 
-    # game/screens.rpy:1295
+    # game/screens.rpy:1557
     old "Ouvre le menu d'accessibilité."
     new ""
 
-    # game/screens.rpy:1303
+    # game/screens.rpy:1565
     old "Bouton gauche"
     new ""
 
-    # game/screens.rpy:1307
+    # game/screens.rpy:1569
     old "Bouton central"
     new ""
 
-    # game/screens.rpy:1311
+    # game/screens.rpy:1573
     old "Bouton droit"
     new ""
 
-    # game/screens.rpy:1315
+    # game/screens.rpy:1577
     old "Molette vers le haut"
     new ""
 
-    # game/screens.rpy:1319
+    # game/screens.rpy:1581
     old "Molette vers le bas"
     new ""
 
-    # game/screens.rpy:1327
+    # game/screens.rpy:1589
     old "Bouton R1\nA/Bouton du bas"
     new ""
 
-    # game/screens.rpy:1331
+    # game/screens.rpy:1593
     old "Gâchettes gauche"
     new ""
 
-    # game/screens.rpy:1335
+    # game/screens.rpy:1597
     old "Bouton R1"
     new ""
 
-    # game/screens.rpy:1339
+    # game/screens.rpy:1601
     old "Boutons directionnels, stick gauche"
     new ""
 
-    # game/screens.rpy:1343
+    # game/screens.rpy:1605
     old "Start, Guide, B/Right Button"
     new ""
 
-    # game/screens.rpy:1347
+    # game/screens.rpy:1609
     old "Y/Bouton du haut"
     new ""
 
-    # game/screens.rpy:1350
+    # game/screens.rpy:1612
     old "Calibrage"
     new ""
 
-    # game/screens.rpy:1415
+    # game/screens.rpy:1678
     old "Oui"
-    new ""
+    new "Yes"
 
-    # game/screens.rpy:1416
+    # game/screens.rpy:1679
     old "Non"
-    new ""
+    new "No"
 
-    # game/screens.rpy:1777
-    old "Auto"
-    new ""
+    # game/screens.rpy:1731
+    old "Choisis le prénom d'Anthräx, ton personnage :"
+    new "Choose Anthräx's name, your caracther :"
 
-    # game/screens.rpy:1778
-    old "Menu"
+    # game/screens.rpy:1739
+    old "Valider"
+    new "Confirm"
+
+    # game/screens.rpy:1819
+    old "Avance rapide"
     new ""
 

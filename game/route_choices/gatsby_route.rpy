@@ -140,6 +140,7 @@ show aimee_neutre at gat_center with dissolve
 play ambiance AmbLoges fadein 2.0
 
 #GAT.1
+
 gatsby "Let's go ! On va former un duo d'enfer, je te le dis !"
 
 anthrax "Aha ! J'adore cette énergie. Par quoi voudrais-tu commencer ?"

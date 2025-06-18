@@ -108,11 +108,68 @@ image rideau = "Backgrounds/rideau.png"
 
 image balcon = "Backgrounds/balcon.png"
 
+image wip = "images/WIP.png"
 #vfx
 
-
-
-image curtain_open = Animation(
+image curtain : 
+    "images/VFX/Curtain_Close/Curtain_Close_00000.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00001.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00002.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00003.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00004.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00005.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00006.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00007.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00008.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00009.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00010.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00011.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00012.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00013.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00014.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00015.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00016.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00017.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00018.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00019.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00020.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00021.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00022.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00023.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00024.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00025.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00026.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00027.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00028.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00029.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00030.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00031.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00032.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00033.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00034.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00035.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00036.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00037.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00038.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00039.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00040.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00041.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00042.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00043.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00044.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00045.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00046.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00047.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00048.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00049.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00050.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00051.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00052.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00053.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00054.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00055.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00056.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00057.png", 0.04,
     "images/VFX/Curtain_Open/Curtain_Open_00000.png", 0.04,
     "images/VFX/Curtain_Open/Curtain_Open_00001.png", 0.04,
     "images/VFX/Curtain_Open/Curtain_Open_00002.png", 0.04,
@@ -152,50 +209,118 @@ image curtain_open = Animation(
     "images/VFX/Curtain_Open/Curtain_Open_00036.png", 0.04,
     "images/VFX/Curtain_Open/Curtain_Open_00037.png", 0.04,
     "images/VFX/Curtain_Open/Curtain_Open_00038.png", 0.04,
-    "images/VFX/Curtain_Open/Curtain_Open_00039.png", 0.04
-)
+    "images/VFX/Curtain_Open/Curtain_Open_00039.png", 0.04,
+    "images/Backgrounds/transparent_background.png"
+    
+    
+
+image curtain_open:
+    "images/VFX/Curtain_Open/Curtain_Open_00000.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00001.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00002.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00003.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00004.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00005.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00006.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00007.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00008.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00009.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00010.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00011.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00012.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00013.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00014.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00015.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00016.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00017.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00018.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00019.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00020.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00021.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00022.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00023.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00024.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00025.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00026.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00027.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00028.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00029.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00030.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00031.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00032.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00033.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00034.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00035.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00036.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00037.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00038.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00039.png", 0.04,
+    "images/Backgrounds/transparent_background.png"
+    
 
 
-image curtain_close = Animation(
-    "images/VFX/Curtain_Close/Curtain_Clone_00022.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00023.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00024.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00025.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00026.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00027.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00028.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00029.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00030.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00031.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00032.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00033.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00034.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00035.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00036.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00037.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00038.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00039.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00040.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00041.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00042.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00043.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00044.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00045.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00046.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00047.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00048.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00049.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00050.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00051.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00052.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00053.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00054.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00055.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00056.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00057.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00058.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Clone_00059.png", 0.04
-)
+
+image curtain_close :
+    "images/VFX/Curtain_Close/Curtain_Close_00000.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00001.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00002.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00003.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00004.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00005.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00006.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00007.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00008.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00009.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00010.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00011.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00012.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00013.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00014.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00015.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00016.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00017.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00018.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00019.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00020.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00021.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00022.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00023.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00024.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00025.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00026.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00027.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00028.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00029.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00030.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00031.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00032.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00033.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00034.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00035.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00036.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00037.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00038.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00039.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00040.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00041.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00042.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00043.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00044.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00045.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00046.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00047.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00048.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00049.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00050.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00051.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00052.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00053.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00054.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00055.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00056.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00057.png", 0.04,
+    "images/Backgrounds/transparent_background.png"
+
 
 
 image flirt = Animation(
@@ -323,71 +448,25 @@ image angry = Animation(
 
 
 image joy = Animation(
-    "images/VFX/Joy/Joy_00001.png", 0.04,
-    "images/VFX/Joy/Joy_00002.png", 0.04,
-    "images/VFX/Joy/Joy_00003.png", 0.04,
-    "images/VFX/Joy/Joy_00004.png", 0.04,
-    "images/VFX/Joy/Joy_00005.png", 0.04,
-    "images/VFX/Joy/Joy_00006.png", 0.04,
-    "images/VFX/Joy/Joy_00007.png", 0.04,
-    "images/VFX/Joy/Joy_00008.png", 0.04,
-    "images/VFX/Joy/Joy_00009.png", 0.04,
-    "images/VFX/Joy/Joy_00010.png", 0.04,
-    "images/VFX/Joy/Joy_00011.png", 0.04,
-    "images/VFX/Joy/Joy_00012.png", 0.04,
-    "images/VFX/Joy/Joy_00013.png", 0.04,
-    "images/VFX/Joy/Joy_00014.png", 0.04,
-    "images/VFX/Joy/Joy_00015.png", 0.04,
-    "images/VFX/Joy/Joy_00016.png", 0.04,
-    "images/VFX/Joy/Joy_00017.png", 0.04,
-    "images/VFX/Joy/Joy_00018.png", 0.04,
-    "images/VFX/Joy/Joy_00019.png", 0.04,
-    "images/VFX/Joy/Joy_00020.png", 0.04,
-    "images/VFX/Joy/Joy_00021.png", 0.04,
-    "images/VFX/Joy/Joy_00022.png", 0.04,
-    "images/VFX/Joy/Joy_00023.png", 0.04,
-    "images/VFX/Joy/Joy_00024.png", 0.04,
-    "images/VFX/Joy/Joy_00025.png", 0.04,
-    "images/VFX/Joy/Joy_00026.png", 0.04,
-    "images/VFX/Joy/Joy_00027.png", 0.04,
-    "images/VFX/Joy/Joy_00028.png", 0.04,
-    "images/VFX/Joy/Joy_00029.png", 0.04,
-    "images/VFX/Joy/Joy_00030.png", 0.04,
-    "images/VFX/Joy/Joy_00031.png", 0.04,
-    "images/VFX/Joy/Joy_00032.png", 0.04,
-    "images/VFX/Joy/Joy_00033.png", 0.04,
-    "images/VFX/Joy/Joy_00034.png", 0.04,
-    "images/VFX/Joy/Joy_00035.png", 0.04,
-    "images/VFX/Joy/Joy_00036.png", 0.04,
-    "images/VFX/Joy/Joy_00037.png", 0.04,
-    "images/VFX/Joy/Joy_00038.png", 0.04,
-    "images/VFX/Joy/Joy_00039.png", 0.04,
-    "images/VFX/Joy/Joy_00040.png", 0.04,
-    "images/VFX/Joy/Joy_00041.png", 0.04,
-    "images/VFX/Joy/Joy_00042.png", 0.04,
-    "images/VFX/Joy/Joy_00043.png", 0.04,
-    "images/VFX/Joy/Joy_00044.png", 0.04,
-    "images/VFX/Joy/Joy_00045.png", 0.04,
-    "images/VFX/Joy/Joy_00046.png", 0.04,
-    "images/VFX/Joy/Joy_00047.png", 0.04,
-    "images/VFX/Joy/Joy_00048.png", 0.04,
-    "images/VFX/Joy/Joy_00049.png", 0.04,
-    "images/VFX/Joy/Joy_00050.png", 0.04,
-    "images/VFX/Joy/Joy_00051.png", 0.04,
-    "images/VFX/Joy/Joy_00052.png", 0.04,
-    "images/VFX/Joy/Joy_00053.png", 0.04,
-    "images/VFX/Joy/Joy_00054.png", 0.04,
-    "images/VFX/Joy/Joy_00055.png", 0.04,
-    "images/VFX/Joy/Joy_00056.png", 0.04,
-    "images/VFX/Joy/Joy_00057.png", 0.04,
-    "images/VFX/Joy/Joy_00058.png", 0.04,
-    "images/VFX/Joy/Joy_00059.png", 0.04,
-    "images/VFX/Joy/Joy_00060.png", 0.04,
-    "images/VFX/Joy/Joy_00061.png", 0.04,
-    "images/VFX/Joy/Joy_00062.png", 0.04,
-    "images/VFX/Joy/Joy_00063.png", 0.04,
-    "images/VFX/Joy/Joy_00064.png", 0.04,
-    "images/VFX/Joy/Joy_00065.png", 0.04
+    "images/VFX/Joy/Joy_00001.png", 0.06,
+    "images/VFX/Joy/Joy_00002.png", 0.06,
+    "images/VFX/Joy/Joy_00003.png", 0.06,
+    "images/VFX/Joy/Joy_00004.png", 0.06,
+    "images/VFX/Joy/Joy_00005.png", 0.06,
+    "images/VFX/Joy/Joy_00006.png", 0.06,
+    "images/VFX/Joy/Joy_00007.png", 0.06,
+    "images/VFX/Joy/Joy_00008.png", 0.06,
+    "images/VFX/Joy/Joy_00009.png", 0.06,
+    "images/VFX/Joy/Joy_00010.png", 0.06,
+    "images/VFX/Joy/Joy_00011.png", 0.06,
+    "images/VFX/Joy/Joy_00012.png", 0.06,
+    "images/VFX/Joy/Joy_00013.png", 0.06,
+    "images/VFX/Joy/Joy_00014.png", 0.06,
+    "images/VFX/Joy/Joy_00015.png", 0.06,
+    "images/VFX/Joy/Joy_00016.png", 0.06,
+    "images/VFX/Joy/Joy_00017.png", 0.06,
+    "images/VFX/Joy/Joy_00018.png", 0.06,
+    "images/VFX/Joy/Joy_00019.png", 0.06
 )
 
 image sadness = Animation(
@@ -1045,11 +1124,6 @@ define M_type_sounds = ['audio/SFX/AP_TM-001.ogg','audio/SFX/AP_TM-002.ogg','aud
 define G_type_sounds = ['audio/SFX/AP_TG-001.ogg','audio/SFX/AP_TG-002.ogg','audio/SFX/AP_TG-003.ogg','audio/SFX/AP_TG-004.ogg','audio/SFX/AP_TG-005.ogg','audio/SFX/AP_TG-006.ogg']
 define P_type_sounds = ['audio/SFX/AP_TP-001.ogg','audio/SFX/AP_TP-002.ogg','audio/SFX/AP_TP-003.ogg','audio/SFX/AP_TP-004.ogg','audio/SFX/AP_TP-005.ogg','audio/SFX/AP_TP-006.ogg']
 define type_silent = ['<silence 1.0>']
-define audio.transition = 'audio/SFX/AP_UI_Transition.ogg'
-define audio.IntroConstruction = 'audio/SFX/AP_SFX_Intro_Construction.ogg'
-define audio.IntroRagots = 'audio/SFX/AP_SFX_Intro_Ragots.ogg'
-define audio.IntroRoaring = 'audio/SFX/AP_SFX_Intro_Roaring20s.ogg'
-define audio.IntroSmartphone = 'audio/SFX/AP_SFX_Intro_Smartphone.ogg'
 
 # SONS d'UI
 # pour jouer aléatoirement un son de la liste : renpy.sound.play(renpy.random.choice(nomliste))
@@ -1127,11 +1201,19 @@ label start:
     if player_name == "":
         $ player_name = "Anthräx"
 
-    call screen name_confirm_screen(
-    message="Tu veux bien garder [player_name] ?",
-    yes_action=Jump("onboarding"),
-    no_action=Jump("start"),
-    style_prompt="confirm_prompt_text")
+    if _preferences.language == "English":
+        call screen name_confirm_screen(
+        message="Would you keep [player_name] ?",
+        yes_action=Jump("onboarding"),
+        no_action=Jump("start"),
+        style_prompt="confirm_prompt_text")
+
+    else:
+        call screen name_confirm_screen(
+        message="Tu veux bien garder [player_name] ?",
+        yes_action=Jump("onboarding"),
+        no_action=Jump("start"),
+        style_prompt="confirm_prompt_text")
 
 
 
@@ -1151,53 +1233,44 @@ label onboarding:
     with fade
     $ quick_menu = True  
 
-    stop music fadeout 0.5
-    play ambiance AmbRue fadein 1.0
+    play ambiance AmbRue fadein 2.0
 
     $ current_textbox = "description"
 
-    text "L'androgame..."
-
-    play music IntroConstruction noloop
-
-    text "Cela fait un moment maintenant qu’il a été reprit, et après de longs et nombreux travaux, il fait à présent revivre le quartier comme je ne l’avais jamais vu auparavant."
-    text "Et puis même au sein de la commu’, ça a fait jaser. Toutes les têtes d’affiches sont queer."
-    
-    play music IntroRagots noloop
-
-    text "Ça fait presque bizarre de nous voir nous réapproprier une époque dans laquelle on n’avait pas le droit d'exister."
-    text "Je suis sûr·e qu’on n’aurait jamais autant flamboyé que dans les années 20... C’est peut-être pour ça qu’on était \"interdits\"?"
+    text "L'Androgame..."
+    text "Cela fait un moment maintenant qu'il a été reprit, et après de longs travaux, il fait à présent revivre le quartier comme je ne l'avais jamais vu auparavant."
+    text "Et puis même au sein de la commu', ça a fait jaser. Toutes les têtes d'affiches sont queer."
+    text "Ça fait presque bizarre de nous voir nous réapproprier une époque dans laquelle on n'avait pas le droit d'exister."
+    text "Je suis sûr·e que l’on n’aurait jamais autant flamboyé que dans les années 20... C’est peut-être pour ça qu’on était \"interdit.e.s\" ?"
     text "On aurait trop volé la vedette aux hétéros."
-    
-    play music IntroRoaring noloop
-
     text "Les plumes, la fourrure, les paillettes, le champagne, le charleston, l’occasionnel rail de coke... Les années folles quoi."
     text "C’est ce qui m’a motivé·e à me lancer dans le drag finalement..."
     text "J’ai toujours été intrigué·e par cette forme d’expression. Et à voir ces artistes bourré·e·s de talent faire leur show, à deux pas de chez moi..."
-    text "Au début, j’en avais un peu honte. Je me costumais en cachette dans mon appart, et pour être honnête, c’était peut-être pour le mieux."
+    text "J'ai commencé à me costumer en cachette dans mon appart, et pour être honnête, c'était peut-être pour le mieux."
     text "Mes premières tentatives de make-up étaient catastrophiques... Mais au fur et à mesure, j’ai pris le coup de pinceau."
     text "Ce que je pensais être une lubie est finalement devenu un hobby."
-
-    queue music IntroSmartphone noloop
-
-    text "Je faisais mon petit contenu sur les réseaux socieux et continuait ma vie tranquillement à côté, en passant toujours devant l’Androgame pour aller au travail."
-    text "Alors quand ils ont lancé des auditions pour agrandir la troupe, j’ai longuement hésité. Je ne me sentais pas légitime de rentrer dans cette sphère."
-    text "Je ne pensais pas être sélectionné.e, encore moins de passer un entretien avec Mother, la patronne du cabaret. Je n’ai pas trop compris, mais elle m’a parlé des règles de conduite au sein de la troupe et envers les clients, puis d’une période d’essai..."
-
+    text "Je faisais mon petit contenu sur les réseaux socieux et continuait ma vie tranquillement à côté, en passant toujours devant L’Androgame pour aller au travail."
+    text "Alors quand ils ont lancé des auditions pour agrandir la troupe, j'ai longuement hésité. Mais on n'a qu'une vie !"
+    text "Je ne pensais pas être sélectionné·e ! Et encore moins passer un entretien avec Mother, la patronne du cabaret. "
+    
     stop ambiance fadeout 1.0
     play music CabaretEntrance volume 0.7
     hide devanture
+    scene black with fade
     show auditorium  with dissolve
     show mother at mother_center with dissolve
+
 
 
 #0.2
 
     play ambiance AmbAndrogameDay fadein 0.5
 
-    $ current_textbox = "anthrax"
+    $ current_textbox = "mother"
 
-    mother "Bienvenue dans l'Androgame ! J'espère que tu as fait bonne route."
+    show joy at joy_center
+    mother "Bienvenue dans L'Androgame ! J'espère que tu as fait bonne route."
+    hide joy with dissolve
 
     queue music CabaretIntro volume 0.7
     queue music CabaretLightVerse volume 0.7
@@ -1205,188 +1278,225 @@ label onboarding:
 
     $ current_textbox = "description"
 
+    #overlay description
     text "Une fois passée la porte pivotante, la hauteur sous plafond et les lustres géométriques faillirent me donner un torticolis. "
-    text "Je devais presque plisser les yeux pour repérer tous les petits détails dans la marqueterie, les dorures et les formes dans le papier peint."
+    text "Je devais presque plisser les yeux pour repérer tous les petits détails dans la marqueterie, les dorures et les reliefs dans le papier peint."
+    # retirer overlay
 
     $ current_textbox = "anthrax"
 
-    anthrax "Oui. Et puis, c’est le genre d’établissement qu’il est difficile de louper!"
+    anthrax "Oui. Et puis, c’est le genre d’établissement qu’il est difficile de louper !"
+    
+    $ current_textbox = "mother"
 
+    show joy at joy_center
     mother "Aha ! Tu m’en vois ravie de l’entendre."
+    hide joy with dissolve
+
     mother "Je ne vais pas te faire patienter plus longtemps... Commençons par te faire une petite visite des lieux. Promis, tu vas t’y retrouver bien vite."
+    hide mother with dissolve
 
     queue music CabaretLightChorus volume 0.7
 
-    mother "Et nous voici donc dans l'auditorium !"
+    show mother at mother_right with dissolve
+    show joy at joy_right
+    mother "Nous voici donc dans l'auditorium !"
+    hide joy with dissolve
 
     mother "Il sera un peu comme ton meilleur ennemi, car peu importe le trac ou qui se retrouvera dans le public, il faudra grimper sur les planches !"
    
-    mother "Après, si tu es ici aujourd’hui, c’est parce que c’est justement le genre de chose qui t’anime: te mettre en scène..."
-
-    hide mother 
-
-    $ current_textbox = "description" 
+    show joy at joy_right
+    mother "Après, si tu es ici aujourd’hui, c’est parce que c’est justement le genre de chose qui t’anime : te mettre en scène..."
+    hide joy with dissolve
 
     stop ambiance fadeout 5.0
 
 
 #0.5
     hide auditorium 
-    show loges
-    with fade
+    hide mother with dissolve
+    scene black with fade
+    
     queue music CabaretLightSolo volume 0.7
 
     $ current_textbox = "description" 
 
-    show mother at mother_right  with dissolve
-
     text "Nous sommes monté·e·s sur la scène et l'avons traversée avant de passer derrière les épais rideaux de velours." 
     text "Les coulisses étaient un véritable dédale de couloirs tandis qu'elle ouvrait quelques portes et me présentait chaque pièce."
     text "Ici, la réserve des costumes; où les armatures de dos, de hanches, d'épaules à plumes d'autruche, de floss, d'oie ou de faisan;"
-    text "et les casques grandioses à strass, sequins, perles de verre ou fausses pierres précieuses, se faisaient la compétition." 
+    text "Et les casques grandioses à strass, sequins, perles de verre ou fausses pierres précieuses, se faisaient la compétition." 
     text "Là, l'inventaire des décors roulants, barres de pole dance, accessoires de scène et de cirque pour les tours plus acrobatiques." 
-    text "Déjà que je ne savais pas encore vers quelle pratique je souhaitais me spécialiser, submergé·e par tout ceci, j'en étais d'autant plus perdu·e..."
     stop music fadeout 1.5
     text "Nous avons fini par pousser une dernière porte, celle des loges..."
     
+    show loges
+
     play ambiance AmbLoges fadein 1
     play music BackstageDrumLoop volume 0.5
 
-    show imani_neutre at pea_left  with dissolve
+    show imani_neutre at pea_left with dissolve
 
-    $ current_textbox = "anthrax"
-
+    $ current_textbox = "peacock"
+    
+    show angry at angry_left
     imani "Ok, hear me out... Je dis simplement que si l'on veut garder une logique dans la suite de nos numéros, on va devoir inverser l'ordre dans lequel on passe..."
-    imani "Pour pouvoir faire de la place aux nouvelles."
+    hide angry with dissolve
 
+    imani "Pour pouvoir faire de la place aux nouvelles !"
+    
     $ current_textbox = "description"
 
-    text "L'homme qui venait de prendre la parole était en train de gribouiller avec insistance un schéma dans son carnet, "
-    text "une aiguille à coudre entre les lèvres et une pièce de tissu sur les genoux, à laquelle il semblait broder des sequins un à un."
+    #ajouter un overlay entre la descri et le personnage
+    text "L'homme qui venait de prendre la parole était en train de gribouiller avec insistance un croquis dans son carnet..."
+    text "Une aiguille à coudre entre les lèvres et une pièce de tissu sur les genoux, à laquelle il semblait broder des sequins uns à uns."
+    #retirer l'overlay
 
-    $ current_textbox = "anthrax"
+    $ current_textbox = "gatsby"
 
-    inconnu "Girl... J'entends, et je suis d'accord sur le fond. Mais on ne les connaît même pas encore et on ne sait pas quels numéros iels vont présenter, ou si même iels en ont... "
+    show aimee_neutre at gat_right with dissolve
+    inconnu "Girl... J'entends, et je suis d'accord sur le fond. Mais on ne les connaît même pas encore et on ne sait pas quels numéros iels vont présenter, ou si même iels en ont..."
+    hide imani_neutre with dissolve
+    
+    show joy at joy_right
     inconnu "Tu es en train de te faire des plans sur la comète, ma belle."
+    hide joy
 
     $ current_textbox = "description"
 
-    text "Les doigts couverts de gel et un peigne à la main, la personne qui venait de lui répondre était en train de styliser une perruque noir de jais sur une tête de mannequin." 
-    text "Iel y plaquait les cheveux contre le front en de jolies boucles bien définie, et y fixait des perles nacrées avec un pistolet à colle."
+    #ajouter un overlay entre la descri et le personnage
+    text "Les doigts couverts de gel et un peigne à la main, la personne qui venait de lui répondre était en train de styliser une perruque noire de jais sur une tête de mannequin." 
+    text "Iel y plaquait les cheveux contre le front en de jolies boucles bien définies, et y fixait des perles nacrées avec un pistolet à colle."
+    #retirer l'overlay
 
-    $ current_textbox = "anthrax"
+    $ current_textbox = "gatsby"
 
-    hide mother 
     show aimee_neutre at gat_right  with dissolve
 
-    inconnu "Et toi Del'? Qu'est-ce que tu en penses?"
+    inconnu "Et toi Del'? Qu'est-ce que tu en penses ?"
 
     $ current_textbox = "description"
 
+    show leandre_neutre at del_left with dissolve
+    #ajouter un overlay entre la descri et le personnage
     text "Un autre garçon, plus silencieux, avait la tête baissée sur un corset tout de dentelle, qu'il laçait précautionneusement."
+    hide aimee_neutre with dissolve 
     text "Relevant la tête, le concerné remarqua qu'iels n'étaient plus trois dans la pièce et me fixa un instant, avant de se retourner vers ses interlocuteur·ice·s."
-
-    hide imani_neutre 
-    show leandre_neutre at del_left  with dissolve
-
-    delinconnu "Je pense qu'on devrait leur demander directement..."
-
-    $ current_textbox = "description"
-
-    text "Les deux autres se sont retourné·e·s vers l'encadrement de porte dans lequel nous nous tenions, Mother et moi."
-
-    $ current_textbox = "anthrax"
+    #retirer l'overlay
     
-    delinconnu "Ou alors que ce serait justement l'occasion parfaite pour nous de revoir nos propres tours..." 
+
+    $ current_textbox = "delaunay"
+
+    show joy at joy_left
+    delinconnu "Je pense qu'on devrait leur demander directement..."
+    hide joy
+    
+    delinconnu "Ou alors que ce serait justement l'occasion parfaite pour nous de revoir nos tours respectifs..." 
+    
 
     stop music fadeout 1.0
 
     $ current_textbox = "description"
 
-    text "Un court silence s'installa, tandis que nous nous regardions dans le blanc des yeux, ne sachant pas tellement qui devait prendre la parole et que dire."
+    show aimee_neutre at gat_right with dissolve
+    show imani_neutre at pea_center with dissolve
+    #ajouter un overlay entre la descri et le personnage
+    text "Un court silence s'installa, tandis que nous nous regardions tous.te.s dans le blanc des yeux, ne sachant pas tellement qui devait prendre la parole et que dire." 
+    #retirer l'overlay
 
-    hide aimee_neutre 
-    hide leandre_neutre 
-    show mother at mother_center  with dissolve
+    #possibilité de les retirer toustes en même temps?
+    hide leandre_neutre with dissolve
+    hide aimee_neutre with dissolve
+    hide imani_neutre with dissolve
 
-    $ current_textbox = "anthrax"
+    show mother at mother_center with dissolve
 
+    $ current_textbox = "mother"
+    
+    show joy at joy_center
     mother "Bon ! Les filles, je vous présente [player_name], iel nous rejoindra sous peu, le temps d'arranger le spectacle, et je compte sur vous pour l'accueillir comme il se doit."
+    hide joy
+    hide mother with dissolve
 
     play music CabaretLightChorus volume 0.7
 
-    $ current_textbox = "description"
+    $ current_textbox = "peacock"
 
-    text "Semblant sortir de leur torpeur et reprendre leurs esprits, les artistes drag face à moi me sourirent et commencèrent à faire un tour des présentations."
+    show imani_neutre at pea_right with dissolve
+    imani "Pardon, on a dû te sembler super judgy avec notre absence de réaction ! Moi c'est Imani."
+
+    show flirt at flirt_right
+    imani "Parfois on s'appelle aussi par nos noms de scène, donc tu peux aussi m'appeler Peacock, si tu en as envie..."
+    hide flirt
+
+    $ current_textbox = "mother"
     
-    hide mother 
-    show imani_neutre at pea_center with dissolve
-
-    $ current_textbox = "anthrax"
-
-    peacock "Pardon, on a dû te sembler super judgy avec notre absence de réaction ! Moi c'est Imani."
-    peacock "Parfois on s'appelle aussi par nos noms de scène, donc tu peux aussi m'appeler Peacock, si tu en as envie..."
-    
-    hide imani_neutre 
-    show mother at mother_center with dissolve
-
+    show mother at mother_left with dissolve
     mother "Imani se spécialise dans tout ce qui est du ressort de la performance vocale. Lipsync, chant, reading, shading, imitation..."
+
     mother "Si tu as des conseils à aller chercher de ce côté, c'est vers elle."
     
-    hide mother 
-    show imani_neutre at pea_center with dissolve
+    $ current_textbox = "peacock"
 
-    peacock "Ah oui ! Et pour les pronoms, tu peux utiliser ceux dont tu as envie, je ne suis pas très regardant. Je me genre moi-même souvent au féminin."
+    imani "Ah oui ! Et pour les pronoms, tu peux utiliser ceux dont tu as envie, je ne suis pas très regardant. Je me genre moi-même souvent au féminin."
+    hide imani_neutre with dissolve
+
+    $ current_textbox = "mother"
     
-    hide imani_neutre 
-    show mother at mother_center with dissolve
-
     mother "Le petit timide là, qui essaye de faire en sorte de se faire oublier, c'est Léandre."
 
     $ current_textbox = "description"
-    
-    text "Prit en flagrant délit, le jeune homme tourna au pivoine et balbutia, mal à l'aise."
-    
     hide mother 
-    show leandre_neutre at del_center with dissolve
+    #ajouter overlay
+    show leandre_neutre at del_right with dissolve
+    text "Prit en flagrant délit, le jeune homme tourna au pivoine et balbutia, mal à l'aise."
+    #retirer overlay
 
-    $ current_textbox = "anthrax"
+    $ current_textbox = "delaunay"
     
     leandre "N-Non ! C'est juste que... J'ai toujours un peu de mal avec les nouvelles personnes. Excuse-moi..."
+    show flirt at flirt_right
     leandre "Oui, donc moi, c'est Léandre, j'utilise il/lui, et je fais principalement de l'effeuillage burlesque. C'est assez classique..."
-    
-    hide leandre_neutre 
-    show aimee_neutre at gat_center with dissolve
-    
+    hide flirt
+
+    $ current_textbox = "gatsby"
+    show aimee_neutre at gat_left with dissolve
+    show joy at joy_left
     inconnu "C'est tout sauf classique, ton striptease !"
+    hide joy
     
     $ current_textbox = "description"
 
+    show angry at angry_right
     text "Léandre se renfrogna davantage. Apparement, les deux étaient suffisamment bon·ne·s ami·e·s pour se taquiner et s'embarasser ainsi."
-    
-    $ current_textbox = "anthrax"
+    hide angry
+    hide leandre_neutre with dissolve
+
+    $ current_textbox = "gatsby"
 
     gatsby "Du coup, vu qu'on doit toujours parler à sa place, son nom de drag est Delaunay."
-    gatsby "Et moi c'est Gatsby ! Parce que je suis magnifique, et que je n'avais pas plus d'inspi que ça au moment de choisir. Je me genre au neutre, c'est à dire avec ellui/iel."
-    gatsby "C'est non-négociable. "
-    gatsby "Mais mon vrai prénom, c'est Aimé.e. Bien trouvé, non?"
+    show joy at joy_left
+    gatsby "Et moi c'est Gatsby ! Parce que je suis magnifique, et que je n'avais pas plus d'inspi que ça au moment de choisir."
+    hide joy
+    gatsby "Je me genre au neutre, c'est à dire avec ellui/iel. C'est non-négociable.~"
+    show flirt at flirt_left
+    aimee "Mais mon vrai prénom, c'est Aimé.e. Bien trouvé, non?"
+    hide flirt
+    hide aimee_neutre with dissolve
     
     stop ambiance fadeout 1
     stop music fadeout 2.0
-    hide aimee_neutre 
     jump route_choice_intro
-
-
 
 
 
 label route_choice_intro:
     show loges 
-    show mother at mother_right 
-    mother "Alors [player], si tu devais choisir l'un de mes \"babies\" comme marrain ou parraine, qui est-ce que tu désignerais ?" with fade
+    show mother at mother_center
+    $ current_textbox = "mother"
+    mother "Alors [player_name], si tu devais choisir l'un de mes \"babies\" comme marrain ou parraine, qui est-ce que tu désignerais ?" with fade
     hide loges 
     hide devanture 
-    hide mother 
+    hide mother with dissolve
     stop music fadeout 0.1
     $ _window_hide()
     $ renpy.pause(0, hard=True)
