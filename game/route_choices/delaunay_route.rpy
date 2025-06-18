@@ -97,11 +97,6 @@ define audio.CrowdDel3 = "audio/Amb/AP_Crowd_ShowDelSt3.ogg"
 define audio.CrowdDel4 = "audio/Amb/AP_Crowd_ShowDelSt4.ogg"
 
 # Liste des musiques
-define audio.GoodVibeIntro = "audio/Music/ON_GoodVibeIntro_V2.ogg"
-define audio.IntroGoodVibe1 = "audio/Music/ON_GoodVibeA_V2.ogg"
-define audio.IntroGoodVibe2 = "audio/Music/ON_GoodVibeB_V2.ogg"
-define audio.IntroGoodVibe3 = "audio/Music/AP_IntroGoodVib3_V1.ogg"
-define audio.IntroGoodVibe4 = "audio/Music/AP_IntroGoodVib4_V1.ogg"
 define audio.CabaretEntrance = "audio/Music/ON_CabaretEntrance_V1.ogg"
 define audio.CabaretIntro = "audio/Music/ON_CabaretIntro_V1_.ogg"
 define audio.CabaretLightVerse = "audio/Music/ON_CabaretLightVerse_V1.ogg"
@@ -111,7 +106,7 @@ define audio.BackstageSt1 = "audio/Music/AP_Stinger1_V1.ogg"
 define audio.BackstageSt2 = "audio/Music/AP_Stinger2_V1.ogg"
 define audio.BackstageSt3 = "audio/Music/AP_Stinger3_V1.ogg"
 define audio.BackstageSt4 = "audio/Music/AP_Stinger4_V1.ogg"
-define audio.BackstageLoop = "audio/Music/AP_LogesTruc_V1.ogg"
+define audio.End = "audio/Music/AP_LogesTruc_V1.ogg"  
 define audio.BackstageDrumLoop = "audio/Music/ON_BackStageLoop_V1.ogg"
 define audio.BarMusic = "audio/Music/RUN_BarNeutral_V1.ogg"
 define audio.ShowDelaunay = "audio/Music/AP_ShowDelaunay_V2.ogg"
@@ -1256,6 +1251,7 @@ label del_6_good:
  
     scene black with dissolve
     
+    play music End
 
     $ current_textbox = "description"
     text "Le temps que Delaunay et les autres artistes terminent de se démaquiller et de se rhabiller en civil, je passai le balai sur les planches de la scène..."

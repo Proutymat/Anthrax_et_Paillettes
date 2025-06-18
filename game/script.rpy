@@ -1124,6 +1124,10 @@ define M_type_sounds = ['audio/SFX/AP_TM-001.ogg','audio/SFX/AP_TM-002.ogg','aud
 define G_type_sounds = ['audio/SFX/AP_TG-001.ogg','audio/SFX/AP_TG-002.ogg','audio/SFX/AP_TG-003.ogg','audio/SFX/AP_TG-004.ogg','audio/SFX/AP_TG-005.ogg','audio/SFX/AP_TG-006.ogg']
 define P_type_sounds = ['audio/SFX/AP_TP-001.ogg','audio/SFX/AP_TP-002.ogg','audio/SFX/AP_TP-003.ogg','audio/SFX/AP_TP-004.ogg','audio/SFX/AP_TP-005.ogg','audio/SFX/AP_TP-006.ogg']
 define type_silent = ['<silence 1.0>']
+define audio.IntroConstruction = 'audio/SFX/AP_SFX_Intro_Construction.ogg'
+define audio.IntroRagots = 'audio/SFX/AP_SFX_Intro_Ragots.ogg'
+define audio.IntroRoaring = 'audio/SFX/AP_SFX_Intro_Roaring20s.ogg'
+define audio.IntroSmartphone = 'audio/SFX/AP_SFX_Intro_Roaring20s.ogg'
 
 # SONS d'UI
 # pour jouer aléatoirement un son de la liste : renpy.sound.play(renpy.random.choice(nomliste))
@@ -1146,11 +1150,6 @@ define audio.CrowdDel3 = "audio/Amb/AP_Crowd_ShowDelSt3.ogg"
 define audio.CrowdDel4 = "audio/Amb/AP_Crowd_ShowDelSt4.ogg"
 
 # Liste des musiques
-define audio.GoodVibeIntro = "audio/Music/ON_GoodVibeIntro_V2.ogg"
-define audio.IntroGoodVibe1 = "audio/Music/ON_GoodVibeA_V2.ogg"
-define audio.IntroGoodVibe2 = "audio/Music/ON_GoodVibeB_V2.ogg"
-define audio.IntroGoodVibe3 = "audio/Music/AP_IntroGoodVib3_V1.ogg"
-define audio.IntroGoodVibe4 = "audio/Music/AP_IntroGoodVib4_V1.ogg"
 define audio.CabaretEntrance = "audio/Music/ON_CabaretEntrance_V1.ogg"
 define audio.CabaretIntro = "audio/Music/ON_CabaretIntro_V1_.ogg"
 define audio.CabaretLightVerse = "audio/Music/ON_CabaretLightVerse_V1.ogg"
@@ -1233,23 +1232,35 @@ label onboarding:
     with fade
     $ quick_menu = True  
 
-    play ambiance AmbRue fadein 2.0
+    play ambiance AmbRue fadein 0.5
 
     $ current_textbox = "description"
 
     text "L'Androgame..."
+
+    play music IntroConstruction noloop
+
     text "Cela fait un moment maintenant qu'il a été reprit, et après de longs travaux, il fait à présent revivre le quartier comme je ne l'avais jamais vu auparavant."
     text "Et puis même au sein de la commu', ça a fait jaser. Toutes les têtes d'affiches sont queer."
+
+    queue music IntroRagots noloop
+
     text "Ça fait presque bizarre de nous voir nous réapproprier une époque dans laquelle on n'avait pas le droit d'exister."
     text "Je suis sûr·e que l’on n’aurait jamais autant flamboyé que dans les années 20... C’est peut-être pour ça qu’on était \"interdit.e.s\" ?"
     text "On aurait trop volé la vedette aux hétéros."
+
+    queue music IntroRoaring noloop
+
     text "Les plumes, la fourrure, les paillettes, le champagne, le charleston, l’occasionnel rail de coke... Les années folles quoi."
     text "C’est ce qui m’a motivé·e à me lancer dans le drag finalement..."
     text "J’ai toujours été intrigué·e par cette forme d’expression. Et à voir ces artistes bourré·e·s de talent faire leur show, à deux pas de chez moi..."
     text "J'ai commencé à me costumer en cachette dans mon appart, et pour être honnête, c'était peut-être pour le mieux."
     text "Mes premières tentatives de make-up étaient catastrophiques... Mais au fur et à mesure, j’ai pris le coup de pinceau."
     text "Ce que je pensais être une lubie est finalement devenu un hobby."
-    text "Je faisais mon petit contenu sur les réseaux socieux et continuait ma vie tranquillement à côté, en passant toujours devant L’Androgame pour aller au travail."
+
+    queue music IntroSmartphone noloop
+
+    text "Je faisais mon petit contenu sur les réseaux sociaux et continuais ma vie tranquillement à côté, en passant toujours devant L’Androgame pour aller au travail."
     text "Alors quand ils ont lancé des auditions pour agrandir la troupe, j'ai longuement hésité. Mais on n'a qu'une vie !"
     text "Je ne pensais pas être sélectionné·e ! Et encore moins passer un entretien avec Mother, la patronne du cabaret. "
     
@@ -1296,8 +1307,6 @@ label onboarding:
     mother "Je ne vais pas te faire patienter plus longtemps... Commençons par te faire une petite visite des lieux. Promis, tu vas t’y retrouver bien vite."
     hide mother with dissolve
 
-    queue music CabaretLightChorus volume 0.7
-
     show mother at mother_right with dissolve
     show joy at joy_right
     mother "Nous voici donc dans l'auditorium !"
@@ -1309,6 +1318,7 @@ label onboarding:
     mother "Après, si tu es ici aujourd’hui, c’est parce que c’est justement le genre de chose qui t’anime : te mettre en scène..."
     hide joy with dissolve
 
+    stop music fadeout 5.0
     stop ambiance fadeout 5.0
 
 
@@ -1317,8 +1327,6 @@ label onboarding:
     hide mother with dissolve
     scene black with fade
     
-    queue music CabaretLightSolo volume 0.7
-
     $ current_textbox = "description" 
 
     text "Nous sommes monté·e·s sur la scène et l'avons traversée avant de passer derrière les épais rideaux de velours." 
@@ -1332,7 +1340,6 @@ label onboarding:
     show loges
 
     play ambiance AmbLoges fadein 1
-    play music BackstageDrumLoop volume 0.5
 
     show imani_neutre at pea_left with dissolve
 
