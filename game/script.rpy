@@ -60,6 +60,13 @@ init python:
 
     renpy.music.register_channel("ambiance", "sfx", True)
     renpy.music.register_channel("sfx","sfx", False)
+    renpy.music.register_channel("vfxL","sfx", False)
+    renpy.music.register_channel("vfxC","sfx", False)
+    renpy.music.register_channel("vfxR","sfx", False)
+
+    renpy.music.set_pan(-0.8, 0, 'vfxL')
+    renpy.music.set_pan(0,0, 'vfxC')
+    renpy.music.set_pan(0.8,0,'vfxR')
 
 
 # Déclarez sous cette ligne les images, avec l'instruction 'image'
@@ -1136,6 +1143,11 @@ define audio.Gribouillis = 'audio/SFX/AP_SFX_Gribouillis.ogg'
 define audio.Corset = 'audio/SFX/AP_SFX_Corset.ogg'
 define audio.GelCheveux = 'audio/SFX/AP_SFX_Intro_GelCheveux.ogg'
 define audio.DoorLoges = 'audio/SFX/AP_SFX_Intro_DoorLoges.ogg'
+define audio.VFXJoy = 'audio/SFX/AP_VFX_Joy.ogg'
+define audio.VFXFlirt = 'audio/SFX/AP_VFX_Flirt.ogg'
+define audio.VFXSadness = 'audio/SFX/AP_VFX_Sadness.ogg'
+define audio.VFXAnger = 'audio/SFX/AP_VFX_Anger.ogg'
+define audio.Gradient = 'audio/SFX/AP_VFX_Gradient_V2.ogg'
 
 # SONS d'UI
 # pour jouer aléatoirement un son de la liste : renpy.sound.play(renpy.random.choice(nomliste))
@@ -1247,27 +1259,20 @@ label onboarding:
     text "L'Androgame..."
 
     play music IntroConstruction noloop
-
     text "Cela fait un moment maintenant qu'il a été reprit, et après de longs travaux, il fait à présent revivre le quartier comme je ne l'avais jamais vu auparavant."
-    text "Et puis même au sein de la commu', ça a fait jaser. Toutes les têtes d'affiches sont queer."
-
     queue music IntroRagots noloop
-
+    text "Et puis même au sein de la commu', ça a fait jaser. Toutes les têtes d'affiches sont queer."
     text "Ça fait presque bizarre de nous voir nous réapproprier une époque dans laquelle on n'avait pas le droit d'exister."
     text "Je suis sûr·e que l’on n’aurait jamais autant flamboyé que dans les années 20... C’est peut-être pour ça qu’on était \"interdit.e.s\" ?"
-    text "On aurait trop volé la vedette aux hétéros."
-
     queue music IntroRoaring noloop
-
+    text "On aurait trop volé la vedette aux hétéros."
     text "Les plumes, la fourrure, les paillettes, le champagne, le charleston, l’occasionnel rail de coke... Les années folles quoi."
     text "C’est ce qui m’a motivé·e à me lancer dans le drag finalement..."
     text "J’ai toujours été intrigué·e par cette forme d’expression. Et à voir ces artistes bourré·e·s de talent faire leur show, à deux pas de chez moi..."
     text "J'ai commencé à me costumer en cachette dans mon appart, et pour être honnête, c'était peut-être pour le mieux."
     text "Mes premières tentatives de make-up étaient catastrophiques... Mais au fur et à mesure, j’ai pris le coup de pinceau."
     text "Ce que je pensais être une lubie est finalement devenu un hobby."
-
     queue music IntroSmartphone noloop
-
     text "Je faisais mon petit contenu sur les réseaux sociaux et continuais ma vie tranquillement à côté, en passant toujours devant L’Androgame pour aller au travail."
     text "Alors quand ils ont lancé des auditions pour agrandir la troupe, j'ai longuement hésité. Mais on n'a qu'une vie !"
     text "Je ne pensais pas être sélectionné·e ! Et encore moins passer un entretien avec Mother, la patronne du cabaret. "
@@ -1289,6 +1294,7 @@ label onboarding:
     $ current_textbox = "mother"
 
     show joy at joy_center
+    play vfxC VFXJoy
     mother "Bienvenue dans L'Androgame ! J'espère que tu as fait bonne route."
     hide joy with dissolve
 
@@ -1310,6 +1316,7 @@ label onboarding:
     $ current_textbox = "mother"
 
     show joy at joy_center
+    play vfxC VFXJoy
     mother "Aha ! Tu m’en vois ravie de l’entendre."
     hide joy with dissolve
 
@@ -1318,12 +1325,14 @@ label onboarding:
 
     show mother at mother_right with dissolve
     show joy at joy_right
+    play vfxR VFXJoy
     mother "Nous voici donc dans l'auditorium !"
     hide joy with dissolve
 
     mother "Il sera un peu comme ton meilleur ennemi, car peu importe le trac ou qui se retrouvera dans le public, il faudra grimper sur les planches !"
    
     show joy at joy_right
+    play vfxR VFXJoy
     mother "Après, si tu es ici aujourd’hui, c’est parce que c’est justement le genre de chose qui t’anime : te mettre en scène..."
     hide joy with dissolve
 
@@ -1360,6 +1369,7 @@ label onboarding:
     $ current_textbox = "peacock"
     
     show angry at angry_left
+    play vfxL VFXAnger
     imani "Ok, hear me out... Je dis simplement que si l'on veut garder une logique dans la suite de nos numéros, on va devoir inverser l'ordre dans lequel on passe..."
     hide angry with dissolve
 
@@ -1379,6 +1389,7 @@ label onboarding:
     hide imani_neutre with dissolve
     
     show joy at joy_right
+    play vfxR VFXJoy
     inconnu "Tu es en train de te faire des plans sur la comète, ma belle."
     hide joy
 
@@ -1410,6 +1421,7 @@ label onboarding:
     $ current_textbox = "delaunay"
 
     show joy at joy_left
+    play vfxL VFXJoy
     delinconnu "Je pense qu'on devrait leur demander directement..."
     hide joy
     
@@ -1436,6 +1448,7 @@ label onboarding:
     $ current_textbox = "mother"
     
     show joy at joy_center
+    play vfxC VFXJoy
     mother "Bon ! Les filles, je vous présente [player_name], iel nous rejoindra sous peu, le temps d'arranger le spectacle, et je compte sur vous pour l'accueillir comme il se doit."
     hide joy
     hide mother with dissolve
@@ -1448,6 +1461,7 @@ label onboarding:
     imani "Pardon, on a dû te sembler super judgy avec notre absence de réaction ! Moi c'est Imani."
 
     show flirt at flirt_right
+    play vfxR VFXFlirt
     imani "Parfois on s'appelle aussi par nos noms de scène, donc tu peux aussi m'appeler Peacock, si tu en as envie..."
     hide flirt
 
@@ -1478,18 +1492,21 @@ label onboarding:
     
     leandre "N-Non ! C'est juste que... J'ai toujours un peu de mal avec les nouvelles personnes. Excuse-moi..."
     show flirt at flirt_right
+    play vfxR VFXFlirt
     leandre "Oui, donc moi, c'est Léandre, j'utilise il/lui, et je fais principalement de l'effeuillage burlesque. C'est assez classique..."
     hide flirt
 
     $ current_textbox = "gatsby"
     show aimee_neutre at gat_left with dissolve
     show joy at joy_left
+    play vfxL VFXJoy
     inconnu "C'est tout sauf classique, ton striptease !"
     hide joy
     
     $ current_textbox = "description"
 
     show angry at angry_right
+    play vfxR VFXAnger
     text "Léandre se renfrogna davantage. Apparement, les deux étaient suffisamment bon·ne·s ami·e·s pour se taquiner et s'embarasser ainsi."
     hide angry
     hide leandre_neutre with dissolve
@@ -1498,10 +1515,12 @@ label onboarding:
 
     gatsby "Du coup, vu qu'on doit toujours parler à sa place, son nom de drag est Delaunay."
     show joy at joy_left
+    play vfxL VFXJoy
     gatsby "Et moi c'est Gatsby ! Parce que je suis magnifique, et que je n'avais pas plus d'inspi que ça au moment de choisir."
     hide joy
     gatsby "Je me genre au neutre, c'est à dire avec ellui/iel. C'est non-négociable.~"
     show flirt at flirt_left
+    play vfxL VFXFlirt
     aimee "Mais mon vrai prénom, c'est Aimé.e. Bien trouvé, non?"
     hide flirt
     hide aimee_neutre with dissolve
