@@ -136,11 +136,10 @@ $ persistent.bg_parallax = True
 $ quick_menu = True
 scene black with fade
 show loges
-#show aimee_neutre at gat_center with dissolve
+show aimee_neutre at gat_center with dissolve
 play ambiance AmbLoges fadein 2.0
 
 #GAT.1
-show wip
 
 gatsby "Let's go ! On va former un duo d'enfer, je te le dis !"
 
