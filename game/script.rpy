@@ -110,7 +110,108 @@ image balcon = "Backgrounds/balcon.png"
 
 #vfx
 
-
+image curtain : 
+    "images/VFX/Curtain_Close/Curtain_Close_00000.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00001.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00002.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00003.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00004.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00005.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00006.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00007.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00008.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00009.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00010.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00011.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00012.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00013.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00014.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00015.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00016.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00017.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00018.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00019.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00020.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00021.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00022.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00023.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00024.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00025.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00026.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00027.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00028.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00029.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00030.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00031.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00032.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00033.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00034.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00035.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00036.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00037.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00038.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00039.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00040.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00041.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00042.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00043.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00044.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00045.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00046.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00047.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00048.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00049.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00050.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00051.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00052.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00053.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00054.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00055.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00056.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00057.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00000.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00001.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00002.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00003.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00004.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00005.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00006.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00007.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00008.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00009.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00010.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00011.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00012.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00013.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00014.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00015.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00016.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00017.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00018.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00019.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00020.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00021.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00022.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00023.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00024.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00025.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00026.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00027.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00028.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00029.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00030.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00031.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00032.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00033.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00034.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00035.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00036.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00037.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00038.png", 0.04,
+    "images/VFX/Curtain_Open/Curtain_Open_00039.png", 0.04,
+    "images/Backgrounds/transparent_background.png"
+    
+    
 
 image curtain_open:
     "images/VFX/Curtain_Open/Curtain_Open_00000.png", 0.04,
@@ -152,71 +253,71 @@ image curtain_open:
     "images/VFX/Curtain_Open/Curtain_Open_00036.png", 0.04,
     "images/VFX/Curtain_Open/Curtain_Open_00037.png", 0.04,
     "images/VFX/Curtain_Open/Curtain_Open_00038.png", 0.04,
-    "images/VFX/Curtain_Open/Curtain_Open_00039.png", 0.04
+    "images/VFX/Curtain_Open/Curtain_Open_00039.png", 0.04,
     "images/Backgrounds/transparent_background.png"
     
 
 
 
-image curtain_close:
-    "images/VFX/Curtain_Close/Curtain_Close_00000.png", 0.02,
-    "images/VFX/Curtain_Close/Curtain_Close_00001.png", 0.02,
-    "images/VFX/Curtain_Close/Curtain_Close_00002.png", 0.02,
-    "images/VFX/Curtain_Close/Curtain_Close_00003.png", 0.02,
-    "images/VFX/Curtain_Close/Curtain_Close_00004.png", 0.02,
-    "images/VFX/Curtain_Close/Curtain_Close_00005.png", 0.02,
-    "images/VFX/Curtain_Close/Curtain_Close_00006.png", 0.02,
-    "images/VFX/Curtain_Close/Curtain_Close_00007.png", 0.02,
-    "images/VFX/Curtain_Close/Curtain_Close_00008.png", 0.02,
-    "images/VFX/Curtain_Close/Curtain_Close_00009.png", 0.02,
-    "images/VFX/Curtain_Close/Curtain_Close_00010.png", 0.02,
-    "images/VFX/Curtain_Close/Curtain_Close_00011.png", 0.02,
-    "images/VFX/Curtain_Close/Curtain_Close_00012.png", 0.02,
-    "images/VFX/Curtain_Close/Curtain_Close_00013.png", 0.02,
-    "images/VFX/Curtain_Close/Curtain_Close_00014.png", 0.02,
-    "images/VFX/Curtain_Close/Curtain_Close_00015.png", 0.02,
-    "images/VFX/Curtain_Close/Curtain_Close_00016.png", 0.02,
-    "images/VFX/Curtain_Close/Curtain_Close_00017.png", 0.02,
-    "images/VFX/Curtain_Close/Curtain_Close_00018.png", 0.02,
-    "images/VFX/Curtain_Close/Curtain_Close_00019.png", 0.02,
-    "images/VFX/Curtain_Close/Curtain_Close_00020.png", 0.02,
-    "images/VFX/Curtain_Close/Curtain_Close_00021.png", 0.02,
-    "images/VFX/Curtain_Close/Curtain_Close_00022.png", 0.02,
-    "images/VFX/Curtain_Close/Curtain_Close_00023.png", 0.02,
-    "images/VFX/Curtain_Close/Curtain_Close_00024.png", 0.02,
-    "images/VFX/Curtain_Close/Curtain_Close_00025.png", 0.02,
-    "images/VFX/Curtain_Close/Curtain_Close_00026.png", 0.02,
-    "images/VFX/Curtain_Close/Curtain_Close_00027.png", 0.02,
-    "images/VFX/Curtain_Close/Curtain_Close_00028.png", 0.02,
-    "images/VFX/Curtain_Close/Curtain_Close_00029.png", 0.02,
-    "images/VFX/Curtain_Close/Curtain_Close_00030.png", 0.02,
-    "images/VFX/Curtain_Close/Curtain_Close_00031.png", 0.02,
-    "images/VFX/Curtain_Close/Curtain_Close_00032.png", 0.02,
-    "images/VFX/Curtain_Close/Curtain_Close_00033.png", 0.02,
-    "images/VFX/Curtain_Close/Curtain_Close_00034.png", 0.02,
-    "images/VFX/Curtain_Close/Curtain_Close_00035.png", 0.02,
-    "images/VFX/Curtain_Close/Curtain_Close_00036.png", 0.02,
-    "images/VFX/Curtain_Close/Curtain_Close_00037.png", 0.02,
-    "images/VFX/Curtain_Close/Curtain_Close_00038.png", 0.02,
-    "images/VFX/Curtain_Close/Curtain_Close_00039.png", 0.02,
-    "images/VFX/Curtain_Close/Curtain_Close_00040.png", 0.02,
-    "images/VFX/Curtain_Close/Curtain_Close_00041.png", 0.02,
-    "images/VFX/Curtain_Close/Curtain_Close_00042.png", 0.02,
-    "images/VFX/Curtain_Close/Curtain_Close_00043.png", 0.02,
-    "images/VFX/Curtain_Close/Curtain_Close_00044.png", 0.02,
-    "images/VFX/Curtain_Close/Curtain_Close_00045.png", 0.02,
-    "images/VFX/Curtain_Close/Curtain_Close_00046.png", 0.02,
-    "images/VFX/Curtain_Close/Curtain_Close_00047.png", 0.02,
-    "images/VFX/Curtain_Close/Curtain_Close_00048.png", 0.02,
-    "images/VFX/Curtain_Close/Curtain_Close_00049.png", 0.02,
-    "images/VFX/Curtain_Close/Curtain_Close_00050.png", 0.02,
-    "images/VFX/Curtain_Close/Curtain_Close_00051.png", 0.02,
-    "images/VFX/Curtain_Close/Curtain_Close_00052.png", 0.02,
-    "images/VFX/Curtain_Close/Curtain_Close_00053.png", 0.02,
-    "images/VFX/Curtain_Close/Curtain_Close_00054.png", 0.02,
-    "images/VFX/Curtain_Close/Curtain_Close_00055.png", 0.02,
-    "images/VFX/Curtain_Close/Curtain_Close_00056.png", 0.02,
-    "images/VFX/Curtain_Close/Curtain_Close_00057.png", 0.02
+image curtain_close :
+    "images/VFX/Curtain_Close/Curtain_Close_00000.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00001.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00002.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00003.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00004.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00005.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00006.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00007.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00008.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00009.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00010.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00011.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00012.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00013.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00014.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00015.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00016.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00017.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00018.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00019.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00020.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00021.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00022.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00023.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00024.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00025.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00026.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00027.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00028.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00029.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00030.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00031.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00032.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00033.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00034.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00035.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00036.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00037.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00038.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00039.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00040.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00041.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00042.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00043.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00044.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00045.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00046.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00047.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00048.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00049.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00050.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00051.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00052.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00053.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00054.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00055.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00056.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00057.png", 0.04,
     "images/Backgrounds/transparent_background.png"
 
 
@@ -1164,7 +1265,7 @@ label onboarding:
 
     play ambiance AmbAndrogameDay fadein 0.5
 
-    $ current_textbox = "anthrax"
+    $ current_textbox = "mother"
 
     show joy at joy_center
     mother "Bienvenue dans L'Androgame ! J'espère que tu as fait bonne route."
@@ -1184,6 +1285,8 @@ label onboarding:
     $ current_textbox = "anthrax"
 
     anthrax "Oui. Et puis, c’est le genre d’établissement qu’il est difficile de louper !"
+    
+    $ current_textbox = "mother"
 
     show joy at joy_center
     mother "Aha ! Tu m’en vois ravie de l’entendre."
@@ -1232,7 +1335,7 @@ label onboarding:
 
     show imani_neutre at pea_left with dissolve
 
-    $ current_textbox = "anthrax"
+    $ current_textbox = "peacock"
     
     show angry at angry_left
     imani "Ok, hear me out... Je dis simplement que si l'on veut garder une logique dans la suite de nos numéros, on va devoir inverser l'ordre dans lequel on passe..."
@@ -1247,7 +1350,7 @@ label onboarding:
     text "Une aiguille à coudre entre les lèvres et une pièce de tissu sur les genoux, à laquelle il semblait broder des sequins uns à uns."
     #retirer l'overlay
 
-    $ current_textbox = "anthrax"
+    $ current_textbox = "gatsby"
 
     show aimee_neutre at gat_right with dissolve
     inconnu "Girl... J'entends, et je suis d'accord sur le fond. Mais on ne les connaît même pas encore et on ne sait pas quels numéros iels vont présenter, ou si même iels en ont..."
@@ -1264,7 +1367,7 @@ label onboarding:
     text "Iel y plaquait les cheveux contre le front en de jolies boucles bien définies, et y fixait des perles nacrées avec un pistolet à colle."
     #retirer l'overlay
 
-    $ current_textbox = "anthrax"
+    $ current_textbox = "gatsby"
 
     show aimee_neutre at gat_right  with dissolve
 
@@ -1280,7 +1383,7 @@ label onboarding:
     #retirer l'overlay
     
 
-    $ current_textbox = "anthrax"
+    $ current_textbox = "delaunay"
 
     show joy at joy_left
     delinconnu "Je pense qu'on devrait leur demander directement..."
@@ -1306,7 +1409,7 @@ label onboarding:
 
     show mother at mother_center with dissolve
 
-    $ current_textbox = "anthrax"
+    $ current_textbox = "mother"
     
     show joy at joy_center
     mother "Bon ! Les filles, je vous présente [player_name], iel nous rejoindra sous peu, le temps d'arranger le spectacle, et je compte sur vous pour l'accueillir comme il se doit."
@@ -1315,7 +1418,7 @@ label onboarding:
 
     play music CabaretLightChorus volume 0.7
 
-    $ current_textbox = "anthrax"
+    $ current_textbox = "peacock"
 
     show imani_neutre at pea_right with dissolve
     imani "Pardon, on a dû te sembler super judgy avec notre absence de réaction ! Moi c'est Imani."
@@ -1323,17 +1426,20 @@ label onboarding:
     show flirt at flirt_right
     imani "Parfois on s'appelle aussi par nos noms de scène, donc tu peux aussi m'appeler Peacock, si tu en as envie..."
     hide flirt
+
+    $ current_textbox = "mother"
     
     show mother at mother_left with dissolve
     mother "Imani se spécialise dans tout ce qui est du ressort de la performance vocale. Lipsync, chant, reading, shading, imitation..."
 
     mother "Si tu as des conseils à aller chercher de ce côté, c'est vers elle."
     
-
+    $ current_textbox = "peacock"
 
     imani "Ah oui ! Et pour les pronoms, tu peux utiliser ceux dont tu as envie, je ne suis pas très regardant. Je me genre moi-même souvent au féminin."
     hide imani_neutre with dissolve
 
+    $ current_textbox = "mother"
     
     mother "Le petit timide là, qui essaye de faire en sorte de se faire oublier, c'est Léandre."
 
@@ -1344,14 +1450,14 @@ label onboarding:
     text "Prit en flagrant délit, le jeune homme tourna au pivoine et balbutia, mal à l'aise."
     #retirer overlay
 
-    $ current_textbox = "anthrax"
+    $ current_textbox = "delaunay"
     
     leandre "N-Non ! C'est juste que... J'ai toujours un peu de mal avec les nouvelles personnes. Excuse-moi..."
     show flirt at flirt_right
     leandre "Oui, donc moi, c'est Léandre, j'utilise il/lui, et je fais principalement de l'effeuillage burlesque. C'est assez classique..."
     hide flirt
 
-
+    $ current_textbox = "gatsby"
     show aimee_neutre at gat_left with dissolve
     show joy at joy_left
     inconnu "C'est tout sauf classique, ton striptease !"
@@ -1364,7 +1470,7 @@ label onboarding:
     hide angry
     hide leandre_neutre with dissolve
 
-    $ current_textbox = "anthrax"
+    $ current_textbox = "gatsby"
 
     gatsby "Du coup, vu qu'on doit toujours parler à sa place, son nom de drag est Delaunay."
     show joy at joy_left
@@ -1385,6 +1491,7 @@ label onboarding:
 label route_choice_intro:
     show loges 
     show mother at mother_center
+    $ current_textbox = "mother"
     mother "Alors [player_name], si tu devais choisir l'un de mes \"babies\" comme marrain ou parraine, qui est-ce que tu désignerais ?" with fade
     hide loges 
     hide devanture 

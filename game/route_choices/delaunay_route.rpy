@@ -456,6 +456,7 @@ label minichoice_del_8:
 label del_3:
 # TRANSITION RIDEAUX
 # faire la transition avec la description sur fond noir comme sur l'onboarding
+<<<<<<< HEAD
     hide loges with dissolve
     hide leandre_neutre with dissolve
     hide bar with dissolve
@@ -463,7 +464,16 @@ label del_3:
     show curtain_close
     scene black with dissolve
     #text "Quelques mois passèrent..."
+=======
+    show curtain_close with dissolve
+    hide leandre_neutre with dissolve
+    hide bar
+    hide loges
+    pause 1.5
+    show curtain_open with dissolve
+>>>>>>> 1a6c590c73c6950b3876af07e7a25fc74160d942
 
+    scene black
 
     play music ConfidenceIntro
 
