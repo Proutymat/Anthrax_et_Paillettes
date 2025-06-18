@@ -816,18 +816,14 @@ label minichoice_del_17:
 
 #DEL.4
 # TRANSITION RIDEAU DE SES MORTS A AJOUTER
+# text "Le jour du spectacle..."
+label del_4:
     show curtain_close with dissolve
     hide leandre_neutre with dissolve
-    hide bar
+    hide auditorium
     hide loges
     pause 1.5
     show curtain_open with dissolve
-
-# text "Le jour du spectacle..."
-label del_4:
-
-    hide leandre_neutre
-    hide auditorium
     scene black with dissolve
 
     stop music fadeout 0.5
@@ -1234,15 +1230,6 @@ label del_6:
 #Choix DEL.6
 label choix_del6:
     $ quick_menu = False
-    show curtain_close with dissolve
-    hide delaunay_neutre with dissolve
-    hide bar
-    hide loges
-    pause 1.5
-    show curtain_open with dissolve
-    show delaunay_neutre at del_right
-    with fade
-
     menu: 
         text "Accepter le date ?"
         "Oui":
@@ -1253,19 +1240,33 @@ label choix_del6:
 #DEL.6.GOOD
 label del_6_good:
     $ quick_menu = True
-    show delaunay at del_right with dissolve
+    show delaunay_neutre at del_right with dissolve
+    show loges with dissolve
     
     delaunay "Parfait! Je te retrouve dehors dans quelques minutes alors !"
+
+    show curtain_close with dissolve
+    hide delaunay_neutre with dissolve
+    hide bar
+    hide loges
+    pause 1.5
+    show curtain_open with dissolve
+    with fade
+
+ 
+    scene black with dissolve
     
-    show scene black with dissolve
 
     $ current_textbox = "description"
-    text "Le temps que Delaunay et les autres artistes terminent de se démaquiller et de se rhabiller en civil, je passai le balai sur les planches de la scène"
+    text "Le temps que Delaunay et les autres artistes terminent de se démaquiller et de se rhabiller en civil, je passai le balai sur les planches de la scène..."
     text "Laissant mon esprit vagabonder au jour où moi-même je les foulerais."
     text "À l'extérieur, quelques clients étaient restés sur le pavé pour continuer leurs discussions et attendre la sortie de la royauté de L'Androgame."
  
     show devanture
     show leandre_neutre at del_right with dissolve
+
+    
+    $ current_textbox = "anthrax"
 
     leandre "Pardon pour l'attente! On y va?"
     anthrax "Merci pour l'invitation... Les autres ne sont pas trop jaloux.se.s de notre contre-soirée?"
