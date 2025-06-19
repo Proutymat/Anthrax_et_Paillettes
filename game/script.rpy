@@ -1400,7 +1400,7 @@ label onboarding:
 label route_choice_intro:
     show loges 
     show mother at mother_center
-    mother "Alors [player], si tu devais choisir l'un de mes \"babies\" comme marrain ou parraine, qui est-ce que tu désignerais ?" with fade
+    mother "Alors [player_name], si tu devais choisir l'un de mes \"babies\" comme marrain ou parraine, qui est-ce que tu désignerais ?" with fade
     hide loges 
     hide devanture 
     hide mother with dissolve

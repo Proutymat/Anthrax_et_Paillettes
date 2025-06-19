@@ -264,15 +264,15 @@ translate English strings:
 
     # game/screens.rpy:1678
     old "Oui"
-    new ""
+    new "Yes"
 
     # game/screens.rpy:1679
     old "Non"
-    new ""
+    new "No"
 
     # game/screens.rpy:1731
     old "Choisis le prénom d'Anthräx, ton personnage :"
-    new "Choose Anthräx's name, your caracther :"
+    new "Choose Anthräx's name, your character :"
 
     # game/screens.rpy:1739
     old "Valider"

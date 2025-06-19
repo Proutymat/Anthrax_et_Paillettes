@@ -202,7 +202,7 @@ translate English onboarding_93727f9b:
 translate English onboarding_b8c48588:
 
     # text "Une aiguille à coudre entre les lèvres et une pièce de tissu sur les genoux, à laquelle il semblait broder des sequins uns à uns."
-    text "And a piece of cloth on his knees to which he seemed to be embroidering sequins one by one"
+    text "And a piece of cloth on his knees to which he seemed to be embroidering sequins one by one."
 
 # game/script.rpy:1268
 translate English onboarding_d01213cd:
@@ -220,13 +220,13 @@ translate English onboarding_6882cc01:
 translate English onboarding_917cef7f:
 
     # text "Les doigts couverts de gel et un peigne à la main, la personne qui venait de lui répondre était en train de styliser une perruque noire de jais sur une tête de mannequin."
-    text "Their fingers covered in gel and a comb in hand, they who had just replied was styling a jet-black wig on a mannequin head,"
+    text "Their fingers covered in gel and a comb in hand, they who had just replied was styling a jet-black wig on a mannequin head..."
 
 # game/script.rpy:1279
 translate English onboarding_620f9d94:
 
     # text "Iel y plaquait les cheveux contre le front en de jolies boucles bien définies, et y fixait des perles nacrées avec un pistolet à colle."
-    text "holding those hair down to the forehead in pretty, well-defined curls, and attached pearly beads with a glue gun."
+    text "Holding those hair down to the forehead in pretty, well-defined curls, and attached pearly beads with a glue gun."
 
 # game/script.rpy:1286
 translate English onboarding_32396bc5:
@@ -268,7 +268,7 @@ translate English onboarding_8d45cc80:
 translate English onboarding_82adaebb:
 
     # mother "Bon ! Les filles, je vous présente [player_name], iel nous rejoindra sous peu, le temps d'arranger le spectacle, et je compte sur vous pour l'accueillir comme il se doit."
-    mother "So! Girls! This is [PSEUDO], they'll be joining us shortly, while we arrange the show, and I'm counting on you to give them a warm welcome."
+    mother "So! Girls! This is [player_name], they'll be joining us shortly, while we arrange the show, and I'm counting on you to give them a warm welcome."
 
 # game/script.rpy:1336
 translate English onboarding_e34f347b:
@@ -364,5 +364,5 @@ translate English onboarding_51231d54:
 translate English route_choice_intro_fecd02d6:
 
     # mother "Alors [player], si tu devais choisir l'un de mes \"babies\" comme marrain ou parraine, qui est-ce que tu désignerais ?" with fade
-    mother "So [PSEUDO], if you had to choose one of my children as your mentor, who would you pick?" with fade
+    mother "So [player_name], if you had to choose one of my children as your mentor, who would you pick?" with fade
 

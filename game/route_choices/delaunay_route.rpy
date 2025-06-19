@@ -164,9 +164,20 @@ leandre "Vraiment? Je suis soulagé alors!"
 
 leandre "Est-ce que tu souhaites qu’on discute autour d’un verre au bar? J’aimerais beaucoup en apprendre plus sur ton drag."
 
-leandre "Et puis, ce sera plus simple aussi pour t’aider à construire ton acte lorsque Mother te donnera le feu vert"
-
-anthrax "Ça, je ne dis pas non!"
+label minichoice_del_1:
+    $ quick_menu = False
+    
+    show leandre_neutre at del_right
+    with fade
+    menu: 
+        leandre "Et puis, ce sera plus simple aussi pour t’aider à construire ton acte lorsque Mother te donnera le feu vert"
+        "Je te suis !":
+            pass
+        "J'adorerais !":
+            pass
+        "Ça, je ne dis pas non !":
+            pass
+          
 
 
 #DEL.2
@@ -175,6 +186,7 @@ play music BarMusic fadein 1.5 volume 0.5
 play ambiance BarDay fadein 0.5
 play music BarMusic volume 0.5
 
+$ quick_menu = True
 anthrax "Nous sommes arrivé.e.s dans l'auditorium et nous sommes approché.e.s du comptoir derrière lequel brillaient un mur de bouteilles de formes et couleurs uniques. Le paradis du parfait mixologue."
 anthrax "Nous avions depuis le bar une vue imprenable sur la scène, légèrement en contrebas. Les tablées y étaient déjà dressées et se regroupaient autour du big band et de l'estrade secondaire au centre de la pièce."
 anthrax "L'immense lustre duquel pendaient des larmes de verre reflétait les spots de lumière à la manière d'une boule à facettes sur le papier peint texturé. Léandre s'assît sur l'une des chaises hautes de bois verni et commanda une citronnade au barman, et moi un allongé."
