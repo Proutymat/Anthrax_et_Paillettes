@@ -86,5 +86,6 @@ init -1 python:
         (-50, "farBack"),
         (-80, "back"),
         (-30, "front"),
+        (-40, "curtain"),
         (50, "inyourface")
     ])

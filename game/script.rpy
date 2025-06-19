@@ -3,6 +3,8 @@
 image splash = "splashscreen.png"
 image splash2 = "splashscreen2.png"
 
+define quick_dissolve = Dissolve(0.2)
+
 label before_main_menu:
      # Ne pas afficher la textbox ni le quick menu
     $ _window = False
@@ -531,17 +533,17 @@ image gradiant_noir:
     
 
 image curtain : 
-    "images/VFX/Curtain_Close/Curtain_Close_00000.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Close_00001.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Close_00002.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Close_00003.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Close_00004.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Close_00005.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Close_00006.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Close_00007.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Close_00008.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Close_00009.png", 0.04,
-    "images/VFX/Curtain_Close/Curtain_Close_00010.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00000.png", 0.01,
+    "images/VFX/Curtain_Close/Curtain_Close_00001.png", 0.01,
+    "images/VFX/Curtain_Close/Curtain_Close_00002.png", 0.01,
+    "images/VFX/Curtain_Close/Curtain_Close_00003.png", 0.01,
+    "images/VFX/Curtain_Close/Curtain_Close_00004.png", 0.01,
+    "images/VFX/Curtain_Close/Curtain_Close_00005.png", 0.01,
+    "images/VFX/Curtain_Close/Curtain_Close_00006.png", 0.01,
+    "images/VFX/Curtain_Close/Curtain_Close_00007.png", 0.01,
+    "images/VFX/Curtain_Close/Curtain_Close_00008.png", 0.01,
+    "images/VFX/Curtain_Close/Curtain_Close_00009.png", 0.01,
+    "images/VFX/Curtain_Close/Curtain_Close_00010.png", 0.01,
     "images/VFX/Curtain_Close/Curtain_Close_00011.png", 0.04,
     "images/VFX/Curtain_Close/Curtain_Close_00012.png", 0.04,
     "images/VFX/Curtain_Close/Curtain_Close_00013.png", 0.04,
@@ -589,6 +591,7 @@ image curtain :
     "images/VFX/Curtain_Close/Curtain_Close_00055.png", 0.04,
     "images/VFX/Curtain_Close/Curtain_Close_00056.png", 0.04,
     "images/VFX/Curtain_Close/Curtain_Close_00057.png", 0.04,
+    pause 0.5,
     "images/VFX/Curtain_Open/Curtain_Open_00000.png", 0.04,
     "images/VFX/Curtain_Open/Curtain_Open_00001.png", 0.04,
     "images/VFX/Curtain_Open/Curtain_Open_00002.png", 0.04,

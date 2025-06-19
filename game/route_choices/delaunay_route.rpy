@@ -145,6 +145,7 @@ define text = Character(color="#FFFFFF", who_outlines=[(2, "#000000", 0, 0)], wh
 label delaunay_start:
 $ persistent.bg_parallax = True
 $ quick_menu = True
+default indice = 0
 scene black with fade
 show loges
 #show leandre_shy at del_center with dissolve
@@ -301,7 +302,7 @@ label choix_del2:
 #DEL.2.1
 label del_2_1:
     $ quick_menu = True
-    #lovometer +1
+    $ indice += 1
     hide joy
     show leandre_neutre at del_center
     with fade
@@ -403,7 +404,7 @@ label del_2_1:
 #DEL.2.2
 label del_2_2:
     $ quick_menu = True
-    
+    $ indice -= 1
     hide joy
     show leandre_neutre at del_center
     with fade
@@ -796,7 +797,8 @@ label del_3_1:
 #DEL.3.2
 label del_3_2:
     $ quick_menu = True
-    
+    $ indice -= 1
+
     queue music ConfidenceAB
     queue music ConfidenceB1
     hide sadness
@@ -889,6 +891,7 @@ label del_3_2:
 #DEL.3.3
 label del_3_3:
     $ quick_menu = True
+    $ indice += 1
     
     hide sadness
     show leandre_neutre at del_center
@@ -987,13 +990,14 @@ label del_3_3:
 # TRANSITION RIDEAU DE SES MORTS A AJOUTER
 # text "Le jour du spectacle..."
 label del_4:
+    hide delaunay_neutre with dissolve
     show curtain_close with dissolve
-    hide leandre_neutre with dissolve
-    hide auditorium
-    hide loges
     pause 1.5
+    hide bar
+    hide loges
+    scene black
     show curtain_open with dissolve
-    scene black with dissolve
+    with fade
 
     text "Le jour du spectacle..."
 
@@ -1159,6 +1163,7 @@ label del_4_1:
 #DEL.4.2
 label del_4_2:
     $ quick_menu = True
+    $ indice += 1
     
     show delaunay_neutre at del_center
     with fade
@@ -1316,6 +1321,7 @@ label del_4_2:
 #DEL.4.3
 label del_4_3:
     $ quick_menu = True
+    $ indice -= 1
 
     show delaunay_neutre at del_center
     with fade
@@ -1412,6 +1418,7 @@ label del_4_3:
 
     $ current_textbox = "delaunay"
     delaunay "Anyway."
+    hide angry
     delaunay "J'ai quand même pas mal rétropédalé au niveau de l'hypermasculinisation de mon perso, quand mon corps a commencé à changer."
     delaunay "Je me suis réconcilié avec moi-même, et donc Delaunay n'avait plus besoin de servir cette fonction."
     #show delaunay_flirty at del_right
@@ -1459,25 +1466,27 @@ label del_4_3:
     show delaunay_neutre at del_center with dissolve
 
     $ current_textbox = "delaunay"
-    show joy at joy_right
+    show joy at joy_center
     #show delaunay_flirty at del_right
     delaunay "Mon dieu, j'ai encore tellement à faire ! Vite [player_name] ! Un coup de main, vite !~"
     #hide delaunay_flirty
-    hide joy
 
     stop ambiance fadeout 2.0
 
     call del_5 from _call_del_5_2 
-
+    hide joy
 #DEL.5
 label del_5:
 # TRANSITION RIDEAU
-    show curtain_close with dissolve
+    hide joy
     hide delaunay_neutre with dissolve
+    show curtain_close with dissolve
+    pause 1.5
     hide bar
     hide loges
-    pause 1.5
+    scene black
     show curtain_open with dissolve
+    with fade
 
     scene black with dissolve
     play music ShowDelaunay noloop
@@ -1507,8 +1516,15 @@ label del_5:
     text "L’effet dupait aisément son public et signa la fin de son acte."
     stop music fadeout 3.0
     text "Il se couvrit d’un long kimono et se fit aider pour descendre sans glisser avant de saluer fièrement les spectateur.ice.s, son make-up intact et un grand sourire aux lèvres."
+    
+    show curtain_close with dissolve
+    pause 1.5
+    hide bar
+    hide loges
+    scene black
+    show curtain_open with dissolve
+    with fade
 
-#Dialogue WIP 
 
 
 call del_6 from _call_del_6 
@@ -1532,10 +1548,21 @@ label del_6:
     delaunay "Et j'ai ramassé un beau pactole avec les tips! Je suis refais!"
     #hide delaunay_laugh
     
+    $ quick_menu = False
+
+    scene background_cg
+    show CG_delaunay with fade
+
+    pause 1.0
+    "Nouvelle illustration débloquée"
+    hide CG_delaunay 
+    hide background_cg 
+    $ persistent.delaunay_unlocked = True
+
 
     $ quick_menu = False
    
-    show delaunay_neutre at del_right
+    show delaunay_neutre at del_right with dissolve
     show flirt at flirt_right
     menu:
         delaunay "Alors, qu'est-ce que tu en as pensé [player_name]?"
@@ -1561,38 +1588,41 @@ label del_6:
     anthrax "C'est sur le feu! Je suis chaud.e bouillant.e!"
 
     #show delaunay_flirty at del_right with dissolve
-    show flirt at flirt_right
-    $ current_textbox = "delaunay"
-    delaunay "Hey, ça te dirait qu'on sorte prendre un verre après m'être changé? Rien que nous deux?"
-    
 
-#Dialogue WIP 
+    label indice:
+        if indice >= 0:
+            jump del_6_good
+        else:
+            jump del_6_bad
 
-#Choix DEL.6
-label choix_del6:
-    $ quick_menu = False
-    menu: 
-        text "Accepter le date ?"
-        "Oui":
-            call del_6_good from _call_del_6_good 
-        "Non":
-            call del_6_bad from _call_del_6_bad 
 
 #DEL.6.GOOD
 label del_6_good:
     $ quick_menu = True
-    show delaunay_neutre at del_center with dissolve
+    show delaunay_neutre at del_right with dissolve
     show loges with dissolve
+   
+    $ quick_menu = False
+    menu: 
+        text "Hey, ça te dirait qu'on sorte prendre un verre après m'être changé? Rien que nous deux ? "
+        "Oui":
+            pass
+        "Non":
+            call del_6_bad from _call_del_6_bad 
+
+    $ quick_menu = True
     
     $ current_textbox = "delaunay"
     delaunay "Parfait! Je te retrouve dehors dans quelques minutes alors !"
 
+    #Transition Rideau
     hide flirt
-    show curtain_close with dissolve
     hide delaunay_neutre with dissolve
+    show curtain_close with dissolve
+    pause 1.5
     hide bar
     hide loges
-    pause 1.5
+    scene black
     show curtain_open with dissolve
     with fade
 
@@ -1645,26 +1675,60 @@ label del_6_good:
 #DEL.6.BAD
 label del_6_bad:
     $ quick_menu = True
-    show leandre_neutre at del_center
+    show delaunay_neutre at del_right
     with fade
+    
+    $ current_textbox = "delaunay"
 
-    anthrax "WIP"
-    mother "WIP"
+    delaunay "On va aller boire un verre avec les autres une fois que les derniers clients auront quitté la salle. Tu te joins à nous ?"
+    
+    $ quick_menu = False
+
+    menu:
+        "Oui, bien sûr! Je termine ça et j'arrive!":
+            anthrax "Oui, bien sûr ! Je termine ça et j'arrive !"
+        "Si vous insistez!":
+            anthrax "Si vous insistez !"
+        "Proposé si gentiment, comment refuser?":
+            anthrax "Proposé si gentiment, comment refuser ?"
+
+    $ quick_menu = True
+
+    $ current_textbox = "description"
+
+    text "Tous.te.s étaient réuni.e.s face au comptoir, se faisant servir par notre merveilleux \"Dobarman\"."
+    text "Imani avait entre ses doigts un mocktail de sa création, Léandre retrouvait peu à peu sa timidité, laissant Delaunay s'effacer."
+    text "Partageant son verre avec Aimé.e pour qu'iel goûte, riant aux éclats en détaillant quelques anecdotes de leur expérience au fil des années."
+    text "Le tout appuyé.e par l'approbation et les précisions de Mother."
+
+    $ current_textbox = "gatsby"
+
+    aimee "Nan mais je te jure ! La manière dont sa perruque a volé au milieu de la pièce !"
+
+    $ current_textbox = "delaunay"
+    leandre "Et surtout sa tête, en s'en rendant compte... !"
+
+    $ current_textbox = "peacock"
+    imani "J'aurais rêvé être là cette soirée, et non derrière les machines !"
+
+    $ current_textbox = "mother"
+    mother "Je suis sûre que je peux te retrouver une vidéo d'excellente qualité, vu comment elle a tourné sur les plateformes."
+
+    $ current_textbox = "description"
+
+    text "Les écoutant avec une certaine envie, ayant hâte de pouvoir raconter à mon tour mes aventures."
+    text "Je les observais un à une, ancrant cette image dans ma mémoire, essayant d'y graver le moindre détail."
+    text "Je m'en voulais peut-être un peu de ne pas avoir demandé à Léandre d'être sorti avec moi ce soir."
+    text "Mais quelque chose me dit que c'était peut-être un peu trop tôt..."
+    text "Et j'aurais loupé cet instant précieux, sachant pertinemment que je passerais le reste de la soirée bien entouré.e !"
+
+
     call final_delaunay from _call_final_delaunay_1 
 
 label final_delaunay:
     hide leandre_neutre
     hide loges
 
-    $ quick_menu = False
-
-    scene background_cg
-    show CG_delaunay with fade
-
-    pause 1.0
-    "Nouvelle illustration débloquée"
-    hide CG_delaunay with fade
-    $ persistent.delaunay_unlocked = True
     "Interview et musiques débloquées"
     pause 1.0
 
