@@ -165,7 +165,7 @@ screen say(who, what):
                 text who id "who" style "my_say_label" xpos 140 ypos 40
 
             # 💬 Texte principal
-            text what id "what" style "my_say_dialogue" xpos 145 ypos 85 line_spacing 10 size 40
+            text what id "what" style "my_say_dialogue" xpos 145 ypos 85 line_spacing 10 size 40 color "02061a"
 
     use quick_menu
 
@@ -193,7 +193,7 @@ style my_say_label is default:
 style my_say_dialogue is default:
     font "fonts/EBGaramond12-Regular.ttf"
     size 70
-    color "#2e2e2e"
+    color "#02061a"
     text_align 0.0
     spacing 40
 
@@ -446,8 +446,16 @@ screen backstages():
                     auto "menuUI/interviews_%s.png" action [Hide("backstages"), Function(renpy.transition, fade), Show("music_room_interviews", mr=music_room_interviews)]
                 imagebutton:
                     auto "menuUI/juxebox_%s.png" action [Hide("backstages"), Function(renpy.transition, fade), Show("music_room", mr=music_room)]
-                imagebutton:
-                    auto "menuUI/credits_%s.png" action [Hide("backstages"), Function(renpy.transition, fade), Show("credits")]
+                if _preferences.language == "English":
+                    imagebutton:
+                        auto "menuUI/credits_eng_%s.png"
+                        hovered Function(play_ui_hover)
+                        action [Function(play_ui_click), Start()]                    
+                else : 
+                    imagebutton:
+                        auto "menuUI/credits_%s.png"
+                        hovered Function(play_ui_hover)
+                        action [Function(play_ui_click), Start()]
                                                    
 
     vbox:
@@ -480,10 +488,17 @@ screen navigation():
         if main_menu:
 
             #textbutton _("Nouvelle partie") action Start()
-            imagebutton:
-                auto "menuUI/jouer_%s.png"
-                hovered Function(play_ui_hover)
-                action [Function(play_ui_click), Start()]
+            if _preferences.language == "English":
+                imagebutton:
+                    auto "menuUI/play_%s.png"
+                    hovered Function(play_ui_hover)
+                    action [Function(play_ui_click), Start()]
+            
+            else: 
+                imagebutton:
+                    auto "menuUI/jouer_%s.png"
+                    hovered Function(play_ui_hover)
+                    action [Function(play_ui_click), Start()]
 
             #textbutton _("Historique") action ShowMenu("history")
 
@@ -502,10 +517,17 @@ screen navigation():
         spacing 20
 
         #textbutton _("Reprendre") action ShowMenu("load")
-        imagebutton:
-            auto "menuUI/reprendre_%s.png"
-            hovered Function(play_ui_hover)
-            action [Function(play_ui_click), SetVariable("_previous_screen", "navigation"), Function(renpy.transition, fade), Show("load")]
+        if _preferences.language == "English":
+                imagebutton:
+                    auto "menuUI/load_%s.png"
+                    hovered Function(play_ui_hover)
+                    action [Function(play_ui_click), Start()]
+        
+        else:
+            imagebutton:
+                auto "menuUI/reprendre_%s.png"
+                hovered Function(play_ui_hover)
+                action [Function(play_ui_click), SetVariable("_previous_screen", "navigation"), Function(renpy.transition, fade), Show("load")]
 
              
         #textbutton _("Backstages") action ShowMenu("backstages")
@@ -546,10 +568,16 @@ screen navigation():
             ## Le bouton pour quitter est banni sur iOS et inutile sur Android
             ## et sur le Web.
             #textbutton _("Quitter") action Quit(confirm=not main_menu)
-            imagebutton:
-                auto "menuUI/quitter_%s.png"
-                hovered Function(play_ui_hover)
-                action [Function(play_ui_click), Quit(confirm=not main_menu)]
+            if _preferences.language == "English":
+                imagebutton:
+                    auto "menuUI/quit_%s.png"
+                    hovered Function(play_ui_hover)
+                    action [Function(play_ui_click), Start()]
+            else:
+                imagebutton:
+                    auto "menuUI/quitter_%s.png"
+                    hovered Function(play_ui_hover)
+                    action [Function(play_ui_click), Quit(confirm=not main_menu)]
 
 
 style navigation_button is gui_button
@@ -906,8 +934,6 @@ screen about():
             scrollbars "vertical"
             mousewheel True
 
-    
-
         vbox:
             style_prefix "about"
             spacing 20
@@ -1186,11 +1212,6 @@ screen preferences():
 
                     label _("Avance automatique") xalign 0.5
                     bar value Preference("auto-forward time") xmaximum 600 xalign 0.5
-
-                    null height 30
-
-                    imagebutton idle "menuUI/controles_idle.png" hover "menuUI/controles_hover.png" action ShowMenu("help") xalign 0.5
-
             else: 
                 vbox:
                     spacing 8
@@ -1701,7 +1722,11 @@ screen crush_confirm(name, destination):
             xalign 0.5
             yalign 0.5
 
-            text "Es-tu sûr·e de vouloir [name] comme mentor ?" style "confirm_prompt"
+            if _preferences.language == "English":
+                text "Are you sure to pick [name] as mentor" style "confirm_prompt"
+            else:
+                text "Es-tu sûr·e de vouloir [name] comme mentor ?" style "confirm_prompt"
+                
 
             hbox:
                 spacing 40

@@ -8,11 +8,11 @@ translate English strings:
 
     # game/screens.rpy:534
     old "Menu principal"
-    new ""
+    new "Main menu"
 
     # game/screens.rpy:698
     old "Retour"
-    new ""
+    new "Return"
 
     # game/screens.rpy:917
     old "Version [config.version!t]\n"
@@ -92,11 +92,11 @@ translate English strings:
 
     # game/screens.rpy:1184
     old "Vitesse du texte"
-    new ""
+    new "Text speed"
 
     # game/screens.rpy:1187
     old "Avance automatique"
-    new ""
+    new "Auto speed"
 
     # game/screens.rpy:1212
     old "Volume de la musique"

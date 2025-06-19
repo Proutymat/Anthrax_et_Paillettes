@@ -363,6 +363,6 @@ translate English onboarding_51231d54:
 # game/script.rpy:1403
 translate English route_choice_intro_fecd02d6:
 
-    # mother "Alors [player], si tu devais choisir l'un de mes \"babies\" comme marrain ou parraine, qui est-ce que tu désignerais ?" with fade
+    # mother "Alors [player_name], si tu devais choisir l'un de mes \"babies\" comme marrain ou parraine, qui est-ce que tu désignerais ?" with fade
     mother "So [player_name], if you had to choose one of my children as your mentor, who would you pick?" with fade
 
