@@ -548,12 +548,12 @@ label del_3:
 
     show curtain_close with dissolve
     hide leandre_neutre with dissolve
-    hide bar
+    hide bar with dissolve
     hide loges
     pause 1.5
     show curtain_open with dissolve
+    scene black with dissolve
 
-    scene black
     #show gradient
     text "Quelques mois passèrent..."
     #hide gradient with dissolve
@@ -1412,6 +1412,7 @@ label del_4_3:
 
     $ current_textbox = "delaunay"
     delaunay "Anyway."
+    hide angry
     delaunay "J'ai quand même pas mal rétropédalé au niveau de l'hypermasculinisation de mon perso, quand mon corps a commencé à changer."
     delaunay "Je me suis réconcilié avec moi-même, et donc Delaunay n'avait plus besoin de servir cette fonction."
     #show delaunay_flirty at del_right
@@ -1459,7 +1460,7 @@ label del_4_3:
     show delaunay_neutre at del_center with dissolve
 
     $ current_textbox = "delaunay"
-    show joy at joy_right
+    show joy at joy_center
     #show delaunay_flirty at del_right
     delaunay "Mon dieu, j'ai encore tellement à faire ! Vite [player_name] ! Un coup de main, vite !~"
     #hide delaunay_flirty
@@ -1475,7 +1476,7 @@ label del_5:
     show curtain_close with dissolve
     hide delaunay_neutre with dissolve
     hide bar
-    hide loges
+    hide loges with dissolve
     pause 1.5
     show curtain_open with dissolve
 
@@ -1564,6 +1565,7 @@ label del_6:
     show flirt at flirt_right
     $ current_textbox = "delaunay"
     delaunay "Hey, ça te dirait qu'on sorte prendre un verre après m'être changé? Rien que nous deux?"
+    hide flirt
     
 
 #Dialogue WIP 
@@ -1591,7 +1593,7 @@ label del_6_good:
     show curtain_close with dissolve
     hide delaunay_neutre with dissolve
     hide bar
-    hide loges
+    hide loges with dissolve
     pause 1.5
     show curtain_open with dissolve
     with fade
