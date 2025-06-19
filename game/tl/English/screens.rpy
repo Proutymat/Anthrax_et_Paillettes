@@ -272,7 +272,7 @@ translate English strings:
 
     # game/screens.rpy:1731
     old "Choisis le prénom d'Anthräx, ton personnage :"
-    new "Choose Anthräx's name, your caracther :"
+    new "Choose Anthräx's name, your character :"
 
     # game/screens.rpy:1739
     old "Valider"

@@ -171,21 +171,17 @@ leandre "Vraiment ? Je suis soulagé alors !"
 hide joy
 leandre "Est-ce que tu souhaites qu'on discute autour d'un verre au bar ? J'aimerais beaucoup en apprendre plus sur ton drag."
 
-label minichoice_del_1:
-    $ quick_menu = False
-   
-    show leandre_neutre at del_right
-    with fade
-    menu:
-
-        leandre "Et puis, ce sera plus simple aussi pour t’aider à construire ton acte lorsque Mother te donnera le feu vert."
-        "Je te suis !":
-            pass
-        "J'adorerais !":
-            pass
-        "Ça, je ne dis pas non !":
-            pass
-
+show leandre_neutre at del_right
+with fade
+menu: 
+    leandre "Et puis, ce sera plus simple aussi pour t’aider à construire ton acte lorsque Mother te donnera le feu vert"
+    "Je te suis !":
+         pass
+    "J'adorerais !":
+         pass
+    "Ça, je ne dis pas non !":
+        pass
+          
 
 
 #DEL.2
