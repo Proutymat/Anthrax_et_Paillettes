@@ -549,12 +549,12 @@ label del_3:
 
     show curtain_close with dissolve
     hide leandre_neutre with dissolve
-    hide bar
+    hide bar with dissolve
     hide loges
     pause 1.5
     show curtain_open with dissolve
+    scene black with dissolve
 
-    scene black
     #show gradient
     text "Quelques mois passèrent..."
     #hide gradient with dissolve
@@ -1483,8 +1483,8 @@ label del_5:
     show curtain_close with dissolve
     pause 1.5
     hide bar
-    hide loges
-    scene black
+    hide loges with dissolve
+    pause 1.5
     show curtain_open with dissolve
     with fade
 
@@ -1588,6 +1588,10 @@ label del_6:
     anthrax "C'est sur le feu! Je suis chaud.e bouillant.e!"
 
     #show delaunay_flirty at del_right with dissolve
+    show flirt at flirt_right
+    $ current_textbox = "delaunay"
+    delaunay "Hey, ça te dirait qu'on sorte prendre un verre après m'être changé? Rien que nous deux?"
+    hide flirt
 
     label indice:
         if indice >= 0:
@@ -1621,8 +1625,8 @@ label del_6_good:
     show curtain_close with dissolve
     pause 1.5
     hide bar
-    hide loges
-    scene black
+    hide loges with dissolve
+    pause 1.5
     show curtain_open with dissolve
     with fade
 
