@@ -140,69 +140,114 @@ show aimee_neutre at gat_center with dissolve
 play ambiance AmbLoges fadein 2.0
 
 #GAT.1
+show aimee_neutre at gat_center with dissolve
+
+$ current_textbox = "gatsby"
 
 gatsby "Let's go ! On va former un duo d'enfer, je te le dis !"
+$ current_textbox = "anthrax"
 
 anthrax "Aha ! J'adore cette énergie. Par quoi voudrais-tu commencer ?"
+$ current_textbox = "gatsby"
 
 gatsby "Hm... On pourrait se présenter mutuellement, histoire d'apprendre à se connaître, et voir ensuite où ça nous mène ?"
+$ current_textbox = "anthrax"
 
 anthrax "C'est une excellente idée."
+$ current_textbox = "gatsby"
 
-gatsby "Ça te dit qu'on se pose au bar ? C'est plus intime et Barman est un vrai génie dans tout ce qui est cocktail, alcoolisé ou non."
+$ quick_menu = False
+#show delaunay_neutre at del_right
+show aimee_neutre at gat_right with dissolve
+   
+menu:
+    #delaunay ""
+    gatsby "Ça te dit qu'on se pose au bar ? C'est plus intime et Barman est un vrai génie dans tout ce qui est cocktail, alcoolisé ou non."
+    "Ça me tente bien.":
+     pass
+    "Je te suis !":
+     pass
+    "Ça, je ne dis pas non !":
+     pass
 
-anthrax "Ça me tente bien."
+
+
+
+$ quick_menu = True
 
 
 #GAT.2
+hide aimee_neutre with dissolve
+hide loges with dissolve
+scene black with fade
 
-show bar with dissolve
 play music BarMusic fadein 1.5 volume 0.5
 play ambiance BarDay fadein 0.5
 play music BarMusic volume 0.5
 
-text "Nous sommes arrivé.e.s dans l'auditorium et nous nous sommes approché.e.s du comptoir derrière lequel brillait un mur de bouteilles de formes et couleurs uniques. Le paradis du parfait mixologue."
 
+
+$ current_textbox = "description"
+
+text "Nous sommes arrivé.e.s dans l'auditorium et nous sommes approché.e.s du comptoir derrière lequel brillaient un mur de bouteilles aux couleurs uniques."
 text "Nous avions depuis le bar une vue imprenable sur la scène, légèrement en contrebas. Les tablées y étaient déjà dressées et se regroupaient autour du big band et de l'estrade secondaire au centre de la pièce."
-
 text "L'immense lustre duquel pendaient des larmes de verre reflétait les spots de lumière à la manière d'une boule à facettes sur le papier peint texturé."
+text "Aimée s'assit sur l'une des chaises hautes de bois verni et commanda un Bloody Mary au barman."
 
-text "Aimée s'assit sur l'une des chaises hautes de bois verni et commanda un Bloody Mary au barman, et moi un Expresso Martini."
+show bar 
+
+$ current_textbox = "gatsby"
+
+$ quick_menu = False
+show aimee_neutre at gat_right with dissolve
+   
+menu:
+    aimee "Est-ce que tu sais déjà quoi commander ?"
+    "Un Pornstar Martini.":
+     pass
+    "Un Negroni Sbagliato, avec une pointe de prosecco.":
+     pass
+    "Une citronnade bien fraîche.":
+     pass
+
+
+$ quick_menu = True
 
 aimee "Alors ! Raconte-moi tout ! D'où est-ce que tu viens ? Qu'est-ce que tu fais ici ? Comment est-ce que tu nous as connu.e.s ?"
+$ current_textbox = "anthrax"
 
 anthrax "Oh... Euh... Ça fait beaucoup de questions à la fois..."
-
+$ current_textbox = "gatsby"
 aimee "Pas faux. Commence par le drag alors. Qu'est-ce qui t'as lancé.e ?"
+$ current_textbox = "anthrax"
 
 anthrax "Oh. Eh bien... J'ai commencé dans le confort de mon appart, sur les réseaux sociaux. Je n'ai jamais mis les pieds dans une troupe. Ou même un cabaret pour tout te dire."
-
 anthrax "Je n'habite pas très loin, donc je passais souvent devant L'Androgame et vous observais de loin."
-
 anthrax "C'est un peu impressionnant. Je me demande si j'ai ma place, je ne m'attendais pas à être retenu.e après l'audition..."
 
+$ current_textbox = "gatsby"
 aimee "Bien sûr que tu as ta place ! Mother a l'œil pour repérer les talents."
+$ current_textbox = "anthrax"
 
 anthrax "Et toi ? Ça fait longtemps que tu as intégré la troupe ?"
+$ current_textbox = "gatsby"
 
 aimee "Peut-être... Cinq ans ? Quatre ? Léandre était là déjà avant moi, mais je n'ai pas tardé après lui."
-
 aimee "Et Imani...? Eh bien, elle bossait déjà là avant en tant que technicienne son. C'est plus récent son lancement dans le drag. Deux ans, il me semble ?"
+$ current_textbox = "anthrax"
 
 anthrax "Ah oui, donc ça fait un moment que vous vous connaissez."
+$ current_textbox = "gatsby"
 
 aimee "Oui. Ils font même partie de mon cercle d'ami.e.s le plus proche. Mais je ne vais pas leur dire en face sinon ils vont prendre la grosse tête..."
-
 aimee "Et je m'imagine déjà les vannes de Delaunay, quand Léandre sort son alter-ego. Tu verras, c'est assez marrant."
+$ current_textbox = "anthrax"
 
 anthrax "En tout cas, ça promet beaucoup pour la suite !"
-
 anthrax "Et sinon, c'est quoi qui t'as lancé.e dans le drag toi ?"
-
+$ current_textbox = "gatsby"
 aimee "Ma quête de genre principalement... Enfin je pense. J'étais dans une phase où je me redécouvrais entièrement."
-
 aimee "Je sortais d'un burn-out, je savais que j'avais plein de choses enfouies à régler... Et j'ai décidé de commencer par ça."
-
 aimee "Le reste a suivi."
 
 
@@ -228,57 +273,55 @@ label gat_2_1:
     
     show aimee_neutre at gat_center
     with fade
+    $ current_textbox = "anthrax"
 
     anthrax "Donc tu as commencé par le drag pour... Te relever ? Ce n'est peut-être pas la première chose à laquelle on pense quand on commence sa \"healing journey\"."
+    $ current_textbox = "gatsby"
 
     aimee "Tu faisais du cirque du coup ? Est-ce que tu peux m'en raconter davantage ?"
-
     aimee "Eh bien... J'ai commencé très jeune, avec de la gymnastique."
-
     aimee "Mes parents ont découvert assez vite que j'étais hyperlaxe, c'était donc un avantage dans ce type de discipline."
-
     aimee "Et j'étais plutôt bon.ne en plus. Mais je commençais à m'ennuyer et j'avais envie de changement."
-
     aimee "Et avec l'âge, je me suis de plus en plus intéressé.e à d'autres formes d'art, un peu plus physiques mais plus challengeantes !"
-
     aimee "Et qui dit challenge, dit fun."
+    $ current_textbox = "anthrax"
 
     anthrax "Ça te correspond bien en tout cas. Tu as l'air d'être du genre... explosif ?"
+    $ current_textbox = "gatsby"
 
     aimee "Ha ha ! Merci. Oui, j'ai toujours été assez turbulent.e !"
-
     aimee "Donc fallait y aller pour m'épuiser !"
+    $ current_textbox = "anthrax"
 
     anthrax "Et qu'est-ce que tu sais faire du coup ?"
+    $ current_textbox = "gatsby"
 
     aimee "Pendant quelques années, j'étais contorsionniste."
-
     aimee "Puis je me suis intéressé.e aux hauteurs."
+    $ current_textbox = "anthrax"
 
     anthrax "Aux hauteurs ?"
+    $ current_textbox = "gatsby"
 
     aimee "Oui ! Toutes les disciplines qui avaient un rapport de près ou de loin au vide."
-
     aimee "Équilibrisme, acrobatie aérienne, voltige, trapèze, cerceaux volants..."
+    $ current_textbox = "anthrax"
 
     anthrax "Et tu n'as jamais eu le vertige ? J'ai le tournis rien que de m'imaginer ça."
+    $ current_textbox = "gatsby"
 
     aimee "Jamais ! Au contraire, la partie la plus drôle, c'était la chute."
-
     aimee "Après, il y avait toujours un filet ou des matelas pour nous rattraper, donc les dangers étaient minimes pour peu que l'on ait appris à bien tomber."
-
     aimee "Et rien de mieux dans la vie que d'apprendre à se relever après un échec !"
+    $ current_textbox = "anthrax"
 
     anthrax "Et tu en fais toujours ?"
+    $ current_textbox = "gatsby"
 
     aimee "Hm... Disons que je reprends doucement."
-
     aimee "J'ai beau avoir un corps d'Adonis, il n'a plus les mêmes capacités qu'avant."
-
     aimee "Mais ça ne m'empêche pas d'improviser, puisque je n'ai pas non plus tout perdu."
-
     aimee "Après tout, j'y ai consacré la majorité de ma vie. Ce n'est pas une mauvaise passe qui va envoyer en l'air tous mes efforts."
-
     aimee "Recommencer ne me fait pas peur. Et si je peux compiler avec la personne que je suis devenu.e, ce serait un triomphe !"
 
     jump gat_3
@@ -290,43 +333,44 @@ label gat_2_2:
     
     show aimee_neutre at gat_center
     with fade
+    $ current_textbox = "anthrax"
 
     anthrax "J'ignorais que tu avais fait un burn-out. C'était quel genre d'environnement de travail pour que ça en arrive là ?"
+    $ current_textbox = "gatsby"
 
     aimee "Ça n'en a peut-être pas l'air comme ça, mais j'étais acrobate dans une troupe de cirque..."
-
     aimee "On était constamment en déplacement à l'étranger pour des tournées, et disons que l'ambiance aux répétitions et en spectacles n'était pas au beau fixe."
-
     aimee "Pendant un long moment, c'était le genre de chose que je ne pouvais pas voir en peinture ou entendre parler."
-
     aimee "Alors que j'en étais réellement passionné.e..."
+    $ current_textbox = "anthrax"
 
     anthrax "Merde... Et du coup, ça a dû te dégoûter complètement..."
+    $ current_textbox = "gatsby"
 
     aimee "Pendant un temps, oui."
-
     aimee "Mais plus à présent. C'est même redevenu ma spécialité au sein de l'Androgame."
-
     aimee "La majorité de mes numéros sont acrobatiques."
-
     aimee "Dis-toi que Mother a même fait des modifications dans la structure de la scène, pour l'accommoder à mes besoins techniques."
+    $ current_textbox = "anthrax"
 
     anthrax "Ça a dû être assez coûteux."
+    $ current_textbox = "gatsby"
 
     aimee "Rien qu'une avance sur le salaire ne puisse régler !"
-
     aimee "Non, je plaisante. Je n'ai pas eu à contribuer aux frais. C'est juste bien tombé puisque des rénovations étaient déjà prévues."
-
     aimee "Mother est une vraie businesswoman. Je ne sais pas quels contacts elle cache dans son décolleté, mais si tu as besoin de n'importe quoi, je suis sûr.e qu'elle a quelqu'un pour te dépanner."
+    $ current_textbox = "anthrax"
 
     anthrax "Et du coup, qu'est-ce que tu fais exactement comme acrobatisme ?"
+    $ current_textbox = "gatsby"
 
     aimee "As-tu réellement envie que je te spoile ? Je peux te laisser la surprise pour le prochain show~"
+    $ current_textbox = "anthrax"
 
     anthrax "Juste un indice alors ?"
+    $ current_textbox = "gatsby"
 
     aimee "Un indice ? Très bien."
-
     aimee "C'est de la voltige...~"
 
     call gat_3 from _call_gat_3_1 
@@ -337,52 +381,48 @@ label gat_2_3:
 
     show aimee_neutre at gat_center
     with fade
+    $ current_textbox = "anthrax"
 
     anthrax "Donc tu as commencé par le drag pour... Te relever ? Ce n'est peut-être pas la première chose à laquelle on pense quand on commence sa \"healing journey\"."
+    $ current_textbox = "gatsby"
 
     aimee "Oh, ne t'en fais pas que j'allais déjà chez le psy !"
-
     aimee "Je ne l'ai d'ailleurs jamais quitté.e..."
-
     aimee "Non, j'étais déjà à un stade suffisamment avancé de réflexion pour me lancer dans l'exploration tout de même."
-
     aimee "J'avais les clefs en main, mais je ne savais pas quelle porte ouvrir. Ou bien même où est-ce qu'elle était cette foutue porte."
-
     aimee "Alors que je suis plutôt du genre à les enfoncer..."
-
     aimee "Et tout ça pour réaliser que ce n'était pas une porte mais une trappe vers le grenier où j'avais entassé pas mal de vieux démons en espérant les y oublier..."
-
     aimee "Enfin bref, pas mal de métaphores pour dire une seule chose : \"Maintenant, ça va mieux\"."
+    $ current_textbox = "anthrax"
 
     anthrax "Ça a l'air d'avoir été bien fastidieux. Donc... Par quoi est-ce que tu as commencé le drag ?"
+    $ current_textbox = "gatsby"
 
     aimee "Eh bien... Au tout départ, c'était avec des sorties costumées, comme Halloween ou Mardi Gras."
-
     aimee "On avait aussi ces petites soirées à thème avec mes ami.e.s où l'on venait déguisé.e.s, et j'utilisais ces occasions à fond"
-
     aimee "puisque c'était les seuls moments où je sentais que je pouvais m'amuser avec les frontières du genre et repousser quelques limites."
-
     aimee "Puis j'ai de plus en plus assumé, avec du jeu de rôle notamment."
-
     aimee "Puis les cercles d'amis se sont mêlés et j'ai découvert une association queer qui proposait des ateliers drag. Et je me suis inscrit.e."
+    $ current_textbox = "anthrax"
 
     anthrax "Sur un coup de tête ? Comme ça ?"
+    $ current_textbox = "gatsby"
 
     aimee "Après tout, c'est un peu comme toi lorsque tu t'es présenté.e à l'audition. Parfois, il faut juste se lancer."
+    $ current_textbox = "anthrax"
 
     anthrax "C'est vrai... Et à quoi ressemblait ton drag au début ?"
+    $ current_textbox = "gatsby"
 
     aimee "Je suis content.e que tu demandes !"
-
     aimee "Au départ, c'était plutôt du drag clown et du drag creature... Ça ne ressemblait pas à grand-chose, mais c'était le but."
-
     aimee "Je m'inspirais principalement d'œuvres d'art et j'essayais de les reproduire sur mon corps avec une pointe de body horror."
-
     aimee "C'était assez fun. Dommage que ça ne colle pas trop avec le style de l'Androgame..."
-
     aimee "Mais ça ne m'empêche pas de développer ces personnages à côté."
+    $ current_textbox = "anthrax"
 
     anthrax "Et tu es toujours dans cette association ?"
+    $ current_textbox = "gatsby"
 
     aimee "Oui ! Mais malheureusement, on n'y fait plus trop de spectacles. Chacun.e a sa vie et d'autres priorités, et le drag est passé au second plan. Mais peut-être que ça reprendra un jour, qui sait ?"
 
@@ -390,55 +430,64 @@ label gat_2_3:
 
 #GAT.3
 label gat_3:
+    $ current_textbox = "description"
 
     text "Cela faisait plusieurs minutes que je cherchais Aimée, avec qui j'étais supposé.e répéter une partie de mon numéro, que l'on construisait ensemble."
-
     text "Après avoir fait trois fois le tour du lobby, des backstages, être retourné.e tout autant de fois dans les loges, je finis par retourner sur les planches de la scène, pensif.ve."
-
     text "Et en toute honnêteté, un peu inquiet.e."
-
     text "Puis je l'aperçus, dominant un carnet sur lequel iel tapotait la mine de son crayon, posé sur l'un des mange-debouts. Je le.a rejoignis rapidement."
+    $ current_textbox = "anthrax"
 
     anthrax "Hey... Je me demandais où tu étais passé.e."
+    $ current_textbox = "gatsby"
 
     aimee "Oh, pardon... Je ne pensais pas que tu me cherchais."
+    $ current_textbox = "anthrax"
 
     anthrax "Euh... Nous étions censé.e.s nous retrouver pour nous entraîner..."
+    $ current_textbox = "gatsby"
 
     aimee "Meeeeeerde ! J'ai complètement zappé ! Je suis désolé.e !"
+    $ current_textbox = "anthrax"
 
     anthrax "Ce n'est pas grave, c'est le genre de chose qui arrive. Qu'est-ce que tu fais... ?"
+    $ current_textbox = "gatsby"
 
     aimee "Ça ? J'essaye de tenir un journal."
+    $ current_textbox = "anthrax"
 
     anthrax "Un journal ?"
+    $ current_textbox = "gatsby"
 
     aimee "Oui, pour mettre à plat ma progression, mes hauts et mes bas... Histoire de garder une trace du chemin parcouru et de ce que j'ai accompli."
+    $ current_textbox = "anthrax"
 
     anthrax "Oh ! Un journal intime quoi !"
+    $ current_textbox = "gatsby"
 
     aimee "Ça fait tout de suite moins sérieux dit comme ça... Mais oui, un journal intime."
-
     aimee "Entre autres..."
 
+    $ current_textbox = "description"
+
     text "Soudainement l'air un peu ailleurs, Aimée se mordit l'intérieur de la joue, sans reprendre la parole. Ellui étant si bavard.e, c'était plutôt surprenant de sa part..."
+    $ current_textbox = "anthrax"
 
     anthrax "Tout va bien ?"
+    $ current_textbox = "gatsby"
 
     aimee "Hm..."
 
     aimee "Peut-être qu'en parler m'aidera à mieux trouver les mots pour l'écrire..."
+    $ current_textbox = "anthrax"
 
     anthrax "Oh... ?"
+    $ current_textbox = "gatsby"
 
     aimee "Tu vois quand je t'ai parlé de mon burn-out ? Ça a eu des conséquences bien plus dévastatrices sur ma santé mentale qu'une simple dépression..."
-
     aimee "Avec la pression au sein de mon ancienne troupe, j'ai développé des troubles du comportement alimentaire."
-
     aimee "Boulimie, anorexie, un mix des deux, puis un soupçon de mérycisme... Enfin bref."
-
     aimee "Rien de bien joyeux, mais j'aimerais réussir à le noter dans mon carnet pour..."
-
     aimee "Je ne sais pas... Enfin tourner la page ?"
 
 
@@ -463,59 +512,52 @@ label gat_3_1:
 
     show aimee_neutre at gat_center
     with fade
+    $ current_textbox = "anthrax"
 
     anthrax "Est-ce que ça va mieux maintenant que tu as quitté cet environnement ?"
+    $ current_textbox = "gatsby"
 
     aimee "Oui ! Énormément même !"
-
     aimee "Ça n'a pas encore complètement disparu, mais c'est sur une excellente voie !"
-
     aimee "Je n'ai jamais été aussi bien dans ma peau, mon apparence et ma confiance."
+    $ current_textbox = "anthrax"
 
     anthrax "Ça me rassure un peu... Ça ne rigole pas les TCA."
+    $ current_textbox = "gatsby"
 
     aimee "Ce n'est pas moi qui vais te dire le contraire !"
-
     aimee "Remonter la pente est ce qui a été le plus compliqué, mais maintenant que c'est passé, je suis inarrêtable."
+    $ current_textbox = "anthrax"
 
     anthrax "Mais qu'est-ce qui t'as causé de sombrer en premier lieu ?"
+    $ current_textbox = "gatsby"
 
     aimee "Je pense que c'était sincèrement la pression qu'on me mettait. C'est même indéniable..."
-
     aimee "Quelqu'un était constamment sur mon dos pour surveiller mon poids, mon déficit calorique, combien de litres d'eau je buvais par jour, quels compléments alimentaires..."
-
     aimee "Je n'ai pas toujours eu le corps que j'ai aujourd'hui, c'était un régime très strict."
-
     aimee "Ça a d'ailleurs commencé par de l'anorexie. Je pense qu'avec le recul, j'avais terriblement besoin de contrôle."
-
     aimee "Et le peu que je pouvais grapiller se trouvait là..."
+    $ current_textbox = "anthrax"
 
     anthrax "Ça devait être abominable."
+    $ current_textbox = "gatsby"
 
     aimee "Hm... Peut-être, mais j'ai survécu."
-
     aimee "Surtout qu'à cette époque, j'étais particulièrement mal dans mes baskets, et je n'avais pas encore réalisé que je me posais des questions sur mon genre."
-
     aimee "C'était vraiment un pêle-mêle de sentiments néfastes, sans un pour rattraper l'autre."
-
     aimee "Et j'ai beau avoir fini par quitter la troupe, j'étais tellement matrixé.e que les TCA ne se sont pas arrêtés là."
-
     aimee "Maintenant, j'avais une sorte de vide à combler, et j'ai fait de l'hyperphagie."
-
     aimee "Bref..."
+    $ current_textbox = "anthrax"
 
     anthrax "C'est l'Androgame qui t'as aidé à t'en sortir ?"
+    $ current_textbox = "gatsby"
 
     aimee "L'Androgame ? Non."
-
     aimee "Mais ma psy et le drag, par contre, oui !"
-
     aimee "J'ai trouvé une communauté, et un espace pour me redécouvrir, qui m'acceptait pour quiconque je devenais."
-
     aimee "Franchement, c'était salvateur. Et j'ai pu commencer à aborder plus ouvertement les épreuves que je traversais."
-
     aimee "Jusqu'à ultimement les surmonter."
-
     aimee "C'est après que j'ai découvert l'Androgame, et que j'ai pu réitérer !"
 
     call gat_4 from _call_gat_4 
@@ -528,58 +570,49 @@ label gat_3_2:
     with fade
 
     anthrax "Wow... Quand je te vois maintenant... Je ne pensais pas..."
+    $ current_textbox = "gatsby"
 
     aimee "\"Tu ne pensais pas\" quoi ?"
+    $ current_textbox = "anthrax"
 
     anthrax "Eh bien... Ça ne te ressemble pas. Enfin, pas au toi d’aujourd’hui."
-
     anthrax "Je te vois comme cette personne bien dans son corps, hyper confiante..."
-
     anthrax "J’ai juste un peu de mal à réaliser que tu n’as pas été... épargné.e ?"
+    $ current_textbox = "gatsby"
 
     aimee "Hm... Je pourrais me vexer, mais je crois voir où tu veux en venir."
-
     aimee "Je ne pense pas que mes TCA viennent de là, il y a plein d’autres raisons que de vouloir correspondre à un standard de beauté pour que ça se déclenche."
-
     aimee "Ça a commencé avec moi parce que j’avais besoin de contrôle dans ma vie, et que c’était là où je le trouvais."
-
     aimee "Enfin... C’est ce que je préférais me raconter plutôt..."
+    $ current_textbox = "anthrax"
 
     anthrax "Désolé.e, je ne voulais pas te blesser. J’ai été maladroit.e dans mes mots."
 
     anthrax "Qu’est-ce que tu sous-entends par là ?"
+    $ current_textbox = "gatsby"
 
     aimee "Eh bien..."
-
     aimee "Putain, c’est pas simple d’en parler..."
-
     aimee "En fait, quand tu entres dans une crise... Que ce soit à te pencher au-dessus d’une cuvette et enfoncer tes doigts dans la gorge ou avaler tout ce qui tombe sous ta main..."
-
     aimee "Tu n’es pas toi-même. Enfin, plutôt... Tu n’as pas le contrôle sur ce que tu fais à cet instant..."
-
     aimee "C’est comme si tu étais possédé.e."
-
     aimee "Mais le pire dans tout ça, c’est que tu te sens étrangement satisfait.e après... Et c’est là où est le danger."
-
     aimee "Parce que ça te fait sentir bien, tu commences à croire que c’est normal, et que c’est même une solution."
-
     aimee "Et ensuite, tu ne te sors plus de ce cercle vicieux. Ou du moins, très difficilement..."
+    $ current_textbox = "anthrax"
 
     anthrax "Mais maintenant, tu en as encore... ?"
+    $ current_textbox = "gatsby"
 
     aimee "Hm... Ce n’est pas aussi simple que ça. J’en ai encore les stigmates, pour être honnête."
-
     aimee "Justement, je me sens bien dans mes baskets, et j’aime le reflet que je vois dans le miroir, puisque c’est la version de moi la plus heureuse que j’ai eue dans ma vie."
-
     aimee "Sauf peut-être quand j’étais enfant, mais je n’en ai plus tellement de souvenirs..."
-
     aimee "Tout le monde ne penserait pas que c’est le cas parce que dans leur tête, être gros.se équivaut à devoir automatiquement se sentir misérable."
-
     aimee "Mais j’étais bien plus misérable quand j’avais la peau sur les os et que mon patron me disait que je devais encore surveiller mon poids pour pouvoir faire de la contorsion."
-
     aimee "C’est toute une histoire..."
 
     anthrax "Et pas l’une des plus joyeuses..."
+    $ current_textbox = "gatsby"
 
     aimee "Ça c’est clair..."
 
@@ -591,52 +624,49 @@ label gat_3_3:
 
     show aimee_neutre at gat_center
     with fade
+    $ current_textbox = "anthrax"
 
     anthrax "Tu as dû prendre pas mal de temps pour t'en remettre, non ?"
+    $ current_textbox = "gatsby"
 
     aimee "Oh ça ! Et encore, je suis loin d'en avoir fini !"
-
     aimee "Bon, au moins je ne me prive plus de nourriture, ni me fais vomir, ni vide les placards au moindre mental breakdown."
-
     aimee "Juste parfois, je me reprends à y penser. Sans l'envisager hein ! C'est déjà du progrès."
-
     aimee "Tant que je ne rechute pas, c'est le principal."
+    $ current_textbox = "anthrax"
 
     anthrax "C'est quelque chose qui t'inquiète ? De rechuter ?"
+    $ current_textbox = "gatsby"
 
     aimee "Oui, et non... J'ai suffisamment dépassé tout ça et me suis construit une force mentale telle que je ne me laisserais pas retomber."
-
     aimee "Et d'un autre côté, c'est toujours une peur un peu irrationnelle qui ne me quitte jamais."
-
     aimee "Surtout que sur le chemin de la convalescence, j'ai eu beaucoup de hauts et de bas."
-
     aimee "Des périodes qui allaient vraiment très bien, et d'autres où je me sentais comme la dernière des merdes."
-
     aimee "Chacune durait plus ou moins longtemps. Des mois même !"
-
     aimee "Et mon corps qui subissait tout ça au passage."
 
     anthrax "Ça a fini par se stabiliser du coup ?"
+    $ current_textbox = "gatsby"
 
     aimee "Visualise ça comme un yo-yo. Sans mauvais jeu de mot."
-
     aimee "Au début, il descend et remonte très fort, jusqu'à perdre en vélocité. Et ensuite, il rebondit de moins en moins haut et de moins en moins bas."
+    $ current_textbox = "anthrax"
 
     anthrax "Bon, un yo-yo finit quand même par se stopper tout en bas..."
+    $ current_textbox = "gatsby"
 
     aimee "Imagine qu'il n'y a pas de gravité dans ce cas. Ah mais du coup, le yo-yo ne tomberait pas en premier lieu..."
-
     aimee "Bon, oublie cette métaphore foireuse !"
-
     aimee "Ce qui compte, c'est qu'au fil du temps, avec la volonté de guérir qui va avec parce qu'on n'a rien sans rien, les pics sont moins intenses."
-
     aimee "Jusqu'à disparaître."
-
     aimee "Et que les TCA disparaissent, c'est ça qu'on veut."
+    $ current_textbox = "anthrax"
 
     anthrax "Et où est-ce que tu en es à présent ? Si ce n'est pas encore ça..."
+    $ current_textbox = "gatsby"
 
     aimee "Eh bien... Disons que le yo-yo oscille. Mais il faudrait vraiment un gros coup de vent ou une catastrophe naturelle pour qu'il se remette à bouger vraiment."
+    $ current_textbox = "anthrax"
 
     anthrax "Bon, tant mieux alors !"
 
@@ -649,39 +679,46 @@ label gat_4:
     stop ambiance fadeout 0.5
     play music BackstageLoop volume 0.5
     play ambiance AmbLoges fadein 0.5
+    $ current_textbox = "description"
 
-    anthrax "Le calme illusoire de la loge contrastait drastiquement avec le bourdonnement du staff passé la porte."
-    anthrax "Les discussions étaient légères et l'entraide entre les artistes pour régler les petits aléas techniques était doux à voir."
-    anthrax "Malgré tout, chacun.e se préparait avec diligence, en jetant nerveusement un coup d'œil à l'heure qui tournait plusieurs fois dans la même minute."
-    anthrax "Assis.e sur une chaise face à l'un des miroirs, en peignoir, Aimé décoiffait son mohawk à l'aide d'une large brosse avant d'appliquer un conditionner, pendant que son teint était en train de se fixer."
-    anthrax "Iel finit par tresser les sections, puis enfiler un collant pour tout bien plaquer contre son crâne et laisser place à sa perruque qui l'attendait sur le mannequin."
-    anthrax "En quelques coups de peigne et de gel, des vagues décoraient son front et quelques perles adoucissaient son regard tandis que son regard se berçait d'écume."
+    text "Le calme illusoire de la loge contrastait drastiquement avec le bourdonnement du staff passé la porte."
+    text "Les discussions étaient légères et l'entraide entre les artistes pour régler les petits aléas techniques était doux à voir."
+    text "Malgré tout, chacun.e se préparait avec diligence, en jetant nerveusement un coup d'œil à l'heure qui tournait plusieurs fois dans la même minute."
+    text "Assis.e sur une chaise face à l'un des miroirs, en peignoir, Aimé décoiffait son mohawk à l'aide d'une large brosse avant d'appliquer un conditionner, pendant que son teint était en train de se fixer."
+    text "Iel finit par tresser les sections, puis enfiler un collant pour tout bien plaquer contre son crâne et laisser place à sa perruque qui l'attendait sur le mannequin."
+    text "En quelques coups de peigne et de gel, des vagues décoraient son front et quelques perles adoucissaient son regard tandis que son regard se berçait d'écume."
+    $ current_textbox = "gatsby"
 
     gatsby "[player], est-ce que tu pourrais me rendre un service ?"
+    $ current_textbox = "anthrax"
 
     anthrax "Bien sûr, de quoi as-tu besoin ?"
+    $ current_textbox = "gatsby"
 
     gatsby "Est-ce que ce serait possible de me passer les pièces de mon costume pendant que je me change ? La cabine est ridiculement petite."
+    $ current_textbox = "description"
 
-    anthrax "Aimé.e gardait son air confiant malgré son maquillage aux traits de Pierrot. Cependant, je décelais quelques incertitudes dans son regard. Peut-être de l'appréhension."
-    anthrax "Avait-iel peur de me demander une telle chose ? Cela semblait délicat pour iel de me demander cela. Mais qu'iel me fasse confiance ainsi me fit anormalement plaisir."
+    text "Aimé.e gardait son air confiant malgré son maquillage aux traits de Pierrot. Cependant, je décelais quelques incertitudes dans son regard. Peut-être de l'appréhension."
+    text "Avait-iel peur de me demander une telle chose ? Cela semblait délicat pour iel de me demander cela. Mais qu'iel me fasse confiance ainsi me fit anormalement plaisir."
     anthrax "Dis-moi ! Qu'est-ce que tu veux que je porte ?"
-    anthrax "Iel me pointa une chaise et disparut avec son regard espiègle derrière le rideau de la cabine."
-    anthrax "Je pris le costume et passa mes doigts sur le tulle léger, les strass, testant l'élasticité du tissu avec précaution."
-    anthrax "Aimé.e me tendit ensuite son haut en dehors de son vestiaire improvisé et je compris à l'oreille que Gatsby quittait son binder pour taper sa poitrine."
-    anthrax "Après tout, son tour était très physique et lui demandait une liberté de mouvements, qui clashaient peut-être avec sa dysphorie de genre..."
+    text "Iel me pointa une chaise et disparut avec son regard espiègle derrière le rideau de la cabine."
+    text "Je pris le costume et passa mes doigts sur le tulle léger, les strass, testant l'élasticité du tissu avec précaution."
+    text "Aimé.e me tendit ensuite son haut en dehors de son vestiaire improvisé et je compris à l'oreille que Gatsby quittait son binder pour taper sa poitrine."
+    text "Après tout, son tour était très physique et lui demandait une liberté de mouvements, qui clashaient peut-être avec sa dysphorie de genre..."
+    $ current_textbox = "gatsby"
 
     gatsby "Merci... J'aurais besoin du harnais de sécurité s'il te plaît."
 
 #Choix GAT.4
 label choix_gat4:
     $ quick_menu = False
+    $ current_textbox = "description"
 
     show aimee_neutre at gat_right
     with fade
 
     menu: 
-        anthrax "Je lui tendis en réfléchissant à quoi dire pour meubler le silence."
+        text "Je lui tendis en réfléchissant à quoi dire pour meubler le silence."
         "Ce n'est pas trop compliqué de performer? Je veux dire... Le rapport au corps, tout ça....?":
             call gat_4_1 from _call_gat_4_1_1 
         "Je te trouve courageux.e... Tout ce que tu réussis à accomplir sans que ça ai vraiment l'air de t'affecter":
@@ -695,45 +732,60 @@ label gat_4_1:
     
     show aimee_neutre at gat_center
     with fade
+    $ current_textbox = "anthrax"
 
     anthrax "Ce n'est pas trop compliqué de performer ? Je veux dire... Le rapport au corps, tout ça... ?"
+    $ current_textbox = "gatsby"
 
     gatsby "Mon corps, c'est un peu mon meilleur ennemi."
     gatsby "Dans le sens où c'est avec lui que je suis capable de faire ce que je fais, et je sais que je suis doué.e."
     gatsby "Et d'un autre côté, j'ai toujours une dysphorie de genre assez fluctuante, donc je ne sais pas si je vais être au top de ma forme ou non, avant un show."
+    $ current_textbox = "anthrax"
 
     anthrax "À ce point ?"
+    $ current_textbox = "gatsby"
 
     gatsby "Parfois oui, j'adore mon corps, mes formes, sa force... Et il suffit d'un instant pour avoir l'impression que ma peau n'est pas la mienne, que quelque chose est à vif en dessous, que ça grouille."
-
     gatsby "C'est très spécial à décrire..."
+    $ current_textbox = "delaunay"
 
     delaunay "Hm... Je comprends exactement ce que tu veux dire..."
+    $ current_textbox = "peacock"
 
     peacock "C'est peut-être pour ça que le drag est notre plus grand atout finalement, on peut se permettre d'explorer."
+    $ current_textbox = "gatsby"
 
     gatsby "Plus qu'explorer, je dirais même se réconcilier. La majeure partie du temps, je me sens super bien dans ma peau."
     gatsby "Devoir accomplir des prouesses physiques, se dévoiler, ne pas avoir droit à l'erreur et être obligé.e de rester concentré.e quand juste parfois le mood n'est pas là, est bien plus embarrassant que ce qu'on croirait."
     gatsby "Même moi, j'ai sous-estimé l'impact que ça aurait sur ma performance au début. Ça va que je réussis maintenant à gérer."
+    $ current_textbox = "anthrax"
 
     anthrax "Ça t'est déjà arrivé pendant que tu étais sur scène ?"
+    $ current_textbox = "gatsby"
 
     gatsby "Si on parle de crise de dysphorie, non. Et j'ai bien de la chance. C'est plus une sensation de malaise qu'autre chose."
+    $ current_textbox = "peacock"
 
     peacock "C'est déjà arrivé une fois à Léandre cependant, au début."
+    $ current_textbox = "anthrax"
 
     anthrax "Vraiment ?"
+    $ current_textbox = "delaunay"
 
     delaunay "Oui, mais c'était un cas exceptionnel. Et j'avais d'autres facteurs dans ma vie personnelle qui ont fait que je n'ai plus réussi à assumer mon numéro en plein milieu de celui-ci."
+    $ current_textbox = "gatsby"
 
     gatsby "Mais au final, ça s'est bien fini et le public était très compréhensif..."
     gatsby "Et on se soutient suffisamment dans la troupe pour savoir exprimer nos besoins et nos difficultés."
+    $ current_textbox = "peacock"
 
     peacock "Et se rassurer."
 
     stop music fadeout 0.1
-    
+    $ current_textbox = "mother"
+
     staff "Ok les filles ! Showtime dans dix minutes !"
+    $ current_textbox = "gatsby"
 
     gatsby "Allez ! On doit mettre les bouchées doubles si on veut être à l'heure, girlies ! Chop-chop !"
 
@@ -746,43 +798,59 @@ label gat_4_2:
 
     show aimee_neutre at gat_center
     with fade
+    $ current_textbox = "anthrax"
 
     anthrax "Je te trouve courageux.e... Tout ce que tu réussis à accomplir sans que ça ait vraiment l'air de t'affecter."
+    $ current_textbox = "gatsby"
 
     gatsby "Ce n'est pas du courage ça. Ça s'appelle juste vivre... Tu dis ça parce que tu as du mal à comprendre."
+    $ current_textbox = "anthrax"
 
     anthrax "Du mal à comprendre ? Pourquoi tu dis ça ? Ce n'est pas comme si j'essayais pas ou que j'étais complètement ignorant.e."
+    $ current_textbox = "gatsby"
 
     gatsby "Non ! Pas dans ce sens-là ! Dans le sens où on a tous.te.s nos limites de compréhension. Tu n'es pas dans ma tête, ni dans mon corps. Alors la définition de courage est celle qui te vient en premier."
     gatsby "Je déteste ce mot, pour me définir en tout cas."
+    $ current_textbox = "anthrax"
 
     anthrax "Pourquoi donc ? Ce n'est pas péjoratif."
+    $ current_textbox = "gatsby"
 
     gatsby "Non, en effet. Mais ça sous-entend un peu que mon existence est une corvée. Ce n'est pas le cas du tout. En fait, j'ai l'impression d'être pris.e en pitié, et je ne supporte pas ça."
+    $ current_textbox = "anthrax"
 
     anthrax "Pardon, ce n'est pas ce que je souhaitais dire."
+    $ current_textbox = "gatsby"
 
     gatsby "Je sais. Et j'ai aussi été maladroit.e dans ma réaction. Désolé.e."
     gatsby "J'ai conscience d'être une personne grosse, noire et non-binaire. Très clairement, je cumule."
     gatsby "Mais ce n'est pas une raison pour s'apitoyer, au contraire."
     gatsby "Mon bonheur, c'est ma plus belle arme de résistance face à une société peu accueillante. Et c'est quelque chose que je ne compte pas lui abandonner de sitôt."
     gatsby "J'ai trop travaillé pour arriver là où j'en suis aujourd'hui. De l'effort, de la résilience, de la joie, mais pas du courage."
+    $ current_textbox = "anthrax"
 
     anthrax "C'est un raccourci trop simple, si je comprends bien."
+    $ current_textbox = "gatsby"
 
     gatsby "Je n'aurais pas dit mieux !"
+    $ current_textbox = "peacock"
 
     peacock "Mais t'aurais pu lui répondre plus gentiment. Maintenant [player] a l'air tout.e embarrassé.e."
+    $ current_textbox = "delaunay"
 
     delaunay "C'était peut-être maladroit, mais ça ne partait pas d'un mauvais fond. Tu es encore parti.e au quart de tour By-By."
+    $ current_textbox = "gatsby"
 
     gatsby "C'est vrai, my bad. Je ferai plus gaffe."
+    $ current_textbox = "anthrax"
 
     anthrax "Ce n'est pas grave, ça m'a plus surpris.e qu'autre chose. Mais au final, ça m'a donné plus de perspective, et j'apprécie l'honnêteté."
 
     stop music fadeout 0.1
+    $ current_textbox = "mother"
 
     staff "Ok les filles ! Showtime dans dix minutes !"
+    $ current_textbox = "gatsby"
 
     gatsby "Allez ! On doit mettre les bouchées doubles si on veut être à l'heure girlies ! Chop-chop !"
     
@@ -796,41 +864,54 @@ label gat_4_3:
 
     show aimee_neutre at gat_center
     with fade
+    $ current_textbox = "anthrax"
 
     anthrax "J'étais persuadé.e qu'avec tout ce que tu m'as mentionné avant, tu ne toucherais plus jamais aux arts acrobatiques."
+    $ current_textbox = "gatsby"
 
     gatsby "Eh bien... En soi je comprends que tu puisses penser cela. Moi aussi j'étais persuadé.e que je ne reprendrais pas."
     gatsby "Mais petit à petit, l'envie de m'y remettre a pris le pas sur mes réticences."
     gatsby "Et au final, j'ai réalisé que ce n'était pas contre les soies aériennes que j'étais fâché, mais tout ce qu'elles avaient représenté de toxique dans mon ancien environnement de travail."
     gatsby "C'était plus facile d'amalgamer quelque chose que j'adore avec les horreurs que l'on m'a fait subir dans cette industrie, plutôt que de déconstruire et dissocier des années d'abus."
+    $ current_textbox = "anthrax"
 
     anthrax "Personne ne peut te blâmer là-dessus, de ce que tu m'as raconté."
+    $ current_textbox = "gatsby"
 
     gatsby "Bah... Ce n'était pas juste la pression de bien performer au spectacle. C'était la pure misogynie, le racisme ambiant, les standards de beauté, l'absence de contrôle sur ma manière de penser. J'étais vraiment conditionné.e."
     gatsby "Après, c'est aussi surtout parce que je suis tombé.e sur une troupe particulièrement toxique."
     gatsby "J'ai de nombreux.euses ami.e.s qui l'ont quittée et qui travaillent maintenant dans un climat plus sain, avec de l'entraide et de l'empathie. J'en ai d'excellents échos."
     gatsby "Et de toute manière, j'ai entendu dire que l'entreprise pour laquelle on bossait a fait faillite."
     gatsby "Donc j'ai vraiment l'esprit en paix à présent."
+    $ current_textbox = "delaunay"
 
     delaunay "Je me demande surtout comment tu as fait pour ne pas partir avant..."
+    $ current_textbox = "gatsby"
 
     gatsby "Pour les mêmes raisons que toi : je pourrais te retourner la remarque. J'avais mes circonstances, je ne questionne pas les tiennes..."
+    $ current_textbox = "delaunay"
 
     delaunay "Touché."
+    $ current_textbox = "peacock"
 
     peacock "Stop vous deux. C'est pas simple de briser un pattern malsain auquel on est habitué.e.s."
     peacock "Vous êtes les deux le plus à même de le comprendre ici."
+    $ current_textbox = "gatsby"
 
     gatsby "Tu dis ça, mais ton industrie n'est pas non plus très haute placée sur l'échelle des bisounours..."
+    $ current_textbox = "peacock"
 
     peacock "C'est vrai, c'est surtout de la chance. Et du bouche à oreille. J'ai l'avantage de bosser beaucoup avec des petits contrats. Ça aide à ne pas rester enfermé.e avec la même équipe et de pouvoir tourner."
     peacock "Ou alors de trouver justement les personnes avec qui j'apprécie bosser et pouvoir les recontacter."
+    $ current_textbox = "gatsby"
 
     gatsby "Enfin bref ! Morale de l'histoire : bien s'entourer, et faire du drag. Parce qu'au moins, on s'entoure de gens qui nous comprennent."
 
     stop music fadeout 0.1
+    $ current_textbox = "mother"
 
     staff "Ok les filles ! Showtime dans dix minutes !"
+    $ current_textbox = "gatsby"
 
     gatsby "Allez ! On doit mettre les bouchées doubles si on veut être à l'heure, girlies ! Chop-chop !"
 
@@ -841,17 +922,18 @@ label gat_4_3:
 label gat_5:
 
     play music ShowGatsby noloop
+    $ current_textbox = "description"
 
-    anthrax "Le band commença le morceau suivant alors que la scène était encore vide de toute activité, si bien que les spectateur.ice.s en venaient à se demander si quelque chose clochait."
-    anthrax "Un projecteur se braqua sur deux longues soies qui venaient d'être lâchées. Tout en douceur, accompagné.e par les accords du piano, Gatsby avançait sur les planches."
-    anthrax "Après une courte parade, iel retira sa redingote et se hissa le long des deux voilages à la force de ses bras et de ses jambes, sécurisant son ascension en se créant un harnais en quelques tours de draps."
-    anthrax "Surplombant l'atrium de quelques mètres de hauteurs, iel démarra son numéro de soies aériennes avec grâce."
-    anthrax "Tourbillonnant, usant de sa flexibilité pour réaliser des postures impressionnantes, Gatsby captivait le regard, et le souffle retenu de chaque membre de l'audience faisait planer une tension éthérée et palpable."
-    anthrax "Les deux nœuds au bout de chaque cheville et plante le.a tenait suspendu.e en grand écart, qui lui demandaient un effort d'équilibre surhumain."
-    anthrax "Soudainement, iel tomba."
-    anthrax "Virevoltant, sa chute se stoppa si près du sol qu'un cri de surprise fusa depuis le comptoir du bar."
-    anthrax "Mais le risque calculé, et son sourire fier tandis qu'iel se redressait en disait long sur le contrôle que Gatsby avait sur la situation."
-    anthrax "Quelques minutes plus tard et notre acrobate revint sur la terre ferme, saluant avec humilité son public ému."
+    text "Le band commença le morceau suivant alors que la scène était encore vide de toute activité, si bien que les spectateur.ice.s en venaient à se demander si quelque chose clochait."
+    text "Un projecteur se braqua sur deux longues soies qui venaient d'être lâchées. Tout en douceur, accompagné.e par les accords du piano, Gatsby avançait sur les planches."
+    text "Après une courte parade, iel retira sa redingote et se hissa le long des deux voilages à la force de ses bras et de ses jambes, sécurisant son ascension en se créant un harnais en quelques tours de draps."
+    text "Surplombant l'atrium de quelques mètres de hauteurs, iel démarra son numéro de soies aériennes avec grâce."
+    text "Tourbillonnant, usant de sa flexibilité pour réaliser des postures impressionnantes, Gatsby captivait le regard, et le souffle retenu de chaque membre de l'audience faisait planer une tension éthérée et palpable."
+    text "Les deux nœuds au bout de chaque cheville et plante le.a tenait suspendu.e en grand écart, qui lui demandaient un effort d'équilibre surhumain."
+    text "Soudainement, iel tomba."
+    text "Virevoltant, sa chute se stoppa si près du sol qu'un cri de surprise fusa depuis le comptoir du bar."
+    text "Mais le risque calculé, et son sourire fier tandis qu'iel se redressait en disait long sur le contrôle que Gatsby avait sur la situation."
+    text "Quelques minutes plus tard et notre acrobate revint sur la terre ferme, saluant avec humilité son public ému."
 
     stop music fadeout 2.0
 
@@ -879,25 +961,154 @@ label choix_gat6:
             call gat_6_bad from _call_gat_6_bad 
 
 #GAT.6.GOOD
+#COPYPASTE DE LA RUN DEL A MODIFIER
 label gat_6_good:
     $ quick_menu = True
+    show delaunay_neutre at del_center with dissolve
+    show loges with dissolve
+    hide flirt
+
+    $ current_textbox = "delaunay"
+    delaunay "Parfait! Je te retrouve dehors dans quelques minutes alors !"
+
     
-    show aimee_neutre at gat_center
+    show curtain_close with dissolve
+    hide delaunay_neutre with dissolve
+    hide bar
+    hide loges with dissolve
+    pause 1.5
+    show curtain_open with dissolve
     with fade
 
-    anthrax "WIP"
-    aimee "WIP"
+ 
+    scene black with dissolve
+    
+
+    $ current_textbox = "description"
+    text "Le temps que Delaunay et les autres artistes terminent de se démaquiller et de se rhabiller en civil, je passai le balai sur les planches de la scène..."
+    text "Laissant mon esprit vagabonder au jour où moi-même je les foulerais."
+    text "À l'extérieur, quelques clients étaient restés sur le pavé pour continuer leurs discussions et attendre la sortie de la royauté de L'Androgame."
+ 
+    show devanture
+    show leandre_neutre at del_right with dissolve
+
+    
+    $ current_textbox = "delaunay"
+    show joy at joy_right
+    leandre "Pardon pour l'attente! On y va?"
+    hide joy
+
+    $ current_textbox = "anthrax"
+    anthrax "Merci pour l'invitation... Les autres ne sont pas trop jaloux.se.s de notre contre-soirée?"
+
+    $ current_textbox = "delaunay"
+    #show leandre_laugh at del_right
+    leandre "Oh, iels devraient s'en remettre. Ça faisait un moment que je voulais passer un peu plus de temps avec toi."
+    #hide leandre_laugh
+    leandre "En dehors des plumes et des paillettes,  je veux dire..."
+    #show leandre_shy at del_right
+    leandre "Enfin, si tu es d'accord, évidemment."
+    #hide leandre_shy
+
+
+    $ current_textbox = "anthrax"
+    anthrax "Ce serait avec plaisir Léandre..."
+    anthrax "Alors dis-moi! Où est-ce que tu m'emmènes ce soir?"
+
+    $ current_textbox = "delaunay"
+    show flirt at flirt_right
+    #show leandre_flirty at del_right
+    leandre "Hm... Je te réserve la surprise. Mais je pense vraiment que ça devrait te plaire!"
+    #hide leandre_flirty
+
+
+    hide flirt
     call final_gatsby from _call_final_gatsby 
 
 #GAT.6.BAD
+#COPYPASTE DE LA RUN DEL A MODIFIER
 label gat_6_bad:
     $ quick_menu = True
     
-    show aimee_neutre at gat_center
+    hide auditorium
+    show loges
+    show delaunay_neutre at del_center with dissolve
+    
+    $ current_textbox = "delaunay"
+    delaunay "On va aller boire un verre avec les autres une fois que les derniers clients auront quitté la salle. Tu te joins à nous ?"
+    
+    $ quick_menu = False
+
+    menu:
+        "Oui, bien sûr! Je termine ça et j'arrive!":
+            pass
+        "Si vous insistez!":
+            pass
+        "Proposé si gentiment, comment refuser?":
+            pass
+
+    $ quick_menu = True
+
+    #Transition Rideau
+    hide delaunay_neutre with dissolve
+    show curtain_close with dissolve
+    pause 1.5
+    hide bar
+    hide loges
+    scene black
+    show curtain_open with dissolve
     with fade
 
-    anthrax "WIP"
-    mother "WIP"
+    show bar 
+   
+    $ current_textbox = "description"
+
+    text "Tous.te.s étaient réuni.e.s face au comptoir, se faisant servir par notre merveilleux \"Dobarman\"."
+    show imani_neutre at pea_left with dissolve
+    text "Imani avait entre ses doigts un mocktail de sa création..."
+    show leandre_neutre at del_right with dissolve
+    text "Léandre retrouvait peu à peu sa timidité, laissant Delaunay s'effacer."
+    show aimee_neutre at gat_center with dissolve
+    text "Partageant son verre avec Aimé.e pour qu'iel goûte, riant aux éclats en détaillant quelques anecdotes de leurs expériences."
+    text "Le tout appuyé.e par l'approbation et les précisions de Mother."
+    
+    hide imani_neutre
+    hide leandre_neutre
+    hide aimee_neutre
+    show aimee_neutre at gat_right with dissolve
+    $ current_textbox = "gatsby"
+    aimee "Nan mais je te jure ! La manière dont sa perruque a volé au milieu de la pièce !"
+
+    $ current_textbox = "delaunay"
+    show leandre_neutre at del_left with dissolve
+    leandre "Et surtout sa tête, en s'en rendant compte... !"
+
+    $ current_textbox = "peacock"
+    hide aimee_neutre
+    show imani_neutre at pea_right with dissolve
+    imani "J'aurais rêvé être là cette soirée, et non derrière les machines !"
+
+    $ current_textbox = "mother"
+    hide leandre_neutre
+    show mother at mother_left with dissolve
+    mother "Je suis sûre que je peux te retrouver une vidéo d'excellente qualité, vu comment elle a tourné sur les plateformes."
+
+    hide imani_neutre
+    hide mother
+    show imani_neutre at pea_left with dissolve
+    show leandre_neutre at del_right with dissolve
+    show aimee_neutre at gat_center with dissolve
+
+    $ current_textbox = "description"
+
+    text "Les écoutant avec une certaine envie, ayant hâte de pouvoir raconter à mon tour mes aventures."
+    text "Je les observais un à une, ancrant cette image dans ma mémoire, essayant d'y graver le moindre détail."
+    hide imani_neutre with dissolve
+    hide aimee_neutre with dissolve
+    text "Je m'en voulais peut-être un peu de ne pas avoir demandé à Léandre d'être sorti avec moi ce soir."
+    text "Mais quelque chose me dit que c'était peut-être un peu trop tôt..."
+    text "Et j'aurais loupé cet instant précieux, sachant pertinemment que je passerais le reste de la soirée bien entouré.e !"
+
     call final_gatsby from _call_final_gatsby_1 
 
     
