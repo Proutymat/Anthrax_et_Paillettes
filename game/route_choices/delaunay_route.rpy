@@ -734,7 +734,7 @@ label del_3_1:
     show leandre_neutre at del_right
     menu:
         leandre "J'étais jeune aussi, et c'était peut-être trop de bonheur d'un coup, pour quelqu'un d'encore blessé et immature."
-        "Après, c'est quelque chose de facilement compréhensible. Tu te cherchais...":
+        "C'est quelque chose de compréhensible. Tu te cherchais...":
             pass
         "Ce n'est pas simple de se trouver !":
             pass
@@ -763,7 +763,7 @@ label del_3_1:
     menu:
         leandre "Maintenant, le \"moi\" adulte vit avec."
 
-        "Si tu réussis à te réconcilier avec ton passé, c'est le principal non ?":
+        "Si tu réussis à te réconcilier avec ton passé, c'est le principal.":
             pass
         "Ça doit être rassurant, d'avoir au moins ça de clair.":
             pass
@@ -1645,8 +1645,70 @@ label del_6_good:
 #DEL.6.BAD
 label del_6_bad:
     $ quick_menu = True
+<<<<<<< Updated upstream
     show leandre_neutre at del_center
     with fade
+=======
+    hide auditorium
+    show loges with fade
+    show delaunay_neutre at del_center with dissolve
+    
+    $ current_textbox = "delaunay"
+    delaunay "On va aller boire un verre avec les autres une fois que les derniers clients auront quitté la salle. Tu te joins à nous ?"
+    
+    $ quick_menu = False
+
+    menu:
+        "Oui, bien sûr! Je termine ça et j'arrive!":
+            anthrax "Oui, bien sûr ! Je termine ça et j'arrive !"
+        "Si vous insistez!":
+            anthrax "Si vous insistez !"
+        "Proposé si gentiment, comment refuser?":
+            anthrax "Proposé si gentiment, comment refuser ?"
+
+    $ quick_menu = True
+
+    #Transition Rideau
+    hide delaunay_neutre with dissolve
+    show curtain_close with dissolve
+    pause 1.5
+    hide bar
+    hide loges
+    scene black
+    show curtain_open with dissolve
+    with fade
+
+ 
+    scene black with dissolve
+    $ current_textbox = "description"
+
+    text "Tous.te.s étaient réuni.e.s face au comptoir, se faisant servir par notre merveilleux \"Dobarman\"."
+    text "Imani avait entre ses doigts un mocktail de sa création, Léandre retrouvait peu à peu sa timidité, laissant Delaunay s'effacer."
+    text "Partageant son verre avec Aimé.e pour qu'iel goûte, riant aux éclats en détaillant quelques anecdotes de leur expérience au fil des années."
+    text "Le tout appuyé.e par l'approbation et les précisions de Mother."
+
+    $ current_textbox = "gatsby"
+
+    aimee "Nan mais je te jure ! La manière dont sa perruque a volé au milieu de la pièce !"
+
+    $ current_textbox = "delaunay"
+    leandre "Et surtout sa tête, en s'en rendant compte... !"
+
+    $ current_textbox = "peacock"
+    imani "J'aurais rêvé être là cette soirée, et non derrière les machines !"
+
+    $ current_textbox = "mother"
+    mother "Je suis sûre que je peux te retrouver une vidéo d'excellente qualité, vu comment elle a tourné sur les plateformes."
+
+    $ current_textbox = "description"
+
+    text "Les écoutant avec une certaine envie, ayant hâte de pouvoir raconter à mon tour mes aventures."
+    text "Je les observais un à une, ancrant cette image dans ma mémoire, essayant d'y graver le moindre détail."
+    text "Je m'en voulais peut-être un peu de ne pas avoir demandé à Léandre d'être sorti avec moi ce soir."
+    text "Mais quelque chose me dit que c'était peut-être un peu trop tôt..."
+    text "Et j'aurais loupé cet instant précieux, sachant pertinemment que je passerais le reste de la soirée bien entouré.e !"
+
+>>>>>>> Stashed changes
 
     anthrax "WIP"
     mother "WIP"
