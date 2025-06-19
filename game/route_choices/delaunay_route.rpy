@@ -172,21 +172,17 @@ leandre "Vraiment ? Je suis soulagé alors !"
 hide joy
 leandre "Est-ce que tu souhaites qu'on discute autour d'un verre au bar ? J'aimerais beaucoup en apprendre plus sur ton drag."
 
-label minichoice_del_1:
-    $ quick_menu = False
-   
-    show leandre_neutre at del_right
-    with fade
-    menu:
-
-        leandre "Et puis, ce sera plus simple aussi pour t’aider à construire ton acte lorsque Mother te donnera le feu vert."
-        "Je te suis !":
-            pass
-        "J'adorerais !":
-            pass
-        "Ça, je ne dis pas non !":
-            pass
-
+show leandre_neutre at del_right
+with fade
+menu: 
+    leandre "Et puis, ce sera plus simple aussi pour t’aider à construire ton acte lorsque Mother te donnera le feu vert"
+    "Je te suis !":
+         pass
+    "J'adorerais !":
+         pass
+    "Ça, je ne dis pas non !":
+        pass
+          
 
 
 #DEL.2
@@ -738,7 +734,7 @@ label del_3_1:
     show leandre_neutre at del_right
     menu:
         leandre "J'étais jeune aussi, et c'était peut-être trop de bonheur d'un coup, pour quelqu'un d'encore blessé et immature."
-        "Après, c'est quelque chose de facilement compréhensible. Tu te cherchais...":
+        "C'est quelque chose de compréhensible. Tu te cherchais...":
             pass
         "Ce n'est pas simple de se trouver !":
             pass
@@ -767,7 +763,7 @@ label del_3_1:
     menu:
         leandre "Maintenant, le \"moi\" adulte vit avec."
 
-        "Si tu réussis à te réconcilier avec ton passé, c'est le principal non ?":
+        "Si tu réussis à te réconcilier avec ton passé, c'est le principal.":
             pass
         "Ça doit être rassurant, d'avoir au moins ça de clair.":
             pass
@@ -952,7 +948,7 @@ label del_3_3:
         leandre "Enfin bref..."
         "Les circonstances ont fait que tu as dû payer de ta poche...":
             pass
-        "Ça devait être un beau billet pour te mettre autant dans la panade...":
+        "Ça a dû être terriblement cher...":
             pass
         "Tu as fait tes choix.":
             pass
@@ -1356,11 +1352,11 @@ label del_4_3:
     show delaunay_neutre at del_right
     menu:
         delaunay "Il m'a toujours aidé à devenir l'homme que je voulais être, encore maintenant..."
-        "Pourtant, ton personnage m'a l'air d'être très effeminé, aussi maladroit que ça puisse être dit comme ça.":
+        "Pourtant, ton personnage m'a l'air d'être très effeminé...":
             pass
-        "Ton personnage est aussi très féminin pour un \"drag king\"":
+        "Pour un \"drag king\", ton personnage est aussi très féminin.":
             pass
-        "Bousculer les normes du genre, c'est le principe du drag, après tout !":
+        "Bousculer les normes du genre, c'est le principe du drag !":
             pass
 
     $ quick_menu = True
@@ -1436,7 +1432,7 @@ label del_4_3:
 
     $ current_textbox = "anthrax"
     anthrax "C'est une relation très personnelle et intime que tu as avec ton personnage finalement..."
-    anthrax "je comprends mieux pourquoi tu t'adresses à \"Léandre\" à la troisième personne parfois, quand tu es en drag."
+    anthrax "Je comprends mieux pourquoi tu t'adresses à \"Léandre\" à la troisième personne parfois, quand tu es en drag."
     
     $ current_textbox = "delaunay"
     #show delaunay_laugh at del_right
@@ -1573,7 +1569,7 @@ label del_6:
     show flirt at flirt_right
     menu:
         delaunay "Alors, qu'est-ce que tu en as pensé [player_name]?"
-        "C'était incroyable! Surtout quand le rideau s'est ouvert sur le verre!":
+        "C'était incroyable! Surtout quand le rideau s'est ouvert !":
             pass
         "J'ai adoré! Mais tu l'as sorti d'où ce string?!":
             pass
@@ -1618,7 +1614,10 @@ label del_6_good:
             call del_6_bad from _call_del_6_bad 
 
     $ quick_menu = True
-    
+    show delaunay_neutre at del_center with dissolve
+    show loges with dissolve
+    hide flirt
+
     $ current_textbox = "delaunay"
     delaunay "Parfait! Je te retrouve dehors dans quelques minutes alors !"
 
@@ -1681,7 +1680,34 @@ label del_6_good:
 #DEL.6.BAD
 label del_6_bad:
     $ quick_menu = True
-    show delaunay_neutre at del_right
+    
+    hide auditorium
+    show loges
+    show delaunay_neutre at del_center with dissolve
+    
+    $ current_textbox = "delaunay"
+    delaunay "On va aller boire un verre avec les autres une fois que les derniers clients auront quitté la salle. Tu te joins à nous ?"
+    
+    $ quick_menu = False
+
+    menu:
+        "Oui, bien sûr! Je termine ça et j'arrive!":
+            pass
+        "Si vous insistez!":
+            pass
+        "Proposé si gentiment, comment refuser?":
+            pass
+
+    $ quick_menu = True
+
+    #Transition Rideau
+    hide delaunay_neutre with dissolve
+    show curtain_close with dissolve
+    pause 1.5
+    hide bar
+    hide loges
+    scene black
+    show curtain_open with dissolve
     with fade
     
     $ current_textbox = "delaunay"
