@@ -115,7 +115,10 @@ image wip = "images/WIP.png"
 #vfx
 
 # Déclaration de l'animation complète du gradient
-image gradiant_transparent:
+
+image gradient= Movie(play="images/VFX/Gradiants/Gradient.webm", loop=True)
+
+image gradient_transparent:
     "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00000.png"
     pause 0.04
     "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00001.png"
@@ -288,8 +291,9 @@ image gradiant_transparent:
     pause 0.04
     "images/VFX/Gradiants/Gradiant_Fond_Transparent/Gradient_00119.png"
     pause 0.04
+    "images/Backgrounds/transparent_background.png"
 
-image gradiant_noir:
+image gradient_noir:
     "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00000.png"
     pause 0.04
     "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00001.png"
@@ -530,20 +534,21 @@ image gradiant_noir:
     pause 0.04
     "images/VFX/Gradiants/Gradiant_Fond_Noir/Gradient_00119.png"
     pause 0.04
+    "images/Backgrounds/transparent_background.png"
     
 
 image curtain : 
-    "images/VFX/Curtain_Close/Curtain_Close_00000.png", 0.01,
-    "images/VFX/Curtain_Close/Curtain_Close_00001.png", 0.01,
-    "images/VFX/Curtain_Close/Curtain_Close_00002.png", 0.01,
-    "images/VFX/Curtain_Close/Curtain_Close_00003.png", 0.01,
-    "images/VFX/Curtain_Close/Curtain_Close_00004.png", 0.01,
-    "images/VFX/Curtain_Close/Curtain_Close_00005.png", 0.01,
-    "images/VFX/Curtain_Close/Curtain_Close_00006.png", 0.01,
-    "images/VFX/Curtain_Close/Curtain_Close_00007.png", 0.01,
-    "images/VFX/Curtain_Close/Curtain_Close_00008.png", 0.01,
-    "images/VFX/Curtain_Close/Curtain_Close_00009.png", 0.01,
-    "images/VFX/Curtain_Close/Curtain_Close_00010.png", 0.01,
+    "images/VFX/Curtain_Close/Curtain_Close_00000.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00001.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00002.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00003.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00004.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00005.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00006.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00007.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00008.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00009.png", 0.04,
+    "images/VFX/Curtain_Close/Curtain_Close_00010.png", 0.04,
     "images/VFX/Curtain_Close/Curtain_Close_00011.png", 0.04,
     "images/VFX/Curtain_Close/Curtain_Close_00012.png", 0.04,
     "images/VFX/Curtain_Close/Curtain_Close_00013.png", 0.04,
@@ -745,7 +750,7 @@ image curtain_close :
 
 
 
-image flirt = Animation(
+image flirt :
     "images/VFX/Flirt/Flirt_00001.png", 0.03,
     "images/VFX/Flirt/Flirt_00002.png", 0.03,
     "images/VFX/Flirt/Flirt_00003.png", 0.03,
@@ -783,46 +788,10 @@ image flirt = Animation(
     "images/VFX/Flirt/Flirt_00035.png", 0.03,
     "images/VFX/Flirt/Flirt_00036.png", 0.03,
     "images/VFX/Flirt/Flirt_00037.png", 0.03,
-    "images/VFX/Flirt/Flirt_00038.png", 0.03,
-    "images/VFX/Flirt/Flirt_00039.png", 0.03,
-    "images/VFX/Flirt/Flirt_00040.png", 0.03,
-    "images/VFX/Flirt/Flirt_00041.png", 0.03,
-    "images/VFX/Flirt/Flirt_00042.png", 0.03,
-    "images/VFX/Flirt/Flirt_00043.png", 0.03,
-    "images/VFX/Flirt/Flirt_00044.png", 0.03,
-    "images/VFX/Flirt/Flirt_00045.png", 0.03,
-    "images/VFX/Flirt/Flirt_00046.png", 0.03,
-    "images/VFX/Flirt/Flirt_00047.png", 0.03,
-    "images/VFX/Flirt/Flirt_00048.png", 0.03,
-    "images/VFX/Flirt/Flirt_00049.png", 0.03,
-    "images/VFX/Flirt/Flirt_00050.png", 0.03,
-    "images/VFX/Flirt/Flirt_00051.png", 0.03,
-    "images/VFX/Flirt/Flirt_00052.png", 0.03,
-    "images/VFX/Flirt/Flirt_00053.png", 0.03,
-    "images/VFX/Flirt/Flirt_00054.png", 0.03,
-    "images/VFX/Flirt/Flirt_00055.png", 0.03,
-    "images/VFX/Flirt/Flirt_00056.png", 0.03,
-    "images/VFX/Flirt/Flirt_00057.png", 0.03,
-    "images/VFX/Flirt/Flirt_00058.png", 0.03,
-    "images/VFX/Flirt/Flirt_00059.png", 0.03,
-    "images/VFX/Flirt/Flirt_00060.png", 0.03,
-    "images/VFX/Flirt/Flirt_00061.png", 0.03,
-    "images/VFX/Flirt/Flirt_00062.png", 0.03,
-    "images/VFX/Flirt/Flirt_00063.png", 0.03,
-    "images/VFX/Flirt/Flirt_00064.png", 0.03,
-    "images/VFX/Flirt/Flirt_00065.png", 0.03,
-    "images/VFX/Flirt/Flirt_00066.png", 0.03,
-    "images/VFX/Flirt/Flirt_00067.png", 0.03,
-    "images/VFX/Flirt/Flirt_00068.png", 0.03,
-    "images/VFX/Flirt/Flirt_00069.png", 0.03,
-    "images/VFX/Flirt/Flirt_00070.png", 0.03,
-    "images/VFX/Flirt/Flirt_00071.png", 0.03,
-    "images/VFX/Flirt/Flirt_00072.png", 0.03,
-    "images/VFX/Flirt/Flirt_00073.png", 0.03,
-    "images/VFX/Flirt/Flirt_00074.png", 0.03
-)
+    "images/Backgrounds/transparent_background.png"
 
-image angry = Animation(
+
+image angry :
     "images/VFX/Angry/Angry_00001.png", 0.03,
     "images/VFX/Angry/Angry_00002.png", 0.03,
     "images/VFX/Angry/Angry_00003.png", 0.03,
@@ -844,31 +813,9 @@ image angry = Animation(
     "images/VFX/Angry/Angry_00019.png", 0.03,
     "images/VFX/Angry/Angry_00020.png", 0.03,
     "images/VFX/Angry/Angry_00021.png", 0.03,
-    "images/VFX/Angry/Angry_00022.png", 0.03,
-    "images/VFX/Angry/Angry_00023.png", 0.03,
-    "images/VFX/Angry/Angry_00024.png", 0.03,
-    "images/VFX/Angry/Angry_00025.png", 0.03,
-    "images/VFX/Angry/Angry_00026.png", 0.03,
-    "images/VFX/Angry/Angry_00027.png", 0.03,
-    "images/VFX/Angry/Angry_00028.png", 0.03,
-    "images/VFX/Angry/Angry_00029.png", 0.03,
-    "images/VFX/Angry/Angry_00030.png", 0.03,
-    "images/VFX/Angry/Angry_00031.png", 0.03,
-    "images/VFX/Angry/Angry_00032.png", 0.03,
-    "images/VFX/Angry/Angry_00033.png", 0.03,
-    "images/VFX/Angry/Angry_00034.png", 0.03,
-    "images/VFX/Angry/Angry_00035.png", 0.03,
-    "images/VFX/Angry/Angry_00036.png", 0.03,
-    "images/VFX/Angry/Angry_00037.png", 0.03,
-    "images/VFX/Angry/Angry_00038.png", 0.03,
-    "images/VFX/Angry/Angry_00039.png", 0.03,
-    "images/VFX/Angry/Angry_00040.png", 0.03,
-    "images/VFX/Angry/Angry_00041.png", 0.03,
-    "images/VFX/Angry/Angry_00042.png", 0.03,
-    "images/VFX/Angry/Angry_00043.png", 0.03,
-)
+    "images/Backgrounds/transparent_background.png"
 
-image joy = Animation(
+image joy :
     "images/VFX/Joy/Joy_00000.png", 0.04,
     "images/VFX/Joy/Joy_00001.png", 0.04,
     "images/VFX/Joy/Joy_00002.png", 0.04,
@@ -885,96 +832,76 @@ image joy = Animation(
     "images/VFX/Joy/Joy_00013.png", 0.04,
     "images/VFX/Joy/Joy_00014.png", 0.04,
     "images/VFX/Joy/Joy_00015.png", 0.04,
-    "images/VFX/Joy/Joy_00031.png", 0.04,
-    "images/VFX/Joy/Joy_00032.png", 0.04,
-    "images/VFX/Joy/Joy_00033.png", 0.04,
-    "images/VFX/Joy/Joy_00034.png", 0.04,
-    "images/VFX/Joy/Joy_00035.png", 0.04,
-    "images/VFX/Joy/Joy_00036.png", 0.04,
-    "images/VFX/Joy/Joy_00037.png", 0.04,
-    "images/VFX/Joy/Joy_00038.png", 0.04,
-    "images/VFX/Joy/Joy_00039.png", 0.04,
-)
+    "images/VFX/Joy/Joy_00016.png", 0.04,
+    "images/VFX/Joy/Joy_00017.png", 0.04,
+    "images/VFX/Joy/Joy_00018.png", 0.04,
+    "images/VFX/Joy/Joy_00019.png", 0.04,
+    "images/Backgrounds/transparent_background.png"
 
-image sadness = Animation(
-    "images/VFX/Sadness/Sadness_00001.png", 0.05,
-    "images/VFX/Sadness/Sadness_00002.png", 0.05,
-    "images/VFX/Sadness/Sadness_00003.png", 0.05,
-    "images/VFX/Sadness/Sadness_00004.png", 0.05,
-    "images/VFX/Sadness/Sadness_00005.png", 0.05,
-    "images/VFX/Sadness/Sadness_00006.png", 0.05,
-    "images/VFX/Sadness/Sadness_00007.png", 0.05,
-    "images/VFX/Sadness/Sadness_00008.png", 0.05,
-    "images/VFX/Sadness/Sadness_00009.png", 0.05,
-    "images/VFX/Sadness/Sadness_00010.png", 0.05,
-    "images/VFX/Sadness/Sadness_00011.png", 0.05,
-    "images/VFX/Sadness/Sadness_00012.png", 0.05,
-    "images/VFX/Sadness/Sadness_00013.png", 0.05,
-    "images/VFX/Sadness/Sadness_00014.png", 0.05,
-    "images/VFX/Sadness/Sadness_00015.png", 0.05,
-    "images/VFX/Sadness/Sadness_00016.png", 0.05,
-    "images/VFX/Sadness/Sadness_00017.png", 0.05,
-    "images/VFX/Sadness/Sadness_00018.png", 0.05,
-    "images/VFX/Sadness/Sadness_00019.png", 0.05,
-    "images/VFX/Sadness/Sadness_00020.png", 0.05,
-    "images/VFX/Sadness/Sadness_00021.png", 0.05,
-    "images/VFX/Sadness/Sadness_00022.png", 0.05,
-    "images/VFX/Sadness/Sadness_00023.png", 0.05,
-    "images/VFX/Sadness/Sadness_00024.png", 0.05,
-    "images/VFX/Sadness/Sadness_00025.png", 0.05,
-    "images/VFX/Sadness/Sadness_00026.png", 0.05,
-    "images/VFX/Sadness/Sadness_00027.png", 0.05,
-    "images/VFX/Sadness/Sadness_00028.png", 0.05,
-    "images/VFX/Sadness/Sadness_00029.png", 0.05,
-    "images/VFX/Sadness/Sadness_00030.png", 0.05,
-    "images/VFX/Sadness/Sadness_00031.png", 0.05,
-    "images/VFX/Sadness/Sadness_00032.png", 0.05,
-    "images/VFX/Sadness/Sadness_00033.png", 0.05,
-    "images/VFX/Sadness/Sadness_00034.png", 0.05,
-    "images/VFX/Sadness/Sadness_00035.png", 0.05,
-    "images/VFX/Sadness/Sadness_00036.png", 0.05,
-    "images/VFX/Sadness/Sadness_00037.png", 0.05,
-    "images/VFX/Sadness/Sadness_00038.png", 0.05,
-    "images/VFX/Sadness/Sadness_00039.png", 0.05,
-    "images/VFX/Sadness/Sadness_00040.png", 0.05,
-    "images/VFX/Sadness/Sadness_00041.png", 0.05,
-    "images/VFX/Sadness/Sadness_00042.png", 0.05,
-    "images/VFX/Sadness/Sadness_00043.png", 0.05,
-    "images/VFX/Sadness/Sadness_00044.png", 0.05,
-    "images/VFX/Sadness/Sadness_00045.png", 0.05,
-    "images/VFX/Sadness/Sadness_00046.png", 0.05,
-    "images/VFX/Sadness/Sadness_00047.png", 0.05,
-    "images/VFX/Sadness/Sadness_00048.png", 0.05,
-    "images/VFX/Sadness/Sadness_00049.png", 0.05,
-    "images/VFX/Sadness/Sadness_00050.png", 0.05,
-    "images/VFX/Sadness/Sadness_00051.png", 0.05,
-    "images/VFX/Sadness/Sadness_00052.png", 0.05,
-    "images/VFX/Sadness/Sadness_00053.png", 0.05,
-    "images/VFX/Sadness/Sadness_00054.png", 0.05,
-    "images/VFX/Sadness/Sadness_00055.png", 0.05,
-    "images/VFX/Sadness/Sadness_00056.png", 0.05,
-    "images/VFX/Sadness/Sadness_00057.png", 0.05,
-    "images/VFX/Sadness/Sadness_00058.png", 0.05,
-    "images/VFX/Sadness/Sadness_00059.png", 0.05,
-    "images/VFX/Sadness/Sadness_00060.png", 0.05,
-    "images/VFX/Sadness/Sadness_00061.png", 0.05,
-    "images/VFX/Sadness/Sadness_00062.png", 0.05,
-    "images/VFX/Sadness/Sadness_00063.png", 0.05,
-    "images/VFX/Sadness/Sadness_00064.png", 0.05,
-    "images/VFX/Sadness/Sadness_00065.png", 0.05,
-    "images/VFX/Sadness/Sadness_00066.png", 0.05,
-    "images/VFX/Sadness/Sadness_00067.png", 0.05,
-    "images/VFX/Sadness/Sadness_00068.png", 0.05,
-    "images/VFX/Sadness/Sadness_00069.png", 0.05,
-    "images/VFX/Sadness/Sadness_00070.png", 0.05,
-    "images/VFX/Sadness/Sadness_00071.png", 0.05,
-    "images/VFX/Sadness/Sadness_00072.png", 0.05,
-    "images/VFX/Sadness/Sadness_00073.png", 0.05,
-    "images/VFX/Sadness/Sadness_00074.png", 0.05
-)
+image sadness :
+    "images/VFX/Sadness/Sadness_VF_00001.png", 0.05,
+    "images/VFX/Sadness/Sadness_VF_00002.png", 0.05,
+    "images/VFX/Sadness/Sadness_VF_00003.png", 0.05,
+    "images/VFX/Sadness/Sadness_VF_00004.png", 0.05,
+    "images/VFX/Sadness/Sadness_VF_00005.png", 0.05,
+    "images/VFX/Sadness/Sadness_VF_00006.png", 0.05,
+    "images/VFX/Sadness/Sadness_VF_00007.png", 0.05,
+    "images/VFX/Sadness/Sadness_VF_00008.png", 0.05,
+    "images/VFX/Sadness/Sadness_VF_00009.png", 0.05,
+    "images/VFX/Sadness/Sadness_VF_00010.png", 0.05,
+    "images/VFX/Sadness/Sadness_VF_00011.png", 0.05,
+    "images/VFX/Sadness/Sadness_VF_00012.png", 0.05,
+    "images/VFX/Sadness/Sadness_VF_00013.png", 0.05,
+    "images/VFX/Sadness/Sadness_VF_00014.png", 0.05,
+    "images/VFX/Sadness/Sadness_VF_00015.png", 0.05,
+    "images/VFX/Sadness/Sadness_VF_00016.png", 0.05,
+    "images/VFX/Sadness/Sadness_VF_00017.png", 0.05,
+    "images/VFX/Sadness/Sadness_VF_00018.png", 0.05,
+    "images/VFX/Sadness/Sadness_VF_00019.png", 0.05,
+    "images/VFX/Sadness/Sadness_VF_00020.png", 0.05,
+    "images/VFX/Sadness/Sadness_VF_00021.png", 0.05,
+    "images/VFX/Sadness/Sadness_VF_00022.png", 0.05,
+    "images/VFX/Sadness/Sadness_VF_00023.png", 0.05,
+    "images/VFX/Sadness/Sadness_VF_00024.png", 0.05,
+    "images/VFX/Sadness/Sadness_VF_00025.png", 0.05,
+    "images/VFX/Sadness/Sadness_VF_00026.png", 0.05,
+    "images/VFX/Sadness/Sadness_VF_00027.png", 0.05,
+    "images/VFX/Sadness/Sadness_VF_00028.png", 0.05,
+    "images/VFX/Sadness/Sadness_VF_00029.png", 0.05,
+    "images/VFX/Sadness/Sadness_VF_00030.png", 0.05,
+    "images/VFX/Sadness/Sadness_VF_00031.png", 0.05,
+    "images/VFX/Sadness/Sadness_VF_00032.png", 0.05,
+    "images/VFX/Sadness/Sadness_VF_00033.png", 0.05,
+    "images/VFX/Sadness/Sadness_VF_00034.png", 0.05,
+    "images/VFX/Sadness/Sadness_VF_00035.png", 0.05,
+    "images/VFX/Sadness/Sadness_VF_00036.png", 0.05,
+    "images/VFX/Sadness/Sadness_VF_00037.png", 0.05,
+    "images/VFX/Sadness/Sadness_VF_00038.png", 0.05,
+    "images/VFX/Sadness/Sadness_VF_00039.png", 0.05,
+    "images/VFX/Sadness/Sadness_VF_00040.png", 0.05,
+    "images/VFX/Sadness/Sadness_VF_00041.png", 0.05,
+    "images/VFX/Sadness/Sadness_VF_00042.png", 0.05,
+    "images/VFX/Sadness/Sadness_VF_00043.png", 0.05,
+    "images/VFX/Sadness/Sadness_VF_00044.png", 0.05,
+    "images/VFX/Sadness/Sadness_VF_00045.png", 0.05,
+    "images/VFX/Sadness/Sadness_VF_00046.png", 0.05,
+    "images/VFX/Sadness/Sadness_VF_00047.png", 0.05,
+    "images/VFX/Sadness/Sadness_VF_00048.png", 0.05,
+    "images/VFX/Sadness/Sadness_VF_00049.png", 0.05,
+    "images/VFX/Sadness/Sadness_VF_00050.png", 0.05,
+    "images/VFX/Sadness/Sadness_VF_00051.png", 0.05,
+    "images/VFX/Sadness/Sadness_VF_00052.png", 0.05,
+    "images/VFX/Sadness/Sadness_VF_00053.png", 0.05,
+    "images/VFX/Sadness/Sadness_VF_00054.png", 0.05,
+    "images/VFX/Sadness/Sadness_VF_00055.png", 0.05,
+    "images/VFX/Sadness/Sadness_VF_00056.png", 0.05,
+    "images/VFX/Sadness/Sadness_VF_00057.png", 0.05,
+    "images/VFX/Sadness/Sadness_VF_00058.png", 0.05,
+    "images/VFX/Sadness/Sadness_VF_00059.png", 0.05,
+    "images/Backgrounds/transparent_background.png"
 
     
-image sparkling_click = Animation(
+image sparkling_click :
     "images/VFX/Sparkling Click/Stars_00001.png", 0.03,
     "images/VFX/Sparkling Click/Stars_00002.png", 0.03,
     "images/VFX/Sparkling Click/Stars_00003.png", 0.03,
@@ -995,7 +922,7 @@ image sparkling_click = Animation(
     "images/VFX/Sparkling Click/Stars_00018.png", 0.03,
     "images/VFX/Sparkling Click/Stars_00019.png", 0.03,
     "images/VFX/Sparkling Click/Stars_00020.png", 0.03,
-)
+    "images/Backgrounds/transparent_background.png"
 
 image light_solo_left:
     "VFX/LightSoloLeft/LightSoloLeft_00001.png"
@@ -1116,7 +1043,7 @@ image light_solo_left:
     pause 0.03
     "VFX/LightSoloLeft/LightSoloLeft_00059.png"
     pause 0.03
-    repeat
+    "images/Backgrounds/transparent_background.png"
 
 image light_solo_middle:
     "VFX/LightSoloMiddle/LightSoloMiddle_00001.png"
@@ -1237,7 +1164,7 @@ image light_solo_middle:
     pause 0.03
     "VFX/LightSoloMiddle/LightSoloMiddle_00059.png"
     pause 0.03
-    repeat
+    "images/Backgrounds/transparent_background.png"
 
 
 image light_solo_right:
@@ -1321,7 +1248,7 @@ image light_solo_right:
     pause 0.03
     "VFX/LightSoloRight/LightSoloRight_00059.png"
     pause 0.03
-    repeat
+    "images/Backgrounds/transparent_background.png"
 
 
 init python:

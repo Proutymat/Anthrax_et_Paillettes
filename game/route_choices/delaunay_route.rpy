@@ -332,8 +332,8 @@ label del_2_1:
     $ current_textbox = "delaunay"
 
     #show leandre_laugh at del_right
-    show joy at joy_right
     show leandre_neutre at del_right with fade
+    show joy at joy_right
 
     menu:
         leandre "Pas faux... Mais bon, nous sommes une troupe particulièrement hétéroclite. Blague à part!"
@@ -541,25 +541,30 @@ label del_2_3:
 
     stop music fadeout 1.0
     stop ambiance fadeout 1.0
-    call del_3 from _call_del_3_2 
-
+    call del_3 from _call_del_3_2
+ 
 #DEL.3
 label del_3:
 
- 
+    $ persistent.bg_parallax = False
     hide leandre_neutre with dissolve
     show curtain_close with dissolve
     pause 1.5
-    hide loges with dissolve
-    pause 1.5
-    show curtain_open with dissolve
-    with fade
+    hide bar
+    show curtain_open 
 
-    #show gradient
-    text "Quelques mois passèrent..."
-    #hide gradient with dissolve
+    show gradient
+    show text "{size=60}{color=#FFFFFF}Quelques mois passèrent...{/color}{/size}" at truecenter
+
+    pause 6
+
+    hide text with dissolve
+    hide gradient with fade
+
 
     play music ConfidenceIntro
+
+    $ persistent.bg_parallax = True
 
     $ current_textbox = "description"
     text "Cela faisait plusieurs minutes que je cherchais Léandre, avec qui j'étais supposé.e répéter une partie de mon numéro, que l'on construisait ensemble."
@@ -572,14 +577,13 @@ label del_3:
     text "N'ayant pas pensé à lever le regard, je grimpai l'escalier en colimaçon pour le rejoindre, à tâtons."
 
 
-    show auditorium
-    
-
     $ quick_menu = False
+
+    show auditorium
     
     show sadness at sadness_right
     show leandre_neutre at del_right with dissolve
-    with fade
+
     menu:
         
         "Hey... Je me demandais où tu étais passé.":
@@ -991,20 +995,28 @@ label del_3_3:
 # TRANSITION RIDEAU DE SES MORTS A AJOUTER
 # text "Le jour du spectacle..."
 label del_4:
-    hide leandre_neutre with dissolve
-    show curtain_close with dissolve
-    pause 1.5
-    hide auditorium with dissolve
-    pause 1.5
-    show curtain_open with dissolve
-    with fade
 
-    text "Le jour du spectacle..."
+    $ persistent.bg_parallax = False
+    hide leandre_neutre with dissolve
+    show curtain_close  with dissolve
+    pause 1.5
+    hide auditorium 
+    show curtain_open 
+
+    show gradient with dissolve
+    show text "{size=60}{color=#FFFFFF}Le jour du spectacle...{/color}{/size}" at truecenter
+
+    pause 6
+
+    hide text with dissolve
+    hide gradient with fade
 
     stop music fadeout 0.5
     stop ambiance fadeout 0.5
     play music BackstageLoop volume 0.5
     play ambiance AmbLoges fadein 0.5
+
+    $ persistent.bg_parallax = True
 
     $ current_textbox = "description"
     text "Au sein de la loge, une certaine tension planait au-dessus de la playlist qui tournait. Pas une mauvaise ambiance, non, plutôt une intense concentration."
@@ -1482,10 +1494,9 @@ label del_5:
     hide delaunay_neutre with dissolve
     show curtain_close with dissolve
     pause 1.5
-    hide loges with dissolve
+    hide loges
     pause 1.5
     show curtain_open with dissolve
-    with fade
 
     scene black with dissolve
     play music ShowDelaunay noloop
@@ -1516,27 +1527,28 @@ label del_5:
     stop music fadeout 3.0
     text "Il se couvrit d’un long kimono et se fit aider pour descendre sans glisser avant de saluer fièrement les spectateur.ice.s, son make-up intact et un grand sourire aux lèvres."
     
+    #TRANSITION RIDEAU
+    $ persistent.bg_parallax = False
+    hide delaunay_neutre with dissolve
     show curtain_close with dissolve
-    hide delaunay_neutre with dissolve 
-    hide auditorium with dissolve
     pause 1.5
-    scene black
+    hide auditorium
     show curtain_open with dissolve
-    with fade
-
 
 
 call del_6 from _call_del_6 
 
 #DEL.6
 
-#TRANSITION RIDEAU
+
 
 label del_6:
+
     
     show loges with fade
     show delaunay_neutre at del_center
     $ current_textbox = "delaunay"
+    $ persistent.bg_parallax = True
     #show delaunay_flirty at del_center with dissolve
     show delaunay_neutre at del_center with dissolve
     show joy at joy_center
