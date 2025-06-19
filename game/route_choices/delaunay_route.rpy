@@ -1341,11 +1341,11 @@ label del_4_3:
     show delaunay_neutre at del_right
     menu:
         delaunay "Il m'a toujours aidé à devenir l'homme que je voulais être, encore maintenant..."
-        "Pourtant, ton personnage m'a l'air d'être très effeminé, aussi maladroit que ça puisse être dit comme ça.":
+        "Pourtant, ton personnage m'a l'air d'être très effeminé...":
             pass
-        "Ton personnage est aussi très féminin pour un \"drag king\"":
+        "Pour un \"drag king\", ton personnage est aussi très féminin.":
             pass
-        "Bousculer les normes du genre, c'est le principe du drag, après tout !":
+        "Bousculer les normes du genre, c'est le principe du drag !":
             pass
 
     $ quick_menu = True
@@ -1412,6 +1412,7 @@ label del_4_3:
 
     $ current_textbox = "delaunay"
     delaunay "Anyway."
+    hide angry
     delaunay "J'ai quand même pas mal rétropédalé au niveau de l'hypermasculinisation de mon perso, quand mon corps a commencé à changer."
     delaunay "Je me suis réconcilié avec moi-même, et donc Delaunay n'avait plus besoin de servir cette fonction."
     #show delaunay_flirty at del_right
@@ -1420,7 +1421,7 @@ label del_4_3:
 
     $ current_textbox = "anthrax"
     anthrax "C'est une relation très personnelle et intime que tu as avec ton personnage finalement..."
-    anthrax "je comprends mieux pourquoi tu t'adresses à \"Léandre\" à la troisième personne parfois, quand tu es en drag."
+    anthrax "Je comprends mieux pourquoi tu t'adresses à \"Léandre\" à la troisième personne parfois, quand tu es en drag."
     
     $ current_textbox = "delaunay"
     #show delaunay_laugh at del_right
@@ -1459,7 +1460,7 @@ label del_4_3:
     show delaunay_neutre at del_center with dissolve
 
     $ current_textbox = "delaunay"
-    show joy at joy_right
+    show joy at joy_center
     #show delaunay_flirty at del_right
     delaunay "Mon dieu, j'ai encore tellement à faire ! Vite [player_name] ! Un coup de main, vite !~"
     #hide delaunay_flirty
@@ -1539,7 +1540,7 @@ label del_6:
     show flirt at flirt_right
     menu:
         delaunay "Alors, qu'est-ce que tu en as pensé [player_name]?"
-        "C'était incroyable! Surtout quand le rideau s'est ouvert sur le verre!":
+        "C'était incroyable! Surtout quand le rideau s'est ouvert !":
             pass
         "J'ai adoré! Mais tu l'as sorti d'où ce string?!":
             pass
@@ -1583,11 +1584,12 @@ label del_6_good:
     $ quick_menu = True
     show delaunay_neutre at del_center with dissolve
     show loges with dissolve
-    
+    hide flirt
+
     $ current_textbox = "delaunay"
     delaunay "Parfait! Je te retrouve dehors dans quelques minutes alors !"
 
-    hide flirt
+    
     show curtain_close with dissolve
     hide delaunay_neutre with dissolve
     hide bar
@@ -1645,10 +1647,8 @@ label del_6_good:
 #DEL.6.BAD
 label del_6_bad:
     $ quick_menu = True
-<<<<<<< Updated upstream
     show leandre_neutre at del_center
     with fade
-=======
     hide auditorium
     show loges with fade
     show delaunay_neutre at del_center with dissolve
@@ -1678,8 +1678,8 @@ label del_6_bad:
     show curtain_open with dissolve
     with fade
 
- 
-    scene black with dissolve
+    show bar 
+   
     $ current_textbox = "description"
 
     text "Tous.te.s étaient réuni.e.s face au comptoir, se faisant servir par notre merveilleux \"Dobarman\"."
@@ -1708,10 +1708,6 @@ label del_6_bad:
     text "Mais quelque chose me dit que c'était peut-être un peu trop tôt..."
     text "Et j'aurais loupé cet instant précieux, sachant pertinemment que je passerais le reste de la soirée bien entouré.e !"
 
->>>>>>> Stashed changes
-
-    anthrax "WIP"
-    mother "WIP"
     call final_delaunay from _call_final_delaunay_1 
 
 label final_delaunay:
