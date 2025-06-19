@@ -609,7 +609,6 @@ label del_3:
     anthrax "Est-ce que tout va bien ? Tu as l'air soucieux."
     
     #show leandre_laugh at del_center
-    show sadness at sadness_center
     $ current_textbox = "delaunay"
     leandre "Hm... C'est rien. Juste un ancien client qui essaye de reprendre contact. C'est un peu relou."
  
@@ -815,7 +814,6 @@ label del_3_2:
     $ current_textbox = "delaunay"
     leandre "Oh, eh bien, ça me semble plutôt logique..."
     #show leandre_laugh at del_center
-    show sadness at sadness_center
     leandre "Avoir fait du porno, c'est pas très mirobolant sur un CV."
     hide sadness
     #hide leandre_laugh
@@ -847,7 +845,6 @@ label del_3_2:
     anthrax "Si tu réussis à tirer quelque chose de positif de cette expérience, c'est le principal."
 
     $ current_textbox = "delaunay"
-    show sadness at sadness_right
     leandre "Hm... Oui, après tout, ça m'a aidé à réaliser que ce n'était pas à travers le regard des autres que j'allais apprendre à m'aimer."
     leandre "J'étais persuadé à l'époque que si les gens m'appréciaient pour quelque chose, le reste allait suivre de l'autre côté."
     hide sadness
@@ -1495,7 +1492,6 @@ label del_5:
     show curtain_close with dissolve
     pause 1.5
     hide loges
-    pause 1.5
     show curtain_open with dissolve
 
     scene black with dissolve
@@ -1598,11 +1594,7 @@ label del_6:
     $ current_textbox = "anthrax"
     anthrax "C'est sur le feu! Je suis chaud.e bouillant.e!"
 
-    #show delaunay_flirty at del_right with dissolve
-    show flirt at flirt_right
     $ current_textbox = "delaunay"
-    delaunay "Hey, ça te dirait qu'on sorte prendre un verre après m'être changé? Rien que nous deux?"
-    hide flirt
 
     label indice:
         if indice >= 0:
@@ -1635,8 +1627,8 @@ label del_6_good:
     hide delaunay_neutre with dissolve
     show curtain_close with dissolve
     pause 1.5
-    hide loges with dissolve
-    pause 1.5
+    hide loges
+    scene black
     show curtain_open with dissolve
     with fade
 
