@@ -684,26 +684,57 @@ label gat_4:
     text "Le calme illusoire de la loge contrastait drastiquement avec le bourdonnement du staff passé la porte."
     text "Les discussions étaient légères et l'entraide entre les artistes pour régler les petits aléas techniques était doux à voir."
     text "Malgré tout, chacun.e se préparait avec diligence, en jetant nerveusement un coup d'œil à l'heure qui tournait plusieurs fois dans la même minute."
-    text "Assis.e sur une chaise face à l'un des miroirs, en peignoir, Aimé décoiffait son mohawk à l'aide d'une large brosse avant d'appliquer un conditionner, pendant que son teint était en train de se fixer."
-    text "Iel finit par tresser les sections, puis enfiler un collant pour tout bien plaquer contre son crâne et laisser place à sa perruque qui l'attendait sur le mannequin."
-    text "En quelques coups de peigne et de gel, des vagues décoraient son front et quelques perles adoucissaient son regard tandis que son regard se berçait d'écume."
+    text "Assis.e sur une chaise face à l'un des miroirs, Aimé décoiffait son mohawk à l'aide d'une large brosse avant d'appliquer un conditionner."
+    text "Pendant que son teint était en train de se fixer, iel tressa les sections, puis enfila un collant pour tout bien plaquer contre son crâne..."
+    text "Puis mit la perruque qui l'attendait sur son mannequin... En quelques coups de peigne et de gel, des vagues décorèrent son front..."
+    text "Et quelques perles adoucissaient son regard tandis que ses paupières se berçaient d'écume."
     $ current_textbox = "gatsby"
 
-    gatsby "[player], est-ce que tu pourrais me rendre un service ?"
     $ current_textbox = "anthrax"
 
-    anthrax "Bien sûr, de quoi as-tu besoin ?"
+    $ quick_menu = False
+    show gatsby_neutre at gat_right
+   
+    menu:
+        #gatsby ""
+        gatsby "[player_name], est-ce que tu pourrais me rendre un service ?"
+        "Bien sûr, de quoi as-tu besoin ?":
+         pass
+        "Sans soucis ! Dis-moi.":
+         pass
+        "Certainement! Quoi donc...?":
+         pass
+
+
+    $ quick_menu = True
+
     $ current_textbox = "gatsby"
 
-    gatsby "Est-ce que ce serait possible de me passer les pièces de mon costume pendant que je me change ? La cabine est ridiculement petite."
+    gatsby "Est-ce que ce serait possible de me passer les pièces de mon costume pendant que je me change ? Le paravent est ridiculement petit..."
     $ current_textbox = "description"
 
     text "Aimé.e gardait son air confiant malgré son maquillage aux traits de Pierrot. Cependant, je décelais quelques incertitudes dans son regard. Peut-être de l'appréhension."
-    text "Avait-iel peur de me demander une telle chose ? Cela semblait délicat pour iel de me demander cela. Mais qu'iel me fasse confiance ainsi me fit anormalement plaisir."
-    anthrax "Dis-moi ! Qu'est-ce que tu veux que je porte ?"
-    text "Iel me pointa une chaise et disparut avec son regard espiègle derrière le rideau de la cabine."
+    
+        $ quick_menu = False
+    show gatsby_neutre at gat_right
+   
+    menu:
+        #gatsby ""
+        text "Avait-iel peur de me demander une telle chose ? Cela semblait délicat pour iel de me demander cela. Mais qu'iel me fasse confiance ainsi me fit anormalement plaisir."
+        "Qu'est-ce que tu veux que je t'apporte ?":
+         pass
+        "Où est-ce que tu as rangé tes affaires ?":
+         pass
+        "Je te trouve ça où...?":
+         pass
+
+
+    $ quick_menu = True
+
+
+    text "Iel me pointa une chaise et disparu avec son regard espiègle derrière la toile de la cabine improvisée."
     text "Je pris le costume et passa mes doigts sur le tulle léger, les strass, testant l'élasticité du tissu avec précaution."
-    text "Aimé.e me tendit ensuite son haut en dehors de son vestiaire improvisé et je compris à l'oreille que Gatsby quittait son binder pour taper sa poitrine."
+    text "Aimé.e me tendit ensuite son haut en dehors de son vestiaire et je compris à l'oreille que Gatsby quittait son binder pour taper sa poitrine."
     text "Après tout, son tour était très physique et lui demandait une liberté de mouvements, qui clashaient peut-être avec sa dysphorie de genre..."
     $ current_textbox = "gatsby"
 
@@ -721,7 +752,7 @@ label choix_gat4:
         text "Je lui tendis en réfléchissant à quoi dire pour meubler le silence."
         "Ce n'est pas trop compliqué de performer? Je veux dire... Le rapport au corps, tout ça....?":
             call gat_4_1 from _call_gat_4_1_1 
-        "Je te trouve courageux.e... Tout ce que tu réussis à accomplir sans que ça ai vraiment l'air de t'affecter":
+        "Je te trouve courageux.e... Tout ce que tu réussis à accomplir sans que ça ait vraiment l'air de t'affecter":
             call gat_4_2 from _call_gat_4_2_1 
         "Je comprends, je pense. Mais tu n'as pas à te sentir gêné.e avec moi, tu sais?":
             call gat_4_3 from _call_gat_4_3 
