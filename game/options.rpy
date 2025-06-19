@@ -4,6 +4,7 @@
 #Menu pause route 
 default route_menu_enabled = False
 
+define config.cache_surfaces = True
 
 ##
 ## Les lignes qui commencent avec deux dièses '#' sont des commentaires et vous

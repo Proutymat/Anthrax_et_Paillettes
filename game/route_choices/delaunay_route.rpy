@@ -546,14 +546,14 @@ label del_2_3:
 #DEL.3
 label del_3:
 
-
-    show curtain_close with dissolve
+ 
     hide leandre_neutre with dissolve
-    hide bar with dissolve
-    hide loges
+    show curtain_close with dissolve
+    pause 1.5
+    hide loges with dissolve
     pause 1.5
     show curtain_open with dissolve
-    scene black with dissolve
+    with fade
 
     #show gradient
     text "Quelques mois passèrent..."
@@ -578,7 +578,7 @@ label del_3:
     $ quick_menu = False
     
     show sadness at sadness_right
-    show leandre_neutre at del_right
+    show leandre_neutre at del_right with dissolve
     with fade
     menu:
         
@@ -977,8 +977,9 @@ label del_3_3:
     $ current_textbox = "anthrax"
     anthrax "C'est clair... Mais c'est la triste réalité..."
 
-    show flirt at flirt_right
+    
     $ current_textbox = "delaunay"
+    show flirt at flirt_right
     #show leandre_flirty at del_right
     leandre "Je suis tout de même heureux de l'avoir partagé avec toi..."
     #hide leandre_flirty
@@ -990,12 +991,11 @@ label del_3_3:
 # TRANSITION RIDEAU DE SES MORTS A AJOUTER
 # text "Le jour du spectacle..."
 label del_4:
-    hide delaunay_neutre with dissolve
+    hide leandre_neutre with dissolve
     show curtain_close with dissolve
     pause 1.5
-    hide bar
-    hide loges
-    scene black
+    hide auditorium with dissolve
+    pause 1.5
     show curtain_open with dissolve
     with fade
 
@@ -1482,7 +1482,6 @@ label del_5:
     hide delaunay_neutre with dissolve
     show curtain_close with dissolve
     pause 1.5
-    hide bar
     hide loges with dissolve
     pause 1.5
     show curtain_open with dissolve
@@ -1518,9 +1517,9 @@ label del_5:
     text "Il se couvrit d’un long kimono et se fit aider pour descendre sans glisser avant de saluer fièrement les spectateur.ice.s, son make-up intact et un grand sourire aux lèvres."
     
     show curtain_close with dissolve
+    hide delaunay_neutre with dissolve 
+    hide auditorium with dissolve
     pause 1.5
-    hide bar
-    hide loges
     scene black
     show curtain_open with dissolve
     with fade
@@ -1535,8 +1534,8 @@ call del_6 from _call_del_6
 
 label del_6:
     
-    hide auditorium
     show loges with fade
+    show delaunay_neutre at del_center
     $ current_textbox = "delaunay"
     #show delaunay_flirty at del_center with dissolve
     show delaunay_neutre at del_center with dissolve
@@ -1624,7 +1623,6 @@ label del_6_good:
     hide delaunay_neutre with dissolve
     show curtain_close with dissolve
     pause 1.5
-    hide bar
     hide loges with dissolve
     pause 1.5
     show curtain_open with dissolve
