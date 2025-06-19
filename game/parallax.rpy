@@ -1,5 +1,7 @@
 define config.tag_layer = {
     'wip' : 'front',
+    'gradiant_noir' : 'front',
+    'gradiant_tranparent' : 'front',
     'curtain_open' : 'front',
     'curtain_close' : 'front',
     'curtain' : 'front',
