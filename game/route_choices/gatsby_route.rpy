@@ -230,9 +230,10 @@ $ current_textbox = "gatsby"
 $ quick_menu = False
 #show gatsby_neutre at gat_right
 show aimee_neutre at gat_right
+show joy at joy_right
    
 menu:
-    #gatsby ""
+    
     aimee "Bien sûr que tu as ta place ! Mother a l'œil pour repérer les talents."
 
     "Ça fait longtemps que tu as intégré la troupe?":
@@ -492,12 +493,13 @@ label gat_2_3:
     aimee "J'avais les clefs en main, mais je ne savais pas quelle porte ouvrir. Ou bien même où est-ce qu'elle était cette foutue porte."
     aimee "Alors que je suis plutôt du genre à les enfoncer..."
     aimee "Et tout ça pour réaliser que ce n'était pas une porte mais une trappe vers le grenier où j'avais entassé pas mal de vieux démons en espérant les y oublier..."
-    aimee "Enfin bref, pas mal de métaphores pour dire une seule chose : \"Maintenant, ça va mieux\"."
+    
 
 
     $ quick_menu = False
     #show gatsby_neutre at gat_right
-    show aimee_neutre at gat_right
+    show aimee_neutre at gat_right with dissolve
+    show joy at joy_right
    
     menu:
         #gatsby ""
@@ -528,6 +530,7 @@ label gat_2_3:
     $ quick_menu = False
     #show gatsby_neutre at gat_right
     show aimee_neutre at gat_right
+    show joy at joy_right
    
     menu:
         #gatsby ""
@@ -551,7 +554,8 @@ label gat_2_3:
 
     anthrax "Et tu es toujours dans cette association ?"
     $ current_textbox = "gatsby"
-
+    
+    show sadness at sadness_right
     aimee "Oui ! Mais malheureusement, on n'y fait plus trop de spectacles. Chacun.e a sa vie et d'autres priorités, et le drag est passé au second plan." 
     aimee "Mais peut-être que ça reprendra un jour, qui sait ?"
 
@@ -561,7 +565,25 @@ label gat_2_3:
 #GAT.3
 label gat_3:
 
+    $ persistent.bg_parallax = False
+    hide aimee_neutre with dissolve
+    show curtain_close with dissolve
+    pause 1.5
+    hide bar
+    show curtain_open 
+
+    show gradient
+    show text "{size=60}{color=#FFFFFF}Quelques mois passèrent...{/color}{/size}" at truecenter
+
+    pause 6
+
+    hide text with dissolve
+    hide gradient with fade
+
+
     play music ConfidenceIntro
+
+    $ persistent.bg_parallax = True
 
     $ current_textbox = "description"
     text "Cela faisait plusieurs minutes que je cherchais Aimé.e, avec qui j'étais supposé.e répéter une partie de mon numéro, que l'on construisait ensemble."
@@ -572,16 +594,19 @@ label gat_3:
     text "Puis je l'aperçus, dominant un carnet sur lequel iel tapotait la mine de son crayon, posé sur l'un des mange-debouts. "
     text "Je le.a rejoignis rapidement."
 
-    show auditorium
+    
 
     $ current_textbox = "anthrax"
 
     $ quick_menu = False
-    #show gatsby_neutre at gat_right
-    show aimee_neutre at gat_right
+
+    show auditorium
+    
+    show sadness at sadness_right
+    show aimee_neutre at gat_right with dissolve
+    
    
     menu:
-        #gatsby ""
         "Hey... Je me demandais où tu étais passé.":
          pass
         "Aimé.e! Ça fait un moment que je te cherche !":
@@ -626,6 +651,7 @@ label gat_3:
     $ quick_menu = False
     #show gatsby_neutre at gat_right
     show aimee_neutre at gat_right
+    show sadness at sadness_right
    
     menu:
         #gatsby ""
@@ -938,15 +964,31 @@ label gat_3_3:
 #GAT.4
 label gat_4:
 
+    $ persistent.bg_parallax = False
+    hide aimee_neutre with dissolve
+    show curtain_close  with dissolve
+    pause 1.5
+    hide auditorium 
+    show curtain_open 
+
+    show gradient with dissolve
+    show text "{size=60}{color=#FFFFFF}Le jour du spectacle...{/color}{/size}" at truecenter
+
+    pause 6
+
+    hide text with dissolve
+    hide gradient with fade
+
+
     stop music fadeout 0.5
     stop ambiance fadeout 0.5
     play music BackstageLoop volume 0.5
     play ambiance AmbLoges fadein 0.5
     
     hide aimee_neutre
-    show loges
 
 
+    $ persistent.bg_parallax = True
     $ current_textbox = "description"
 
     text "Le calme illusoire de la loge contrastait drastiquement avec le bourdonnement du staff passé la porte."
@@ -961,7 +1003,8 @@ label gat_4:
     $ current_textbox = "anthrax"
 
     $ quick_menu = False
-    show gatsby_neutre at gat_right
+    show loges
+    show gatsby_neutre at gat_right with dissolve
    
     menu:
         #gatsby ""
@@ -1357,8 +1400,15 @@ label gat_4_3:
 # AJOUTER LA TRANSITION RIDEAU DE SES MORTS LA J'EN PEUX PLUS LIBEREZ NOUS
 #GAT.5
 label gat_5:
-    hide gatsby_neutre
+    hide gatsby_neutre with dissolve
+    show curtain_close with dissolve
+    pause 1.5
+    hide loges
+    show curtain_open with dissolve
+
+    scene black with dissolve
     play music ShowGatsby noloop
+
     $ current_textbox = "description"
 
     text "Le band commença le morceau suivant alors que la scène était encore vide de toute activité..."
@@ -1386,14 +1436,23 @@ label gat_5:
 
     stop music fadeout 2.0
 
-call gat_6 from _call_gat_6_1
-call gat_6 from _call_gat_6 
+    $ persistent.bg_parallax = False
+    hide gatsby_neutre with dissolve
+    show curtain_close with dissolve
+    pause 1.5
+    hide auditorium
+    show curtain_open with dissolve
 
-#TRANSITION AGAIN MA VIE 
+call gat_6 from _call_gat_6_1
+
+
 #GAT.6
 label gat_6:
-    hide auditorium
-    show loges 
+    $ persistent.bg_parallax = True
+    show loges
+    show gatsby_neutre at gat_center with dissolve
+
+    $ current_textbox = "gatsby"
 
     gatsby "Franchement, je ne me laisserais jamais de cette réaction!"
     gatsby "Tu as vu leur tête quand je suis tombé.e?"
@@ -1405,6 +1464,8 @@ label gat_6:
     scene background_cg
     show CG_gatsby at CG_center with fade
 
+    $ current_textbox = "description"
+
     pause 1.0
     "Nouvelle illustration débloquée"
     hide CG_gatsby with dissolve
@@ -1413,7 +1474,8 @@ label gat_6:
 
 
     $ quick_menu = False
-    show gatsby_neutre at gat_right
+    $ current_textbox = "gatsby"
+    show gatsby_neutre at gat_right with dissolve
    
     menu:
         gatsby "Mémorable! J'ai cru que le premier rang allait faire un arrêt cardiaque!"
@@ -1431,6 +1493,8 @@ label gat_6:
     gatsby "Tu sais que ça marche trop bien avec moi en plus!"
     gatsby "Plus qu'à me montrer maintenant ce dont TOI tu es capable!"
 
+    $ current_textbox = "anthrax"
+
     anthrax "C'est en cours! Patience, patience! Moi aussi, j'ai envie de te garder la surprise~"
 
 label indice_gat:
@@ -1438,12 +1502,12 @@ label indice_gat:
             jump gat_6_good
         else:
             jump gat_6_bad
+    
 
-
-
-#Choix GAT.6
-label choix_gat6:
+#GAT.6.GOOD
+label gat_6_good:
     $ quick_menu = False
+    $ current_textbox = "gatsby"
     
     with fade
     gatsby "Ça te tente que l'on sorte un peu après? Se promener en ville, grignoter un truc, quelque chose du style..."
@@ -1452,25 +1516,26 @@ label choix_gat6:
     menu: 
         text "Accepter le date ?"
         "Oui":
-            call gat_6_good from _call_gat_6_good 
+            pass
         "Non":
             call gat_6_good_bad from _call_gat_6_good_bad 
 
-#GAT.6.GOOD
-label gat_6_good:
+
     $ quick_menu = True
     show gatsby_neutre at gat_center with dissolve
     show loges with dissolve
     hide flirt
 
-    $ current_textbox = "delaunay"
+    $ current_textbox = "gatsby"
     gatsby "Nickel! Je fais vite! Attends-moi devant l'entrée quand tu aura aussi fini!"
 
     
     show curtain_close with dissolve
     hide gatsby_neutre with dissolve
     hide bar
+    scene black
     hide loges with dissolve
+    scene black
     pause 1.5
     show curtain_open with dissolve
     with fade

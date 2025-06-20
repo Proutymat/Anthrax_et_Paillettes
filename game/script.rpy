@@ -381,9 +381,6 @@ image sadness :
     "images/VFX/Sadness/Sadness_VF_00054.png", 0.055,
     "images/VFX/Sadness/Sadness_VF_00055.png", 0.055,
     "images/VFX/Sadness/Sadness_VF_00056.png", 0.055,
-    "images/VFX/Sadness/Sadness_VF_00057.png", 0.055,
-    "images/VFX/Sadness/Sadness_VF_00058.png", 0.055,
-    "images/VFX/Sadness/Sadness_00059.png", 0.055,
     "images/Backgrounds/transparent_background.png"
 
     

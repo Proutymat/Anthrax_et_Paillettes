@@ -296,7 +296,7 @@ screen music_room(mr):
         viewport:
             mousewheel True scrollbars "vertical" draggable True
             has vbox
-            label _("Track List") style "music_room_title"
+            label _("Juxebox") style "music_room_title"
             ## get_tracklist takes one argument, all_tracks. If all_tracks is
             ## True, it shows all tracks, including locked ones (which will be
             ## shown grayed out). If all_tracks is False, it only shows unlocked
@@ -517,7 +517,7 @@ screen music_room_interviews(mr):
         viewport:
             mousewheel True scrollbars "vertical" draggable True
             has vbox
-            label _("Track List") style "music_room_title"
+            label _("Interviews") style "music_room_title"
             ## get_tracklist takes one argument, all_tracks. If all_tracks is
             ## True, it shows all tracks, including locked ones (which will be
             ## shown grayed out). If all_tracks is False, it only shows unlocked
