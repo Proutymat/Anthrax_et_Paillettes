@@ -41,36 +41,52 @@ init python:
     ## given a more specific one. This default art is 600x600, but several
     ## layouts resize it. It should typically be square.
     music_room.default_art = "gui/music_room/cover_art.webp"
+    music_room_interviews.default_art = "gui/music_room/cover_art.webp"
 
-    ## Now you can declare the music files. These will appear in the music room
-    ## in the order you declare them in, unless you set alphabetical=True above.
-    music_room.add(
-        ## The title of the song. Used for alphabetization. Should probably
-        ## be translatable.
-        name=_("Dance of the Sugar Plum Fairy"),
-        ## This should be the path to the song i.e. "audio/music/sugar_plum.ogg"
-        path="<silence 124>",
-        ## The song artist. Optional; depends on how you want to set up
-        ## your screens. The default layouts use the artist field.
-        artist="Pyotr Ilyich Tchaikovsky",
-        ############ The following are more optional fields ####################
-        ## This can be the path to album art specific for this song. If not
-        ## provided/it is None (the default), it'll use the default_art,
-        ## provided above. You can provide Null() if you'd like no image at all,
-        ## not even the default.
-        art=None,
-        ## An optional extra field. You can put whatever information you like
-        ## in here and display it however you want in the music room screen.
-        ## By default, the screens do not display this information.
-        description=_("From {i}The Nutcracker{/i}"),
-        ## You may optionally provide an unlock condition as a string, which
-        ## will be evaluated to determine if the song is unlocked or not.
-        ## In this case, the song is unlocked when the persistent variable
-        ## persistent.watched_intro is True.
-        ## By default, songs are unlocked when the player has listened to them
-        ## in-game. You can also set this to "True" to have a song be always
-        ## unlocked.
-        unlock_condition="persistent.watched_intro",
+
+
+    music_room_interviews.add(
+        name=_("Cove"),
+        artist="Red Robotix",
+        path="<silence 201>",
+        ## The other information is omitted here, so it gets the defaults.
+        ## That is, it gets the default cover art, no description, and it is
+        ## unlocked when it is listened to in-game.
+    )
+
+    music_room_interviews.add(
+        name=_("Stateside"),
+        artist="Pink Mother fucking Panthress",
+        path="audio/music_room/stateside.ogg",
+        unlock_condition="True",
+    )
+
+    music_room_interviews.add(
+        name=_("von dutch"),
+        artist="brat icon",
+        path="audio/music_room/vondutch.ogg",
+        unlock_condition="True",
+    )
+
+    music_room_interviews.add(
+        name=_("Song of the Ancients"),
+        artist="Keiichi Okabe",
+        path="<silence 317>",
+        unlock_condition="True",
+    )
+
+    music_room_interviews.add(
+        name=_("Nightsong"),
+        artist="Borislav Slavov",
+        path="<silence 77>",
+        unlock_condition="True",
+    )
+
+    music_room_interviews.add(
+        name=_("Requiem of Dawn"),
+        artist="Alcaknight",
+        path="<silence 225>",
+        unlock_condition="True",
     )
 
     music_room.add(
@@ -217,6 +233,7 @@ transform zoom_button(z):
 
 screen select_music_room_layout(mr, **properties):
     frame:
+        background None
         style_prefix 'mr_layout'
         #properties properties
         has hbox
@@ -258,7 +275,7 @@ screen music_room(mr):
 
     style_prefix "music_room"
 
-    add "images/Backgrounds/concept_backstage.png" ## The background image
+    add "images/Backgrounds/options_background.png" zoom 1.3 xpos -130 ## The background image
 
     ## To return to the main menu
     vbox:
@@ -273,9 +290,9 @@ screen music_room(mr):
     ## to the music room in or in alphabetical order, depending on whether
     ## alphabetical sorting was turned on or not. You can arrange this however
     ## you like, with whichever information you like!
-    frame:
+    vbox:
         style_prefix 'track_list'
-        xsize 750 left_margin 25 top_margin 25
+        xsize 750 xpos 120 ypos 130
         viewport:
             mousewheel True scrollbars "vertical" draggable True
             has vbox
@@ -310,7 +327,7 @@ screen music_room(mr):
     ## so you can click it to seek in the song.
     frame:
         right_margin 45 background None
-        xalign 1.0 yalign 0.0
+        xpos 870 ypos 550
         has vbox
         if current_track:
             add current_track.art xalign 0.5 ysize 440 fit "contain"
@@ -479,7 +496,7 @@ screen music_room_interviews(mr):
 
     style_prefix "music_room"
 
-    add "images/Backgrounds/concept_backstage.png" ## The background image
+    add "images/Backgrounds/options_background.png" zoom 1.3 xpos -130## The background image
 
     ## To return to the main menu
     vbox:
@@ -494,9 +511,9 @@ screen music_room_interviews(mr):
     ## to the music room in or in alphabetical order, depending on whether
     ## alphabetical sorting was turned on or not. You can arrange this however
     ## you like, with whichever information you like!
-    frame:
+    vbox:
         style_prefix 'track_list'
-        xsize 750 left_margin 25 top_margin 25
+        xsize 750 xpos 120 ypos 130
         viewport:
             mousewheel True scrollbars "vertical" draggable True
             has vbox
@@ -531,7 +548,7 @@ screen music_room_interviews(mr):
     ## so you can click it to seek in the song.
     frame:
         right_margin 45 background None
-        xalign 1.0 yalign 0.0
+        xpos 870 ypos 550
         has vbox
         if current_track:
             add current_track.art xalign 0.5 ysize 440 fit "contain"

@@ -329,17 +329,17 @@ screen quick_menu():
             frame:
                 background "menuUI/quick_background.png"
                 padding (20, 15)
-                xalign 1.0
+                xalign 1.008
                 yalign 0.0
 
                 hbox:
                     style_prefix "quick"
-                    spacing 12
+                    spacing 8
 
-                    imagebutton idle "menuUI/retourhud_idle.png" hover "menuUI/retourhud_hover.png" action Rollback()
-                    imagebutton idle "menuUI/journal_idle.png" hover "menuUI/journal_hover.png" action ShowMenu("history")
-                    imagebutton idle "menuUI/save_button_idle.png" hover "menuUI/save_button_hover.png" action ShowMenu("save")
-                    imagebutton idle "menuUI/pause_menu_idle.png" hover "menuUI/pause_menu_hover.png" action ShowMenu("pause_menu")
+                    imagebutton idle "menuUI/retourhud_idle.png" hover "menuUI/retourhud_hover.png" action Rollback() xalign 1.008 yalign 0.5
+                    imagebutton idle "menuUI/journal_idle.png" hover "menuUI/journal_hover.png" action ShowMenu("history") xalign 1.008 yalign 0.5
+                    imagebutton idle "menuUI/save_button_idle.png" hover "menuUI/save_button_hover.png" action ShowMenu("save") xalign 1.008 yalign 0.5
+                    imagebutton idle "menuUI/pause_menu_idle.png" hover "menuUI/pause_menu_hover.png" action ShowMenu("pause_menu") xalign 1.00 yalign 0.5
 
             #imagebutton idle "menuUI/avancerapide_idle.png" hover "menuUI/avancerapide_hover.png" action Skip() alternate Skip(fast=True, confirm=True)
 
