@@ -1572,7 +1572,7 @@ label gat_6_bad:
     text "Les écoutant avec une certaine envie, ayant hâte de pouvoir raconter à mon tour mes aventures."
     text "Je les observais un à une, ancrant cette image dans ma mémoire, essayant d'y graver le moindre détail."
     hide imani_neutre with dissolve
-    hide aimee_neutre with dissolve
+    hide leandre_neutre with dissolve
     text "Je m'en voulais peut-être un peu de ne pas avoir demandé à Aimé.e d'être sorti avec moi ce soir."
     text "Mais quelque chose me dit que c'était peut-être un peu trop tôt..."
     text "Et j'aurais loupé cet instant précieux, sachant pertinemment que je passerais le reste de la soirée bien entouré.e !"
