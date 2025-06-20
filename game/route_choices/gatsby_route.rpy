@@ -134,6 +134,7 @@ define text = Character(color="#FFFFFF", who_outlines=[(2, "#000000", 0, 0)], wh
 label gatsby_start:
 $ persistent.bg_parallax = True
 $ quick_menu = True
+default indice_gat = 0
 scene black with fade
 show loges
 show aimee_neutre at gat_center with dissolve
@@ -300,6 +301,7 @@ label choix_gat2:
 #GAT.2.1
 label gat_2_1:
     $ quick_menu = True
+    $ indice_gat += 1
     
     show aimee_neutre at gat_center
     with fade
@@ -391,6 +393,7 @@ label gat_2_1:
 #GAT.2.2
 label gat_2_2:
     $ quick_menu = True
+    $ indice_gat -= 1
     
     show aimee_neutre at gat_center
     with fade
@@ -673,9 +676,9 @@ label choix_gat3:
             call gat_3_3 from _call_gat_3_3 
 
 #GAT.3.1
-#+1
 label gat_3_1:
     $ quick_menu = True
+    $ indice_gat += 1
 
     show aimee_neutre at gat_center
     with fade
@@ -758,7 +761,6 @@ label gat_3_1:
     call gat_4 from _call_gat_4 
 
 #GAT.3.2
-#0
 label gat_3_2:
     $ quick_menu = True
     
@@ -845,9 +847,9 @@ label gat_3_2:
     call gat_4 from _call_gat_4_1 
 
 #GAT.3.3
-#-1
 label gat_3_3:
     $ quick_menu = True
+    $ indice_gat -= 1
 
     show aimee_neutre at gat_center
     with fade
@@ -1025,6 +1027,7 @@ label choix_gat4:
 #GAT.4.1
 label gat_4_1:
     $ quick_menu = True
+    $ indice_gat += 1
     
     show gatsby_neutre at gat_center with fade
     $ current_textbox = "anthrax"
@@ -1135,6 +1138,7 @@ label gat_4_1:
 #GAT.4.2
 label gat_4_2:
     $ quick_menu = True
+    $ indice_gat -= 1
 
     show gatsby_neutre at gat_center with fade
     $ current_textbox = "anthrax"
@@ -1394,6 +1398,19 @@ label gat_6:
     gatsby "Franchement, je ne me laisserais jamais de cette réaction!"
     gatsby "Tu as vu leur tête quand je suis tombé.e?"
 
+    hide gatsby_neutre
+ 
+    $ quick_menu = False
+
+    scene background_cg
+    show CG_gatsby at CG_center with fade
+
+    pause 1.0
+    "Nouvelle illustration débloquée"
+    hide CG_gatsby with dissolve
+    hide background_cg with fade
+    $ persistent.gatsby_unlocked = True  
+
 
     $ quick_menu = False
     show gatsby_neutre at gat_right
@@ -1416,22 +1433,28 @@ label gat_6:
 
     anthrax "C'est en cours! Patience, patience! Moi aussi, j'ai envie de te garder la surprise~"
 
+label indice_gat:
+        if indice_gat >= 0:
+            jump gat_6_good
+        else:
+            jump gat_6_bad
+
 
 
 #Choix GAT.6
 label choix_gat6:
     $ quick_menu = False
     
-    show aimee_neutre at gat_right
     with fade
     gatsby "Ça te tente que l'on sorte un peu après? Se promener en ville, grignoter un truc, quelque chose du style..."
- 
+    
+    $ current_textbox = "description"
     menu: 
         text "Accepter le date ?"
         "Oui":
             call gat_6_good from _call_gat_6_good 
         "Non":
-            call gat_6_bad from _call_gat_6_bad 
+            call gat_6_good_bad from _call_gat_6_good_bad 
 
 #GAT.6.GOOD
 label gat_6_good:
@@ -1498,14 +1521,14 @@ label gat_6_bad:
     
     hide auditorium
     show loges
-    show gatsby_neutre at gat_center with dissolve
+    show gatsby_neutre at gat_right with dissolve
     
     $ current_textbox = "gatsby"
-    gatsby "On va aller boire un verre avec les autres une fois que les derniers clients auront quitté la salle. Tu te joins à nous ?"
-    
     $ quick_menu = False
 
     menu:
+        gatsby "On va aller boire un verre avec les autres une fois que les derniers clients auront quitté la salle. Tu te joins à nous ?"
+    
         "Oui, bien sûr! Je termine ça et j'arrive!":
             pass
         "Si vous insistez!":
@@ -1515,8 +1538,10 @@ label gat_6_bad:
 
     $ quick_menu = True
     
+    jump gat_6_good_bad
+    
 
-#Commencer ici si le date est refusé dans la GOOD run
+label gat_6_good_bad:
     #Transition Rideau
     hide gatsby_neutre with dissolve
     show curtain_close with dissolve
@@ -1527,7 +1552,7 @@ label gat_6_bad:
     show curtain_open with dissolve
     with fade
 
-    show bar 
+    show bar with fade
    
     $ current_textbox = "description"
   
@@ -1582,18 +1607,13 @@ label gat_6_bad:
     
 
 label final_gatsby:
-    hide aimee_neutre
-    hide loges
-
+    $ current_textbox = "description"
+    hide aimee_neutre with dissolve
+    hide devanture with fade
+    hide bar with fade
+    
     $ quick_menu = False
-    
-    scene background_cg
-    show CG_gatsby with fade
-    
-    pause 1.0
-    "Nouvelle illustration débloquée"
-    hide CG_gatsby with fade
-    $ persistent.peacock_unlocked = True
+
     "Interview et musiques débloquées"
     pause 1.0
 

@@ -12,9 +12,9 @@ define config.tag_layer = {
     'aimee_neutre': 'back',
     'peacock_neutre': 'back',
     'imani_neutre': 'back',
-    'CG_delaunay' : 'back',
-    'CG_gatsby' : 'back',
-    'CG_peacock' : 'back',
+    'CG_delaunay' : 'CGs',
+    'CG_gatsby' : 'CGs',
+    'CG_peacock' : 'CGs',
     'flirt' : 'farthestBack',
     'angry' : 'farthestBack',
     'joy' : 'farthestBack',
@@ -83,6 +83,7 @@ init -1 python:
 
     MouseParallax([
         (-20, "farthestBack"),
+        (-30, "CGs"),
         (-50, "farBack"),
         (-80, "back"),
         (-30, "front"),

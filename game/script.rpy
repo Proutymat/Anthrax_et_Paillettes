@@ -302,26 +302,26 @@ image angry :
     "images/Backgrounds/transparent_background.png"
 
 image joy :
-    "images/VFX/Joy/Joy_00000.png", 0.055,
-    "images/VFX/Joy/Joy_00001.png", 0.055,
-    "images/VFX/Joy/Joy_00002.png", 0.055,
-    "images/VFX/Joy/Joy_00003.png", 0.055,
-    "images/VFX/Joy/Joy_00004.png", 0.055,
-    "images/VFX/Joy/Joy_00005.png", 0.055,
-    "images/VFX/Joy/Joy_00006.png", 0.055,
-    "images/VFX/Joy/Joy_00007.png", 0.055,
-    "images/VFX/Joy/Joy_00008.png", 0.055,
-    "images/VFX/Joy/Joy_00009.png", 0.055,
-    "images/VFX/Joy/Joy_00010.png", 0.055,
-    "images/VFX/Joy/Joy_00011.png", 0.055,
-    "images/VFX/Joy/Joy_00012.png", 0.055,
-    "images/VFX/Joy/Joy_00013.png", 0.055,
-    "images/VFX/Joy/Joy_00014.png", 0.055,
-    "images/VFX/Joy/Joy_00015.png", 0.055,
-    "images/VFX/Joy/Joy_00016.png", 0.055,
-    "images/VFX/Joy/Joy_00017.png", 0.055,
-    "images/VFX/Joy/Joy_00018.png", 0.055,
-    "images/VFX/Joy/Joy_00019.png", 0.055,
+    "images/VFX/Joy/Joy_00000.png", 0.045,
+    "images/VFX/Joy/Joy_00001.png", 0.045,
+    "images/VFX/Joy/Joy_00002.png", 0.045,
+    "images/VFX/Joy/Joy_00003.png", 0.045,
+    "images/VFX/Joy/Joy_00004.png", 0.045,
+    "images/VFX/Joy/Joy_00005.png", 0.045,
+    "images/VFX/Joy/Joy_00006.png", 0.045,
+    "images/VFX/Joy/Joy_00007.png", 0.045,
+    "images/VFX/Joy/Joy_00008.png", 0.045,
+    "images/VFX/Joy/Joy_00009.png", 0.045,
+    "images/VFX/Joy/Joy_00010.png", 0.045,
+    "images/VFX/Joy/Joy_00011.png", 0.045,
+    "images/VFX/Joy/Joy_00012.png", 0.045,
+    "images/VFX/Joy/Joy_00013.png", 0.045,
+    "images/VFX/Joy/Joy_00014.png", 0.045,
+    "images/VFX/Joy/Joy_00015.png", 0.045,
+    "images/VFX/Joy/Joy_00016.png", 0.045,
+    "images/VFX/Joy/Joy_00017.png", 0.045,
+    "images/VFX/Joy/Joy_00018.png", 0.045,
+    "images/VFX/Joy/Joy_00019.png", 0.045,
     "images/Backgrounds/transparent_background.png"
 
 image sadness :
@@ -782,6 +782,15 @@ init python:
         ypos=0.7,
         xzoom=1
     )
+    
+    CG_center = Transform(
+        zoom=1,
+        xalign=0.5,
+        yanchor=1.0,
+        ypos=0.985,
+        xzoom=1
+    )
+
 
 
 # Liste des sfx

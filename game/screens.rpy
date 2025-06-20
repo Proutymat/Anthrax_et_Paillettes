@@ -459,7 +459,7 @@ screen backstages():
                                                    
 
     vbox:
-        at Transform(xalign=0.05, yalign=0.98)
+        at Transform(xalign=0.09, yalign=0.98)
         imagebutton idle "menuUI/retour_idle.png" hover "menuUI/retour_hover.png" action Return()
 
 ################################################################################
@@ -795,15 +795,13 @@ style return_button:
 screen credits():
     tag menu
 
-    vbox:
-        at Transform(xalign=0.1, yalign=0.98)
-        imagebutton idle "menuUI/retour_idle.png" hover "menuUI/retour_hover.png" action ShowMenu("backstages")
+    
 
     # Fond
     add "images/Backgrounds/options_background.png"
 
     vbox:
-        at Transform(xalign=0.1, yalign=0.98)
+        at Transform(xalign=0.1, yalign=0.94)
         imagebutton idle "menuUI/retour_idle.png" hover "menuUI/retour_hover.png" action ShowMenu("backstages")
 
     # Conteneur avec padding haut/bas réduit
@@ -977,7 +975,7 @@ screen save():
 
     tag menu
 
-    use file_slots(_("Sauvegarde"))
+    use file_slots(_(""))
 
 
 screen load():
@@ -988,6 +986,8 @@ screen load():
 
 
 screen file_slots(title):
+
+    add "images/Backgrounds/options_background.png"
 
     default page_name_value = FilePageNameInputValue(pattern=_("Page {}"), auto=_("Sauvegardes automatiques"), quick=_("Sauvegardes rapides"))
 
@@ -1155,7 +1155,7 @@ screen preferences():
     add "images/Backgrounds/options_background.png"
 
     vbox:
-        at Transform(xalign=0.05, yalign=0.98)
+        at Transform(xalign=0.09, yalign=0.95)
         imagebutton:
             idle "menuUI/retour_idle.png"
             hover "menuUI/retour_hover.png"

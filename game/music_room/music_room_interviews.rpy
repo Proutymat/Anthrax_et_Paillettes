@@ -279,7 +279,7 @@ screen music_room(mr):
 
     ## To return to the main menu
     vbox:
-                at Transform(xalign=0.015, yalign=0.97)
+                at Transform(xalign=0.06, yalign=0.97)
                 imagebutton idle "menuUI/retour_idle.png" hover "menuUI/retour_hover.png" action ShowMenu("backstages")
 
     ## Buttons to go to the different layouts. Remove once you've decided
@@ -500,7 +500,7 @@ screen music_room_interviews(mr):
 
     ## To return to the main menu
     vbox:
-                at Transform(xalign=0.015, yalign=0.97)
+                at Transform(xalign=0.06, yalign=0.97)
                 imagebutton idle "menuUI/retour_idle.png" hover "menuUI/retour_hover.png" action ShowMenu("backstages")
 
     ## Buttons to go to the different layouts. Remove once you've decided
