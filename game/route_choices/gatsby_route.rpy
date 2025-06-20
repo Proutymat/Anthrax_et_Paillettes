@@ -1396,8 +1396,7 @@ label gat_6:
 
 
     $ quick_menu = False
-    #show gatsby_neutre at gat_right
-    show aimee_neutre at gat_right
+    show gatsby_neutre at gat_right
    
     menu:
         gatsby "Mémorable! J'ai cru que le premier rang allait faire un arrêt cardiaque!"
