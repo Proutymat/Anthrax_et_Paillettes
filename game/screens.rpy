@@ -154,7 +154,7 @@ screen say(who, what):
 
     window:
         style "my_say_window"
-        background "gui/textbox_[current_textbox].png"
+        background "gui/textbox_[current_textbox].png" xalign 1 yalign 0.87
 
         fixed:
             xfill True
@@ -162,10 +162,10 @@ screen say(who, what):
 
             # 🧍 Nom du personnage
             if who is not None:
-                text who id "who" style "my_say_label" xpos 140 ypos 40
+                text who id "who" style "my_say_label" xpos 390 ypos 40
 
             # 💬 Texte principal
-            text what id "what" style "my_say_dialogue" xpos 145 ypos 85 line_spacing 10 size 40 color "02061a"
+            text what id "what" style "my_say_dialogue" xpos 390 ypos 120 line_spacing 10 size 40 color "02061a"
 
     use quick_menu
 
@@ -450,12 +450,12 @@ screen backstages():
                     imagebutton:
                         auto "menuUI/credits_eng_%s.png"
                         hovered Function(play_ui_hover)
-                        action [Function(play_ui_click), Start()]                    
+                        action [Function(play_ui_click), Function(renpy.transition, fade), Show("credits")]                    
                 else : 
                     imagebutton:
                         auto "menuUI/credits_%s.png"
                         hovered Function(play_ui_hover)
-                        action [Function(play_ui_click), Start()]
+                        action [Function(play_ui_click), Function(renpy.transition, fade), Show("credits")]
                                                    
 
     vbox:
@@ -518,10 +518,10 @@ screen navigation():
 
         #textbutton _("Reprendre") action ShowMenu("load")
         if _preferences.language == "English":
-                imagebutton:
-                    auto "menuUI/load_%s.png"
-                    hovered Function(play_ui_hover)
-                    action [Function(play_ui_click), Start()]
+            imagebutton:
+                auto "menuUI/load_%s.png"
+                hovered Function(play_ui_hover)
+                action [Function(play_ui_click), SetVariable("_previous_screen", "navigation"), Function(renpy.transition, fade), Show("load")]
         
         else:
             imagebutton:
@@ -572,7 +572,7 @@ screen navigation():
                 imagebutton:
                     auto "menuUI/quit_%s.png"
                     hovered Function(play_ui_hover)
-                    action [Function(play_ui_click), Start()]
+                    action [Function(play_ui_click), Quit(confirm=not main_menu)]
             else:
                 imagebutton:
                     auto "menuUI/quitter_%s.png"

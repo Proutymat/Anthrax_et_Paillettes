@@ -14,7 +14,13 @@ define short_fade = Fade(0.1, 1, 0.2)
 
 label choose_route:
     scene black
-    show expression "images/Backgrounds/menu_background_two.png"
+     
+    if _preferences.language == "English":
+        show expression "images/Backgrounds/crush_choice_background_eng.png"
+
+    else : 
+        show expression "images/Backgrounds/crush_choice_background_fr.png"
+        
     $ persistent.bg_parallax = False
     $ quick_menu = False
 
