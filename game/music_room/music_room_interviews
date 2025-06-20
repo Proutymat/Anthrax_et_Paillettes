@@ -1,40 +1,4 @@
- ## This sets up a default art image for all tracks in this room which aren't
-    ## given a more specific one. This default art is 600x600, but several
-    ## layouts resize it. It should typically be square.
-    music_room.default_art = "gui/music_room/cover_art.webp"
-
-    ## Now you can declare the music files. These will appear in the music room
-    ## in the order you declare them in, unless you set alphabetical=True above.
-    music_room.add(
-        ## The title of the song. Used for alphabetization. Should probably
-        ## be translatable.
-        name=_("Dance of the Sugar Plum Fairy"),
-        ## This should be the path to the song i.e. "audio/music/sugar_plum.ogg"
-        path="<silence 124>",
-        ## The song artist. Optional; depends on how you want to set up
-        ## your screens. The default layouts use the artist field.
-        artist="Pyotr Ilyich Tchaikovsky",
-        ############ The following are more optional fields ####################
-        ## This can be the path to album art specific for this song. If not
-        ## provided/it is None (the default), it'll use the default_art,
-        ## provided above. You can provide Null() if you'd like no image at all,
-        ## not even the default.
-        art=None,
-        ## An optional extra field. You can put whatever information you like
-        ## in here and display it however you want in the music room screen.
-        ## By default, the screens do not display this information.
-        description=_("From {i}The Nutcracker{/i}"),
-        ## You may optionally provide an unlock condition as a string, which
-        ## will be evaluated to determine if the song is unlocked or not.
-        ## In this case, the song is unlocked when the persistent variable
-        ## persistent.watched_intro is True.
-        ## By default, songs are unlocked when the player has listened to them
-        ## in-game. You can also set this to "True" to have a song be always
-        ## unlocked.
-        unlock_condition="persistent.watched_intro",
-    )
-
-    music_room.add(
+     music_room.add(
         name=_("Cove"),
         artist="Red Robotix",
         path="<silence 201>",
@@ -44,9 +8,9 @@
     )
 
     music_room.add(
-        name=_("Stateside"),
-        artist="Pink Mother fucking Panthress",
-        path="audio/music_room/stateside.ogg",
+        name=_("Drag King Aujourd'hui"),
+        artist="L'imberbe, Drag King, Montpellier, France",
+        path="audio/music_room/limberbe.ogg",
         unlock_condition="True",
     )
 
@@ -176,23 +140,6 @@ transform zoom_button(z):
 ## once you've picked a layout.
 #screen select_music_room_layout(mr, **properties):
 
-screen select_music_room_layout(mr, **properties):
-    frame:
-        style_prefix 'mr_layout'
-        #properties properties
-        has hbox
-        #xalign 0.5 spacing 20
-        #textbutton "Layout 1" action ShowMenu("music_room", mr=mr)
-        #textbutton "Layout 2" action ShowMenu("music_room2", mr=mr)
-        #textbutton "Layout 3" action ShowMenu("music_room3", mr=mr)
-#style mr_layout_frame:
-    #background "#21212d" xpadding 15 ypadding 10
-#style mr_layout_button:
-    #background None
-#style mr_layout_button_text:
-    #hover_color "#f93c3e" selected_color "#ff8335"
-    #idle_color "#f7f7ed" insensitive_color "#666"
-
 
 
 ################################################################################
@@ -219,7 +166,7 @@ screen music_room_interviews(mr):
 
     style_prefix "music_room"
 
-    add "images/Backgrounds/concept_backstage.png" ## The background image
+    add "images/Backgrounds/options_background.png" ## The background image
 
     ## To return to the main menu
     vbox:

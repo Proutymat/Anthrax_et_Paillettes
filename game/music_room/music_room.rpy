@@ -258,7 +258,7 @@ screen music_room(mr):
 
     style_prefix "music_room"
 
-    add "images/Backgrounds/concept_backstage.png" ## The background image
+    add "images/Backgrounds/options_background.png" ## The background image
 
     ## To return to the main menu
     vbox:
@@ -479,7 +479,7 @@ screen music_room_interviews(mr):
 
     style_prefix "music_room"
 
-    add "images/Backgrounds/concept_backstage.png" ## The background image
+    add "images/Backgrounds/options_background.png" ## The background image
 
     ## To return to the main menu
     vbox:
