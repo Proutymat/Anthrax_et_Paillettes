@@ -140,7 +140,7 @@ define text = Character(color="#FFFFFF", who_outlines=[(2, "#000000", 0, 0)], wh
 label delaunay_start:
 $ persistent.bg_parallax = True
 $ quick_menu = True
-default indice = 0
+default indice_del = 0
 scene black with fade
 show loges
 #show leandre_shy at del_center with dissolve
@@ -293,7 +293,7 @@ label choix_del2:
 #DEL.2.1
 label del_2_1:
     $ quick_menu = True
-    $ indice += 1
+    $ indice_del += 1
     hide joy
     show leandre_neutre at del_center
     with fade
@@ -395,7 +395,7 @@ label del_2_1:
 #DEL.2.2
 label del_2_2:
     $ quick_menu = True
-    $ indice -= 1
+    $ indice_del -= 1
     hide joy
     show leandre_neutre at del_center
     with fade
@@ -791,7 +791,7 @@ label del_3_1:
 #DEL.3.2
 label del_3_2:
     $ quick_menu = True
-    $ indice -= 1
+    $ indice_del -= 1
 
     queue music ConfidenceAB
     queue music ConfidenceB1
@@ -883,7 +883,7 @@ label del_3_2:
 #DEL.3.3
 label del_3_3:
     $ quick_menu = True
-    $ indice += 1
+    $ indice_del += 1
     
     hide sadness
     show leandre_neutre at del_center
@@ -1163,7 +1163,7 @@ label del_4_1:
 #DEL.4.2
 label del_4_2:
     $ quick_menu = True
-    $ indice += 1
+    $ indice_del += 1
     
     show delaunay_neutre at del_center
     with fade
@@ -1321,7 +1321,7 @@ label del_4_2:
 #DEL.4.3
 label del_4_3:
     $ quick_menu = True
-    $ indice -= 1
+    $ indice_del -= 1
 
     show delaunay_neutre at del_center
     with fade
@@ -1546,10 +1546,11 @@ label del_6:
     delaunay "Et j'ai ramassé un beau pactole avec les tips! Je suis refais!"
     #hide delaunay_laugh
     
+    hide delaunay_neutre with dissolve
     $ quick_menu = False
 
     scene background_cg
-    show CG_delaunay with fade
+    show CG_delaunay at CG_center with fade
 
     pause 1.0
     "Nouvelle illustration débloquée"
@@ -1587,8 +1588,8 @@ label del_6:
 
     $ current_textbox = "delaunay"
 
-    label indice:
-        if indice >= 0:
+    label indice_del:
+        if indice_del >= 0:
             jump del_6_good
         else:
             jump del_6_bad
@@ -1599,14 +1600,18 @@ label del_6_good:
     $ quick_menu = True
     show delaunay_neutre at del_right with dissolve
     show loges with dissolve
+
+    delaunay "Hey, ça te dirait qu'on sorte prendre un verre après m'être changé? Rien que nous deux ? "
    
+    $ current_textbox = "description"
     $ quick_menu = False
     menu: 
-        text "Hey, ça te dirait qu'on sorte prendre un verre après m'être changé? Rien que nous deux ? "
+        text "Accepter le date ?"
+        
         "Oui":
             pass
         "Non":
-            call del_6_bad from _call_del_6_bad 
+            call del_6_good_bad
 
     $ quick_menu = True
     show delaunay_neutre at del_center with dissolve
@@ -1724,38 +1729,79 @@ label del_6_bad:
 
     $ current_textbox = "description"
 
+    jump del_6_good_bad
+
+label del_6_good_bad:
+
+    #Transition Rideau
+    hide delaunay_neutre with dissolve
+    show curtain_close with dissolve
+    pause 1.5
+    hide bar
+    hide loges
+    scene black
+    show curtain_open with dissolve
+    with fade
+    
+    show bar with fade
+    $ current_textbox = "description"
+  
     text "Tous.te.s étaient réuni.e.s face au comptoir, se faisant servir par notre merveilleux \"Dobarman\"."
-    text "Imani avait entre ses doigts un mocktail de sa création, Léandre retrouvait peu à peu sa timidité, laissant Delaunay s'effacer."
-    text "Partageant son verre avec Aimé.e pour qu'iel goûte, riant aux éclats en détaillant quelques anecdotes de leur expérience au fil des années."
+    show imani_neutre at pea_left with dissolve
+    text "Imani avait entre ses doigts un mocktail de sa création..."
+    show leandre_neutre at del_right with dissolve
+    text "Léandre retrouvait peu à peu sa timidité, laissant Delaunay s'effacer."
+    show aimee_neutre at gat_center with dissolve
+    text "Partageant son verre avec Aimé.e pour qu'iel goûte, riant aux éclats en détaillant quelques anecdotes de leurs expériences."
     text "Le tout appuyé.e par l'approbation et les précisions de Mother."
-
+    
+    hide imani_neutre
+    hide leandre_neutre
+    hide aimee_neutre
+    show aimee_neutre at gat_right with dissolve
     $ current_textbox = "gatsby"
-
     aimee "Nan mais je te jure ! La manière dont sa perruque a volé au milieu de la pièce !"
 
     $ current_textbox = "delaunay"
+    show leandre_neutre at del_left with dissolve
     leandre "Et surtout sa tête, en s'en rendant compte... !"
 
     $ current_textbox = "peacock"
+    hide aimee_neutre
+    show imani_neutre at pea_right with dissolve
     imani "J'aurais rêvé être là cette soirée, et non derrière les machines !"
 
     $ current_textbox = "mother"
+    hide leandre_neutre
+    show mother at mother_left with dissolve
     mother "Je suis sûre que je peux te retrouver une vidéo d'excellente qualité, vu comment elle a tourné sur les plateformes."
+
+    hide imani_neutre
+    hide mother
+    show imani_neutre at pea_left with dissolve
+    show leandre_neutre at del_right with dissolve
+    show aimee_neutre at gat_center with dissolve
 
     $ current_textbox = "description"
 
     text "Les écoutant avec une certaine envie, ayant hâte de pouvoir raconter à mon tour mes aventures."
     text "Je les observais un à une, ancrant cette image dans ma mémoire, essayant d'y graver le moindre détail."
+    hide imani_neutre with dissolve
+    hide aimee_neutre with dissolve
     text "Je m'en voulais peut-être un peu de ne pas avoir demandé à Léandre d'être sorti avec moi ce soir."
     text "Mais quelque chose me dit que c'était peut-être un peu trop tôt..."
     text "Et j'aurais loupé cet instant précieux, sachant pertinemment que je passerais le reste de la soirée bien entouré.e !"
 
-
     call final_delaunay from _call_final_delaunay_1 
 
 label final_delaunay:
-    hide leandre_neutre
-    hide loges
+
+    $ quick_menu = False
+
+    $ current_textbox = "description"
+    hide leandre_neutre with dissolve
+    hide devanture with fade
+    hide bar with fade
 
     "Interview et musiques débloquées"
     pause 1.0

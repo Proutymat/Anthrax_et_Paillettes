@@ -7,7 +7,7 @@ define team_credits_list = [
     Credit(
         name = "Nathanaël DEFEUILLET",
         role = "Writer & Narrative Designer",
-        image_name = "images/crédits/nath.png",
+        image_name = "images/Credits/nath.png",
         url_list = [
             ("itch-io", "https://gaming-variety-potato.itch.io/"),
             ("twitter-original", "https://www.twitter.com/gaming_v_potato/")
@@ -16,7 +16,7 @@ define team_credits_list = [
     Credit(
         name = "Moumine KONATE",
         role = "Programmer, UI/UX Designer,\nUser Researcher & Knowledge Manager",
-        image_name = "images/crédits/moumine.png",
+        image_name = "images/Credits/moumine.png",
         url_list = [
             ("itch-io", "https://gaming-variety-potato.itch.io/"),
             ("twitter-original", "https://www.twitter.com/gaming_v_potato/")
@@ -25,7 +25,7 @@ define team_credits_list = [
     Credit(
         name = "Justine DESMEDT",
         role = "UI Artist",
-        image_name = "images/crédits/justine.png",
+        image_name = "images/Credits/justine.png",
         url_list = [
             ("itch-io", "https://gaming-variety-potato.itch.io/"),
             ("twitter-original", "https://www.twitter.com/gaming_v_potato/")
@@ -34,7 +34,7 @@ define team_credits_list = [
     Credit(
         name = "Gabriele ENNAOUAJI",
         role = "Character & Environment Artist",
-        image_name = "images/crédits/gabriele.png",
+        image_name = "images/Credits/gabriele.png",
         url_list = [
             ("itch-io", "https://gaming-variety-potato.itch.io/"),
             ("twitter-original", "https://www.twitter.com/gaming_v_potato/")
@@ -43,7 +43,7 @@ define team_credits_list = [
     Credit(
         name = "Candice DELORME",
         role = "Sound Designer & Composer",
-        image_name = "images/crédits/candice.png",
+        image_name = "images/Credits/candice.png",
         url_list = [
             ("itch-io", "https://gaming-variety-potato.itch.io/"),
             ("twitter-original", "https://www.twitter.com/gaming_v_potato/")
@@ -56,7 +56,7 @@ define help_credits_list = [
     Credit(
         name = "Maïa/Mäx BEAUVOIS",
         role = "Project Management Consultant",
-        image_name = "images/crédits/max.png",
+        image_name = "images/Credits/max.png",
         url_list = [
             ("itch-io", "https://gaming-variety-potato.itch.io/"),
             ("twitter-original", "https://www.twitter.com/gaming_v_potato/")
@@ -65,7 +65,7 @@ define help_credits_list = [
     Credit(
         name = "Daphné RENAULD",
         role = "VFX Artist",
-        image_name = "images/crédits/daph.png",
+        image_name = "images/Credits/daph.png",
         url_list = [
             ("itch-io", "https://gaming-variety-potato.itch.io/"),
             ("twitter-original", "https://www.twitter.com/gaming_v_potato/")
@@ -74,7 +74,7 @@ define help_credits_list = [
     Credit(
         name = "Lily BEAUHAIRE",
         role = "Poster Artist",
-        image_name = "images/crédits/lily.png",
+        image_name = "images/Credits/lily.png",
         url_list = [
             ("itch-io", "https://gaming-variety-potato.itch.io/"),
             ("twitter-original", "https://www.twitter.com/gaming_v_potato/")
@@ -83,7 +83,7 @@ define help_credits_list = [
     Credit(
         name = "Natanael ROSSIGNOL",
         role = "Typographer",
-        image_name = "images/crédits/nat.png",
+        image_name = "images/Credits/nat.png",
         url_list = [
             ("itch-io", "https://gaming-variety-potato.itch.io/"),
             ("twitter-original", "https://www.twitter.com/gaming_v_potato/")
