@@ -785,7 +785,7 @@ label pea_3_2:
     $ current_textbox = "peacock"
 
     imani "Franchement, ce n’est pas l’histoire la plus sensationnelle que je pourrais te raconter..."
-    imani "Honnêtement, est-ce que c’est une histoire qui mérite d’être racontée? Je ne sais pas... J’étais vraiment pathétique."
+    imani "Est-ce qu'elle mérite même Rd’être racontée ? Je ne sais pas... J’étais vraiment pathétique."
     $ current_textbox = "anthrax"
 
     anthrax "Ne dis pas ça... C’est vicieux, les addictions. Sinon personne ne serait accro à rien ! Tu as fini par t’en sortir."
@@ -795,9 +795,25 @@ label pea_3_2:
 
     imani "Ha ha ! T’es chou..."
     imani "Mais tu n’aurais peut-être pas voulu me connaître à l’époque..."
-    $ current_textbox = "anthrax"
 
-    anthrax "Pourquoi donc ?"
+    $ quick_menu = False
+    #show peacock_neutre at pea_right
+    show imani_neutre at pea_right
+   
+    menu:
+        imani "Mais tu n’aurais peut-être pas voulu me connaître à l’époque..."
+        "Pourquoi donc ?":
+         pass
+        "Ah bon ? Pourquoi dis-tu ça...?":
+         pass
+        "Ça ne devais pas être à ce point terrible, si ?":
+         pass
+
+
+
+
+    $ quick_menu = True
+
     $ current_textbox = "peacock"
 
     imani "Et bien... Je n’étais pas quelqu’un que l’on pouvait qualifier... d’émotionnellement stable."
@@ -814,10 +830,23 @@ label pea_3_2:
     imani "Parce que ce n’était que le début !"
     imani "J’en suis venu à penser que c’était normal... Mais ça a vraiment dérapé quand je suis devenu acteur de ma déchéance."
     imani "Ce sentiment de... « truc qui cloche », il ne m’a jamais quitté. Et les soirées, c’était un moyen de me distraire pour ne plus y penser."
-    imani "Mais quand ça t’obscède autant dans la journée et que tu n’as pas de porte de sortie, tu t’en crées..."
-    $ current_textbox = "anthrax"
 
-    anthrax "Oh non..."
+    $ quick_menu = False
+    #show peacock_neutre at pea_right
+    show imani_neutre at pea_right
+   
+    menu:
+        imani "Mais quand ça t’obscède autant dans la journée et que tu n’as pas de porte de sortie, tu t’en crées..."
+        "Oh non...":
+         pass
+        "Est-ce que c'est ce que je crois être ?":
+         pass
+        "Mince... Je pense deviner où ça mène.":
+         pass
+
+
+    $ quick_menu = True
+
     $ current_textbox = "peacock"
 
     imani "Si... J’ai commencé à boire au taf."
@@ -850,10 +879,25 @@ label pea_3_3:
     imani "De volonté ? De motivation ? Ce ne sont même pas les bons mots pour décrire..."
     imani "L’alcool avait juste une telle emprise sur moi que j’ai l’impression que je me disais ça pour me donner bonne conscience."
     imani "« Essayer, sans réellement essayer »... Entre les tentatives ratées et les fausses excuses que je me donnais, il a d’abord fallu que je remette les pieds sur terre."
-    imani "Et ça n’a pas été une mince affaire."
-    $ current_textbox = "anthrax"
+    
 
-    anthrax "Comment est-ce que tu as fait ?"
+    $ quick_menu = False
+    #show peacock_neutre at pea_right
+    show imani_neutre at pea_right
+   
+    menu:
+        imani "Et ça n’a pas été une mince affaire."
+        "Qu'est-ce qui t'as motivé à changer ?":
+         pass
+        "Tu as juste fait quelques détours, mais tu y es arrivé !":
+         pass
+        "Comment est-ce que tu as fait ?":
+         pass
+
+
+    $ quick_menu = True
+
+
     $ current_textbox = "peacock"
 
     imani "Moi ? Je n’ai rien fait. J’ai dû me faire virer de mon ancien taf pour que j’aie un déclic..."
@@ -871,13 +915,31 @@ label pea_3_3:
     imani "Heureusement que j’étais en cure de désintox et qu’il y avait du monde pour s’occuper de moi, parce que j’avais l’impression de mourir."
     $ current_textbox = "description"
 
-    text "Je ne su quoi lui répondre, ne pouvais que me l’imaginer. Jamais je n’aurais pensé qu’Imani avait traversé une telle épreuve..."
+    text "Je ne su quoi lui répondre, ne pouvant que me l’imaginer. Jamais je n’aurais pensé qu’Imani avait traversé une telle épreuve..."
     $ current_textbox = "peacock"
 
-    imani "On dirait que cette histoire a laissé un froid, non ? Désolé, c’était un peu morbide..."
+
+    $ quick_menu = False
+    #show peacock_neutre at pea_right
+    show imani_neutre at pea_right
+   
+    menu:
+        imani "On dirait que cette histoire a laissé un froid, non ? Désolé, c’était un peu morbide..."
+
+        "Non, non... Ne t’excuse pas. ":
+         pass
+        "Je m'en parle pas, haha... Mais t'inquiète.":
+         pass
+        "Imani... Ce n'est rien voyons.":
+         pass
+
+
+    $ quick_menu = True
+
+
     $ current_textbox = "anthrax"
 
-    anthrax "Non, non... Ne t’excuse pas. C’est juste que..."
+    anthrax "C’est juste que..."
     anthrax "Pendant tout ce temps, tu devais te sentir tellement seul."
     $ current_textbox = "peacock"
 
@@ -888,26 +950,54 @@ label pea_3_3:
     anthrax "Ce n’est pas ton passé qui te définit, tu sais ?"
     $ current_textbox = "peacock"
 
-    imani "C’est vrai, tu as raison..."
-    imani "Bon ! C’est pas tout, mais on a un show à préparer !"
+    imani "C’est vrai, tu as raison... Je vais sûrement mettre encore un peu de temps pour le croire, mais merci !"
+    imani "Bon ! C’est pas tout, mais on a un show à préparer nous !"
     
     call pea_4 from _call_pea_4_2 
 
 #PEA.4
 label pea_4:
 
+    hide auditorium
+    hide imani_neutre with fade
+    
+    scene black
+
     stop music fadeout 0.2
     stop ambiance fadeout 1.0
     play ambiance AmbLoges fadein 0.5
     play music BackstageLoop volume 0.5
 
+    
     $ current_textbox = "description"
 
-    text "Debout au milieu de la pièce, Imani était en train de passer le fil de son micro dans les espaces étriqués de son corset et de son padding couleur chair, le passant dans la lanière de son bullet-bra jusque le long de son dos."
-    text "Accrochant l'appareil à l'aide d'épingles à sa perruque, elle semblait avoir la tête ailleurs, tout en reproduisant ses gestes millimétrés et à présent routiniers, glissant ensuite le boîtier HF dans sa jarretelle qui avait été modifiée à cet effet."
+    text "Debout au milieu de la pièce, Imani était en train de passer le fil de son micro dans les espaces étriqués de son corset et de son padding couleur chair..."
+    "le passant dans la lanière de son bullet-bra jusque le long de son dos. Accrochant l'appareil à l'aide d'épingles à sa perruque, elle semblait avoir la tête ailleurs..."
+    "Tout en reproduisant ses gestes millimétrés et à présent routiniers, glissant ensuite le boîtier HF dans sa jarretelle qui avait été modifiée à cet effet."
     text "Peacock enfila ensuite sa robe à dos nu et déclipsa le soutien-gorge pour dissimuler le tissu dépassant dans son costume, n'ayant pas besoin de maintien."
-    text "Une étiquette dépassait effrontément du vêtement et je me levai pour remédier à ce problème."
-    text "Attends, oups... Je me permets..."
+
+    $ quick_menu = False
+    show loges with fade
+    show peacock_neutre at pea_right with dissolve
+   
+    menu:
+        text "Une étiquette dépassait effrontément du vêtement et je me levai pour remédier à ce problème."
+        "Attends, oups... Je me permets...":
+         pass
+        "Ne bouge pas ! Il y a juste quelque chose...":
+         pass
+        "Excuse-moi, je fais vite... ":
+         pass
+
+
+    $ quick_menu = True
+
+
+    $ current_textbox = "anthrax"
+    anthrax "Voilà !"
+
+    $ current_textbox = "description"
+
     text "Un peu surprise, Imani remarqua que j'essayais maladroitement d'aider et me laissa faire, avant de me sourire avec un air attendri."
     $ current_textbox = "peacock"
 
@@ -915,45 +1005,60 @@ label pea_4:
     $ current_textbox = "anthrax"
 
     anthrax "Je peux t'aider à quelque chose d'autre ?"
+    $ current_textbox = "peacock"
 
+    peacock "Hm... Je ne sais pas trop. Peut-être peux-tu vérifier l'état des plumes de mes éventails ? Je les ai changées il y a peu, mais elles ont peut-être besoin d'être ébouriffées."
 #Choix PEA.4
 label choix_pea4:
     $ quick_menu = False
     $ current_textbox = "peacock"
 
-    show imani_neutre at pea_right
-    with fade
+    show peacock_neutre at pea_right
 
     menu: 
-        peacock "Hm... Je ne sais pas trop. Peut-être peux-tu vérifier l'état des plumes de mes éventails ? Je les ai changées il y a peu, mais elles ont peut-être besoin d'être ébouriffées."
-        "Oui, bien sûr. Ca fait longtemps que tu fais ce show? Avec les plumes je veux dire...":
+        anthrax "Oui, bien sûr !"
+        "Ça fait longtemps que tu fais ce show? ":
             call pea_4_1 from _call_pea_4_1_1 
-        "Sans soucis! Tu comptes chanter aussi? Je vois que tu as un micro d'installé...":
+        "Tu comptes chanter aussi? Je vois que tu as un micro...":
             call pea_4_2 from _call_pea_4_2_1 
-        "Les ébouriffer? Est-ce que c'est pour mieux te cacher lors de l'effeuillage?":
+        "Les ébouriffer? Tu fais de l'effeuillage?":
             call pea_4_3 from _call_pea_4_3 
 
 #PEA.4.1
 label pea_4_1:
     $ quick_menu = True
 
-    show imani_neutre at pea_center
+    show peacock_neutre at pea_center
     with fade
     $ current_textbox = "anthrax"
 
-    anthrax "Oui, bien sûr. Ça fait longtemps que tu fais ce show? Avec les plumes je veux dire..."
+    anthrax "Ça fait longtemps que tu fais ce show? Avec les plumes je veux dire..."
     $ current_textbox = "peacock"
 
-    peacock "Hm... Oui et non. Il a tout de même bien évolué depuis le temps."
+    peacock "Hm... Oui et non. Il a tout de même bien évolué depuis mes débuts."
     peacock "Évidemment, je me base sur mes atouts, mais l'expérience fait que le show s'est amélioré."
-    peacock "Et puis, j'y ai aussi mis de l'effort. J'ai pris des classes, j'ai longtemps itéré, jusqu'à trouver la formule qui me correspondait."
-    peacock "Puis, je suis loin d'avoir fini, je compte rester dans le business encore un moment. Le show continuera de progresser dans tous les cas."
-    $ current_textbox = "anthrax"
+    peacock "Puis, j'y ai aussi mit de l'effort. J'ai pris des classes, j'ai longtemps itéré, jusqu'à trouver la formule qui me correspondait."
+    
+    $ quick_menu = False
+    show peacock_neutre at pea_right
+   
+    menu:
+        peacock "Et je suis loin d'avoir fini, je compte rester dans le business encore un moment. Le show continuera de progresser dans tous les cas."
 
-    anthrax "Et donc, les plumes, ça vient de quelque part en particulier ?"
+        "Et donc, les plumes, ça t'a inspiré en particulier ?":
+         pass
+        "Le paon, Peacock, les plumes, je fais le lien...~":
+         pass
+        "C'est vrai que c'est emblématique du burlesque !":
+         pass
+
+
+    $ quick_menu = True
+    
+    
     $ current_textbox = "peacock"
 
-    peacock "Eh bien déjà, c'est mon nom de scène. Donc il y a ça... Et puis c'est finalement ce qui m'a fait me rapprocher de l'Androgame."
+    peacock "Eh bien, mon nom de scène vient de là... Et puis c'est finalement ce qui m'a fait me rapprocher de l'Androgame."
     peacock "J'ai toujours eu une admiration démesurée pour le monde de la scène, mes parents m'emmenaient toujours en spectacle quand j'étais petit."
     peacock "Ce sont les souvenirs qui me ramènent le plus en enfance."
     peacock "Et une fois, il y avait ces danseuses de cabaret, avec leurs grands éventails à plumes. À partir de ce point, je n'ai jamais lâché cette fixette."
@@ -962,32 +1067,58 @@ label pea_4_1:
     delaunay "C'est mignon ! Quand j'y repense, mes parents aussi m'emmenaient en spectacle. C'est peut-être de là que ça vient."
     $ current_textbox = "gatsby"
 
-    gatsby "Ou d'y avoir été sensibilisé.e au moins. De mon côté, c'était plus les comédies musicales à la télé, du type *Mozart, l'Opéra Rock* ou *1789*."
+    hide peacock_neutre
+    show gatsby_neutre at gat_right with dissolve
+    gatsby "Ou d'y avoir été sensibilisé.e au moins. De mon côté, c'était plus les comédies musicales à la télé, du type \"Mozart, l'Opéra Rock\" ou \"1789\"."
     $ current_textbox = "peacock"
 
+
+    hide delaunay_neutre
+    show peacock_neutre at pea_left with dissolve
     peacock "Comme quoi ! Les plumes, la scène, le théâtre... Au final, c'est plus histoire de me rappeler d'où je viens, ce que j'aime et ce qui m'a construit."
-    peacock "Et je parle pour plusieurs on dirait."
-    $ current_textbox = "anthrax"
+    hide gatsby_neutre
 
-    anthrax "C'est assez beau comme réflexion. Mais ça ne vous a jamais ennuyé.e.s ?"
+
+    $ quick_menu = False
+    show peacock_neutre at pea_right with dissolve
+   
+    menu:
+        peacock "Et je parle pour plusieurs on dirait."
+        "Tu as l'air du genre très polyvalente !":
+         pass
+        "Tu n'as pas peur de trop te répêter ?":
+         pass
+        "C'est assez beau comme réflexion. Ça ne t'a jamais ennuyée?":
+         pass
+
+
+    $ quick_menu = True
+
     $ current_textbox = "peacock"
 
-    peacock "Peut-être par moments, mais c'est pour ça que je danse, je chante et je fais rire à côté. Je déteste l'idée de ne pas me renouveler et de proposer toujours la même chose."
+    peacock "Peut-être par moments, c'est pour ça que je danse, je chante et je fais rire à côté. Je déteste l'idée de ne pas me renouveler et de proposer toujours la même chose."
     peacock "Même si ce n'est pas simple d'innover chaque semaine, c'est quelque chose que je me suis promis de faire."
     peacock "Sinon, autant arrêter le drag maintenant. Ça ne sert à rien d'être boring sur scène..."
     $ current_textbox = "delaunay"
-
-    delaunay "Moi, pas du tout... Il y a quelque chose de relaxant à faire un numéro répétitif. On a beau le connaître par cœur, on en découvre toujours de nouvelles facettes."
+    
+    show delaunay_neutre at del_left with dissolve
+    delaunay "Moi, pas du tout... Il y a quelque chose de relaxant à faire un numéro répétitif. "
+    delaunay "On a beau le connaître par cœur, on en découvre toujours de nouvelles facettes."
     $ current_textbox = "gatsby"
+    hide peacock_neutre with dissolve
 
+    show gatsby_neutre at gat_right with dissolve
     gatsby "J'ai une relation un peu plus mitigée avec le mien, puisque j'ai une démarche différente qui est plus de l'ordre de la réconciliation."
     gatsby "Donc parfois, je le déteste, et parfois je l'adore. Mais ennuyant ? Ça, jamais."
 
     stop music fadeout 0.1
 
+    hide delaunay_neutre with dissolve
+    hide gatsby_neutre with dissolve
     staff "Ok les filles ! Showtime dans dix minutes !"
     $ current_textbox = "peacock"
 
+    show peacock_neutre at pea_center with dissolve
     peacock "Déjà ?! Bon, plus qu'à se dépêcher..."
     
     stop ambiance fadeout 3.0
@@ -997,37 +1128,72 @@ label pea_4_1:
 label pea_4_2:
     $ quick_menu = True
 
-    show imani_neutre at pea_center
+    show peacock_neutre at pea_center
     with fade
     $ current_textbox = "anthrax"
 
-    anthrax "Sans souci ! Tu comptes chanter aussi ? Je vois que tu as un micro d'inspeaé..."
+    anthrax "Sans souci ! Tu comptes chanter aussi ? Je vois que tu as un micro d'installé..."
     anthrax "J'étais persuadé.e que tu ne faisais que de la danse..."
     $ current_textbox = "peacock"
 
-    peacock "Il fut une époque, c'était le cas. J'étais encore timide et je reproduisais des pas de chorés que j'avais vus sur les réseaux."
-    $ current_textbox = "anthrax"
+    
+    $ quick_menu = False
+    show peacock_neutre at pea_right
 
-    anthrax "Et qu'est-ce qui a changé depuis ?"
+    menu:
+        peacock "Il fut une époque, c'était le cas. J'étais encore timide et je reproduisais des pas de chorés que j'avais vus sur internet."
+
+        "Et qu'est-ce qui a changé depuis ?":
+         pass
+        "C'est bien de se renouveler ! Qu'est-ce qui a évolué ?":
+         pass
+        "Et du coup le chant, hein ? Qu'est-ce qui t'as convaincue ?":
+         pass
+
+
+    $ quick_menu = True
+    
     $ current_textbox = "peacock"
 
-    peacock "Changé ? Honnêtement, énormément de choses, et à la fois, pas tant. J'ai pris en confiance principalement."
-    peacock "Je t'avais dit que je bossais en régie avant ? Un peu comme Jazz actuellement."
+    peacock "Honnêtement, énormément de choses, et à la fois, pas tant. J'ai pris en confiance principalement."
+    peacock "Je t'avais dit que je bossais en régie avant ?"
     peacock "Maintenant, je fais de la radio et du podcast, tout en filant un coup de main de temps en temps, au besoin."
     peacock "La musique a toujours eu une place super importante dans ma vie, et je ne pensais pas être suffisamment talentueuse pour pouvoir partager ça sur scène un jour."
     peacock "Encore une leçon que le drag m'a apprise : ne jamais se douter de ses capacités et savoir se lancer."
     $ current_textbox = "gatsby"
 
-    gatsby "On est un peu tous.te.s dans ce cas. Le drag, ça éveille des capacités insoupçonnées. Ou en tout cas, ça nous encourage à nous redécouvrir sous un nouvel angle."
+    show gatsby_neutre at gat_left with dissolve
+    gatsby "On est un peu tous.te.s dans ce cas. Le drag, ça éveille des capacités insoupçonnées. "
+    gatsby "Ou en tout cas, ça nous encourage à nous redécouvrir sous un nouvel angle."
     $ current_textbox = "delaunay"
 
-    delaunay "Pendant un long moment, je ne me suis jamais cru capable d'être aussi confiant.e. Encore moins sur scène. Et encore moins en m'effeuillant !"
+    hide peacock_neutre
+    show delaunay_neutre at del_right with dissolve
+    delaunay "Pendant un long moment, je ne me suis jamais cru capable d'être aussi confiant. "
+    delaunay "Encore moins sur scène. Et encore moins en m'effeuillant !"
     $ current_textbox = "peacock"
+    
+    hide gatsby_neutre
+    hide delaunay_neutre
 
-    peacock "Et moi, je ne me sentais pas suffisamment légitime, ou sexy, ou \"féminine\" pour faire du drag à barbe et rendre hommage à ma culture. Surtout que je viens de loin !"
-    $ current_textbox = "anthrax"
+    
+    $ quick_menu = False
+    show peacock_neutre at pea_right
+   
+    menu:
+        peacock "Et moi, je ne me sentais pas suffisamment légitime, ou sexy, ou \"féminine\" pour faire du drag à barbe et rendre hommage à ma culture. Surtout que je pars de loin !"
+        "C'est super physique de chanter et danser en même temps !":
+         pass
+        "La manière dont il m'a été vendu, ton gig est sportif !":
+         pass
+        "Et tu as le temps de respirer avec tout ça ?!":
+         pass
 
-    anthrax "Ça doit tout de même être super physique de chanter et danser en même temps..."
+
+
+
+    $ quick_menu = True
+    
     $ current_textbox = "peacock"
 
     peacock "On s'y fait... Et puis, c'est pour ça que je me pose ensuite sur scène pour enchaîner le public."
@@ -1035,17 +1201,22 @@ label pea_4_2:
     peacock "Autant \"ouvrir la bibliothèque\" en dehors des loges. C'est bien de lire les copines, encore mieux d'en faire profiter tout le monde."
     $ current_textbox = "gatsby"
 
+    show gatsby_neutre at gat_left with dissolve
     gatsby "Oui... Enfin, quand tu te décides à tacler, t'en fais pas que tu ne te gardes pas de le faire dans les coulisses."
     $ current_textbox = "delaunay"
-
+    hide peacock_neutre
+    show delaunay_neutre at del_right with dissolve
     delaunay "Et puis, quand tu es dans l'humeur, on en a parfois pour des heures !"
 
     stop music fadeout 0.1
     $ current_textbox = "mother"
 
+    hide delaunay_neutre with dissolve
+    hide gatsby_neutre with dissolve
     staff "Ok les filles ! Showtime dans dix minutes !"
     $ current_textbox = "peacock"
 
+    show peacock_neutre at pea_center with dissolve
     peacock "Déjà ?! Bon, plus qu'à se dépêcher..."
 
     stop ambiance fadeout 3.0
@@ -1055,7 +1226,7 @@ label pea_4_2:
 label pea_4_3:
     $ quick_menu = True
 
-    show imani_neutre at pea_center
+    show peacock_neutre at pea_center
     with fade
     $ current_textbox = "anthrax"
 
@@ -1064,15 +1235,30 @@ label pea_4_3:
     $ current_textbox = "peacock"
 
     peacock "L'effeuillage ? Hm... Non, ce n'est vraiment pas mon genre de numéro ça."
-    peacock "//Don't get me wrong//, je suis une bombe."
-    peacock "Mais me déshabiller sur scène face à tout un public, ça va à l'encontre de ce que je veux transmettre avec ma persona."
-    $ current_textbox = "anthrax"
+    peacock "\"Don't get me wrong\", je suis une bombe."
+    
+    $ quick_menu = False
+    show peacock_neutre at pea_right
+   
+    menu:
+        peacock "Mais me déshabiller sur scène face à tout un public, ça va à l'encontre de ce que je veux transmettre avec ma persona."
 
-    anthrax "Ah bon ? C'est-à-dire ? J'ai du mal à comprendre."
+        "Ah bon? C'est-à-dire? J'ai du mal à comprendre.":
+         pass
+        "Pourtant, je suis sûr.e que beaucoup apprécieraient ~":
+         pass
+        "C'est très burlesque, j'aurais imaginé ça avec les éventails...":
+         pass
+
+
+    $ quick_menu = True
+    
+
     $ current_textbox = "peacock"
 
     peacock "Faut que je réussisse à mettre les mots dessus, attends..."
-    peacock "En fait, Peacock, elle est sensuelle, mais avec pudeur et une certaine humilité. Elle ne charme pas comme Delaunay, en jouant de son corps. Elle use de ses autres charmes."
+    peacock "En fait, Peacock, elle est sensuelle, mais avec pudeur et une certaine humilité. "
+    peacock "Elle ne charme pas comme Delaunay, en jouant de son corps. Elle use de ses autres charmes."
     peacock "\"J'use\" de mes autres charmes."
     $ current_textbox = "anthrax"
 
@@ -1086,32 +1272,56 @@ label pea_4_3:
     $ current_textbox = "peacock"
 
     peacock "Touchée... Et shady~"
-    peacock "Tu apprends vite~"
-    $ current_textbox = "anthrax"
+    
+    $ quick_menu = False
+    show peacock_neutre at pea_right
+   
+    menu:
+        peacock "Tu apprends vite~"
 
-    anthrax "J'apprends surtout des meilleurs."
+        "J'apprends surtout des meilleur.e.s":
+         pass
+        "Un peu de lecture ne fait pas de mal ~":
+         pass
+        "Tu commences à déteindre sur moi !":
+         pass
+
+
+    $ quick_menu = True
+  
     $ current_textbox = "delaunay"
-    delaunay "On vous entend à côté ! Faudrait pas non plus nous rendre jaloux.e.s."
-    $ current_textbox = "gatsby"
 
+    show delaunay_neutre at del_left with dissolve
+    delaunay "On vous entend à côté ! Faudrait pas non plus nous rendre jaloux.e.s. ~"
+    $ current_textbox = "gatsby"
+    
+    hide peacock_neutre
+    show gatsby_neutre at gat_right with dissolve
     gatsby "Je t'ai vue draguer avec plus de finesse, Pea ! Attention à ne pas te perdre avec l'âge !"
     $ current_textbox = "peacock"
 
-    peacock "Non mais de quoi je me mêle les fouineuses ! Occupez-vous de faire un trait d'eyeliner droit avant de vous intéresser à mes techniques de séduction !"
+    hide delaunay_neutre with dissolve
+    hide gatsby_neutre with dissolve
+    show peacock_neutre at pea_center with dissolve
+
+    peacock "Non mais de quoi je me mêle les fouineuses ! "
+    peacock "Occupez-vous de faire un trait d'eyeliner droit avant de vous intéresser à mes techniques de séduction !"
     $ current_textbox = "anthrax"
 
     anthrax "Ah... Donc c'est là où l'on se situe ?~"
     $ current_textbox = "peacock"
 
-    peacock "Pas encore~ Mais c'est une option tout à fait envisageable."
-    peacock "Si nos deux commères nationales arrêtaient de fourrer leur nez là où ça ne les concerne pas !"
+    peacock "Pas encore ~ Mais c'est une option tout à fait envisageable."
+    peacock "Si nos deux commères nationales arrêtaient de fourrer leur nez là où ça ne les concernent pas !"
 
     stop music fadeout 0.1
     $ current_textbox = "mother"
 
+    hide peacock_neutre with dissolve
     staff "Ok les filles ! Showtime dans dix minutes !"
-    $ current_textbox = "peacock"
 
+    $ current_textbox = "peacock"
+    show peacock_neutre at pea_center with dissolve
     peacock "Déjà ?! Bon, plus qu'à se dépêcher..."
    
     stop ambiance fadeout 3.0
@@ -1120,46 +1330,117 @@ label pea_4_3:
 #PEA.5
 label pea_5:
 
-    play music ShowPeacock noloop
+    show curtain_close with dissolve
+    hide peacock_neutre with dissolve
+    hide bar
+    hide loges with dissolve
+    pause 1.5
+    show curtain_open with dissolve
+
+    scene black with dissolve
+    play music ShowDelaunay noloop
+
     $ current_textbox = "description"
 
-    text "Les yeux du public étaient encore rivés sur la scène où les restes du précédent numéro se faisaient débarrasser, qu'ils furent forcés de se retourner en entendant une voix rauque et a cappella démarrer le fameux 'Feeling Good' de Nina Simone depuis le fond de la salle."
-    text "Les escarpins ancrés dans le marbre du comptoir du bar, un spot détournant sa silhouette en contre-jour pour ajouter un peu de pizzazz à son entrée, elle descendit tout en sensualité en se faisant porter par Doberman."
-    text "Imani se saisit des deux grands éventails à plumes que le staff lui proposait et le band lança le top départ de sa performance en arrivant en fanfare."
+    text "Les yeux du public étaient encore rivés sur la scène où les restes du précédent numéro se faisaient débarrasser... "
+    text "Qu'ils furent forcés de se retourner en entendant une voix rauque et a cappella démarrer le fameux 'Feeling Good' de Nina Simone depuis le fond de la salle."
+    show bar with dissolve
+    show peacock_neutre at pea_center with dissolve
+    text "Les escarpins ancrés dans le marbre du comptoir du bar, un spot détourant sa silhouette en contre-jour pour ajouter un peu de pizzazz à son entrée... "
+    text "Peacock descendit tout en sensualité en se faisant porter par Doberman et se saisit des deux grands éventails à plumes que le staff lui présentait. "
+    text "Et le band lança le top départ de sa performance en arrivant en fanfare."
+    hide bar
+    hide peacock_neutre
+    show auditorium with dissolve
+    show peacock_neutre at pea_right with dissolve
     text "Se baladant entre les tables, sans manquer une seule note, son chant et sa danse induisaient une certaine transe chez le public ébahi."
     text "Hypnotisante, chacun de ses coups de hanches, tourbillons de plumage et battement de cils soulevaient quelques sifflements jusqu'à ce que sa représentation ne se déplace sur l'estrade."
+    hide peacock_neutre with dissolve
+    show peacock_neutre at pea_left with dissolve
     text "Tandis que les derniers accords signaient la fin de sa chorégraphie, elle troqua ses éventails pour un tabouret et un verre d'eau, chauffant la salle avec un 'one-woman show' pour introduire le prochain numéro."
     text "Son charisme, sa vivacité d'esprit et sa répartie étaient bien connus des habitué.e.s du cabaret, qui venaient parfois uniquement pour participer à cet instant léger et sarcastique."
+    hide peacock_neutre with dissolve
+    show peacock_neutre at pea_center with dissolve
     text "Peacock se faisait règle de ne jamais reproduire un gig deux fois, de la même manière que ses tenues selon ses propres termes."
+    text "Elle est quitta la scène sous les rires, après avoir introduit le show suivant."
     stop music fadeout 0.2
     call pea_6 from _call_pea_6 
 
 #PEA.6
 label pea_6:
 
+hide auditorium
+hide peacock_neutre
+show loges with fade
+show peacock_neutre at pea_right with dissolve
+$ current_textbox = "peacock"
 
-#Dialogue WIP 
 
+peacock "OUF! Ça y est, le trac est passé !"
+peacock "J'en ai encore les genoux qui tremblent! J'espère que personne n'a remarqué !"
+
+$ quick_menu = False
+
+menu:
+    peacock "C'était particulièrement intense ce soir ou je rêve ?!"
+    "Le trac? Toi? Tu as vu ton entrée?! Elle était sensationnelle!":
+     pass
+    "La danse, les éventails, le chant! Mais waouh! La claque!":
+     pass
+    "C'était génial! J'ai rarement autant rit de ma vie!":
+     pass
+
+
+$ quick_menu = True
+
+peacock "C'est le meilleur shot d'adrénaline que j'aurais pu avoir!"
+peacock "J'ai hâte que tu ressentes ça toi aussi."
+peacock "Tu vas voir, tu ne t'en lasses plus!"
+$ current_textbox = "anthrax"
+
+anthrax "Si je peux être aussi radieux.se que toi ce soir, j'aurais tout gagné!"
+$ current_textbox = "peacock"
+
+peacock "Est-ce que je peux te proposer un resto, ensemble, après la fermeture? Je connais quelques adresses cosy encore ouvertes à cette heure...~"
 
 #Choix PEA.6
 label choix_pea6:
     $ quick_menu = False
-    
-    show imani_neutre at pea_right
-    with fade
+    $ current_textbox = "description"
+
+    show peacock_neutre at pea_right
 
     menu: 
-        "WIP":
+        text "Accepter le date ?"
+        "Oui":
             call pea_6_good from _call_pea_6_good 
-        "WIP":
+        "Non":
             call pea_6_bad from _call_pea_6_bad 
 
 #PEA.6.GOOD
 label pea_6_good:
     $ quick_menu = True
+    show peacock_neutre at pea_center with fade
+    show loges with dissolve
+    hide flirt
+
+    $ current_textbox = "peacock"
+    peacock "Oh! Tu acceptes ?! Wow ! Ok, ok  Je me change en vitesse alors ! Aha !"
+
     
-    show imani_neutre at pea_center
+    show curtain_close with dissolve
+    hide peacock_neutre with dissolve
+    hide bar
+    hide loges with dissolve
+    pause 1.5
+    show curtain_open with dissolve
     with fade
+
+ 
+    scene black with dissolve
+    
+    $ quick_menu = True
+    
 
     $ current_textbox = "description"
 
@@ -1167,6 +1448,9 @@ label pea_6_good:
     text "Laissant mon esprit vagabonder au jour où moi-même je les foulerais."
     text "À l'extérieur, quelques clients étaient restés sur le pavé pour continuer leurs discussions et attendre la sortie de la royauté de l'Androgame."
     $ current_textbox = "peacock"
+
+    show devanture
+    show imani_neutre at pea_right with dissolve
 
     imani "Me voici! Tu n'as pas attendu trop longtemps? Il commence à faire un peu frois en plus..."
     $ current_textbox = "anthrax"
@@ -1185,7 +1469,7 @@ label pea_6_good:
     anthrax "Mais dis-moi! Où est-ce que tu m'emmènes ce soir?"
     $ current_textbox = "peacock"
 
-    imani "Je dois mettre la barre haute pour notre premier rendez-vous alors! J'ai une petite idée, mais je garde encore le secret~"
+    imani "Je dois mettre la barre haute pour notre premier rendez-vous alors! J'ai une petite idée, mais je garde encore le secret ~"
     call final_peacock from _call_final_peacock 
 
 #PEA.6.BAD
