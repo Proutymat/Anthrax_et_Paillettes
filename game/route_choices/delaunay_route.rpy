@@ -110,6 +110,13 @@ define audio.BadEnd = "audio/Music/AP_LogesTruc_V1.ogg"
 define audio.BackstageDrumLoop = "audio/Music/ON_BackStageLoop_V1.ogg"
 define audio.BarMusic = "audio/Music/AP_BarFull.ogg"
 define audio.BarMusicPartB = "audio/Music/AP_BarPartieB.ogg"
+define audio.BalconIntro = "audio/Music/AP_Balcon_Intro.ogg"
+define audio.BalconCoupletIntro = "audio/Music/AP_Balcon_IntroCouplet.ogg"
+define audio.BalconCouplet = "audio/Music/AP_Balcon_Couplet.ogg"
+define audio.BalconRefrain = "audio/Music/AP_Balcon_Refrain.ogg"
+define audio.BalconEnd = "audio/Music/AP_Balcon_End.ogg"
+define audio.LogesIntro = "audio/Music/AP_Loges_Intro.ogg"
+define audio.LogesRefrain = "audio/Music/AP_Loges_Refrain.ogg"
 define audio.ShowDelaunay = "audio/Music/AP_ShowDelaunay_V2.ogg"
 define audio.ShowGatsby = "audio/Music/AP_ShowGatsby_V1.ogg"
 define audio.ShowPeacock = "audio/Music/AP_ShowPeacock_V1.ogg"
@@ -571,7 +578,7 @@ label del_3:
     hide gradient with fade
 
 
-    stop music fadeout 1.0
+    stop music fadeout 2.0
 
     $ persistent.bg_parallax = True
 
@@ -593,6 +600,7 @@ label del_3:
     show sadness at sadness_right
     play vfxR VFXSadness
     show leandre_neutre at del_right with dissolve
+    play music BalconIntro noloop
 
     menu:
         
@@ -629,15 +637,13 @@ label del_3:
     leandre "Hm..."
     hide sadness
 
-    queue music ConfidenceA2
-
     $ current_textbox = "description"
     text "Visiblement pas très à l'aise, Léandre rangea son mobile et joua avec ses doigts, venant s'appuyer sur la rambarde pour observer la scène en contrebas."
     
     #show leandre_shy at del_center
     $ current_textbox = "delaunay"
     leandre "C'est vrai que je ne t'en ai pas encore parlé..."
-
+    queue music BalconIntro noloop
 
     $ quick_menu = False
    
@@ -668,6 +674,9 @@ label del_3:
     hide joy
     # hide leandre_laugh 
     leandre "Mais je te fais suffisamment confiance pour ne pas me juger sur mes décisions."
+
+    play music BalconCoupletIntro
+    queue music BalconCouplet
 
     $ current_textbox = "description"
     text "Un peu plus confiant, il se redressa et tourna la tête dans ma direction, un sourire apaisé aux lèvres."
@@ -770,6 +779,7 @@ label del_3_1:
     #show leandre_shy at del_right
     leandre "J'ai fini par l'accepter : j'ai fait des erreurs et pris de mauvaises décisions."
     #hide leandre_shy
+    queue music BalconRefrain
 
 
     $ quick_menu = False
@@ -803,6 +813,7 @@ label del_3_1:
     show flirt at flirt_right
     #show leandre_laugh at del_right
     leandre "C'est un peu mon ange gardien finalement, qui m'incite à prendre exemple sur lui et être une meilleure version de moi-même."
+    queue music BalconEnd noloop
     #hide leandre_laugh
     hide flirt
     leandre "Mais tout le monde ne fait pas pareil et chacun.e a sa manière d'aborder son drag après tout."
@@ -862,6 +873,7 @@ label del_3_2:
 
     #show leandre_shy at del_right
     leandre "M'aimer d'abord, découvrir mon intimité ensuite... Ou en même temps, à la rigueur."
+    queue music BalconRefrain
     #hide leandre_shy
 
     $ quick_menu = False
@@ -890,7 +902,7 @@ label del_3_2:
     #hide leandre_laugh
     hide joy
     leandre "Je t'en avais déjà parlé, non ? Je ne me souviens plus... Ce serait bête que je passe pour un disque rayé !"
-    
+    queue music BalconEnd noloop
     $ current_textbox = "anthrax"
     anthrax "Mais non ! Et puis, même si tu te répétais, ça m'est égal. Ça veut dire que tu me fais toujours confiance pour m'en parler !"
 
@@ -950,7 +962,7 @@ label del_3_3:
     leandre "Et de ne pas savoir ce que tu veux finalement..."
     show sadness at sadness_right
     leandre "Parce qu'en plus de ta déprime, c'est apparemment absolument nécessaire de t'achever en te décrédibilisant."
-    
+    queue music BalconRefrain
 
     $ quick_menu = False
    
@@ -985,7 +997,7 @@ label del_3_3:
     $ current_textbox = "anthrax"
     anthrax "C'est clair... Mais c'est la triste réalité..."
 
-    
+    queue music BalconEnd noloop
     $ current_textbox = "delaunay"
     show flirt at flirt_right
     #show leandre_flirty at del_right
@@ -1020,8 +1032,8 @@ label del_4:
 
     stop music fadeout 0.5
     stop ambiance fadeout 0.5
-    play music BackstageLoop volume 0.5
-    play ambiance AmbLoges fadein 0.5
+    play music LogesIntro volume 0.5
+    
 
     $ persistent.bg_parallax = True
 
@@ -1032,12 +1044,13 @@ label del_4:
     text "Il collait précautionneusement des strass dorés sur la peau rugueuse des cicatrices de son torse."
     text "Tel un papillon se dégageant de son cocon, Delaunay sortait de la peau de Léandre."
     text "Son dos se courba, son regard s'embrasa et il me remarqua le fixer. Un sourire coquin et un clin d’œil plus tard, il m'invitait à le rejoindre."
-    
+    play ambiance AmbLoges fadein 0.5
 
 #Choix DEL.4
 label choix_del4:
     $ quick_menu = False
     show loges
+    queue music LogesRefrain volume 0.5
     $ current_textbox = "delaunay"
     #show delaunay_flirty at del_right
     show delaunay_neutre at del_right
@@ -1500,9 +1513,11 @@ label del_5:
     hide joy
     hide delaunay_neutre with dissolve
     show curtain_close with dissolve
+    play vfxC SFXCurtainClose
     pause 1.5
     hide loges
     show curtain_open with dissolve
+    play vfxC SFXCurtainClose
 
     scene black with dissolve
     play music ShowDelaunay noloop
