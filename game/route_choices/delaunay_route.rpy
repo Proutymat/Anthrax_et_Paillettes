@@ -102,13 +102,14 @@ define audio.CabaretIntro = "audio/Music/ON_CabaretIntro_V1_.ogg"
 define audio.CabaretLightVerse = "audio/Music/ON_CabaretLightVerse_V1.ogg"
 define audio.CabaretLightChorus = "audio/Music/ON_CabaretLightChorus_V1.ogg"
 define audio.CabaretLightSolo = "audio/Music/ON_CabaretLightSolo_V1.ogg"
-define audio.BackstageSt1 = "audio/Music/AP_Stinger1_V1.ogg"
-define audio.BackstageSt2 = "audio/Music/AP_Stinger2_V1.ogg"
-define audio.BackstageSt3 = "audio/Music/AP_Stinger3_V1.ogg"
-define audio.BackstageSt4 = "audio/Music/AP_Stinger4_V1.ogg"
-define audio.End = "audio/Music/AP_LogesTruc_V1.ogg"  
+define audio.BadEndSt1 = "audio/Music/AP_Stinger1_V1.ogg"
+define audio.BadEndSt2 = "audio/Music/AP_Stinger2_V1.ogg"
+define audio.BadEndSt3 = "audio/Music/AP_Stinger3_V1.ogg"
+define audio.BadEndSt4 = "audio/Music/AP_Stinger4_V1.ogg"
+define audio.BadEnd = "audio/Music/AP_LogesTruc_V1.ogg"  
 define audio.BackstageDrumLoop = "audio/Music/ON_BackStageLoop_V1.ogg"
-define audio.BarMusic = "audio/Music/RUN_BarNeutral_V1.ogg"
+define audio.BarMusic = "audio/Music/AP_BarFull.ogg"
+define audio.BarMusicPartB = "audio/Music/AP_BarPartieB.ogg"
 define audio.ShowDelaunay = "audio/Music/AP_ShowDelaunay_V2.ogg"
 define audio.ShowGatsby = "audio/Music/AP_ShowGatsby_V1.ogg"
 define audio.ShowPeacock = "audio/Music/AP_ShowPeacock_V1.ogg"
@@ -146,7 +147,7 @@ show loges
 #show leandre_shy at del_center with dissolve
 show leandre_neutre at del_center with dissolve
 
-play ambiance AmbLoges fadein 0.5 
+play ambiance AmbLoges volume 0.1 fadein 0.5
 
 #DEL.1
 $ current_textbox = "delaunay"
@@ -163,9 +164,11 @@ anthrax "Discret ? Ce n'est pas cette impression que tu m'as donné.e."
 
 $ current_textbox = "delaunay"
 show joy at joy_center
+play vfxC VFXJoy
 leandre "Vraiment ? Je suis soulagé alors !"
 hide joy
 leandre "Est-ce que tu souhaites qu'on discute autour d'un verre au bar ? J'aimerais beaucoup en apprendre plus sur ton drag."
+stop ambiance fadeout 2.0
 
 show leandre_neutre at del_right
 with fade
@@ -185,9 +188,7 @@ hide loges with dissolve
 hide leandre_neutre with dissolve
 scene black with fade
 $ quick_menu = True
-play music BarMusic fadein 1.5 volume 0.5
-play ambiance BarDay fadein 0.5
-play music BarMusic volume 0.5
+play music BarMusicPartB volume 0.5
 
 $ current_textbox = "description" 
 text "Nous sommes arrivé.e.s dans l'auditorium et nous sommes approché.e.s du comptoir derrière lequel brillaient un mur de bouteilles aux couleurs uniques."
@@ -197,6 +198,7 @@ text "L'immense lustre duquel pendaient des larmes de verre reflétait les spots
 text "Léandre s'assît sur l'une des chaises hautes de bois verni et commanda un Cosmo au barman."
 
 show bar
+play ambiance BarDay fadein 2.0
 
 $ current_textbox = "delaunay"
 
@@ -217,6 +219,8 @@ menu:
 
 $ quick_menu = True
 
+queue music BarMusic volume 0.5
+queue music BarMusicPartB volume 0.5
 leandre "Alors dis-moi, qu’est-ce qui t’amène ici ?"
 
 $ current_textbox = "anthrax"
@@ -234,6 +238,7 @@ anthrax "J'ai toujours été attiré.e par le burlesque, les plumes, le vintage,
 
 $ current_textbox = "delaunay"
 show joy at joy_right
+play vfxR VFXJoy
 #show leandre_laugh at del_right
 leandre "Hm... C’est bien le genre de Mother de recruter quelqu’un de ton acabit. Plein.e de potentiel, mais ne sachant pas par où commencer."
 hide joy
@@ -278,6 +283,7 @@ label choix_del2:
     $ quick_menu = False
     
     show joy at joy_right
+    play vfxR VFXJoy
     show leandre_neutre at del_right
     menu: 
         leandre "Et finalement, Mother m’a pris sous son aile et m’a aidé à me sortir de tout cela."
@@ -325,6 +331,7 @@ label del_2_1:
     #show leandre_laugh at del_right
     show leandre_neutre at del_right with fade
     show joy at joy_right
+    play vfxR VFXJoy
 
     menu:
         leandre "Pas faux... Mais bon, nous sommes une troupe particulièrement hétéroclite. Blague à part!"
@@ -359,6 +366,7 @@ label del_2_1:
     $ quick_menu = False
    
     show flirt at flirt_right
+    play vfxR VFXFlirt
     #show leandre_laugh at del_right
     show leandre_neutre at del_right
     
@@ -378,12 +386,14 @@ label del_2_1:
     leandre "Et que je me relancerais dans le même parcours de vie."
     #show leandre_shy at del_right
     show joy at joy_right
+    play vfxR VFXJoy
     leandre "Je n'échangerais pour rien au monde cette expérience."
     #hide leandre_shy
     hide joy
     leandre "D'avoir grandi comme j'ai grandi, d'avoir connu la sororité et les difficultés liées à la vie de femme ?"
     #show leandre_laugh at del_right
     show flirt at flirt_right
+    play vfxR VFXFlirt
     leandre "Cette empathie, en tant qu'homme, m'est très précieuse."
     #hide leandre_laugh
     hide flirt
@@ -405,6 +415,7 @@ label del_2_2:
     #show leandre_shy at del_center
     leandre "C'est un peu bête, vraiment..."
     show sadness at sadness_center
+    play vfxC VFXSadness
     leandre "Je me suis fait traîner ici par des ami.e.s pour un spectacle, mais iels ont eu un empêchement de dernière minute."
     leandre "Du coup je me suis retrouvé tout seul... Comme les endroits avec beaucoup de monde et personne que je connais m'angoissent beaucoup, j'ai bu..."
     hide sadness
@@ -439,6 +450,7 @@ label del_2_2:
     leandre "Et initié au drag en m'emmenant dans les coulisses avec les danseuses de semaine et racontant sa vie."
     #hide leandre_laugh
     show joy at joy_right
+    play vfxR VFXJoy
     leandre "Tout du long, elle soulignait qu'elle comptait monter une troupe secondaire, exclusivement queer."
     leandre "\"Une manière de rendre à la communauté\", qu'elle disait. Son plan était de réserver au moins un soir de grande affluence en semaine au drag."
     hide joy
@@ -476,6 +488,7 @@ label del_2_3:
     $ current_textbox = "delaunay"
     #show leandre_shy at del_center
     show sadness at sadness_center
+    play vfxC VFXSadness
     leandre "Hm... La plupart du temps oui. Mais c'est quelque chose que j'essaye de travailler."
     leandre "J'ai toujours été assez réservé et discret. Je prends plutôt bien sa démarche puisque je ne réussis pas encore à aussi bien m'imposer qu'ellui."
     leandre "Je préfère ça à m'effacer dans le décor comme je le faisais avant..."
@@ -497,6 +510,7 @@ label del_2_3:
 
     #show leandre_laugh at del_right
     show joy at joy_right
+    play vfxR VFXJoy
     show leandre_neutre at del_right
     menu:
         leandre "C'est challengeant, et ça a déjà marché. Même Imani s'est retrouvée assez surprise."
@@ -513,6 +527,7 @@ label del_2_3:
 
     #show leandre_shy at del_right
     show sadness at sadness_right
+    play vfxR VFXSadness
     leandre "Je n'ai juste jamais eu une grande confiance en moi, et le regard des autres m'a toujours semblé particulièrement lourd à porter."
     leandre "Lorsqu'une situation était trop embarrassante, je choisissais toujours la fuite. Ou le déni, au choix."
     leandre "C'est devenu ma façon d'être, et les handicaps qui viennent avec."
@@ -540,11 +555,14 @@ label del_3:
     $ persistent.bg_parallax = False
     hide leandre_neutre with dissolve
     show curtain_close with dissolve
+    play vfxC SFXCurtainClose
     pause 1.5
     hide bar
-    show curtain_open 
+    show curtain_open
+    play vfxC SFXCurtainOpen
 
     show gradient
+    play music LongEllipse volume 0.7
     show text "{size=60}{color=#FFFFFF}Quelques mois passèrent...{/color}{/size}" at truecenter
 
     pause 6
@@ -553,7 +571,7 @@ label del_3:
     hide gradient with fade
 
 
-    play music ConfidenceIntro
+    stop music fadeout 1.0
 
     $ persistent.bg_parallax = True
 
@@ -573,6 +591,7 @@ label del_3:
     show auditorium
     
     show sadness at sadness_right
+    play vfxR VFXSadness
     show leandre_neutre at del_right with dissolve
 
     menu:
@@ -644,6 +663,7 @@ label del_3:
     $ current_textbox = "delaunay"
     #show leandre_laugh at del_right
     show joy at joy_right
+    play vfxR VFXJoy
     leandre "Ne t'en fais pas, je n'aurais pas commencé à en parler si je ne le sentais pas."
     hide joy
     # hide leandre_laugh 
@@ -666,6 +686,7 @@ label choix_del3:
     $ quick_menu = False
     
     show sadness at sadness_right
+    play vfxR VFXSadness
     #show leandre_shy at del right
     show leandre_neutre at del_right
     
@@ -793,8 +814,6 @@ label del_3_2:
     $ quick_menu = True
     $ indice_del -= 1
 
-    queue music ConfidenceAB
-    queue music ConfidenceB1
     hide sadness
     show leandre_neutre at del_center
     with fade
@@ -841,7 +860,6 @@ label del_3_2:
     hide sadness
     leandre "Alors que ça aurait dû être l'inverse..."
 
-    queue music ConfidenceB2
     #show leandre_shy at del_right
     leandre "M'aimer d'abord, découvrir mon intimité ensuite... Ou en même temps, à la rigueur."
     #hide leandre_shy
@@ -865,8 +883,6 @@ label del_3_2:
     leandre "Franchement? Je dois énormément à Mother... J'étais prêt à me raccrocher à n'importe quoi, et elle m'a tendu la main."
     leandre "Je m'étais lancé dans les vidéos pour payer mon opération mais Mother m'a proposé un travail à mi-temps..."
     leandre "Puis elle m'a présenté à ses ami.e.s drag artists lorsque j'ai soulevé l'idée que ça pouvait m'aider avec ma dysphorie de genre."
-
-    queue music ConfidenceOutro
     
     #show leandre_laugh at del_right
     show joy at joy_right
@@ -987,11 +1003,14 @@ label del_4:
     $ persistent.bg_parallax = False
     hide leandre_neutre with dissolve
     show curtain_close  with dissolve
+    play vfxC SFXCurtainClose
     pause 1.5
     hide auditorium 
-    show curtain_open 
+    show curtain_open
+    play vfxC SFXCurtainOpen
 
     show gradient with dissolve
+    play music LongEllipse volume 0.7
     show text "{size=60}{color=#FFFFFF}Le jour du spectacle...{/color}{/size}" at truecenter
 
     pause 6
@@ -1744,6 +1763,7 @@ label del_6_good_bad:
     with fade
     
     show bar with fade
+    play music BadEnd noloop
     $ current_textbox = "description"
   
     text "Tous.te.s étaient réuni.e.s face au comptoir, se faisant servir par notre merveilleux \"Dobarman\"."

@@ -94,23 +94,19 @@ define audio.CrowdDel3 = "audio/Amb/AP_Crowd_ShowDelSt3.ogg"
 define audio.CrowdDel4 = "audio/Amb/AP_Crowd_ShowDelSt4.ogg"
 
 # Liste des musiques
-define audio.GoodVibeIntro = "audio/Music/ON_GoodVibeIntro_V2.ogg"
-define audio.IntroGoodVibe1 = "audio/Music/ON_GoodVibeA_V2.ogg"
-define audio.IntroGoodVibe2 = "audio/Music/ON_GoodVibeB_V2.ogg"
-define audio.IntroGoodVibe3 = "audio/Music/AP_IntroGoodVib3_V1.ogg"
-define audio.IntroGoodVibe4 = "audio/Music/AP_IntroGoodVib4_V1.ogg"
 define audio.CabaretEntrance = "audio/Music/ON_CabaretEntrance_V1.ogg"
 define audio.CabaretIntro = "audio/Music/ON_CabaretIntro_V1_.ogg"
 define audio.CabaretLightVerse = "audio/Music/ON_CabaretLightVerse_V1.ogg"
 define audio.CabaretLightChorus = "audio/Music/ON_CabaretLightChorus_V1.ogg"
 define audio.CabaretLightSolo = "audio/Music/ON_CabaretLightSolo_V1.ogg"
-define audio.BackstageSt1 = "audio/Music/AP_Stinger1_V1.ogg"
-define audio.BackstageSt2 = "audio/Music/AP_Stinger2_V1.ogg"
-define audio.BackstageSt3 = "audio/Music/AP_Stinger3_V1.ogg"
-define audio.BackstageSt4 = "audio/Music/AP_Stinger4_V1.ogg"
-define audio.BackstageLoop = "audio/Music/AP_LogesTruc_V1.ogg"
+define audio.BadEndSt1 = "audio/Music/AP_Stinger1_V1.ogg"
+define audio.BadEndSt2 = "audio/Music/AP_Stinger2_V1.ogg"
+define audio.BadEndSt3 = "audio/Music/AP_Stinger3_V1.ogg"
+define audio.BadEndSt4 = "audio/Music/AP_Stinger4_V1.ogg"
+define audio.BadEnd = "audio/Music/AP_LogesTruc_V1.ogg"  
 define audio.BackstageDrumLoop = "audio/Music/ON_BackStageLoop_V1.ogg"
-define audio.BarMusic = "audio/Music/RUN_BarNeutral_V1.ogg"
+define audio.BarMusic = "audio/Music/AP_BarFull.ogg"
+define audio.BarMusicPartB = "audio/Music/AP_BarPartieB.ogg"
 define audio.ShowDelaunay = "audio/Music/AP_ShowDelaunay_V2.ogg"
 define audio.ShowGatsby = "audio/Music/AP_ShowGatsby_V1.ogg"
 define audio.ShowPeacock = "audio/Music/AP_ShowPeacock_V1.ogg"
@@ -169,8 +165,8 @@ imani "Ça te dit de t'inspeaer quelque part de plus cosy pour continuer à disc
 #PEA.2
 show bar with dissolve
 stop ambiance fadeout 2.0
-play music BarMusic volume 0.5
-play ambiance BarDay fadein 0.5
+play music BarMusicPartB volume 0.5
+
 $ current_textbox = "description"
 
 text "Nous sommes arrivé.e.s dans l'auditorium et nous nous sommes approché.e.s du comptoir derrière lequel brillait un mur de bouteilles de formes et couleurs uniques. Le paradis du parfait mixologue."
@@ -178,6 +174,8 @@ text "Nous avions depuis le bar une vue imprenable sur la scène, légèrement e
 text "L'immense lustre duquel pendaient des larmes de verre reflétait les spots de lumière à la manière d'une boule à facettes sur le papier peint texturé."
 text "Imani s'assit sur l'une des chaises hautes de bois verni et commanda un Virgin Moscow Mule au barman, et moi un Negroni."
 $ current_textbox = "peacock"
+
+play ambiance BarDay fadein 0.5
 
 imani "Tu verras, notre barman est un vrai génie en la matière. Il peut te concocter le meilleur mocktail de ta vie sans que tu t'y attendes."
 imani "Et des cocktails aussi, bien sûr !"

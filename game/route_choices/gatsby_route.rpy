@@ -94,23 +94,20 @@ define audio.CrowdDel3 = "audio/Amb/AP_Crowd_ShowDelSt3.ogg"
 define audio.CrowdDel4 = "audio/Amb/AP_Crowd_ShowDelSt4.ogg"
 
 # Liste des musiques
-define audio.GoodVibeIntro = "audio/Music/ON_GoodVibeIntro_V2.ogg"
-define audio.IntroGoodVibe1 = "audio/Music/ON_GoodVibeA_V2.ogg"
-define audio.IntroGoodVibe2 = "audio/Music/ON_GoodVibeB_V2.ogg"
-define audio.IntroGoodVibe3 = "audio/Music/AP_IntroGoodVib3_V1.ogg"
-define audio.IntroGoodVibe4 = "audio/Music/AP_IntroGoodVib4_V1.ogg"
 define audio.CabaretEntrance = "audio/Music/ON_CabaretEntrance_V1.ogg"
 define audio.CabaretIntro = "audio/Music/ON_CabaretIntro_V1_.ogg"
 define audio.CabaretLightVerse = "audio/Music/ON_CabaretLightVerse_V1.ogg"
 define audio.CabaretLightChorus = "audio/Music/ON_CabaretLightChorus_V1.ogg"
 define audio.CabaretLightSolo = "audio/Music/ON_CabaretLightSolo_V1.ogg"
-define audio.BackstageSt1 = "audio/Music/AP_Stinger1_V1.ogg"
-define audio.BackstageSt2 = "audio/Music/AP_Stinger2_V1.ogg"
-define audio.BackstageSt3 = "audio/Music/AP_Stinger3_V1.ogg"
-define audio.BackstageSt4 = "audio/Music/AP_Stinger4_V1.ogg"
+define audio.BadEndSt1 = "audio/Music/AP_Stinger1_V1.ogg"
+define audio.BadEndSt2 = "audio/Music/AP_Stinger2_V1.ogg"
+define audio.BadEndSt3 = "audio/Music/AP_Stinger3_V1.ogg"
+define audio.BadEndSt4 = "audio/Music/AP_Stinger4_V1.ogg"
+define audio.BadEnd = "audio/Music/AP_LogesTruc_V1.ogg"
 define audio.BackstageLoop = "audio/Music/AP_LogesTruc_V1.ogg"
 define audio.BackstageDrumLoop = "audio/Music/ON_BackStageLoop_V1.ogg"
-define audio.BarMusic = "audio/Music/RUN_BarNeutral_V1.ogg"
+define audio.BarMusic = "audio/Music/AP_BarFull.ogg"
+define audio.BarMusicPartB = "audio/Music/AP_BarPartieB.ogg"
 define audio.ShowDelaunay = "audio/Music/AP_ShowDelaunay_V2.ogg"
 define audio.ShowGatsby = "audio/Music/AP_ShowGatsby_V1.ogg"
 define audio.ShowPeacock = "audio/Music/AP_ShowPeacock_V1.ogg"
@@ -182,9 +179,7 @@ hide aimee_neutre with dissolve
 hide loges with dissolve
 scene black with fade
 
-play music BarMusic fadein 1.5 volume 0.5
-play ambiance BarDay fadein 0.5
-play music BarMusic volume 0.5
+play music BarMusicPartB volume 0.5
 
 
 
@@ -196,6 +191,8 @@ text "L'immense lustre duquel pendaient des larmes de verre reflétait les spots
 text "Aimée s'assit sur l'une des chaises hautes de bois verni et commanda un Bloody Mary au barman."
 
 show bar 
+play ambiance BarDay fadein 0.5
+
 
 $ current_textbox = "gatsby"
 
@@ -213,7 +210,8 @@ menu:
 
 
 $ quick_menu = True
-
+queue music BarMusic volume 0.5
+queue music BarMusicPartB volume 0.5
 aimee "Alors ! Raconte-moi tout ! D'où est-ce que tu viens ? Qu'est-ce que tu fais ici ? Comment est-ce que tu nous as connu.e.s ?"
 $ current_textbox = "anthrax"
 
@@ -1618,6 +1616,7 @@ label gat_6_good_bad:
     with fade
 
     show bar with fade
+    play music BadEnd noloop
    
     $ current_textbox = "description"
   
