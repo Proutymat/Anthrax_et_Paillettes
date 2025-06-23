@@ -136,6 +136,9 @@ $ quick_menu = True
 scene black with fade
 show loges
 show imani_neutre at pea_center with dissolve
+#show imani_laugh at pea_center with dissolve
+#hide imani_neutre
+
 
 play ambiance AmbLoges fadein 0.5
 
@@ -144,13 +147,18 @@ play ambiance AmbLoges fadein 0.5
 $ current_textbox = "peacock"
 
 imani "Je suis flattée ~"
+
+#show imani_neutre at pea_center
+#hide imani_laugh
 imani "Alors comme ça je t'ai fait une telle impression ?"
 $ current_textbox = "anthrax"
 
 anthrax "Il semblerait, j'adore ta vibe. Tu as un certain talent pour mettre les gens à l'aise."
 $ current_textbox = "peacock"
 
+show joy at joy_center
 imani "Ah ça ! On me le dit souvent !"
+hide joy
 imani "Même si parfois j'ai l'impression de faire trop vieux jeu."
 $ current_textbox = "anthrax"
 
@@ -164,14 +172,16 @@ $ current_textbox = "anthrax"
 anthrax "Comme dirait RuPaul, il ne faut pas écouter notre 'inner saboteur'."
 $ current_textbox = "peacock"
 
+#show imani_sassy at pea_center
+#hide imani_neutre
 imani "Word."
+#show imani_neutre at pea_center
+#hide imani_sassy
 
 $ quick_menu = False
-#show peacock_neutre at pea_right
 show imani_neutre at pea_right
    
 menu:
-    #peacock ""
     imani "Ça te dit de t'installer quelque part de plus cosy pour continuer à discuter ?"
     "Je te suis !":
         pass
@@ -205,12 +215,10 @@ text "Imani s'assît sur l'une des chaises hautes de bois verni et commanda un V
 
 
 $ quick_menu = False
-#show peacock_neutre at pea_right
 show bar with fade
 show imani_neutre at pea_right 
    
 menu:
-    #peacock ""
     imani "Est-ce que tu sais déjà quoi commander ?"
     "Un Pornstar Martini.":
      pass
@@ -225,16 +233,28 @@ $ quick_menu = True
 $ current_textbox = "peacock"
 
 imani "Tu verras, notre barman est un vrai génie en la matière. Il peut te concocter le meilleur mocktail de ta vie sans que tu t'y attendes."
+#show imani_laugh at pea_right
+#hide imani_neutre
 imani "Et des cocktails aussi, bien sûr !"
+#show imani_neutre at pea_right
+#hide imani_laugh
 $ current_textbox = "anthrax"
 
 anthrax "Tu ne bois pas d’alcool ?"
 $ current_textbox = "peacock"
 
+show joy at joy_right
 imani "Non ! Mais j’adore le concept. Mêler jus, sirops, eau gazeuse, et créer quelque chose d’un peu plus fancy qu’une limonade, je prends !"
+hide joy
 $ current_textbox = "anthrax"
 
+#show imani_laugh at pea_right
+#hide imani_neutre
 anthrax "Je me sens bête de prendre un Martini du coup..."
+#show imani_neutre at pea_right
+#hide imani_laugh
+
+
 $ current_textbox = "peacock"
 
 imani "Oh non ! Ne t’en fais pas, tant que tu es raisonnable dans ta consommation, tout va bien !"
@@ -247,11 +267,9 @@ $ current_textbox = "peacock"
 $ current_textbox = "anthrax"
 
 $ quick_menu = False
-#show peacock_neutre at pea_right
 show imani_neutre at pea_right
    
 menu:
-    #peacock ""
     imani "Alors, dis-moi. C’est quoi ton drag ?"
     "Mon drag ?":
      pass
@@ -265,8 +283,11 @@ $ quick_menu = True
 
 
 $ current_textbox = "peacock"
-
+#show imani_laugh at pea_right
+#hide imani_neutre
 imani "Oui ! C’est pour ça que tu es là après tout !"
+#show imani_neutre at pea_right
+#hide imani_laugh
 $ current_textbox = "anthrax"
 
 anthrax "Oh. Eh bien... Je dirais que c’est plus du drag quing. Je ne me fixe pas à un genre précis, parfois pas même l’espèce humaine pour tout dire..."
@@ -274,20 +295,24 @@ anthrax "J’ai commencé dans le confort de mon appart, sur les réseaux sociau
 anthrax "Mais le burlesque, c’est quelque chose qui m’a toujours attiré.e. C’est culturel, niche, voluptueux... À la fois décent et indécent."
 anthrax "Ça me parle."
 
+show joy at joy_right
 imani "À moi aussi tu me parles ! Je comprends mieux ce que Mother a vu chez toi !"
+hide joy
 $ current_textbox = "anthrax"
 
 anthrax "Ah bah merci..."
 
+#show imani_laugh at pea_right
+#hide imani_neutre
 imani "Non, non ! C’était un compliment. Je sais que j’ai beaucoup de shade à revendre, mais là, c’était sincère."
-
+#show imani_neutre at pea_right
+#hide imani_laugh
 
 #Choix PEA.2
 label choix_pea2:
     $ quick_menu = False
     
     show imani_neutre at pea_right
-    with fade
 
     menu: 
         "Tu m'a l'air la plus engagée au sein de la troupe...":
@@ -299,6 +324,7 @@ label choix_pea2:
           
 
 #PEA.2.1
+#+1
 label pea_2_1:
     $ quick_menu = True
     
@@ -308,108 +334,128 @@ label pea_2_1:
 
     anthrax "Tu es la personne qui m'a l'air la plus engagée au sein de la troupe."
     $ current_textbox = "peacock"
-
+    #show imani_laugh at pea_right
+    #hide imani_neutre
     imani "Oh ! Ne dis pas ça aux autres, les oreilles vont chauffer !"
+    #show imani_neutre at pea_right
+    #hide imani_laugh
     imani "C’est vrai que Léandre a l’air plus discret mais n’en est pas moins activiste."
     imani "Et Aimée... Eh bien, je crois que tu as remarqué qu’iel avait plutôt grande gueule..."
     imani "Même l’Androgame est un lieu très central dans la sphère queer de la ville. Toutes les Paillettes vont défiler aux prides et scandent des slogans."
 
 
-$ quick_menu = False
-#show peacock_neutre at pea_right
-show imani_neutre at pea_right
+    $ quick_menu = False
+    show imani_neutre at pea_right with dissolve
    
-menu:
-    #peacock ""
-    imani "Et c’est un peu devenu une tradition même que l’on fasse un discours sur le char, après la minute de silence."
+    menu:
+        imani "Et c’est un peu devenu une tradition même que l’on fasse un discours sur le char, après la minute de silence."
 
-    "C'est vrai que je vous y avais vu.e.s quelques fois. ":
-     pass
-    "Je n'avais pas fait le rapprochement...":
-     pass
-    "Oh! J'avais complêtement oublié !":
-     pass
-
-
-$ quick_menu = True
+        "C'est vrai que je vous y avais vu.e.s quelques fois. ":
+         pass
+        "Je n'avais pas fait le rapprochement...":
+         pass
+        "Oh! J'avais complêtement oublié !":
+         pass
 
 
-$ current_textbox = "peacock"
+    $ quick_menu = True
 
-imani "Même en dehors du drag, je suis très politisée. Contre le racisme, l’islamophobie, et le trafic d’enfants avec l’adoption internationale."
-$ current_textbox = "anthrax"
 
-anthrax "L’adoption internationale ?"
-$ current_textbox = "peacock"
+    $ current_textbox = "peacock"
+    #show imani_nosmile at pea_right
+    # #hide imani_neutre
+    imani "Même en dehors du drag, je suis très politisée. Contre le racisme, l’islamophobie, et le trafic d’enfants avec l’adoption internationale."
+    $ current_textbox = "anthrax"
 
-imani "Oui, c’est assez méconnu. Mais c’est la dure réalité d’une grande partie des enfants adoptés de l’étranger."
-imani "Le déracinement, la méconnaissance de ses origines et la quête de soi qui vont avec."
-$ current_textbox = "anthrax"
+    anthrax "L’adoption internationale ?"
+    $ current_textbox = "peacock"
 
-anthrax "Je l’ignorais..."
-$ current_textbox = "peacock"
+    imani "Oui, c’est assez méconnu. Mais c’est la dure réalité d’une grande partie des enfants adoptés de l’étranger."
+    imani "Le déracinement, la méconnaissance de ses origines et la quête de soi qui vont avec."
+    #show imani_neutre at pea_right
+    #hide imani_nosmile
+    $ current_textbox = "anthrax"
 
-imani "Ce n’est pas la première chose à laquelle on pense en me voyant après tout."
+    anthrax "Je l’ignorais..."
+    $ current_textbox = "peacock"
 
-$ quick_menu = False
-#show peacock_neutre at pea_right
-show imani_neutre at pea_right
+    #show imani_laugh at pea_right
+    #hide imani_neutre
+    imani "Ce n’est pas la première chose à laquelle on pense en me voyant après tout."
+
+
+
+    $ quick_menu = False
+    show imani_neutre at pea_right
    
-menu:
-    #peacock ""
-    imani "J’aurais très bien pu être un petit-fils d’immigrés, mais non ! Adopté par des parents français !"
-    "Et comment est-ce que tu le vis? Si ce n'est pas indiscret...":
-     pass
-    "Ça n'a pas dû être simple... Ça s'est bien passé ?":
-     pass
-    "On ne se l'imagine pas du tout en te voyant. Tu le vis bien ?":
-     pass
+    menu:
+        imani "J’aurais très bien pu être un petit-fils d’immigrés, mais non ! Adopté par des parents français !"
+        "Et comment est-ce que tu le vis? Si ce n'est pas indiscret...":
+         pass
+        "Ça n'a pas dû être simple... Ça s'est bien passé ?":
+         pass
+        "On ne se l'imagine pas du tout en te voyant. Tu le vis bien ?":
+         pass
 
 
-$ quick_menu = True
+    $ quick_menu = True
 
 
-$ current_textbox = "peacock"
-
-imani "Hm... Plutôt bien. J’aime beaucoup ma famille adoptive, même si ça a posé de nombreux problèmes avec le temps."
-imani "La discussion a toujours été très ouverte avec mes parents sur ce sujet-là, et ils ne sont pas responsables des travers de procédures qu’il y a eu."
-imani "C’est plutôt une incompréhension de leur part parfois, quand j’essaye de me rapprocher de mes origines."
-imani "Je leur en ai un peu voulu lorsque j’étais adolescent, mais je sais maintenant que c’est parce que ça atteint simplement leurs limites éducationnelles."
-imani "C’est un peu vexant parfois, mais on fait avec. Et ça ne change rien à l’amour et au soutien qu’ils me donnent. Je m’estime donc très chanceux."
-imani "Je me sers, pour le coup, beaucoup du drag pour explorer cette facette de ma personne."
-$ current_textbox = "anthrax"
-
-
-$ quick_menu = False
-#show peacock_neutre at pea_right
-show imani_neutre at pea_right
-   
-menu:
-    #peacock ""
-    imani "Et remédier un peu au white-washing que j’ai intégré en grandissant."
-
-    "C'est un sacré parcours en perspective. Pas trop la pression ?":
-     pass
-    "C'est beau comme message à porter, un peu lourd, non ?":
-     pass
-    "Tu as de sacrées épaules pour te lancer là dedans, bravo !":
-     pass
+    $ current_textbox = "peacock"
+    #show imani_neutre at pea_right
+    #hide imani_laugh
+    imani "Hm... Plutôt bien. J’aime beaucoup ma famille adoptive, même si ça a posé de nombreux problèmes avec le temps."
+    imani "La discussion a toujours été très ouverte avec mes parents sur ce sujet-là, et ils ne sont pas responsables des travers de procédures qu’il y a eu."
+    imani "C’est plutôt une incompréhension de leur part parfois, quand j’essaye de me rapprocher de mes origines."
+    #show imani_nosmile at pea_right
+    #hide imani_neutre
+    imani "Je leur en ai un peu voulu lorsque j’étais adolescent, mais je sais maintenant que c’est parce que ça atteint simplement leurs limites éducationnelles."
+    imani "C’est un peu vexant parfois, mais on fait avec. Et ça ne change rien à l’amour et au soutien qu’ils me donnent. Je m’estime donc très chanceux."
+    #show imani_laugh at pea_right
+    #hide imani_nosmile
+    imani "Je me sers, pour le coup, beaucoup du drag pour explorer cette facette de ma personne."
+    $ current_textbox = "anthrax"
 
 
-$ quick_menu = True
+    $ quick_menu = False
+    show imani_neutre at pea_right
+    #hide imani_laugh
 
-$ current_textbox = "peacock"
+    menu:
+        imani "Et remédier un peu au white-washing que j’ai intégré en grandissant."
 
-imani "J'ai énormément la pression ! Haha !"
-imani "Je me sens parfois toujours pas légitime, alors que je suis littéralement maghrébin."
-imani "Sérieusement, c’est quelle logique ?!"
-$ current_textbox = "anthrax"
+        "C'est un sacré parcours en perspective. Pas trop la pression ?":
+         pass
+        "C'est beau comme message à porter, un peu lourd, non ?":
+         pass
+        "Tu as de sacrées épaules pour te lancer là dedans, bravo !":
+         pass
 
-anthrax "J’avais tout de même raison quand je disais que tu avais l’air d’être la personne la plus militante..."
 
-call pea_3 from _call_pea_3_4 
+    $ quick_menu = True
+
+    $ current_textbox = "peacock"
+
+    #show imani_laugh at pea_right
+    #hide imani_neutre
+    imani "J'ai énormément la pression, oui ! Haha !"
+    #show imani_neutre at pea_right
+    #hide imani_laugh
+    imani "Je me sens parfois toujours pas légitime, alors que je suis littéralement maghrébin."
+    #show imani_sassy at pea_right
+    #hide imani_neutre
+    imani "Sérieusement, c’est quelle logique ?!"
+    #show imani_neutre at pea_right
+    #hide imani_sassy
+
+    $ current_textbox = "anthrax"
+
+    anthrax "J’avais tout de même raison quand je disais que tu avais l’air d’être la personne la plus militante..."
+
+    call pea_3 from _call_pea_3_4 
 
 #PEA.2.2
+#+0
 label pea_2_2:
     $ quick_menu = True
     
@@ -420,20 +466,26 @@ label pea_2_2:
     anthrax "Est-ce que tu peux m'en dire davantage sur ce que tu fais ? Mother a piqué ma curiosité, mais je brûle d'avoir plus de détails."
     $ current_textbox = "peacock"
 
+
     imani "Eh bien... Comme Mother l'a expliqué. Je me spécialise dans tout ce qui est \"vocal\"..."
     imani "Mais c'est plus de l'ordre de l'humour, de la lecture, du chant..."
+    show flirt at flirt_center
     imani "Récemment, je m'intéresse plus à comment utiliser davantage mon corps dans mes numéros."
+    hide flirt
     imani "Avec de la danse notamment."
     $ current_textbox = "anthrax"
 
     anthrax "Elle ne l'a pas précisé ça !"
     $ current_textbox = "peacock"
 
+    #show imani_laugh at pea_center
+    #hide imani_neutre
     imani "C'est suffisamment récent pour que tu en aies l'exclusivité."
+    #show imani_neutre at pea_center
+    #hide imani_laugh
 
 
     $ quick_menu = False
-    #show peacock_neutre at pea_right
     show imani_neutre at pea_right
    
     menu:
