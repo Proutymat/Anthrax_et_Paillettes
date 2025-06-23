@@ -1,3 +1,5 @@
+define audio.CrushChoice = "audio/Music/AP_CrushChoice.ogg"
+
 label route_return:
     scene black
     with fade
@@ -14,6 +16,7 @@ define short_fade = Fade(0.1, 1, 0.2)
 
 label choose_route:
     scene black
+    play music CrushChoice
      
     if _preferences.language == "English":
         show expression "images/Backgrounds/crush_choice_background_eng.png"

@@ -801,8 +801,10 @@ define type_silent = ['<silence 1.0>']
 define audio.IntroConstruction = 'audio/SFX/AP_SFX_Intro_Construction.ogg'
 define audio.IntroRagots = 'audio/SFX/AP_SFX_Intro_Ragots.ogg'
 define audio.IntroRoaring = 'audio/SFX/AP_SFX_Intro_Roaring20s.ogg'
-define audio.IntroSmartphone = 'audio/SFX/AP_SFX_Intro_Roaring20s.ogg'
+define audio.IntroSmartphone = 'audio/SFX/AP_SFX_Intro_Smartphone.ogg'
 define audio.DoorAndrogame = 'audio/SFX/AP_SFX_Intro_DoorAndrogame.ogg'
+define audio.SFXCurtainOpen = 'audio/SFX/AP_Curtain_Open.ogg'
+define audio.SFXCurtainClose = 'audio/SFX/AP_Curtain_Close.ogg'
 define audio.ShortEllipse = 'audio/SFX/AP_SFX_Intro_Ellipse_V2.ogg'
 define audio.LongEllipse = 'audio/SFX/AP_SFX_Intro_LongEllipse_V2.ogg'
 define audio.Gribouillis = 'audio/SFX/AP_SFX_Gribouillis.ogg'
@@ -822,8 +824,8 @@ define ui_click = ['audio/SFX/AP_UI_Click-001.ogg','audio/SFX/AP_UI_Click-002.og
 define ui_back = ['audio/SFX/AP_UI_Back_V4-001.ogg','audio/SFX/AP_UI_Back_V4-002.ogg','audio/SFX/AP_UI_Back_V4-003.ogg','audio/SFX/AP_UI_Back_V4-004.ogg','audio/SFX/AP_UI_Back_V4-005.ogg','audio/SFX/AP_UI_Back_V4-006.ogg']
 
 # Liste des ambiances
-define audio.AmbAndrogameDay = "audio/Amb/Amb_CabaretDay_V3.ogg"
-define audio.AmbLoges = "audio/Amb/Amb_LogesDay_V4.ogg"
+define audio.AmbAndrogameDay = "audio/Amb/Amb_Cabaret_V4.ogg"
+define audio.AmbLoges = "audio/Amb/Amb_LogesDay_V5.ogg"
 define audio.AmbRue = "audio/Amb/Amb_Rue_V2.ogg"
 define audio.AmbLogesNight = "audio/Amb/Amb_LogesNight_V3.ogg"
 define audio.AmbDelShow = "audio/Amb/AP_Amb_ShowDel_V1.ogg"
@@ -834,6 +836,13 @@ define audio.CrowdDel1 = "audio/Amb/AP_Crowd_ShowDelSt1.ogg"
 define audio.CrowdDel2 = "audio/Amb/AP_Crowd_ShowDelSt2.ogg"
 define audio.CrowdDel3 = "audio/Amb/AP_Crowd_ShowDelSt3.ogg"
 define audio.CrowdDel4 = "audio/Amb/AP_Crowd_ShowDelSt4.ogg"
+
+#Voix
+define audio.GLaugh1 = "audio/Voice/AP_Voice_G_Laugh-001.ogg"
+define audio.GLaugh2 = "audio/Voice/AP_Voice_G_Laugh-002.ogg"
+define audio.GLaugh3 = "audio/Voice/AP_Voice_G_Laugh-003.ogg"
+define audio.GLaugh4 = "audio/Voice/AP_Voice_G_Laugh-004.ogg"
+define audio.GLaugh5 = "audio/Voice/AP_Voice_G_Laugh-005.ogg"
 
 # Liste des musiques
 define audio.CabaretEntrance = "audio/Music/ON_CabaretEntrance_V1.ogg"
@@ -847,10 +856,11 @@ define audio.BackstageSt3 = "audio/Music/AP_Stinger3_V1.ogg"
 define audio.BackstageSt4 = "audio/Music/AP_Stinger4_V1.ogg"
 define audio.BackstageLoop = "audio/Music/AP_LogesTruc_V1.ogg"
 define audio.BackstageDrumLoop = "audio/Music/ON_BackStageLoop_V1.ogg"
-define audio.BarMusic = "audio/Music/RUN_BarNeutral_V1.ogg"
+define audio.BarMusic = "audio/Music/AP_BarFull.ogg"
 define audio.ShowDelaunay = "audio/Music/AP_ShowDelaunay_V2.ogg"
 define audio.ShowGatsby = "audio/Music/AP_ShowGatsby_V1.ogg"
 define audio.ShowPeacock = "audio/Music/AP_ShowPeacock_V1.ogg"
+define audio.CrushChoice = "audio/Music/AP_CrushChoice.ogg"
 
 # Déclarez les personnages utilisés dans le jeu.
 define mother = Character('Mother', color="#b51963", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=30, callback=type_sound, cb_cps=30, cb_boopfile=M_type_sounds)
@@ -874,7 +884,7 @@ label start:
     $ quick_menu = False
     scene black
     with fade
-    stop music fadeout 1.0
+    stop music fadeout 0.2
 
     # Initialiser la variable utilisée dans l'écran d'input
     default temp_name = ""
@@ -924,7 +934,7 @@ label onboarding:
 
     text "L'Androgame..."
 
-    play music IntroConstruction noloop
+    play music IntroConstruction noloop volume 0.7
     text "Cela fait un moment maintenant qu'il a été reprit, et après de longs travaux, il fait à présent revivre le quartier comme je ne l'avais jamais vu auparavant."
     queue music IntroRagots noloop
     text "Et puis même au sein de la commu', ça a fait jaser. Toutes les têtes d'affiches sont queer."
@@ -944,7 +954,7 @@ label onboarding:
     text "Je ne pensais pas être sélectionné·e ! Et encore moins passer un entretien avec Mother, la patronne du cabaret. "
     
     stop ambiance fadeout 1.0
-    play music CabaretEntrance volume 0.7
+    play music CabaretEntrance volume 0.7 noloop
     hide devanture
     scene black with fade
     show auditorium  with dissolve
@@ -965,8 +975,6 @@ label onboarding:
     hide joy with dissolve
 
     queue music CabaretIntro volume 0.7
-    queue music CabaretLightVerse volume 0.7
-
 
     $ current_textbox = "description"
 
@@ -974,7 +982,7 @@ label onboarding:
     text "Une fois passée la porte pivotante, la hauteur sous plafond et les lustres géométriques faillirent me donner un torticolis. "
     text "Je devais presque plisser les yeux pour repérer tous les petits détails dans la marqueterie, les dorures et les reliefs dans le papier peint."
     # retirer overlay
-
+    queue music CabaretLightVerse volume 0.7
     $ current_textbox = "anthrax"
 
     anthrax "Oui. Et puis, c’est le genre d’établissement qu’il est difficile de louper !"
@@ -1011,7 +1019,7 @@ label onboarding:
     hide mother with dissolve
     scene black with fade
 
-    play sfx LongEllipse volume 0.8
+    play music BackstageDrumLoop volume 0.5
     
     $ current_textbox = "description" 
 
@@ -1028,7 +1036,7 @@ label onboarding:
     
     show loges
 
-    play ambiance AmbLoges fadein 1
+    play ambiance AmbLoges fadein 1 volume 0.8
 
     show imani_neutre at pea_left with dissolve
 
@@ -1166,6 +1174,7 @@ label onboarding:
     show aimee_neutre at gat_left with dissolve
     show joy at joy_left
     play vfxL VFXJoy
+    voice GLaugh1
     inconnu "C'est tout sauf classique, ton striptease !"
     hide joy
     
@@ -1173,7 +1182,7 @@ label onboarding:
 
     show angry at angry_right
     play vfxR VFXAnger
-    text "Léandre se renfrogna davantage. Apparement, les deux étaient suffisamment bon·ne·s ami·e·s pour se taquiner et s'embarasser ainsi."
+    text "Léandre se renfrogna davantage. Apparemment, les deux étaient suffisamment bon·ne·s ami·e·s pour se taquiner et s'embarasser ainsi."
     hide angry
     hide leandre_neutre with dissolve
 
@@ -1192,12 +1201,13 @@ label onboarding:
     hide aimee_neutre with dissolve
     
     stop ambiance fadeout 1
-    stop music fadeout 2.0
+    stop music fadeout 0.5
     jump route_choice_intro
 
 
 
 label route_choice_intro:
+    play music CrushChoice
     show loges 
     show mother at mother_center
     $ current_textbox = "mother"
