@@ -136,6 +136,7 @@ scene black with fade
 show loges
 show aimee_neutre at gat_center with dissolve
 play ambiance AmbLoges fadein 2.0
+stop music fadeout 0.1
 
 #GAT.1
 show aimee_neutre at gat_center with dissolve

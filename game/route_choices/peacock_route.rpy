@@ -132,6 +132,7 @@ $ quick_menu = True
 scene black with fade
 show loges
 show imani_neutre at pea_center with dissolve
+stop music fadeout 0.1
 
 play ambiance AmbLoges fadein 0.5
 

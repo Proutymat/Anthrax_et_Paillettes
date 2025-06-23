@@ -860,6 +860,7 @@ define audio.BarMusic = "audio/Music/AP_BarFull.ogg"
 define audio.ShowDelaunay = "audio/Music/AP_ShowDelaunay_V2.ogg"
 define audio.ShowGatsby = "audio/Music/AP_ShowGatsby_V1.ogg"
 define audio.ShowPeacock = "audio/Music/AP_ShowPeacock_V1.ogg"
+define audio.CrushChoice = "audio/Music/AP_CrushChoice.ogg"
 
 # Déclarez les personnages utilisés dans le jeu.
 define mother = Character('Mother', color="#b51963", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=30, callback=type_sound, cb_cps=30, cb_boopfile=M_type_sounds)
@@ -1200,12 +1201,13 @@ label onboarding:
     hide aimee_neutre with dissolve
     
     stop ambiance fadeout 1
-    stop music fadeout 2.0
+    stop music fadeout 0.5
     jump route_choice_intro
 
 
 
 label route_choice_intro:
+    play music CrushChoice
     show loges 
     show mother at mother_center
     $ current_textbox = "mother"

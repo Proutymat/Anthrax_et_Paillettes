@@ -151,6 +151,8 @@ $ quick_menu = True
 default indice_del = 0
 scene black with fade
 show loges
+stop music fadeout 0.1
+play ambiance AmbLoges fadein 2.0
 #show leandre_shy at del_center with dissolve
 show leandre_neutre at del_center with dissolve
 
