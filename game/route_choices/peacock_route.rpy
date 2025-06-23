@@ -486,7 +486,7 @@ label pea_2_2:
 
 
     $ quick_menu = False
-    show imani_neutre at pea_right
+    show imani_neutre at pea_right with dissolve
    
     menu:
 
@@ -505,11 +505,19 @@ label pea_2_2:
 
    
     $ current_textbox = "peacock"
-
+    
+    #show imani_laugh at pea_right
+    #hide imani_neutre
     imani "Je suis né avec deux pieds gauches, je te jure !"
-    imani "C'est pas la faute de mes parents d'avoir essayé."
+    #show imani_emo at pea_right
+    #hide imani_laugh
+    imani "C'est pas la faute de mes parents d'avoir essayé..."
+    #show imani_nosmile at pea_right
+    #hide imani_emo
     imani "Mais à défaut d'avoir appris à danser, ils m'ont introduit très jeune au monde du spectacle, en m'emmenant voir des comédies musicales, des concerts et des ballets."
     imani "C'est sûrement pour ça que je fais de la régie d'ailleurs..."
+    #show imani_nautre at pea_right
+    #hide imani_nosmile
     imani "Au moins, quand les procédures sont protocolaires, je n'ai pas à m'inquiéter de ma maladresse."
     $ current_textbox = "anthrax"
 
@@ -517,7 +525,11 @@ label pea_2_2:
     anthrax "Encore moins si tu commences à inclure de la danse à un acte dans lequel tu chantes ou tu lipsync déjà."
     $ current_textbox = "peacock"
 
+    #show imani_laugh at pea_right
+    #hide imani_neutre
     imani "C'est gentil de dire ça... Tu me flattes."
+    #show imani_neutre at pea_right
+    #hide imani_laugh
     $ current_textbox = "anthrax"
 
     anthrax "Et sinon, c'est un genre de danse en particulier que tu apprends en ce moment ?"
@@ -527,7 +539,6 @@ label pea_2_2:
 
 
     $ quick_menu = False
-    #show peacock_neutre at pea_right
     show imani_neutre at pea_right
    
     menu:
@@ -544,12 +555,15 @@ label pea_2_2:
     $ quick_menu = True
 
     $ current_textbox = "peacock"
-
+    #show imani_laugh at pea_right
+    #hide imani_neutre
     imani "Eh bien, mon nom de scène est Peacock après tout. Ce serait bête de ne pas l'exploiter un minimum."
     imani "Et pour tout dire, c'est même ce qui a initialement inspiré le nom."
+    #show imani_emo at pea_right
+    #hide imani_laugh
     imani "Je n'avais juste pas encore les compétences pour prétendre être à la hauteur de mon titre !"
-    #emote/son ironie, ou quelque chose du style
-
+    #show imani_laugh at pea_right
+    #hide imani_emo
     $ current_textbox = "anthrax"
 
     anthrax "Il me faudrait le voir pour le croire alors, mais ça ne saurait tarder !"
@@ -557,6 +571,7 @@ label pea_2_2:
     call pea_3 from _call_pea_3 
 
 #PEA.2.3
+#-1
 label pea_2_3:
     $ quick_menu = True
 
@@ -578,8 +593,9 @@ label pea_2_3:
 
 
     $ quick_menu = False
-    #show peacock_neutre at pea_right
     show imani_neutre at pea_right
+    #show imani_laugh at pea_right
+    #hide imani_neutre
    
     menu:
         imani "En tant que technicien, peut-être, mais je suis encore assez débutant en drag. Ça fait seulement deux ans que j'ai officiellement commencé."
@@ -595,23 +611,34 @@ label pea_2_3:
 
     $ current_textbox = "peacock"
 
+    #show imani_neutre at pea_right
+    #hide imani_laugh
     imani "C'est pour cela que j'ai dit \"débutant\" et non \"novice\"."
     imani "Enfin bref, c'est Delaunay qui m'a costumé pour la première fois après une soirée arrosée pour fêter la fin d'un show."
     imani "Et j'y ai pris vraiment goût."
+    #show imani_laugh at pea_right
+    #hide imani_neutre
     imani "Comme mon contrat se terminait, je suis allé bosser ailleurs en régie, mais j'ai gardé contact avec les filles."
+    #show imani_neutre at pea_right
+    #hide imani_laugh
     $ current_textbox = "anthrax"
 
     anthrax "Et je suppose que tu as continué de ton côté avant de revenir, mais cette fois en intégrant la troupe ?"
     $ current_textbox = "peacock"
 
+    #show imani_laugh at pea_right
+    #hide imani_neutre
     imani "Très bien deviné !"
+    #show imani_emo at pea_right
+    #hide imani_laugh
     imani "Au départ, Mother n'était pas très encline, et j'ai mis un moment à faire mes preuves."
+    #show imani_neutre at pea_right
+    #hide imani_emo
     imani "Mais du coup, on a bidouillé une sorte de contrat pour que je file un coup de main en technique de temps en temps, tout en peaufinant mon drag."
     imani "Et au final, ça s'est plutôt bien goupillé. J'avais une stabilité financière et un espace familier, dans lequel je pouvais progresser."
 
 
     $ quick_menu = False
-    #show peacock_neutre at pea_right
     show imani_neutre at pea_right
    
     menu:
@@ -628,10 +655,18 @@ label pea_2_3:
 
     $ current_textbox = "peacock"
 
+    #show imani_laugh at pea_right
+    #hide imani_neutre
     imani " C'était quelque chose !"
+    #show imani_emo at pea_right
+    #hide imani_laugh
     imani "J'étais tellement nerveuse que je suis allée vomir deux fois avant de monter sur scène !"
+    #show imani_laugh at pea_right
+    #hide imani_emo
     imani "Mais une fois dessus, c'était comme si je m'étais fait posséder par quelqu'un d'autre, Peacock avait complètement prit le contrôle sur ma personne."
     imani "C'était grisant !"
+    #show imani_neutre at pea_right
+    #hide imani_laugh
     imani "J'étais tellement habitué à être sur le derrière de la scène, à faire en sorte que tout se déroule bien, que je n'avais jamais envisagé autant aimer être sur le devant."
 
     anthrax "J'ai hâte que ce soit mon tour !"
@@ -651,7 +686,6 @@ label pea_3:
     text "Cela faisait plusieurs minutes que je cherchais Imani, avec qui j'étais supposé.e répéter une partie de mon numéro, que l'on construisait ensemble."
     text "Après avoir fait trois fois le tour du bâtiment, je finis par retourner sur les planches de la scène, pensif.ve."
     text "Et en toute honnêteté, un peu inquiet.e."
-
     queue music ConfidenceA1
     text "En relevant le regard vers le balcon, je le remarquai appuyé.e contre la balustrade, me faisant signe de le rejoindre, un verre de jus à moitié vide à la main avec lequel il jouait."
 
@@ -676,38 +710,47 @@ label pea_3:
 
     $ current_textbox = "peacock"
 
+    #show imani_laugh at pea_right
+    #hide imani_neutre
     imani "Moi aussi ! Ça fait une demie-heure que je te cherche ! On a dû faire que de se louper."
+    #show imani_neutre at pea_right
+    #hide imani_laugh
     imani "Bon, au final, je me suis pris à boire et j'ai arrêté de bouger pour que tu puisses me retrouver !"
     $ current_textbox = "anthrax"
 
     anthrax "J'aurais pu tourner encore longtemps, dis ! Pourquoi tu ne m'as pas appelé.e ?"
     $ current_textbox = "peacock"
-
-    imani "J'ai laissé mon téléphone dans les loges, j'avais la flemme d'aller le chercher !"
+    #show imani_nosmile at pea_right
+    #hide imani_neutre
+    imani "J'ai laissé mon téléphone dans les loges, j'avais la flemme d'aller le chercher."
     $ current_textbox = "anthrax"
 
     anthrax "Ah... Tu n'es pas possible."
     $ current_textbox = "peacock"
 
+    #show imani_laugh at pea_right
+    #hide imani_neutre
     imani "Roh, arrête~ C'est comme ça qu'on m'aime !"
     $ current_textbox = "anthrax"
-
+    #show imani_neutre at pea_right
+    #hide imani_laugh
     anthrax "Oui, oui... Bien sûr. Qu'est-ce que tu bois ?"
     $ current_textbox = "peacock"
+
 
     imani "Un jus d'abricot. Classique et délicieux !"
     $ current_textbox = "description"
 
+    #show overlay
     text "Il termina le fond de son verre d'une traite, avant de le poser sur l'une des tables qui n'avaient pas encore été dressées pour la soirée."
 
 
     $ quick_menu = False
-    #show peacock_neutre at pea_right
     show imani_neutre at pea_right
    
     menu:
         text "Il termina le fond de son verre d'une traite, avant de le poser sur l'une des tables qui n'avaient pas encore été dressées pour la soirée."
-
+        
         "Quand j'y repense, je ne t'ai jamais vu boire.":
          pass
         "Tu aimes vraiment les softs. Haha !":
@@ -715,16 +758,18 @@ label pea_3:
         "Je ne t'ai vu tourner qu'à l'eau dernièrement, ça change !":
          pass
 
-
+    #hide overlay
 
 
     $ quick_menu = True
 
     $ current_textbox = "peacock"
-
+    #show imani_laugh at pea_right
+    #hide imani_neutre
     imani "Hm... Peut-être parce qu’il est 16h00 de l’après-midi et qu’il est un peu tôt à mon goût pour ça ?"
     $ current_textbox = "anthrax"
-
+    #show imani_nosmile at pea_right
+    #hide imani_laugh
     anthrax "Non ! Pas dans ce sens là, je n’ai pas envie de passer pour un.e ivrogne ! Je me faisais juste la réflexion..."
     $ current_textbox = "peacock"
 
@@ -740,10 +785,12 @@ label choix_pea3:
     $ quick_menu = False
 
     show imani_neutre at pea_right
+    #show imani_sassy at pea_right
+    #hide imani_nosmile
     with fade
 
     menu: 
-        imani "Ça, je ne te le fais pas dire ! Haha !"
+        imani "Ça, je ne te le fais pas dire."
         "Je me sens bête d'avoir amené le sujet comme ça...":
             call pea_3_1 from _call_pea_3_1_1 
         "Comment est-ce que tu es tombé dedans ?":
@@ -752,16 +799,19 @@ label choix_pea3:
             call pea_3_3 from _call_pea_3_3 
 
 #PEA.3.1
+#-1
 label pea_3_1:
     $ quick_menu = True
 
     show imani_neutre at pea_center
+    #show imani_sassy at pea_center
     with fade
     $ current_textbox = "anthrax"
 
     anthrax "Je me sens bête maintenant, d'avoir amené le sujet comme ça..."
     $ current_textbox = "peacock"
-
+    #show imani_nosmile at pea_center
+    #hide imani_sassy
     imani "En même temps, boire, c’est tellement normalisé dans notre société. Et encore plus dans nos communautés."
     imani "Je ne peux pas t’en vouloir, tu ne pouvais pas savoir..."
     $ current_textbox = "anthrax"
@@ -770,14 +820,18 @@ label pea_3_1:
     $ current_textbox = "peacock"
 
     imani "Ouais... Dis-toi qu’ils pratiquaient encore la tradition du petit shot avant le spectacle avant mon arrivée."
+    #show imani_neutre at pea_right
+    #hide imani_nosmile
     imani "Mais je leur ai dit que ça me mettait un peu mal à l’aise, et la troupe a finalement été très compréhensive."
     imani "Surtout que ce n’est que bien plus tard que je leur ai parlé de mes anciens problèmes d’alcoolisme."
+    #show imani_laugh at pea_right
+    #hide imani_neutre
     imani "C’est aussi comme ça que je me suis rendu compte que j’étais tombé sur ma famille de cœur."
     imani "Et ça ne nous empêche pas de nous retrouver au bar après la fermeture pour boire un verre de temps en temps."
 
     $ quick_menu = False
-    #show peacock_neutre at pea_right
     show imani_neutre at pea_right
+    #hide imani_laugh
    
     menu:
         imani "Je réussis à en surprendre plus d’un avec mes idées de mocktails !"
@@ -794,12 +848,14 @@ label pea_3_1:
 
     $ current_textbox = "peacock"
 
+    #show imani_nosmile at pea_right
+    #hide imani_neutre
     imani "Hm... Je ne pars pas du principe que tout le monde est mauvais, mais c’est vrai que les milieux queers fonctionnent énormément autour de la drogue et de l’alcool."
     imani "Après tout, les bars et clubs étaient les seuls lieux qui acceptaient la prohibition. C’est culturel à présent."
 
     $ quick_menu = False
-    #show peacock_neutre at pea_right
     show imani_neutre at pea_right
+    #hide imani_nosmile
    
     menu:
         imani "Mais on peut faire mieux que ça ! On n’a pas besoin de se désinhiber pour se sentir légitime d’exister, de s’amuser et de réclamer nos espaces !"
@@ -816,16 +872,23 @@ label pea_3_1:
     $ current_textbox = "peacock"
 
     imani "C’est vrai... Mais je ne pense pas que les deux sont incompatibles."
+    #show imani_nosmile at pea_right
+    #hide imani_neutre
     imani "Si je suis tombé dans l’addiction, c’est aussi surtout parce que l’on m’a influencé, et normalisé ce genre de comportement."
     imani "J’ai toujours travaillé dans l’industrie du spectacle et de l’entertainment, les vices sont bien plus profonds que ça..."
+    #show imani_emo at pea_right
+    #hide imani_nosmile
     imani "Et justement, prendre du recul est mal vu. Tu es « moins drôle », « pas fun », « archi ennuyeux », si tu ne bois pas."
     $ current_textbox = "anthrax"
 
+    #show imani_neutre at pea_right
+    #hide imani_emo
     anthrax "Alors tu es l’exception qui confirme la règle. Parce que tu es l’opposé de « boring » !"
 
     call pea_4 from _call_pea_4 
 
 #PEA.3.2
+#+1
 label pea_3_2:
     $ quick_menu = True
 
@@ -836,8 +899,12 @@ label pea_3_2:
     anthrax "Comment est-ce que tu es tombé dedans? Ça te ressemble si peu..."
     $ current_textbox = "peacock"
 
+    #show imani_emo at pea_center
+    #hide imani_neutre
     imani "Franchement, ce n’est pas l’histoire la plus sensationnelle que je pourrais te raconter..."
-    imani "Est-ce qu'elle mérite même Rd’être racontée ? Je ne sais pas... J’étais vraiment pathétique."
+    #show imani_nosmile at pea_center
+    #hide imani_emo
+    imani "Est-ce qu'elle mérite même d’être racontée ? Je ne sais pas... J’étais vraiment pathétique."
     $ current_textbox = "anthrax"
 
     anthrax "Ne dis pas ça... C’est vicieux, les addictions. Sinon personne ne serait accro à rien ! Tu as fini par t’en sortir."
@@ -845,12 +912,15 @@ label pea_3_2:
     anthrax "Et je dis ça, sans t’avoir connu à l’époque !"
     $ current_textbox = "peacock"
 
+    #show imani_neutre at pea_center
+    #hide imani_nosmile
     imani "Ha ha ! T’es chou..."
-    imani "Mais tu n’aurais peut-être pas voulu me connaître à l’époque..."
+
 
     $ quick_menu = False
-    #show peacock_neutre at pea_right
     show imani_neutre at pea_right
+    #show imani_nosmile at pea_right
+    #hide imani_neutre
    
     menu:
         imani "Mais tu n’aurais peut-être pas voulu me connaître à l’époque..."
@@ -862,30 +932,38 @@ label pea_3_2:
          pass
 
 
-
-
     $ quick_menu = True
 
     $ current_textbox = "peacock"
 
+
     imani "Et bien... Je n’étais pas quelqu’un que l’on pouvait qualifier... d’émotionnellement stable."
     imani "Je travaillais bien et étais respectueux, hein ! Mais, je ne sais pas... J’ai toujours senti que quelque chose clochait."
+    #show imani_emo at pea_right
+    #hide imani_nosmile
     imani "J’étais encore très immature, dans mes relations. Il n’y avait qu’au travail où j’avais un cadre qui me permettait de garder les pieds sur terre."
+    #show imani_nosmile at pea_right
+    #hide imani_emo
     imani "Et pourtant, il y a commencé à y avoir des écarts... Au début, entre collègues, c’était marrant de sortir boire un verre pour décompresser."
     imani "Mais ça a pris des proportions telles où l’on finissait en boîte jusqu’à pas d’heure, où ça se droguait et se mettait la misère."
+    show sadness at sadness_pea_right
     imani "Et je t’ai dit, j’étais immature... Donc cette ambiance, ça me plaisait. Et je suis un bon suiveur..."
     $ current_textbox = "anthrax"
 
     anthrax "C’est normal de faire des erreurs, tu sais... Et sortir s’amuser, personne ne peut te blâmer là-dessus ! Alors pourquoi toi ?"
     $ current_textbox = "peacock"
 
+    hide sadness
+    #show imani_emo at pea_right
+    #hide imani_nosmile
     imani "Parce que ce n’était que le début !"
     imani "J’en suis venu à penser que c’était normal... Mais ça a vraiment dérapé quand je suis devenu acteur de ma déchéance."
     imani "Ce sentiment de... « truc qui cloche », il ne m’a jamais quitté. Et les soirées, c’était un moyen de me distraire pour ne plus y penser."
 
     $ quick_menu = False
-    #show peacock_neutre at pea_right
     show imani_neutre at pea_right
+    #show imani_nosmile at pea_right
+    #hide imani_emo
    
     menu:
         imani "Mais quand ça t’obscède autant dans la journée et que tu n’as pas de porte de sortie, tu t’en crées..."
@@ -901,7 +979,9 @@ label pea_3_2:
 
     $ current_textbox = "peacock"
 
+    show sadness at sadness_pea_right
     imani "Si... J’ai commencé à boire au taf."
+    hide sadnesso
     imani "Au début, c’était discret. Je buvais juste suffisamment pour me désinhiber. Mais là encore, je n’ai pas su m’arrêter."
     imani "Et au final, ils ont fini par s’en rendre compte et me virer."
     imani "Ça m’a mis un coup de pied aux fesses suffisant pour que j’aille faire une cure de désintox dans un centre, et je suis revenu en force !"
@@ -910,11 +990,14 @@ label pea_3_2:
     anthrax "Et tu l’as toujours ce « truc qui cloche » ?"
     $ current_textbox = "peacock"
 
+    #show imani_neutre at pea_right
+    #hide imani_nosmile
     imani "Hm... Un peu ! Mais j’ai mis le doigt dessus en commençant à faire du drag. Je pense donc être sur la bonne voie !"
 
     call pea_4 from _call_pea_4_1 
 
 #PEA.3.3
+#+0
 label pea_3_3:
     $ quick_menu = True
 
