@@ -153,8 +153,7 @@ scene black with fade
 show loges
 stop music fadeout 0.1
 play ambiance AmbLoges fadein 2.0
-#show leandre_shy at del_center with dissolve
-show leandre_neutre at del_center with dissolve
+show leandre_shy at del_center with dissolve
 
 play ambiance AmbLoges volume 0.1 fadein 0.5
 
@@ -178,6 +177,8 @@ leandre "Vraiment ? Je suis soulagé alors !"
 hide joy
 leandre "Est-ce que tu souhaites qu'on discute autour d'un verre au bar ? J'aimerais beaucoup en apprendre plus sur ton drag."
 stop ambiance fadeout 2.0
+
+hide leandre_shy
 
 show leandre_neutre at del_right
 with fade
@@ -212,7 +213,6 @@ play ambiance BarDay fadein 2.0
 $ current_textbox = "delaunay"
 
 $ quick_menu = False
-#show delaunay_neutre at del_right
 show leandre_neutre at del_right
 with fade
    
@@ -236,9 +236,9 @@ $ current_textbox = "anthrax"
 anthrax "M-Moi ? Comme ça ? Directement ?"
 
 $ current_textbox = "delaunay"
-# show leandre_shy at del right
+show leandre_shy at del_right
 leandre "Euh... Oui ? Enfin, ça me semblait être un bon début de conversation..."
-#hide leandre_shy
+hide leandre_shy
 
 $ current_textbox = "anthrax"
 anthrax "Oh. Eh bien... J’ai commencé le drag dans le confort de mon appart, sur les réseaux sociaux. "
@@ -248,10 +248,10 @@ anthrax "J'ai toujours été attiré.e par le burlesque, les plumes, le vintage,
 $ current_textbox = "delaunay"
 show joy at joy_right
 play vfxR VFXJoy
-#show leandre_laugh at del_right
+show leandre_laugh at del_right
 leandre "Hm... C’est bien le genre de Mother de recruter quelqu’un de ton acabit. Plein.e de potentiel, mais ne sachant pas par où commencer."
 hide joy
-#hide leandre_laugh
+hide leandre_laugh
 
 $ quick_menu = False
    
@@ -282,9 +282,9 @@ $ current_textbox = "anthrax"
 anthrax "Et toi ? Qu’est-ce qui t’as lancé dans le drag ?"
 
 $ current_textbox = "delaunay"
-#show leandre_shy at del_right
+show leandre_shy at del_right
 leandre "Et bien... J’étais en train de décrocher des études, j’étais dans la panade financière, j’étais en pleine découverte de mon identité de genre."
-#hide leandre_shy
+hide leandre_shy
 leandre "Une vraie crise de la vingtaine... J'en ris maintenant, mais ce n'était pas du tout drôle à l'époque."
 
 #Choix DEL.2
@@ -317,28 +317,28 @@ label del_2_1:
     anthrax "Oh ! Tu as transitionné ?"  
 
     $ current_textbox = "delaunay"
-    #show leandre_laugh at del_center
+    show leandre_laugh at del_center
     leandre "Oui ! Ça ne se voit pas ?"
-    #hide leandre_laugh
+    hide leandre_laugh
 
     $ current_textbox = "anthrax"
     anthrax "Ça dépend... Tu as un très bon passing. Mais ce n'est pas la première question que je me pose en rencontrant quelqu'un."
     
     $ current_textbox = "delaunay"
     leandre "C'est vrai que dit comme ça, ça a l'air plutôt normal. Je suis toujours persuadé que ça se lit sur mon front tellement ça fait partie de moi."
-    #show leandre_shy at del_center
+    show leandre_shy at del_center
     leandre "J'ai tendance à oublier que ce n'est pas si commun que ça."
-    #hide leandre_shy
+    hide leandre_shy
 
     $ current_textbox = "anthrax"
     anthrax "J'ai aussi envie de dire que l'on est dans une troupe de drag. J'aurais dû m'y attendre un minimum..."
 
+    hide leandre_neutre
 
     $ quick_menu = False
     $ current_textbox = "delaunay"
-
-    #show leandre_laugh at del_right
-    show leandre_neutre at del_right with fade
+    
+    show leandre_laugh at del_right with fade
     show joy at joy_right
     play vfxR VFXJoy
 
@@ -355,9 +355,11 @@ label del_2_1:
 
     $ quick_menu = True
 
-    #show leandre_shy at del_right
+    hide leandre_laugh
+    show leandre_shy at del_right
     leandre "En toute honnêteté, c'était l'enfer. Mais j'ai eu la chance d'être bien entouré."
-    #hide leandre_shy
+    hide leandre_shy
+    show leandre_neutre at del_right
     leandre "Et j'ai commencé le drag à peu près à cette période, donc c'était très utile pour m'aider à combattre la dysphorie de genre."
     $ current_textbox = "anthrax"
 
@@ -365,9 +367,9 @@ label del_2_1:
 
     $ current_textbox = "delaunay"
 
-    #show leandre_shy at del_right
+    show leandre_shy at del_right
     leandre "C'est exact..."
-    #hide leandre shy
+    hide leandre shy
     leandre "Après, mon drag s'est \"re\"féminisé dernièrement."
     leandre "Après tout, ma masculinité n'est pas la même que celle des hommes cisgenres, et hétéros."
 
@@ -376,7 +378,7 @@ label del_2_1:
    
     show flirt at flirt_right
     play vfxR VFXFlirt
-    #show leandre_laugh at del_right
+    show leandre_laugh at del_right
     show leandre_neutre at del_right
     
     menu:
@@ -393,18 +395,18 @@ label del_2_1:
 
     leandre "J'entends que si je devais renaître, je ne choisirais pas de le faire dans un corps d'homme cis..."
     leandre "Et que je me relancerais dans le même parcours de vie."
-    #show leandre_shy at del_right
+    show leandre_shy at del_right
     show joy at joy_right
     play vfxR VFXJoy
     leandre "Je n'échangerais pour rien au monde cette expérience."
-    #hide leandre_shy
+    hide leandre_shy
     hide joy
     leandre "D'avoir grandi comme j'ai grandi, d'avoir connu la sororité et les difficultés liées à la vie de femme ?"
-    #show leandre_laugh at del_right
+    show leandre_laugh at del_right
     show flirt at flirt_right
     play vfxR VFXFlirt
     leandre "Cette empathie, en tant qu'homme, m'est très précieuse."
-    #hide leandre_laugh
+    hide leandre_laugh
     hide flirt
 
     stop music fadeout 1.0
@@ -421,14 +423,14 @@ label del_2_2:
 
     anthrax "Et comment est-ce que tu as rencontré Mother ?"
 
-    #show leandre_shy at del_center
+    show leandre_shy at del_center
     leandre "C'est un peu bête, vraiment..."
     show sadness at sadness_center
     play vfxC VFXSadness
     leandre "Je me suis fait traîner ici par des ami.e.s pour un spectacle, mais iels ont eu un empêchement de dernière minute."
     leandre "Du coup je me suis retrouvé tout seul... Comme les endroits avec beaucoup de monde et personne que je connais m'angoissent beaucoup, j'ai bu..."
     hide sadness
-    #hide leandre_shy
+    hide leandre_shy
 
     $ quick_menu = False
    
@@ -451,13 +453,13 @@ label del_2_2:
 
     anthrax "Et tu as fini par intégrer la troupe."
 
-    #show leandre_shy at del_right
+    show leandre_shy at del_right
     leandre "E-Et bien... Ça ne s'est pas fait de suite évidemment... Mais ultimement, oui."
-    #hide leandre_shy
-    #show leandre_laugh at del_right
+    hide leandre_shy
+    show leandre_laugh at del_right
     leandre "C'était un peu informel, mais elle m'a fait visiter L'Androgame de fond en comble..."
     leandre "Et initié au drag en m'emmenant dans les coulisses avec les danseuses de semaine et racontant sa vie."
-    #hide leandre_laugh
+    hide leandre_laugh
     show joy at joy_right
     play vfxR VFXJoy
     leandre "Tout du long, elle soulignait qu'elle comptait monter une troupe secondaire, exclusivement queer."
@@ -470,9 +472,9 @@ label del_2_2:
     show leandre_neutre at del_right
     menu:
         leandre "Pas besoin de préciser que ça a fonctionné bien plus qu'elle ne le pensait..."
-        "La majorité des soirées sont réservées aux \"Paillettes\", c'est vrai.":
+        "La majorité des soirées inclue les \"Paillettes\", c'est vrai.":
             pass
-        "C'est comme ça que j'ai connu L'Androgame... Grâce à la commu":
+        "C'est comme ça que j'ai connu L'Androgame !":
             pass
         "C'est aussi pour cette raison que j'avais envie de venir.":
             pass
@@ -495,32 +497,32 @@ label del_2_3:
     anthrax "J'ai remarqué qu'Aimé.e finissait beaucoup tes phrases. Est-ce que tu es toujours aussi timide ?"
 
     $ current_textbox = "delaunay"
-    #show leandre_shy at del_center
+    show leandre_shy at del_center
     show sadness at sadness_center
     play vfxC VFXSadness
     leandre "Hm... La plupart du temps oui. Mais c'est quelque chose que j'essaye de travailler."
     leandre "J'ai toujours été assez réservé et discret. Je prends plutôt bien sa démarche puisque je ne réussis pas encore à aussi bien m'imposer qu'ellui."
     leandre "Je préfère ça à m'effacer dans le décor comme je le faisais avant..."
     hide sadness
-    #hide leandre_shy
+    hide leandre_shy
     leandre "Et iel est très compréhensif.ve lorsque je sens que je suis capable de m'exprimer et que j'en fais part."
     
     $ current_textbox = "anthrax"
     anthrax "C'est donc d'un commun accord..."
 
     $ current_textbox = "delaunay"
-    #show leandre_laugh at del_center
+    show leandre_laugh at del_center
     leandre "Tacite, oui. Mais qui nous convient et ressemble bien..."
-    #hide leandre_laugh
+    hide leandre_laugh
     leandre "Ça ne l'empêche pas non plus de me taquiner et d'essayer de me faire sortir de mes gonds."
     
 
     $ quick_menu = False
-
-    #show leandre_laugh at del_right
+    
+    hide leandre_neutre
+    show leandre_laugh at del_right
     show joy at joy_right
     play vfxR VFXJoy
-    show leandre_neutre at del_right
     menu:
         leandre "C'est challengeant, et ça a déjà marché. Même Imani s'est retrouvée assez surprise."
         "Il y a une raison derrière tout cela ?":
@@ -534,22 +536,23 @@ label del_2_3:
 
     $ quick_menu = True
 
-    #show leandre_shy at del_right
+    show leandre_shy at del_right
     show sadness at sadness_right
     play vfxR VFXSadness
     leandre "Je n'ai juste jamais eu une grande confiance en moi, et le regard des autres m'a toujours semblé particulièrement lourd à porter."
     leandre "Lorsqu'une situation était trop embarrassante, je choisissais toujours la fuite. Ou le déni, au choix."
     leandre "C'est devenu ma façon d'être, et les handicaps qui viennent avec."
     hide sadness
-    #hide leandre_shy
-    #show leandre_flirty at del_right
+    hide leandre_shy
+    show leandre_flirty at del_right
     leandre "C'est pour ça que le drag est particulièrement rassurant... L'espace d'un instant, je peux être entièrement quelqu'un d'autre."
     leandre "Quelqu'un de ma création, que je contrôle, qui me protège, derrière lequel je peux me cacher et extérioriser le fond de ma pensée."
-    #hide leandre_flirty
+    hide leandre_flirty
     leandre "Il n'y a pas vraiment d'autre forme d'expression qui permet cela... Le théâtre peut-être ? Mais encore, le personnage y est déjà existant et incarné..."
-    #show leandre_laugh
+    show leandre_laugh
     leandre "Pas un reflet d'une personnalité que j'aimerais affirmer."
-    #hide leandre_laugh
+    hide leandre_laugh
+    show leandre_neutre at del_right
 
     $ current_textbox = "anthrax"
     anthrax "La nuance est fine, mais je crois comprendre ce que tu sous-entends..."
@@ -616,11 +619,12 @@ label del_3:
     $ quick_menu = True
     hide sadness
     hide leandre_neutre with dissolve
-    #show leandre_nosmile at del_center with dissolve
-    show leandre_neutre at del_center with dissolve
+    show leandre_nosmile at del_center with dissolve
     $ current_textbox = "delaunay"
 
-
+     
+    hide leandre_nosmile
+    show leandre_neutre at del_center
     leandre "Oh !"
     
     leandre "Pardon, je n'ai pas vu l'heure tourner."
@@ -628,29 +632,32 @@ label del_3:
     $ current_textbox = "anthrax"
     anthrax "Est-ce que tout va bien ? Tu as l'air soucieux."
     
-    #show leandre_laugh at del_center
+    show leandre_laugh at del_center
     $ current_textbox = "delaunay"
     leandre "Hm... C'est rien. Juste un ancien client qui essaye de reprendre contact. C'est un peu relou."
  
     $ current_textbox = "anthrax"
     anthrax "Un ancien client ?"
+    
+    hide leandre_laugh
 
     $ current_textbox = "delaunay"
     leandre "Hm..."
-    hide sadness
 
     $ current_textbox = "description"
     text "Visiblement pas très à l'aise, Léandre rangea son mobile et joua avec ses doigts, venant s'appuyer sur la rambarde pour observer la scène en contrebas."
     
-    #show leandre_shy at del_center
+    show leandre_shy at del_center
     $ current_textbox = "delaunay"
     leandre "C'est vrai que je ne t'en ai pas encore parlé..."
     queue music BalconIntro noloop
 
+    hide leandre_shy
+    hide leandre_neutre
+
     $ quick_menu = False
    
-    #show leandre_shy at del_right with dissolve
-    show leandre_neutre at del_right with dissolve
+    show leandre_shy at del_right with dissolve
     menu:
         leandre "Les autres sont au courant, mais j'aurais peut-être dû te mettre dans la boucle plus tôt."
         "Oh...  C'est grave ?":
@@ -669,12 +676,12 @@ label del_3:
     anthrax "Seulement si tu te sens de l'aborder alors."
 
     $ current_textbox = "delaunay"
-    #show leandre_laugh at del_right
+    show leandre_laugh at del_right
     show joy at joy_right
     play vfxR VFXJoy
     leandre "Ne t'en fais pas, je n'aurais pas commencé à en parler si je ne le sentais pas."
     hide joy
-    # hide leandre_laugh 
+    hide leandre_laugh 
     leandre "Mais je te fais suffisamment confiance pour ne pas me juger sur mes décisions."
 
     play music BalconCoupletIntro
@@ -683,12 +690,12 @@ label del_3:
     $ current_textbox = "description"
     text "Un peu plus confiant, il se redressa et tourna la tête dans ma direction, un sourire apaisé aux lèvres."
 
-    #show leandre_nosmile at del_right
+    show leandre_nosmile at del_right
     $ current_textbox = "delaunay"
     leandre "À un moment, j'ai fait des vidéos à caractère..."
     leandre "Disons les termes, à caractère sexuel."
     leandre "Pour de l'argent."
-    #hide leandre_nosmile
+    hide leandre_nosmile
 
 #Dialogue WIP 
 
@@ -698,8 +705,8 @@ label choix_del3:
     
     show sadness at sadness_right
     play vfxR VFXSadness
-    #show leandre_shy at del right
-    show leandre_neutre at del_right
+    show leandre_shy at del_right
+    
     
     menu: 
         leandre "D'où \"l'ancien client\"..."
@@ -714,6 +721,7 @@ label choix_del3:
 label del_3_1:
     $ quick_menu = True
     
+    hide leandre_shy
     hide sadness
     show leandre_neutre at del_center
     with fade
@@ -725,9 +733,9 @@ label del_3_1:
 
     leandre "Sûrement... On peut dire ça."
     leandre "C'était un moment dans ma vie où j'étais assez perdu."
-    #show leandre_shy at del_center
+    show leandre_shy at del_center
     leandre "Il y a eu tellement de changements en si peu de temps que je ne savais plus du tout où me positionner."
-    #hide leandre_shy
+    hide leandre_shy
     
     $ quick_menu = False
    
@@ -743,16 +751,16 @@ label del_3_1:
 
     $ quick_menu = True
     
-    #show leandre_laugh at del_right
+    show leandre_laugh at del_right
     leandre "Je ne sais pas... J'ai toujours eu un rapport à l'intime complètement frit."
     leandre "Hormonalement parlant, c'était la fiesta. Je commençais tout juste la testo et ma libido était en roue libre."
-    #hide leandre_laugh
+    hide leandre_laugh
     leandre "Bon, après, ça ne m'a jamais empêché d'être décent avec mes partenaires, mais tout de même..."
     leandre "Et c'était la première fois de ma vie que j'apprenais à apprécier mon corps pour ce qu'il était. "
-    #show leandre_laugh at del_right
+    show leandre_laugh at del_right
     show sadness at sadness_right
     leandre "C'était une liberté nouvelle, et je ne savais pas ce que je faisais."
-    #hide leandre_laugh
+    hide leandre_laugh
     hide sadness
 
 
@@ -771,22 +779,22 @@ label del_3_1:
 
     $ quick_menu = True
 
-    #show leandre_laugh at del_right
+    show leandre_laugh at del_right
     show angry at angry_right
     leandre "Je me suis surtout senti pousser des ailes."
-    #hide leandre_laugh
+    hide leandre_laugh
     hide angry
     leandre "Dans cette quête, je me suis hypersexualisé, et au final ça m'a plus joué des tours qu'autre chose."
     leandre "J'avais aussi besoin d'argent pour payer ma mammec', et je m'en sentais les épaules. Maintenant, je me retrouve avec du contenu intime qui se promène dans la nature..."
-    #show leandre_shy at del_right
+    show leandre_shy at del_right
     leandre "J'ai fini par l'accepter : j'ai fait des erreurs et pris de mauvaises décisions."
-    #hide leandre_shy
+    hide leandre_shy
     queue music BalconRefrain
 
 
     $ quick_menu = False
    
-    #show leandre_laugh at del_right
+    show leandre_laugh at del_right
     show leandre_neutre at del_right
     menu:
         leandre "Maintenant, le \"moi\" adulte vit avec."
@@ -813,10 +821,10 @@ label del_3_1:
     $ current_textbox = "delaunay"
     leandre "C'est un peu plus simple de complètement le dissocier de ma personne."
     show flirt at flirt_right
-    #show leandre_laugh at del_right
+    show leandre_laugh at del_right
     leandre "C'est un peu mon ange gardien finalement, qui m'incite à prendre exemple sur lui et être une meilleure version de moi-même."
     queue music BalconEnd noloop
-    #hide leandre_laugh
+    hide leandre_laugh
     hide flirt
     leandre "Mais tout le monde ne fait pas pareil et chacun.e a sa manière d'aborder son drag après tout."
 
@@ -827,6 +835,7 @@ label del_3_2:
     $ quick_menu = True
     $ indice_del -= 1
 
+    hide leandre_shy
     hide sadness
     show leandre_neutre at del_center
     with fade
@@ -836,14 +845,14 @@ label del_3_2:
 
     $ current_textbox = "delaunay"
     leandre "Oh, eh bien, ça me semble plutôt logique..."
-    #show leandre_laugh at del_center
+    show leandre_laugh at del_center
     leandre "Avoir fait du porno, c'est pas très mirobolant sur un CV."
     hide sadness
-    #hide leandre_laugh
+    hide leandre_laugh
     leandre "Mais Mother n'est pas très regardante sur ce point, donc je n'ai pas eu plus de soucis que ça."
-    #show leandre_shy at del_center
+    show leandre_shy at del_center
     leandre "C'est plus gênant si quelqu'un tombe dessus et m'y reconnaît, mais comme j'ai énormément changé entre-temps, je ne m'en inquiète pas plus que ça."
-    #hide leandre_shy
+    hide leandre_shy
 
     $ quick_menu = False
    
@@ -860,9 +869,9 @@ label del_3_2:
 
     $ quick_menu = True
 
-    #show leandre_laugh at del_right
+    show leandre_laugh at del_right
     leandre "Exact !"
-    #hide leandre_laugh
+    hide leandre_laugh
 
     $ current_textbox = "anthrax"
     anthrax "Si tu réussis à tirer quelque chose de positif de cette expérience, c'est le principal."
@@ -873,10 +882,10 @@ label del_3_2:
     hide sadness
     leandre "Alors que ça aurait dû être l'inverse..."
 
-    #show leandre_shy at del_right
+    show leandre_shy at del_right
     leandre "M'aimer d'abord, découvrir mon intimité ensuite... Ou en même temps, à la rigueur."
     queue music BalconRefrain
-    #hide leandre_shy
+    hide leandre_shy
 
     $ quick_menu = False
    
@@ -898,10 +907,10 @@ label del_3_2:
     leandre "Je m'étais lancé dans les vidéos pour payer mon opération mais Mother m'a proposé un travail à mi-temps..."
     leandre "Puis elle m'a présenté à ses ami.e.s drag artists lorsque j'ai soulevé l'idée que ça pouvait m'aider avec ma dysphorie de genre."
     
-    #show leandre_laugh at del_right
+    show leandre_laugh at del_right
     show joy at joy_right
     leandre "Grâce à ça, j'ai pu arrêter et reprendre ma vie en main."
-    #hide leandre_laugh
+    hide leandre_laugh
     hide joy
     leandre "Je t'en avais déjà parlé, non ? Je ne me souviens plus... Ce serait bête que je passe pour un disque rayé !"
     queue music BalconEnd noloop
@@ -915,6 +924,7 @@ label del_3_3:
     $ quick_menu = True
     $ indice_del += 1
     
+    hide leandre_shy
     hide sadness
     show leandre_neutre at del_center
     with fade
@@ -926,9 +936,9 @@ label del_3_3:
     leandre "Plus ou moins... Avec mon parcours de transition plutôt chaotique, je n'ai pas pu passer par le circuit \"public\", avec les aides médicales qui vont avec."
     leandre "Pour avoir accès à ça, il faut avoir eu un suivi psychiatrique d'au moins deux ans."
     hide sadness
-    #show leandre_laugh at del_right 
+    show leandre_laugh at del_center 
     leandre "Mais comme je m'en suis rendu compte tardivement, je n'ai pas eu ce luxe."
-    #hide leandre_laugh
+    hide leandre_laugh
     leandre "Et j'étais tellement dans le mal, psychologiquement parlant, que je n'avais pas la patience non plus d'entamer ce parcours."
     leandre "Heureusement, je suis tombé sur une endocrinologue top, qui m'a permit d'accéder à un traitement hormonal."
 
@@ -947,20 +957,20 @@ label del_3_3:
     $ quick_menu = True
     
     show joy at joy_right
-    #show leandre_laugh at del_right
+    show leandre_laugh at del_right
     leandre "Oh, crois-moi que je suis rodé en tout ce qui concerne les démarches administratives et suivis médicaux..."
     hide joy
-    #hide leandre_laugh
-    #show leandre_shy
+    hide leandre_laugh
+    show leandre_shy at del_right
     leandre "Même si je suis toujours aussi terrifié à l'idée de passer un appel téléphonique pour prendre un rendez-vous..."
-    #hide leandre_shy
+    hide leandre_shy
     leandre "Dans l'idée, dans le meilleur des mondes, j'aurais dû m'en rendre compte lorsque j'étais jeune et innocent pour qu'on me prenne au sérieux."
     leandre "Et pas à dix-neuf ans, déjà majeur, comme ça s'est passé..."
     leandre "C'est fou à quel point on te laisse tomber à ta majorité par rapport à tout ce qui est médical..."
-    #show leandre_shy
+    show leandre_shy at del_right
     leandre "Comme si c'était inné, qu'on devait tout savoir, ou que c'était une évidence de connaître la marche à suivre."
-    #hide leandre_shy
-    leandre "Alors, internet est ton meilleur ami, mais ensuite on te reproche d'avoir été influencé par ça"
+    hide leandre_shy
+    leandre "Alors, internet est ton meilleur ami, mais ensuite on te reproche d'avoir été influencé par ça."
     leandre "Et de ne pas savoir ce que tu veux finalement..."
     show sadness at sadness_right
     leandre "Parce qu'en plus de ta déprime, c'est apparemment absolument nécessaire de t'achever en te décrédibilisant."
@@ -982,12 +992,12 @@ label del_3_3:
     $ quick_menu = True 
 
     hide sadness
-    #show leandre_laugh at del_right
+    show leandre_laugh at del_right
     leandre "En effet... Et ça ne sort pas d'un chapeau magique, quelques milliers d'euros. Donc j'ai fait avec ce que j'avais, c'est-à-dire, pas grand-chose..."
     leandre "J'étais tellement au fond du trou et au pire de ma dépression que ça me semblait être la seule issue."
-    #show leandre_shy at del_right
+    show leandre_shy at del_right
     leandre "Si je n'agissais pas, j'allais me laisser manger par les idées noires et..."
-    #hide leandre_shy
+    hide leandre_shy
     leandre "Je ne vais pas faire un dessin, je suppose que tu connais les statistiques..."
 
     $ current_textbox = "anthrax"
@@ -1002,9 +1012,12 @@ label del_3_3:
     queue music BalconEnd noloop
     $ current_textbox = "delaunay"
     show flirt at flirt_right
-    #show leandre_flirty at del_right
+    show leandre_flirty at del_right
     leandre "Je suis tout de même heureux de l'avoir partagé avec toi..."
-    #hide leandre_flirty
+    
+    hide leandre_laugh with dissolve
+    hide leandre_flirty with dissolve
+    
     hide flirt
 
     call del_4 from _call_del_4_2 
@@ -1054,7 +1067,6 @@ label choix_del4:
     show loges
     queue music LogesRefrain volume 0.5
     $ current_textbox = "delaunay"
-    #show delaunay_flirty at del_right
     show delaunay_neutre at del_right
     with fade
     menu: 
@@ -1071,12 +1083,14 @@ label choix_del4:
 #DEL.4.1
 label del_4_1:
     $ quick_menu = True
-    #show delaunay_flirty at del_right
+    
+    hide delaunay_neutre
     show delaunay_neutre at del_center
     with fade
 
     $ current_textbox = "anthrax"
     anthrax "Franchement, tu me manges quand tu veux...~"
+    show delaunay_flirty at del_center
 
     show flirt at flirt_center
     $ current_textbox = "delaunay"
@@ -1087,36 +1101,32 @@ label del_4_1:
     anthrax "Ce n'était pas le but peut-être ?"
 
     $ current_textbox = "delaunay"
-    #show delaunay_laugh at del_right
+    show delaunay_laugh at del_right
     delaunay "Seulement si tu en as réellement envie. Je ne veux pas te forcer à faire du burlesque ou à devenir une pimbèche de service..."
-    #hide delaunay_laugh
+    hide delaunay_laugh
     delaunay "Bien que je tienne ce titre en très haute estime ~."
     hide delaunay_neutre with dissolve
 
     $ current_textbox = "gatsby"
-    #show gatsby_laugh at gat_left
     show gatsby_neutre at gat_left with dissolve
     gatsby "Et ça va être difficile de la battre, cette pimbèche là."
 
     $ current_textbox = "peacock"
-    #show peacock_laugh at pea_right
     show peacock_neutre at pea_right with dissolve
     peacock "Oh, je suis certaine qu'il y a de la place pour deux perruches dans cette troupe, après tout, regarde-nous."
     peacock "Mais bon quand il s'agit de bomber le torse et de faire du pied, il n'y a qu'une personne qui nous vienne à l'esprit."
    
     $ current_textbox = "delaunay"
-    #show delaunay_shy at del_center
-    show delaunay_neutre at del_center with dissolve
+    show delaunay_shy at del_center with dissolve
     delaunay "Oh ! Mais occupez-vous de vos fesses, oui ! Je vais rougir..."
 
     $ quick_menu = False
 
-    #hide gatsby_laugh
-    #hide peacock_laugh
     hide gatsby_neutre
     hide peacock_neutre
-    #show delaunay_flirty at del_right
-    show delaunay_neutre at del_right with fade
+    hide delaunay_neutre
+    hide delaunay_shy
+    show delaunay_flirty at del_right with fade
     menu:
         delaunay "Je reviens de loin, je peux bien m'octroyer un peu de crédit."
 
@@ -1131,36 +1141,34 @@ label del_4_1:
     $ quick_menu = True
     
     delaunay "Oh, c'est vrai. Comment est-ce que je pourrais le formuler... ?"
-    #show delaunay_shy at del_right
+    show delaunay_shy at del_right
     delaunay "J'ai toujours eu un peu de mal à me trouver désirable. Ou en tout cas d'être confiant dans mon intimité, ma sensualité, ma sexualité..."
-    #hide delaunay_shy
+    hide delaunay_shy
     delaunay "Alors Delaunay l'est à ma place, et m'aide à explorer cette facette de ma personne que je cherche à redécouvrir."
     show sadness at sadness_right
     delaunay "Puisque ça a été un échec cuisant lors de ma première tentative, à travers les vidéos..."
     hide sadness
 
     $ current_textbox = "gatsby"
-    #show gatsby_pensive at gat_left
-    show gatsby_neutre at gat_left with dissolve
+    show gatsby_pensive at gat_left with dissolve
     gatsby "Après, quand tu faisais tes vidéos, tu avais aussi d'autres circonstances qui ont fait que ta démarche n'était pas vraiment saine."
-    hide delaunay_neutre with dissolve
+    hide delaunay_flirty with dissolve
 
     $ current_textbox = "peacock"
-    #show peacock_emo at pea_right
-    show peacock_neutre at pea_right with dissolve
+    show peacock_sassy at pea_right with dissolve
     peacock "...Toi et ton tact légendaire."
     peacock "En soi, je suis plutôt d'accord avec Aimé.e, mais je ne l'aurais pas dit dans ces termes. Tu avais des besoins et tu te cherchais encore..."
-    hide gatsby_neutre
+    hide gatsby_pensive
 
     $ current_textbox = "delaunay"
     show delaunay_neutre at del_left with dissolve
     delaunay "Je sais. J'ai fait un choix et ce n'était pas le bon. Mais au final, ça m'a tout de même amené ici aujourd'hui. Donc je n'ai pas tant de regrets que ça."
-    hide peacock_neutre with dissolve
-    #show delaunay_laugh at del_left
+    hide peacock_sassy with dissolve
+    show delaunay_laugh at del_left
     show joy at joy_left
     delaunay "Et je découvre la bad bitch que j'ai toujours rêvé d'être."
     hide joy
-    #hide delaunay_laugh
+    hide delaunay_laugh
 
     $ quick_menu = False
    
@@ -1186,9 +1194,9 @@ label del_4_1:
     
     $ current_textbox = "delaunay"
     show joy at joy_center
-    #show delaunay_flirty at del_center
+    show delaunay_flirty at del_center
     delaunay "Mon dieu, j'ai encore tellement à faire ! Vite [player_name] ! Un coup de main, vite !~"
-    #hide delaunay_flirty
+    hide delaunay_flirty
     hide flirt
 
     stop ambiance fadeout 2.0
@@ -1207,9 +1215,9 @@ label del_4_2:
     anthrax "Qu'est-ce qui change quand tu te costumes ?"
     
     $ current_textbox = "delaunay"
-    #show delaunay_laugh at del_center
+    show delaunay_laugh at del_center
     delaunay "Tout."
-    #hide delaunay_laugh
+    hide delaunay_laugh
     show joy at joy_center
     delaunay "Léandre n'existe pas quand je suis en drag, c'est libérateur."
     hide joy
@@ -1231,23 +1239,23 @@ label del_4_2:
     $ quick_menu = True
 
     delaunay "Hm...c'est le bon mot."
-    #show delaunay_laugh at del_right
+    show delaunay_laugh at del_right
     show flirt at flirt_right
     delaunay "Mais détrompe-toi... J'adore Léandre."
     hide flirt
-    #hide delaunay_laugh 
+    hide delaunay_laugh 
     delaunay "Enfin, je m'aime bien."
-    #show delaunay_flirty at del_right
+    show delaunay_flirty at del_right
     delaunay "Quand j'ai imaginé Delaunay, je l'ai créé comme étant tout ce que je désirais être. Confiant, têtu, un peu salope sur les bords..."
-    #hide delaunay_flirty
+    hide delaunay_flirty
 
     $ current_textbox = "anthrax"
     anthrax "Et c'est quelque chose que tu n'arrives pas à faire... en tant que Léandre ?"
     
     $ current_textbox = "delaunay"
-    #show delaunay_shy at del_right
+    show delaunay_shy at del_right
     delaunay "Hm... Oui. Mais c'est pas comme si je n'essayais pas. Comment dire..."
-    #hide delaunay_laugh
+    hide delaunay_laugh
     show sadness at sadness_right
     delaunay "En fait, je suis passé par tellement de changements et je me recherche tellement encore..."
     hide sadness
@@ -1255,7 +1263,7 @@ label del_4_2:
 
     $ quick_menu = False
 
-    #show delaunay_laugh at del_right
+    show delaunay_laugh at del_right
     show delaunay_neutre at del_right
     menu:
         delaunay "Alors... Delaunay, c'est un peu mon phare dans cet océan de confusion. Et Léandre, il essaye de naviguer un peu à travers tout ça."
@@ -1271,34 +1279,34 @@ label del_4_2:
     show joy at joy_right
     delaunay "Je sais... Et ça commence à se stabiliser, bien heureusement."
     hide joy
-    #hide delaunay_laugh
+    hide delaunay_laugh
     delaunay "J'aimerais juste des fois que ça aille un peu plus vite."
 
     $ current_textbox = "gatsby"
-    #show gatsby_pensive at gat_left
+    show gatsby_pensive at gat_left
     show gatsby_neutre at gat_left with dissolve
     gatsby "C'est le genre de chose qui prend du temps après tout."
     hide delaunay_neutre with dissolve
 
     $ current_textbox = "peacock"
-    #show peacock_sassy at pea_right
+    show peacock_sassy at pea_right
     show peacock_neutre at pea_right with dissolve
     peacock "Et puis, tu as déjà fait de nombreux progrès. Je me souviens quand t'avais commencé avec une version masculinisée un peu foireuse de Betty Boop..."
     
-    #show gatsby_laugh at gat_left
+    show gatsby_laugh at gat_left
     $ current_textbox = "gatsby"
     gatsby "Mon dieu, c'est vrai que ça a existé ça."
 
     $ quick_menu = False
     
-    #hide gatsby_pensive
-    #hide gatsby_laugh
-    #hide peacock_sassy
+    hide gatsby_pensive
+    hide gatsby_laugh
+    hide peacock_sassy
     hide gatsby_neutre
     hide peacock_neutre
     $ current_textbox = "delaunay"
 
-    #show delaunay_shy at del_right
+    show delaunay_shy at del_right
     show delaunay_neutre at del_right
     menu:
         delaunay "Épargnez-moi, c'est toujours le monstre de ma paralysie du sommeil."
@@ -1314,26 +1322,26 @@ label del_4_2:
     delaunay "Elles ont été diligemment supprimées."
     
     $ current_textbox = "gatsby"
-    #show gatsby_laugh at gat_left
+    show gatsby_laugh at gat_left
     show gatsby_neutre at gat_left with dissolve
     gatsby "Oh... Je suis sûr.e qu'il doit m'en rester..."
    
     $ current_textbox = "delaunay"
-    #show delaunay_shy at del_right
+    show delaunay_shy at del_right
     show angry at angry_right
     delaunay "Tu n'as pas osé!?"
     hide angry
-    #hide delaunay_shy
+    hide delaunay_shy
 
     $ current_textbox = "peacock"
-    #hide gatsby_laugh with dissolve 
+    hide gatsby_laugh with dissolve 
     hide gatsby_neutre with dissolve
 
-    #show peacock_laugh at pea_left with dissolve
+    show peacock_laugh at pea_left with dissolve
     show peacock_neutre at pea_left with dissolve
     peacock "Je suis si peu surprise. C'était mythique!"
     hide peacock_neutre with dissolve
-    #hide peacock_lauch
+    hide peacock_lauch
 
     stop music fadeout 0.1
 
@@ -1344,10 +1352,10 @@ label del_4_2:
 
     $ current_textbox = "delaunay"
     show flirt at flirt_center
-    #show delaunay_flirty at del_center with dissolve
+    show delaunay_flirty at del_center with dissolve
     delaunay "Mon dieu, j'ai encore tellement à faire ! Vite [player_name] ! Un coup de main, vite !"
     hide flirt
-    #hide delaunay_flirt
+    hide delaunay_flirt
 
     stop ambiance fadeout 2.0
     call del_5 from _call_del_5_1 
@@ -1364,9 +1372,9 @@ label del_4_3:
     anthrax "\"Timide\" ? Moi ?"
 
     $ current_textbox = "delaunay"
-    #show delaunay_shy at del_center
+    show delaunay_shy at del_center
     delaunay "Oui, bon ok. C'est un peu l'hôpital qui se fout de la charité."
-    #hide delaunay_shy
+    hide delaunay_shy
 
     $ current_textbox = "anthrax"
     anthrax "J'aurais bien dit que tu as raison... Mais bizarrement, tu m'as l'air plus confiant là."
@@ -1390,9 +1398,9 @@ label del_4_3:
 
     $ quick_menu = True
 
-    #show delaunay_laugh at del_right
+    show delaunay_laugh at del_right
     delaunay "Tu n'as pas tort. Mais il n'a pas toujours été comme ça... Au contraire, au début, il était très masculin."
-    #hide delaunay_laugh
+    hide delaunay_laugh
     delaunay "Après coup, j'ai réalisé que comme c'était au début de ma transition, j'essayais peut-être de me recréer un \"idéal\"... "
     delaunay "Qui était finalement très stéréotypé."
 
@@ -1400,32 +1408,32 @@ label del_4_3:
     anthrax "Je ne l'aurais jamais imaginé... Genre avec une fausse barbe et tout ?"
 
     $ current_textbox = "delaunay"
-    #show delaunay_laugh at del_right
+    show delaunay_laugh at del_right
     delaunay "Surtout pas ! Une moustache, très chèr.e ! J'ai quand même un peu de goût..."
-    #hide delaunay_laugh
+    hide delaunay_laugh
 
 
     $ current_textbox = "peacock"
-    #show peacock_sassy at pea_left with dissolve
+    show peacock_sassy at pea_left with dissolve
     show angry at angry_left
     show peacock_neutre at pea_left with dissolve
     peacock "Tu as quelque chose contre les barbes ma belle ?"
     hide angry
-    #hide peacock_sassy
+    hide peacock_sassy
 
     $ current_textbox = "delaunay"
-    #show delaunay_flirty at del_right
+    show delaunay_flirty at del_right
     delaunay "Non ! Du tout ! La tienne te sied très bien... Malgré les trous~"
-    #hide delaunay_flirty
+    hide delaunay_flirty
 
     $ current_textbox = "peacock"
-    #show peacock_laugh at pea_left with dissolve
+    show peacock_laugh at pea_left with dissolve
     peacock "Hm... C'est vrai que la testo ne t'a pas trop épargné là-dessus... Une absence de barbe, des poils aux fesses et un début de calvitie..."
     #hide peacock_lauch
     hide delaunay_neutre with dissolve
 
     $ current_textbox = "gatsby"
-    #show gatsby_laugh at gat_right with dissolve
+    show gatsby_laugh at gat_right with dissolve
     show gatsby_neutre at gat_right with dissolve
     gatsby "BAHAHA !"
 
@@ -1455,19 +1463,19 @@ label del_4_3:
     hide angry
     delaunay "J'ai quand même pas mal rétropédalé au niveau de l'hypermasculinisation de mon perso, quand mon corps a commencé à changer."
     delaunay "Je me suis réconcilié avec moi-même, et donc Delaunay n'avait plus besoin de servir cette fonction."
-    #show delaunay_flirty at del_right
+    show delaunay_flirty at del_right
     delaunay "Et comme j'avais envie de redécouvrir ma part de féminité en tant qu'homme, nous y voilà."
-    # hide delaunay_flirty
+    hide delaunay_flirty
 
     $ current_textbox = "anthrax"
     anthrax "C'est une relation très personnelle et intime que tu as avec ton personnage finalement..."
     anthrax "Je comprends mieux pourquoi tu t'adresses à \"Léandre\" à la troisième personne parfois, quand tu es en drag."
     
     $ current_textbox = "delaunay"
-    #show delaunay_laugh at del_right
+    show delaunay_laugh at del_right
     show joy at joy_right
     delaunay "Oh, ça... C'est un autre débat. C'est plus mon côté égocentrique que j'essaye de travailler. Faut pas hésiter à me rappeler l'humilité..."
-    # hide delaunay_laugh
+    hide delaunay_laugh
     hide joy
   
     $ current_textbox = "anthrax"
@@ -1501,9 +1509,9 @@ label del_4_3:
 
     $ current_textbox = "delaunay"
     show joy at joy_center
-    #show delaunay_flirty at del_right
+    show delaunay_flirty at del_right
     delaunay "Mon dieu, j'ai encore tellement à faire ! Vite [player_name] ! Un coup de main, vite !~"
-    #hide delaunay_flirty
+    hide delaunay_flirty
 
     stop ambiance fadeout 2.0
 
@@ -1572,15 +1580,15 @@ label del_6:
     show delaunay_neutre at del_center
     $ current_textbox = "delaunay"
     $ persistent.bg_parallax = True
-    #show delaunay_flirty at del_center with dissolve
+    show delaunay_flirty at del_center with dissolve
     show delaunay_neutre at del_center with dissolve
     show joy at joy_center
     delaunay "Wow! C'était dément! La salle était super chaude ce soir!"
-    #hide delaunay_flirty
+    hide delaunay_flirty
     hide joy
-    #show delaunay_laugh at del_center with dissolve
+    show delaunay_laugh at del_center with dissolve
     delaunay "Et j'ai ramassé un beau pactole avec les tips! Je suis refais!"
-    #hide delaunay_laugh
+    hide delaunay_laugh
     
     hide delaunay_neutre with dissolve
     $ quick_menu = False
@@ -1613,9 +1621,9 @@ label del_6:
     hide flirt
 
     $ current_textbox = "delaunay"
-    #show delaunay_laugh at del_right with dissolve
+    show delaunay_laugh at del_right with dissolve
     delaunay "Je suis content que ça t'aie plu!"
-    #hide delaunay_laugh
+    hide delaunay_laugh
     delaunay "Et puis ça pourra toujours t'inspirer pour ton propre numéro!"
     delaunay "Ça avance, d'ailleurs?"
 
@@ -1690,13 +1698,13 @@ label del_6_good:
     anthrax "Merci pour l'invitation... Les autres ne sont pas trop jaloux.se.s de notre contre-soirée?"
 
     $ current_textbox = "delaunay"
-    #show leandre_laugh at del_right
+    show leandre_laugh at del_right
     leandre "Oh, iels devraient s'en remettre. Ça faisait un moment que je voulais passer un peu plus de temps avec toi."
     #hide leandre_laugh
     leandre "En dehors des plumes et des paillettes,  je veux dire..."
-    #show leandre_shy at del_right
+    show leandre_shy at del_right
     leandre "Enfin, si tu es d'accord, évidemment."
-    #hide leandre_shy
+    hide leandre_shy
 
 
     $ current_textbox = "anthrax"
@@ -1705,9 +1713,9 @@ label del_6_good:
 
     $ current_textbox = "delaunay"
     show flirt at flirt_right
-    #show leandre_flirty at del_right
+    show leandre_flirty at del_right
     leandre "Hm... Je te réserve la surprise. Mais je pense vraiment que ça devrait te plaire!"
-    #hide leandre_flirty
+    hide leandre_flirty
 
 
     hide flirt

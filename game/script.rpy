@@ -75,33 +75,102 @@ init python:
 # ex: image eileen heureuse = "eileen_heureuse.png"
 
 #Assets personnages
-image mother:
-    "images/Personnages/mother.png"
-    zoom 0.35
 
-image delaunay_neutre:
-    "images/Personnages/delaunay_neutre.png"
+# Aimée
+image aimee_irritated:
+    "images/Personnages/aimee_irritated.png"
     zoom 0.35
-
-image leandre_neutre:
-    "images/Personnages/leandre_neutre.png"
+image aimee_laugh:
+    "images/Personnages/aimee_laugh.png"
     zoom 0.35
-
-image gatsby_neutre:
-    "images/Personnages/gatsby_neutre.png"
+image aimee_nosmile:
+    "images/Personnages/aimee_nosmile.png"
     zoom 0.35
-
+image aimee_pensive:
+    "images/Personnages/aimee_pensive.png"
+    zoom 0.35
 image aimee_neutre:
     "images/Personnages/aimee_neutre.png"
     zoom 0.35
 
-image peacock_neutre:
-    "images/Personnages/peacock_neutre.png"
+# Delaunay
+image delaunay_flirty:
+    "images/Personnages/delaunay_flirty.png"
+    zoom 0.35
+image delaunay_neutre:
+    "images/Personnages/delaunay_neutre.png"
+    zoom 0.35
+image delaunay_nosmile:
+    "images/Personnages/delaunay_nosmile.png"
+    zoom 0.35
+image delaunay_shy:
+    "images/Personnages/delaunay_shy.png"
     zoom 0.35
 
+# Gatsby
+image gatsby_irritated:
+    "images/Personnages/gatsby_irritated.png"
+    zoom 0.35
+image gatsby_neutre:
+    "images/Personnages/gatsby_neutre.png"
+    zoom 0.35
+image gatsby_nosmile:
+    "images/Personnages/gatsby_nosmile.png"
+    zoom 0.35
+image gatsby_pensive:
+    "images/Personnages/gatsby_pensive.png"
+    zoom 0.35
+
+# Imani
+image imani_emo:
+    "images/Personnages/imani_emo.png"
+    zoom 0.35
+image imani_laugh:
+    "images/Personnages/imani_laugh.png"
+    zoom 0.35
 image imani_neutre:
     "images/Personnages/imani_neutre.png"
     zoom 0.35
+image imani_nosmile:
+    "images/Personnages/imani_nosmile.png"
+    zoom 0.35
+image imani_sassy:
+    "images/Personnages/imani_sassy.png"
+    zoom 0.35
+
+# Léandre
+image leandre_flirty:
+    "images/Personnages/leandre_flirty.png"
+    zoom 0.35
+image leandre_laugh:
+    "images/Personnages/leandre_laugh.png"
+    zoom 0.35
+image leandre_neutre:
+    "images/Personnages/leandre_neutre.png"
+    zoom 0.35
+image leandre_nosmile:
+    "images/Personnages/leandre_nosmile.png"
+    zoom 0.35
+image leandre_shy:
+    "images/Personnages/leandre_shy.png"
+    zoom 0.35
+
+# Mother
+image mother:
+    "images/Personnages/mother.png"
+    zoom 0.35
+
+# Peacock
+image peacock_neutre:
+    "images/Personnages/peacock_neutre.png"
+    zoom 0.35
+image peacock_nosmile:
+    "images/Personnages/peacock_nosmile.png"
+    zoom 0.35
+image peacock_sassy:
+    "images/Personnages/peacock_sassy.png"
+    zoom 0.35
+
 
 #Assets backgrounds
 image devanture = "Backgrounds/devanture.png"
