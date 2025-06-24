@@ -160,6 +160,7 @@ anthrax "Il semblerait, j'adore ta vibe. Tu as un certain talent pour mettre les
 $ current_textbox = "peacock"
 
 show joy at joy_center
+play vfxC VFXJoy
 imani "Ah ça ! On me le dit souvent !"
 hide joy
 imani "Même si parfois j'ai l'impression de faire trop vieux jeu."
@@ -249,16 +250,17 @@ imani "Tu verras, notre barman est un vrai génie en la matière. Il peut te con
 imani "Et des cocktails aussi, bien sûr !"
 #show imani_neutre at pea_right
 #hide imani_laugh
+
 $ current_textbox = "anthrax"
-
 anthrax "Tu ne bois pas d’alcool ?"
-$ current_textbox = "peacock"
 
+$ current_textbox = "peacock"
 show joy at joy_right
+play vfxR VFXJoy
 imani "Non ! Mais j’adore le concept. Mêler jus, sirops, eau gazeuse, et créer quelque chose d’un peu plus fancy qu’une limonade, je prends !"
 hide joy
-$ current_textbox = "anthrax"
 
+$ current_textbox = "anthrax"
 #show imani_laugh at pea_right
 #hide imani_neutre
 anthrax "Je me sens bête de prendre un Martini du coup..."
@@ -312,6 +314,7 @@ anthrax "Mais le burlesque, c’est quelque chose qui m’a toujours attiré.e. 
 anthrax "Ça me parle."
 
 show joy at joy_right
+play vfxR VFXJoy
 imani "À moi aussi tu me parles ! Je comprends mieux ce que Mother a vu chez toi !"
 hide joy
 $ current_textbox = "anthrax"
@@ -432,6 +435,7 @@ label pea_2_1:
     #hide imani_laugh
     imani "Hm... Plutôt bien. J’aime beaucoup ma famille adoptive, même si ça a posé de nombreux problèmes avec le temps."
     show joy at joy_right
+    play vfxR VFXJoy
     imani "La discussion a toujours été très ouverte avec mes parents sur ce sujet-là, et ils ne sont pas responsables des travers de procédures qu’il y a eu."
     hide joy
     imani "C’est plutôt une incompréhension de leur part parfois, quand j’essaye de me rapprocher de mes origines."
@@ -501,6 +505,7 @@ label pea_2_2:
     imani "Eh bien... Comme Mother l'a expliqué. Je me spécialise dans tout ce qui est \"vocal\"..."
     imani "Mais c'est plus de l'ordre de l'humour, de la lecture, du chant..."
     show flirt at flirt_center
+    play vfxC VFXFlirt
     imani "Récemment, je m'intéresse plus à comment utiliser davantage mon corps dans mes numéros."
     hide flirt
     imani "Avec de la danse notamment."
@@ -570,6 +575,7 @@ label pea_2_2:
     $ current_textbox = "peacock"
 
     show joy at joy_right
+    play vfxR VFXJoy
     imani "En ce moment ? Eh bien, ce que je commence à intégrer à mon gig, c'est de la danse à éventails... "
     hide joy
 
@@ -678,6 +684,7 @@ label pea_2_3:
     #hide imani_emo
     imani "Mais du coup, on a bidouillé une sorte de contrat pour que je file un coup de main en technique de temps en temps, tout en peaufinant mon drag."
     show joy at joy_right
+    play vfxR VFXJoy
     imani "Et au final, ça s'est plutôt bien goupillé. J'avais une stabilité financière et un espace familier, dans lequel je pouvais progresser."
     hide joy
 
@@ -802,6 +809,7 @@ label pea_3:
     #show imani_laugh at pea_right
     #hide imani_neutre
     show flirt at flirt_right
+    play vfxR VFXFlirt
     imani "Roh, arrête~ C'est comme ça qu'on m'aime !"
     hide flirt
     $ current_textbox = "anthrax"
@@ -850,6 +858,7 @@ label pea_3:
 
     imani "Non, je ne bois pas. Je ne bois plus..."
     show angry at angry_right
+    play vfxR VFXAnger
     imani "Parce que moi, je l’ai été... ivrogne. Et il n’y a pas un monde où je me laisserais retomber là dedans."
     hide angry
     $ current_textbox = "anthrax"
@@ -894,6 +903,7 @@ label pea_3_1:
     #hide imani_sassy
     imani "En même temps, boire, c’est tellement normalisé dans notre société. Et encore plus dans nos communautés."
     show sadness at sadness_pea_center
+    play vfxC VFXSadness
     imani "Je ne peux pas t’en vouloir, tu ne pouvais pas savoir..."
     hide sadness
     $ current_textbox = "anthrax"
@@ -910,6 +920,7 @@ label pea_3_1:
     #hide imani_neutre
     imani "C’est aussi comme ça que je me suis rendu compte que j’étais tombé sur ma famille de cœur."
     show joy at joy_right
+    play vfxR VFXJoy
     imani "Et ça ne nous empêche pas de nous retrouver au bar après la fermeture pour boire un verre de temps en temps."
     hide joy
 
@@ -965,6 +976,7 @@ label pea_3_1:
     #show imani_nosmile at pea_right
     #hide imani_neutre
     show angry at angry_right
+    play vfxR VFXAnger
     imani "Si je suis tombé dans l’addiction, c’est aussi parce que l’on m’a influencé, et normalisé ce genre de comportement. Après je ne nie pas la part de responsabilité que j'ai eu la-dedans..."
     hide angry
     imani "J’ai toujours travaillé dans l’industrie du spectacle et de l’entertainment, les vices sont bien plus profonds que ça..."
@@ -999,6 +1011,7 @@ label pea_3_2:
     #show imani_nosmile at pea_center
     #hide imani_emo
     show sadness at sadness_pea_right
+    play vfxR VFXSadness
     imani "Est-ce qu'elle mérite même d’être racontée ? Je ne sais pas... J’étais vraiment pathétique."
     hide sadness
     $ current_textbox = "anthrax"
@@ -1047,6 +1060,7 @@ label pea_3_2:
     imani "Et pourtant, il y a commencé à y avoir des écarts... Au début, entre collègues, c’était marrant de sortir boire un verre pour décompresser."
     imani "Mais ça a pris des proportions telles où l’on finissait en boîte jusqu’à pas d’heure, où ça se droguait et se mettait la misère."
     show sadness at sadness_pea_right
+    play vfxR VFXSadness
     imani "Et je t’ai dit, j’étais immature... Donc cette ambiance, ça me plaisait. Et je suis un bon suiveur..."
     $ current_textbox = "anthrax"
 
@@ -1083,6 +1097,7 @@ label pea_3_2:
     $ current_textbox = "peacock"
 
     show sadness at sadness_pea_right
+    play vfxR VFXSadness
     imani "Si... J’ai commencé à boire au taf."
     hide sadnesso
     imani "Au début, c’était discret. Je buvais juste suffisamment pour me désinhiber. Mais là encore, je n’ai pas su m’arrêter."
@@ -1117,6 +1132,7 @@ label pea_3_3:
     #hide imani_sassy
     imani "Oui, ça on peut le dire... Mais c’est parce que ça a été un parcours de longue haleine..."
     show sadness at sadness_pea_right
+    play vfxR VFXSadness
     #show imani_emo at pea_center
     #hide imani_nosmile
     imani "Des fois, je me dis que j’aurais pu voir les signes et m’arrêter à temps."
@@ -1173,6 +1189,7 @@ label pea_3_3:
     #hide imani_nosmile
     imani "Il n’y a aucune chance que je redevienne qui j’étais durant cette période..."
     show angry at angry_right
+    play vfxR VFXAnger
     imani "Une sorte de zombie... Une autre personne, en tous points, qui n’avait pas de volonté autre que de toucher à la goutte suivante."
     hide angry
     #show imani_emo at pea_right
@@ -1219,6 +1236,7 @@ label pea_3_3:
     $ current_textbox = "peacock"
     
     show sadness at sadness_pea_right
+    play vfxR VFXSadness
     imani "..."
     $ current_textbox = "anthrax"
 
@@ -1251,14 +1269,13 @@ label pea_4:
     stop music fadeout 0.2
     stop ambiance fadeout 1.0
     play ambiance AmbLoges fadein 0.5
-    play music BackstageLoop volume 0.5
+    play music LogesIntro volume 0.5
 
     
     $ current_textbox = "description"
-
     text "Debout au milieu de la pièce, Imani était en train de passer le fil de son micro dans les espaces étriqués de son corset et de son padding couleur chair..."
-    "le passant dans la lanière de son bullet-bra jusque le long de son dos. Accrochant l'appareil à l'aide d'épingles à sa perruque, elle semblait avoir la tête ailleurs..."
-    "Tout en reproduisant ses gestes millimétrés et à présent routiniers, glissant ensuite le boîtier HF dans sa jarretelle qui avait été modifiée à cet effet."
+    text "le passant dans la lanière de son bullet-bra jusque le long de son dos. Accrochant l'appareil à l'aide d'épingles à sa perruque, elle semblait avoir la tête ailleurs..."
+    text "Tout en reproduisant ses gestes millimétrés et à présent routiniers, glissant ensuite le boîtier HF dans sa jarretelle qui avait été modifiée à cet effet."
     text "Peacock enfila ensuite sa robe à dos nu et déclipsa le soutien-gorge pour dissimuler le tissu dépassant dans son costume, n'ayant pas besoin de maintien."
 
     $ quick_menu = False
@@ -1280,7 +1297,8 @@ label pea_4:
 
 
     $ quick_menu = True
-
+    queue music LogesRefrain volume 0.5
+    
     #hide overlay
     $ current_textbox = "anthrax"
     anthrax "Voilà !"
@@ -1293,6 +1311,7 @@ label pea_4:
     $ current_textbox = "peacock"
 
     show flirt at flirt_right
+    play vfxR VFXFlirt
     #show imani_laugh at pea_right
     #hide imani_neutre
 
@@ -1344,6 +1363,7 @@ label pea_4_1:
     #show peacock_neutre at pea_center
     #hide peacock_neutre
     show joy at joy_center
+    play vfxC VFXJoy
     peacock "Puis, j'y ai aussi mit de l'effort. J'ai pris des classes, j'ai longtemps itéré, jusqu'à trouver la formule qui me correspondait."
     hide joy
 
@@ -1394,6 +1414,7 @@ label pea_4_1:
     show peacock_neutre at pea_left with dissolve
     #show peacock_laugh at pea_left with dissolve
     show joy at joy_left
+    play vfxL VFXJoy
     peacock "Comme quoi ! Les plumes, la scène, le théâtre... Au final, c'est plus histoire de me rappeler d'où je viens, ce que j'aime et ce qui m'a construit."
     hide gatsby_neutre
     hide joy
@@ -1498,6 +1519,7 @@ label pea_4_2:
     $ current_textbox = "peacock"
 
     show joy at joy_right
+    play vfxR VFXJoy
     peacock "Honnêtement, énormément de choses, et à la fois, pas tant. J'ai pris en confiance principalement."
     hide joy
     peacock "Je t'avais dit que je bossais en régie avant ?"
@@ -1562,6 +1584,7 @@ label pea_4_2:
     peacock "On s'y fait... Et puis, c'est pour ça que je me pose ensuite sur scène pour enchaîner le public."
     peacock "J'ai toujours été un petit clown de service, et l'humour nous rend toujours plus accessible, même envers les personnes qui ne sont pas très familières avec notre art."
     show joy at joy_right
+    play vfxR VFXJoy
     
     peacock "Autant \"ouvrir la bibliothèque\" en dehors des loges. C'est bien de lire les copines, encore mieux d'en faire profiter tout le monde."
     hide joy
@@ -1642,6 +1665,7 @@ label pea_4_3:
     peacock "En fait, Peacock, elle est sensuelle, mais avec pudeur et une certaine humilité. "
     peacock "Elle ne charme pas comme Delaunay, en jouant de son corps. Elle use de ses autres charmes."
     show flirt at flirt_right
+    play vfxR VFXFlirt
     peacock "\"J'use\" de mes autres charmes."
     hide flirt
     $ current_textbox = "anthrax"
@@ -1706,6 +1730,7 @@ label pea_4_3:
 
     peacock "Non mais de quoi je me mêle les fouineuses !"
     show angry at angry_center
+    play vfxC VFXAnger
     peacock "Occupez-vous de faire un trait d'eyeliner droit avant de vous intéresser à mes techniques de séduction !"
     hide angry
     $ current_textbox = "anthrax"
@@ -1716,6 +1741,7 @@ label pea_4_3:
     #show peacock_laugh at pea_center
     #hide peacock_sassy
     show flirt at flirt_right
+    play vfxR VFXFlirt
     peacock "Pas encore ~ Mais c'est une option tout à fait envisageable."
     hide flirt
     #show peacock_nosmile at pea_center
@@ -1765,6 +1791,7 @@ label pea_5:
     show peacock_neutre at pea_right with dissolve
     #show peacock_laugh at pea_right with dissolve
     show flirt at flirt_right
+    play vfxR VFXFlirt
     text "Se baladant entre les tables, sans manquer une seule note, son chant et sa danse induisaient une certaine transe chez le public ébahi."
     text "Hypnotisante, chacun de ses coups de hanches, tourbillons de plumage et battement de cils soulevaient quelques sifflements jusqu'à ce que sa représentation ne se déplace sur l'estrade."
     hide peacock_neutre with dissolve
@@ -1777,6 +1804,7 @@ label pea_5:
     show peacock_neutre at pea_center with dissolve
     #show peacock_laugh at pea_center with dissolve
     show joy at joy_center
+    play vfxC VFXJoy
     text "Peacock se faisait règle de ne jamais reproduire un gig deux fois, de la même manière que ses tenues selon ses propres termes."
     text "Elle est quitta la scène sous les rires, après avoir introduit le show suivant."
     hide joy
@@ -1825,6 +1853,7 @@ $ quick_menu = True
 peacock "C'est le meilleur shot d'adrénaline que j'aurais pu avoir!"
 peacock "J'ai hâte que tu ressentes ça toi aussi."
 show joy at joy_right
+play vfxR VFXJoy
 peacock "Tu vas voir, tu ne t'en lasses plus!"
 hide joy
 $ current_textbox = "anthrax"
@@ -1835,6 +1864,7 @@ anthrax "Si je peux être aussi radieux.se que toi ce soir, j'aurais tout gagné
 $ current_textbox = "peacock"
 
 show flirt at flirt_right
+play vfxR VFXRight
 peacock "Est-ce que je peux te proposer un resto, ensemble, après la fermeture? Je connais quelques adresses cosy encore ouvertes à cette heure...~"
 hide flirt
 
@@ -1892,6 +1922,7 @@ label pea_6_good:
     show imani_neutre at pea_center with dissolve
 
     show joy at joy_center
+    play vfxC VFXJoy
     imani "Me voici! Tu n'as pas attendu trop longtemps? Il commence à faire un peu frois en plus..."
     hide joy
     $ current_textbox = "anthrax"
@@ -1921,6 +1952,7 @@ label pea_6_good:
     $ current_textbox = "peacock"
 
     show flirt at flirt_center
+    play vfxC VFXFlirt
     imani "Je dois mettre la barre haute pour notre premier rendez-vous alors! J'ai une petite idée, mais je garde encore le secret ~"
     hide flirt
     call final_peacock from _call_final_peacock 
@@ -1968,6 +2000,8 @@ label pea_6_bad:
     show bar 
    
     $ current_textbox = "description"
+
+    play music BadEnd volume 0.8 noloop
   
     text "Tous.te.s étaient réuni.e.s face au comptoir, se faisant servir par notre merveilleux \"Dobarman\"."
     show imani_neutre at pea_left with dissolve
@@ -2007,6 +2041,7 @@ label pea_6_bad:
     #show mother_laugh at mother_left with dissolve
 
     show joy at joy_left
+    play vfxL VFXJoy
     mother "Je suis sûre que je peux te retrouver une vidéo d'excellente qualité, vu comment elle a tourné sur les plateformes."
     hide joy
 
@@ -2032,6 +2067,7 @@ label pea_6_bad:
     #show imani_neutre at pea_left
     text "Mais quelque chose me dit que c'était peut-être un peu trop tôt..."
     show flirt at flirt_left
+    play vfxL VFXFlirt
     text "Et j'aurais loupé cet instant précieux, sachant pertinemment que je passerais le reste de la soirée bien entouré.e !"
     hide flirt
 
