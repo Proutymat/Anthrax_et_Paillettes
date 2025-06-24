@@ -336,10 +336,29 @@ screen quick_menu():
                     style_prefix "quick"
                     spacing 8
 
-                    imagebutton idle "menuUI/retourhud_idle.png" hover "menuUI/retourhud_hover.png" action Rollback() xalign 1.008 yalign 0.5
-                    imagebutton idle "menuUI/journal_idle.png" hover "menuUI/journal_hover.png" action ShowMenu("history") xalign 1.008 yalign 0.5
-                    imagebutton idle "menuUI/save_button_idle.png" hover "menuUI/save_button_hover.png" action ShowMenu("save") xalign 1.008 yalign 0.5
-                    imagebutton idle "menuUI/pause_menu_idle.png" hover "menuUI/pause_menu_hover.png" action ShowMenu("pause_menu") xalign 1.00 yalign 0.5
+                    imagebutton: 
+                        idle "menuUI/retourhud_idle.png" 
+                        hover "menuUI/retourhud_hover.png"
+                        hovered Function(play_ui_hover) 
+                        action Rollback() xalign 1.008 yalign 0.5
+
+                    imagebutton:
+                        idle "menuUI/journal_idle.png" 
+                        hover "menuUI/journal_hover.png"
+                        hovered Function(play_ui_hover)
+                        action ShowMenu("history") xalign 1.008 yalign 0.5
+
+                    imagebutton:
+                        idle "menuUI/save_button_idle.png" 
+                        hover "menuUI/save_button_hover.png"
+                        hovered Function(play_ui_hover)
+                        action ShowMenu("save") xalign 1.008 yalign 0.5
+
+                    imagebutton:
+                        idle "menuUI/pause_menu_idle.png" 
+                        hover "menuUI/pause_menu_hover.png"
+                        hovered Function(play_ui_hover) 
+                        action ShowMenu("pause_menu") xalign 1.00 yalign 0.5
 
             #imagebutton idle "menuUI/avancerapide_idle.png" hover "menuUI/avancerapide_hover.png" action Skip() alternate Skip(fast=True, confirm=True)
 
@@ -441,11 +460,19 @@ screen backstages():
                 xalign 0.5
 
                 imagebutton:
-                    auto "menuUI/album_%s.png" action [Hide("backstages"), Function(renpy.transition, fade), Show("album")]
+                    auto "menuUI/album_%s.png"
+                    hovered Function(play_ui_hover)
+                    action [Function(play_ui_click), Hide("backstages"), Function(renpy.transition, fade), Show("album")]
+
                 imagebutton:
-                    auto "menuUI/interviews_%s.png" action [Hide("backstages"), Function(renpy.transition, fade), Show("music_room_interviews", mr=music_room_interviews)]
+                    auto "menuUI/interviews_%s.png"
+                    hovered Function(play_ui_hover) 
+                    action [Function(play_ui_click), Hide("backstages"), Function(renpy.transition, fade), Show("music_room_interviews", mr=music_room_interviews)]
                 imagebutton:
-                    auto "menuUI/juxebox_%s.png" action [Hide("backstages"), Function(renpy.transition, fade), Show("music_room", mr=music_room)]
+                    auto "menuUI/juxebox_%s.png"
+                    hovered Function(play_ui_hover) 
+                    action [Function(play_ui_click), Hide("backstages"), Function(renpy.transition, fade), Show("music_room", mr=music_room)]
+
                 if _preferences.language == "English":
                     imagebutton:
                         auto "menuUI/credits_eng_%s.png"
@@ -460,7 +487,7 @@ screen backstages():
 
     vbox:
         at Transform(xalign=0.09, yalign=0.98)
-        imagebutton idle "menuUI/retour_idle.png" hover "menuUI/retour_hover.png" action Return()
+        imagebutton idle "menuUI/retour_idle.png" hover "menuUI/retour_hover.png" action [Function(play_ui_back), Return()]
 
 ################################################################################
 ## Screens du menu principal et du menu de jeu
@@ -1733,10 +1760,10 @@ screen crush_confirm(name, destination):
                 xalign 0.5
 
                 textbutton "Oui":
-                    action [Hide("crush_confirm"), Jump(destination)] style "confirm_prompt_text"
+                    action [Function(play_ui_click), Hide("crush_confirm"), Jump(destination)] style "confirm_prompt_text"
 
                 textbutton "Non":
-                    action Hide("crush_confirm") style "confirm_prompt_text"
+                    action [Function(play_ui_back), Hide("crush_confirm")] style "confirm_prompt_text"
 
 screen name_input_screen():
 
@@ -1761,7 +1788,7 @@ screen name_input_screen():
                 spacing 80
                 xalign 0.5
 
-                textbutton _("Valider") action Return() style "confirm_button"
+                textbutton _("Valider") action [Function(play_ui_click), Return()] style "confirm_button"
 
 
 
@@ -1782,8 +1809,8 @@ screen name_confirm_screen(message, yes_action, no_action, style_prompt="confirm
             hbox:
                 spacing 60
                 xalign 0.5
-                textbutton _("Oui") action yes_action style "confirm_button"
-                textbutton _("Non") action no_action style "confirm_button"
+                textbutton _("Oui") action [Function(play_ui_click), yes_action] style "confirm_button"
+                textbutton _("Non") action [Function(play_ui_back), no_action] style "confirm_button"
 
 
 
