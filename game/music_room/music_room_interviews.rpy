@@ -46,18 +46,9 @@ init python:
 
 
     music_room_interviews.add(
-        name=_("Cove"),
-        artist="Red Robotix",
-        path="<silence 201>",
-        ## The other information is omitted here, so it gets the defaults.
-        ## That is, it gets the default cover art, no description, and it is
-        ## unlocked when it is listened to in-game.
-    )
-
-    music_room_interviews.add(
-        name=_("Stateside"),
-        artist="Pink Mother fucking Panthress",
-        path="audio/music_room/stateside.ogg",
+        name=_("Sororité trans et Drag"),
+        artist="IbuProFem - Nantes, France",
+        path="audio/music_room/AP_Interview_IbuProfem.ogg",
         unlock_condition="True",
     )
 

@@ -441,11 +441,19 @@ screen backstages():
                 xalign 0.5
 
                 imagebutton:
-                    auto "menuUI/album_%s.png" action [Hide("backstages"), Function(renpy.transition, fade), Show("album")]
+                    auto "menuUI/album_%s.png"
+                    hovered Function(play_ui_hover)
+                    action [Function(play_ui_click), Function(renpy.transition, fade), Show("album")]
                 imagebutton:
-                    auto "menuUI/interviews_%s.png" action [Hide("backstages"), Function(renpy.transition, fade), Show("music_room_interviews", mr=music_room_interviews)]
+                    auto "menuUI/interviews_%s.png" 
+                    hovered Function(play_ui_hover)
+                    action [Function(play_ui_click), Function(renpy.transition, fade), Show("music_room", mr=music_room_interviews)]
+                
                 imagebutton:
-                    auto "menuUI/juxebox_%s.png" action [Hide("backstages"), Function(renpy.transition, fade), Show("music_room", mr=music_room)]
+                    auto "menuUI/juxebox_%s.png" 
+                    hovered Function(play_ui_hover)
+                    action [Function(play_ui_click), Function(renpy.transition, fade), Show("music_room", mr=music_room)]
+
                 if _preferences.language == "English":
                     imagebutton:
                         auto "menuUI/credits_eng_%s.png"

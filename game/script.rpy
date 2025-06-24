@@ -1055,10 +1055,11 @@ label onboarding:
 
 
 #0.2
+    $ current_textbox = "mother"
 
     play ambiance AmbAndrogameDay fadein 0.5
 
-    $ current_textbox = "mother"
+   
 
     show joy at joy_center
     play vfxC VFXJoy
@@ -1143,8 +1144,7 @@ label onboarding:
 
     play ambiance AmbLoges fadein 1 volume 0.8
 
-    show imani_neutre at pea_left with dissolve
-    #show imani_sassy at pea_left with dissolve
+    show imani_sassy at pea_left with dissolve
 
     $ current_textbox = "peacock"
     
@@ -1153,12 +1153,15 @@ label onboarding:
     voice PAh1
     imani "Ok, hear me out... Je dis simplement que si l'on veut garder une logique dans la suite de nos numéros, on va devoir inverser l'ordre dans lequel on passe..."
     hide angry with dissolve
-    #show imani_laugh at pea_right
-    #hide imani_sassy
+
+    hide imani_sassy
+    show imani_laugh at pea_left
+    
 
     imani "Pour pouvoir faire de la place aux nouvelles !"
-    #show imani_neutre at pea_right
-    #hide imani_laugh
+    hide imani_laugh
+    show imani_neutre at pea_left
+    
     
     $ current_textbox = "description"
     #ajouter un overlay entre la descri et le personnage
