@@ -1487,28 +1487,34 @@ label del_5:
     text "Soudainement, un spot se braqua sur le velours et un \"bang\" de trompettes réveilla la foule."
     text "Puis une longue jambe dévoila sensuellement sa résille en sortant de l’entrouverture."
     show delaunay_neutre at del_center with dissolve
+    #show delaunay_flirty at del_center with dissolve
     text "Au rythme de la musique, Delaunay fit son apparition sur le devant de la scène, sous les hurlements des fanatiques du premier rang."
     text "Le temps qu’il ne chauffe la salle, les préparatifs de l’arrière-scène arrivaient à leur fin. "
     hide delaunay_neutre with dissolve
+    #hide delaunay_flirty with dissolve
     show delaunay_neutre at del_left with dissolve
+    #show delaunay_laugh at del_left with dissolve
     text "Le rideau tomba et dévoila un immense verre à martini duquel s’échappaient des volutes de fumée."
     text "Delaunay continuait d'effeuiller son costume jusqu’à grimper l’échelle et s’asseoir, dos courbé, sur le bord du verre."
     hide delaunay_neutre with dissolve
+    #hide delaunay_laugh with dissolve
     show delaunay_neutre at del_right with dissolve
+    #show delaunay_shy at del_right with dissolve
     show flirt at flirt_right
     text "Laissant la tension gagner le public, il finit par s’y glisser en arrière, laissant l’eau déborder ostensiblement sur la scène."
     text "Il continua de se déshabiller avec lenteur et adresse, jusqu’à sortir de son corset un sous-vêtement trempé qu’il jeta insolemment."
     hide flirt
     hide delaunay_neutre with dissolve
+    #hide delaunay_shy with dissolve
     show delaunay_neutre at del_center with dissolve
+    #show delaunay_flirty at del_center with dissolve
     text "L’effet dupait aisément son public et signa la fin de son acte."
     stop music fadeout 3.0
+    show joy at joy_center
     text "Il se couvrit d’un long kimono et se fit aider pour descendre sans glisser avant de saluer fièrement les spectateur.ice.s, son make-up intact et un grand sourire aux lèvres."
+    hide joy
 
-#Dialogue WIP 
-
-
-call del_6 from _call_del_6 
+    call del_6 from _call_del_6 
 
 #DEL.6
 
@@ -1605,11 +1611,11 @@ label del_6_good:
     text "À l'extérieur, quelques clients étaient restés sur le pavé pour continuer leurs discussions et attendre la sortie de la royauté de L'Androgame."
  
     show devanture
-    show leandre_neutre at del_right with dissolve
+    show leandre_neutre at del_center with dissolve
 
     
     $ current_textbox = "delaunay"
-    show joy at joy_right
+    show joy at joy_center
     leandre "Pardon pour l'attente! On y va?"
     hide joy
 
@@ -1617,11 +1623,11 @@ label del_6_good:
     anthrax "Merci pour l'invitation... Les autres ne sont pas trop jaloux.se.s de notre contre-soirée?"
 
     $ current_textbox = "delaunay"
-    #show leandre_laugh at del_right
+    #show leandre_laugh at del_center
     leandre "Oh, iels devraient s'en remettre. Ça faisait un moment que je voulais passer un peu plus de temps avec toi."
     #hide leandre_laugh
     leandre "En dehors des plumes et des paillettes,  je veux dire..."
-    #show leandre_shy at del_right
+    #show leandre_shy at del_center
     leandre "Enfin, si tu es d'accord, évidemment."
     #hide leandre_shy
 
@@ -1631,8 +1637,8 @@ label del_6_good:
     anthrax "Alors dis-moi! Où est-ce que tu m'emmènes ce soir?"
 
     $ current_textbox = "delaunay"
-    show flirt at flirt_right
-    #show leandre_flirty at del_right
+    show flirt at flirt_center
+    #show leandre_flirty at del_center
     leandre "Hm... Je te réserve la surprise. Mais je pense vraiment que ça devrait te plaire!"
     #hide leandre_flirty
 
@@ -1648,6 +1654,8 @@ label del_6_bad:
     hide auditorium
     show loges
     show delaunay_neutre at del_center with dissolve
+    #show delaunay_laugh at del_center with dissolve
+
     
     $ current_textbox = "delaunay"
     delaunay "On va aller boire un verre avec les autres une fois que les derniers clients auront quitté la salle. Tu te joins à nous ?"
@@ -1666,6 +1674,7 @@ label del_6_bad:
 
     #Transition Rideau
     hide delaunay_neutre with dissolve
+    #hide delaunay_laugh with dissolve
     show curtain_close with dissolve
     pause 1.5
     hide bar
@@ -1691,28 +1700,44 @@ label del_6_bad:
     hide leandre_neutre
     hide aimee_neutre
     show aimee_neutre at gat_right with dissolve
+    #show aimee_laugh at gat_right with dissolve
+
     $ current_textbox = "gatsby"
     aimee "Nan mais je te jure ! La manière dont sa perruque a volé au milieu de la pièce !"
 
     $ current_textbox = "delaunay"
     show leandre_neutre at del_left with dissolve
+    #show leandre_laugh at del_left with dissolve
     leandre "Et surtout sa tête, en s'en rendant compte... !"
 
     $ current_textbox = "peacock"
     hide aimee_neutre
+    #hide aimee_laugh
+
     show imani_neutre at pea_right with dissolve
+    #show imani_laugh at pea_right with dissolve
     imani "J'aurais rêvé être là cette soirée, et non derrière les machines !"
 
     $ current_textbox = "mother"
     hide leandre_neutre
+    #hide leandre_laugh
     show mother at mother_left with dissolve
-    mother "Je suis sûre que je peux te retrouver une vidéo d'excellente qualité, vu comment elle a tourné sur les plateformes."
+    #show mother_laugh at mother_left with dissolve
 
+    show joy at joy_left
+    mother "Je suis sûre que je peux te retrouver une vidéo d'excellente qualité, vu comment elle a tourné sur les plateformes."
+    hide joy
+    
     hide imani_neutre
+    #hide imani_laugh
+
     hide mother
+    #hide mother_laugh
+
     show imani_neutre at pea_left with dissolve
     show leandre_neutre at del_right with dissolve
     show aimee_neutre at gat_center with dissolve
+
 
     $ current_textbox = "description"
 
@@ -1720,9 +1745,13 @@ label del_6_bad:
     text "Je les observais un à une, ancrant cette image dans ma mémoire, essayant d'y graver le moindre détail."
     hide imani_neutre with dissolve
     hide aimee_neutre with dissolve
+    #show leandre_laugh at del_right
     text "Je m'en voulais peut-être un peu de ne pas avoir demandé à Léandre d'être sorti avec moi ce soir."
+    show leandre_neutre at del_right
     text "Mais quelque chose me dit que c'était peut-être un peu trop tôt..."
+    show flirt at flirt_right
     text "Et j'aurais loupé cet instant précieux, sachant pertinemment que je passerais le reste de la soirée bien entouré.e !"
+    hide flirt
 
     call final_delaunay from _call_final_delaunay_1 
 

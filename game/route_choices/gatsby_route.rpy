@@ -1462,11 +1462,11 @@ label gat_6_good:
     text "À l'extérieur, quelques clients étaient restés sur le pavé pour continuer leurs discussions et attendre la sortie de la royauté de L'Androgame."
  
     show devanture
-    show aimee_neutre at gat_right with dissolve
+    show aimee_neutre at gat_center with dissolve
 
     
     $ current_textbox = "gatsby"
-    show joy at joy_right
+    show joy at joy_center
     aimee "Promis, j'ai fais aussi vite que possible! Quelle horreur de retirer la colle après avoir sué toute la soirée!"
     hide joy
 
@@ -1484,7 +1484,7 @@ label gat_6_good:
     anthrax "Alors dis-moi! Où est-ce que tu m'emmènes ce soir?"
 
     $ current_textbox = "gatsby"
-    show flirt at flirt_right
+    show flirt at flirt_center
     aimee "Aha! Mystère, mystère... Mais te connaissant, tu devrais bien kiffer!"
 
 
@@ -1544,28 +1544,44 @@ label gat_6_bad:
     hide leandre_neutre
     hide aimee_neutre
     show aimee_neutre at gat_right with dissolve
+    #show aimee_laugh at gat_right with dissolve
+
     $ current_textbox = "gatsby"
     aimee "Nan mais je te jure ! La manière dont sa perruque a volé au milieu de la pièce !"
 
     $ current_textbox = "delaunay"
     show leandre_neutre at del_left with dissolve
+    #show leandre_laugh at del_left with dissolve
     leandre "Et surtout sa tête, en s'en rendant compte... !"
 
     $ current_textbox = "peacock"
     hide aimee_neutre
+    #hide aimee_laugh
+
     show imani_neutre at pea_right with dissolve
+    #show imani_laugh at pea_right with dissolve
     imani "J'aurais rêvé être là cette soirée, et non derrière les machines !"
 
     $ current_textbox = "mother"
     hide leandre_neutre
+    #hide leandre_laugh
     show mother at mother_left with dissolve
-    mother "Je suis sûre que je peux te retrouver une vidéo d'excellente qualité, vu comment elle a tourné sur les plateformes."
+    #show mother_laugh at mother_left with dissolve
 
+    show joy at joy_left
+    mother "Je suis sûre que je peux te retrouver une vidéo d'excellente qualité, vu comment elle a tourné sur les plateformes."
+    hide joy
+    
     hide imani_neutre
+    #hide imani_laugh
+
     hide mother
+    #hide mother_laugh
+
     show imani_neutre at pea_left with dissolve
     show leandre_neutre at del_right with dissolve
     show aimee_neutre at gat_center with dissolve
+
 
     $ current_textbox = "description"
 
@@ -1573,9 +1589,13 @@ label gat_6_bad:
     text "Je les observais un à une, ancrant cette image dans ma mémoire, essayant d'y graver le moindre détail."
     hide imani_neutre with dissolve
     hide leandre_neutre with dissolve
-    text "Je m'en voulais peut-être un peu de ne pas avoir demandé à Aimé.e d'être sorti avec moi ce soir."
+    #show aimee_laugh at gat_center
+    text "Je m'en voulais peut-être un peu de ne pas avoir demandé à Aimé.e d'être sorti.e avec moi ce soir."
+    show aimee_neutre at gat_center
     text "Mais quelque chose me dit que c'était peut-être un peu trop tôt..."
+    show flirt at flirt_center
     text "Et j'aurais loupé cet instant précieux, sachant pertinemment que je passerais le reste de la soirée bien entouré.e !"
+    hide flirt
 
     call final_gatsby from _call_final_gatsby_1 
 
