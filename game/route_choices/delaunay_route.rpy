@@ -592,7 +592,7 @@ label del_3:
     $ quick_menu = False
 
     show auditorium
-    
+    play ambiance AmbBalcon
     show sadness at sadness_right
     play vfxR VFXSadness
     show leandre_neutre at del_right with dissolve

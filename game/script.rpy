@@ -900,6 +900,7 @@ define audio.AmbLogesNight = "audio/Amb/Amb_LogesNight_V3.ogg"
 define audio.AmbDelShow = "audio/Amb/AP_Amb_ShowDel_V1.ogg"
 define audio.BarDay = "audio/Amb/Amb_BarDay_V4.ogg"
 define audio.BarEnd = "audio/Amb/Amb_BarEnd_V2.ogg"
+define audio.AmbBalcon = "audio/Amb/Amb_Balcon.ogg"
 
 # Liste des réactions de foule
 define audio.CrowdDel1 = "audio/Amb/AP_Crowd_ShowDelSt1.ogg"
