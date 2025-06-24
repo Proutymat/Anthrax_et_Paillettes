@@ -1173,14 +1173,13 @@ label onboarding:
 
     show aimee_neutre at gat_right with dissolve
     voice GHm1
+    
     inconnu "Girl... J'entends, et je suis d'accord sur le fond. Mais on ne les connaît même pas encore et on ne sait pas quels numéros iels vont présenter, ou si même iels en ont..."
     hide imani_neutre with dissolve
     
     show joy at joy_right
     play vfxR VFXJoy
     voice GLaugh2
-    #show aimee_pensive at gat_right with dissolve
-    inconnu "Girl... J'entends, et je suis d'accord sur le fond. Mais on ne les connaît même pas encore et on ne sait pas quels numéros iels vont présenter, ou si même iels en ont..."
     hide imani_neutre with dissolve
     #show aimee_laugh at gat_right
     #hide aimee_pensive
@@ -1275,9 +1274,6 @@ label onboarding:
     show imani_neutre at pea_right with dissolve
     voice PLaugh1
     imani "Pardon, on a dû te sembler super judgy avec notre absence de réaction ! Moi c'est Imani."
-    #show imani_laugh at pea_right with dissolve
-
-    imani "Pardon, on a dû te sembler super judgy avec notre absence de réaction ! Moi c'est Imani."
     show flirt at flirt_right
     play vfxR VFXFlirt
     voice PFlirt1
@@ -1350,9 +1346,6 @@ label onboarding:
     show joy at joy_left
     play vfxL VFXJoy
     voice GLaugh2
-    #show aimee_neutre at gat left
-    #hide aimee_laugh
-    gatsby "Du coup, vu qu'on doit toujours parler à sa place, son nom de drag est Delaunay."
     #show aimee_laugh at gat_left
     #hide aimee_neutre
     gatsby "Et moi c'est Gatsby ! Parce que je suis magnifique, et que je n'avais pas plus d'inspi que ça au moment de choisir."

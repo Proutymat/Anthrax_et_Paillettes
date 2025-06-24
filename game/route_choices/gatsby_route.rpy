@@ -90,12 +90,6 @@ define audio.AmbDelShow = "audio/Amb/AP_Amb_ShowDel_V1.ogg"
 define audio.BarDay = "audio/Amb/Amb_BarDay_V4.ogg"
 define audio.BarEnd = "audio/Amb/Amb_BarEnd_V2.ogg"
 
-# Liste des réactions de foule
-define audio.CrowdDel1 = "audio/Amb/AP_Crowd_ShowDelSt1.ogg"
-define audio.CrowdDel2 = "audio/Amb/AP_Crowd_ShowDelSt2.ogg"
-define audio.CrowdDel3 = "audio/Amb/AP_Crowd_ShowDelSt3.ogg"
-define audio.CrowdDel4 = "audio/Amb/AP_Crowd_ShowDelSt4.ogg"
-
 # Liste des musiques
 define audio.CabaretEntrance = "audio/Music/ON_CabaretEntrance_V1.ogg"
 define audio.CabaretIntro = "audio/Music/ON_CabaretIntro_V1_.ogg"
@@ -116,6 +110,8 @@ define audio.BalconCoupletIntro = "audio/Music/AP_Balcon_IntroCouplet.ogg"
 define audio.BalconCouplet = "audio/Music/AP_Balcon_Couplet.ogg"
 define audio.BalconRefrain = "audio/Music/AP_Balcon_Refrain.ogg"
 define audio.BalconEnd = "audio/Music/AP_Balcon_End.ogg"
+define audio.LogesIntro = "audio/Music/AP_Loges_Intro.ogg"
+define audio.LogesRefrain = "audio/Music/AP_Loges_Refrain.ogg"
 define audio.ShowDelaunay = "audio/Music/AP_ShowDelaunay_V2.ogg"
 define audio.ShowGatsby = "audio/Music/AP_ShowGatsby_V1.ogg"
 define audio.ShowPeacock = "audio/Music/AP_ShowPeacock_V1.ogg"
@@ -415,7 +411,6 @@ label gat_2_1:
     aimee "Après tout, j'y ai consacré la majorité de ma vie. Ce n'est pas une mauvaise passe qui va envoyer en l'air tous mes efforts."
     aimee "Recommencer ne me fait pas peur. Et si je peux compiler avec la personne que je suis devenu.e, ce serait un triomphe !"
 
-    stop music fadeout 1.0
     jump gat_3
     call gat_3 from _call_gat_3 
 
@@ -509,7 +504,6 @@ label gat_2_2:
     aimee "Un indice ? Très bien."
     aimee "Il y a de quoi te faire tourner la tête...~"
 
-    stop music fadeout 1.0
     call gat_3 from _call_gat_3_1 
 
 #GAT.2.3
@@ -602,7 +596,6 @@ label gat_2_3:
     play vfxR VFXSadness
     aimee "Oui ! Mais malheureusement, on n'y fait plus trop de spectacles. Chacun.e a sa vie et d'autres priorités, et le drag est passé au second plan." 
     aimee "Mais peut-être que ça reprendra un jour, qui sait ?"
-    stop music fadeout 1.0
     call gat_3 from _call_gat_3_2 
 
 #TRANSITION RIDEAU & GRADIENT A AJOUTER + quelques mois blabla (vers auditorium)
@@ -611,6 +604,8 @@ label gat_3:
 
     $ persistent.bg_parallax = False
     hide aimee_neutre with dissolve
+    stop music fadeout 1.0
+    stop ambiance fadeout 1.0
     show curtain_close with dissolve
     play vfxC SFXCurtainClose
     pause 1.5
@@ -661,33 +656,31 @@ label gat_3:
 
     $ quick_menu = True
 
-
     $ current_textbox = "gatsby"
-
     aimee "Oh, pardon... Je ne pensais pas que tu me cherchais."
-    $ current_textbox = "anthrax"
 
+    $ current_textbox = "anthrax"
     anthrax "Euh... Nous étions censé.e.s nous retrouver pour nous entraîner..."
-    $ current_textbox = "gatsby"
 
+    $ current_textbox = "gatsby"
     aimee "Meeeeeerde ! J'ai complètement zappé ! Je suis désolé.e !"
-    $ current_textbox = "anthrax"
 
+    $ current_textbox = "anthrax"
     anthrax "Ce n'est pas grave, c'est le genre de chose qui arrive. Qu'est-ce que tu fais... ?"
-    $ current_textbox = "gatsby"
 
+    $ current_textbox = "gatsby"
     aimee "Ça ? J'essaye de tenir un journal."
-    $ current_textbox = "anthrax"
 
+    $ current_textbox = "anthrax"
     anthrax "Un journal ?"
-    $ current_textbox = "gatsby"
 
+    $ current_textbox = "gatsby"
     aimee "Oui, pour mettre à plat ma progression, mes hauts et mes bas... Histoire de garder une trace du chemin parcouru et de ce que j'ai accompli."
+
     $ current_textbox = "anthrax"
-
     anthrax "Oh ! Un journal intime quoi !"
-    $ current_textbox = "gatsby"
 
+    $ current_textbox = "gatsby"
     aimee "Ça fait tout de suite moins sérieux dit comme ça... Mais oui, un journal intime."
     queue music BalconIntro noloop
 
@@ -719,18 +712,15 @@ label gat_3:
 
 
     $ current_textbox = "gatsby"
-
     aimee "Hm..."
-
     aimee "Peut-être qu'en parler m'aidera à mieux trouver les mots pour l'écrire..."
+
     $ current_textbox = "anthrax"
-
     anthrax "Oh... ?"
-    $ current_textbox = "gatsby"
 
-    play music BalconCoupletIntro
+    queue music BalconCoupletIntro
     queue music BalconCouplet
-
+    $ current_textbox = "gatsby"
     aimee "Tu vois quand je t'ai parlé de mon burn-out ? Ça a eu des conséquences bien plus dévastatrices sur ma santé mentale qu'une \"simple\" dépression..."
     aimee "Avec la pression au sein de mon ancienne troupe, j'ai développé des troubles du comportement alimentaire."
     aimee "Boulimie, anorexie, un mix des deux, puis un soupçon de mérycisme... Enfin bref."
@@ -781,6 +771,7 @@ label gat_3_1:
     $ quick_menu = False
     #show gatsby_neutre at gat_right
     show aimee_neutre at gat_right
+    queue music BalconRefrain
    
     menu:
         #gatsby ""
@@ -870,10 +861,10 @@ label gat_3_2:
     aimee "Ça a commencé avec moi parce que j’avais besoin de contrôle dans ma vie, et que c’était là où je le trouvais."
     aimee "Enfin... C’est ce que je préférais me raconter plutôt..."
     $ current_textbox = "anthrax"
-
+    
+    queue music BalconRefrain
 
     $ quick_menu = False
-    #show gatsby_neutre at gat_right
     show aimee_neutre at gat_right
    
     menu:
@@ -956,9 +947,9 @@ label gat_3_3:
     aimee "Juste parfois, je me reprends à y penser. Sans l'envisager hein ! C'est déjà du progrès."
     $ current_textbox = "anthrax"
 
+    queue music BalconRefrain
 
     $ quick_menu = False
-    #show gatsby_neutre at gat_right
     show aimee_neutre at gat_right
    
     menu:

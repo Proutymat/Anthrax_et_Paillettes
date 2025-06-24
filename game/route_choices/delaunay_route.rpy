@@ -705,7 +705,7 @@ label del_3:
     hide leandre_laugh 
     leandre "Mais je te fais suffisamment confiance pour ne pas me juger sur mes décisions."
 
-    play music BalconCoupletIntro
+    queue music BalconCoupletIntro
     queue music BalconCouplet
 
     $ current_textbox = "description"
