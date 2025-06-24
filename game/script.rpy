@@ -894,11 +894,12 @@ define ui_back = ['audio/SFX/AP_UI_Back_V4-001.ogg','audio/SFX/AP_UI_Back_V4-002
 
 # Liste des ambiances
 define audio.AmbAndrogameDay = "audio/Amb/Amb_Cabaret_V4.ogg"
-define audio.AmbLoges = "audio/Amb/Amb_LogesDay_V5.ogg"
+define audio.AmbLoges = "audio/Amb/Amb_LogesDay_V6.ogg"
 define audio.AmbRue = "audio/Amb/Amb_Rue_V2.ogg"
 define audio.AmbLogesNight = "audio/Amb/Amb_LogesNight_V3.ogg"
 define audio.AmbDelShow = "audio/Amb/AP_Amb_ShowDel_V1.ogg"
 define audio.BarDay = "audio/Amb/Amb_BarDay_V4.ogg"
+define audio.BarEnd = "audio/Amb/Amb_BarEnd_V2.ogg"
 
 # Liste des réactions de foule
 define audio.CrowdDel1 = "audio/Amb/AP_Crowd_ShowDelSt1.ogg"
@@ -906,12 +907,30 @@ define audio.CrowdDel2 = "audio/Amb/AP_Crowd_ShowDelSt2.ogg"
 define audio.CrowdDel3 = "audio/Amb/AP_Crowd_ShowDelSt3.ogg"
 define audio.CrowdDel4 = "audio/Amb/AP_Crowd_ShowDelSt4.ogg"
 
-#Voix
+# Liste des Voix
+define audio.MLaugh1 = "audio/Voice/AP_Voice_M_Laugh-001.ogg"
+define audio.MLaugh2 = "audio/Voice/AP_Voice_M_Laugh-002.ogg"
+define audio.MLaugh3 = "audio/Voice/AP_Voice_M_Laugh-003.ogg"
+define audio.MLaugh4 = "audio/Voice/AP_Voice_M_Laugh-004.ogg"
+define audio.MLaugh5 = "audio/Voice/AP_Voice_M_Laugh-005.ogg"
+define audio.MHm1 = "audio/Voice/AP_Voice_M_Hm-001.ogg"
+define audio.MHm2 = "audio/Voice/AP_Voice_M_Hm-002.ogg"
+define audio.MBienvenue = "audio/Voice/AP_Voice_M_Bienvenue-002.ogg"
 define audio.GLaugh1 = "audio/Voice/AP_Voice_G_Laugh-001.ogg"
 define audio.GLaugh2 = "audio/Voice/AP_Voice_G_Laugh-002.ogg"
 define audio.GLaugh3 = "audio/Voice/AP_Voice_G_Laugh-003.ogg"
 define audio.GLaugh4 = "audio/Voice/AP_Voice_G_Laugh-004.ogg"
 define audio.GLaugh5 = "audio/Voice/AP_Voice_G_Laugh-005.ogg"
+define audio.GHm1 = "audio/Voice/AP_Voice_G_Hm-001.ogg"
+define audio.GHm2 = "audio/Voice/AP_Voice_G_Hm-002.ogg"
+define audio.GHm3 = "audio/Voice/AP_Voice_G_Hm-003.ogg"
+define audio.PLaugh1 = "audio/Voice/AP_Voice_P_Laugh-001.ogg"
+define audio.PLaugh2 = "audio/Voice/AP_Voice_P_Laugh-002.ogg"
+define audio.Pnono = "audio/Voice/AP_Voice_P_Nono-001.ogg"
+define audio.PAh1 = "audio/Voice/AP_Voice_P_Ah-001.ogg"
+define audio.PAh2 = "audio/Voice/AP_Voice_P_Ah-002.ogg"
+define audio.PFlirt1 = "audio/Voice/AP_Voice_P_Flirt-001.ogg"
+define audio.DSurprised1 = "audio/Voice/AP_Voice_D_Surprised-001.ogg"
 
 # Liste des musiques
 define audio.CabaretEntrance = "audio/Music/ON_CabaretEntrance_V1.ogg"
@@ -1040,6 +1059,7 @@ label onboarding:
 
     show joy at joy_center
     play vfxC VFXJoy
+    voice MLaugh3
     mother "Bienvenue dans L'Androgame ! J'espère que tu as fait bonne route."
     hide joy with dissolve
 
@@ -1060,6 +1080,7 @@ label onboarding:
 
     show joy at joy_center
     play vfxC VFXJoy
+    voice MLaugh1
     mother "Aha ! Tu m’en vois ravie de l’entendre."
     hide joy with dissolve
 
@@ -1076,6 +1097,7 @@ label onboarding:
    
     show joy at joy_right
     play vfxR VFXJoy
+    voice MHm2
     mother "Après, si tu es ici aujourd’hui, c’est parce que c’est justement le genre de chose qui t’anime : te mettre en scène..."
     hide joy with dissolve
 
@@ -1113,6 +1135,7 @@ label onboarding:
     
     show angry at angry_left
     play vfxL VFXAnger
+    voice PAh1
     imani "Ok, hear me out... Je dis simplement que si l'on veut garder une logique dans la suite de nos numéros, on va devoir inverser l'ordre dans lequel on passe..."
     hide angry with dissolve
 
@@ -1128,11 +1151,13 @@ label onboarding:
     $ current_textbox = "gatsby"
 
     show aimee_neutre at gat_right with dissolve
+    voice GHm1
     inconnu "Girl... J'entends, et je suis d'accord sur le fond. Mais on ne les connaît même pas encore et on ne sait pas quels numéros iels vont présenter, ou si même iels en ont..."
     hide imani_neutre with dissolve
     
     show joy at joy_right
     play vfxR VFXJoy
+    voice GLaugh2
     inconnu "Tu es en train de te faire des plans sur la comète, ma belle."
     hide joy
 
@@ -1201,10 +1226,12 @@ label onboarding:
     $ current_textbox = "peacock"
 
     show imani_neutre at pea_right with dissolve
+    voice PLaugh1
     imani "Pardon, on a dû te sembler super judgy avec notre absence de réaction ! Moi c'est Imani."
 
     show flirt at flirt_right
     play vfxR VFXFlirt
+    voice PFlirt1
     imani "Parfois on s'appelle aussi par nos noms de scène, donc tu peux aussi m'appeler Peacock, si tu en as envie..."
     hide flirt
 
@@ -1232,7 +1259,7 @@ label onboarding:
     #retirer overlay
 
     $ current_textbox = "delaunay"
-    
+    voice DSurprised1
     leandre "N-Non ! C'est juste que... J'ai toujours un peu de mal avec les nouvelles personnes. Excuse-moi..."
     show flirt at flirt_right
     play vfxR VFXFlirt
@@ -1257,9 +1284,11 @@ label onboarding:
 
     $ current_textbox = "gatsby"
 
+    
     gatsby "Du coup, vu qu'on doit toujours parler à sa place, son nom de drag est Delaunay."
     show joy at joy_left
     play vfxL VFXJoy
+    voice GLaugh2
     gatsby "Et moi c'est Gatsby ! Parce que je suis magnifique, et que je n'avais pas plus d'inspi que ça au moment de choisir."
     hide joy
     gatsby "Je me genre au neutre, c'est à dire avec ellui/iel. C'est non-négociable.~"

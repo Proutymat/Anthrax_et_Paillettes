@@ -83,12 +83,13 @@ define P_type_sounds = ['audio/SFX/AP_T4-001.ogg','audio/SFX/AP_T4-002.ogg','aud
 define type_silent = ['<silence 1.0>']
 
 # Liste des ambiances
-define audio.AmbAndrogameDay = "audio/Amb/Amb_CabaretDay_V3.ogg"
-define audio.AmbLoges = "audio/Amb/Amb_LogesDay_V4.ogg"
+define audio.AmbAndrogameDay = "audio/Amb/Amb_Cabaret_V4.ogg"
+define audio.AmbLoges = "audio/Amb/Amb_LogesDay_V6.ogg"
 define audio.AmbRue = "audio/Amb/Amb_Rue_V2.ogg"
 define audio.AmbLogesNight = "audio/Amb/Amb_LogesNight_V3.ogg"
 define audio.AmbDelShow = "audio/Amb/AP_Amb_ShowDel_V1.ogg"
 define audio.BarDay = "audio/Amb/Amb_BarDay_V4.ogg"
+define audio.BarEnd = "audio/Amb/Amb_BarEnd_V2.ogg"
 
 # Liste des réactions de foule
 define audio.CrowdDel1 = "audio/Amb/AP_Crowd_ShowDelSt1.ogg"
@@ -120,13 +121,6 @@ define audio.LogesRefrain = "audio/Music/AP_Loges_Refrain.ogg"
 define audio.ShowDelaunay = "audio/Music/AP_ShowDelaunay_V2.ogg"
 define audio.ShowGatsby = "audio/Music/AP_ShowGatsby_V1.ogg"
 define audio.ShowPeacock = "audio/Music/AP_ShowPeacock_V1.ogg"
-define audio.ConfidenceIntro = 'audio/Music/3_Confidence_Intro.ogg'
-define audio.ConfidenceA1 = 'audio/Music/3_Confidence_A.ogg'
-define audio.ConfidenceA2 = 'audio/Music/3_Confidence_A2.ogg'
-define audio.ConfidenceAB = 'audio/Music/3_Confidence_AB.ogg'
-define audio.ConfidenceB1 = 'audio/Music/3_Confidence_B1.ogg'
-define audio.ConfidenceB2 = 'audio/Music/3_Confidence_B2.ogg'
-define audio.ConfidenceOutro = 'audio/Music/3_Confidence_Outro.ogg'
 
 # Déclarez les personnages utilisés dans le jeu.
 define mother = Character('Mother', color="#b51963", who_outlines=[(2, "#000000", 0, 0)], what_slow_cps=30, callback=type_sound, cb_cps=30, cb_boopfile=M_type_sounds)
@@ -155,7 +149,7 @@ stop music fadeout 0.1
 play ambiance AmbLoges fadein 2.0
 show leandre_shy at del_center with dissolve
 
-play ambiance AmbLoges volume 0.1 fadein 0.5
+play ambiance AmbLoges volume 0.5 fadein 0.5
 
 #DEL.1
 $ current_textbox = "delaunay"
@@ -208,7 +202,7 @@ text "L'immense lustre duquel pendaient des larmes de verre reflétait les spots
 text "Léandre s'assît sur l'une des chaises hautes de bois verni et commanda un Cosmo au barman."
 
 show bar
-play ambiance BarDay fadein 2.0
+play ambiance BarDay fadein 3.0 volume 0.8
 
 $ current_textbox = "delaunay"
 
@@ -591,9 +585,6 @@ label del_3:
     text "Cela faisait plusieurs minutes que je cherchais Léandre, avec qui j'étais supposé.e répéter une partie de mon numéro, que l'on construisait ensemble."
     text "Après avoir fait trois fois le tour du bâtiment, je finis par retourner sur les planches de la scène, pensif.ve."
     text "Et en toute honnêteté, un peu inquiet.e."
-
-    queue music ConfidenceA1
-
     text "C'est alors que j'aperçu une tignasse blonde depuis le haut du balcon, absorbée par le contenu de son téléphone."
     text "N'ayant pas pensé à lever le regard, je grimpai l'escalier en colimaçon pour le rejoindre, à tâtons."
 
@@ -778,7 +769,7 @@ label del_3_1:
 
 
     $ quick_menu = True
-
+    queue music BalconRefrain
     show leandre_laugh at del_right
     show angry at angry_right
     leandre "Je me suis surtout senti pousser des ailes."
@@ -789,7 +780,7 @@ label del_3_1:
     show leandre_shy at del_right
     leandre "J'ai fini par l'accepter : j'ai fait des erreurs et pris de mauvaises décisions."
     hide leandre_shy
-    queue music BalconRefrain
+    
 
 
     $ quick_menu = False
@@ -853,7 +844,7 @@ label del_3_2:
     show leandre_shy at del_center
     leandre "C'est plus gênant si quelqu'un tombe dessus et m'y reconnaît, mais comme j'ai énormément changé entre-temps, je ne m'en inquiète pas plus que ça."
     hide leandre_shy
-
+    queue music BalconRefrain
     $ quick_menu = False
    
     show leandre_neutre at del_right
@@ -884,7 +875,7 @@ label del_3_2:
 
     show leandre_shy at del_right
     leandre "M'aimer d'abord, découvrir mon intimité ensuite... Ou en même temps, à la rigueur."
-    queue music BalconRefrain
+    
     hide leandre_shy
 
     $ quick_menu = False
@@ -941,6 +932,7 @@ label del_3_3:
     hide leandre_laugh
     leandre "Et j'étais tellement dans le mal, psychologiquement parlant, que je n'avais pas la patience non plus d'entamer ce parcours."
     leandre "Heureusement, je suis tombé sur une endocrinologue top, qui m'a permit d'accéder à un traitement hormonal."
+    queue music BalconRefrain
 
     $ quick_menu = False
    
@@ -974,7 +966,7 @@ label del_3_3:
     leandre "Et de ne pas savoir ce que tu veux finalement..."
     show sadness at sadness_right
     leandre "Parce qu'en plus de ta déprime, c'est apparemment absolument nécessaire de t'achever en te décrédibilisant."
-    queue music BalconRefrain
+    
 
     $ quick_menu = False
    
@@ -1065,7 +1057,7 @@ label del_4:
 label choix_del4:
     $ quick_menu = False
     show loges
-    queue music LogesRefrain volume 0.5
+    
     $ current_textbox = "delaunay"
     show delaunay_neutre at del_right
     with fade
@@ -1119,6 +1111,7 @@ label del_4_1:
     $ current_textbox = "delaunay"
     show delaunay_shy at del_center with dissolve
     delaunay "Oh ! Mais occupez-vous de vos fesses, oui ! Je vais rougir..."
+    queue music LogesRefrain volume 0.5
 
     $ quick_menu = False
 
@@ -1221,7 +1214,7 @@ label del_4_2:
     show joy at joy_center
     delaunay "Léandre n'existe pas quand je suis en drag, c'est libérateur."
     hide joy
-  
+    queue music LogesRefrain volume 0.5
 
     $ quick_menu = False
    
@@ -1406,7 +1399,7 @@ label del_4_3:
 
     $ current_textbox = "anthrax"
     anthrax "Je ne l'aurais jamais imaginé... Genre avec une fausse barbe et tout ?"
-
+    queue music LogesRefrain volume 0.5
     $ current_textbox = "delaunay"
     show delaunay_laugh at del_right
     delaunay "Surtout pas ! Une moustache, très chèr.e ! J'ai quand même un peu de goût..."
@@ -1555,16 +1548,17 @@ label del_5:
     hide delaunay_neutre with dissolve
     show delaunay_neutre at del_center with dissolve
     text "L’effet dupait aisément son public et signa la fin de son acte."
-    stop music fadeout 3.0
     text "Il se couvrit d’un long kimono et se fit aider pour descendre sans glisser avant de saluer fièrement les spectateur.ice.s, son make-up intact et un grand sourire aux lèvres."
-    
+    stop music fadeout 3.0
     #TRANSITION RIDEAU
     $ persistent.bg_parallax = False
     hide delaunay_neutre with dissolve
     show curtain_close with dissolve
+    play vfxC SFXCurtainClose
     pause 1.5
     hide auditorium
     show curtain_open with dissolve
+    play vfxC SFXCurtainOpen
 
 
 call del_6 from _call_del_6 
@@ -1644,6 +1638,7 @@ label del_6_good:
     $ quick_menu = True
     show delaunay_neutre at del_right with dissolve
     show loges with dissolve
+    
 
     delaunay "Hey, ça te dirait qu'on sorte prendre un verre après m'être changé? Rien que nous deux ? "
    
@@ -1669,16 +1664,17 @@ label del_6_good:
     hide flirt
     hide delaunay_neutre with dissolve
     show curtain_close with dissolve
+    play vfxC SFXCurtainClose
     pause 1.5
     hide loges
     scene black
     show curtain_open with dissolve
+    play vfxC SFXCurtainOpen
     with fade
 
- 
+
     scene black with dissolve
-    
-    play music End
+    play music BadEnd noloop volume 0.7
 
     $ current_textbox = "description"
     text "Le temps que Delaunay et les autres artistes terminent de se démaquiller et de se rhabiller en civil, je passai le balai sur les planches de la scène..."
@@ -1687,10 +1683,12 @@ label del_6_good:
  
     show devanture
     show leandre_neutre at del_right with dissolve
+    play ambiance AmbRue volume 0.4
 
     
     $ current_textbox = "delaunay"
     show joy at joy_right
+    play vfxC VFXJoy
     leandre "Pardon pour l'attente! On y va?"
     hide joy
 
@@ -1754,7 +1752,7 @@ label del_6_bad:
     scene black
     show curtain_open with dissolve
     with fade
-    
+    play ambiance BarEnd
     $ current_textbox = "delaunay"
 
     delaunay "On va aller boire un verre avec les autres une fois que les derniers clients auront quitté la salle. Tu te joins à nous ?"
@@ -1788,7 +1786,7 @@ label del_6_good_bad:
     with fade
     
     show bar with fade
-    play music BadEnd noloop
+    play music BadEnd noloop volume 0.7
     $ current_textbox = "description"
   
     text "Tous.te.s étaient réuni.e.s face au comptoir, se faisant servir par notre merveilleux \"Dobarman\"."
