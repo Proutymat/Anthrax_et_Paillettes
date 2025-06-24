@@ -6,7 +6,7 @@ image splash2 = "splashscreen2.png"
 define quick_dissolve = Dissolve(0.2)
 
 label before_main_menu:
-     # Ne pas afficher la textbox ni le quick menu
+    # Ne pas afficher la textbox ni le quick menu
     $ _window = False
     $ quick_menu = False
     $ _game_menu_screen = None
