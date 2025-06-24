@@ -724,9 +724,30 @@ label pea_2_3:
 #PEA.3
 label pea_3:
     
-    hide imani_neutre
-    hide bar 
-    scene black
+    $ persistent.bg_parallax = False
+    hide imani_neutre with dissolve
+    stop music fadeout 0.5
+    stop ambiance fadeout 1.0
+    show curtain_close with dissolve
+    play vfxC SFXCurtainClose
+    pause 1.5
+    hide bar
+    show curtain_open 
+    play vfxC SFXCurtainOpen
+
+    show gradient
+    play music LongEllipse volume 0.7
+    show text "{size=60}{color=#FFFFFF}Quelques mois passèrent...{/color}{/size}" at truecenter
+
+    pause 6
+
+    hide text with dissolve
+    hide gradient with fade
+    stop music fadeout 1.5
+
+    pause 2
+
+    $ persistent.bg_parallax = True
 
     $ current_textbox = "description"
     text "Cela faisait plusieurs minutes que je cherchais Imani, avec qui j'étais supposé.e répéter une partie de mon numéro, que l'on construisait ensemble."

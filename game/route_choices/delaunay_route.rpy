@@ -418,8 +418,6 @@ label del_2_1:
     hide leandre_laugh
     hide flirt
 
-    stop music fadeout 1.0
-    stop ambiance fadeout 1.0
     call del_3 from _call_del_3 
 
 #DEL.2.2
@@ -496,8 +494,6 @@ label del_2_2:
 
     $ quick_menu = True
 
-    stop music fadeout 1.0
-    stop ambiance fadeout 1.0
     call del_3 from _call_del_3_1 
 
 #DEL.2.3
@@ -575,8 +571,6 @@ label del_2_3:
     $ current_textbox = "anthrax"
     anthrax "La nuance est fine, mais je crois comprendre ce que tu sous-entends..."
 
-    stop music fadeout 1.0
-    stop ambiance fadeout 1.0
     call del_3 from _call_del_3_2
  
 #DEL.3
@@ -584,6 +578,8 @@ label del_3:
 
     $ persistent.bg_parallax = False
     hide leandre_neutre with dissolve
+    stop music fadeout 1.0
+    stop ambiance fadeout 1.0
     show curtain_close with dissolve
     play vfxC SFXCurtainClose
     pause 1.5
@@ -599,9 +595,9 @@ label del_3:
 
     hide text with dissolve
     hide gradient with fade
+    stop music fadeout 1.5
 
-
-    stop music fadeout 2.0
+    pause 2
 
     $ persistent.bg_parallax = True
 

@@ -604,7 +604,7 @@ label gat_3:
 
     $ persistent.bg_parallax = False
     hide aimee_neutre with dissolve
-    stop music fadeout 1.0
+    stop music fadeout 0.5
     stop ambiance fadeout 1.0
     show curtain_close with dissolve
     play vfxC SFXCurtainClose
@@ -614,12 +614,16 @@ label gat_3:
     play vfxC SFXCurtainOpen
 
     show gradient
+    play music LongEllipse volume 0.7
     show text "{size=60}{color=#FFFFFF}Quelques mois passèrent...{/color}{/size}" at truecenter
 
     pause 6
 
     hide text with dissolve
     hide gradient with fade
+    stop music fadeout 1.5
+
+    pause 2
 
     $ persistent.bg_parallax = True
 
@@ -1011,8 +1015,6 @@ label gat_3_3:
             pass
 
 
-
-
     $ quick_menu = True
 
     $ current_textbox = "gatsby"
@@ -1043,18 +1045,14 @@ label gat_4:
     hide text with dissolve
     hide gradient with fade
 
-
     stop music fadeout 0.5
     stop ambiance fadeout 0.5
-    play music BackstageLoop volume 0.5
-    play ambiance AmbLoges fadein 0.5
+    play music LogesIntro volume 0.5
     
     hide aimee_neutre
 
-
     $ persistent.bg_parallax = True
     $ current_textbox = "description"
-
     text "Le calme illusoire de la loge contrastait drastiquement avec le bourdonnement du staff passé la porte."
     text "Les discussions étaient légères et l'entraide entre les artistes pour régler les petits aléas techniques était doux à voir."
     text "Malgré tout, chacun.e se préparait avec diligence, en jetant nerveusement un coup d'œil à l'heure qui tournait plusieurs fois dans la même minute."
@@ -1069,7 +1067,9 @@ label gat_4:
     $ quick_menu = False
     show loges
     show gatsby_neutre at gat_right with dissolve
-   
+    play ambiance AmbLoges fadein 0.5
+    queue music LogesRefrain
+
     menu:
         #gatsby ""
         gatsby "[player_name], est-ce que tu pourrais me rendre un service ?"
@@ -1087,10 +1087,9 @@ label gat_4:
     $ quick_menu = True
 
     $ current_textbox = "gatsby"
-
     gatsby "Est-ce que ce serait possible de me passer les pièces de mon costume pendant que je me change ? Le paravent est ridiculement petit..."
-    $ current_textbox = "description"
 
+    $ current_textbox = "description"
     text "Aimé.e gardait son air confiant malgré son maquillage aux traits de Pierrot. Cependant, je décelais quelques incertitudes dans son regard. Peut-être de l'appréhension."
     
     $ quick_menu = False
@@ -1493,9 +1492,11 @@ label gat_4_3:
 label gat_5:
     hide gatsby_neutre with dissolve
     show curtain_close with dissolve
+    play vfxC SFXCurtainClose
     pause 1.5
     hide loges
     show curtain_open with dissolve
+    play vfxC SFXCurtainClose
 
     scene black with dissolve
     play music ShowGatsby noloop
@@ -1605,6 +1606,7 @@ label gat_6_good:
     $ quick_menu = False
     $ current_textbox = "gatsby"
     
+    play ambiance AmbLoges volume 0.4
     with fade
     gatsby "Ça te tente que l'on sorte un peu après? Se promener en ville, grignoter un truc, quelque chose du style..."
     
@@ -1639,10 +1641,9 @@ label gat_6_good:
     show curtain_open with dissolve
     play vfxC SFXCurtainOpen
     with fade
-
  
     scene black with dissolve
-    
+    play music BadEnd volume 0.8 noloop
 
     $ current_textbox = "description"
     text "Le temps que Gatsby et les autres artistes terminent de se démaquiller et de se rhabiller en civil, je passai le balai sur les planches de la scène..."
@@ -1723,7 +1724,7 @@ label gat_6_good_bad:
     with fade
 
     show bar with fade
-    play music BadEnd noloop
+    play music BadEnd volume 0.8 noloop
    
     $ current_textbox = "description"
   
