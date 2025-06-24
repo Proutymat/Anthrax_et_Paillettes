@@ -148,9 +148,7 @@ default indice_del = 0
 scene black with fade
 show loges
 stop music fadeout 0.1
-play ambiance AmbLoges fadein 2.0
 show leandre_shy at del_center with dissolve
-
 play ambiance AmbLoges volume 0.5 fadein 0.5
 
 #DEL.1
@@ -232,6 +230,7 @@ $ quick_menu = True
 
 queue music BarMusic volume 0.5
 queue music BarMusicPartB volume 0.5
+
 leandre "Alors dis-moi, qu’est-ce qui t’amène ici ?"
 
 $ current_textbox = "anthrax"
@@ -272,10 +271,6 @@ menu:
         pass
 
 $ quick_menu = True
-
-
-
-
 
 leandre "Environ cinq ans je dirais? Techniquement, je suis le doyen, parmi les autres que tu as croisé.e.s tout à l'heure."
 leandre "Enfin, officiellement, Imani a travaillé ici depuis plus longtemps, mais n'a intégré la troupe qu'il y a seulement deux ans."
@@ -791,6 +786,7 @@ label del_3_1:
     leandre "Et c'était la première fois de ma vie que j'apprenais à apprécier mon corps pour ce qu'il était. "
     show leandre_laugh at del_right
     show sadness at sadness_right
+    play vfxR VFXSadness
     leandre "C'était une liberté nouvelle, et je ne savais pas ce que je faisais."
     hide leandre_laugh
     hide sadness
@@ -816,6 +812,7 @@ label del_3_1:
     queue music BalconRefrain
     show leandre_laugh at del_right
     show angry at angry_right
+    play vfxR VFXAnger
     leandre "Je me suis surtout senti pousser des ailes."
     hide leandre_laugh
     hide angry
@@ -848,6 +845,7 @@ label del_3_1:
 
     leandre "Oui, je suis de cet avis. Et puis tout le monde a des regrets, je ne suis pas le seul."
     show sadness at sadness_right
+    play vfxR VFXSadness
     leandre "J'aurais peut-être juste espéré que Delaunay débarque un peu plus tôt dans ma vie."
     hide sadness
     leandre "Il m'aurait sûrement évité quelques bêtises et aiguillé comme il le fait aujourd'hui."
@@ -859,6 +857,7 @@ label del_3_1:
     $ current_textbox = "delaunay"
     leandre "C'est un peu plus simple de complètement le dissocier de ma personne."
     show flirt at flirt_right
+    play vfxR VFXFlirt
     show leandre_laugh at del_right
     leandre "C'est un peu mon ange gardien finalement, qui m'incite à prendre exemple sur lui et être une meilleure version de moi-même."
     queue music BalconEnd noloop
@@ -953,6 +952,7 @@ label del_3_2:
     
     show leandre_laugh at del_right
     show joy at joy_right
+    play vfxR VFXJoy
     leandre "Grâce à ça, j'ai pu arrêter et reprendre ma vie en main."
     hide leandre_laugh
     hide joy
@@ -977,6 +977,7 @@ label del_3_3:
 
     $ current_textbox = "delaunay"
     show sadness at sadness_center
+    play vfxC VFXSadness
     leandre "Plus ou moins... Avec mon parcours de transition plutôt chaotique, je n'ai pas pu passer par le circuit \"public\", avec les aides médicales qui vont avec."
     leandre "Pour avoir accès à ça, il faut avoir eu un suivi psychiatrique d'au moins deux ans."
     hide sadness
@@ -1005,6 +1006,7 @@ label del_3_3:
     $ quick_menu = True
     
     show joy at joy_right
+    play vfxR VFXJoy
     show leandre_laugh at del_right
     leandre "Oh, crois-moi que je suis rodé en tout ce qui concerne les démarches administratives et suivis médicaux..."
     hide joy
@@ -1063,6 +1065,7 @@ label del_3_3:
     queue music BalconEnd noloop
     $ current_textbox = "delaunay"
     show flirt at flirt_right
+    play vfxR VFXFlirt
     show leandre_flirty at del_right
     leandre "Je suis tout de même heureux de l'avoir partagé avec toi..."
     
@@ -1147,6 +1150,7 @@ label del_4_1:
     show delaunay_flirty at del_center
 
     show flirt at flirt_center
+    play vfxC VFXFlirt
     $ current_textbox = "delaunay"
     delaunay "Eh bien ! On dirait que je commence à déteindre sur toi~"
     hide flirt
@@ -1224,6 +1228,7 @@ label del_4_1:
     hide peacock_sassy with dissolve
     show delaunay_laugh at del_left
     show joy at joy_left
+    play vfxL VFXJoy
     delaunay "Et je découvre la bad bitch que j'ai toujours rêvé d'être."
     hide joy
     hide delaunay_laugh
@@ -1255,6 +1260,7 @@ label del_4_1:
     
     $ current_textbox = "delaunay"
     show joy at joy_center
+    play vfxC VFXJoy
     show delaunay_flirty at del_center
     delaunay "Mon dieu, j'ai encore tellement à faire ! Vite [player_name] ! Un coup de main, vite !~"
     hide delaunay_flirty
@@ -1280,6 +1286,7 @@ label del_4_2:
     delaunay "Tout."
     hide delaunay_laugh
     show joy at joy_center
+    play vfxC VFXJoy
     delaunay "Léandre n'existe pas quand je suis en drag, c'est libérateur."
     hide joy
     queue music LogesRefrain volume 0.5
@@ -1321,6 +1328,7 @@ label del_4_2:
     delaunay "Hm... Oui. Mais c'est pas comme si je n'essayais pas. Comment dire..."
     hide delaunay_laugh
     show sadness at sadness_right
+    play vfxR VFXSadness
     delaunay "En fait, je suis passé par tellement de changements et je me recherche tellement encore..."
     hide sadness
     delaunay "Que je n'ai pas de vrai repère auquel me raccrocher en termes de confiance en soi et de personnalité."
@@ -1344,6 +1352,7 @@ label del_4_2:
     $ quick_menu = True
 
     show joy at joy_right
+    play vfxR VFXJoy
     delaunay "Je sais... Et ça commence à se stabiliser, bien heureusement."
     hide joy
     hide delaunay_laugh
@@ -1399,6 +1408,7 @@ label del_4_2:
     $ current_textbox = "delaunay"
     show delaunay_shy at del_right
     show angry at angry_right
+    play vfxR VFXAnger
     delaunay "Tu n'as pas osé!?"
     hide angry
     hide delaunay_shy
@@ -1422,6 +1432,7 @@ label del_4_2:
 
     $ current_textbox = "delaunay"
     show flirt at flirt_center
+    play vfxC VFXFlirt
     show delaunay_flirty at del_center with dissolve
     delaunay "Mon dieu, j'ai encore tellement à faire ! Vite [player_name] ! Un coup de main, vite !"
     hide flirt
@@ -1451,6 +1462,7 @@ label del_4_3:
     
     $ current_textbox = "delaunay"
     show joy at joy_center
+    play vfxC VFXJoy
     delaunay "Ah ça, c'est l'effet \"Delaunay\" !"
     hide joy
 
@@ -1489,6 +1501,7 @@ label del_4_3:
     $ current_textbox = "peacock"
     show peacock_sassy at pea_left with dissolve
     show angry at angry_left
+    play vfxL VFXAnger
     show peacock_neutre at pea_left with dissolve
     peacock "Tu as quelque chose contre les barbes ma belle ?"
     hide angry
@@ -1518,6 +1531,7 @@ label del_4_3:
     $ quick_menu = False
     $ current_textbox = "delaunay"
     show angry at angry_right
+    play vfxR VFXAnger
     show delaunay_neutre at del_right
     menu:
         delaunay "Je suis outré !"
@@ -1550,6 +1564,7 @@ label del_4_3:
     $ current_textbox = "delaunay"
     show delaunay_laugh at del_right
     show joy at joy_right
+    play vfxR VFXJoy
     delaunay "Oh, ça... C'est un autre débat. C'est plus mon côté égocentrique que j'essaye de travailler. Faut pas hésiter à me rappeler l'humilité..."
     hide delaunay_laugh
     hide joy
@@ -1563,6 +1578,7 @@ label del_4_3:
     $ current_textbox = "delaunay"
     show delaunay_neutre at del_right
     show sadness at sadness_right
+    play vfxR VFXSadness
     menu:
         delaunay "Par pitié, pas toi aussi..."
         "Désolé.e, c'était trop tentant !":
@@ -1585,6 +1601,7 @@ label del_4_3:
 
     $ current_textbox = "delaunay"
     show joy at joy_center
+    play vfxC VFXJoy
     show delaunay_flirty at del_right
     delaunay "Mon dieu, j'ai encore tellement à faire ! Vite [player_name] ! Un coup de main, vite !~"
     hide delaunay_flirty
@@ -1630,6 +1647,7 @@ label del_5:
     show delaunay_neutre at del_right with dissolve
     #show delaunay_shy at del_right with dissolve
     show flirt at flirt_right
+    play vfxR VFXFlirt
     text "Laissant la tension gagner le public, il finit par s’y glisser en arrière, laissant l’eau déborder ostensiblement sur la scène."
     text "Il continua de se déshabiller avec lenteur et adresse, jusqu’à sortir de son corset un sous-vêtement trempé qu’il jeta insolemment."
     hide flirt
@@ -1639,6 +1657,7 @@ label del_5:
     #show delaunay_flirty at del_center with dissolve
     text "L’effet dupait aisément son public et signa la fin de son acte."
     show joy at joy_center
+    play vfxC VFXJoy
     text "Il se couvrit d’un long kimono et se fit aider pour descendre sans glisser avant de saluer fièrement les spectateur.ice.s, son make-up intact et un grand sourire aux lèvres."
     hide joy
     stop music fadeout 3.0
@@ -1669,6 +1688,7 @@ label del_6:
     show delaunay_flirty at del_center with dissolve
     show delaunay_neutre at del_center with dissolve
     show joy at joy_center
+    play vfxC VFXJoy
     delaunay "Wow! C'était dément! La salle était super chaude ce soir!"
     hide delaunay_flirty
     hide joy
@@ -1693,6 +1713,7 @@ label del_6:
    
     show delaunay_neutre at del_right with dissolve
     show flirt at flirt_right
+    play vfxR VFXFlirt
     menu:
         delaunay "Alors, qu'est-ce que tu en as pensé [player_name]?"
         "C'était incroyable! Surtout quand le rideau s'est ouvert !":
@@ -1784,6 +1805,7 @@ label del_6_good:
     
     $ current_textbox = "delaunay"
     show joy at joy_center
+    play vfxC VFXJoy
     leandre "Pardon pour l'attente! On y va?"
     hide joy
 
@@ -1806,6 +1828,7 @@ label del_6_good:
 
     $ current_textbox = "delaunay"
     show flirt at flirt_right
+    play vfxR VFXFlirt
     show leandre_flirty at del_right
     leandre "Hm... Je te réserve la surprise. Mais je pense vraiment que ça devrait te plaire!"
     hide leandre_flirty
@@ -1931,6 +1954,7 @@ label del_6_good_bad:
     #show mother_laugh at mother_left with dissolve
 
     show joy at joy_left
+    play vfxL VFXJoy
     mother "Je suis sûre que je peux te retrouver une vidéo d'excellente qualité, vu comment elle a tourné sur les plateformes."
     hide joy
     
@@ -1956,6 +1980,7 @@ label del_6_good_bad:
     show leandre_neutre at del_right
     text "Mais quelque chose me dit que c'était peut-être un peu trop tôt..."
     show flirt at flirt_right
+    play vfxR VFXFlirt
     text "Et j'aurais loupé cet instant précieux, sachant pertinemment que je passerais le reste de la soirée bien entouré.e !"
     hide flirt
 

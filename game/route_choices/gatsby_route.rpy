@@ -82,12 +82,13 @@ define type_silent = ['<silence 1.0>']
 define ui_choice_click = ['audio/SFX/AP_UI_Click-001.ogg','audio/SFX/AP_UI_Click-002.ogg','audio/SFX/AP_UI_Click-003.ogg','audio/SFX/AP_UI_Click-004.ogg','audio/SFX/AP_UI_Click-005.ogg','audio/SFX/AP_UI_Click-006.ogg']
 
 # Liste des ambiances
-define audio.AmbAndrogameDay = "audio/Amb/Amb_CabaretDay_V3.ogg"
-define audio.AmbLoges = "audio/Amb/Amb_LogesDay_V4.ogg"
+define audio.AmbAndrogameDay = "audio/Amb/Amb_Cabaret_V4.ogg"
+define audio.AmbLoges = "audio/Amb/Amb_LogesDay_V6.ogg"
 define audio.AmbRue = "audio/Amb/Amb_Rue_V2.ogg"
 define audio.AmbLogesNight = "audio/Amb/Amb_LogesNight_V3.ogg"
 define audio.AmbDelShow = "audio/Amb/AP_Amb_ShowDel_V1.ogg"
 define audio.BarDay = "audio/Amb/Amb_BarDay_V4.ogg"
+define audio.BarEnd = "audio/Amb/Amb_BarEnd_V2.ogg"
 
 # Liste des réactions de foule
 define audio.CrowdDel1 = "audio/Amb/AP_Crowd_ShowDelSt1.ogg"
@@ -110,6 +111,11 @@ define audio.BackstageLoop = "audio/Music/AP_LogesTruc_V1.ogg"
 define audio.BackstageDrumLoop = "audio/Music/ON_BackStageLoop_V1.ogg"
 define audio.BarMusic = "audio/Music/AP_BarFull.ogg"
 define audio.BarMusicPartB = "audio/Music/AP_BarPartieB.ogg"
+define audio.BalconIntro = "audio/Music/AP_Balcon_Intro.ogg"
+define audio.BalconCoupletIntro = "audio/Music/AP_Balcon_IntroCouplet.ogg"
+define audio.BalconCouplet = "audio/Music/AP_Balcon_Couplet.ogg"
+define audio.BalconRefrain = "audio/Music/AP_Balcon_Refrain.ogg"
+define audio.BalconEnd = "audio/Music/AP_Balcon_End.ogg"
 define audio.ShowDelaunay = "audio/Music/AP_ShowDelaunay_V2.ogg"
 define audio.ShowGatsby = "audio/Music/AP_ShowGatsby_V1.ogg"
 define audio.ShowPeacock = "audio/Music/AP_ShowPeacock_V1.ogg"
@@ -137,7 +143,7 @@ default indice_gat = 0
 scene black with fade
 show loges
 show aimee_neutre at gat_center with dissolve
-play ambiance AmbLoges fadein 2.0
+play ambiance AmbLoges volume 0.5 fadein 2.0
 stop music fadeout 0.1
 
 #GAT.1
@@ -174,9 +180,6 @@ menu:
         $ renpy.play(random.choice(ui_choice_click), channel="sound")
         pass
 
-
-
-
 $ quick_menu = True
 
 #TRANSITION RIDEAU VERS BAR
@@ -187,8 +190,6 @@ scene black with fade
 
 play music BarMusicPartB volume 0.5
 
-
-
 $ current_textbox = "description" 
 text "Nous sommes arrivé.e.s dans l'auditorium et nous sommes approché.e.s du comptoir derrière lequel brillaient un mur de bouteilles aux couleurs uniques."
 text "Nous avions depuis le bar une vue imprenable sur la scène, légèrement en contrebas."
@@ -197,7 +198,7 @@ text "L'immense lustre duquel pendaient des larmes de verre reflétait les spots
 text "Aimée s'assit sur l'une des chaises hautes de bois verni et commanda un Bloody Mary au barman."
 
 show bar 
-play ambiance BarDay fadein 0.5
+play ambiance BarDay volume 0.7 fadein 0.5
 
 
 $ current_textbox = "gatsby"
@@ -238,6 +239,7 @@ $ quick_menu = False
 #show gatsby_neutre at gat_right
 show aimee_neutre at gat_right
 show joy at joy_right
+play vfxR VFXJoy
    
 menu:
     
@@ -255,6 +257,9 @@ menu:
 
 
 $ quick_menu = True
+
+queue music BarMusic volume 0.5
+queue music BarMusicPartB volume 0.5
 
 $ current_textbox = "gatsby"
 
@@ -410,6 +415,7 @@ label gat_2_1:
     aimee "Après tout, j'y ai consacré la majorité de ma vie. Ce n'est pas une mauvaise passe qui va envoyer en l'air tous mes efforts."
     aimee "Recommencer ne me fait pas peur. Et si je peux compiler avec la personne que je suis devenu.e, ce serait un triomphe !"
 
+    stop music fadeout 1.0
     jump gat_3
     call gat_3 from _call_gat_3 
 
@@ -503,6 +509,7 @@ label gat_2_2:
     aimee "Un indice ? Très bien."
     aimee "Il y a de quoi te faire tourner la tête...~"
 
+    stop music fadeout 1.0
     call gat_3 from _call_gat_3_1 
 
 #GAT.2.3
@@ -528,6 +535,7 @@ label gat_2_3:
     #show gatsby_neutre at gat_right
     show aimee_neutre at gat_right with dissolve
     show joy at joy_right
+    play vfxR VFXJoy
    
     menu:
         #gatsby ""
@@ -562,6 +570,7 @@ label gat_2_3:
     #show gatsby_neutre at gat_right
     show aimee_neutre at gat_right
     show joy at joy_right
+    play vfxR VFXJoy
    
     menu:
         #gatsby ""
@@ -590,9 +599,10 @@ label gat_2_3:
     $ current_textbox = "gatsby"
     
     show sadness at sadness_right
+    play vfxR VFXSadness
     aimee "Oui ! Mais malheureusement, on n'y fait plus trop de spectacles. Chacun.e a sa vie et d'autres priorités, et le drag est passé au second plan." 
     aimee "Mais peut-être que ça reprendra un jour, qui sait ?"
-
+    stop music fadeout 1.0
     call gat_3 from _call_gat_3_2 
 
 #TRANSITION RIDEAU & GRADIENT A AJOUTER + quelques mois blabla (vers auditorium)
@@ -602,9 +612,11 @@ label gat_3:
     $ persistent.bg_parallax = False
     hide aimee_neutre with dissolve
     show curtain_close with dissolve
+    play vfxC SFXCurtainClose
     pause 1.5
     hide bar
     show curtain_open 
+    play vfxC SFXCurtainOpen
 
     show gradient
     show text "{size=60}{color=#FFFFFF}Quelques mois passèrent...{/color}{/size}" at truecenter
@@ -614,21 +626,15 @@ label gat_3:
     hide text with dissolve
     hide gradient with fade
 
-
-    play music ConfidenceIntro
-
     $ persistent.bg_parallax = True
 
     $ current_textbox = "description"
     text "Cela faisait plusieurs minutes que je cherchais Aimé.e, avec qui j'étais supposé.e répéter une partie de mon numéro, que l'on construisait ensemble."
     text "Après avoir fait trois fois le tour du bâtiment, je finis par retourner sur les planches de la scène, pensif.ve."
     text "Et en toute honnêteté, un peu inquiet.e."
-
-    queue music ConfidenceA1
     text "Puis je l'aperçus, dominant un carnet sur lequel iel tapotait la mine de son crayon, posé sur l'un des mange-debouts. "
     text "Je le.a rejoignis rapidement."
-
-    
+    play music BalconIntro noloop
 
     $ current_textbox = "anthrax"
 
@@ -637,6 +643,7 @@ label gat_3:
     show auditorium
     
     show sadness at sadness_right
+    play vfxR VFXSadness
     show aimee_neutre at gat_right with dissolve
     
    
@@ -644,7 +651,7 @@ label gat_3:
         "Hey... Je me demandais où tu étais passé.":
             $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
-        "Aimé.e! Ça fait un moment que je te cherche !":
+        "Aimé.e ! Ça fait un moment que je te cherche !":
             $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
         "Alors c'était là où tu te cachais !":
@@ -682,6 +689,7 @@ label gat_3:
     $ current_textbox = "gatsby"
 
     aimee "Ça fait tout de suite moins sérieux dit comme ça... Mais oui, un journal intime."
+    queue music BalconIntro noloop
 
     $ current_textbox = "description"
 
@@ -689,6 +697,7 @@ label gat_3:
     #show gatsby_neutre at gat_right
     show aimee_neutre at gat_right
     show sadness at sadness_right
+    play vfxR VFXSadness
    
     menu:
         #gatsby ""
@@ -718,6 +727,9 @@ label gat_3:
 
     anthrax "Oh... ?"
     $ current_textbox = "gatsby"
+
+    play music BalconCoupletIntro
+    queue music BalconCouplet
 
     aimee "Tu vois quand je t'ai parlé de mon burn-out ? Ça a eu des conséquences bien plus dévastatrices sur ma santé mentale qu'une \"simple\" dépression..."
     aimee "Avec la pression au sein de mon ancienne troupe, j'ai développé des troubles du comportement alimentaire."
@@ -1527,9 +1539,11 @@ label gat_5:
     $ persistent.bg_parallax = False
     hide gatsby_neutre with dissolve
     show curtain_close with dissolve
+    play vfxC SFXCurtainClose
     pause 1.5
     hide auditorium
     show curtain_open with dissolve
+    play vfxC SFXCurtainOpen
 
 call gat_6 from _call_gat_6_1
 
@@ -1624,6 +1638,7 @@ label gat_6_good:
 
     
     show curtain_close with dissolve
+    play vfxC SFXCurtainClose
     hide gatsby_neutre with dissolve
     hide bar
     scene black
@@ -1631,6 +1646,7 @@ label gat_6_good:
     scene black
     pause 1.5
     show curtain_open with dissolve
+    play vfxC SFXCurtainOpen
     with fade
 
  
@@ -1648,6 +1664,7 @@ label gat_6_good:
     
     $ current_textbox = "gatsby"
     show joy at joy_center
+    play vfxC VFXJoy
     aimee "Promis, j'ai fais aussi vite que possible! Quelle horreur de retirer la colle après avoir sué toute la soirée!"
     hide joy
 
@@ -1666,6 +1683,7 @@ label gat_6_good:
 
     $ current_textbox = "gatsby"
     show flirt at flirt_center
+    play vfxC VFXFlirt
     aimee "Aha! Mystère, mystère... Mais te connaissant, tu devrais bien kiffer!"
 
 
@@ -1756,6 +1774,7 @@ label gat_6_good_bad:
     #show mother_laugh at mother_left with dissolve
 
     show joy at joy_left
+    play vfxL VFXJoy
     mother "Je suis sûre que je peux te retrouver une vidéo d'excellente qualité, vu comment elle a tourné sur les plateformes."
     hide joy
     
@@ -1781,6 +1800,7 @@ label gat_6_good_bad:
     show aimee_neutre at gat_center
     text "Mais quelque chose me dit que c'était peut-être un peu trop tôt..."
     show flirt at flirt_center
+    play vfxC VFXFlirt
     text "Et j'aurais loupé cet instant précieux, sachant pertinemment que je passerais le reste de la soirée bien entouré.e !"
     hide flirt
 
