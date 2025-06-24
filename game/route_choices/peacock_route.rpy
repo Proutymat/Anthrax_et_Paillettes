@@ -755,6 +755,7 @@ label pea_3:
     text "Et en toute honnêteté, un peu inquiet.e."
     text "En relevant le regard vers le balcon, je le remarquai appuyé.e contre la balustrade, me faisant signe de le rejoindre, un verre de jus à moitié vide à la main avec lequel il jouait."
 
+    play music BalconIntro noloop
     show auditorium with dissolve
 
     $ current_textbox = "anthrax"
@@ -778,7 +779,8 @@ label pea_3:
     $ quick_menu = True
 
     $ current_textbox = "peacock"
-
+    queue music BalconCoupletIntro noloop
+    queue music BalconRefrain
     #show imani_laugh at pea_right
     #hide imani_neutre
     imani "Moi aussi ! Ça fait une demie-heure que je te cherche ! On a dû faire que de se louper."

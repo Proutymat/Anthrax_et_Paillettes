@@ -633,18 +633,17 @@ label gat_3:
     text "Et en toute honnêteté, un peu inquiet.e."
     text "Puis je l'aperçus, dominant un carnet sur lequel iel tapotait la mine de son crayon, posé sur l'un des mange-debouts. "
     text "Je le.a rejoignis rapidement."
+
     play music BalconIntro noloop
+    show auditorium
 
     $ current_textbox = "anthrax"
 
     $ quick_menu = False
-
-    show auditorium
     
     show sadness at sadness_right
     play vfxR VFXSadness
     show aimee_neutre at gat_right with dissolve
-    
    
     menu:
         "Hey... Je me demandais où tu étais passé.":
@@ -708,8 +707,6 @@ label gat_3:
         "Tout va bien?":
             $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
-
-
 
 
     $ quick_menu = True

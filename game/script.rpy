@@ -1028,19 +1028,19 @@ label onboarding:
     queue music IntroRagots noloop
     text "Et puis même au sein de la commu', ça a fait jaser. Toutes les têtes d'affiches sont queer."
     text "Ça fait presque bizarre de nous voir nous réapproprier une époque dans laquelle on n'avait pas le droit d'exister."
-    text "Je suis sûr·e que l’on n’aurait jamais autant flamboyé que dans les années 20... C’est peut-être pour ça qu’on était \"interdit.e.s\" ?"
+    text "Je suis sûr.e que l’on n’aurait jamais autant flamboyé que dans les années 20... C’est peut-être pour ça qu’on était \"interdit.e.s\" ?"
     queue music IntroRoaring noloop
     text "On aurait trop volé la vedette aux hétéros."
     text "Les plumes, la fourrure, les paillettes, le champagne, le charleston, l’occasionnel rail de coke... Les années folles quoi."
     text "C’est ce qui m’a motivé·e à me lancer dans le drag finalement..."
-    text "J’ai toujours été intrigué·e par cette forme d’expression. Et à voir ces artistes bourré·e·s de talent faire leur show, à deux pas de chez moi..."
+    text "J’ai toujours été intrigué·e par cette forme d’expression. Et à voir ces artistes bourré.e.s de talent faire leur show, à deux pas de chez moi..."
     text "J'ai commencé à me costumer en cachette dans mon appart, et pour être honnête, c'était peut-être pour le mieux."
     text "Mes premières tentatives de make-up étaient catastrophiques... Mais au fur et à mesure, j’ai pris le coup de pinceau."
     text "Ce que je pensais être une lubie est finalement devenu un hobby."
     queue music IntroSmartphone noloop
     text "Je faisais mon petit contenu sur les réseaux sociaux et continuais ma vie tranquillement à côté, en passant toujours devant L’Androgame pour aller au travail."
     text "Alors quand ils ont lancé des auditions pour agrandir la troupe, j'ai longuement hésité. Mais on n'a qu'une vie !"
-    text "Je ne pensais pas être sélectionné·e ! Et encore moins passer un entretien avec Mother, la patronne du cabaret. "
+    text "Je ne pensais pas être sélectionné.e ! Et encore moins passer un entretien avec Mother, la patronne du cabaret. "
     
     stop ambiance fadeout 1.0
     play music CabaretEntrance volume 0.7 noloop
@@ -1128,7 +1128,7 @@ label onboarding:
     
     $ current_textbox = "description" 
 
-    text "Nous sommes monté·e·s sur la scène et l'avons traversée avant de passer derrière les épais rideaux de velours." 
+    text "Nous sommes monté.e.s sur la scène et l'avons traversée avant de passer derrière les épais rideaux de velours." 
     text "Les coulisses étaient un véritable dédale de couloirs tandis qu'elle ouvrait quelques portes et me présentait chaque pièce."
     text "Ici, la réserve des costumes; où les armatures de dos, de hanches, d'épaules à plumes d'autruche, de floss, d'oie ou de faisan;"
     text "Et les casques grandioses à strass, sequins, perles de verre ou fausses pierres précieuses, se faisaient la compétition." 
@@ -1214,7 +1214,7 @@ label onboarding:
     #show overlay
     text "Un autre garçon, plus silencieux, avait la tête baissée sur un corset tout de dentelle, qu'il laçait précautionneusement."
     hide aimee_neutre with dissolve 
-    text "Relevant la tête, le concerné remarqua qu'iels n'étaient plus trois dans la pièce et me fixa un instant, avant de se retourner vers ses interlocuteur·ice·s."
+    text "Relevant la tête, le concerné remarqua qu'iels n'étaient plus trois dans la pièce et me fixa un instant, avant de se retourner vers ses interlocuteur.ice.s."
     #hide overlay
     
 
@@ -1334,7 +1334,7 @@ label onboarding:
 
     show angry at angry_right
     play vfxR VFXAnger
-    text "Léandre se renfrogna davantage. Apparemment, les deux étaient suffisamment bon·ne·s ami·e·s pour se taquiner et s'embarasser ainsi."
+    text "Léandre se renfrogna davantage. Apparemment, les deux étaient suffisamment bon.ne.s ami.e.s pour se taquiner et s'embarasser ainsi."
     hide angry
     hide leandre_neutre with dissolve
     #hide leandre_shy with dissolve
