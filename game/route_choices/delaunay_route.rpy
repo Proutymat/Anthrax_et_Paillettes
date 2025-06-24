@@ -729,12 +729,15 @@ label choix_del3:
         leandre "D'où \"l'ancien client\"..."
         "Tu avais tes raisons pour te lancer... dans cette industrie ?":
             $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            queue music BalconRefrain
             call del_3_1 from _call_del_3_1_1 
         "Pourquoi est-ce que tu n'es pas très fier de cette période?":
             $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            queue music BalconRefrain
             call del_3_2 from _call_del_3_2_1 
         "Pour de l'argent? Tu étais en difficulté?":
             $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            queue music BalconRefrain
             call del_3_3 from _call_del_3_3 
 
 #DEL.3.1
@@ -805,7 +808,6 @@ label del_3_1:
 
 
     $ quick_menu = True
-    queue music BalconRefrain
     show leandre_laugh at del_right
     show angry at angry_right
     play vfxR VFXAnger
@@ -886,7 +888,6 @@ label del_3_2:
     show leandre_shy at del_center
     leandre "C'est plus gênant si quelqu'un tombe dessus et m'y reconnaît, mais comme j'ai énormément changé entre-temps, je ne m'en inquiète pas plus que ça."
     hide leandre_shy
-    queue music BalconRefrain
     $ quick_menu = False
    
     show leandre_neutre at del_right
@@ -982,7 +983,6 @@ label del_3_3:
     hide leandre_laugh
     leandre "Et j'étais tellement dans le mal, psychologiquement parlant, que je n'avais pas la patience non plus d'entamer ce parcours."
     leandre "Heureusement, je suis tombé sur une endocrinologue top, qui m'a permit d'accéder à un traitement hormonal."
-    queue music BalconRefrain
 
     $ quick_menu = False
    
@@ -1992,8 +1992,8 @@ label final_delaunay:
     hide bar with fade
 
     "Interview et musiques débloquées"
+    stop music fadeout 1.0
     pause 1.0
-
     scene black with fade
 
     $ renpy.full_restart()

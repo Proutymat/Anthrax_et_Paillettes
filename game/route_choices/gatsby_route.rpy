@@ -739,12 +739,15 @@ label choix_gat3:
     menu: 
         "Est-ce que ça va mieux maintenant ?":
             $ renpy.play(random.choice(ui_choice_click), channel="sound")
-            call gat_3_1 from _call_gat_3_1_1 
+            call gat_3_1 from _call_gat_3_1_1
+            queue music BalconRefrain
         "Wow... Quand je te vois maintenant... Je ne pensais pas...":
             $ renpy.play(random.choice(ui_choice_click), channel="sound")
-            call gat_3_2 from _call_gat_3_2_1 
+            call gat_3_2 from _call_gat_3_2_1
+            queue music BalconRefrain
         "Tu as dû prendre pas mal de temps pour t'en remettre, non?":
             $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            queue music BalconRefrain
             call gat_3_3 from _call_gat_3_3 
 
 #GAT.3.1
@@ -772,7 +775,7 @@ label gat_3_1:
     $ quick_menu = False
     #show gatsby_neutre at gat_right
     show aimee_neutre at gat_right
-    queue music BalconRefrain
+    
    
     menu:
         #gatsby ""
@@ -863,7 +866,6 @@ label gat_3_2:
     aimee "Enfin... C’est ce que je préférais me raconter plutôt..."
     $ current_textbox = "anthrax"
     
-    queue music BalconRefrain
 
     $ quick_menu = False
     show aimee_neutre at gat_right
@@ -935,7 +937,7 @@ label gat_3_2:
 label gat_3_3:
     $ quick_menu = True
     $ indice_gat -= 1
-
+    
     show aimee_neutre at gat_center
     with fade
     $ current_textbox = "anthrax"
@@ -948,7 +950,7 @@ label gat_3_3:
     aimee "Juste parfois, je me reprends à y penser. Sans l'envisager hein ! C'est déjà du progrès."
     $ current_textbox = "anthrax"
 
-    queue music BalconRefrain
+    
 
     $ quick_menu = False
     show aimee_neutre at gat_right
@@ -1027,6 +1029,7 @@ label gat_3_3:
 #GAT.4
 label gat_4:
 
+    stop music fadeout 0.5
     $ persistent.bg_parallax = False
     hide aimee_neutre with dissolve
     show curtain_close  with dissolve
@@ -1806,8 +1809,8 @@ label final_gatsby:
     $ quick_menu = False
 
     "Interview et musiques débloquées"
+    stop music fadeout 1.0
     pause 1.0
-
     scene black with fade
 
     $ renpy.full_restart()

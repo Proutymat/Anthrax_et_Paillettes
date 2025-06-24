@@ -787,7 +787,7 @@ label pea_3:
 
     $ current_textbox = "peacock"
     queue music BalconCoupletIntro noloop
-    queue music BalconRefrain
+    queue music BalconCouplet
     #show imani_laugh at pea_right
     #hide imani_neutre
     imani "Moi aussi ! Ça fait une demie-heure que je te cherche ! On a dû faire que de se louper."
@@ -833,12 +833,15 @@ label pea_3:
         
         "Quand j'y repense, je ne t'ai jamais vu boire.":
             $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            queue music BalconRefrain
             pass
         "Tu aimes vraiment les softs. Haha !":
             $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            queue music BalconRefrain
             pass
         "Je ne t'ai vu tourner qu'à l'eau dernièrement, ça change !":
             $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            queue music BalconRefrain
             pass
 
     #hide overlay
@@ -1774,7 +1777,7 @@ label pea_5:
     show curtain_open with dissolve
 
     scene black with dissolve
-    play music ShowDelaunay noloop
+    play music ShowPeacock noloop
 
     $ current_textbox = "description"
 
@@ -1864,7 +1867,7 @@ anthrax "Si je peux être aussi radieux.se que toi ce soir, j'aurais tout gagné
 $ current_textbox = "peacock"
 
 show flirt at flirt_right
-play vfxR VFXRight
+play vfxR VFXFlirt
 peacock "Est-ce que je peux te proposer un resto, ensemble, après la fermeture? Je connais quelques adresses cosy encore ouvertes à cette heure...~"
 hide flirt
 
@@ -1904,7 +1907,7 @@ label pea_6_good:
     pause 1.5
     show curtain_open with dissolve
     with fade
-
+    play music BadEnd volume 0.8 noloop
  
     scene black with dissolve
     
@@ -2090,6 +2093,7 @@ label final_peacock:
     hide CG_peacock with fade
     $ persistent.peacock_unlocked = True
     "Interview et musiques débloquées"
+    stop music fadeout 1.0
     pause 1.0
 
     scene black with fade
