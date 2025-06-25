@@ -762,12 +762,13 @@ label del_3_1:
     leandre "Sûrement... On peut dire ça."
     leandre "C'était un moment dans ma vie où j'étais assez perdu."
     show leandre_shy at del_center
+    hide leandre_neutre
     leandre "Il y a eu tellement de changements en si peu de temps que je ne savais plus du tout où me positionner."
-    hide leandre_shy
+    hide leandre_shy with dissolve
     
     $ quick_menu = False
    
-    show leandre_neutre at del_right
+    show leandre_shy at del_right
     menu:
         leandre "Par rapport aux autres et par rapport à moi-même..."
         "C'est-à-dire...?":
@@ -1339,7 +1340,6 @@ label del_4_2:
     $ quick_menu = False
 
     show delaunay_laugh at del_right
-    show delaunay_neutre at del_right
     menu:
         delaunay "Alors... Delaunay, c'est un peu mon phare dans cet océan de confusion. Et Léandre, il essaye de naviguer un peu à travers tout ça."
         "C'est valide d'être un peu perdu dans la vie.":
@@ -1365,6 +1365,7 @@ label del_4_2:
     show gatsby_pensive at gat_left
     show gatsby_neutre at gat_left with dissolve
     gatsby "C'est le genre de chose qui prend du temps après tout."
+    hide delaunay_shy with dissolve
     hide delaunay_neutre with dissolve
 
     $ current_textbox = "peacock"
@@ -1386,7 +1387,7 @@ label del_4_2:
     $ current_textbox = "delaunay"
 
     show delaunay_shy at del_right
-    show delaunay_neutre at del_right
+    show delaunay_neutre at del_right with dissolve
     menu:
         delaunay "Épargnez-moi, c'est toujours le monstre de ma paralysie du sommeil."
         "Dire que j'ai loupé ça, quelle tragédie...":
@@ -1424,7 +1425,7 @@ label del_4_2:
     show peacock_neutre at pea_left with dissolve
     peacock "Je suis si peu surprise. C'était mythique!"
     hide peacock_neutre with dissolve
-    hide peacock_lauch
+    hide peacock_laugh with dissolve
 
     stop music fadeout 0.1
 
@@ -1439,7 +1440,7 @@ label del_4_2:
     show delaunay_flirty at del_center with dissolve
     delaunay "Mon dieu, j'ai encore tellement à faire ! Vite [player_name] ! Un coup de main, vite !"
     hide flirt
-    hide delaunay_flirt
+    hide delaunay_flirty
 
     stop ambiance fadeout 2.0
     call del_5 from _call_del_5_1 
@@ -1518,7 +1519,7 @@ label del_4_3:
     $ current_textbox = "peacock"
     show peacock_laugh at pea_left with dissolve
     peacock "Hm... C'est vrai que la testo ne t'a pas trop épargné là-dessus... Une absence de barbe, des poils aux fesses et un début de calvitie..."
-    #hide peacock_lauch
+    hide peacock_laugh
     hide delaunay_neutre with dissolve
 
     $ current_textbox = "gatsby"
@@ -1526,12 +1527,13 @@ label del_4_3:
     show gatsby_neutre at gat_right with dissolve
     gatsby "BAHAHA !"
     hide gatsby_neutre
+    
     $ current_textbox = "anthrax"
     anthrax "Shady."
-
+    hide gatsby_laugh
     hide peacock_neutre
     
-    $ quick_menu = False
+    #$ quick_menu = False
     $ current_textbox = "delaunay"
     show angry at angry_right
     play vfxR VFXAnger
@@ -1600,10 +1602,9 @@ label del_4_3:
     hide delaunay_neutre
     $ current_textbox = "mother"
     staff "Ok les filles ! Showtime dans dix minutes !"
-    show delaunay_neutre at del_center with dissolve
 
     $ current_textbox = "delaunay"
-    show joy at joy_center
+    show joy at joy_right
     play vfxC VFXJoy
     show delaunay_flirty at del_right
     delaunay "Mon dieu, j'ai encore tellement à faire ! Vite [player_name] ! Un coup de main, vite !~"
@@ -1869,38 +1870,6 @@ label del_6_bad:
 
     $ quick_menu = True
 
-    #Transition Rideau
-    hide delaunay_neutre with dissolve
-    #hide delaunay_laugh with dissolve
-    show curtain_close with dissolve
-    pause 1.5
-    hide bar
-    hide loges
-    scene black
-    show curtain_open with dissolve
-    with fade
-    play ambiance BarEnd
-    $ current_textbox = "delaunay"
-
-    delaunay "On va aller boire un verre avec les autres une fois que les derniers clients auront quitté la salle. Tu te joins à nous ?"
-    
-    $ quick_menu = False
-
-    menu:
-        "Oui, bien sûr ! Je termine ça et j'arrive !":
-            $ renpy.play(random.choice(ui_choice_click), channel="sound")
-            anthrax "Oui, bien sûr ! Je termine ça et j'arrive !"
-        "Si vous insistez !":
-            $ renpy.play(random.choice(ui_choice_click), channel="sound")
-            anthrax "Si vous insistez !"
-        "Proposé si gentiment, comment refuser ?":
-            $ renpy.play(random.choice(ui_choice_click), channel="sound")
-            anthrax "Proposé si gentiment, comment refuser ?"
-
-    $ quick_menu = True
-
-    $ current_textbox = "description"
-
     jump del_6_good_bad
 
 label del_6_good_bad:
@@ -1908,14 +1877,17 @@ label del_6_good_bad:
     #Transition Rideau
     hide delaunay_neutre with dissolve
     show curtain_close with dissolve
+    play vfxC SFXCurtainClose
     pause 1.5
     hide bar
     hide loges
     scene black
     show curtain_open with dissolve
+    play vfxC SFXCurtainOpen
     with fade
     
     show bar with fade
+    play ambiance BarEnd
     play music BadEnd noloop volume 0.7
     $ current_textbox = "description"
   
@@ -1975,12 +1947,13 @@ label del_6_good_bad:
     show leandre_laugh at del_right
     text "Je m'en voulais peut-être un peu de ne pas avoir demandé à Léandre d'être sorti avec moi ce soir."
     show leandre_neutre at del_right
+    hide leandre_laugh
     text "Mais quelque chose me dit que c'était peut-être un peu trop tôt..."
     show flirt at flirt_right
     play vfxR VFXFlirt
     text "Et j'aurais loupé cet instant précieux, sachant pertinemment que je passerais le reste de la soirée bien entouré.e !"
     hide flirt
-
+    hide leandre_neutre with dissolve
     call final_delaunay from _call_final_delaunay_1 
 
 label final_delaunay:
@@ -1988,7 +1961,7 @@ label final_delaunay:
     $ quick_menu = False
 
     $ current_textbox = "description"
-    hide leandre_neutre with dissolve
+    
     hide devanture with fade
     hide bar with fade
 
