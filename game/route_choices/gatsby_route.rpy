@@ -688,7 +688,7 @@ label gat_2_3:
 label gat_3:
 
     $ persistent.bg_parallax = False
-    hide aimee_neutre with dissolve
+    hide aimee_laugh with dissolve
     stop music fadeout 0.5
     stop ambiance fadeout 1.0
     show curtain_close with dissolve
@@ -965,6 +965,7 @@ label gat_3_1:
     hide aimee_neutre
     aimee "J'ai trouvé une communauté, et un espace pour me redécouvrir, qui m'acceptait pour quiconque je devenais."
     show joy at joy_right
+    play vfxR VFXJoy
     aimee "Franchement, c'était salvateur. Et j'ai pu commencer à aborder plus ouvertement les épreuves que je traversais."
     hide joy
     show aimee_neutre at gat_right
@@ -1034,6 +1035,7 @@ label gat_3_2:
     hide aimee_nosmile
     aimee "Eh bien..."
     show sadness at sadness_right
+    play vfxR VFXSadness
     aimee "Putain, c’est pas simple d’en parler..."
     hide sadness
     show aimee_nosmile at gat_right
@@ -1272,7 +1274,7 @@ label gat_4:
 
     $ current_textbox = "gatsby"
 
-    show aimee_nosmile at gat_right
+    #show aimee_nosmile at gat_right
     hide aimee_pensive
     gatsby "Est-ce que ce serait possible de me passer les pièces de mon costume pendant que je me change ? Le paravent est ridiculement petit..."
 
@@ -1461,6 +1463,7 @@ label gat_4_1:
     $ current_textbox = "gatsby"
 
     show joy at joy_center
+    play vfxC VFXJoy
     show gatsby_laugh at gat_center with dissolve
     gatsby "Allez ! On doit mettre les bouchées doubles si on veut être à l'heure, girlies ! Chop-chop !"
     hide joy
@@ -1522,6 +1525,7 @@ label gat_4_2:
     hide gatsby_nosmile
     gatsby "Non, en effet. Mais ça sous-entend un peu que mon existence est une corvée. "
     show angry at angry_right
+    play vfxR VFXAnger
     gatsby "Ce n'est pas le cas du tout. En fait, j'ai l'impression d'être pris.e en pitié, et je ne supporte pas ça."
     hide angry
     $ current_textbox = "anthrax"
@@ -1602,6 +1606,7 @@ label gat_4_2:
     $ current_textbox = "gatsby"
 
     show joy at joy_center
+    play vfxC VFXJoy
     show gatsby_laugh at gat_center with dissolve
     gatsby "Allez ! On doit mettre les bouchées doubles si on veut être à l'heure girlies ! Chop-chop !"
     hide joy
@@ -1663,8 +1668,9 @@ label gat_4_3:
     hide gatsby_pensive
     gatsby "C'était de la pure misogynie, un racisme ambiant, des standards de beauté inatteignables, une absence de contrôle sur ma manière de penser..."
     show sadness at sadness_right
+    play vfxR VFXSadness
     gatsby "J'étais vraiment conditionné.e."
-    hide sadness*
+    hide sadness
     show gatsby_irritated at gat_right
     hide gatsby_pensive
     gatsby "Après, c'est aussi surtout parce que je suis tombé.e sur une troupe particulièrement toxique."
@@ -1746,6 +1752,7 @@ label gat_4_3:
     $ current_textbox = "gatsby"
 
     show joy at joy_center
+    play vfxC VFXJoy
     show gatsby_laugh at gat_center with dissolve
     gatsby "Allez ! On doit mettre les bouchées doubles si on veut être à l'heure, girlies ! Chop-chop !"
     hide joy
@@ -1860,6 +1867,7 @@ label gat_6:
     show gatsby_pensive at gat_right
     hide gatsby_laugh
     show flirt at flirt_right
+    play vfxR VFXFlirt
     gatsby "Roh, arrête! Tu vas me faire rougir, va!"
     hide flirt
     show gatsby_laugh at gat_right
@@ -1888,7 +1896,7 @@ label indice_gat:
         "Oui":
             call gat_6_good from _call_gat_6_good 
         "Non":
-            call gat_6_bad from _call_gat_6_bad 
+            call gat_6_bad from _call_gat_6_bad
 
 #GAT.6.GOOD
 label gat_6_good:
@@ -1917,6 +1925,7 @@ label gat_6_good:
 
     $ current_textbox = "gatsby"
     show flirt at flirt_center
+    play vfxC VFXFlirt
     gatsby "Nickel! Je fais vite! Attends-moi devant l'entrée quand tu aura aussi fini!"
     hide flirt
 
@@ -2016,11 +2025,13 @@ label gat_6_good_bad:
     #Transition Rideau
     hide gatsby_neutre with dissolve
     show curtain_close with dissolve
+    play vfxC SFXCurtainClose
     pause 1.5
     hide bar
     hide loges
     scene black
     show curtain_open with dissolve
+    play vfxC SFXCurtainOpen
     with fade
 
     show bar with fade
