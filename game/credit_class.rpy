@@ -8,11 +8,10 @@ init -5 python:
     class Credit:
 
         # constructor
-        def __init__(self, name, role, image_name, url_list):            
+        def __init__(self, name, role, image_name):            
             self.name = name
             self.role = role
             self.image_name = image_name 
-            self.url_list = url_list
 
 
     ## CategorisedCredits class

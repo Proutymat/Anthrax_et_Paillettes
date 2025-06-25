@@ -154,7 +154,7 @@ screen say(who, what):
 
     window:
         style "my_say_window"
-        background "gui/textbox_[current_textbox].png" xalign 1 yalign 0.87
+        background "gui/textbox_[current_textbox].png" xalign 1 yalign 0.78
 
         fixed:
             xfill True
@@ -162,10 +162,10 @@ screen say(who, what):
 
             # 🧍 Nom du personnage
             if who is not None:
-                text who id "who" style "my_say_label" xpos 390 ypos 40
+                text who id "who" style "my_say_label" xpos 325 ypos 96 size 66 font "fonts/Cavalier.ttf"
 
             # 💬 Texte principal
-            text what id "what" style "my_say_dialogue" xpos 390 ypos 120 line_spacing 10 size 40 color "02061a"
+            text what id "what" style "my_say_dialogue" xpos 390 ypos 185 line_spacing 10 size 40 color "02061a"
 
     use quick_menu
 
@@ -182,15 +182,15 @@ style my_say_window is default:
     ysize 260
     background "gui/textbox_description.png"
 
-style my_say_label is default:
-    font "fonts/EBGaramond12-Regular.ttf"
-    size 34
+style my_say_label:
+    font "fonts/Cavalier.ttf"
+    size 90
     color "#ffffff"
     background "#00000080"
     xalign 0.0
     yalign 0.0
 
-style my_say_dialogue is default:
+style my_say_dialogue:
     font "fonts/EBGaramond12-Regular.ttf"
     size 70
     color "#02061a"
@@ -888,13 +888,6 @@ screen credits():
                                                 vbox:
                                                     text credit.name style "credits_name_small"
                                                     text credit.role style "credits_role_small"
-                                                    for url_tuple in credit.url_list:
-                                                        hbox:
-                                                            if url_tuple[0]:
-                                                                add url_tuple[0]
-                                                            else:
-                                                                null width 32
-                                                            textbutton _(url_tuple[1]) action OpenURL(url_tuple[1]) style "credits_url_button" text_style "credits_url_text_small"
 
                                         if is_odd:
                                             null
@@ -911,8 +904,6 @@ style credits_category_header:
     font "fonts/EBGaramond12-Regular.ttf"  # adapte à ta font
     color "#ffffff"
 
-# inherit style from text_button
-style credits_url_button is text_button
 
 
 #########################################################################################################################    
@@ -921,8 +912,8 @@ style credits_url_button is text_button
 
 style credits_name_small:
     size 25
-    bold True
-    font "fonts/EBGaramond12-Regular.ttf"
+    bold False
+    font "fonts/EBGaramond-Bold.ttf"
     color "#ffffff"
     text_align 0.0
 
@@ -932,10 +923,7 @@ style credits_role_small:
     color "#ffffff"
     text_align 0.0
 
-# inherit from hyperlink_text
-style credits_url_text_small is hyperlink_text
-style credits_url_text_small:
-    size 15
+
 
 
 ## Écran « À propos... » #######################################################
@@ -1387,8 +1375,8 @@ screen history():
         idle "menuUI/retour_idle.png"
         hover "menuUI/retour_hover.png"
         action Return()
-        xalign 0.05
-        yalign 0.95
+        xpos 180
+        ypos 935
 
     viewport:
         xalign 0.57
@@ -1413,8 +1401,8 @@ screen history():
                         text h.who:
                             style "history_name"
                             substitute False
-                            if "color" in h.who_args:
-                                color h.who_args["color"]
+                            #if "color" in h.who_args:
+                                #color h.who_args["color"]
                             min_width 200
                             text_align 1.0
                             xalign 1.0
@@ -1459,11 +1447,11 @@ define gui.history_allow_tags = { "alt", "noalt", "rt", "rb", "art" }
 
 style history_window is empty
 
-style history_name is default:
-    color "#c6367b"
-    font "fonts/EBGaramond12-Regular.ttf"
+style history_name:
+    color "#1e1c1c"
+    font "fonts/EBGaramond-Bold.ttf"
     size 30
-    bold True
+    bold False
     xalign 1.0  # le nom est aligné à droite dans sa "colonne"
     text_align 1.0
 

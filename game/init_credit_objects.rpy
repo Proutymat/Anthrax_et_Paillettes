@@ -8,46 +8,30 @@ define team_credits_list = [
         name = "Nathanaël DEFEUILLET",
         role = "Writer & Narrative Designer",
         image_name = "images/Credits/nath.png",
-        url_list = [
-            ("itch-io", "https://gaming-variety-potato.itch.io/"),
-            ("twitter-original", "https://www.twitter.com/gaming_v_potato/")
-        ]
+        #url_list = [
+            #("itch-io", "https://gaming-variety-potato.itch.io/"),
+            #("twitter-original", "https://www.twitter.com/gaming_v_potato/")
+        #]
     ),
     Credit(
         name = "Moumine KONATE",
         role = "Programmer, UI/UX Designer,\nUser Researcher & Knowledge Manager",
         image_name = "images/Credits/moumine.png",
-        url_list = [
-            ("itch-io", "https://gaming-variety-potato.itch.io/"),
-            ("twitter-original", "https://www.twitter.com/gaming_v_potato/")
-        ]
     ),
     Credit(
         name = "Justine DESMEDT",
         role = "UI Artist",
         image_name = "images/Credits/justine.png",
-        url_list = [
-            ("itch-io", "https://gaming-variety-potato.itch.io/"),
-            ("twitter-original", "https://www.twitter.com/gaming_v_potato/")
-        ]
     ),
     Credit(
         name = "Gabriele ENNAOUAJI",
         role = "Character & Environment Artist",
         image_name = "images/Credits/gabriele.png",
-        url_list = [
-            ("itch-io", "https://gaming-variety-potato.itch.io/"),
-            ("twitter-original", "https://www.twitter.com/gaming_v_potato/")
-        ]
     ),
     Credit(
         name = "Candice DELORME",
         role = "Sound Designer & Composer",
         image_name = "images/Credits/candice.png",
-        url_list = [
-            ("itch-io", "https://gaming-variety-potato.itch.io/"),
-            ("twitter-original", "https://www.twitter.com/gaming_v_potato/")
-        ]
     )
 ]
 
@@ -57,72 +41,58 @@ define help_credits_list = [
         name = "Maïa/Mäx BEAUVOIS",
         role = "Project Management Consultant",
         image_name = "images/Credits/max.png",
-        url_list = [
-            ("itch-io", "https://gaming-variety-potato.itch.io/"),
-            ("twitter-original", "https://www.twitter.com/gaming_v_potato/")
-        ]
     ),
     Credit(
         name = "Daphné RENAULD",
-        role = "VFX Artist",
+        role = "VFX & UI Artist",
         image_name = "images/Credits/daph.png",
-        url_list = [
-            ("itch-io", "https://gaming-variety-potato.itch.io/"),
-            ("twitter-original", "https://www.twitter.com/gaming_v_potato/")
-        ]
     ),
     Credit(
         name = "Lily BEAUHAIRE",
         role = "Poster Artist",
         image_name = "images/Credits/lily.png",
-        url_list = [
-            ("itch-io", "https://gaming-variety-potato.itch.io/"),
-            ("twitter-original", "https://www.twitter.com/gaming_v_potato/")
-        ]
-    ),
+   ),
     Credit(
         name = "Natanael ROSSIGNOL",
         role = "Typographer",
         image_name = "images/Credits/nat.png",
-        url_list = [
-            ("itch-io", "https://gaming-variety-potato.itch.io/"),
-            ("twitter-original", "https://www.twitter.com/gaming_v_potato/")
-        ]
     )
 ]
 
 define drags_credits_list = [
-    Credit(name = "Gaming Variety Potato", role = "Artist", image_name = "logo", url_list = [
-        ("twitter-original", "https://www.twitter.com/gaming_v_potato/")
-    ]),
-    Credit(name = "Gaming Variety Potato", role = "Artist", image_name = "logo", url_list = [
-        ("twitter-original", "https://www.twitter.com/gaming_v_potato/")
-    ]),
-    Credit(name = "Gaming Variety Potato", role = "Artist", image_name = "logo", url_list = [
-        ("twitter-original", "https://www.twitter.com/gaming_v_potato/")
-    ]),
-    Credit(name = "Gaming Variety Potato", role = "Artist", image_name = "logo", url_list = [
-        ("twitter-original", "https://www.twitter.com/gaming_v_potato/")
-    ]),
-    Credit(name = "Gaming Variety Potato", role = "Artist", image_name = "logo", url_list = [
-        ("twitter-original", "https://www.twitter.com/gaming_v_potato/")
-    ])
+    #Credit(name = "Gaming Variety Potato", role = "Artist", image_name = "logo", #url_list = [
+        #("twitter-original", "https://www.twitter.com/gaming_v_potato/")
+    #]
+    #),
+    Credit(name = "Léo Pardchouli", role = "Drag King", image_name = "images/credits/leo.png"),
+
+    Credit(name = "Marie Soterie", role = "Drag Queen / King", image_name = "images/credits/marie.png"),
+
+    Credit(name = "Orkidd Opamine", role = "Drag Flower", image_name = "images/credits/orkidd.png"),
+
+    Credit(name = "Lethal Strawberry", role = "Drag Queen", image_name = "images/credits/lethal.png"),
+
+    Credit(name = "Jaj Hope", role = "Drag Queen", image_name = "images/credits/jaj.png"),
+
+    Credit(name = "Kate Amary", role = "Drag Queen", image_name = "images/credits/kate_amary.png"),
+
+    Credit(name = "IbuProfem", role = "Drag Queer", image_name = "images/credits/ibuprofem.png"),
+
+    Credit(name = "L'imberbe", role = "Drag King", image_name = "images/credits/limberbe.png"),
+
+    Credit(name = "Urazoria", role = "Drag Kréature", image_name = "images/credits/urazoria.png"),
+
 ]
 
-define translators_credits_list = [
-    Credit(name = "Gaming Variety Potato", role = "Musician", image_name = "logo", url_list = [
-        ("itch-io", "https://www.twitter.com/gaming_v_potato/"), 
-        ("twitter-original", "https://www.twitter.com/gaming_v_potato/")
-    ]),
-    Credit(name = "Gaming Variety Potato", role = "Musician", image_name = "logo", url_list = [
-        ("itch-io", "https://www.twitter.com/gaming_v_potato/"), 
-        ("twitter-original", "https://www.twitter.com/gaming_v_potato/")
-    ]),
-    Credit(name = "Gaming Variety Potato", role = "Musician", image_name = "logo", url_list = [
-        ("itch-io", "https://www.twitter.com/gaming_v_potato/"), 
-        ("twitter-original", "https://www.twitter.com/gaming_v_potato/")
-    ])
+define templates = [
+    #Credit(name = "Gaming Variety Potato", role = "Artist", image_name = "logo", #url_list = [
+        #("twitter-original", "https://www.twitter.com/gaming_v_potato/")
+    #]
+    #),
+    Credit(name = "Feniks", role = "Juxebox & Interview template / https://feniksdev.com ", image_name = ""),
+
 ]
+
 
 
 define categorised_credits_list = [
@@ -133,6 +103,5 @@ define categorised_credits_list = [
     # item 3: category Art
     CategorisedCredits(category = "Helping shining drags", credit_list = drags_credits_list),
     # item 4: category Audio
-    CategorisedCredits(category = "Translation", credit_list = translators_credits_list),
-    # item 5: category Programming
+    CategorisedCredits(category = "Templates", credit_list = templates)
 ]
