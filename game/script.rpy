@@ -892,8 +892,8 @@ define audio.SFXCurtainOpen = 'audio/SFX/AP_Curtain_Open.ogg'
 define audio.SFXCurtainClose = 'audio/SFX/AP_Curtain_Close.ogg'
 define audio.ShortEllipse = 'audio/SFX/AP_SFX_Intro_Ellipse_V2.ogg'
 define audio.LongEllipse = 'audio/SFX/AP_SFX_Intro_LongEllipse_V2.ogg'
-define audio.Gribouillis = 'audio/SFX/AP_SFX_Gribouillis.ogg'
-define audio.Corset = 'audio/SFX/AP_SFX_Corset.ogg'
+define audio.Gribouillis = 'audio/SFX/AP_SFX_Intro_Gribouillis.ogg'
+define audio.Corset = 'audio/SFX/AP_SFX_Intro_Corset.ogg'
 define audio.GelCheveux = 'audio/SFX/AP_SFX_Intro_GelCheveux.ogg'
 define audio.DoorLoges = 'audio/SFX/AP_SFX_Intro_DoorLoges.ogg'
 define audio.VFXJoy = 'audio/SFX/AP_VFX_Joy.ogg'
@@ -1040,7 +1040,7 @@ label onboarding:
     with fade
     $ quick_menu = True  
 
-    play ambiance AmbRue fadein 0.5
+    play ambiance AmbRue fadein 1.5
 
     $ current_textbox = "description"
 
@@ -1086,9 +1086,9 @@ label onboarding:
 
     show joy at joy_center
     play vfxC VFXJoy
-    voice MLaugh3
+    #voice MLaugh3
     mother "Bienvenue dans L'Androgame ! J'espère que tu as fait bonne route."
-    hide mother_laugh
+    hide mother_laugh with dissolve
     hide joy with dissolve
 
     queue music CabaretIntro volume 0.7
@@ -1106,11 +1106,11 @@ label onboarding:
     
     $ current_textbox = "mother"
 
-    voice MLaugh1
+    #voice MLaugh1
     #retirer vfx joy
-    show mother_laugh at mother_center
-    hide mother
+    show mother_laugh at mother_center with dissolve
     mother "Aha ! Tu m’en vois ravie de l’entendre."
+    hide mother_laugh with dissolve
     show mother at mother_center
     
 
@@ -1122,16 +1122,16 @@ label onboarding:
     show joy at joy_right
     play vfxR VFXJoy
     queue music CabaretLightChorus volume 0.7
-
+    
     show mother_laugh at mother_right with dissolve
-    hide mother
+    hide mother with dissolve
     mother "Nous voici donc dans l'auditorium !"
-    show mother at mother_center
+    show mother at mother_right with dissolve
     hide mother_laugh
 
     mother "Il sera un peu comme ton meilleur ennemi, car peu importe le trac ou qui se retrouvera dans le public, il faudra grimper sur les planches !"
    
-    voice MHm2
+    #voice MHm2
     mother "Après, si tu es ici aujourd’hui, c’est parce que c’est justement le genre de chose qui t’anime : te mettre en scène..."
     hide joy with dissolve
 
@@ -1169,10 +1169,10 @@ label onboarding:
     
     show angry at angry_left
     play vfxL VFXAnger
-    voice PAh1
+    #voice PAh1
     imani "Ok, hear me out... Je dis simplement que si l'on veut garder une logique dans la suite de nos numéros, on va devoir inverser l'ordre dans lequel on passe..."
     hide angry with dissolve
-    hide imani_sassy
+    hide imani_sassy with dissolve
     show imani_laugh at pea_right with dissolve
 
     imani "Pour pouvoir faire de la place aux nouvelles !"
@@ -1189,15 +1189,14 @@ label onboarding:
     #hide overlay
 
     $ current_textbox = "gatsby"
-
-    show aimee_neutre at gat_left with dissolve
-    voice GHm1
-    
-    inconnu "Girl... J'entends, et je suis d'accord sur le fond. Mais on ne les connaît même pas encore et on ne sait pas quels numéros iels vont présenter, ou si même iels en ont..."
     hide imani_neutre with dissolve
+    show aimee_neutre at gat_left with dissolve
+    #voice GHm1
+    inconnu "Girl... J'entends, et je suis d'accord sur le fond. Mais on ne les connaît même pas encore et on ne sait pas quels numéros iels vont présenter, ou si même iels en ont..."
     
     
-    voice GLaugh2
+    
+    #voice GLaugh2
     hide imani_neutre with dissolve
     hide aimee_neutre
     show aimee_laugh at gat_left
@@ -1225,14 +1224,12 @@ label onboarding:
     hide aimee_neutre
 
     inconnu "Et toi Del'? Qu'est-ce que tu en penses ?"
-    show aimee_neutre at gat_right
-
+    show aimee_neutre at gat_right with dissolve
+    hide aimee_nosmile
     $ current_textbox = "description"
-
     show leandre_neutre at del_left with dissolve
     #ajouter un overlay entre la descri et le personnage
     play sfx Corset
-
     #show overlay
     text "Un autre garçon, plus silencieux, avait la tête baissée sur un corset tout de dentelle, qu'il laçait précautionneusement."
     hide aimee_neutre with dissolve 
@@ -1246,14 +1243,10 @@ label onboarding:
     play vfxL VFXJoy
     show leandre_shy at del_left
     hide leandre_neutre
-    delinconnu "Je pense qu'on devrait leur demander directement..."
-    show leandre_nosmile at del_left  
-    hide leandre_neutre
-    delinconnu "Ou alors que ce serait justement l'occasion parfaite pour nous de revoir nos tours respectifs..." 
-    show leandre_flirty at del_left
-    hide leandre_nosmile
-    
-
+    delinconnu "Je pense qu'on devrait leur demander directement..." 
+    show leandre_flirty at del_left with dissolve
+    hide leandre_shy
+    delinconnu "Ou alors que ce serait justement l'occasion parfaite pour nous de revoir nos tours respectifs..."
     stop music fadeout 1.0
 
     $ current_textbox = "description"
@@ -1278,13 +1271,14 @@ label onboarding:
     
     show joy at joy_center
     play vfxC VFXJoy
+    play music CabaretLightChorus volume 0.7
     mother "Bon ! Les filles, je vous présente [player_name], iel nous rejoindra sous peu, le temps d'arranger le spectacle, et je compte sur vous pour l'accueillir comme il se doit."
     hide joy
     hide mother with dissolve
     hide mother_laugh with dissolve
 
 
-    play music CabaretLightChorus volume 0.7
+    
 
     $ current_textbox = "peacock"
 
@@ -1293,11 +1287,11 @@ label onboarding:
     hide aimee_neutre with dissolve
     hide aimee_nosmile with dissolve
     show imani_neutre at pea_right with dissolve
-    voice PLaugh1
+    #voice PLaugh1
     imani "Pardon, on a dû te sembler super judgy avec notre absence de réaction ! Moi c'est Imani."
     show flirt at flirt_right
     play vfxR VFXFlirt
-    voice PFlirt1
+    #voice PFlirt1
     imani "Parfois on s'appelle aussi par nos noms de scène, donc tu peux aussi m'appeler Peacock, si tu en as envie..."
     hide flirt
     show imani_neutre at pea_right
@@ -1321,19 +1315,18 @@ label onboarding:
     mother "Le petit timide là, qui essaye de faire en sorte de se faire oublier, c'est Léandre."
 
     $ current_textbox = "description"
-    hide mother 
-    show leandre_neutre at del_right with dissolve
+    hide mother
     show leandre_shy at del_right with dissolve
     #show overlay
     text "Prit en flagrant délit, le jeune homme tourna au pivoine et balbutia, mal à l'aise."
     #hide overlay
 
     $ current_textbox = "delaunay"
-    voice DSurprised1
+    #voice DSurprised1
     leandre "N-Non ! C'est juste que... J'ai toujours un peu de mal avec les nouvelles personnes. Excuse-moi..."
     show leandre_neutre at del_right
-    hide leandre_shy
     show flirt at flirt_right
+    hide leandre_shy
     play vfxR VFXFlirt
     leandre "Oui, donc moi, c'est Léandre, j'utilise il/lui, et je fais principalement de l'effeuillage burlesque. C'est assez classique..."
     hide flirt
@@ -1344,10 +1337,10 @@ label onboarding:
     show aimee_laugh at gat_left with dissolve
     show joy at joy_left
     play vfxL VFXJoy
-    voice GLaugh1
+    #voice GLaugh1
     inconnu "C'est tout sauf classique, ton striptease !"
     show leandre_shy at del_right with dissolve
-    hide leandre_neutre
+    hide leandre_neutre with dissolve
 
 
     hide joy
@@ -1367,7 +1360,7 @@ label onboarding:
     gatsby "Du coup, vu qu'on doit toujours parler à sa place, son nom de drag est Delaunay."
     show joy at joy_left
     play vfxL VFXJoy
-    voice GLaugh2
+    #voice GLaugh2
     show aimee_laugh at gat_left
     hide aimee_neutre
     gatsby "Et moi c'est Gatsby ! Parce que je suis magnifique, et que je n'avais pas plus d'inspi que ça au moment de choisir."
@@ -1390,16 +1383,16 @@ label onboarding:
 
 
 label route_choice_intro:
-    play music CrushChoice
     show loges 
     show mother at mother_center with dissolve
     show mother_laugh at mother_center with dissolve
     $ current_textbox = "mother"
     mother "Alors [player_name], si tu devais choisir l'un de mes \"babies\" comme marrain ou parraine, qui est-ce que tu désignerais ?" with fade
-    hide loges 
-    hide devanture 
     hide mother with dissolve
     hide mother_laugh with dissolve
+    hide loges 
+    hide devanture 
+    
     stop music fadeout 0.1
     $ _window_hide()
     $ renpy.pause(0, hard=True)

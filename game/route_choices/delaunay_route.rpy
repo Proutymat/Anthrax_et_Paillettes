@@ -167,12 +167,13 @@ anthrax "Discret ? Ce n'est pas cette impression que tu m'as donné.e."
 $ current_textbox = "delaunay"
 show joy at joy_center
 play vfxC VFXJoy
+show leandre_neutre at del_center
 leandre "Vraiment ? Je suis soulagé alors !"
 hide joy
 leandre "Est-ce que tu souhaites qu'on discute autour d'un verre au bar ? J'aimerais beaucoup en apprendre plus sur ton drag."
 stop ambiance fadeout 2.0
+hide leandre_shy with dissolve
 
-hide leandre_shy
 
 show leandre_neutre at del_right
 with fade
@@ -180,19 +181,21 @@ menu:
     leandre "Et puis, ce sera plus simple aussi pour t’aider à construire ton acte lorsque Mother te donnera le feu vert"
     "Je te suis !":
         $ renpy.play(random.choice(ui_choice_click), channel="sound")
+        hide leandre_neutre with dissolve
         pass
     "J'adorerais !":
         $ renpy.play(random.choice(ui_choice_click), channel="sound")
+        hide leandre_neutre with dissolve
         pass
     "Ça, je ne dis pas non !":
         $ renpy.play(random.choice(ui_choice_click), channel="sound")
+        hide leandre_neutre with dissolve
         pass
           
 
 
 #DEL.2
 hide loges with dissolve
-hide leandre_neutre with dissolve
 scene black with fade
 $ quick_menu = True
 play music BarMusicPartB volume 0.5
@@ -279,7 +282,7 @@ leandre "Techniquement, cela fait déjà des années que l’on se côtoie."
 leandre "Quelques collègues sont parti.e.s, revenue.s, mais au final nous sommes les trois qui ayons tenu sur le long terme."
 
 $ current_textbox = "anthrax"
-anthrax "Et toi ? Qu’est-ce qui t’as lancé dans le drag ?"
+anthrax "Et toi ? Qu’est-ce qui t’a lancé dans le drag ?"
 
 $ current_textbox = "delaunay"
 show leandre_shy at del_right
@@ -588,7 +591,7 @@ label del_3:
     play vfxC SFXCurtainOpen
 
     show gradient
-    play music LongEllipse volume 0.7
+    play music LongEllipse volume 0.6
     show text "{size=60}{color=#FFFFFF}Quelques mois passèrent...{/color}{/size}" at truecenter
 
     pause 6
@@ -600,7 +603,7 @@ label del_3:
     pause 2
 
     $ persistent.bg_parallax = True
-
+    play music BalconIntro noloop
     $ current_textbox = "description"
     text "Cela faisait plusieurs minutes que je cherchais Léandre, avec qui j'étais supposé.e répéter une partie de mon numéro, que l'on construisait ensemble."
     text "Après avoir fait trois fois le tour du bâtiment, je finis par retourner sur les planches de la scène, pensif.ve."
@@ -610,13 +613,13 @@ label del_3:
 
 
     $ quick_menu = False
-
+    queue music BalconIntro noloop
     show auditorium
     play ambiance AmbBalcon
     show sadness at sadness_right
     play vfxR VFXSadness
     show leandre_nosmile at del_right with dissolve
-    play music BalconIntro noloop
+    
 
     menu:
         
@@ -635,6 +638,7 @@ label del_3:
     hide leandre_nosmile with dissolve
     show leandre_neutre at del_center with dissolve
     $ current_textbox = "delaunay"
+    queue music BalconIntro noloop
 
      
     
@@ -663,7 +667,7 @@ label del_3:
     show leandre_shy at del_center
     $ current_textbox = "delaunay"
     leandre "C'est vrai que je ne t'en ai pas encore parlé..."
-    queue music BalconIntro noloop
+    
 
     hide leandre_shy
     hide leandre_neutre
@@ -744,13 +748,15 @@ label del_3_1:
     $ quick_menu = True
     
     hide leandre_shy
+    show leandre_shy at del_center
     hide sadness
-    show leandre_neutre at del_center
+    
     with fade
 
     $ current_textbox = "anthrax"
     anthrax "Tu avais tes raisons pour te lancer... dans cette industrie ?"
-
+    hide leandre_shy
+    show leandre_neutre at del_center
     $ current_textbox = "delaunay"
 
     leandre "Sûrement... On peut dire ça."
@@ -1154,7 +1160,7 @@ label del_4_1:
     anthrax "Ce n'était pas le but peut-être ?"
 
     $ current_textbox = "delaunay"
-    show delaunay_laugh at del_right
+    show delaunay_laugh at del_center
     delaunay "Seulement si tu en as réellement envie. Je ne veux pas te forcer à faire du burlesque ou à devenir une pimbèche de service..."
     hide delaunay_laugh
     delaunay "Bien que je tienne ce titre en très haute estime ~."
@@ -1171,6 +1177,7 @@ label del_4_1:
    
     $ current_textbox = "delaunay"
     show delaunay_shy at del_center with dissolve
+    hide delaunay_neutre
     delaunay "Oh ! Mais occupez-vous de vos fesses, oui ! Je vais rougir..."
     queue music LogesRefrain volume 0.5
 
@@ -1178,7 +1185,7 @@ label del_4_1:
 
     hide gatsby_neutre
     hide peacock_neutre
-    hide delaunay_neutre
+    
     hide delaunay_shy
     show delaunay_flirty at del_right with fade
     menu:
@@ -1257,8 +1264,9 @@ label del_4_1:
     show joy at joy_center
     play vfxC VFXJoy
     show delaunay_flirty at del_center
+    hide delaunay_neutre
     delaunay "Mon dieu, j'ai encore tellement à faire ! Vite [player_name] ! Un coup de main, vite !~"
-    hide delaunay_flirty
+    hide delaunay_flirty with dissolve
     hide flirt
 
     stop ambiance fadeout 2.0
@@ -1517,12 +1525,12 @@ label del_4_3:
     show gatsby_laugh at gat_right with dissolve
     show gatsby_neutre at gat_right with dissolve
     gatsby "BAHAHA !"
-
+    hide gatsby_neutre
     $ current_textbox = "anthrax"
     anthrax "Shady."
 
     hide peacock_neutre
-    hide gatsby_neutre
+    
     $ quick_menu = False
     $ current_textbox = "delaunay"
     show angry at angry_right
@@ -1650,7 +1658,7 @@ label del_5:
     #hide delaunay_shy with dissolve
     show delaunay_neutre at del_center with dissolve
     #show delaunay_flirty at del_center with dissolve
-    text "L’effet dupait aisément son public et signa la fin de son acte."
+    text "L’effet dupa aisément son public et signa la fin de son acte."
     show joy at joy_center
     play vfxC VFXJoy
     text "Il se couvrit d’un long kimono et se fit aider pour descendre sans glisser avant de saluer fièrement les spectateur.ice.s, son make-up intact et un grand sourire aux lèvres."
@@ -1677,18 +1685,16 @@ label del_6:
 
     
     show loges with fade
-    show delaunay_neutre at del_center
     $ current_textbox = "delaunay"
     $ persistent.bg_parallax = True
     show delaunay_flirty at del_center with dissolve
-    show delaunay_neutre at del_center with dissolve
     show joy at joy_center
     play vfxC VFXJoy
-    delaunay "Wow! C'était dément! La salle était super chaude ce soir!"
+    delaunay "Wow ! C'était dément ! La salle était super chaude ce soir !"
+    show delaunay_laugh at del_center
     hide delaunay_flirty
     hide joy
-    show delaunay_laugh at del_center with dissolve
-    delaunay "Et j'ai ramassé un beau pactole avec les tips! Je suis refais!"
+    delaunay "Et j'ai ramassé un beau pactole avec les tips ! Je suis refais !"
     hide delaunay_laugh
     
     hide delaunay_neutre with dissolve
@@ -1710,14 +1716,14 @@ label del_6:
     show flirt at flirt_right
     play vfxR VFXFlirt
     menu:
-        delaunay "Alors, qu'est-ce que tu en as pensé [player_name]?"
-        "C'était incroyable! Surtout quand le rideau s'est ouvert !":
+        delaunay "Alors, qu'est-ce que tu en as pensé [player_name] ?"
+        "C'était incroyable ! Surtout quand le rideau s'est ouvert !":
             $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
-        "J'ai adoré! Mais tu l'as sorti d'où ce string?!":
+        "J'ai adoré ! Mais tu l'as sorti d'où ce string ?!":
             $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
-        "La foule était en délire à ton salut! Et moi aussi!":
+        "La foule était en délire à ton salut ! Et moi aussi !":
             $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
 
@@ -1729,11 +1735,11 @@ label del_6:
     show delaunay_laugh at del_right with dissolve
     delaunay "Je suis content que ça t'aie plu!"
     hide delaunay_laugh
-    delaunay "Et puis ça pourra toujours t'inspirer pour ton propre numéro!"
-    delaunay "Ça avance, d'ailleurs?"
+    delaunay "Et puis ça pourra toujours t'inspirer pour ton propre numéro !"
+    delaunay "Ça avance, d'ailleurs ?"
 
     $ current_textbox = "anthrax"
-    anthrax "C'est sur le feu! Je suis chaud.e bouillant.e!"
+    anthrax "C'est sur le feu ! Je suis chaud.e bouillant.e !"
 
     $ current_textbox = "delaunay"
 
@@ -1751,7 +1757,7 @@ label del_6_good:
     show loges with dissolve
     
 
-    delaunay "Hey, ça te dirait qu'on sorte prendre un verre après m'être changé? Rien que nous deux ? "
+    delaunay "Hey, ça te dirait qu'on sorte prendre un verre après m'être changé ? Rien que nous deux ? "
    
     $ current_textbox = "description"
     $ quick_menu = False
@@ -1771,7 +1777,7 @@ label del_6_good:
     hide flirt
 
     $ current_textbox = "delaunay"
-    delaunay "Parfait! Je te retrouve dehors dans quelques minutes alors !"
+    delaunay "Parfait ! Je te retrouve dehors dans quelques minutes alors !"
 
     #Transition Rideau
     hide flirt
@@ -1801,31 +1807,33 @@ label del_6_good:
     $ current_textbox = "delaunay"
     show joy at joy_center
     play vfxC VFXJoy
-    leandre "Pardon pour l'attente! On y va?"
+    leandre "Pardon pour l'attente ! On y va?"
     hide joy
 
     $ current_textbox = "anthrax"
-    anthrax "Merci pour l'invitation... Les autres ne sont pas trop jaloux.se.s de notre contre-soirée?"
+    anthrax "Merci pour l'invitation... Les autres ne sont pas trop jaloux.se.s de notre contre-soirée ?"
 
     $ current_textbox = "delaunay"
-    show leandre_laugh at del_right
+    hide leandre_neutre with dissolve
+    show leandre_laugh at del_right with dissolve
     leandre "Oh, iels devraient s'en remettre. Ça faisait un moment que je voulais passer un peu plus de temps avec toi."
-    hide leandre_laugh
     leandre "En dehors des plumes et des paillettes,  je veux dire..."
     show leandre_shy at del_right
+    hide leandre_laugh
     leandre "Enfin, si tu es d'accord, évidemment."
-    hide leandre_shy
-
 
     $ current_textbox = "anthrax"
+    show leandre_neutre at del_right
+    hide leandre_shy
     anthrax "Ce serait avec plaisir Léandre..."
-    anthrax "Alors dis-moi! Où est-ce que tu m'emmènes ce soir?"
+    anthrax "Alors dis-moi ! Où est-ce que tu m'emmènes ce soir ?"
 
     $ current_textbox = "delaunay"
     show flirt at flirt_right
     play vfxR VFXFlirt
     show leandre_flirty at del_right
-    leandre "Hm... Je te réserve la surprise. Mais je pense vraiment que ça devrait te plaire!"
+    hide leandre_neutre
+    leandre "Hm... Je te réserve la surprise. Mais je pense vraiment que ça devrait te plaire !"
     hide leandre_flirty
 
 
@@ -1849,13 +1857,13 @@ label del_6_bad:
     $ quick_menu = False
 
     menu:
-        "Oui, bien sûr! Je termine ça et j'arrive!":
+        "Oui, bien sûr ! Je termine ça et j'arrive !":
             $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
-        "Si vous insistez!":
+        "Si vous insistez !":
             $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
-        "Proposé si gentiment, comment refuser?":
+        "Proposé si gentiment, comment refuser ?":
             $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
 
@@ -1879,13 +1887,13 @@ label del_6_bad:
     $ quick_menu = False
 
     menu:
-        "Oui, bien sûr! Je termine ça et j'arrive!":
+        "Oui, bien sûr ! Je termine ça et j'arrive !":
             $ renpy.play(random.choice(ui_choice_click), channel="sound")
             anthrax "Oui, bien sûr ! Je termine ça et j'arrive !"
-        "Si vous insistez!":
+        "Si vous insistez !":
             $ renpy.play(random.choice(ui_choice_click), channel="sound")
             anthrax "Si vous insistez !"
-        "Proposé si gentiment, comment refuser?":
+        "Proposé si gentiment, comment refuser ?":
             $ renpy.play(random.choice(ui_choice_click), channel="sound")
             anthrax "Proposé si gentiment, comment refuser ?"
 
