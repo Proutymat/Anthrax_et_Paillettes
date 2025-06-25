@@ -194,6 +194,8 @@ image wip = "images/WIP.png"
 # Déclaration de l'animation complète du gradient
 
 image gradient= Movie(play="images/VFX/Gradiants/Gradient.webm", loop=True)
+image tuto= Movie(play="images/tuto.webm", loop=False)
+ 
     
 
 image curtain_open:
@@ -971,6 +973,7 @@ define text = Character(color="#FFFFFF", who_outlines=[(2, "#000000", 0, 0)], wh
 
 label start:
     $ quick_menu = False
+    $ persistent.bg_parallax = False
     scene black
     with fade
     stop music fadeout 0.2
@@ -1002,7 +1005,6 @@ label start:
 
 
     if yes_action:
-        $ persistent.bg_parallax = True
         jump onboarding
     else:
         $ persistent.bg_parallax = False
@@ -1012,6 +1014,13 @@ label start:
 
 #0.1    
 label onboarding:
+
+    $ persistent.bg_parallax = False
+    
+    show tuto with dissolve
+    pause 7
+
+    hide tuto with fade
     $ persistent.bg_parallax = True
     show devanture
     with fade
