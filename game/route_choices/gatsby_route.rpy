@@ -1874,10 +1874,10 @@ label gat_6:
     anthrax "C'est en cours! Patience, patience! Moi aussi, j'ai envie de te garder la surprise~"
 
 label indice_gat:
-        if indice_gat >= 0:
-            jump gat_6_good
-        else:
-            jump gat_6_bad
+    if indice_gat >= 0:
+        jump gat_6_good
+    else:
+        jump gat_6_bad
     
     show gatsby_neutre at gat_right
     with fade
