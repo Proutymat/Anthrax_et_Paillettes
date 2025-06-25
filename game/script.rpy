@@ -106,7 +106,9 @@ image delaunay_nosmile:
 image delaunay_shy:
     "images/Personnages/delaunay_shy.png"
     zoom 0.35
-
+image delaunay_laugh:
+    "images/Personnages/delaunay_laugh.png"
+    zoom 0.35
 # Gatsby
 image gatsby_irritated:
     "images/Personnages/gatsby_irritated.png"
@@ -119,6 +121,9 @@ image gatsby_nosmile:
     zoom 0.35
 image gatsby_pensive:
     "images/Personnages/gatsby_pensive.png"
+    zoom 0.35
+image gatsby_laugh:
+    "images/Personnages/gatsby_laugh.png"
     zoom 0.35
 
 # Imani
@@ -159,6 +164,9 @@ image leandre_shy:
 image mother:
     "images/Personnages/mother.png"
     zoom 0.35
+image mother_laugh:
+    "images/Personnages/mother_laugh.png"
+    zoom 0.35
 
 # Peacock
 image peacock_neutre:
@@ -169,6 +177,12 @@ image peacock_nosmile:
     zoom 0.35
 image peacock_sassy:
     "images/Personnages/peacock_sassy.png"
+    zoom 0.35
+image peacock_emo:
+    "images/Personnages/peacock_emo.png"
+    zoom 0.35
+image peacock_laugh:
+    "images/Personnages/peacock_laugh.png"
     zoom 0.35
 
 
@@ -1058,7 +1072,7 @@ label onboarding:
     show auditorium  with dissolve
     play sfx DoorAndrogame
     show mother at mother_center with dissolve
-    #show mother_laugh at mother_center with dissolve
+    show mother_laugh at mother_center with dissolve
 
 
 
@@ -1095,28 +1109,26 @@ label onboarding:
 
     voice MLaugh1
     #retirer vfx joy
-    #show mother_laugh at mother_center
-    #hide mother
+    show mother_laugh at mother_center
+    hide mother
     mother "Aha ! Tu m’en vois ravie de l’entendre."
-    #show mother_neutre at mother_center
-    #hide mother_laugh
+    show mother_neutre at mother_center
+    
 
 
     mother "Je ne vais pas te faire patienter plus longtemps... Commençons par te faire une petite visite des lieux. Promis, tu vas t’y retrouver bien vite."
-    hide mother with dissolve
+    hide mother_laugh with dissolve
 
     show mother at mother_right with dissolve
     show joy at joy_right
     play vfxR VFXJoy
     queue music CabaretLightChorus volume 0.7
 
-    #retirer vfx joy
-    #retirer vfx joy
-    #show mother_laugh at mother_right with dissolve
-    #hide mother_neutre
+    show mother_laugh at mother_right with dissolve
+    hide mother_neutre
     mother "Nous voici donc dans l'auditorium !"
-    #show mother_neutre at mother_center
-    #hide mother_laugh
+    show mother_neutre at mother_center
+    hide mother_laugh
 
     mother "Il sera un peu comme ton meilleur ennemi, car peu importe le trac ou qui se retrouvera dans le public, il faudra grimper sur les planches !"
    
@@ -1382,13 +1394,13 @@ label route_choice_intro:
     play music CrushChoice
     show loges 
     show mother at mother_center with dissolve
-    #show mother_laugh at mother_center with dissolve
+    show mother_laugh at mother_center with dissolve
     $ current_textbox = "mother"
     mother "Alors [player_name], si tu devais choisir l'un de mes \"babies\" comme marrain ou parraine, qui est-ce que tu désignerais ?" with fade
     hide loges 
     hide devanture 
     hide mother with dissolve
-    #hide mother_laugh with dissolve
+    hide mother_laugh with dissolve
     stop music fadeout 0.1
     $ _window_hide()
     $ renpy.pause(0, hard=True)

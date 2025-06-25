@@ -366,6 +366,7 @@ label pea_2_1:
     imani "C’est vrai que Léandre a l’air plus discret mais n’en est pas moins activiste."
     imani "Et Aimée... Eh bien, je crois que tu as remarqué qu’iel avait plutôt grande gueule..."
     show joy at joy_center
+    play vfxC VFXJoy
     imani "Même l’Androgame est un lieu très central dans la sphère queer de la ville. Toutes les Paillettes vont défiler aux prides et scandent des slogans."
     hide joy
 
@@ -923,7 +924,7 @@ label pea_3_1:
     hide imani_nosmile
     imani "Mais je leur ai dit que ça me mettait un peu mal à l’aise, et la troupe a finalement été très compréhensive."
     imani "Surtout que ce n’est que bien plus tard que je leur ai parlé de mes anciens problèmes d’alcoolisme."
-    show imani_laugh at pea_right
+    show imani_laugh at pea_right with dissolve
     hide imani_neutre
     imani "C’est aussi comme ça que je me suis rendu compte que j’étais tombé sur ma famille de cœur."
     show joy at joy_right
@@ -1374,10 +1375,12 @@ label pea_4_1:
     hide peacock_neutre
     show joy at joy_center
     play vfxC VFXJoy
+
     peacock "Puis, j'y ai aussi mit de l'effort. J'ai pris des classes, j'ai longtemps itéré, jusqu'à trouver la formule qui me correspondait."
     hide joy
 
     $ quick_menu = False
+    hide peacock_laugh with dissolve
     show peacock_neutre at pea_right
    
     menu:
@@ -1409,28 +1412,28 @@ label pea_4_1:
     peacock "Et une fois, il y avait ces danseuses de cabaret, avec leurs grands éventails à plumes. À partir de ce point, je n'ai jamais lâché cette fixette."
     $ current_textbox = "delaunay"
 
-    show delaunay_neutre at del_left
     show delaunay_laugh at del_left
     delaunay "C'est mignon ! Quand j'y repense, mes parents aussi m'emmenaient en spectacle. C'est peut-être de là que ça vient."
     $ current_textbox = "gatsby"
 
     hide peacock_neutre
-    show gatsby_neutre at gat_right with dissolve
     show gatsby_laugh at gat_right with dissolve
     gatsby "Ou d'y avoir été sensibilisé.e au moins. De mon côté, c'était plus les comédies musicales à la télé, du type \"Mozart, l'Opéra Rock\" ou \"1789\"."
     $ current_textbox = "peacock"
 
     hide delaunay_neutre
     show peacock_neutre at pea_left with dissolve
+    hide delaunay_laugh
     show peacock_laugh at pea_left with dissolve
     show joy at joy_left
     play vfxL VFXJoy
     peacock "Comme quoi ! Les plumes, la scène, le théâtre... Au final, c'est plus histoire de me rappeler d'où je viens, ce que j'aime et ce qui m'a construit."
-    hide gatsby_neutre
+    hide gatsby_laugh
     hide joy
 
 
     $ quick_menu = False
+    hide gatsby_neutre
     show peacock_neutre at pea_right with dissolve
     hide peacock_laugh
    
@@ -1485,7 +1488,6 @@ label pea_4_1:
     staff "Ok les filles ! Showtime dans dix minutes !"
     $ current_textbox = "peacock"
 
-    show peacock_neutre at pea_center with dissolve
     show peacock_laugh at pea_center with dissolve
 
     peacock "Déjà ?! Bon, plus qu'à se dépêcher...!"
@@ -1620,7 +1622,6 @@ label pea_4_2:
     staff "Ok les filles ! Showtime dans dix minutes !"
     $ current_textbox = "peacock"
 
-    show peacock_neutre at pea_center with dissolve
     show peacock_laugh at pea_center with dissolve
     peacock "Déjà ?! Bon, plus qu'à se dépêcher...!"
 
@@ -1768,7 +1769,6 @@ label pea_4_3:
     staff "Ok les filles ! Showtime dans dix minutes !"
 
     $ current_textbox = "peacock"
-    show peacock_neutre at pea_center with dissolve
     show peacock_laugh at pea_center with dissolve
     peacock "Déjà ?! Bon, plus qu'à se dépêcher...!"
    
@@ -1779,6 +1779,7 @@ label pea_4_3:
 label pea_5:
 
     show curtain_close with dissolve
+    hide peacock_laugh with dissolve
     hide peacock_neutre with dissolve
     hide bar
     hide loges with dissolve
@@ -1829,6 +1830,7 @@ label pea_6:
 
     hide auditorium
     hide peacock_neutre
+    hide peacock_laugh
     show loges with fade
     show peacock_neutre at pea_right with dissolve
     show peacock_laugh at pea_right with dissolve
@@ -1841,6 +1843,7 @@ label pea_6:
 
 
     hide peacock_neutre
+    hide peacock_laugh
  
     $ quick_menu = False
 
