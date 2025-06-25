@@ -1673,7 +1673,7 @@ label onboarding:
     text "J'ai commencé à me costumer en cachette dans mon appart, et pour être honnête, c'était peut-être pour le mieux."
     text "Mes premières tentatives de make-up étaient catastrophiques... Mais au fur et à mesure, j’ai pris le coup de pinceau."
     text "Ce que je pensais être une lubie est finalement devenu un hobby."
-    text "Je faisais mon petit contenu sur les réseaux socieux et continuait ma vie tranquillement à côté, en passant toujours devant L’Androgame pour aller au travail."
+    text "Je faisais mon petit contenu sur les réseaux sociaux et continuait ma vie tranquillement à côté, en passant toujours devant L’Androgame pour aller au travail."
     text "Alors quand ils ont lancé des auditions pour agrandir la troupe, j'ai longuement hésité. Mais on n'a qu'une vie !"
     text "Je ne pensais pas être sélectionné·e ! Et encore moins passer un entretien avec Mother, la patronne du cabaret. "
     
@@ -1715,6 +1715,7 @@ label onboarding:
     
     $ current_textbox = "mother"
 
+    #retirer vfx joy
     #show mother_laugh at mother_center
     #hide mother
     mother "Aha ! Tu m’en vois ravie de l’entendre."
@@ -1727,6 +1728,8 @@ label onboarding:
 
     queue music CabaretLightChorus volume 0.7
 
+    #retirer vfx joy
+    #retirer vfx joy
     #show mother_laugh at mother_right with dissolve
     #hide mother_neutre
     mother "Nous voici donc dans l'auditorium !"
