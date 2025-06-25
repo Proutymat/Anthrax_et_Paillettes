@@ -1064,10 +1064,11 @@ label onboarding:
 
 
 #0.2
+    $ current_textbox = "mother"
 
     play ambiance AmbAndrogameDay fadein 0.5
 
-    $ current_textbox = "mother"
+   
 
     show joy at joy_center
     play vfxC VFXJoy
@@ -1092,8 +1093,6 @@ label onboarding:
     
     $ current_textbox = "mother"
 
-    show joy at joy_center
-    play vfxC VFXJoy
     voice MLaugh1
     #retirer vfx joy
     #show mother_laugh at mother_center
@@ -1121,8 +1120,6 @@ label onboarding:
 
     mother "Il sera un peu comme ton meilleur ennemi, car peu importe le trac ou qui se retrouvera dans le public, il faudra grimper sur les planches !"
    
-    show joy at joy_right
-    play vfxR VFXJoy
     voice MHm2
     mother "Après, si tu es ici aujourd’hui, c’est parce que c’est justement le genre de chose qui t’anime : te mettre en scène..."
     hide joy with dissolve

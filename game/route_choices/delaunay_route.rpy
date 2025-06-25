@@ -615,7 +615,7 @@ label del_3:
     play ambiance AmbBalcon
     show sadness at sadness_right
     play vfxR VFXSadness
-    show leandre_neutre at del_right with dissolve
+    show leandre_nosmile at del_right with dissolve
     play music BalconIntro noloop
 
     menu:
@@ -632,13 +632,12 @@ label del_3:
 
     $ quick_menu = True
     hide sadness
-    hide leandre_neutre with dissolve
-    show leandre_nosmile at del_center with dissolve
+    hide leandre_nosmile with dissolve
+    show leandre_neutre at del_center with dissolve
     $ current_textbox = "delaunay"
 
      
-    hide leandre_nosmile
-    show leandre_neutre at del_center
+    
     leandre "Oh !"
     
     leandre "Pardon, je n'ai pas vu l'heure tourner."
