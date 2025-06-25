@@ -1093,8 +1093,6 @@ label onboarding:
     
     $ current_textbox = "mother"
 
-    show joy at joy_center
-    play vfxC VFXJoy
     voice MLaugh1
     #retirer vfx joy
     #show mother_laugh at mother_center
@@ -1122,8 +1120,6 @@ label onboarding:
 
     mother "Il sera un peu comme ton meilleur ennemi, car peu importe le trac ou qui se retrouvera dans le public, il faudra grimper sur les planches !"
    
-    show joy at joy_right
-    play vfxR VFXJoy
     voice MHm2
     mother "Après, si tu es ici aujourd’hui, c’est parce que c’est justement le genre de chose qui t’anime : te mettre en scène..."
     hide joy with dissolve
@@ -1196,10 +1192,10 @@ label onboarding:
     play vfxR VFXJoy
     voice GLaugh2
     hide imani_neutre with dissolve
-    #show aimee_laugh at gat_right
-    #hide aimee_pensive
+    show aimee_laugh at gat_right
+    hide aimee_pensive
     inconnu "Tu es en train de te faire des plans sur la comète, ma belle."
-    #show aimee_neutre at gat_right
+    show aimee_neutre at gat_right
     #hide aimee_laugh
 
 
