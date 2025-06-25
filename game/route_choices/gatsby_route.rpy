@@ -862,7 +862,6 @@ label choix_gat3:
 #+0
 label gat_3_1:
     $ quick_menu = True
-    $ indice_gat += 1
 
     show aimee_neutre at gat_center
     with fade
@@ -975,8 +974,9 @@ label gat_3_1:
     call gat_4 from _call_gat_4 
 
 #GAT.3.2
-#+1
+
 label gat_3_2:
+    $ indice_gat += 1
     $ quick_menu = True
     
     show aimee_neutre at gat_center
@@ -1008,6 +1008,7 @@ label gat_3_2:
     hide aimee_nosmile
     aimee "Enfin... C’est ce que je préférais me raconter plutôt..."
     $ current_textbox = "anthrax"
+    hide aimee_pensive
     
 
     $ quick_menu = False
@@ -1093,6 +1094,7 @@ label gat_3_2:
     hide aimee_neutre
     aimee "Mais je suis là aujourd'hui, j'en demande pas plus !"
 
+    hide aimee_laugh with dissolve
     call gat_4 from _call_gat_4_1 
 
 #GAT.3.3
@@ -1145,7 +1147,7 @@ label gat_3_3:
     show aimee_nosmile at gat_right
     hide aimee_pensive
     aimee "Et d'un autre côté, c'est toujours une peur un peu irrationnelle qui ne me quitte jamais."
-    show sadness at sandess_right
+    show sadness at sadness_right
     aimee "Surtout que sur le chemin de la convalescence, j'ai eu beaucoup de hauts et de bas."
     hide sadness
     show aimee_irritated at gat_right
@@ -1216,6 +1218,7 @@ label gat_4:
 
     stop music fadeout 0.5
     $ persistent.bg_parallax = False
+    hide aimee_nosmile with dissolve
     hide aimee_neutre with dissolve
     show curtain_close  with dissolve
     pause 1.5
@@ -1272,8 +1275,8 @@ label gat_4:
 
     $ current_textbox = "gatsby"
 
-    show aimee_nosmile at gat_right
-    hide aimee_pensive
+    show gatsby_nosmile at gat_right
+    hide gatsby_pensive
     gatsby "Est-ce que ce serait possible de me passer les pièces de mon costume pendant que je me change ? Le paravent est ridiculement petit..."
 
     $ current_textbox = "description"
@@ -1339,6 +1342,7 @@ label gat_4_1:
     $ quick_menu = True
     $ indice_gat += 1
     
+    hide gatsby_nosmile
     show gatsby_neutre at gat_center with fade
     $ current_textbox = "anthrax"
 
@@ -1375,11 +1379,11 @@ label gat_4_1:
     $ current_textbox = "gatsby"
 
     show gatsby_laugh at gat_right
-    hide gatsby_neutre
     gatsby "Parfois oui, j'adore mon corps, mes formes, sa force... "
+    hide gatsby_laugh
     show gatsby_nosmile at gat_right
-    hide gatsby_neutre
     gatsby "Et il suffit d'un instant pour avoir l'impression que ma peau n'est pas la mienne, que quelque chose est à vif en dessous, que ça grouille."
+    hide gatsby_neutre
     show gatsby_pensive at gat_right
     hide gatsby_nosmile
     gatsby "C'est très spécial à décrire..."
@@ -1397,7 +1401,6 @@ label gat_4_1:
     hide delaunay_nosmile
     show gatsby_laugh at gat_left with dissolve
     gatsby "Plus qu'explorer, je dirais même se réconcilier. La majeure partie du temps, je me sens super bien dans ma peau."
-    show gatsby_neutre at gat_left
     hide gatsby_laugh
     gatsby "Devoir accomplir des prouesses physiques, se dévoiler, ne pas avoir droit à l'erreur et être obligé.e de rester concentré.e..."
     gatsby "Quand juste parfois le mood n'est pas là, c'est bien plus embarrassant que ce qu'on croirait."
@@ -1440,9 +1443,11 @@ label gat_4_1:
     show delaunay_shy at del_left with dissolve
     delaunay "Oui, mais c'était un cas exceptionnel. "
     delaunay "Et j'avais d'autres facteurs dans ma vie personnelle qui ont fait que je n'ai plus réussi à assumer mon numéro en plein milieu."
+
+    hide peacock_neutre with dissolve
+    hide peacock_nosmile with dissolve
     $ current_textbox = "gatsby"
 
-    hide peacock_nosmile with dissolve
     show gatsby_neutre at gat_right with dissolve
     gatsby "Mais au final, ça s'est bien fini et le public était très compréhensif..."
     gatsby "Et on se soutient suffisamment dans la troupe pour savoir exprimer nos besoins et nos difficultés."
@@ -1473,7 +1478,8 @@ label gat_4_1:
 label gat_4_2:
     $ quick_menu = True
     $ indice_gat -= 1
-
+    
+    hide gatsby_nosmile
     show gatsby_neutre at gat_center with fade
     $ current_textbox = "anthrax"
 
@@ -1615,6 +1621,7 @@ label gat_4_2:
 label gat_4_3:
     $ quick_menu = True
 
+    hide gatsby_nosmile
     show gatsby_neutre at gat_center with fade
     $ current_textbox = "anthrax"
 
@@ -1879,16 +1886,6 @@ label indice_gat:
         else:
             jump gat_6_bad
     
-    show gatsby_neutre at gat_right
-    with fade
-    gatsby "Ça te tente que l'on sorte un peu après? Se promener en ville, grignoter un truc, quelque chose du style..."
- 
-    menu: 
-        text "Accepter le date ?"
-        "Oui":
-            call gat_6_good from _call_gat_6_good 
-        "Non":
-            call gat_6_bad from _call_gat_6_bad 
 
 #GAT.6.GOOD
 label gat_6_good:
@@ -1916,7 +1913,7 @@ label gat_6_good:
     hide flirt
 
     $ current_textbox = "gatsby"
-    show flirt at flirt_center
+    show flirt at flirt_right
     gatsby "Nickel! Je fais vite! Attends-moi devant l'entrée quand tu aura aussi fini!"
     hide flirt
 
@@ -2094,12 +2091,11 @@ label gat_6_good_bad:
 label final_gatsby:
     $ current_textbox = "description"
     hide aimee_neutre with dissolve
+    hide aimee_laugh with dissolve
     hide devanture with fade
     hide bar with fade
     
     $ quick_menu = False
-
-    "Interview et musiques débloquées"
     stop music fadeout 1.0
     pause 1.0
     scene black with fade

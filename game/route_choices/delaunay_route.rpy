@@ -1924,28 +1924,23 @@ label del_6_good_bad:
     hide imani_neutre
     hide leandre_neutre
     hide aimee_neutre
-    show aimee_neutre at gat_right with dissolve
-    #show aimee_laugh at gat_right with dissolve
+    show aimee_laugh at gat_right with dissolve
 
     $ current_textbox = "gatsby"
     aimee "Nan mais je te jure ! La manière dont sa perruque a volé au milieu de la pièce !"
 
     $ current_textbox = "delaunay"
-    show leandre_neutre at del_left with dissolve
-    #show leandre_laugh at del_left with dissolve
+    show leandre_laugh at del_left with dissolve
     leandre "Et surtout sa tête, en s'en rendant compte... !"
 
     $ current_textbox = "peacock"
-    hide aimee_neutre
-    #hide aimee_laugh
+    hide aimee_laugh
 
-    show imani_neutre at pea_right with dissolve
-    #show imani_laugh at pea_right with dissolve
+    show imani_laugh at pea_right with dissolve
     imani "J'aurais rêvé être là cette soirée, et non derrière les machines !"
 
     $ current_textbox = "mother"
-    hide leandre_neutre
-    #hide leandre_laugh
+    hide leandre_laugh
     show mother at mother_left with dissolve
     #show mother_laugh at mother_left with dissolve
 
@@ -1954,8 +1949,7 @@ label del_6_good_bad:
     mother "Je suis sûre que je peux te retrouver une vidéo d'excellente qualité, vu comment elle a tourné sur les plateformes."
     hide joy
     
-    hide imani_neutre
-    #hide imani_laugh
+    hide imani_laugh
 
     hide mother
     #hide mother_laugh
@@ -1971,7 +1965,7 @@ label del_6_good_bad:
     text "Je les observais un à une, ancrant cette image dans ma mémoire, essayant d'y graver le moindre détail."
     hide imani_neutre with dissolve
     hide aimee_neutre with dissolve
-    #show leandre_laugh at del_right
+    show leandre_laugh at del_right
     text "Je m'en voulais peut-être un peu de ne pas avoir demandé à Léandre d'être sorti avec moi ce soir."
     show leandre_neutre at del_right
     text "Mais quelque chose me dit que c'était peut-être un peu trop tôt..."
@@ -1991,7 +1985,6 @@ label final_delaunay:
     hide devanture with fade
     hide bar with fade
 
-    "Interview et musiques débloquées"
     stop music fadeout 1.0
     pause 1.0
     scene black with fade
