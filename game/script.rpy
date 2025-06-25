@@ -1095,6 +1095,7 @@ label onboarding:
     show joy at joy_center
     play vfxC VFXJoy
     voice MLaugh1
+    #retirer vfx joy
     #show mother_laugh at mother_center
     #hide mother
     mother "Aha ! Tu m’en vois ravie de l’entendre."
@@ -1110,6 +1111,8 @@ label onboarding:
     play vfxR VFXJoy
     queue music CabaretLightChorus volume 0.7
 
+    #retirer vfx joy
+    #retirer vfx joy
     #show mother_laugh at mother_right with dissolve
     #hide mother_neutre
     mother "Nous voici donc dans l'auditorium !"
