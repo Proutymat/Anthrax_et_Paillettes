@@ -1088,7 +1088,6 @@ label onboarding:
     play vfxC VFXJoy
     voice MLaugh3
     mother "Bienvenue dans L'Androgame ! J'espère que tu as fait bonne route."
-    show mother_neutre at mother_center
     hide mother_laugh
     hide joy with dissolve
 
@@ -1112,7 +1111,7 @@ label onboarding:
     show mother_laugh at mother_center
     hide mother
     mother "Aha ! Tu m’en vois ravie de l’entendre."
-    show mother_neutre at mother_center
+    show mother at mother_center
     
 
 
@@ -1125,9 +1124,9 @@ label onboarding:
     queue music CabaretLightChorus volume 0.7
 
     show mother_laugh at mother_right with dissolve
-    hide mother_neutre
+    hide mother
     mother "Nous voici donc dans l'auditorium !"
-    show mother_neutre at mother_center
+    show mother at mother_center
     hide mother_laugh
 
     mother "Il sera un peu comme ton meilleur ennemi, car peu importe le trac ou qui se retrouvera dans le public, il faudra grimper sur les planches !"
