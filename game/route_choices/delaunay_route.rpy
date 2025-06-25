@@ -82,6 +82,8 @@ define G_type_sounds = ['audio/SFX/AP_T3-001.ogg','audio/SFX/AP_T3-002.ogg','aud
 define P_type_sounds = ['audio/SFX/AP_T4-001.ogg','audio/SFX/AP_T4-002.ogg','audio/SFX/AP_T4-003.ogg','audio/SFX/AP_T4-004.ogg']
 define type_silent = ['<silence 1.0>']
 
+define ui_choice_click = ['audio/SFX/AP_UI_Click-001.ogg','audio/SFX/AP_UI_Click-002.ogg','audio/SFX/AP_UI_Click-003.ogg','audio/SFX/AP_UI_Click-004.ogg','audio/SFX/AP_UI_Click-005.ogg','audio/SFX/AP_UI_Click-006.ogg']
+
 # Liste des ambiances
 define audio.AmbAndrogameDay = "audio/Amb/Amb_Cabaret_V4.ogg"
 define audio.AmbLoges = "audio/Amb/Amb_LogesDay_V6.ogg"
@@ -146,9 +148,7 @@ default indice_del = 0
 scene black with fade
 show loges
 stop music fadeout 0.1
-play ambiance AmbLoges fadein 2.0
 show leandre_shy at del_center with dissolve
-
 play ambiance AmbLoges volume 0.5 fadein 0.5
 
 #DEL.1
@@ -179,10 +179,13 @@ with fade
 menu: 
     leandre "Et puis, ce sera plus simple aussi pour t’aider à construire ton acte lorsque Mother te donnera le feu vert"
     "Je te suis !":
-         pass
+        $ renpy.play(random.choice(ui_choice_click), channel="sound")
+        pass
     "J'adorerais !":
-         pass
+        $ renpy.play(random.choice(ui_choice_click), channel="sound")
+        pass
     "Ça, je ne dis pas non !":
+        $ renpy.play(random.choice(ui_choice_click), channel="sound")
         pass
           
 
@@ -214,16 +217,20 @@ menu:
     #delaunay ""
     leandre "Est-ce que tu sais déjà quoi commander ?"
     "Un Pornstar Martini.":
-     pass
+        $ renpy.play(random.choice(ui_choice_click), channel="sound")
+        pass
     "Un Negroni Sbagliato, avec une pointe de prosecco.":
-     pass
+        $ renpy.play(random.choice(ui_choice_click), channel="sound")
+        pass
     "Une citronnade bien fraîche.":
-     pass
+        $ renpy.play(random.choice(ui_choice_click), channel="sound")
+        pass
 
 $ quick_menu = True
 
 queue music BarMusic volume 0.5
 queue music BarMusicPartB volume 0.5
+
 leandre "Alors dis-moi, qu’est-ce qui t’amène ici ?"
 
 $ current_textbox = "anthrax"
@@ -254,17 +261,16 @@ show leandre_neutre at del_right
 menu:
     leandre "J’étais exactement pareil..."
     "Ça fait longtemps que tu as intégré la troupe ?":
-     pass
+        $ renpy.play(random.choice(ui_choice_click), channel="sound")
+        pass
     "Depuis combien de temps est-ce que tu es là?":
-     pass
+        $ renpy.play(random.choice(ui_choice_click), channel="sound")
+        pass
     "Vous devez bien vous connaître, avec les autres...":
-     pass
+        $ renpy.play(random.choice(ui_choice_click), channel="sound")
+        pass
 
 $ quick_menu = True
-
-
-
-
 
 leandre "Environ cinq ans je dirais? Techniquement, je suis le doyen, parmi les autres que tu as croisé.e.s tout à l'heure."
 leandre "Enfin, officiellement, Imani a travaillé ici depuis plus longtemps, mais n'a intégré la troupe qu'il y a seulement deux ans."
@@ -291,10 +297,13 @@ label choix_del2:
     menu: 
         leandre "Et finalement, Mother m’a pris sous son aile et m’a aidé à me sortir de tout cela."
         "Oh! Tu as transitionné?":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             call del_2_1 from _call_del_2_1 
         "Et comment est-ce que tu as rencontré Mother?":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             call del_2_2 from _call_del_2_2 
         "J'ai remarqué qu'Aimé.e finissait beaucoup tes phrases...":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             call del_2_3 from _call_del_2_3 
 
           
@@ -339,10 +348,13 @@ label del_2_1:
     menu:
         leandre "Pas faux... Mais bon, nous sommes une troupe particulièrement hétéroclite. Blague à part!"
         "Ça n'a pas été trop dur? Enfin, si ce n'est pas indiscret.":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
         "Comment as-tu réussi à t'en sortir?":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
         "Ça a dû être une sacrée épreuve, tout de même...":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
 
     hide joy
@@ -378,10 +390,13 @@ label del_2_1:
     menu:
         leandre "Et je tire une bonne partie de ma fierté queer, de ma transition."
         "Qu'est-ce que tu entends par là ?":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
         "Je ne comprends pas...":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
         "Peux-tu préciser? J'ai dû mal à saisir la nuance.":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
 
     hide flirt
@@ -403,8 +418,6 @@ label del_2_1:
     hide leandre_laugh
     hide flirt
 
-    stop music fadeout 1.0
-    stop ambiance fadeout 1.0
     call del_3 from _call_del_3 
 
 #DEL.2.2
@@ -432,10 +445,13 @@ label del_2_2:
     menu:
         leandre "Mother m'a approché puisqu'elle s'inquiétait de mon état et on a fini par discuter pendant que je déssoûlais."
         "Ah oui... Une sacrée histoire finalement.":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
         "C'était un peu des enfoirés, tes potes...":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
         "C'est dommage que ça t'ai mis dans de tels états !":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
 
 
@@ -467,16 +483,17 @@ label del_2_2:
     menu:
         leandre "Pas besoin de préciser que ça a fonctionné bien plus qu'elle ne le pensait..."
         "La majorité des soirées inclue les \"Paillettes\", c'est vrai.":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
         "C'est comme ça que j'ai connu L'Androgame !":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
         "C'est aussi pour cette raison que j'avais envie de venir.":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
 
     $ quick_menu = True
 
-    stop music fadeout 1.0
-    stop ambiance fadeout 1.0
     call del_3 from _call_del_3_1 
 
 #DEL.2.3
@@ -520,10 +537,13 @@ label del_2_3:
     menu:
         leandre "C'est challengeant, et ça a déjà marché. Même Imani s'est retrouvée assez surprise."
         "Il y a une raison derrière tout cela ?":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
         "Vous semblez être de très bon.ne.s ami.e.s, mais pourquoi ?":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
         "C'est le genre de chose que je ne supporterais pas...":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
 
     hide joy
@@ -551,8 +571,6 @@ label del_2_3:
     $ current_textbox = "anthrax"
     anthrax "La nuance est fine, mais je crois comprendre ce que tu sous-entends..."
 
-    stop music fadeout 1.0
-    stop ambiance fadeout 1.0
     call del_3 from _call_del_3_2
  
 #DEL.3
@@ -560,6 +578,8 @@ label del_3:
 
     $ persistent.bg_parallax = False
     hide leandre_neutre with dissolve
+    stop music fadeout 1.0
+    stop ambiance fadeout 1.0
     show curtain_close with dissolve
     play vfxC SFXCurtainClose
     pause 1.5
@@ -575,9 +595,9 @@ label del_3:
 
     hide text with dissolve
     hide gradient with fade
+    stop music fadeout 1.5
 
-
-    stop music fadeout 2.0
+    pause 2
 
     $ persistent.bg_parallax = True
 
@@ -601,10 +621,13 @@ label del_3:
     menu:
         
         "Hey... Je me demandais où tu étais passé.":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
         "Léandre! Ça fait un moment que je te cherche!":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
         "Alors c'était là où tu te cachais...~":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
 
     $ quick_menu = True
@@ -651,10 +674,13 @@ label del_3:
     menu:
         leandre "Les autres sont au courant, mais j'aurais peut-être dû te mettre dans la boucle plus tôt."
         "Oh...  C'est grave ?":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
         "Ta tête ne me dit rien qui vaille... Qu'est-ce qu'il y a ?":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
         "Est-ce que tu veux m'en parler seulement ?":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
 
     $ quick_menu = True
@@ -674,7 +700,7 @@ label del_3:
     hide leandre_laugh 
     leandre "Mais je te fais suffisamment confiance pour ne pas me juger sur mes décisions."
 
-    play music BalconCoupletIntro
+    queue music BalconCoupletIntro
     queue music BalconCouplet
 
     $ current_textbox = "description"
@@ -701,10 +727,16 @@ label choix_del3:
     menu: 
         leandre "D'où \"l'ancien client\"..."
         "Tu avais tes raisons pour te lancer... dans cette industrie ?":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            queue music BalconRefrain
             call del_3_1 from _call_del_3_1_1 
         "Pourquoi est-ce que tu n'es pas très fier de cette période?":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            queue music BalconRefrain
             call del_3_2 from _call_del_3_2_1 
         "Pour de l'argent? Tu étais en difficulté?":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            queue music BalconRefrain
             call del_3_3 from _call_del_3_3 
 
 #DEL.3.1
@@ -733,10 +765,13 @@ label del_3_1:
     menu:
         leandre "Par rapport aux autres et par rapport à moi-même..."
         "C'est-à-dire...?":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
         "Qu'est-ce que tu entends par là ?":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
         "Pourquoi alors ?":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
 
     $ quick_menu = True
@@ -749,6 +784,7 @@ label del_3_1:
     leandre "Et c'était la première fois de ma vie que j'apprenais à apprécier mon corps pour ce qu'il était. "
     show leandre_laugh at del_right
     show sadness at sadness_right
+    play vfxR VFXSadness
     leandre "C'était une liberté nouvelle, et je ne savais pas ce que je faisais."
     hide leandre_laugh
     hide sadness
@@ -760,17 +796,20 @@ label del_3_1:
     menu:
         leandre "J'étais jeune aussi, et c'était peut-être trop de bonheur d'un coup, pour quelqu'un d'encore blessé et immature."
         "C'est quelque chose de compréhensible. Tu te cherchais...":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
         "Ce n'est pas simple de se trouver !":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
         "Il y a des hauts et des bas, c'est normal...":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
 
 
     $ quick_menu = True
-    queue music BalconRefrain
     show leandre_laugh at del_right
     show angry at angry_right
+    play vfxR VFXAnger
     leandre "Je me suis surtout senti pousser des ailes."
     hide leandre_laugh
     hide angry
@@ -790,16 +829,20 @@ label del_3_1:
         leandre "Maintenant, le \"moi\" adulte vit avec."
 
         "Si tu réussis à te réconcilier avec ton passé, c'est le principal.":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
         "Ça doit être rassurant, d'avoir au moins ça de clair.":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
         "Après tout, ça ne concerne que toi, et toi-même !":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
 
     $ quick_menu = True
 
     leandre "Oui, je suis de cet avis. Et puis tout le monde a des regrets, je ne suis pas le seul."
     show sadness at sadness_right
+    play vfxR VFXSadness
     leandre "J'aurais peut-être juste espéré que Delaunay débarque un peu plus tôt dans ma vie."
     hide sadness
     leandre "Il m'aurait sûrement évité quelques bêtises et aiguillé comme il le fait aujourd'hui."
@@ -811,6 +854,7 @@ label del_3_1:
     $ current_textbox = "delaunay"
     leandre "C'est un peu plus simple de complètement le dissocier de ma personne."
     show flirt at flirt_right
+    play vfxR VFXFlirt
     show leandre_laugh at del_right
     leandre "C'est un peu mon ange gardien finalement, qui m'incite à prendre exemple sur lui et être une meilleure version de moi-même."
     queue music BalconEnd noloop
@@ -843,17 +887,19 @@ label del_3_2:
     show leandre_shy at del_center
     leandre "C'est plus gênant si quelqu'un tombe dessus et m'y reconnaît, mais comme j'ai énormément changé entre-temps, je ne m'en inquiète pas plus que ça."
     hide leandre_shy
-    queue music BalconRefrain
     $ quick_menu = False
    
     show leandre_neutre at del_right
     menu:
         leandre "Puis, comme j'assume un minimum, ce n'est pas comme si ces personnes pouvaient retourner ça contre moi. Et sinon, j'ai toujours l'option de nier."
         "Après tout, ça ne concerne que toi.":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
         "Dans tous les cas, il n'y a rien de honteux à avoir fait ce métier...":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
         "Et puis, même si on te reconnait, ça nous fera de la pub !":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
 
 
@@ -883,10 +929,13 @@ label del_3_2:
     menu:
         leandre "Enfin bref, c'était pas du tout la méthode adaptée pour nourrir mon \"appréciation de soi\"."
         "Comment est-ce que tu as réussi à t'en sortir du coup ?":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
         "Et L'Androgame a été ta porte de sortie.":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
         "C'est dingue que tu te sois libéré de tout ça, tout seul.":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
 
 
@@ -899,6 +948,7 @@ label del_3_2:
     
     show leandre_laugh at del_right
     show joy at joy_right
+    play vfxR VFXJoy
     leandre "Grâce à ça, j'ai pu arrêter et reprendre ma vie en main."
     hide leandre_laugh
     hide joy
@@ -923,6 +973,7 @@ label del_3_3:
 
     $ current_textbox = "delaunay"
     show sadness at sadness_center
+    play vfxC VFXSadness
     leandre "Plus ou moins... Avec mon parcours de transition plutôt chaotique, je n'ai pas pu passer par le circuit \"public\", avec les aides médicales qui vont avec."
     leandre "Pour avoir accès à ça, il faut avoir eu un suivi psychiatrique d'au moins deux ans."
     hide sadness
@@ -931,7 +982,6 @@ label del_3_3:
     hide leandre_laugh
     leandre "Et j'étais tellement dans le mal, psychologiquement parlant, que je n'avais pas la patience non plus d'entamer ce parcours."
     leandre "Heureusement, je suis tombé sur une endocrinologue top, qui m'a permit d'accéder à un traitement hormonal."
-    queue music BalconRefrain
 
     $ quick_menu = False
    
@@ -939,15 +989,19 @@ label del_3_3:
     menu:
         leandre "Et ma psy, bien qu'elle ne soit pas psychiatre, a été d'un grand soutien."
         "Ça m'a l'air d'être des démarches super compliquées...":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
         "Quel enfer...":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
         "Ça a dû être terriblement long...":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
 
     $ quick_menu = True
     
     show joy at joy_right
+    play vfxR VFXJoy
     show leandre_laugh at del_right
     leandre "Oh, crois-moi que je suis rodé en tout ce qui concerne les démarches administratives et suivis médicaux..."
     hide joy
@@ -973,10 +1027,13 @@ label del_3_3:
     menu:
         leandre "Enfin bref..."
         "Les circonstances ont fait que tu as dû payer de ta poche...":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
         "Ça a dû être terriblement cher...":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
         "Tu as fait tes choix.":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
 
 
@@ -1003,6 +1060,7 @@ label del_3_3:
     queue music BalconEnd noloop
     $ current_textbox = "delaunay"
     show flirt at flirt_right
+    play vfxR VFXFlirt
     show leandre_flirty at del_right
     leandre "Je suis tout de même heureux de l'avoir partagé avec toi..."
     
@@ -1063,10 +1121,13 @@ label choix_del4:
     menu: 
         delaunay "Qu'est-ce que tu fais à jouer le timide ? Approche, je ne vais pas te manger~"
         "Franchement, tu me manges quand tu veux !":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             call del_4_1 from _call_del_4_1_1 
         "J'adore la manière dont tu prends confiance avec Delaunay":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             call del_4_2 from _call_del_4_2_1 
         "Timide? Moi?":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             call del_4_3 from _call_del_4_3 
 
     $ current_textbox = "anthrax"
@@ -1084,6 +1145,7 @@ label del_4_1:
     show delaunay_flirty at del_center
 
     show flirt at flirt_center
+    play vfxC VFXFlirt
     $ current_textbox = "delaunay"
     delaunay "Eh bien ! On dirait que je commence à déteindre sur toi~"
     hide flirt
@@ -1123,10 +1185,13 @@ label del_4_1:
         delaunay "Je reviens de loin, je peux bien m'octroyer un peu de crédit."
 
         "Il doit me manquer du contexte, je ne comprends pas...":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
         "Par pitié, racontez-moi!":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
         "Des explications, au hasard?":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
 
 
@@ -1158,6 +1223,7 @@ label del_4_1:
     hide peacock_sassy with dissolve
     show delaunay_laugh at del_left
     show joy at joy_left
+    play vfxL VFXJoy
     delaunay "Et je découvre la bad bitch que j'ai toujours rêvé d'être."
     hide joy
     hide delaunay_laugh
@@ -1168,10 +1234,13 @@ label del_4_1:
     menu:
         delaunay "Tout est bien qui finit bien. Carpe diem, blablabla."
         "Excellente philosophie !":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
         "Aw...~":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
         "C'est adorable.":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
 
     $ quick_menu = True
@@ -1186,6 +1255,7 @@ label del_4_1:
     
     $ current_textbox = "delaunay"
     show joy at joy_center
+    play vfxC VFXJoy
     show delaunay_flirty at del_center
     delaunay "Mon dieu, j'ai encore tellement à faire ! Vite [player_name] ! Un coup de main, vite !~"
     hide delaunay_flirty
@@ -1211,6 +1281,7 @@ label del_4_2:
     delaunay "Tout."
     hide delaunay_laugh
     show joy at joy_center
+    play vfxC VFXJoy
     delaunay "Léandre n'existe pas quand je suis en drag, c'est libérateur."
     hide joy
     queue music LogesRefrain volume 0.5
@@ -1222,10 +1293,13 @@ label del_4_2:
     menu:
         anthrax "Vraiment ? J'aurais pensé le contraire. Je ne savais pas que ta relation avec toi-même était si..."
         "Conflictuelle.":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
         "Antagoniste.":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
         "Bizarre.":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
 
     $ quick_menu = True
@@ -1249,6 +1323,7 @@ label del_4_2:
     delaunay "Hm... Oui. Mais c'est pas comme si je n'essayais pas. Comment dire..."
     hide delaunay_laugh
     show sadness at sadness_right
+    play vfxR VFXSadness
     delaunay "En fait, je suis passé par tellement de changements et je me recherche tellement encore..."
     hide sadness
     delaunay "Que je n'ai pas de vrai repère auquel me raccrocher en termes de confiance en soi et de personnalité."
@@ -1260,15 +1335,19 @@ label del_4_2:
     menu:
         delaunay "Alors... Delaunay, c'est un peu mon phare dans cet océan de confusion. Et Léandre, il essaye de naviguer un peu à travers tout ça."
         "C'est valide d'être un peu perdu dans la vie.":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
         "Tant que tu ne navigues plus à l'aveugle, c'est l'essentiel.":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
         "Sans Delaunay, ce serait donc encore la tempête...":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
 
     $ quick_menu = True
 
     show joy at joy_right
+    play vfxR VFXJoy
     delaunay "Je sais... Et ça commence à se stabiliser, bien heureusement."
     hide joy
     hide delaunay_laugh
@@ -1303,10 +1382,13 @@ label del_4_2:
     menu:
         delaunay "Épargnez-moi, c'est toujours le monstre de ma paralysie du sommeil."
         "Dire que j'ai loupé ça, quelle tragédie...":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
         "Dites-moi que vous avez des archives.":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
         "J'ai un besoin vital de voir ça maintenant. ":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
 
     $ quick_menu = True
@@ -1321,6 +1403,7 @@ label del_4_2:
     $ current_textbox = "delaunay"
     show delaunay_shy at del_right
     show angry at angry_right
+    play vfxR VFXAnger
     delaunay "Tu n'as pas osé!?"
     hide angry
     hide delaunay_shy
@@ -1344,6 +1427,7 @@ label del_4_2:
 
     $ current_textbox = "delaunay"
     show flirt at flirt_center
+    play vfxC VFXFlirt
     show delaunay_flirty at del_center with dissolve
     delaunay "Mon dieu, j'ai encore tellement à faire ! Vite [player_name] ! Un coup de main, vite !"
     hide flirt
@@ -1373,6 +1457,7 @@ label del_4_3:
     
     $ current_textbox = "delaunay"
     show joy at joy_center
+    play vfxC VFXJoy
     delaunay "Ah ça, c'est l'effet \"Delaunay\" !"
     hide joy
 
@@ -1382,10 +1467,13 @@ label del_4_3:
     menu:
         delaunay "Il m'a toujours aidé à devenir l'homme que je voulais être, encore maintenant..."
         "Pourtant, ton personnage m'a l'air d'être très effeminé...":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
         "Pour un \"drag king\", ton personnage est aussi très féminin.":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
         "Bousculer les normes du genre, c'est le principe du drag !":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
 
     $ quick_menu = True
@@ -1408,6 +1496,7 @@ label del_4_3:
     $ current_textbox = "peacock"
     show peacock_sassy at pea_left with dissolve
     show angry at angry_left
+    play vfxL VFXAnger
     show peacock_neutre at pea_left with dissolve
     peacock "Tu as quelque chose contre les barbes ma belle ?"
     hide angry
@@ -1437,15 +1526,19 @@ label del_4_3:
     $ quick_menu = False
     $ current_textbox = "delaunay"
     show angry at angry_right
+    play vfxR VFXAnger
     show delaunay_neutre at del_right
     menu:
         delaunay "Je suis outré !"
 
         "Hm... Tu as commencé.":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
         "C'est l'arroseur arrosé...":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
         "The shade! The shade of it all !":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
 
     $ quick_menu = True
@@ -1466,6 +1559,7 @@ label del_4_3:
     $ current_textbox = "delaunay"
     show delaunay_laugh at del_right
     show joy at joy_right
+    play vfxR VFXJoy
     delaunay "Oh, ça... C'est un autre débat. C'est plus mon côté égocentrique que j'essaye de travailler. Faut pas hésiter à me rappeler l'humilité..."
     hide delaunay_laugh
     hide joy
@@ -1479,6 +1573,7 @@ label del_4_3:
     $ current_textbox = "delaunay"
     show delaunay_neutre at del_right
     show sadness at sadness_right
+    play vfxR VFXSadness
     menu:
         delaunay "Par pitié, pas toi aussi..."
         "Désolé.e, c'était trop tentant !":
@@ -1501,6 +1596,7 @@ label del_4_3:
 
     $ current_textbox = "delaunay"
     show joy at joy_center
+    play vfxC VFXJoy
     show delaunay_flirty at del_right
     delaunay "Mon dieu, j'ai encore tellement à faire ! Vite [player_name] ! Un coup de main, vite !~"
     hide delaunay_flirty
@@ -1546,6 +1642,7 @@ label del_5:
     show delaunay_neutre at del_right with dissolve
     #show delaunay_shy at del_right with dissolve
     show flirt at flirt_right
+    play vfxR VFXFlirt
     text "Laissant la tension gagner le public, il finit par s’y glisser en arrière, laissant l’eau déborder ostensiblement sur la scène."
     text "Il continua de se déshabiller avec lenteur et adresse, jusqu’à sortir de son corset un sous-vêtement trempé qu’il jeta insolemment."
     hide flirt
@@ -1555,6 +1652,7 @@ label del_5:
     #show delaunay_flirty at del_center with dissolve
     text "L’effet dupait aisément son public et signa la fin de son acte."
     show joy at joy_center
+    play vfxC VFXJoy
     text "Il se couvrit d’un long kimono et se fit aider pour descendre sans glisser avant de saluer fièrement les spectateur.ice.s, son make-up intact et un grand sourire aux lèvres."
     hide joy
     stop music fadeout 3.0
@@ -1585,6 +1683,7 @@ label del_6:
     show delaunay_flirty at del_center with dissolve
     show delaunay_neutre at del_center with dissolve
     show joy at joy_center
+    play vfxC VFXJoy
     delaunay "Wow! C'était dément! La salle était super chaude ce soir!"
     hide delaunay_flirty
     hide joy
@@ -1609,13 +1708,17 @@ label del_6:
    
     show delaunay_neutre at del_right with dissolve
     show flirt at flirt_right
+    play vfxR VFXFlirt
     menu:
         delaunay "Alors, qu'est-ce que tu en as pensé [player_name]?"
         "C'était incroyable! Surtout quand le rideau s'est ouvert !":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
         "J'ai adoré! Mais tu l'as sorti d'où ce string?!":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
         "La foule était en délire à ton salut! Et moi aussi!":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
 
     $ quick_menu = True
@@ -1656,8 +1759,10 @@ label del_6_good:
         text "Accepter le date ?"
         
         "Oui":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
         "Non":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             call del_6_good_bad
 
     $ quick_menu = True
@@ -1695,6 +1800,7 @@ label del_6_good:
     
     $ current_textbox = "delaunay"
     show joy at joy_center
+    play vfxC VFXJoy
     leandre "Pardon pour l'attente! On y va?"
     hide joy
 
@@ -1717,6 +1823,7 @@ label del_6_good:
 
     $ current_textbox = "delaunay"
     show flirt at flirt_right
+    play vfxR VFXFlirt
     show leandre_flirty at del_right
     leandre "Hm... Je te réserve la surprise. Mais je pense vraiment que ça devrait te plaire!"
     hide leandre_flirty
@@ -1743,10 +1850,13 @@ label del_6_bad:
 
     menu:
         "Oui, bien sûr! Je termine ça et j'arrive!":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
         "Si vous insistez!":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
         "Proposé si gentiment, comment refuser?":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
 
     $ quick_menu = True
@@ -1770,10 +1880,13 @@ label del_6_bad:
 
     menu:
         "Oui, bien sûr! Je termine ça et j'arrive!":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             anthrax "Oui, bien sûr ! Je termine ça et j'arrive !"
         "Si vous insistez!":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             anthrax "Si vous insistez !"
         "Proposé si gentiment, comment refuser?":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             anthrax "Proposé si gentiment, comment refuser ?"
 
     $ quick_menu = True
@@ -1836,6 +1949,7 @@ label del_6_good_bad:
     #show mother_laugh at mother_left with dissolve
 
     show joy at joy_left
+    play vfxL VFXJoy
     mother "Je suis sûre que je peux te retrouver une vidéo d'excellente qualité, vu comment elle a tourné sur les plateformes."
     hide joy
     
@@ -1861,6 +1975,7 @@ label del_6_good_bad:
     show leandre_neutre at del_right
     text "Mais quelque chose me dit que c'était peut-être un peu trop tôt..."
     show flirt at flirt_right
+    play vfxR VFXFlirt
     text "Et j'aurais loupé cet instant précieux, sachant pertinemment que je passerais le reste de la soirée bien entouré.e !"
     hide flirt
 
@@ -1876,8 +1991,8 @@ label final_delaunay:
     hide bar with fade
 
     "Interview et musiques débloquées"
+    stop music fadeout 1.0
     pause 1.0
-
     scene black with fade
 
     $ renpy.full_restart()

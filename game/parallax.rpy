@@ -51,6 +51,7 @@ define config.tag_layer = {
     'rideau': 'farthestBack',
     'balcon': 'farthestBack',
     'background_cg' : 'farthestBack',
+    'tuto' : 'farthestBack'
 }
 
 init -1 python:

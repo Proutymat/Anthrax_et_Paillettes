@@ -6,7 +6,7 @@ image splash2 = "splashscreen2.png"
 define quick_dissolve = Dissolve(0.2)
 
 label before_main_menu:
-     # Ne pas afficher la textbox ni le quick menu
+    # Ne pas afficher la textbox ni le quick menu
     $ _window = False
     $ quick_menu = False
     $ _game_menu_screen = None
@@ -194,6 +194,8 @@ image wip = "images/WIP.png"
 # Déclaration de l'animation complète du gradient
 
 image gradient= Movie(play="images/VFX/Gradiants/Gradient.webm", loop=True)
+image tuto= Movie(play="images/tuto.webm", loop=False)
+ 
     
 
 image curtain_open:
@@ -971,6 +973,7 @@ define text = Character(color="#FFFFFF", who_outlines=[(2, "#000000", 0, 0)], wh
 
 label start:
     $ quick_menu = False
+    $ persistent.bg_parallax = False
     scene black
     with fade
     stop music fadeout 0.2
@@ -1002,7 +1005,6 @@ label start:
 
 
     if yes_action:
-        $ persistent.bg_parallax = True
         jump onboarding
     else:
         $ persistent.bg_parallax = False
@@ -1012,6 +1014,13 @@ label start:
 
 #0.1    
 label onboarding:
+
+    $ persistent.bg_parallax = False
+    
+    show tuto with dissolve
+    pause 7
+
+    hide tuto with fade
     $ persistent.bg_parallax = True
     show devanture
     with fade
@@ -1028,19 +1037,19 @@ label onboarding:
     queue music IntroRagots noloop
     text "Et puis même au sein de la commu', ça a fait jaser. Toutes les têtes d'affiches sont queer."
     text "Ça fait presque bizarre de nous voir nous réapproprier une époque dans laquelle on n'avait pas le droit d'exister."
-    text "Je suis sûr·e que l’on n’aurait jamais autant flamboyé que dans les années 20... C’est peut-être pour ça qu’on était \"interdit.e.s\" ?"
+    text "Je suis sûr.e que l’on n’aurait jamais autant flamboyé que dans les années 20... C’est peut-être pour ça qu’on était \"interdit.e.s\" ?"
     queue music IntroRoaring noloop
     text "On aurait trop volé la vedette aux hétéros."
     text "Les plumes, la fourrure, les paillettes, le champagne, le charleston, l’occasionnel rail de coke... Les années folles quoi."
     text "C’est ce qui m’a motivé·e à me lancer dans le drag finalement..."
-    text "J’ai toujours été intrigué·e par cette forme d’expression. Et à voir ces artistes bourré·e·s de talent faire leur show, à deux pas de chez moi..."
+    text "J’ai toujours été intrigué·e par cette forme d’expression. Et à voir ces artistes bourré.e.s de talent faire leur show, à deux pas de chez moi..."
     text "J'ai commencé à me costumer en cachette dans mon appart, et pour être honnête, c'était peut-être pour le mieux."
     text "Mes premières tentatives de make-up étaient catastrophiques... Mais au fur et à mesure, j’ai pris le coup de pinceau."
     text "Ce que je pensais être une lubie est finalement devenu un hobby."
     queue music IntroSmartphone noloop
     text "Je faisais mon petit contenu sur les réseaux sociaux et continuais ma vie tranquillement à côté, en passant toujours devant L’Androgame pour aller au travail."
     text "Alors quand ils ont lancé des auditions pour agrandir la troupe, j'ai longuement hésité. Mais on n'a qu'une vie !"
-    text "Je ne pensais pas être sélectionné·e ! Et encore moins passer un entretien avec Mother, la patronne du cabaret. "
+    text "Je ne pensais pas être sélectionné.e ! Et encore moins passer un entretien avec Mother, la patronne du cabaret. "
     
     stop ambiance fadeout 1.0
     play music CabaretEntrance volume 0.7 noloop
@@ -1087,6 +1096,7 @@ label onboarding:
     show joy at joy_center
     play vfxC VFXJoy
     voice MLaugh1
+    #retirer vfx joy
     #show mother_laugh at mother_center
     #hide mother
     mother "Aha ! Tu m’en vois ravie de l’entendre."
@@ -1102,6 +1112,8 @@ label onboarding:
     play vfxR VFXJoy
     queue music CabaretLightChorus volume 0.7
 
+    #retirer vfx joy
+    #retirer vfx joy
     #show mother_laugh at mother_right with dissolve
     #hide mother_neutre
     mother "Nous voici donc dans l'auditorium !"
@@ -1129,7 +1141,7 @@ label onboarding:
     
     $ current_textbox = "description" 
 
-    text "Nous sommes monté·e·s sur la scène et l'avons traversée avant de passer derrière les épais rideaux de velours." 
+    text "Nous sommes monté.e.s sur la scène et l'avons traversée avant de passer derrière les épais rideaux de velours." 
     text "Les coulisses étaient un véritable dédale de couloirs tandis qu'elle ouvrait quelques portes et me présentait chaque pièce."
     text "Ici, la réserve des costumes; où les armatures de dos, de hanches, d'épaules à plumes d'autruche, de floss, d'oie ou de faisan;"
     text "Et les casques grandioses à strass, sequins, perles de verre ou fausses pierres précieuses, se faisaient la compétition." 
@@ -1176,14 +1188,13 @@ label onboarding:
 
     show aimee_neutre at gat_right with dissolve
     voice GHm1
+    
     inconnu "Girl... J'entends, et je suis d'accord sur le fond. Mais on ne les connaît même pas encore et on ne sait pas quels numéros iels vont présenter, ou si même iels en ont..."
     hide imani_neutre with dissolve
     
     show joy at joy_right
     play vfxR VFXJoy
     voice GLaugh2
-    #show aimee_pensive at gat_right with dissolve
-    inconnu "Girl... J'entends, et je suis d'accord sur le fond. Mais on ne les connaît même pas encore et on ne sait pas quels numéros iels vont présenter, ou si même iels en ont..."
     hide imani_neutre with dissolve
     #show aimee_laugh at gat_right
     #hide aimee_pensive
@@ -1218,7 +1229,7 @@ label onboarding:
     #show overlay
     text "Un autre garçon, plus silencieux, avait la tête baissée sur un corset tout de dentelle, qu'il laçait précautionneusement."
     hide aimee_neutre with dissolve 
-    text "Relevant la tête, le concerné remarqua qu'iels n'étaient plus trois dans la pièce et me fixa un instant, avant de se retourner vers ses interlocuteur·ice·s."
+    text "Relevant la tête, le concerné remarqua qu'iels n'étaient plus trois dans la pièce et me fixa un instant, avant de se retourner vers ses interlocuteur.ice.s."
     #hide overlay
     
 
@@ -1277,9 +1288,6 @@ label onboarding:
 
     show imani_neutre at pea_right with dissolve
     voice PLaugh1
-    imani "Pardon, on a dû te sembler super judgy avec notre absence de réaction ! Moi c'est Imani."
-    #show imani_laugh at pea_right with dissolve
-
     imani "Pardon, on a dû te sembler super judgy avec notre absence de réaction ! Moi c'est Imani."
     show flirt at flirt_right
     play vfxR VFXFlirt
@@ -1341,7 +1349,7 @@ label onboarding:
 
     show angry at angry_right
     play vfxR VFXAnger
-    text "Léandre se renfrogna davantage. Apparemment, les deux étaient suffisamment bon·ne·s ami·e·s pour se taquiner et s'embarasser ainsi."
+    text "Léandre se renfrogna davantage. Apparemment, les deux étaient suffisamment bon.ne.s ami.e.s pour se taquiner et s'embarasser ainsi."
     hide angry
     hide leandre_neutre with dissolve
     #hide leandre_shy with dissolve
@@ -1353,9 +1361,6 @@ label onboarding:
     show joy at joy_left
     play vfxL VFXJoy
     voice GLaugh2
-    #show aimee_neutre at gat left
-    #hide aimee_laugh
-    gatsby "Du coup, vu qu'on doit toujours parler à sa place, son nom de drag est Delaunay."
     #show aimee_laugh at gat_left
     #hide aimee_neutre
     gatsby "Et moi c'est Gatsby ! Parce que je suis magnifique, et que je n'avais pas plus d'inspi que ça au moment de choisir."

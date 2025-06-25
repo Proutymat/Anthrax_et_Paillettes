@@ -19,6 +19,7 @@ init python:
     def pausedialogue():
         if renpy.music.is_playing('sound'):
             renpy.pause((20-renpy.music.get_pos('sound')),hard=True)
+    
 
 
 # Déclarez sous cette ligne les images, avec l'instruction 'image'
@@ -78,6 +79,11 @@ define M_type_sounds = ['audio/SFX/AP_T2-001.ogg','audio/SFX/AP_T2-002.ogg','aud
 define G_type_sounds = ['audio/SFX/AP_T3-001.ogg','audio/SFX/AP_T3-002.ogg','audio/SFX/AP_T3-003.ogg','audio/SFX/AP_T3-004.ogg'] 
 define P_type_sounds = ['audio/SFX/AP_T4-001.ogg','audio/SFX/AP_T4-002.ogg','audio/SFX/AP_T4-003.ogg','audio/SFX/AP_T4-004.ogg']
 define type_silent = ['<silence 1.0>']
+
+define ui_hover = ['audio/SFX/AP_UI_Hover-001.ogg','audio/SFX/AP_UI_Hover-002.ogg','audio/SFX/AP_UI_Hover-003.ogg','audio/SFX/AP_UI_Hover-004.ogg','audio/SFX/AP_UI_Hover-005.ogg','audio/SFX/AP_UI_Hover-006.ogg']
+define ui_click = ['audio/SFX/AP_UI_Click-001.ogg','audio/SFX/AP_UI_Click-002.ogg','audio/SFX/AP_UI_Click-003.ogg','audio/SFX/AP_UI_Click-004.ogg','audio/SFX/AP_UI_Click-005.ogg','audio/SFX/AP_UI_Click-006.ogg']
+define ui_back = ['audio/SFX/AP_UI_Back_V4-001.ogg','audio/SFX/AP_UI_Back_V4-002.ogg','audio/SFX/AP_UI_Back_V4-003.ogg','audio/SFX/AP_UI_Back_V4-004.ogg','audio/SFX/AP_UI_Back_V4-005.ogg','audio/SFX/AP_UI_Back_V4-006.ogg']
+define ui_choice_click = ['audio/SFX/AP_UI_Click-001.ogg','audio/SFX/AP_UI_Click-002.ogg','audio/SFX/AP_UI_Click-003.ogg','audio/SFX/AP_UI_Click-004.ogg','audio/SFX/AP_UI_Click-005.ogg','audio/SFX/AP_UI_Click-006.ogg']
 
 # Liste des ambiances
 define audio.AmbAndrogameDay = "audio/Amb/Amb_CabaretDay_V3.ogg"
@@ -154,6 +160,7 @@ anthrax "Il semblerait, j'adore ta vibe. Tu as un certain talent pour mettre les
 $ current_textbox = "peacock"
 
 show joy at joy_center
+play vfxC VFXJoy
 imani "Ah ça ! On me le dit souvent !"
 hide joy
 imani "Même si parfois j'ai l'impression de faire trop vieux jeu."
@@ -181,10 +188,13 @@ show imani_neutre at pea_right
 menu:
     imani "Ça te dit de t'installer quelque part de plus cosy pour continuer à discuter ?"
     "Je te suis !":
+        $ renpy.play(random.choice(ui_choice_click), channel="sound")
         pass
     "J'adorerais !":
+        $ renpy.play(random.choice(ui_choice_click), channel="sound")
         pass
     "Ça, je ne dis pas non !":
+        $ renpy.play(random.choice(ui_choice_click), channel="sound")
         pass
           
 
@@ -218,11 +228,14 @@ show imani_neutre at pea_right
 menu:
     imani "Est-ce que tu sais déjà quoi commander ?"
     "Un Pornstar Martini.":
-     pass
+        $ renpy.play(random.choice(ui_choice_click), channel="sound")
+        pass
     "Un Negroni Sbagliato, avec une pointe de prosecco.":
-     pass
+        $ renpy.play(random.choice(ui_choice_click), channel="sound")
+        pass
     "Un Expresso Martini !":
-     pass
+        $ renpy.play(random.choice(ui_choice_click), channel="sound")
+        pass
 
 
 $ quick_menu = True
@@ -237,16 +250,17 @@ imani "Tu verras, notre barman est un vrai génie en la matière. Il peut te con
 imani "Et des cocktails aussi, bien sûr !"
 #show imani_neutre at pea_right
 #hide imani_laugh
+
 $ current_textbox = "anthrax"
-
 anthrax "Tu ne bois pas d’alcool ?"
-$ current_textbox = "peacock"
 
+$ current_textbox = "peacock"
 show joy at joy_right
+play vfxR VFXJoy
 imani "Non ! Mais j’adore le concept. Mêler jus, sirops, eau gazeuse, et créer quelque chose d’un peu plus fancy qu’une limonade, je prends !"
 hide joy
-$ current_textbox = "anthrax"
 
+$ current_textbox = "anthrax"
 #show imani_laugh at pea_right
 #hide imani_neutre
 anthrax "Je me sens bête de prendre un Martini du coup..."
@@ -273,11 +287,14 @@ show imani_neutre at pea_right
 menu:
     imani "Alors, dis-moi. C’est quoi ton drag ?"
     "Mon drag ?":
-     pass
+        $ renpy.play(random.choice(ui_choice_click), channel="sound")
+        pass
     "Oh ? Comme ça, maintenant ?":
-     pass
+        $ renpy.play(random.choice(ui_choice_click), channel="sound")
+        pass
     "M-Moi? Directement ? Sans préli' ?! ":
-     pass
+        $ renpy.play(random.choice(ui_choice_click), channel="sound")
+        pass
 
 
 $ quick_menu = True
@@ -297,6 +314,7 @@ anthrax "Mais le burlesque, c’est quelque chose qui m’a toujours attiré.e. 
 anthrax "Ça me parle."
 
 show joy at joy_right
+play vfxR VFXJoy
 imani "À moi aussi tu me parles ! Je comprends mieux ce que Mother a vu chez toi !"
 hide joy
 $ current_textbox = "anthrax"
@@ -317,10 +335,13 @@ label choix_pea2:
 
     menu: 
         "Tu m'a l'air la plus engagée au sein de la troupe...":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             call pea_2_1 from _call_pea_2_1 
         "Est-ce que tu peux m’en dire davantage sur ce que tu fais ?":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             call pea_2_2 from _call_pea_2_2 
         "Et toi ? Qu’est-ce qui t’as lancée dans le drag ?":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             call pea_2_3 from _call_pea_2_3 
           
 
@@ -353,11 +374,14 @@ label pea_2_1:
         imani "Et c’est un peu devenu une tradition même que l’on fasse un discours sur le char, après la minute de silence."
 
         "C'est vrai que je vous y avais vu.e.s quelques fois. ":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
         "Je n'avais pas fait le rapprochement...":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
         "Oh! J'avais complêtement oublié !":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
 
 
     $ quick_menu = True
@@ -393,11 +417,14 @@ label pea_2_1:
     menu:
         imani "J’aurais très bien pu être un petit-fils d’immigrés, mais non ! Adopté par des parents français !"
         "Et comment est-ce que tu le vis? Si ce n'est pas indiscret...":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
         "Ça n'a pas dû être simple... Ça s'est bien passé ?":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
         "On ne se l'imagine pas du tout en te voyant. Tu le vis bien ?":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
 
 
     $ quick_menu = True
@@ -408,6 +435,7 @@ label pea_2_1:
     #hide imani_laugh
     imani "Hm... Plutôt bien. J’aime beaucoup ma famille adoptive, même si ça a posé de nombreux problèmes avec le temps."
     show joy at joy_right
+    play vfxR VFXJoy
     imani "La discussion a toujours été très ouverte avec mes parents sur ce sujet-là, et ils ne sont pas responsables des travers de procédures qu’il y a eu."
     hide joy
     imani "C’est plutôt une incompréhension de leur part parfois, quand j’essaye de me rapprocher de mes origines."
@@ -429,11 +457,14 @@ label pea_2_1:
         imani "Et remédier un peu au white-washing que j’ai intégré en grandissant."
 
         "C'est un sacré parcours en perspective. Pas trop la pression ?":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
         "C'est beau comme message à porter, un peu lourd, non ?":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
         "Tu as de sacrées épaules pour te lancer là dedans, bravo !":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
 
 
     $ quick_menu = True
@@ -474,6 +505,7 @@ label pea_2_2:
     imani "Eh bien... Comme Mother l'a expliqué. Je me spécialise dans tout ce qui est \"vocal\"..."
     imani "Mais c'est plus de l'ordre de l'humour, de la lecture, du chant..."
     show flirt at flirt_center
+    play vfxC VFXFlirt
     imani "Récemment, je m'intéresse plus à comment utiliser davantage mon corps dans mes numéros."
     hide flirt
     imani "Avec de la danse notamment."
@@ -496,11 +528,14 @@ label pea_2_2:
 
         imani "Je prends des cours en dehors du travail. Sauf que comme j'en ai beaucoup, de travail, ça a prit un certain temps avant de devenir décent."
         "Mytho ! Tu es super athlétique !":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
         "Tu m'as l'air pourtant... Bien en forme ~":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
         "Je ne te crois pas.":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
 
 
 
@@ -540,6 +575,7 @@ label pea_2_2:
     $ current_textbox = "peacock"
 
     show joy at joy_right
+    play vfxR VFXJoy
     imani "En ce moment ? Eh bien, ce que je commence à intégrer à mon gig, c'est de la danse à éventails... "
     hide joy
 
@@ -551,11 +587,14 @@ label pea_2_2:
         imani "Mais ultimement, j'aimerais bien y rajouter quelques éléments de shaabi."
 
         "Du shaabi ? C'est une danse oriental, non ?":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
         "Les éventails ? Tu veux dire les éventails à plumes ?":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
         "Ça fait très cabaret en tout cas !":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
 
 
     $ quick_menu = True
@@ -606,11 +645,14 @@ label pea_2_3:
     menu:
         imani "En tant que technicien, peut-être, mais je suis encore assez débutant en drag. Ça fait seulement deux ans que j'ai officiellement commencé."
         "C'est déjà plus que moi...":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
         "Ne te sous-estimes pas !":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
         "Deux ans ?! C'est énorme !":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
 
 
     $ quick_menu = True
@@ -642,6 +684,7 @@ label pea_2_3:
     #hide imani_emo
     imani "Mais du coup, on a bidouillé une sorte de contrat pour que je file un coup de main en technique de temps en temps, tout en peaufinant mon drag."
     show joy at joy_right
+    play vfxR VFXJoy
     imani "Et au final, ça s'est plutôt bien goupillé. J'avais une stabilité financière et un espace familier, dans lequel je pouvais progresser."
     hide joy
 
@@ -651,11 +694,14 @@ label pea_2_3:
     menu:
         imani "Puis un jour, j'ai eu le droit à mon premier show, et c'était magique."
         "Ah oui ? Comment c'était ?":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
         "Raconte-moi !":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
         "Tu sais que j'ai besoin de détails maintenant !":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
 
 
     $ quick_menu = True
@@ -685,17 +731,38 @@ label pea_2_3:
 #PEA.3
 label pea_3:
     
-    hide imani_neutre
-    hide bar 
-    scene black
+    $ persistent.bg_parallax = False
+    hide imani_neutre with dissolve
+    stop music fadeout 0.5
+    stop ambiance fadeout 1.0
+    show curtain_close with dissolve
+    play vfxC SFXCurtainClose
+    pause 1.5
+    hide bar
+    show curtain_open 
+    play vfxC SFXCurtainOpen
+
+    show gradient
+    play music LongEllipse volume 0.7
+    show text "{size=60}{color=#FFFFFF}Quelques mois passèrent...{/color}{/size}" at truecenter
+
+    pause 6
+
+    hide text with dissolve
+    hide gradient with fade
+    stop music fadeout 1.5
+
+    pause 2
+
+    $ persistent.bg_parallax = True
 
     $ current_textbox = "description"
     text "Cela faisait plusieurs minutes que je cherchais Imani, avec qui j'étais supposé.e répéter une partie de mon numéro, que l'on construisait ensemble."
     text "Après avoir fait trois fois le tour du bâtiment, je finis par retourner sur les planches de la scène, pensif.ve."
     text "Et en toute honnêteté, un peu inquiet.e."
-    queue music ConfidenceA1
     text "En relevant le regard vers le balcon, je le remarquai appuyé.e contre la balustrade, me faisant signe de le rejoindre, un verre de jus à moitié vide à la main avec lequel il jouait."
 
+    play music BalconIntro noloop
     show auditorium with dissolve
 
     $ current_textbox = "anthrax"
@@ -706,17 +773,21 @@ label pea_3:
     menu:
         #gatsby ""
         "Hey... Je me demandais où tu étais passé.":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
         "Aimé.e! Ça fait un moment que je te cherche !":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
         "Alors c'était là où tu te cachais !":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
 
 
     $ quick_menu = True
 
     $ current_textbox = "peacock"
-
+    queue music BalconCoupletIntro noloop
+    queue music BalconCouplet
     #show imani_laugh at pea_right
     #hide imani_neutre
     imani "Moi aussi ! Ça fait une demie-heure que je te cherche ! On a dû faire que de se louper."
@@ -738,6 +809,7 @@ label pea_3:
     #show imani_laugh at pea_right
     #hide imani_neutre
     show flirt at flirt_right
+    play vfxR VFXFlirt
     imani "Roh, arrête~ C'est comme ça qu'on m'aime !"
     hide flirt
     $ current_textbox = "anthrax"
@@ -760,11 +832,17 @@ label pea_3:
         text "Il termina le fond de son verre d'une traite, avant de le poser sur l'une des tables qui n'avaient pas encore été dressées pour la soirée."
         
         "Quand j'y repense, je ne t'ai jamais vu boire.":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            queue music BalconRefrain
+            pass
         "Tu aimes vraiment les softs. Haha !":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            queue music BalconRefrain
+            pass
         "Je ne t'ai vu tourner qu'à l'eau dernièrement, ça change !":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            queue music BalconRefrain
+            pass
 
     #hide overlay
 
@@ -783,6 +861,7 @@ label pea_3:
 
     imani "Non, je ne bois pas. Je ne bois plus..."
     show angry at angry_right
+    play vfxR VFXAnger
     imani "Parce que moi, je l’ai été... ivrogne. Et il n’y a pas un monde où je me laisserais retomber là dedans."
     hide angry
     $ current_textbox = "anthrax"
@@ -802,10 +881,13 @@ label choix_pea3:
     menu: 
         imani "Ça, je ne te le fais pas dire."
         "Je me sens bête d'avoir amené le sujet comme ça...":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             call pea_3_1 from _call_pea_3_1_1 
         "Comment est-ce que tu es tombé dedans ?":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             call pea_3_2 from _call_pea_3_2
         "Tu as dû prendre pas mal de temps pour t'en remettre, non ?":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             call pea_3_3 from _call_pea_3_3 
 
 #PEA.3.1
@@ -824,6 +906,7 @@ label pea_3_1:
     #hide imani_sassy
     imani "En même temps, boire, c’est tellement normalisé dans notre société. Et encore plus dans nos communautés."
     show sadness at sadness_pea_center
+    play vfxC VFXSadness
     imani "Je ne peux pas t’en vouloir, tu ne pouvais pas savoir..."
     hide sadness
     $ current_textbox = "anthrax"
@@ -840,6 +923,7 @@ label pea_3_1:
     #hide imani_neutre
     imani "C’est aussi comme ça que je me suis rendu compte que j’étais tombé sur ma famille de cœur."
     show joy at joy_right
+    play vfxR VFXJoy
     imani "Et ça ne nous empêche pas de nous retrouver au bar après la fermeture pour boire un verre de temps en temps."
     hide joy
 
@@ -851,11 +935,14 @@ label pea_3_1:
         imani "Je réussis à en surprendre plus d’un avec mes idées de mocktails !"
 
         "L'Androgame renvoie une atmosphère vraiment bienveillante.":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
         "On a de la chance, ce n'est pas le cas partout.":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
         "Je n'en attendais pas moins de cet établissement !":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
 
 
     $ quick_menu = True
@@ -874,11 +961,14 @@ label pea_3_1:
     menu:
         imani "Mais on peut faire mieux que ça ! On n’a pas besoin de se désinhiber pour se sentir légitime d’exister, de s’amuser et de réclamer nos espaces !"
         "Je sens que c’est encore trop ancré dans la culture LGBT.":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
         "Le milieu de la nuit a toujours eut ce côté... \"défiance\"":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
         "Nous sommes dans un cabaret, après tout...":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
 
 
     $ quick_menu = True
@@ -889,6 +979,7 @@ label pea_3_1:
     #show imani_nosmile at pea_right
     #hide imani_neutre
     show angry at angry_right
+    play vfxR VFXAnger
     imani "Si je suis tombé dans l’addiction, c’est aussi parce que l’on m’a influencé, et normalisé ce genre de comportement. Après je ne nie pas la part de responsabilité que j'ai eu la-dedans..."
     hide angry
     imani "J’ai toujours travaillé dans l’industrie du spectacle et de l’entertainment, les vices sont bien plus profonds que ça..."
@@ -923,6 +1014,7 @@ label pea_3_2:
     #show imani_nosmile at pea_center
     #hide imani_emo
     show sadness at sadness_pea_right
+    play vfxR VFXSadness
     imani "Est-ce qu'elle mérite même d’être racontée ? Je ne sais pas... J’étais vraiment pathétique."
     hide sadness
     $ current_textbox = "anthrax"
@@ -945,11 +1037,14 @@ label pea_3_2:
     menu:
         imani "Mais tu n’aurais peut-être pas voulu me connaître à l’époque..."
         "Pourquoi donc ?":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
         "Ah bon ? Pourquoi dis-tu ça...?":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
         "Ça ne devais pas être à ce point terrible, si ?":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
 
 
     $ quick_menu = True
@@ -968,6 +1063,7 @@ label pea_3_2:
     imani "Et pourtant, il y a commencé à y avoir des écarts... Au début, entre collègues, c’était marrant de sortir boire un verre pour décompresser."
     imani "Mais ça a pris des proportions telles où l’on finissait en boîte jusqu’à pas d’heure, où ça se droguait et se mettait la misère."
     show sadness at sadness_pea_right
+    play vfxR VFXSadness
     imani "Et je t’ai dit, j’étais immature... Donc cette ambiance, ça me plaisait. Et je suis un bon suiveur..."
     $ current_textbox = "anthrax"
 
@@ -989,11 +1085,14 @@ label pea_3_2:
     menu:
         imani "Mais quand ça t’obscède autant dans la journée et que tu n’as pas de porte de sortie, tu t’en crées..."
         "Oh non...":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
         "Est-ce que c'est ce que je crois être ?":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
         "Mince... Je pense deviner où ça mène.":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
 
 
     $ quick_menu = True
@@ -1001,6 +1100,7 @@ label pea_3_2:
     $ current_textbox = "peacock"
 
     show sadness at sadness_pea_right
+    play vfxR VFXSadness
     imani "Si... J’ai commencé à boire au taf."
     hide sadnesso
     imani "Au début, c’était discret. Je buvais juste suffisamment pour me désinhiber. Mais là encore, je n’ai pas su m’arrêter."
@@ -1035,6 +1135,7 @@ label pea_3_3:
     #hide imani_sassy
     imani "Oui, ça on peut le dire... Mais c’est parce que ça a été un parcours de longue haleine..."
     show sadness at sadness_pea_right
+    play vfxR VFXSadness
     #show imani_emo at pea_center
     #hide imani_nosmile
     imani "Des fois, je me dis que j’aurais pu voir les signes et m’arrêter à temps."
@@ -1057,11 +1158,14 @@ label pea_3_3:
     menu:
         imani "Et ça n’a pas été une mince affaire."
         "Qu'est-ce qui t'as motivé à changer ?":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
         "Tu as juste fait quelques détours, mais tu y es arrivé !":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
         "Comment est-ce que tu as fait ?":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
 
 
     $ quick_menu = True
@@ -1088,6 +1192,7 @@ label pea_3_3:
     #hide imani_nosmile
     imani "Il n’y a aucune chance que je redevienne qui j’étais durant cette période..."
     show angry at angry_right
+    play vfxR VFXAnger
     imani "Une sorte de zombie... Une autre personne, en tous points, qui n’avait pas de volonté autre que de toucher à la goutte suivante."
     hide angry
     #show imani_emo at pea_right
@@ -1112,11 +1217,14 @@ label pea_3_3:
         imani "On dirait que cette histoire a laissé un froid, non ? Désolé, c’était un peu morbide..."
 
         "Non, non... Ne t’excuse pas. ":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
         "Je m'en parle pas, haha... Mais t'inquiète.":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
         "Imani... Ce n'est rien voyons.":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
 
 
     $ quick_menu = True
@@ -1131,6 +1239,7 @@ label pea_3_3:
     $ current_textbox = "peacock"
     
     show sadness at sadness_pea_right
+    play vfxR VFXSadness
     imani "..."
     $ current_textbox = "anthrax"
 
@@ -1163,14 +1272,13 @@ label pea_4:
     stop music fadeout 0.2
     stop ambiance fadeout 1.0
     play ambiance AmbLoges fadein 0.5
-    play music BackstageLoop volume 0.5
+    play music LogesIntro volume 0.5
 
     
     $ current_textbox = "description"
-
     text "Debout au milieu de la pièce, Imani était en train de passer le fil de son micro dans les espaces étriqués de son corset et de son padding couleur chair..."
-    "le passant dans la lanière de son bullet-bra jusque le long de son dos. Accrochant l'appareil à l'aide d'épingles à sa perruque, elle semblait avoir la tête ailleurs..."
-    "Tout en reproduisant ses gestes millimétrés et à présent routiniers, glissant ensuite le boîtier HF dans sa jarretelle qui avait été modifiée à cet effet."
+    text "le passant dans la lanière de son bullet-bra jusque le long de son dos. Accrochant l'appareil à l'aide d'épingles à sa perruque, elle semblait avoir la tête ailleurs..."
+    text "Tout en reproduisant ses gestes millimétrés et à présent routiniers, glissant ensuite le boîtier HF dans sa jarretelle qui avait été modifiée à cet effet."
     text "Peacock enfila ensuite sa robe à dos nu et déclipsa le soutien-gorge pour dissimuler le tissu dépassant dans son costume, n'ayant pas besoin de maintien."
 
     $ quick_menu = False
@@ -1181,15 +1289,19 @@ label pea_4:
         #show overlay
         text "Une étiquette dépassait effrontément du vêtement et je me levai pour remédier à ce problème."
         "Attends, oups... Je me permets...":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
         "Ne bouge pas ! Il y a juste quelque chose...":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
         "Excuse-moi, je fais vite... ":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
 
 
     $ quick_menu = True
-
+    queue music LogesRefrain volume 0.5
+    
     #hide overlay
     $ current_textbox = "anthrax"
     anthrax "Voilà !"
@@ -1202,6 +1314,7 @@ label pea_4:
     $ current_textbox = "peacock"
 
     show flirt at flirt_right
+    play vfxR VFXFlirt
     #show imani_laugh at pea_right
     #hide imani_neutre
 
@@ -1225,10 +1338,13 @@ label choix_pea4:
     menu: 
         anthrax "Oui, bien sûr !"
         "Ça fait longtemps que tu fais ce show? ":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             call pea_4_1 from _call_pea_4_1_1 
         "Tu comptes chanter aussi? Je vois que tu as un micro...":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             call pea_4_2 from _call_pea_4_2_1 
         "Les ébouriffer? Tu fais de l'effeuillage?":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             call pea_4_3 from _call_pea_4_3 
 
 #PEA.4.1
@@ -1250,6 +1366,7 @@ label pea_4_1:
     #show peacock_neutre at pea_center
     #hide peacock_neutre
     show joy at joy_center
+    play vfxC VFXJoy
     peacock "Puis, j'y ai aussi mit de l'effort. J'ai pris des classes, j'ai longtemps itéré, jusqu'à trouver la formule qui me correspondait."
     hide joy
 
@@ -1260,11 +1377,14 @@ label pea_4_1:
         peacock "Et je suis loin d'avoir fini, je compte rester dans le business encore un moment. Le show continuera de progresser dans tous les cas."
 
         "Et donc, les plumes, ça t'a inspiré en particulier ?":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
         "Le paon, Peacock, les plumes, je fais le lien...~":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
         "C'est vrai que c'est emblématique du burlesque !":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
 
 
     $ quick_menu = True
@@ -1297,6 +1417,7 @@ label pea_4_1:
     show peacock_neutre at pea_left with dissolve
     #show peacock_laugh at pea_left with dissolve
     show joy at joy_left
+    play vfxL VFXJoy
     peacock "Comme quoi ! Les plumes, la scène, le théâtre... Au final, c'est plus histoire de me rappeler d'où je viens, ce que j'aime et ce qui m'a construit."
     hide gatsby_neutre
     hide joy
@@ -1309,11 +1430,14 @@ label pea_4_1:
     menu:
         peacock "Et je parle pour plusieurs on dirait."
         "Tu as l'air du genre très polyvalente !":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
         "Tu n'as pas peur de trop te répêter ?":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
         "C'est assez beau comme réflexion. Ça ne t'a jamais ennuyée?":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
 
 
     $ quick_menu = True
@@ -1383,11 +1507,14 @@ label pea_4_2:
         peacock "Il fut une époque, c'était le cas. J'étais encore timide et je reproduisais des pas de chorés que j'avais vus sur internet."
 
         "Et qu'est-ce qui a changé depuis ?":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
         "C'est bien de se renouveler ! Qu'est-ce qui a évolué ?":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
         "Et du coup le chant, hein ? Qu'est-ce qui t'as convaincue ?":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
 
 
     $ quick_menu = True
@@ -1395,6 +1522,7 @@ label pea_4_2:
     $ current_textbox = "peacock"
 
     show joy at joy_right
+    play vfxR VFXJoy
     peacock "Honnêtement, énormément de choses, et à la fois, pas tant. J'ai pris en confiance principalement."
     hide joy
     peacock "Je t'avais dit que je bossais en régie avant ?"
@@ -1438,11 +1566,14 @@ label pea_4_2:
     menu:
         peacock "Et moi, je ne me sentais pas suffisamment légitime, ou sexy, ou \"féminine\" pour faire du drag à barbe et rendre hommage à ma culture. Surtout que je pars de loin !"
         "C'est super physique de chanter et danser en même temps !":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
         "La manière dont il m'a été vendu, ton gig est sportif !":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
         "Et tu as le temps de respirer avec tout ça ?!":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
 
 
 
@@ -1456,6 +1587,7 @@ label pea_4_2:
     peacock "On s'y fait... Et puis, c'est pour ça que je me pose ensuite sur scène pour enchaîner le public."
     peacock "J'ai toujours été un petit clown de service, et l'humour nous rend toujours plus accessible, même envers les personnes qui ne sont pas très familières avec notre art."
     show joy at joy_right
+    play vfxR VFXJoy
     
     peacock "Autant \"ouvrir la bibliothèque\" en dehors des loges. C'est bien de lire les copines, encore mieux d'en faire profiter tout le monde."
     hide joy
@@ -1515,11 +1647,14 @@ label pea_4_3:
         peacock "Mais me déshabiller sur scène face à tout un public, ça va à l'encontre de ce que je veux transmettre avec ma persona."
 
         "Ah bon? C'est-à-dire? J'ai du mal à comprendre.":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
         "Pourtant, je suis sûr.e que beaucoup apprécieraient ~":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
         "C'est très burlesque, j'aurais imaginé ça avec les éventails...":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
 
 
     $ quick_menu = True
@@ -1533,6 +1668,7 @@ label pea_4_3:
     peacock "En fait, Peacock, elle est sensuelle, mais avec pudeur et une certaine humilité. "
     peacock "Elle ne charme pas comme Delaunay, en jouant de son corps. Elle use de ses autres charmes."
     show flirt at flirt_right
+    play vfxR VFXFlirt
     peacock "\"J'use\" de mes autres charmes."
     hide flirt
     $ current_textbox = "anthrax"
@@ -1562,11 +1698,14 @@ label pea_4_3:
         peacock "Tu apprends vite~"
 
         "J'apprends surtout des meilleur.e.s":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
         "Un peu de lecture ne fait pas de mal ~":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
         "Tu commences à déteindre sur moi !":
-         pass
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            pass
 
 
     $ quick_menu = True
@@ -1594,6 +1733,7 @@ label pea_4_3:
 
     peacock "Non mais de quoi je me mêle les fouineuses !"
     show angry at angry_center
+    play vfxC VFXAnger
     peacock "Occupez-vous de faire un trait d'eyeliner droit avant de vous intéresser à mes techniques de séduction !"
     hide angry
     $ current_textbox = "anthrax"
@@ -1604,6 +1744,7 @@ label pea_4_3:
     #show peacock_laugh at pea_center
     #hide peacock_sassy
     show flirt at flirt_right
+    play vfxR VFXFlirt
     peacock "Pas encore ~ Mais c'est une option tout à fait envisageable."
     hide flirt
     #show peacock_nosmile at pea_center
@@ -1636,7 +1777,7 @@ label pea_5:
     show curtain_open with dissolve
 
     scene black with dissolve
-    play music ShowDelaunay noloop
+    play music ShowPeacock noloop
 
     $ current_textbox = "description"
 
@@ -1653,6 +1794,7 @@ label pea_5:
     show peacock_neutre at pea_right with dissolve
     #show peacock_laugh at pea_right with dissolve
     show flirt at flirt_right
+    play vfxR VFXFlirt
     text "Se baladant entre les tables, sans manquer une seule note, son chant et sa danse induisaient une certaine transe chez le public ébahi."
     text "Hypnotisante, chacun de ses coups de hanches, tourbillons de plumage et battement de cils soulevaient quelques sifflements jusqu'à ce que sa représentation ne se déplace sur l'estrade."
     hide peacock_neutre with dissolve
@@ -1665,6 +1807,7 @@ label pea_5:
     show peacock_neutre at pea_center with dissolve
     #show peacock_laugh at pea_center with dissolve
     show joy at joy_center
+    play vfxC VFXJoy
     text "Peacock se faisait règle de ne jamais reproduire un gig deux fois, de la même manière que ses tenues selon ses propres termes."
     text "Elle est quitta la scène sous les rires, après avoir introduit le show suivant."
     hide joy
@@ -1696,11 +1839,14 @@ $ quick_menu = False
 menu:
     peacock "C'était particulièrement intense ce soir ou je rêve ?!"
     "Le trac? Toi? Tu as vu ton entrée?! Elle était sensationnelle!":
-     pass
+        $ renpy.play(random.choice(ui_choice_click), channel="sound")
+        pass
     "La danse, les éventails, le chant! Mais waouh! La claque!":
-     pass
+        $ renpy.play(random.choice(ui_choice_click), channel="sound")
+        pass
     "C'était génial! J'ai rarement autant rit de ma vie!":
-     pass
+        $ renpy.play(random.choice(ui_choice_click), channel="sound")
+        pass
 
 
 $ quick_menu = True
@@ -1710,6 +1856,7 @@ $ quick_menu = True
 peacock "C'est le meilleur shot d'adrénaline que j'aurais pu avoir!"
 peacock "J'ai hâte que tu ressentes ça toi aussi."
 show joy at joy_right
+play vfxR VFXJoy
 peacock "Tu vas voir, tu ne t'en lasses plus!"
 hide joy
 $ current_textbox = "anthrax"
@@ -1720,6 +1867,7 @@ anthrax "Si je peux être aussi radieux.se que toi ce soir, j'aurais tout gagné
 $ current_textbox = "peacock"
 
 show flirt at flirt_right
+play vfxR VFXFlirt
 peacock "Est-ce que je peux te proposer un resto, ensemble, après la fermeture? Je connais quelques adresses cosy encore ouvertes à cette heure...~"
 hide flirt
 
@@ -1733,8 +1881,10 @@ label choix_pea6:
     menu: 
         text "Accepter le date ?"
         "Oui":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             call pea_6_good from _call_pea_6_good 
         "Non":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             call pea_6_bad from _call_pea_6_bad 
 
 #PEA.6.GOOD
@@ -1757,7 +1907,7 @@ label pea_6_good:
     pause 1.5
     show curtain_open with dissolve
     with fade
-
+    play music BadEnd volume 0.8 noloop
  
     scene black with dissolve
     
@@ -1775,6 +1925,7 @@ label pea_6_good:
     show imani_neutre at pea_center with dissolve
 
     show joy at joy_center
+    play vfxC VFXJoy
     imani "Me voici! Tu n'as pas attendu trop longtemps? Il commence à faire un peu frois en plus..."
     hide joy
     $ current_textbox = "anthrax"
@@ -1804,6 +1955,7 @@ label pea_6_good:
     $ current_textbox = "peacock"
 
     show flirt at flirt_center
+    play vfxC VFXFlirt
     imani "Je dois mettre la barre haute pour notre premier rendez-vous alors! J'ai une petite idée, mais je garde encore le secret ~"
     hide flirt
     call final_peacock from _call_final_peacock 
@@ -1825,10 +1977,13 @@ label pea_6_bad:
 
     menu:
         "Oui, bien sûr! Je termine ça et j'arrive!":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
         "Si vous insistez!":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
         "Proposé si gentiment, comment refuser?":
+            $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
 
     $ quick_menu = True
@@ -1848,6 +2003,8 @@ label pea_6_bad:
     show bar 
    
     $ current_textbox = "description"
+
+    play music BadEnd volume 0.8 noloop
   
     text "Tous.te.s étaient réuni.e.s face au comptoir, se faisant servir par notre merveilleux \"Dobarman\"."
     show imani_neutre at pea_left with dissolve
@@ -1887,6 +2044,7 @@ label pea_6_bad:
     #show mother_laugh at mother_left with dissolve
 
     show joy at joy_left
+    play vfxL VFXJoy
     mother "Je suis sûre que je peux te retrouver une vidéo d'excellente qualité, vu comment elle a tourné sur les plateformes."
     hide joy
 
@@ -1912,6 +2070,7 @@ label pea_6_bad:
     #show imani_neutre at pea_left
     text "Mais quelque chose me dit que c'était peut-être un peu trop tôt..."
     show flirt at flirt_left
+    play vfxL VFXFlirt
     text "Et j'aurais loupé cet instant précieux, sachant pertinemment que je passerais le reste de la soirée bien entouré.e !"
     hide flirt
 
@@ -1934,6 +2093,7 @@ label final_peacock:
     hide CG_peacock with fade
     $ persistent.peacock_unlocked = True
     "Interview et musiques débloquées"
+    stop music fadeout 1.0
     pause 1.0
 
     scene black with fade

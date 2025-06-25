@@ -46,40 +46,53 @@ init python:
 
 
     music_room_interviews.add(
-        name=_("Sororité trans et Drag"),
+        name=_("1. Sororité Trans et Drag"),
         artist="IbuProFem - Nantes, France",
         path="audio/music_room/AP_Interview_IbuProfem.ogg",
         unlock_condition="True",
+        art="images/credits/ibuprofem.png"
     )
 
     music_room_interviews.add(
-        name=_("von dutch"),
-        artist="brat icon",
-        path="audio/music_room/vondutch.ogg",
+        name=_("2. Être un mec trans et Drag King"),
+        artist="L'imberbe - Montpellier, France",
+        path="audio/music_room/AP_Interview_Limberbe.ogg",
         unlock_condition="True",
+        art="images/credits/limberbe.png"
     )
 
     music_room_interviews.add(
-        name=_("Song of the Ancients"),
-        artist="Keiichi Okabe",
-        path="<silence 317>",
+        name=_("3. Être Racisé.e et Drag"),
+        artist="Urazoria - Limoges, France",
+        path="audio/music_room/AP_Interview_Urazoria.ogg",
         unlock_condition="True",
+        art="images/credits/urazoria.png"
     )
 
     music_room_interviews.add(
-        name=_("Nightsong"),
-        artist="Borislav Slavov",
-        path="<silence 77>",
+        name=_("4. Être en couple et faire du Drag"),
+        artist="Leo Pardchouli & Marie Soterie - Angoulême, France",
+        path="audio/music_room/AP_Interview_LeoPardchouliMarieSoterie.ogg",
         unlock_condition="True",
+        art="images/credits/leo_marie.png"
     )
 
     music_room_interviews.add(
-        name=_("Requiem of Dawn"),
-        artist="Alcaknight",
-        path="<silence 225>",
+        name=_("5. Rapport au genre dans le Drag"),
+        artist="Kate Amary - Montpellier, France",
+        path="audio/music_room/AP_Interview_KateAmary.ogg",
         unlock_condition="True",
+        art="images/credits/kate_amary.png"
     )
 
+    music_room_interviews.add(
+        name=_("6. Drag en collectivité"),
+        artist="Orkidd Opamine & Lethal Strawberry - Angoulême, France",
+        path="audio/music_room/AP_Interview_OrkiddOpamineLethalStrawberry.ogg",
+        unlock_condition="True",
+        art="images/credits/orkidd_lethal.png"
+    )
+    
     music_room.add(
         name=_("Cove"),
         artist="Red Robotix",
@@ -504,7 +517,7 @@ screen music_room_interviews(mr):
     ## you like, with whichever information you like!
     vbox:
         style_prefix 'track_list'
-        xsize 750 xpos 120 ypos 130
+        xsize 750 xpos 120 ypos 100
         viewport:
             mousewheel True scrollbars "vertical" draggable True
             has vbox
