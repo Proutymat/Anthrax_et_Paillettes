@@ -94,48 +94,49 @@ init python:
     )
     
     music_room.add(
-        name=_("Cove"),
-        artist="Red Robotix",
-        path="<silence 201>",
+        name=_("Main Title"),
+        artist="Le Potage",
+        path="audio/music_room/AP_MainTitle_V3.ogg",
+        unlock_condition="True",
         ## The other information is omitted here, so it gets the defaults.
         ## That is, it gets the default cover art, no description, and it is
         ## unlocked when it is listened to in-game.
     )
 
     music_room.add(
-        name=_("Stateside"),
-        artist="Pink Mother fucking Panthress",
-        path="audio/music_room/stateside.ogg",
+        name=_("Show Delaunay"),
+        artist="Le Potage",
+        path="audio/music_room/AP_ShowDelaunay_V2.ogg",
         unlock_condition="True",
     )
 
     music_room.add(
-        name=_("von dutch"),
-        artist="brat icon",
-        path="audio/music_room/vondutch.ogg",
+        name=_("Show Gatsby"),
+        artist="Le Potage",
+        path="audio/music_room/AP_ShowGatsby_V1.ogg",
         unlock_condition="True",
     )
 
     music_room.add(
-        name=_("Song of the Ancients"),
-        artist="Keiichi Okabe",
-        path="<silence 317>",
+        name=_("Show Peacock"),
+        artist="Le Potage",
+        path="audio/music_room/AP_ShowPeacock_V1.ogg",
         unlock_condition="True",
     )
 
-    music_room.add(
-        name=_("Nightsong"),
-        artist="Borislav Slavov",
-        path="<silence 77>",
-        unlock_condition="True",
-    )
+    #music_room.add(
+        #name=_("Nightsong"),
+        #artist="Borislav Slavov",
+        #path="<silence 77>",
+        #unlock_condition="True",
+    #)
 
-    music_room.add(
-        name=_("Requiem of Dawn"),
-        artist="Alcaknight",
-        path="<silence 225>",
-        unlock_condition="True",
-    )
+    #music_room.add(
+        #name=_("Requiem of Dawn"),
+        #artist="Alcaknight",
+        #path="<silence 225>",
+        #unlock_condition="True",
+    #)
 
 
 ################################################################################
