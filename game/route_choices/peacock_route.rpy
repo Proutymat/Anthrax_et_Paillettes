@@ -478,7 +478,7 @@ label pea_2_1:
     $ current_textbox = "anthrax"
 
     anthrax "J’avais tout de même raison quand je disais que tu avais l’air d’être la personne la plus militante..."
-
+    hide imani_neutre with dissolve
     call pea_3 from _call_pea_3_4 
 
 #PEA.2.2
@@ -547,7 +547,7 @@ label pea_2_2:
     hide imani_emo
     imani "Mais à défaut d'avoir appris à danser, ils m'ont introduit très jeune au monde du spectacle, en m'emmenant voir des comédies musicales, des concerts et des ballets."
     imani "C'est sûrement pour ça que je fais de la régie d'ailleurs..."
-    show imani_nautre at pea_right
+    show imani_neutre at pea_right
     hide imani_nosmile
     imani "Au moins, quand les procédures sont protocolaires, je n'ai pas à m'inquiéter de ma maladresse."
     $ current_textbox = "anthrax"
@@ -604,7 +604,7 @@ label pea_2_2:
     $ current_textbox = "anthrax"
 
     anthrax "Il me faudrait le voir pour le croire alors, mais ça ne saurait tarder !"
-
+    hide imani_laugh with dissolve
     call pea_3 from _call_pea_3 
 
 #PEA.2.3
@@ -716,7 +716,7 @@ label pea_2_3:
     imani "J'étais tellement habitué à être sur le derrière de la scène, à faire en sorte que tout se déroule bien, que je n'avais jamais envisagé autant aimer être sur le devant."
 
     anthrax "J'ai hâte que ce soit mon tour !"
-
+    hide imani_neutre with dissolve
     call pea_3 from _call_pea_3_1 
 
 
@@ -1781,7 +1781,7 @@ label pea_5:
     $ current_textbox = "description"
 
     text "Les yeux du public étaient encore rivés sur la scène où les restes du précédent numéro se faisaient débarrasser... "
-    text "Qu'ils furent forcés de se retourner en entendant une voix rauque et a cappella démarrer le fameux 'Feeling Good' de Nina Simone depuis le fond de la salle."
+    text "Qu'ils furent forcés de se retourner en entendant une voix rauque démarrer a capella depuis le fond de la salle."
     show auditorium with dissolve
     show peacock_neutre at pea_center with dissolve
     text "Les escarpins ancrés dans le marbre du comptoir du bar, un spot détourant sa silhouette en contre-jour pour ajouter un peu de pizzazz à son entrée... "
@@ -1858,13 +1858,13 @@ $ quick_menu = False
 
 menu:
     peacock "C'était particulièrement intense ce soir ou je rêve ?!"
-    "Le trac? Toi? Tu as vu ton entrée?! Elle était sensationnelle!":
+    "Le trac ? Toi ? Tu as vu ton entrée ?! Elle était sensationnelle !":
         $ renpy.play(random.choice(ui_choice_click), channel="sound")
         pass
-    "La danse, les éventails, le chant! Mais waouh! La claque!":
+    "La danse, les éventails, le chant ! Mais waouh ! La claque !":
         $ renpy.play(random.choice(ui_choice_click), channel="sound")
         pass
-    "C'était génial! J'ai rarement autant rit de ma vie!":
+    "C'était génial ! J'ai rarement autant rit de ma vie !":
         $ renpy.play(random.choice(ui_choice_click), channel="sound")
         pass
 
@@ -1873,17 +1873,17 @@ $ quick_menu = True
 
 show peacock_laugh at pea_right
 hide peacock_neutre
-peacock "C'est le meilleur shot d'adrénaline que j'aurais pu avoir!"
+peacock "C'est le meilleur shot d'adrénaline que j'aurais pu avoir !"
 peacock "J'ai hâte que tu ressentes ça toi aussi."
 show joy at joy_right
 play vfxR VFXJoy
-peacock "Tu vas voir, tu ne t'en lasses plus!"
+peacock "Tu vas voir, tu ne t'en lasses plus !"
 hide joy
 $ current_textbox = "anthrax"
 show peacock_neutre at pea_right
 hide peacock_laugh
 
-anthrax "Si je peux être aussi radieux.se que toi ce soir, j'aurais tout gagné!"
+anthrax "Si je peux être aussi radieux.se que toi ce soir, j'aurais tout gagné !"
 $ current_textbox = "peacock"
 
 
@@ -1899,7 +1899,7 @@ label pea_6_good:
 
     show flirt at flirt_right
     play vfxR VFXFlirt
-    peacock "Est-ce que je peux te proposer un resto, ensemble, après la fermeture? Je connais quelques adresses cosy encore ouvertes à cette heure...~"
+    peacock "Est-ce que je peux te proposer un resto, ensemble, après la fermeture ? Je connais quelques adresses cosy encore ouvertes à cette heure...~"
     hide flirt
 
     $ quick_menu = False
@@ -1939,28 +1939,29 @@ label pea_6_good:
     show curtain_open with dissolve
     play vfxC SFXCurtainOpen
     with fade
-    
+    play music BadEnd volume 0.8 noloop
     $ quick_menu = True
     
 
     $ current_textbox = "description"
 
-    text "Le temps que Peacock et les autres artistes terminent de se démaquiller et de se rhabiller en civil, je passai le balai sur les planches de la scène."
+    text "Le temps que Peacock et les autres artistes terminent de se démaquiller et de se rhabiller en civil, je passais le balai sur les planches de la scène."
     text "Laissant mon esprit vagabonder au jour où moi-même je les foulerais."
     text "À l'extérieur, quelques clients étaient restés sur le pavé pour continuer leurs discussions et attendre la sortie de la royauté de l'Androgame."
     $ current_textbox = "peacock"
 
     show devanture
+    play ambiance AmbRue volume 0.4
     show imani_neutre at pea_center with dissolve
 
     show joy at joy_center
     play vfxC VFXJoy
-    imani "Me voici! Tu n'as pas attendu trop longtemps? Il commence à faire un peu frois en plus..."
+    imani "Me voici! Tu n'as pas attendu trop longtemps ? Il commence à faire un peu frois en plus..."
     hide joy
     $ current_textbox = "anthrax"
 
-    anthrax "Aha! Non, ne t'en fais pas! Je viens à peine de sortir!"
-    anthrax "Merci pour l'invitation... Qu'est-ce qu'en ont pensé les autres, que l'on se fasse un truc à deux...?"
+    anthrax "Aha! Non, ne t'en fais pas ! Je viens à peine de sortir !"
+    anthrax "Merci pour l'invitation... Qu'est-ce qu'en ont pensé les autres, que l'on se fasse un truc à deux... ?"
     $ current_textbox = "peacock"
 
     show imani_laugh at pea_center
@@ -1968,10 +1969,10 @@ label pea_6_good:
     imani "Hm... J'ai eu le droit à quelques remarques dans les backstages, mais c'était plus par rapport à moi qui te vole pour le reste de la nuit...~"
     show imani_neutre at pea_center
     hide imani_laugh
-    imani "Iels sont content.e.s pour nous dans tous les cas! Enfin, de ce qui démarre entre nous plutôt..."
+    imani "Iels sont content.e.s pour nous dans tous les cas ! Enfin, de ce qui démarre entre nous plutôt..."
     show imani_emo at pea_center
     hide imani_neutre
-    imani "À moins que je me fasse des films...?"
+    imani "À moins que je me fasse des films... ?"
     $ current_textbox = "anthrax"
 
     anthrax "Hm... Non, non. Pas de film. Tant qu'on prend notre temps et que le feeling est là !"
@@ -1980,13 +1981,14 @@ label pea_6_good:
     anthrax "En tout cas, il est bien là... Le feeling."
     show imani_laugh at pea_center
     hide imani_neutre
-    anthrax "Mais dis-moi! Où est-ce que tu m'emmènes ce soir?"
+    anthrax "Mais dis-moi ! Où est-ce que tu m'emmènes ce soir ?"
     $ current_textbox = "peacock"
 
     show flirt at flirt_center
     play vfxC VFXFlirt
     imani "Je dois mettre la barre haute pour notre premier rendez-vous alors! J'ai une petite idée, mais je garde encore le secret ~"
     hide flirt
+    stop ambiance fadeout 0.5
     call final_peacock from _call_final_peacock 
 
 #PEA.6.BAD
@@ -2005,13 +2007,13 @@ label pea_6_bad:
     $ quick_menu = False
 
     menu:
-        "Oui, bien sûr! Je termine ça et j'arrive!":
+        "Oui, bien sûr ! Je termine ça et j'arrive !":
             $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
-        "Si vous insistez!":
+        "Si vous insistez !":
             $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
-        "Proposé si gentiment, comment refuser?":
+        "Proposé si gentiment, comment refuser ?":
             $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
 
@@ -2105,7 +2107,7 @@ label pea_6_good_bad:
     play vfxL VFXFlirt
     text "Et j'aurais loupé cet instant précieux, sachant pertinemment que je passerais le reste de la soirée bien entouré.e !"
     hide flirt
-
+    stop ambiance fadeout 0.5
     call final_peacock from _call_final_peacock_1 
 
     

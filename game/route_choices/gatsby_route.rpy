@@ -442,7 +442,7 @@ label gat_2_1:
     aimee "Après tout, j'y ai consacré la majorité de ma vie. Ce n'est pas une mauvaise passe qui va envoyer en l'air tous mes efforts."
     hide joy
     aimee "Recommencer ne me fait pas peur. Et si je peux compiler avec la personne que je suis devenu.e, ce serait un triomphe !"
-
+    hide aimee_neutre with dissolve
     jump gat_3
     call gat_3 from _call_gat_3 
 
@@ -552,7 +552,7 @@ label gat_2_2:
     show joy at joy_right
     aimee "Il y a de quoi te faire tourner la tête...~"
     hide joy
-
+    hide aimee_laugh with dissolve
     call gat_3 from _call_gat_3_1 
 
 #GAT.2.3
@@ -624,7 +624,6 @@ label gat_2_3:
 
 
     $ quick_menu = False
-    #show gatsby_neutre at gat_right
     show aimee_neutre at gat_right
     hide aimee_neutre
     show joy at joy_right
@@ -671,6 +670,7 @@ label gat_2_3:
     show aimee_neutre at gat_right
     hide aimee_laugh
     aimee "Mais peut-être que ça reprendra un jour, qui sait ?"
+    hide aimee_neutre with dissolve
     call gat_3 from _call_gat_3_2 
 
 #TRANSITION RIDEAU & GRADIENT A AJOUTER + quelques mois blabla (vers auditorium)
@@ -701,7 +701,7 @@ label gat_3:
     pause 2
 
     $ persistent.bg_parallax = True
-
+    play music BalconIntro noloop
     $ current_textbox = "description"
     text "Cela faisait plusieurs minutes que je cherchais Aimé.e, avec qui j'étais supposé.e répéter une partie de mon numéro, que l'on construisait ensemble."
     text "Après avoir fait trois fois le tour du bâtiment, je finis par retourner sur les planches de la scène, pensif.ve."
@@ -709,7 +709,7 @@ label gat_3:
     text "Puis je l'aperçus, dominant un carnet sur lequel iel tapotait la mine de son crayon, posé sur l'un des mange-debouts. "
     text "Je le.a rejoignis rapidement."
 
-    play music BalconIntro noloop
+    
     show auditorium
 
     $ current_textbox = "anthrax"
@@ -876,9 +876,10 @@ label gat_3_1:
     hide aimee_neutre
     aimee "Ce n'est pas moi qui vais te dire le contraire !"
 
-    $ quick_menu = False
+    $ quick_menu = True
+    hide aimee_laugh with dissolve
     show aimee_neutre at gat_right with dissolve
-    hide aimee_laugh
+    
    
     menu:
         aimee "Remonter la pente est ce qui a été le plus compliqué, mais maintenant que c'est passé, je suis inarrêtable."
@@ -1213,19 +1214,23 @@ label gat_4:
     hide aimee_nosmile with dissolve
     hide aimee_neutre with dissolve
     show curtain_close  with dissolve
+    play vfxC SFXCurtainClose
     pause 1.5
     hide auditorium 
     show curtain_open 
-
+    play vfxC SFXCurtainOpen
     show gradient with dissolve
+    play music LongEllipse volume 0.6
     show text "{size=60}{color=#FFFFFF}Le jour du spectacle...{/color}{/size}" at truecenter
 
     pause 6
 
     hide text with dissolve
     hide gradient with fade
+    stop music fadeout 1.5
+    pause 2
 
-    stop music fadeout 0.5
+    
     stop ambiance fadeout 0.5
     play music LogesIntro volume 0.5
     
@@ -1392,12 +1397,12 @@ label gat_4_1:
 
     hide delaunay_nosmile
     show gatsby_laugh at gat_left with dissolve
+    #hide peacock_neutre with dissolve
     gatsby "Plus qu'explorer, je dirais même se réconcilier. La majeure partie du temps, je me sens super bien dans ma peau."
-    hide gatsby_laugh
     gatsby "Devoir accomplir des prouesses physiques, se dévoiler, ne pas avoir droit à l'erreur et être obligé.e de rester concentré.e..."
     gatsby "Quand juste parfois le mood n'est pas là, c'est bien plus embarrassant que ce qu'on croirait."
     show gatsby_pensive at gat_left
-    hide gatsby_neutre
+    hide gatsby_laugh
     gatsby "Même moi, j'ai sous-estimé l'impact que ça aurait sur ma performance au début. Ça va que je réussis maintenant à gérer."
     $ current_textbox = "anthrax"
     
@@ -1409,10 +1414,10 @@ label gat_4_1:
     gatsby "Si on parle de crise de dysphorie, non. Et j'ai bien de la chance. C'est plus une sensation de malaise qu'autre chose."
     $ current_textbox = "peacock"
 
-    $ quick_menu = False
+    $ quick_menu = True
    
     show peacock_nosmile at pea_right
-    hide gatsby_nosmile
+    hide gatsby_nosmile with dissolve
 
     menu:
         peacock "C'est déjà arrivé une fois à Léandre cependant, au début."
@@ -1462,7 +1467,7 @@ label gat_4_1:
     show gatsby_laugh at gat_center with dissolve
     gatsby "Allez ! On doit mettre les bouchées doubles si on veut être à l'heure, girlies ! Chop-chop !"
     hide joy
-
+    hide gatsby_laugh with dissolve
     stop ambiance fadeout 1.0
     call gat_5 from _call_gat_5 
 
@@ -1606,7 +1611,7 @@ label gat_4_2:
     show gatsby_laugh at gat_center with dissolve
     gatsby "Allez ! On doit mettre les bouchées doubles si on veut être à l'heure girlies ! Chop-chop !"
     hide joy
-    
+    hide gatsby_laugh with dissolve
     stop ambiance fadeout 2.0
     call gat_5 from _call_gat_5_1 
 
@@ -1643,7 +1648,7 @@ label gat_4_3:
    
     menu:
         gatsby "Plutôt que de déconstruire et dissocier des années d'abus."
-        "Personne ne peux te blâmer, de ce que tu m'as raconté.":
+        "Personne ne peut te blâmer, de ce que tu m'as raconté.":
             $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
         "C'est compréhensible, tu te protégeais...":
@@ -1709,7 +1714,7 @@ label gat_4_3:
             $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
 
-    hide delaunay_neutre with dissolve
+    hide delaunay_shy with dissolve
     show peacock_sassy at pea_left with dissolve
     $ quick_menu = True
     $ current_textbox = "peacock"
@@ -1744,6 +1749,7 @@ label gat_4_3:
     $ current_textbox = "mother"
 
     hide delaunay_neutre with dissolve
+    hide delaunay_flirty with dissolve
     hide gatsby_neutre with dissolve
     staff "Ok les filles ! Showtime dans dix minutes !"
     $ current_textbox = "gatsby"
@@ -1753,7 +1759,7 @@ label gat_4_3:
     show gatsby_laugh at gat_center with dissolve
     gatsby "Allez ! On doit mettre les bouchées doubles si on veut être à l'heure, girlies ! Chop-chop !"
     hide joy
-
+    hide gatsby_laugh with dissolve
     stop ambiance fadeout 2.0
     call gat_5 from _call_gat_5_2 
 
@@ -1803,6 +1809,7 @@ label gat_5:
 
     $ persistent.bg_parallax = False
     hide gatsby_neutre with dissolve
+    hide gatsby_laugh with dissolve
     show curtain_close with dissolve
     play vfxC SFXCurtainClose
     pause 1.5
@@ -1817,19 +1824,20 @@ call gat_6 from _call_gat_6_1
 label gat_6:
     $ persistent.bg_parallax = True
     show loges
-    show gatsby_neutre at gat_center with dissolve
-
+    play ambiance AmbLoges volume 0.4
+    
     $ current_textbox = "gatsby"
 
-    show gatsby_laugh at gat_center
-
-    gatsby "Franchement, je ne me laisserais jamais de cette réaction!"
-    gatsby "Tu as vu leur tête quand je suis tombé.e?"
-
+    show gatsby_laugh at gat_center with dissolve
     hide gatsby_neutre
+    gatsby "Franchement, je ne me lasserai jamais de cette réaction!"
+    gatsby "Tu as vu leur tête quand je suis tombé.e ?"
+
+    
  
     $ quick_menu = False
 
+    hide gatsby_laugh with dissolve
     scene background_cg
     show CG_gatsby at CG_center with fade
 
@@ -1847,9 +1855,9 @@ label gat_6:
     show gatsby_laugh at gat_right with dissolve
    
     menu:
-        gatsby "Mémorable! J'ai cru que le premier rang allait faire un arrêt cardiaque!"
+        gatsby "Mémorable ! J'ai cru que le premier rang allait faire un arrêt cardiaque !"
 
-        "Pas que le premier rang! Un peu plus, et moi aussi !":
+        "Pas que le premier rang ! Un peu plus, et moi aussi !":
             $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
         "La grâce et la force que ça demande, sans te faire broncher !":
@@ -1865,18 +1873,18 @@ label gat_6:
     hide gatsby_laugh
     show flirt at flirt_right
     play vfxR VFXFlirt
-    gatsby "Roh, arrête! Tu vas me faire rougir, va!"
+    gatsby "Roh, arrête ! Tu vas me faire rougir, va !"
     hide flirt
     show gatsby_laugh at gat_right
     hide gatsby_pensive
-    gatsby "Tu sais que ça marche trop bien avec moi en plus!"
-    gatsby "Plus qu'à me montrer maintenant ce dont TOI tu es capable!"
+    gatsby "Tu sais que ça marche trop bien avec moi en plus !"
+    gatsby "Plus qu'à me montrer maintenant ce dont TOI tu es capable !"
 
     $ current_textbox = "anthrax"
 
     show gatsby_neutre at gat_right
     hide gatsby_laugh
-    anthrax "C'est en cours! Patience, patience! Moi aussi, j'ai envie de te garder la surprise~"
+    anthrax "C'est en cours ! Patience, patience ! Moi aussi, j'ai envie de te garder la surprise~"
 
 label indice_gat:
     if indice_gat >= 0:
@@ -1884,46 +1892,36 @@ label indice_gat:
     else:
         jump gat_6_bad
     
-    show gatsby_neutre at gat_right
-    with fade
-    gatsby "Ça te tente que l'on sorte un peu après? Se promener en ville, grignoter un truc, quelque chose du style..."
- 
-    menu: 
-        text "Accepter le date ?"
-        "Oui":
-            call gat_6_good from _call_gat_6_good 
-        "Non":
-            call gat_6_bad from _call_gat_6_bad
-
 #GAT.6.GOOD
 label gat_6_good:
     $ quick_menu = False
     $ current_textbox = "gatsby"
     
-    play ambiance AmbLoges volume 0.4
     with fade
-    gatsby "Ça te tente que l'on sorte un peu après? Se promener en ville, grignoter un truc, quelque chose du style..."
+    gatsby "Ça te tente que l'on sorte un peu après ? Se promener en ville, grignoter un truc, quelque chose du style..."
     
     $ current_textbox = "description"
     menu: 
         text "Accepter le date ?"
         "Oui":
             $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            hide gatsby_neutre with dissolve
             pass
         "Non":
             $ renpy.play(random.choice(ui_choice_click), channel="sound")
+            hide gatsby_neutre with dissolve
             call gat_6_good_bad from _call_gat_6_good_bad 
 
 
     $ quick_menu = True
-    show gatsby_laugh at gat_center with dissolve
+    show gatsby_laugh at gat_right with dissolve
     show loges with dissolve
     hide flirt
 
     $ current_textbox = "gatsby"
     show flirt at flirt_right
     play vfxC VFXFlirt
-    gatsby "Nickel! Je fais vite! Attends-moi devant l'entrée quand tu aura aussi fini!"
+    gatsby "Nickel ! Je fais vite ! Attends-moi devant l'entrée quand tu auras aussi fini !"
     hide flirt
 
     
@@ -1949,40 +1947,41 @@ label gat_6_good:
     text "À l'extérieur, quelques clients étaient restés sur le pavé pour continuer leurs discussions et attendre la sortie de la royauté de L'Androgame."
  
     show devanture
+    play ambiance AmbRue volume 0.4
     show aimee_laugh at gat_center with dissolve
 
     
     $ current_textbox = "gatsby"
     show joy at joy_center
     play vfxC VFXJoy
-    aimee "Promis, j'ai fais aussi vite que possible! Quelle horreur de retirer la colle après avoir sué toute la soirée!"
+    aimee "Promis, j'ai fais aussi vite que possible ! Quelle horreur de retirer la colle après avoir sué toute la soirée !"
     hide joy
 
     $ current_textbox = "anthrax"
-    anthrax "Merci pour l'invitation... Qu'est-ce que les autres ont prévu de faire?"
+    anthrax "Merci pour l'invitation... Qu'est-ce que les autres ont prévu de faire ?"
 
     $ current_textbox = "gatsby"
     show aimee_neutre at gat_center
     hide aimee_laugh
-    aimee "Je pense qu'ils vont trinquer un coup et puis rentrer... C'était une très bonne soirée, mais diablement épuisante!"
+    aimee "Je pense qu'ils vont trinquer un coup et puis rentrer... C'était une très bonne soirée, mais diablement épuisante !"
     show aimee_laugh at gat_center
     hide aimee_neutre
-    aimee "Mais j'ai encore la niaque pour un date avec toi! Si tu te poses la question."
+    aimee "Mais j'ai encore la niaque pour un date avec toi ! Si tu te poses la question."
     show aimee_pensive at gat_center
     hide aimee_laugh
     aimee "Enfin, si tu es toujours ok..."
 
 
     $ current_textbox = "anthrax"
-    anthrax "Je n'attendais que ça Aimé.e!"
-    anthrax "Alors dis-moi! Où est-ce que tu m'emmènes ce soir?"
+    anthrax "Je n'attendais que ça Aimé.e !"
+    anthrax "Alors dis-moi ! Où est-ce que tu m'emmènes ce soir ?"
 
     $ current_textbox = "gatsby"
     show flirt at flirt_center
     play vfxC VFXFlirt
     show aimee_laugh at gat_center
     hide aimee_pensive
-    aimee "Aha! Mystère, mystère... Mais te connaissant, tu devrais bien kiffer!"
+    aimee "Aha ! Mystère, mystère... Mais te connaissant, tu devrais bien kiffer !"
 
 
     hide flirt
@@ -2003,13 +2002,13 @@ label gat_6_bad:
     menu:
         gatsby "On va aller boire un verre avec les autres une fois que les derniers clients auront quitté la salle. Tu te joins à nous ?"
     
-        "Oui, bien sûr! Je termine ça et j'arrive!":
+        "Oui, bien sûr ! Je termine ça et j'arrive !":
             $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
-        "Si vous insistez!":
+        "Si vous insistez !":
             $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
-        "Proposé si gentiment, comment refuser?":
+        "Proposé si gentiment, comment refuser ?":
             $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
 
