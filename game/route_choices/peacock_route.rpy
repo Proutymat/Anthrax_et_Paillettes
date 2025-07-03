@@ -9,7 +9,7 @@ init python:
 
         if event == "show" :
             for i in range(100):
-                print(silence)
+                #print(silence)
                 renpy.sound.queue(renpy.random.choice(type_silent))
                 renpy.sound.queue(silence)
 
