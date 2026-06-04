@@ -253,7 +253,7 @@ hide joy
 $ current_textbox = "anthrax"
 show imani_laugh at pea_right
 hide imani_neutre
-anthrax "Je me sens bête de prendre un Martini du coup..."
+anthrax "Je me sens bête de prendre un verre du coup..."
 show imani_neutre at pea_right
 hide imani_laugh
 
