@@ -1972,7 +1972,7 @@ translate English gat_6_good_bad_896d7267:
 translate English gat_6_good_bad_aa5b443d:
 
     # text "Je m'en voulais peut-être un peu de ne pas avoir demandé à Aimé.e d'être sorti.e avec moi ce soir."
-    text "Maybe I was a bit angry with myself for not asking Aimé.e out this evening."
+    text "Maybe I was a bit annoyed with myself for not asking Aimé.e out this evening."
 
 # game/route_choices/gatsby_route.rpy:2091
 translate English gat_6_good_bad_523fec12:

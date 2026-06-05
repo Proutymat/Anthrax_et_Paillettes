@@ -768,7 +768,7 @@ label pea_3:
         "Hey... Je me demandais où tu étais passé.":
             $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
-        "Aimé.e! Ça fait un moment que je te cherche !":
+        "Imani! Ça fait un moment que je te cherche !":
             $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
         "Alors c'était là où tu te cachais !":
@@ -815,8 +815,6 @@ label pea_3:
     imani "Un jus d'abricot. Classique et délicieux !"
     $ current_textbox = "description"
 
-    #show overlay
-    text "Il termina le fond de son verre d'une traite, avant de le poser sur l'une des tables qui n'avaient pas encore été dressées pour la soirée."
 
     $ quick_menu = False
     show imani_neutre at pea_right
@@ -1807,7 +1805,7 @@ label pea_5:
     show joy at joy_center
     play vfxC VFXJoy
     text "Peacock se faisait règle de ne jamais reproduire un gig deux fois, de la même manière que ses tenues selon ses propres termes."
-    text "Elle est quitta la scène sous les rires, après avoir introduit le show suivant."
+    text "Elle quitta la scène sous les rires, après avoir introduit le show suivant."
     hide joy
 
     stop music fadeout 0.2
