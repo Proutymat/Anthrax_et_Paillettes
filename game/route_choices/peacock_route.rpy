@@ -1214,7 +1214,7 @@ label pea_3_3:
         "Non, non... Ne t’excuse pas. ":
             $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
-        "Je m'en parle pas, haha... Mais t'inquiète.":
+        "Ne m'en parle pas, haha... Mais t'inquiète.":
             $ renpy.play(random.choice(ui_choice_click), channel="sound")
             pass
         "Imani... Ce n'est rien voyons.":

@@ -4,5 +4,5 @@ translate English strings:
 
     # game/options.rpy:27
     old "Anthrax_et_Paillettes"
-    new ""
+    new "Anthrax_et_Paillettes"
 
