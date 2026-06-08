@@ -46,10 +46,6 @@ translate English strings:
     old "Juxebox"
     new "Juxebox"
 
-    # game/music_room/music_room_interviews.rpy:349
-    old "No song playing"
-    new "No song playing"
-
     # game/music_room/music_room_interviews.rpy:525
     old "Interviews"
     new "Interviews"
