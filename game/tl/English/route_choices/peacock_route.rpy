@@ -16,7 +16,7 @@ translate English peacock_start_d53766d7:
 translate English peacock_start_4fe7f3d9:
 
     # anthrax "Il semblerait, j'adore ta vibe. Tu as un certain talent pour mettre les gens à l'aise."
-    anthrax "It seems I really like your vibe. You have a knack for putting people at ease"
+    anthrax "It seems I really like your vibe. You have a knack for putting people at ease."
 
 # game/route_choices/peacock_route.rpy:154
 translate English peacock_start_6346b1e7:
@@ -34,7 +34,7 @@ translate English peacock_start_ed3fe3a8:
 translate English peacock_start_8d3cf259:
 
     # anthrax "Vieux jeu ? J'aimerais bien croiser la personne qui a dit ça."
-    anthrax "Old-fashioned? I'd love to meet the person who said that"
+    anthrax "Old-fashioned? I'd love to meet the person who said that."
 
 # game/route_choices/peacock_route.rpy:162
 translate English peacock_start_d08f7331:
@@ -52,7 +52,7 @@ translate English peacock_start_7831b5e4:
 translate English peacock_start_f5fff1a2:
 
     # anthrax "Comme dirait RuPaul, il ne faut pas écouter notre 'inner saboteur'."
-    anthrax "As a certain queen of drag would say, we mustn’t listen to our ‘inner saboteur’"
+    anthrax "As a certain queen of drag would say, we mustn’t listen to our ‘inner saboteur’."
 
 # game/route_choices/peacock_route.rpy:171
 translate English peacock_start_824fdff6:
@@ -1940,7 +1940,7 @@ translate English strings:
 
     # game/route_choices/peacock_route.rpy:327
     old "Tu m'a l'air la plus engagée au sein de la troupe..."
-    new "You seem to me to be the most committed member of the troupe."
+    new "You seem to be the most politicised member of the troupe."
 
     # game/route_choices/peacock_route.rpy:330
     old "Est-ce que tu peux m’en dire davantage sur ce que tu fais ?"
@@ -1952,7 +1952,7 @@ translate English strings:
 
     # game/route_choices/peacock_route.rpy:368
     old "C'est vrai que je vous y avais vu.e.s quelques fois. "
-    new "It’s true that I’d seen you there a few times. But I hadn’t made the connection..."
+    new "It’s true that I’d seen you there a few times."
 
     # game/route_choices/peacock_route.rpy:371
     old "Je n'avais pas fait le rapprochement..."
@@ -1964,7 +1964,7 @@ translate English strings:
 
     # game/route_choices/peacock_route.rpy:411
     old "Et comment est-ce que tu le vis? Si ce n'est pas indiscret..."
-    new "And how are you coping with it? If I’m not being too forward..."
+    new "How are you coping with it? If I’m not being too forward..."
 
     # game/route_choices/peacock_route.rpy:414
     old "Ça n'a pas dû être simple... Ça s'est bien passé ?"
@@ -1972,11 +1972,11 @@ translate English strings:
 
     # game/route_choices/peacock_route.rpy:417
     old "On ne se l'imagine pas du tout en te voyant. Tu le vis bien ?"
-    new "You wouldn't think so at all when you see you. Are you alright?"
+    new "I wouldn't have thought so when seeing you. Are you alright?"
 
     # game/route_choices/peacock_route.rpy:451
     old "C'est un sacré parcours en perspective. Pas trop la pression ?"
-    new "That’s quite a journey ahead… Not feeling the pressure too much?"
+    new "That’s quite a journey ahead… Not feeling pressured sp much?"
 
     # game/route_choices/peacock_route.rpy:454
     old "C'est beau comme message à porter, un peu lourd, non ?"
@@ -2072,7 +2072,7 @@ translate English strings:
 
     # game/route_choices/peacock_route.rpy:957
     old "Je sens que c’est encore trop ancré dans la culture LGBT."
-    new "I feel that it’s still too deeply ingrained in our queer culture."
+    new "I feel that it’s still deeply ingrained in our queer culture."
 
     # game/route_choices/peacock_route.rpy:960
     old "Le milieu de la nuit a toujours eut ce côté... \"défiance\""
@@ -2144,11 +2144,11 @@ translate English strings:
 
     # game/route_choices/peacock_route.rpy:1340
     old "Tu comptes chanter aussi? Je vois que tu as un micro..."
-    new "Are you planning to sing as well? I see you’ve got a microphone set up..."
+    new "Are you planning to sing as well?"
 
     # game/route_choices/peacock_route.rpy:1343
     old "Les ébouriffer? Tu fais de l'effeuillage?"
-    new "Ruffling them up? Is that so you can hide better when you're stripping?"
+    new "Ruffling them up? Is that so you can hide better?"
 
     # game/route_choices/peacock_route.rpy:1378
     old "Et donc, les plumes, ça t'a inspiré en particulier ?"
@@ -2164,7 +2164,7 @@ translate English strings:
 
     # game/route_choices/peacock_route.rpy:1431
     old "Tu as l'air du genre très polyvalente !"
-    new "You seem like the sort of person who can do a bit of everything!"
+    new "You seem like the sort who can do a bit of everything!"
 
     # game/route_choices/peacock_route.rpy:1434
     old "Tu n'as pas peur de trop te répêter ?"
@@ -2200,7 +2200,7 @@ translate English strings:
 
     # game/route_choices/peacock_route.rpy:1648
     old "Ah bon? C'est-à-dire? J'ai du mal à comprendre."
-    new "Really? What do you mean? I'm not quite sure I understand."
+    new "Really? I'm not quite sure I understand."
 
     # game/route_choices/peacock_route.rpy:1651
     old "Pourtant, je suis sûr.e que beaucoup apprécieraient ~"
@@ -2208,7 +2208,7 @@ translate English strings:
 
     # game/route_choices/peacock_route.rpy:1654
     old "C'est très burlesque, j'aurais imaginé ça avec les éventails..."
-    new "It's so burlesque; I would have imagined that with the fans..."
+    new "It's burlesque! I would have imagined that with the fans..."
 
     # game/route_choices/peacock_route.rpy:1699
     old "J'apprends surtout des meilleur.e.s"
@@ -2224,7 +2224,7 @@ translate English strings:
 
     # game/route_choices/peacock_route.rpy:1861
     old "Le trac ? Toi ? Tu as vu ton entrée ?! Elle était sensationnelle !"
-    new "Stage fright? You? Did you see your entrance?! It was sensational!"
+    new "Stage fright? You? It was sensational!"
 
     # game/route_choices/peacock_route.rpy:1864
     old "La danse, les éventails, le chant ! Mais waouh ! La claque !"
