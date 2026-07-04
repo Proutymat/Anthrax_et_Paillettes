@@ -382,7 +382,7 @@ translate English del_2_2_e45854e1:
 translate English del_2_3_935c384c:
 
     # anthrax "J'ai remarqué qu'Aimé.e finissait beaucoup tes phrases. Est-ce que tu es toujours aussi timide ?"
-    anthrax "I've noticed that Aimé.e finishes your sentences a lot. Are you always this shy?"
+    anthrax "I've noticed that Aimé.e finishes your sentences a lot." 
 
 # game/route_choices/delaunay_route.rpy:506
 translate English del_2_3_a3086f71:
@@ -1848,7 +1848,7 @@ translate English strings:
 
     # game/route_choices/delaunay_route.rpy:261
     old "Vous devez bien vous connaître, avec les autres..."
-    new "You and the others must know each other quite well since you've met..."
+    new "You and the others must know each other quite well..."
 
     # game/route_choices/delaunay_route.rpy:291
     old "Oh! Tu as transitionné?"
@@ -1920,7 +1920,7 @@ translate English strings:
 
     # game/route_choices/delaunay_route.rpy:537
     old "C'est le genre de chose que je ne supporterais pas..."
-    new "That's the kind of thing I could not stand... Someone speaking in my stead."
+    new "That's the kind of thing I could not stand..."
 
     # game/route_choices/delaunay_route.rpy:615
     old "Hey... Je me demandais où tu étais passé."
@@ -1948,7 +1948,7 @@ translate English strings:
 
     # game/route_choices/delaunay_route.rpy:722
     old "Tu avais tes raisons pour te lancer... dans cette industrie ?"
-    new "You must have had your reasons for... getting into this industry?"
+    new "You must have had your reasons for... getting into this?"
 
     # game/route_choices/delaunay_route.rpy:726
     old "Pourquoi est-ce que tu n'es pas très fier de cette période?"
@@ -1980,7 +1980,7 @@ translate English strings:
 
     # game/route_choices/delaunay_route.rpy:827
     old "Si tu réussis à te réconcilier avec ton passé, c'est le principal."
-    new "If you manage to come to terms with your past, that's all that matters, right?"
+    new "If you manage to come to terms with it, that's all that matters"
 
     # game/route_choices/delaunay_route.rpy:830
     old "Ça doit être rassurant, d'avoir au moins ça de clair."
@@ -1988,7 +1988,7 @@ translate English strings:
 
     # game/route_choices/delaunay_route.rpy:833
     old "Après tout, ça ne concerne que toi, et toi-même !"
-    new "After all, it doesn't concern anyone else but you, and only you!"
+    new "After all, it doesn't concern anyone else but you!"
 
     # game/route_choices/delaunay_route.rpy:891
     old "Après tout, ça ne concerne que toi."
@@ -1996,11 +1996,11 @@ translate English strings:
 
     # game/route_choices/delaunay_route.rpy:894
     old "Dans tous les cas, il n'y a rien de honteux à avoir fait ce métier..."
-    new "In any case, there's nothing to be ashamed of doing this profession..."
+    new "In any case, there's nothing to be ashamed of ..."
 
     # game/route_choices/delaunay_route.rpy:897
     old "Et puis, même si on te reconnait, ça nous fera de la pub !"
-    new "And even if people recognise you, it'll be great publicity for us!"
+    new "Even if people recognise you, it'll be great publicity for us!"
 
     # game/route_choices/delaunay_route.rpy:927
     old "Comment est-ce que tu as réussi à t'en sortir du coup ?"
@@ -2028,11 +2028,11 @@ translate English strings:
 
     # game/route_choices/delaunay_route.rpy:1025
     old "Les circonstances ont fait que tu as dû payer de ta poche..."
-    new "Circumstances dictated that you had to pay out of your own pocket..."
+    new "Circumstances dictated that you had to pay out..."
 
     # game/route_choices/delaunay_route.rpy:1028
     old "Ça a dû être terriblement cher..."
-    new "It must have been a great deal of money to get you into such trouble..."
+    new "It must have been a great deal of money..."
 
     # game/route_choices/delaunay_route.rpy:1031
     old "Tu as fait tes choix."
@@ -2092,11 +2092,11 @@ translate English strings:
 
     # game/route_choices/delaunay_route.rpy:1337
     old "Tant que tu ne navigues plus à l'aveugle, c'est l'essentiel."
-    new "As long as you're no longer sailing blind, that's the main thing..."
+    new "As long as you're no longer sailing blind, that's the thing..."
 
     # game/route_choices/delaunay_route.rpy:1340
     old "Sans Delaunay, ce serait donc encore la tempête..."
-    new "If it wasn't for Delaunay, you'd still be doing rodeo with yourself."
+    new "If it wasn't for Delaunay, you'd still be on a rodeo."
 
     # game/route_choices/delaunay_route.rpy:1382
     old "Dire que j'ai loupé ça, quelle tragédie..."
@@ -2112,7 +2112,7 @@ translate English strings:
 
     # game/route_choices/delaunay_route.rpy:1467
     old "Pourtant, ton personnage m'a l'air d'être très effeminé..."
-    new "Yet, your character seems to me to be quite effeminate, for lack of better terms..."
+    new "Yet, your character is quite effeminate, for lack of better terms..."
 
     # game/route_choices/delaunay_route.rpy:1470
     old "Pour un \"drag king\", ton personnage est aussi très féminin."
@@ -2148,7 +2148,7 @@ translate English strings:
 
     # game/route_choices/delaunay_route.rpy:1710
     old "C'était incroyable ! Surtout quand le rideau s'est ouvert !"
-    new "It was incredible! Especially when the curtain opened on the glass!"
+    new "It was incredible! Especially when the curtain opened on you!"
 
     # game/route_choices/delaunay_route.rpy:1713
     old "J'ai adoré ! Mais tu l'as sorti d'où ce string ?!"

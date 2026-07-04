@@ -28,7 +28,7 @@ translate English gatsby_start_4ad15410:
 translate English gatsby_start_c4637c52:
 
     # aimee "Ça te dit qu'on se pose au bar ? C'est plus intime et Barman est un vrai génie dans tout ce qui est cocktail, alcoolisé ou non." nointeract
-    aimee "Fancy popping into the bar? It's a bit more intimate, and [BARMAN] is a real genius when it comes to cocktails and mocktails" nointeract
+    aimee "Fancy popping into the bar? It's a bit more intimate, and our barman is a real genius when it comes to cocktails and mocktails" nointeract
 
 # game/route_choices/gatsby_route.rpy:180
 translate English gatsby_start_05991cd8:
