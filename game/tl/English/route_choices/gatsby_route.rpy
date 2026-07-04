@@ -2014,15 +2014,15 @@ translate English strings:
 
     # game/route_choices/gatsby_route.rpy:314
     old "Tu faisais du cirque du coup?"
-    new "So you were doing circus work then? Can you tell me more about it?"
+    new "So you were doing circus work then?"
 
     # game/route_choices/gatsby_route.rpy:317
     old "J'ignorais que tu avais fait un burn-out..."
-    new "I didn't realise you'd had a burnout. What sort of working environment was it that led to that?"
+    new "I didn't realise you'd had a burnout..."
 
     # game/route_choices/gatsby_route.rpy:320
     old "Donc tu as commencé par le drag pour... Te relever?"
-    new "So you started with drag to... get back on your feet? It might not be the first thing that springs to mind when you embark on your 'healing journey'"
+    new "So you started with drag to... get back on your feet?"
 
     # game/route_choices/gatsby_route.rpy:355
     old "Énergique à ce que je vois!"
@@ -2122,7 +2122,7 @@ translate English strings:
 
     # game/route_choices/gatsby_route.rpy:846
     old "Tu as dû prendre pas mal de temps pour t'en remettre, non?"
-    new "It must have taken you quite a while to get over it, didn't it?"
+    new "It must have taken you quite a while to get over it?"
 
     # game/route_choices/gatsby_route.rpy:886
     old "Ça fait plaisir de te voir d'attaque, mais pourquoi c'est arrivé ?"
@@ -2138,7 +2138,7 @@ translate English strings:
 
     # game/route_choices/gatsby_route.rpy:936
     old "Le cabaret a dû avoir une sacrée influence sur ta guérison..."
-    new "The Androgame must have had a big impact on your recovery..."
+    new "The Androgame must have had an impact on your recovery..."
 
     # game/route_choices/gatsby_route.rpy:939
     old "C'est ce lieu qui t'as sauvé.e ?"
@@ -2194,7 +2194,7 @@ translate English strings:
 
     # game/route_choices/gatsby_route.rpy:1189
     old "Et où est-ce que tu en es à présent? Si ce n'est pas encore ça...."
-    new "And where are you at the moment? If it's not quite there yet..."
+    new "And where are you, now? If it's not quite there yet..."
 
     # game/route_choices/gatsby_route.rpy:1260
     old "Bien sûr, de quoi as-tu besoin ?"
@@ -2222,15 +2222,15 @@ translate English strings:
 
     # game/route_choices/gatsby_route.rpy:1326
     old "Ce n'est pas trop compliqué de performer ? "
-    new ""
+    new "Isn't performing a bit complicated?"
 
     # game/route_choices/gatsby_route.rpy:1329
     old "Je te trouve courageux.se. Tout ce que tu réussis à accomplir..."
-    new "I think you're brave... Everything you manage to achieve without it really seeming to get to you."
+    new "I think you're brave... Everything you manage to achieve..."
 
     # game/route_choices/gatsby_route.rpy:1332
     old "J'étais persuadé.e que tu ne toucherais plus aux arts acrobatiques."
-    new "I was convinced that, given everything you'd told me before, you'd never touch acrobatics again."
+    new "I was convinced that, you'd never touch acrobatics again."
 
     # game/route_choices/gatsby_route.rpy:1363
     old "J'imagine ça comme un sentiment très... viscéral ?"
@@ -2306,13 +2306,13 @@ translate English strings:
 
     # game/route_choices/gatsby_route.rpy:1860
     old "Pas que le premier rang ! Un peu plus, et moi aussi !"
-    new "Not just the front row! Just a bit more, and I would have too!"
+    new "Not just the front row! A tad more, and I would have too!"
 
     # game/route_choices/gatsby_route.rpy:1863
     old "La grâce et la force que ça demande, sans te faire broncher !"
-    new "The grace and strength it takes to do that without batting an eyelid..."
+    new "Doing all that without batting an eyelid!"
 
     # game/route_choices/gatsby_route.rpy:1866
     old "Le public était complètement hypnotisé !"
-    new "The audience was completely spellbound, you've done it, Gat!"
+    new "The audience was completely spellbound, Gat!"
 
