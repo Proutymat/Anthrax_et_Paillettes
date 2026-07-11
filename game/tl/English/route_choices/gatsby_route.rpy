@@ -2316,3 +2316,6 @@ translate English strings:
     old "Le public était complètement hypnotisé !"
     new "The audience was completely spellbound, Gat!"
 
+translate English gat_3:
+
+    show text "{size=60}{color=#FFFFFF}A few months passed...{/color}{/size}" at truecenter

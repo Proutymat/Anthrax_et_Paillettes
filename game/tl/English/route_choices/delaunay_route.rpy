@@ -2170,3 +2170,15 @@ translate English strings:
     old "Proposé si gentiment, comment refuser ?"
     new "So kindly offered, how could I refuse?"
 
+# TODO: Translation updated at 2026-07-09 22:04
+
+translate English strings:
+
+    # game/route_choices/delaunay_route.rpy:584
+    old "{size=60}{color=#FFFFFF}Quelques mois passèrent...{/color}{/size}"
+    new ""
+
+translate English del_3:
+
+    show text "{size=60}{color=#FFFFFF}A few months passed...{/color}{/size}" at truecenter
+

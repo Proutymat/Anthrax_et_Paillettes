@@ -278,3 +278,26 @@ translate English strings:
     old "Avance rapide"
     new "Fast forward"
 
+
+translate English strings:
+
+    old "Pause"
+    new "Pause"
+
+    old "Reprendre"
+    new "Resume"
+
+    old "Sauvegarder"
+    new "Save"
+
+    old "Charger"
+    new "Load"
+
+    old "Options"
+    new "Options"
+
+    old "Menu Principal"
+    new "Main Menu"
+
+    old "Quitter le jeu"
+    new "Quit Game"

@@ -399,15 +399,10 @@ screen pause_menu():
 
     tag menu  # Ferme les autres menus automatiquement
 
-    default quick_menu_backup = quick_menu  # ← cette ligne est nécessaire
-    
-    python:
-        quick_menu = False
+    default quick_menu_backup = quick_menu
 
+    on "show" action SetVariable("quick_menu", False)
     on "hide" action SetVariable("quick_menu", quick_menu_backup)
-
-
-    $ quick_menu = False  # <- désactive le quick menu pendant la pause
 
     add "images/Backgrounds/menu_background_two.png"
 
@@ -422,23 +417,141 @@ screen pause_menu():
             spacing 40
             xalign 0.5
 
-            text "Pause" style "h1"
+            text _("Pause") style "h1"
             
             if renpy.variant("pc"):
             
-                textbutton "Reprendre" action Return() xalign 0.5
-                textbutton "Sauvegarder" action [Hide("pause_menu"), Function(renpy.transition, fade), Show("save")] xalign 0.5
-                textbutton "Charger" action [Hide("pause_menu"), Function(renpy.transition, fade), Show("load")] xalign 0.5
-                textbutton "Options" action [SetVariable("_previous_screen", "pause_menu"), Function(renpy.transition, fade), Show("preferences")] xalign 0.5
-                textbutton "Menu Principal" action MainMenu(confirm=not main_menu) xalign 0.5
-                textbutton "Quitter le jeu" action Quit(confirm=not main_menu) xalign 0.5
+                textbutton _("Reprendre") action Return() xalign 0.5
+                
+                textbutton _("Sauvegarder") action [
+                    Hide("pause_menu"), 
+                    Function(renpy.transition, fade), 
+                    Show("save")
+                ] xalign 0.5
+                
+                textbutton _("Charger") action [
+                    Hide("pause_menu"), 
+                    Function(renpy.transition, fade), 
+                    Show("load")
+                ] xalign 0.5
+                
+                textbutton _("Options") action [
+                    SetVariable("_previous_screen", "pause_menu"), 
+                    Function(renpy.transition, fade), 
+                    Show("preferences")
+                ] xalign 0.5
+                
+                textbutton _("Menu Principal") action MainMenu(confirm=not main_menu) xalign 0.5
+                
+                textbutton _("Quitter le jeu") action Quit(confirm=not main_menu) xalign 0.5
 
             else:
-                textbutton "Reprendre" action Return() xalign 0.5
-                textbutton "Sauvegarder" action [Hide("pause_menu"), Function(renpy.transition, fade), Show("save")] xalign 0.5
-                textbutton "Charger" action [Hide("pause_menu"), Function(renpy.transition, fade), Show("load")] xalign 0.5
-                textbutton "Options" action [SetVariable("_previous_screen", "pause_menu"), Function(renpy.transition, fade), Show("preferences")] xalign 0.5
-                textbutton "Menu Principal" action MainMenu(confirm=not main_menu) xalign 0.5
+            
+                textbutton _("Reprendre") action Return() xalign 0.5
+                
+                textbutton _("Sauvegarder") action [
+                    Hide("pause_menu"), 
+                    Function(renpy.transition, fade), 
+                    Show("save")
+                ] xalign 0.5
+                
+                textbutton _("Charger") action [
+                    Hide("pause_menu"), 
+                    Function(renpy.transition, fade), 
+                    Show("load")
+                ] xalign 0.5
+                
+                textbutton _("Options") action [
+                    SetVariable("_previous_screen", "pause_menu"), 
+                    Function(renpy.transition, fade), 
+                    Show("preferences")
+                ] xalign 0.5
+                
+                textbutton _("Menu Principal") action MainMenu(confirm=not main_menu) xalign 0.5
+
+
+screen backstages():
+
+    tag menu
+
+    add "images/Backgrounds/menu_background_two.png"
+    
+    frame:
+        xalign 0.5
+        yalign 0.5
+        background None
+
+        vbox:
+            spacing 50
+            xalign 0.5
+
+            vbox:
+                spacing 5
+                xalign 0.5
+
+                imagebutton:
+                    auto "menuUI/album_%s.png"
+                    hovered Function(play_ui_hover)
+                    action [
+                        Function(play_ui_click),
+                        Hide("backstages"),
+                        Function(renpy.transition, fade),
+                        Show("album")
+                    ]
+
+                imagebutton:
+                    auto "menuUI/interviews_%s.png"
+                    hovered Function(play_ui_hover)
+                    action [
+                        Function(play_ui_click),
+                        Hide("backstages"),
+                        Function(renpy.transition, fade),
+                        Show("music_room_interviews", mr=music_room_interviews)
+                    ]
+
+                imagebutton:
+                    auto "menuUI/juxebox_%s.png"
+                    hovered Function(play_ui_hover)
+                    action [
+                        Function(play_ui_click),
+                        Hide("backstages"),
+                        Function(renpy.transition, fade),
+                        Show("music_room", mr=music_room)
+                    ]
+
+                if _preferences.language == "English":
+
+                    imagebutton:
+                        auto "menuUI/credits_eng_%s.png"
+                        hovered Function(play_ui_hover)
+                        action [
+                            Function(play_ui_click),
+                            Function(renpy.transition, fade),
+                            Show("credits")
+                        ]
+
+                else:
+
+                    imagebutton:
+                        auto "menuUI/credits_%s.png"
+                        hovered Function(play_ui_hover)
+                        action [
+                            Function(play_ui_click),
+                            Function(renpy.transition, fade),
+                            Show("credits")
+                        ]
+
+
+    vbox:
+        at Transform(xalign=0.09, yalign=0.98)
+
+        imagebutton:
+            idle "menuUI/retour_idle.png"
+            hover "menuUI/retour_hover.png"
+            action [
+                Function(play_ui_back),
+                Return()
+            ]
                 
 
 screen backstages():

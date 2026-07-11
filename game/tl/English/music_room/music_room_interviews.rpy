@@ -50,3 +50,11 @@ translate English strings:
     old "Interviews"
     new "Interviews"
 
+# TODO: Translation updated at 2026-07-09 22:04
+
+translate English strings:
+
+    # game/music_room/music_room_interviews.rpy:349
+    old "No song playing"
+    new ""
+

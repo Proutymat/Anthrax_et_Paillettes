@@ -2234,3 +2234,23 @@ translate English strings:
     old "C'était génial ! J'ai rarement autant rit de ma vie !"
     new "That was brilliant! I've rarely laughed so much in my life!"
 
+    
+
+
+# TODO: Translation updated at 2026-07-09 22:04
+
+# game/route_choices/peacock_route.rpy:256
+translate English peacock_start_5b2810cf:
+
+    # anthrax "Je me sens bête de prendre un verre du coup..."
+    anthrax ""
+
+# game/route_choices/peacock_route.rpy:1808
+translate English pea_5_830714e5:
+
+    # text "Elle quitta la scène sous les rires, après avoir introduit le show suivant."
+    text ""
+
+translate English pea_3:
+
+    show text "{size=60}{color=#FFFFFF}A few months passed...{/color}{/size}" at truecenter

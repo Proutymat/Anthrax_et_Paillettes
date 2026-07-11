@@ -581,7 +581,7 @@ label del_3:
 
     show gradient
     play music LongEllipse volume 0.6
-    show text "{size=60}{color=#FFFFFF}Quelques mois passèrent...{/color}{/size}" at truecenter
+    show text _("{size=60}{color=#FFFFFF}Quelques mois passèrent...{/color}{/size}") at truecenter
 
     pause 6
 
